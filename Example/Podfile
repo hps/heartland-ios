@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'Heartland-iOS-SDK_Example', :exclusive => true do
+  pod "Heartland-iOS-SDK", :path => "../"
+end
+
+target 'Heartland-iOS-SDK_Tests', :exclusive => true do
+  pod "Heartland-iOS-SDK", :path => "../"
+
+  
+end
