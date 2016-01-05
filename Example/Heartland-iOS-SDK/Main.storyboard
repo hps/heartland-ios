@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="s8l-nA-HMm">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="pMD-8b-7XT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="s8l-nA-HMm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MHP-IN-dib">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QRW-Nn-Pl1" kind="relationship" relationship="rootViewController" id="2Ie-T5-ApS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UD1-1S-RHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-146" y="434"/>
+        </scene>
+        <!--Payment Example-->
+        <scene sceneID="Jvs-aL-xPP">
+            <objects>
+                <viewController title="Payment Example" id="QRW-Nn-Pl1" customClass="HpsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hIu-U2-H0r"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jpb-Nc-Xra"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CDm-lk-Xfd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3U-DR-Afu">
+                                <rect key="frame" x="135" y="274" width="144" height="26"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.60533303019999996" green="0.11072149119999999" blue="0.1448496631" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="144" id="fWH-26-NxC"/>
+                                    <constraint firstAttribute="height" constant="26" id="wjn-Yr-vgO"/>
+                                </constraints>
+                                <state key="normal" title="Charge It">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="chargeTouched:" destination="QRW-Nn-Pl1" eventType="touchUpInside" id="Q5O-aP-vDp"/>
+                                    <segue destination="dbl-PU-rTX" kind="presentation" id="Wm9-U2-emC"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="250.00" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8qw-rY-0B9">
+                                <rect key="frame" x="141" y="229" width="132" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="132" id="pxr-P7-sLZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="e3U-DR-Afu" firstAttribute="top" secondItem="8qw-rY-0B9" secondAttribute="bottom" constant="15" id="3Xf-BD-eNE"/>
+                            <constraint firstItem="e3U-DR-Afu" firstAttribute="centerX" secondItem="8qw-rY-0B9" secondAttribute="centerX" id="6dT-qC-Jm1"/>
+                            <constraint firstItem="8qw-rY-0B9" firstAttribute="centerX" secondItem="CDm-lk-Xfd" secondAttribute="centerX" id="XHn-Uc-7tT"/>
+                            <constraint firstItem="8qw-rY-0B9" firstAttribute="top" secondItem="hIu-U2-H0r" secondAttribute="bottom" constant="209" id="i23-d2-9Cm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BuZ-SG-dye"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="amountText" destination="8qw-rY-0B9" id="wdx-k7-oRW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ftw-yz-MUc" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="551" y="434"/>
+        </scene>
+        <!--Hps Card Prompt Holder View Controller-->
+        <scene sceneID="pHP-IQ-vqa">
+            <objects>
+                <viewController id="dbl-PU-rTX" customClass="HpsCardPromptHolderViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8O6-L5-8GM"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wbd-LG-zV2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kXe-w7-Id2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MvV-v4-mVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1285" y="434"/>
+        </scene>
+    </scenes>
+</document>
