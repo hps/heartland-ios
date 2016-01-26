@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HpsErrors : NSObject
 
-@end
+NSString *HpsErrorDomain = @"com.heartlandpaymentsystems.iossdk";
+
+enum {
+    GatewayError,
+    IssuerError,
+    TokenError,
+    ConfigurationError,
+    CocoaError
+};

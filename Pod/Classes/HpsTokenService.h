@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HpsTokenResponse.h"
+#import "HpsTokenData.h"
 
 @interface HpsTokenService : NSObject
 
@@ -17,5 +17,5 @@
                             cvc:(NSString*)cvc
                        expMonth:(NSString*)expMonth
                         expYear:(NSString*)expYear
-               andResponseBlock:(void(^)(HpsTokenResponse*))responseBlock;
+               andResponseBlock:(void(^)(HpsTokenData*))responseBlock;
 @end

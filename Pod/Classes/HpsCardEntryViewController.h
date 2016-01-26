@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HpsTokenResponse.h"
+#import "HpsTokenData.h"
 
-typedef void(^CallbackBlockType)(HpsTokenResponse*);
+typedef void(^CallbackBlockType)(HpsTokenData*);
 
 @interface HpsCardEntryViewController : UIViewController
 
 @property(nonatomic, strong) NSString* publicKey;
 
-- (void) setCallBackBlock:(void(^)(HpsTokenResponse*))block;
+- (void) setCallBackBlock:(void(^)(HpsTokenData*))block;
 
 @end

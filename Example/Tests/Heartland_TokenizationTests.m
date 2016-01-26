@@ -43,9 +43,9 @@
     
     [service getTokenWithCardNumber:@"4242424242424242"
                                 cvc:@"023"
-                           expMonth:@"12"
+                           expMonth:@"3"
                             expYear:@"2017"
-                   andResponseBlock:^(HpsTokenResponse *response) {
+                   andResponseBlock:^(HpsTokenData *response) {
                        XCTAssertTrue([response.type isEqualToString:@"token"]);
                        XCTAssertNotNil(response.tokenValue, @"tokenValue nil");
                        XCTAssertNotNil(response.tokenType, @"tokenType nil");
@@ -70,7 +70,7 @@
                                 cvc:@"023"
                            expMonth:@"12"
                             expYear:@"2017"
-                   andResponseBlock:^(HpsTokenResponse *response) {
+                   andResponseBlock:^(HpsTokenData *response) {
                        XCTAssertFalse([response.type isEqualToString:@"error"]);
                        XCTAssertNil(response.param);
                        XCTAssertNil(response.message);
@@ -93,7 +93,7 @@
                                 cvc:@"023"
                            expMonth:@"12"
                             expYear:@"2017"
-                   andResponseBlock:^(HpsTokenResponse *response) {
+                   andResponseBlock:^(HpsTokenData *response) {
                        XCTAssertNil(response.tokenType);
                        XCTAssertNil(response.tokenValue);
                        XCTAssertTrue([response.type isEqualToString:@"error"]);
@@ -118,7 +118,7 @@
                                 cvc:@"023"
                            expMonth:@"12"
                             expYear:@"2017"
-                   andResponseBlock:^(HpsTokenResponse *response) {
+                   andResponseBlock:^(HpsTokenData *response) {
                        XCTAssertNil(response.tokenType);
                        XCTAssertNil(response.tokenValue);
                        XCTAssertTrue([response.type isEqualToString:@"error"]);
@@ -143,7 +143,7 @@
                                 cvc:@"023"
                            expMonth:@"0"
                             expYear:@"2017"
-                   andResponseBlock:^(HpsTokenResponse *response) {
+                   andResponseBlock:^(HpsTokenData *response) {
                        XCTAssertNil(response.tokenType);
                        XCTAssertNil(response.tokenValue);
                        XCTAssertTrue([response.type isEqualToString:@"error"]);
@@ -168,7 +168,7 @@
                                 cvc:@"023"
                            expMonth:@"13"
                             expYear:@"2017"
-                   andResponseBlock:^(HpsTokenResponse *response) {
+                   andResponseBlock:^(HpsTokenData *response) {
                        XCTAssertNil(response.tokenType);
                        XCTAssertNil(response.tokenValue);
                        XCTAssertTrue([response.type isEqualToString:@"error"]);
@@ -193,7 +193,7 @@
                                 cvc:@"023"
                            expMonth:@"12"
                             expYear:@"12"
-                   andResponseBlock:^(HpsTokenResponse *response) {
+                   andResponseBlock:^(HpsTokenData *response) {
                        XCTAssertNil(response.tokenType);
                        XCTAssertNil(response.tokenValue);
                        XCTAssertTrue([response.type isEqualToString:@"error"]);
@@ -218,7 +218,7 @@
                                cvc:@"023"
                           expMonth:@"12"
                            expYear:@"1999"
-                   andResponseBlock:^(HpsTokenResponse *response) {
+                   andResponseBlock:^(HpsTokenData *response) {
                        XCTAssertNil(response.tokenType);
                        XCTAssertNil(response.tokenValue);
                        XCTAssertTrue([response.type isEqualToString:@"error"]);

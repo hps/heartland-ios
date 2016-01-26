@@ -12,6 +12,7 @@
 @class HpsCardHolderData;
 @class HpsAdditionalTxnFields;
 
+
 @interface HpsTransaction : NSObject
 
 @property (nonatomic, strong) HpsCardData *cardData;

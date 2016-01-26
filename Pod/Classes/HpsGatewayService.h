@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "HpsTransaction.h"
-#import "HpsGatewayResponse.h";
+#import "HpsGatewayData.h"
 
 @class HpsServicesConfig;
 
@@ -17,5 +17,5 @@
 
 - (id) initWithConfig:(HpsServicesConfig *) config;
 
-- (void) doTransaction:(HpsTransaction *)transaction withResponseBlock:(void(^)(HpsGatewayResponse*))responseBlock;
+- (void) doTransaction:(HpsTransaction *)transaction withResponseBlock:(void(^)(HpsGatewayData*, NSError*))responseBlock;
 @end

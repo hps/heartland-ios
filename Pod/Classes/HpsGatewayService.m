@@ -12,8 +12,9 @@
 #import "HpsTransaction.h"
 #import "HpsHeader.h"
 #import "HpsPosRequest.h"
-#import "HpsGatewayResponse.h"
-#import "HpsTokenResponse.h"
+#import "HpsGatewayData.h"
+#import "HpsTokenData.h"
+#import "HpsErrors.h"
 
 @interface HpsGatewayService()
 
@@ -37,14 +38,22 @@
     return self;
 }
 
-- (void) doTransaction:(HpsTransaction *)transaction withResponseBlock:(void(^)(HpsGatewayResponse*))responseBlock
+- (void) doTransaction:(HpsTransaction *)transaction withResponseBlock:(void(^)(HpsGatewayData*, NSError*))responseBlock
 {
     if( [self isConfigInvalid] )
     {
         // TODO: throw sdk exception
         
-        
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"No configuration set."};
+            NSError *error = [NSError errorWithDomain:HpsErrorDomain
+                                         code:ConfigurationError
+                                     userInfo:userInfo];
+ 
+            responseBlock(nil, error);
+      
+        });
+        return;
         
     }
     
@@ -75,8 +84,8 @@
         header.siteId = self.config.siteId;
         header.deviceId = self.config.deviceId;
         header.siteTrace = self.config.siteTrace;
-        header.siteTrace = self.config.userName;
-        header.siteTrace = self.config.password;
+        header.userName = self.config.userName;
+        header.password = self.config.password;
         
     }
     
@@ -103,76 +112,143 @@
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:self.queue
                            completionHandler:^(NSURLResponse *response, NSData *responseData, NSError *responseError) {
+                               
                                if( responseError )
                                {
+                                   //error on connection
                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                       NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [responseError localizedDescription]};
+                                       NSError *error = [NSError errorWithDomain:HpsErrorDomain
+                                                                            code:CocoaError
+                                                                        userInfo:userInfo];
                                        
-                                       HpsGatewayResponse *chargeResponse = [[HpsGatewayResponse alloc] init];
-                                       chargeResponse.responseCode = [@(responseError.code) stringValue];
-                                       chargeResponse.responseText = [responseError localizedDescription];
-                                       responseBlock(chargeResponse);
-                                       return;
+                                       responseBlock(nil, error);
+                                       
                                    });
+                                   return;
                                }
                                
-                               if (responseData != nil){
-                                   NSString *responseXML = [[NSString alloc] initWithData:responseData
-                                                                                 encoding:NSUTF8StringEncoding];
-                                   
-                                   NSDictionary *responseDictionary = [NSDictionary dictionaryWithXMLString:responseXML];
-                                   
-                                   //NSLog(@"%@",[responseDictionary description]);
-                                   
-                                   HpsGatewayResponse *chargeResponse = [[HpsGatewayResponse alloc] init];
-                                   NSDictionary *transactionDictionary = responseDictionary[@"soap:Body"][@"PosResponse"][@"Ver1.0"][@"Transaction"];
-                                   
-                                   if (transactionDictionary != nil) {
-                                       chargeResponse.referenceNumber = transactionDictionary[@"CreditSale"][@"RefNbr"];
-                                       chargeResponse.responseCode = transactionDictionary[@"CreditSale"][@"RspCode"];
-                                       chargeResponse.responseText = transactionDictionary[@"CreditSale"][@"RspText"];
-                                       chargeResponse.avsResultCode = transactionDictionary[@"CreditSale"][@"AVSRsltCode"];
-                                       chargeResponse.avsResultText = transactionDictionary[@"CreditSale"][@"AVSRsltText"];
-                                       chargeResponse.authorizationCode = transactionDictionary[@"CreditSale"][@"AuthCode"];
-                                       chargeResponse.cardType = transactionDictionary[@"CreditSale"][@"CardType"];
-                                       chargeResponse.referenceNumber = transactionDictionary[@"CreditSale"][@"RefNbr"];
+                               @try {
+                                   if (responseData != nil){
+                                       NSString *responseXML = [[NSString alloc] initWithData:responseData
+                                                                                     encoding:NSUTF8StringEncoding];
                                        
-                                       NSDictionary *tokenData = responseDictionary[@"soap:Body"][@"PosResponse"][@"Ver1.0"][@"Header"][@"TokenData"];
-                                       if (tokenData != nil) {
-                                           chargeResponse.tokenResponse = [[HpsTokenResponse alloc] init];
-                                           chargeResponse.tokenResponse.tokenValue = tokenData[@"TokenValue"];
-                                           chargeResponse.tokenResponse.message = tokenData[@"TokenRspMsg"];
-                                           chargeResponse.tokenResponse.code = tokenData[@"TokenRspCode"];
-                                       }
-
-                                   }else{
-                                       //error
+                                       NSDictionary *responseDictionary = [NSDictionary dictionaryWithXMLString:responseXML];
+                                       
+                                       HpsGatewayData *chargeResponse = [[HpsGatewayData alloc] init];
+                                       NSDictionary *transactionDictionary = responseDictionary[@"soap:Body"][@"PosResponse"][@"Ver1.0"][@"Transaction"];
                                        NSDictionary *headerDictionary = responseDictionary[@"soap:Body"][@"PosResponse"][@"Ver1.0"][@"Header"];
-                                       chargeResponse.responseCode = headerDictionary[@"GatewayRspCode"];
-                                       chargeResponse.responseText = headerDictionary[@"GatewayRspMsg"];
                                        
-                                       
-                                   }
-                                    //chargeResponse.cardNumber   - not seeing this in the response
+                                       if (headerDictionary != nil) {
+                                           chargeResponse.gatewayResponseCode = headerDictionary[@"GatewayRspCode"];
+                                           chargeResponse.gatewayResponseText = headerDictionary[@"GatewayRspMsg"];
+                                           chargeResponse.gatewayTxnId = headerDictionary[@"GatewayTxnId"];
+                                           
+                                           NSDictionary *tokenData = headerDictionary[@"TokenData"];
+                                           if (tokenData != nil) {
+                                               chargeResponse.tokenResponse = [[HpsTokenData alloc] init];
+                                               chargeResponse.tokenResponse.tokenValue = tokenData[@"TokenValue"];
+                                               chargeResponse.tokenResponse.message = tokenData[@"TokenRspMsg"];
+                                               chargeResponse.tokenResponse.code = tokenData[@"TokenRspCode"];
+                                           }
+                                           
+                                           if (![chargeResponse.gatewayResponseCode isEqualToString:@"0"]) {
+                                               //Failed on Gateway
+                                               
+                                               NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Failed on issuer. See gatewayResponseCode and gatewayResponseText."};
+                                               NSError *error = [NSError errorWithDomain:HpsErrorDomain
+                                                                                    code:IssuerError
+                                                                                userInfo:userInfo];
+                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                   responseBlock(chargeResponse, error);
+                                               });
+                                               
+                                               return;
+                                           }
+                                           
+                                       }else{
+                                           
+                                           //error on header
+                                           NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Gateway header is missing."};
+                                           NSError *error = [NSError errorWithDomain:HpsErrorDomain
+                                                                                code:GatewayError
+                                                                            userInfo:userInfo];
+                                           
+                                           dispatch_async(dispatch_get_main_queue(), ^{
+                                               responseBlock(nil, error);
+                                           });
+                                           return;
+                                           
+                                       }//header
                                    
-                                   
-                                   // TODO: advanced error handling
-                                   dispatch_async(dispatch_get_main_queue(), ^{
-                                       
-                                       responseBlock(chargeResponse);
-                                       return;
-                                   });
+                                       if (transactionDictionary != nil) {
+                                           chargeResponse.referenceNumber = transactionDictionary[@"CreditSale"][@"RefNbr"];
+                                           chargeResponse.responseCode = transactionDictionary[@"CreditSale"][@"RspCode"];
+                                           chargeResponse.responseText = transactionDictionary[@"CreditSale"][@"RspText"];
+                                           chargeResponse.avsResultCode = transactionDictionary[@"CreditSale"][@"AVSRsltCode"];
+                                           chargeResponse.avsResultText = transactionDictionary[@"CreditSale"][@"AVSRsltText"];
+                                           chargeResponse.authorizationCode = transactionDictionary[@"CreditSale"][@"AuthCode"];
+                                           chargeResponse.cardType = transactionDictionary[@"CreditSale"][@"CardType"];
+                                           chargeResponse.referenceNumber = transactionDictionary[@"CreditSale"][@"RefNbr"];
+                                           
+                                           //Error code checking
+                                           if (![chargeResponse.responseCode isEqualToString:@"00"]) {
+                                               //Failed on issuer
+                                               NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Failed on issuer. See responseCode and responseText."};
+                                               NSError *error = [NSError errorWithDomain:HpsErrorDomain
+                                                                                    code:IssuerError
+                                                                                userInfo:userInfo];
+                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                   responseBlock(chargeResponse, error);
+                                               });
 
-                               }else{
-                                   dispatch_async(dispatch_get_main_queue(), ^{
+                                               return;
+                                           }
+                                           
+                                           //All good
+                                           dispatch_async(dispatch_get_main_queue(), ^{
+                                               responseBlock(chargeResponse, nil);
+                                           });
+                                           
+                                       }else{
+                                           
+                                           //error
+                                           NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Transaction error. See codes."};
+                                           NSError *error = [NSError errorWithDomain:HpsErrorDomain
+                                                                                code:GatewayError
+                                                                            userInfo:userInfo];
+                                           dispatch_async(dispatch_get_main_queue(), ^{
+                                               responseBlock(nil, error);
+                                           });
+                                         
+                                       }//transaction
                                        
-                                       HpsGatewayResponse *chargeResponse = [[HpsGatewayResponse alloc] init];
-                                       chargeResponse.responseCode = @"01";
-                                       chargeResponse.responseText = @"No data returned";
-                                       responseBlock(chargeResponse);
-                                       return;
+                                       
+                                   }else{
+                                       
+                                       dispatch_async(dispatch_get_main_queue(), ^{
+                                           NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"No data returned."};
+                                           NSError *error = [NSError errorWithDomain:HpsErrorDomain
+                                                                                code:GatewayError
+                                                                            userInfo:userInfo];
+                                           responseBlock(nil, error);
+                                       });
+                                   }
+                                   
+                               }
+                               @catch (NSException *exception) {
+                                   //Code runtime error - can happen when no XML is returned - HTML with system error messages.
+                                   //or Dictionary parsing on nil errors
+                                   dispatch_async(dispatch_get_main_queue(), ^{
+                                       NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
+                                       NSError *error = [NSError errorWithDomain:HpsErrorDomain
+                                                                            code:CocoaError
+                                                                        userInfo:userInfo];
+                                       
+                                       responseBlock(nil, error);
+                                       
                                    });
                                }
-
 
                            }];    
 }

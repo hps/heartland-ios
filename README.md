@@ -10,7 +10,7 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
-Adding this pod will also include the XMLDictionary cocoapod as a dependency.
+Adding this pod will also include the XMLDictionary, and Masonry cocoapod as a dependency.
  
 ## Installation
 
@@ -23,7 +23,7 @@ pod "Heartland-iOS-SDK"
 
 #####For iOS 9 only: Whitelist heartlandportico.com
 
-If you compile your app with iOS SDK 9.0, you will be affected by App Transport Security. Currently, you will need to whitelist heartlandportico.com in your app by adding the following to your application's plist:
+If you compile your app with iOS SDK 9.0 or above, you will be affected by App Transport Security. Currently, you will need to whitelist heartlandportico.com in your app by adding the following to your application's plist:
 
 ```Objective-C
 <key>NSAppTransportSecurity</key>  
@@ -54,17 +54,18 @@ Below is an example of all that is required to convert sensitive card informatio
 ```objective-c
     TokenService *service = [[TokenService alloc] initWithPublicKey:@"YOUR PUBLIC KEY GOES HERE"];
     
-    [service getTokenWithCardNumber:4242424242424242
-                                cvc:123
-                           expMonth:12
-                            expYear:2015
-                   andResponseBlock:^(TokenResponse *response) {
+    [service getTokenWithCardNumber:@"4242424242424242"
+                                cvc:@"012"
+                           expMonth:@"3"
+                            expYear:@"2017"
+                   andResponseBlock:^(TokenResponse *tokenResponse) {
                        
-                       if([response.type isEqualToString:@"error"]) {
-                           self.tokenResultLabel.text = response.message;
+                       if([tokenResponse.type isEqualToString:@"error"]) {
+                            self.tokenCodeResultLabel.text = tokenResponse.code;
+                            self.tokenResultLabel.text = tokenResponse.message;
                        }
                        else {
-                           self.tokenResultLabel.text = response.tokenValue;
+                            self.tokenResultLabel.text = tokenResponse.tokenValue;
                        }
                        
                    }];
@@ -94,10 +95,19 @@ Below is an example of all that is required to run a card transaction directly.
     transaction.cardHolderData.city = @"Anytown";
     transaction.cardHolderData.zip = @"AZ";
 
-    //Card data as strings
-    transaction.cardData.cardNumber = @"4242424242424242";
-    transaction.cardData.expYear = @"2021";
-    transaction.cardData.expMonth = @"6";
+
+    //***************************
+    //add the tokenResponse to charge against.
+    transaction.cardData.tokenResponse = tokenResponse;
+    //***************************
+
+    //***************************
+    //Or charge by using card data directly - Not the recommended way for processing. 
+    //transaction.cardData.cardNumber = @"4242424242424242";
+    //transaction.cardData.expYear = @"2021";
+    //transaction.cardData.expMonth = @"6";
+    //***************************
+
     
     //Do you want a re-use token returned?
     transaction.cardData.requestToken = YES;
@@ -112,19 +122,30 @@ Below is an example of all that is required to run a card transaction directly.
     
     // 4.) Run the transaction with the service.
     [service doTransaction:transaction
-         withResponseBlock:^(HpsGatewayResponse *gatewayResponse) {
+         withResponseBlock:^(HpsGatewayData *gatewayResponse, NSError *error) {
              
-             if ([gatewayResponse.responseCode isEqualToString:@"00"]) {
-                 //Success
+             if (error != nil) {
                  
+      
+                //Houston we have a problem
                  
-             } else{
-                 //Houston we have a problem
-                 //Error codes:
-                 //gatewayResponse.responseCode
-                 //gatewayResponse.responseText
+                //You can look at the 
+                //Processing error codes:
+
+                // [error localizedDescription];
                  
-                 //...
+
+                //gatewayResponse.responseCode
+                //gatewayResponse.responseText
+
+                //gatewayResponse.gatewayResponseCode
+                //gatewayResponse.gatewayResponseText
+                 
+                
+             }else{
+                //success
+
+
              }
          }];
 

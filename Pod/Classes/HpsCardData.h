@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "HpsTokenData.h"
 
 @interface HpsCardData : NSObject
-
+@property (nonatomic, strong) HpsTokenData *tokenResponse;
 @property (nonatomic, strong) NSString *expMonth;
 @property (nonatomic) BOOL cardPresent;
 @property (nonatomic, strong) NSString *expYear;

@@ -15,6 +15,7 @@
 
 - (NSObject*) init {
     self = [super init];
+  
     self.cardData = [[HpsCardData alloc] init];
     self.cardHolderData = [[HpsCardHolderData alloc] init];
     self.additionalTxnFields = [[HpsAdditionalTxnFields alloc] init];

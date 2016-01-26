@@ -7,7 +7,7 @@
 //
 
 #import "HpsTokenService.h"
-#import "HpsTokenResponse.h"
+#import "HpsTokenData.h"
 
 
 @interface HpsTokenService()
@@ -52,14 +52,11 @@
     return self;
 }
 
-//DEPRECATED - Integer based
-//Integers for CVC with leading zeros are not padded correctly, and we will be deprecating this method in our new SDK.
-
 - (void) getTokenWithCardNumber:(NSString*)cardNumber
                             cvc:(NSString*)cvc
                        expMonth:(NSString*)expMonth
                         expYear:(NSString*)expYear
-               andResponseBlock:(void(^)(HpsTokenResponse*))responseBlock
+               andResponseBlock:(void(^)(HpsTokenData*))responseBlock
 {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.serviceURL]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
@@ -85,22 +82,17 @@
                                                          error:nil];
     
     [request setHTTPMethod:@"POST"];
-    
     [request setValue:authorization forHTTPHeaderField:@"Authorization"];
-    
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
     [request setValue:[@([jsonData length]) stringValue] forHTTPHeaderField:@"Content-Length"];
-    
-    [request setHTTPBody:jsonData];
-    
+    [request setHTTPBody:jsonData];    
     
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:self.queue
                            completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error) {
                                if (error != nil){
                                    
-                                   HpsTokenResponse *response = [[HpsTokenResponse alloc] init];
+                                   HpsTokenData *response = [[HpsTokenData alloc] init];
                                    response.code = [@(error.code) stringValue];
                                    response.message = [error localizedDescription];
                                    response.type = @"error";
@@ -121,7 +113,7 @@
                                                                                           error:&jsonError];
                                    if (jsonError != nil){
                                        
-                                       HpsTokenResponse *response = [[HpsTokenResponse alloc] init];
+                                       HpsTokenData *response = [[HpsTokenData alloc] init];
                                        response.code = [@(jsonError.code) stringValue];
                                        response.message = [jsonError localizedDescription];
                                        response.type = @"error";
@@ -135,7 +127,7 @@
                                        
                                    }
 
-                                   HpsTokenResponse *response = [[HpsTokenResponse alloc] init];
+                                   HpsTokenData *response = [[HpsTokenData alloc] init];
                                    
                                    if(json[@"error"])
                                    {
@@ -160,7 +152,7 @@
 
                                }else{
                                    
-                                   HpsTokenResponse *response = [[HpsTokenResponse alloc] init];
+                                   HpsTokenData *response = [[HpsTokenData alloc] init];
                                    response.code = @"01";
                                    response.message = @"No data returned";
                                    response.type = @"error";
