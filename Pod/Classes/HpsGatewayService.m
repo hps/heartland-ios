@@ -14,7 +14,7 @@
 #import "HpsPosRequest.h"
 #import "HpsGatewayData.h"
 #import "HpsTokenData.h"
-#import "HpsErrors.h"
+
 
 @interface HpsGatewayService()
 
@@ -26,6 +26,16 @@
 @end
 
 @implementation HpsGatewayService
+NSString *HpsErrorDomain = @"com.heartlandpaymentsystems.iossdk";
+
+
+enum  {
+    GatewayError,
+    IssuerError,
+    TokenError,
+    ConfigurationError,
+    CocoaError
+};
 
 - (id) initWithConfig:(HpsServicesConfig *)config
 {
@@ -42,7 +52,7 @@
 {
     if( [self isConfigInvalid] )
     {
-        // TODO: throw sdk exception
+      
         
         dispatch_async(dispatch_get_main_queue(), ^{
             NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"No configuration set."};

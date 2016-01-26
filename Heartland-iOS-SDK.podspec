@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Heartland-iOS-SDK"
-  s.version          = "1.0.3"
+  s.version          = "1.0.4"
   s.summary          = "Secure Tokenized Payments by Heartland Payment Systems."
 
 # This description is used to generate tags and improve search results.
@@ -17,12 +17,12 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
-  Secure Tokenized Payments for iOS.
+  Secure Tokenized Payments for iOS by Heartland Payment Systems.
                        DESC
 
   s.homepage         = "https://github.com/hps/heartland-ios"
   # s.screenshots    = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
-  s.license          = 'MIT'
+  s.license          = 'EULA'
   s.author           = { "Shaunti Fondrisi" => "shaunti.fondrisi@e-hps.com" }
   s.source           = { :git => "https://github.com/hps/heartland-ios.git", :tag => s.version.to_s }
  
