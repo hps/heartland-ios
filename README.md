@@ -18,7 +18,7 @@ Heartland-iOS-SDK is available through [CocoaPods](http://cocoapods.org). To ins
 it, simply add the following line to your Podfile and run "pod update":
 
 ```ruby
-pod "Heartland-iOS-SDK"
+pod 'Heartland-iOS-SDK'
 ```
 
 #####For iOS 9 only: Whitelist heartlandportico.com
@@ -29,19 +29,19 @@ If you compile your app with iOS SDK 9.0 or above, you will be affected by App T
 <key>NSAppTransportSecurity</key>  
 <dict>  
 <key>NSExceptionDomains</key>  
-  	<dict>  
-    	<key>heartlandportico.com</key>  
-	    <dict>  
-		    <key>NSIncludesSubdomains</key>  
-		    <true/>  
-		    <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>  
-		    <true/>  
-		    <key>NSTemporaryExceptionMinimumTLSVersion</key>  
-		    <string>1.0</string>  
-		    <key>NSTemporaryExceptionRequiresForwardSecrecy</key>  
-		    <false/>  
-	  	</dict>  
-	</dict>  
+    <dict>  
+        <key>heartlandportico.com</key>  
+        <dict>  
+            <key>NSIncludesSubdomains</key>  
+            <true/>  
+            <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>  
+            <true/>  
+            <key>NSTemporaryExceptionMinimumTLSVersion</key>  
+            <string>1.0</string>  
+            <key>NSTemporaryExceptionRequiresForwardSecrecy</key>  
+            <false/>  
+        </dict>  
+    </dict>  
 </dict>  
 
 ```
@@ -52,13 +52,13 @@ If you compile your app with iOS SDK 9.0 or above, you will be affected by App T
 #### Simple TokenService
 Below is an example of all that is required to convert sensitive card information into a single-use token.  The request is asynchronous so you can safely run this code on the UI thread.
 ```objective-c
-    TokenService *service = [[TokenService alloc] initWithPublicKey:@"YOUR PUBLIC KEY GOES HERE"];
+    HpsTokenService *service = [[HpsTokenService alloc] initWithPublicKey:@"YOUR PUBLIC KEY GOES HERE"];
     
     [service getTokenWithCardNumber:@"4242424242424242"
                                 cvc:@"012"
                            expMonth:@"3"
                             expYear:@"2017"
-                   andResponseBlock:^(TokenResponse *tokenResponse) {
+                   andResponseBlock:^(HpsTokenData *tokenResponse) {
                        
                        if([tokenResponse.type isEqualToString:@"error"]) {
                             self.tokenCodeResultLabel.text = tokenResponse.code;
