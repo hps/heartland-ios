@@ -29,19 +29,19 @@ If you compile your app with iOS SDK 9.0 or above, you will be affected by App T
 <key>NSAppTransportSecurity</key>  
 <dict>  
 <key>NSExceptionDomains</key>  
-    <dict>  
-        <key>heartlandportico.com</key>  
-        <dict>  
-            <key>NSIncludesSubdomains</key>  
-            <true/>  
-            <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>  
-            <true/>  
-            <key>NSTemporaryExceptionMinimumTLSVersion</key>  
-            <string>1.0</string>  
-            <key>NSTemporaryExceptionRequiresForwardSecrecy</key>  
-            <false/>  
-        </dict>  
-    </dict>  
+  	<dict>  
+    	<key>heartlandportico.com</key>  
+	    <dict>  
+		    <key>NSIncludesSubdomains</key>  
+		    <true/>  
+		    <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>  
+		    <true/>  
+		    <key>NSTemporaryExceptionMinimumTLSVersion</key>  
+		    <string>1.0</string>  
+		    <key>NSTemporaryExceptionRequiresForwardSecrecy</key>  
+		    <false/>  
+	  	</dict>  
+	</dict>  
 </dict>  
 
 ```
@@ -148,6 +148,148 @@ Below is an example of all that is required to run a card transaction directly.
 
              }
          }];
+
+```
+
+#### Orca Device Service
+Below is an example of how the call the Orca services for API key retrieval and device activation.
+
+```objective-c
+     
+    //Device activation request - Emails a code to the address entered below.
+    // 1.) Configure the service data
+    HpsServicesConfig *config = [[HpsServicesConfig alloc]init];
+    
+    config.userName = @"admin";
+    config.password = @"password";
+    config.isForTesting = YES;  //remove for production
+    
+    HpsDeviceData *device = [[HpsDeviceData alloc] init];
+    device.merchantId = @"xxxxxxxx";
+    device.deviceId = @"xxxxxxxxx";
+    device.email = @"username@website.com";
+    device.applicationId = @"Mobuyle Retail";
+    device.hardwareTypeName = @"Heartland Mobuyle";
+    
+    //optional
+    device.softwareVersion = @"";
+    device.configurationName = @"";
+    device.peripheralName = @"";
+    device.peripheralSoftware = @"";
+    
+    // 2.) Initialize the service
+    HpsOrcaService *service = [[HpsOrcaService alloc] init];
+    
+    // 3.) Call
+    [service deviceActivationRequest:device withConfig:config andResponseBlock:^(HpsDeviceData *deviceData, NSError *error) {
+ 
+        if (error != nil) {
+            //failed
+            
+            NSString *errorMessage = [error localizedDescription];
+            
+        }else{
+            //success
+            //deviceData has the results, but the activation code is in the email.
+            
+        }
+        
+    }];
+    
+    
+    //Device activation request - From the activation code in your email.
+    // 1.) Configure the service data
+    HpsServicesConfig *config = [[HpsServicesConfig alloc]init];
+    config.isForTesting = YES; //remove for production
+    
+    HpsDeviceData *device = [[HpsDeviceData alloc] init];
+    device.merchantId = @"xxxxx";
+    device.applicationId = @"Mobuyle Retail";
+    device.activationCode = @"xxxxxxx";
+    
+    // 2.) Initialize the service
+    HpsOrcaService *service = [[HpsOrcaService alloc] init];
+    
+    // 3.) Call
+    [service activeDevice:device withConfig:config andResponseBlock:^(HpsDeviceData *deviceData, NSError *error) {
+        if (error != nil) {
+            //failed
+            
+            NSString *errorMessage = [error localizedDescription];
+            
+        }else{
+            //success
+            //deviceData has the results.
+            
+            //Here is your secret key.  Store and retrieve this securely.
+            // deviceData.apiKey;
+        }
+        
+    }];
+    
+    
+    
+    //Fetch your secret api key.
+    // 1.) Configure the service data
+    HpsServicesConfig *config = [[HpsServicesConfig alloc]init];
+    config.siteId = @"xxxxx";
+    config.licenseId = @"xxxxxx";
+    config.userName = @"admin";
+    config.password = @"password";
+    
+    config.isForTesting = YES;  //remove for production
+
+    config.deviceId = @"xxxxxx";
+    
+    
+    // 2.) Initialize the service
+    HpsOrcaService *service = [[HpsOrcaService alloc] init];
+    
+    // 3.) Call
+    [service getDeviceAPIKey:config andResponseBlock:^(NSString *apiKey, NSError *error) {
+        
+        if (error != nil) {
+            //failed
+            
+            NSString *errorMessage = [error localizedDescription];
+            
+        }else{
+            //success
+            //Here is your secret key.  Store and retrieve this securely.
+            // apiKey;
+        }
+        
+    }];
+    
+    
+    //Device activation request - Eamils a code to the address entered below.
+    // 1.) Configure the service data
+    HpsServicesConfig *config = [[HpsServicesConfig alloc] init];
+    config.secretApiKey = @"YOUR SECRET API KEY"
+    config.isForTesting = YES;   //remove for production
+    
+    HpsDeviceData *device = [[HpsDeviceData alloc] init];
+    device.deviceId = @"xxxxxxxxx";
+    device.applicationId = @"Mobuyle Retail";
+    device.hardwareTypeName = @"Heartland Mobuyle";
+    
+    // 2.) Initialize the service
+    HpsOrcaService *service = [[HpsOrcaService alloc] init];
+    
+    // 3.) Call
+    [service getDeviceParameters:device withConfig:config andResponseBlock:^(NSDictionary *payload, NSError *error) {
+        if (error != nil) {
+            //failed
+            
+            NSString *errorMessage = [error localizedDescription];
+            
+        }else{
+            //success
+            //payload has the results.
+            
+        }
+        
+    }];
 
 ```
 

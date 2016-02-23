@@ -14,10 +14,12 @@
 #import "HpsPosRequest.h"
 #import "HpsGatewayData.h"
 #import "HpsTokenData.h"
-
+#import "HpsCommon.h"
 
 @interface HpsGatewayService()
-
+{
+    NSString *errorDomain;
+}
 @property (strong, nonatomic) HpsServicesConfig *config;
 @property (nonatomic, strong) NSOperationQueue *queue;
 
@@ -26,16 +28,6 @@
 @end
 
 @implementation HpsGatewayService
-NSString *HpsErrorDomain = @"com.heartlandpaymentsystems.iossdk";
-
-
-enum  {
-    GatewayError,
-    IssuerError,
-    TokenError,
-    ConfigurationError,
-    CocoaError
-};
 
 - (id) initWithConfig:(HpsServicesConfig *)config
 {
@@ -43,6 +35,7 @@ enum  {
     {
         self.config = config;
         self.queue = [[NSOperationQueue alloc] init];
+        errorDomain = [HpsCommon sharedInstance].hpsErrorDomain;
     }
     
     return self;
@@ -56,7 +49,7 @@ enum  {
         
         dispatch_async(dispatch_get_main_queue(), ^{
             NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"No configuration set."};
-            NSError *error = [NSError errorWithDomain:HpsErrorDomain
+            NSError *error = [NSError errorWithDomain:errorDomain
                                          code:ConfigurationError
                                      userInfo:userInfo];
  
@@ -89,7 +82,6 @@ enum  {
     {
         header.developerID = self.config.developerId;
         header.versionNumber = self.config.versionNumber;
-        header.siteTrace = self.config.siteTrace;
         header.licenseId = self.config.licenseId;
         header.siteId = self.config.siteId;
         header.deviceId = self.config.deviceId;
@@ -128,7 +120,7 @@ enum  {
                                    //error on connection
                                    dispatch_async(dispatch_get_main_queue(), ^{
                                        NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [responseError localizedDescription]};
-                                       NSError *error = [NSError errorWithDomain:HpsErrorDomain
+                                       NSError *error = [NSError errorWithDomain:errorDomain
                                                                             code:CocoaError
                                                                         userInfo:userInfo];
                                        
@@ -166,7 +158,7 @@ enum  {
                                                //Failed on Gateway
                                                
                                                NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Failed on issuer. See gatewayResponseCode and gatewayResponseText."};
-                                               NSError *error = [NSError errorWithDomain:HpsErrorDomain
+                                               NSError *error = [NSError errorWithDomain:errorDomain
                                                                                     code:IssuerError
                                                                                 userInfo:userInfo];
                                                dispatch_async(dispatch_get_main_queue(), ^{
@@ -180,7 +172,7 @@ enum  {
                                            
                                            //error on header
                                            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Gateway header is missing."};
-                                           NSError *error = [NSError errorWithDomain:HpsErrorDomain
+                                           NSError *error = [NSError errorWithDomain:errorDomain
                                                                                 code:GatewayError
                                                                             userInfo:userInfo];
                                            
@@ -205,7 +197,7 @@ enum  {
                                            if (![chargeResponse.responseCode isEqualToString:@"00"]) {
                                                //Failed on issuer
                                                NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Failed on issuer. See responseCode and responseText."};
-                                               NSError *error = [NSError errorWithDomain:HpsErrorDomain
+                                               NSError *error = [NSError errorWithDomain:errorDomain
                                                                                     code:IssuerError
                                                                                 userInfo:userInfo];
                                                dispatch_async(dispatch_get_main_queue(), ^{
@@ -224,7 +216,7 @@ enum  {
                                            
                                            //error
                                            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Transaction error. See codes."};
-                                           NSError *error = [NSError errorWithDomain:HpsErrorDomain
+                                           NSError *error = [NSError errorWithDomain:errorDomain
                                                                                 code:GatewayError
                                                                             userInfo:userInfo];
                                            dispatch_async(dispatch_get_main_queue(), ^{
@@ -238,7 +230,7 @@ enum  {
                                        
                                        dispatch_async(dispatch_get_main_queue(), ^{
                                            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"No data returned."};
-                                           NSError *error = [NSError errorWithDomain:HpsErrorDomain
+                                           NSError *error = [NSError errorWithDomain:errorDomain
                                                                                 code:GatewayError
                                                                             userInfo:userInfo];
                                            responseBlock(nil, error);
@@ -251,7 +243,7 @@ enum  {
                                    //or Dictionary parsing on nil errors
                                    dispatch_async(dispatch_get_main_queue(), ^{
                                        NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
-                                       NSError *error = [NSError errorWithDomain:HpsErrorDomain
+                                       NSError *error = [NSError errorWithDomain:errorDomain
                                                                             code:CocoaError
                                                                         userInfo:userInfo];
                                        

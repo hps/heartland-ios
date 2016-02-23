@@ -20,6 +20,7 @@
 @property (strong, nonatomic) NSString *secretApiKey;
 @property (strong, nonatomic) NSString *siteTrace;
 @property (strong, nonatomic) NSString *serviceUri;
+@property (nonatomic) BOOL isForTesting;
 
 - (id) initWithSecretApiKey:(NSString *) secretApiKey;
 
