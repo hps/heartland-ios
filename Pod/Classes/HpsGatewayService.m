@@ -71,7 +71,7 @@
         
         if( [self.config.secretApiKey localizedCaseInsensitiveContainsString:@"_prod_"] )
         {
-            self.config.serviceUri = @"https://posgateway.secureexchange.net/Hps.Exchange.PosGateway/PosGatewayService.asmx";
+            self.config.serviceUri = @"https://api2.heartlandportico.com/Hps.Exchange.PosGateway/PosGatewayService.asmx";
         }
         else
         {
