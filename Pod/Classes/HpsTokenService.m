@@ -16,8 +16,6 @@
 @property (nonatomic, strong) NSString *publicKey;
 @property (nonatomic, strong) NSString *serviceURL;
 
-
-
 @end
 
 @implementation HpsTokenService
@@ -52,11 +50,49 @@
     return self;
 }
 
-- (void) getTokenWithCardNumber:(NSString*)cardNumber
-                            cvc:(NSString*)cvc
-                       expMonth:(NSString*)expMonth
-                        expYear:(NSString*)expYear
-               andResponseBlock:(void(^)(HpsTokenData*))responseBlock
+- (void) getTokenWithCardNumber:(NSString *)cardNumber
+                            cvc:(NSString *)cvc
+                       expMonth:(NSString *)expMonth
+                        expYear:(NSString *)expYear
+               andResponseBlock:(void(^)(HpsTokenData *))responseBlock
+{
+	NSDictionary *card = @{@"number"	: cardNumber,
+						   @"cvc"		: cvc,
+						   @"exp_month"	: expMonth,
+						   @"exp_year"	: expYear};
+	
+	[self getTokenWithCardDictionary:card orEncryptedCardDictionary:nil andResponseBlock:responseBlock];
+}
+
+- (void) getTokenWithCardTrackData:(NSString *)trackData
+				  andResponseBlock:(void(^)(HpsTokenData *))responseBlock
+{
+	NSDictionary *card = @{@"track_method"	: @"swipe",
+						   @"track"			: trackData};
+	
+	[self getTokenWithCardDictionary:card orEncryptedCardDictionary:nil andResponseBlock:responseBlock];
+}
+
+- (void) getTokenWithEncryptedCardTrackData:(NSString *)trackData
+								trackNumber:(NSString *)trackNumber
+										ktb:(NSString *)ktb
+								   pinBlock:(NSString *)pinBlock
+						   andResponseBlock:(void(^)(HpsTokenData *))responseBlock
+{
+	NSDictionary *card = @{@"track_method"	: @"swipe",
+						   @"track"			: trackData,
+						   @"track_number"	: trackNumber,
+						   @"ktb"			: ktb,
+						   @"pin_block"		: pinBlock,
+						   };
+
+	[self getTokenWithCardDictionary:nil orEncryptedCardDictionary:card andResponseBlock:responseBlock];
+}
+
+
+- (void) getTokenWithCardDictionary:(NSDictionary *)cardDictionary
+		  orEncryptedCardDictionary:(NSDictionary *)encryptedCardDictionary
+				   andResponseBlock:(void(^)(HpsTokenData*))responseBlock
 {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.serviceURL]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
@@ -65,19 +101,18 @@
     NSData *apiKey = [[NSString stringWithFormat:@"%@:", self.publicKey] dataUsingEncoding:NSUTF8StringEncoding];
     
     NSString *authorization = [NSString stringWithFormat:@"Basic %@", [apiKey base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength]];
-    
-    NSDictionary *card = [NSDictionary dictionaryWithObjectsAndKeys:
-                          cardNumber, @"number",
-                          cvc, @"cvc",
-                          expMonth, @"exp_month",
-                          expYear, @"exp_year", nil];
-    
-    NSDictionary *token = [NSDictionary dictionaryWithObjectsAndKeys:
-                           @"token", @"object",
-                           @"supt", @"token_type",
-                           card, @"card", nil];
-    
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:token
+	
+	NSMutableDictionary *tokenRequestData = [@{@"object": @"token",
+											   @"token_type": @"supt",
+											  } mutableCopy];
+	
+	if (cardDictionary) {
+		tokenRequestData[@"card"] = cardDictionary;
+	} else if (encryptedCardDictionary) {
+		tokenRequestData[@"encryptedcard"] = encryptedCardDictionary;
+	}
+	
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:tokenRequestData
                                                        options:0
                                                          error:nil];
     

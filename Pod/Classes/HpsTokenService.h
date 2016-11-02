@@ -18,4 +18,14 @@
                        expMonth:(NSString*)expMonth
                         expYear:(NSString*)expYear
                andResponseBlock:(void(^)(HpsTokenData*))responseBlock;
+
+- (void) getTokenWithCardTrackData:(NSString *)trackData
+				  andResponseBlock:(void(^)(HpsTokenData *))responseBlock;
+
+- (void) getTokenWithEncryptedCardTrackData:(NSString *)trackData
+								trackNumber:(NSString *)trackNumber
+										ktb:(NSString *)ktb
+								   pinBlock:(NSString *)pinBlock
+						   andResponseBlock:(void(^)(HpsTokenData *))responseBlock;
+
 @end
