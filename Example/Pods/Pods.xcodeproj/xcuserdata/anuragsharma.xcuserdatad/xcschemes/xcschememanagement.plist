@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Heartland-iOS-SDK-Heartland-iOS-SDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Heartland-iOS-SDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Heartland-iOS-SDK_Example.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>XMLDictionary.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>71CDF6741059308B05CFFA3CD96ECB76</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>80C4AEB5B2DDB47D4B99F9D28B30393E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B03A43CF600E939BC7E6A28F672FFFFE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CC9F763CD71584E070EC54FFCE9F490B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
