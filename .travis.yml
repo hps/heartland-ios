@@ -14,7 +14,7 @@ before_install:
  - pod update --project-directory=Example
 
 script:
-# - set -o pipefail && xcodebuild test -workspace Example/Heartland-iOS-SDK.xcworkspace -scheme Heartland-iOS-SDK-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -workspace Example/Heartland-iOS-SDK.xcworkspace -scheme Heartland-iOS-SDK-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint
 # Following extra lines added for automate cocoapod release 
 # Late if need can follow https://fuller.li/posts/automated-cocoapods-releases-with-ci/ 
