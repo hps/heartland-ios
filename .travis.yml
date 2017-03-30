@@ -12,8 +12,6 @@ before_install:
  - gem install cocoapods # Since Travis is not always on latest version
  - gem install xcpretty -N
  - pod update --project-directory=Example
- after_install:
- - pod update XMLDictionary 
 
 script:
 - set -o pipefail && xcodebuild test -workspace Example/Heartland-iOS-SDK.xcworkspace -scheme Heartland-iOS-SDK-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
