@@ -4,25 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Heartland-iOS-SDK-Heartland-iOS-SDK.xcscheme</key>
+		<key>Heartland-iOS-SDK-Heartland-iOS-SDK.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 		</dict>
-		<key>Heartland-iOS-SDK.xcscheme</key>
+		<key>Heartland-iOS-SDK.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 		</dict>
-		<key>Pods-Heartland-iOS-SDK_Example.xcscheme</key>
+		<key>Pods-Heartland-iOS-SDK_Example.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 		</dict>
-		<key>XMLDictionary.xcscheme</key>
+		<key>XMLDictionary.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
