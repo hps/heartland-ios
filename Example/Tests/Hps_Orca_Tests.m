@@ -19,13 +19,7 @@
 
 
 @implementation Hps_Orca_Tests
-- (void) testInOrder
-{
-//    [self testSendDeviceActivationRequest];
-//    [self testActivateDevice];
-    [self testGetDeviceApiKey];
-    [self testGetDeviceParameters];
-}
+
 - (void) testSendDeviceActivationRequest
 {
     XCTestExpectation *expectation = [self expectationWithDescription:@"testSendDeviceActivationRequest"];
@@ -102,6 +96,15 @@
         if(error) XCTFail(@"Request Timed out");
     }];
 }
+    /*
+     - (void) testInOrder
+     {
+     //    [self testSendDeviceActivationRequest];
+     //    [self testActivateDevice];
+     [self testGetDeviceApiKey];
+     [self testGetDeviceParameters];
+     }
+     
 - (void) testGetDeviceApiKey
 {
     XCTestExpectation *expectation = [self expectationWithDescription:@"testGetDeviceApiKey"];
@@ -135,7 +138,7 @@
         if(error) XCTFail(@"Request Timed out");
     }];
 }
-
+*/
 - (void) testGetDeviceParameters
 {
     XCTestExpectation *expectation = [self expectationWithDescription:@"testGetDeviceParameters"];
