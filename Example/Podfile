@@ -7,5 +7,9 @@ target 'Heartland-iOS-SDK_Example' do
 pod "Heartland-iOS-SDK", :path => "../"
 
   # Pods for Heartland-iOS-SDK_Example
+target 'Heartland-iOS-SDK_Tests' do
+    
+    inherit! :search_paths
 
+end
 end

@@ -1,6 +1,6 @@
 {
   "name": "Heartland-iOS-SDK",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "summary": "Secure Tokenized Payments by Heartland Payment Systems.",
   "description": "Secure Tokenized Payments for iOS by Heartland Payment Systems.",
   "homepage": "https://github.com/hps/heartland-ios",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/hps/heartland-ios.git",
-    "tag": "1.0.5"
+    "tag": "1.0.6"
   },
   "platforms": {
     "ios": "8.0"
