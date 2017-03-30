@@ -3,28 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>SchemeUserState</key>
-	<dict>
-		<key>Heartland-iOS-SDK-Heartland-iOS-SDK.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>isShown</key>
-			<true/>
-		</dict>
-		<key>Heartland-iOS-SDK.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>isShown</key>
-			<true/>
-		</dict>
-		<key>Pods-Heartland-iOS-SDK_Example.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>isShown</key>
-			<true/>
-		</dict>
-		<key>XMLDictionary.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>isShown</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>71CDF6741059308B05CFFA3CD96ECB76</key>
