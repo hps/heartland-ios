@@ -19,7 +19,6 @@ script:
 - pod lib lint
 # Following extra lines added for automate cocoapod release 
 # Late if need can follow https://fuller.li/posts/automated-cocoapods-releases-with-ci/ 
-
 deploy:
   provider: script
   script: ./scripts/push.sh
