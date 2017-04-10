@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Heartland-iOS-SDK"
-  s.version          = "1.0.5"
+  s.version          = "1.0.6"
   s.summary          = "Secure Tokenized Payments by Heartland Payment Systems."
 
 # This description is used to generate tags and improve search results.
@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/hps/heartland-ios"
   # s.screenshots    = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'EULA'
-  s.author           = { "Shaunti Fondrisi" => "shaunti.fondrisi@e-hps.com" }
+  s.author           = { "Heartland Developer Portal" => "EntApp_DevPortal@e-hps.com" }
   s.source           = { :git => "https://github.com/hps/heartland-ios.git", :tag => s.version.to_s }
  
 
