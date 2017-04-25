@@ -59,7 +59,7 @@
         self.deviceId = @"";
         self.userName = @"";
         self.password = @"";
-        self.secretApiKey = secretApiKey;
+        self.secretApiKey = secretApiKey == nil ? @"" : [secretApiKey stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         self.developerId = developerId;
         self.versionNumber = versionNumber;
         self.siteTrace = @"";

@@ -9,6 +9,16 @@
 #import "HpsAdditionalTxnFields.h"
 
 @implementation HpsAdditionalTxnFields
+- (id)init {
+    self = [super init];
+    if (!self) return nil;
+    
+    self.invoiceNumber = @"";
+    self.customerID = @"";
+    self.desc = @"";
+    
+    return self;
+}
 
 - (NSString*) toXML
 {    

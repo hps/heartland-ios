@@ -48,7 +48,7 @@
       
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"No configuration set."};
+            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Invalid SDK configuration."};
             NSError *error = [NSError errorWithDomain:errorDomain
                                          code:ConfigurationError
                                      userInfo:userInfo];
@@ -71,7 +71,7 @@
         
         if( [self.config.secretApiKey localizedCaseInsensitiveContainsString:@"_prod_"] )
         {
-            self.config.serviceUri = @"https://posgateway.secureexchange.net/Hps.Exchange.PosGateway/PosGatewayService.asmx";
+            self.config.serviceUri = @"https://api2.heartlandportico.com/Hps.Exchange.PosGateway/PosGatewayService.asmx";
         }
         else
         {
@@ -215,7 +215,7 @@
                                        }else{
                                            
                                            //error
-                                           NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Transaction error. See codes."};
+                                           NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Transaction error. See code."};
                                            NSError *error = [NSError errorWithDomain:errorDomain
                                                                                 code:GatewayError
                                                                             userInfo:userInfo];

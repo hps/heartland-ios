@@ -9,6 +9,18 @@
 #import "HpsCardHolderData.h"
 
 @implementation HpsCardHolderData
+- (NSObject*) init {
+    self = [super init];
+
+    self.firstName = @"";
+    self.lastName = @"";
+    self.address = @"";
+    self.city = @"";
+    self.state = @"";
+    self.zip = @"";
+    
+    return self;
+}
 
 - (NSString*) toXML
 {    

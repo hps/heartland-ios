@@ -12,7 +12,6 @@
 #import "HpsServicesConfig.h"
 #import "HpsGatewayService.h"
 #import "HpsTokenService.h"
-#import "HpsOrcaService.h"
 
 //models
 #import "HpsTransaction.h"
@@ -21,4 +20,3 @@
 #import "HpsCardData.h"
 #import "HpsCardHolderData.h"
 #import "HpsAdditionalTxnFields.h"
-#import "HpsDeviceData.h"

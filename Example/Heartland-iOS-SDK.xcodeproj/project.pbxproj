@@ -19,7 +19,6 @@
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
-		84C83A171C73B1AC004AF2A5 /* Hps_Orca_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C83A151C73B0EC004AF2A5 /* Hps_Orca_Tests.m */; };
 		84CD39E81C45A73E006FED91 /* heartlandlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CD39E71C45A73E006FED91 /* heartlandlogo.png */; };
 		84FA62D61C035C47007854D5 /* Heartland_TokenizationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA62D31C035BB3007854D5 /* Heartland_TokenizationTests.m */; };
 		84FA62D71C035C4B007854D5 /* Heartland_GatewayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA62D21C035BB3007854D5 /* Heartland_GatewayTests.m */; };
@@ -63,7 +62,6 @@
 		61BF46B1C380625FF377FAA8 /* Pods-Heartland-iOS-SDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartland-iOS-SDK_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		70FD3C3038658BD48AC9ADBB /* Pods-Heartland-iOS-SDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartland-iOS-SDK_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		75EF1144CF33D3C27B73A4D1 /* Pods-Heartland-iOS-SDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartland-iOS-SDK_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example.release.xcconfig"; sourceTree = "<group>"; };
-		84C83A151C73B0EC004AF2A5 /* Hps_Orca_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Orca_Tests.m; sourceTree = "<group>"; };
 		84CD39E71C45A73E006FED91 /* heartlandlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartlandlogo.png; sourceTree = "<group>"; };
 		84FA62D21C035BB3007854D5 /* Heartland_GatewayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Heartland_GatewayTests.m; sourceTree = "<group>"; };
 		84FA62D31C035BB3007854D5 /* Heartland_TokenizationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Heartland_TokenizationTests.m; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 			children = (
 				84FA62D21C035BB3007854D5 /* Heartland_GatewayTests.m */,
 				84FA62D31C035BB3007854D5 /* Heartland_TokenizationTests.m */,
-				84C83A151C73B0EC004AF2A5 /* Hps_Orca_Tests.m */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
 			);
 			path = Tests;
@@ -209,12 +206,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "Heartland-iOS-SDK_Example" */;
 			buildPhases = (
-				BBDD82C2366DB21838DFE6E9 /* Check Pods Manifest.lock */,
+				BBDD82C2366DB21838DFE6E9 /* [CP] Check Pods Manifest.lock */,
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				38B1A6D6613D7C674CF3033C /* Embed Pods Frameworks */,
-				2C4AB92A6DA16A37E1341990 /* Copy Pods Resources */,
+				38B1A6D6613D7C674CF3033C /* [CP] Embed Pods Frameworks */,
+				2C4AB92A6DA16A37E1341990 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -229,12 +226,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "Heartland-iOS-SDK_Tests" */;
 			buildPhases = (
-				26FD17C81AC79153C65C318E /* Check Pods Manifest.lock */,
+				26FD17C81AC79153C65C318E /* [CP] Check Pods Manifest.lock */,
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				38625BB0EE413B866DF8FAF4 /* Embed Pods Frameworks */,
-				F4DF8EF29BD28E0291B2EB2A /* Copy Pods Resources */,
+				38625BB0EE413B866DF8FAF4 /* [CP] Embed Pods Frameworks */,
+				F4DF8EF29BD28E0291B2EB2A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -306,29 +303,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		26FD17C81AC79153C65C318E /* Check Pods Manifest.lock */ = {
+		26FD17C81AC79153C65C318E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		2C4AB92A6DA16A37E1341990 /* Copy Pods Resources */ = {
+		2C4AB92A6DA16A37E1341990 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,14 +333,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		38625BB0EE413B866DF8FAF4 /* Embed Pods Frameworks */ = {
+		38625BB0EE413B866DF8FAF4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,14 +348,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		38B1A6D6613D7C674CF3033C /* Embed Pods Frameworks */ = {
+		38B1A6D6613D7C674CF3033C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,29 +363,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BBDD82C2366DB21838DFE6E9 /* Check Pods Manifest.lock */ = {
+		BBDD82C2366DB21838DFE6E9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		F4DF8EF29BD28E0291B2EB2A /* Copy Pods Resources */ = {
+		F4DF8EF29BD28E0291B2EB2A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,7 +411,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				84FA62D61C035C47007854D5 /* Heartland_TokenizationTests.m in Sources */,
-				84C83A171C73B1AC004AF2A5 /* Hps_Orca_Tests.m in Sources */,
 				84FA62D71C035C4B007854D5 /* Heartland_GatewayTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

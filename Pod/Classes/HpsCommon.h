@@ -13,8 +13,7 @@ enum  {
     IssuerError,
     TokenError,
     ConfigurationError,
-    CocoaError,
-    ServiceError
+    CocoaError
 };
 
 @interface HpsCommon : NSObject

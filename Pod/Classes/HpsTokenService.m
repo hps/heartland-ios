@@ -26,7 +26,7 @@
 {
     if((self = [super init]))
     {
-        self.publicKey = publicKey;
+        self.publicKey = publicKey == nil ? @"" : [publicKey stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         self.queue = [[NSOperationQueue alloc] init];
         
         if(!publicKey)

@@ -9,6 +9,16 @@
 #import "HpsHeader.h"
 
 @implementation HpsHeader
+- (NSObject*) init {
+    self = [super init];
+    
+    self.versionNumber = @"";
+    self.secretAPIKey = @"";
+    self.developerID = @"";
+    self.siteTrace = @"";
+    
+    return self;
+}
 
 - (NSString*) toXML
 {

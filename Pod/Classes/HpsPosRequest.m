@@ -13,8 +13,6 @@
 - (NSObject*) init {
     self = [super init];
     
-    
-    
     return self;
 }
 - (NSObject*) initWithHeader: (HpsHeader*)header andTransaction:(HpsTransaction*)transaction {

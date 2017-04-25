@@ -14,10 +14,80 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "98E0CD55982C70A036AB5E46A5D568A5"
+               BuildableName = "XMLDictionary.framework"
+               BlueprintName = "XMLDictionary"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1D786265820B1B65CB0AC3C9F4118C64"
+               BuildableName = "Pods_Heartland_iOS_SDK_Example.framework"
+               BlueprintName = "Pods-Heartland-iOS-SDK_Example"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "6003F589195388D20070C39A"
                BuildableName = "Heartland-iOS-SDK_Example.app"
                BlueprintName = "Heartland-iOS-SDK_Example"
                ReferencedContainer = "container:Heartland-iOS-SDK.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7E86605F6DC33773DF87ED0EAB3A9721"
+               BuildableName = "Heartland-iOS-SDK.bundle"
+               BlueprintName = "Heartland-iOS-SDK-Heartland-iOS-SDK"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "729CAF374AD72A1E9917DF5D2EF30985"
+               BuildableName = "Heartland_iOS_SDK.framework"
+               BlueprintName = "Heartland-iOS-SDK"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BC6F5A00E228CA4B39A7D3D21041357E"
+               BuildableName = "Pods_Heartland_iOS_SDK_Tests.framework"
+               BlueprintName = "Pods-Heartland-iOS-SDK_Tests"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

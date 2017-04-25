@@ -12,6 +12,13 @@
 - (NSObject*) init {
     self = [super init];    
     
+    self.requestToken = NO;
+    self.cardPresent = NO;
+    self.readerPresent = NO;
+    self.expMonth = @"";
+    self.expYear = @"";
+    self.cardNumber = @"";
+    self.cvv2 = @"";
     
     return self;
 }
