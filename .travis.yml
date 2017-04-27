@@ -22,6 +22,8 @@ script:
 
 deploy:
   provider: script
-  script: ./scripts/push.sh
+  script: ./scripts/push.sh production $TRAVIS_TAG
+  skip_cleanup: true
   on:
-    tags: false
+    branch: master
+    tags: true
