@@ -19,7 +19,7 @@ This SDK makes it easy to integrate your iOS apps with Heartland's [**Portico Ga
 | [![](http://developer.heartlandpaymentsystems.com/Resource/Download/sdk-readme-icon-secure)](#data-security)  | [![](http://developer.heartlandpaymentsystems.com/Resource/Download/sdk-readme-icon-resources)](#documentation-and-examples)  | [![](http://developer.heartlandpaymentsystems.com/Resource/Download/sdk-readme-icon-tools)](#testing--certification) | [![](http://developer.heartlandpaymentsystems.com/Resource/Download/sdk-readme-icon-keys)](#api-keys) | <a href="http://developer.heartlandpaymentsystems.com/Account/Register" target="_blank">Register an Account</a> <br> <a href="http://developer.heartlandpaymentsystems.com/Partnership" target="_blank">Partner with Heartland</a> <br>  |
 
 
-####Developer Support
+#### Developer Support
 
 You are not alone! If you have any questions while you are working through your development process, please feel free to <a href="https://developer.heartlandpaymentsystems.com/Support" target="_blank">reach out to our team for assistance</a>!
 
@@ -330,7 +330,7 @@ transaction.additionalTxnFields.customerID = @"4321";
 Testing your implementation in our Certification/Sandbox environment helps to identify and squash bugs before you begin processing transactions in the production environment. While you are encouraged to run as many test transactions as you can, Heartland provides a specific series of tests that you are required to complete before receiving Certification. Please <a href="mailto:SecureSubmitCert@e-hps.com?Subject=Certification Request&Body=I am ready to start certifying my integration! ">contact</a> Heartland in order to initiate a certification project. 
 
 
-####Test Card Data
+#### Test Card Data
 
 The following card numbers are used by our Certification environment to verify that your tests worked. Note that while variations (such as 4111111111111111) will work for general testing the cards listed below are required to complete certification. For card present testing Heartland can provide you with EMV enabled test cards.
 
@@ -395,7 +395,7 @@ The following card numbers are used by our Certification environment to verify t
 	</tbody>
 </table>
 
-####Testing Exceptions
+#### Testing Exceptions
 
 During your integration you will want to test for specific issuer responses such as 'Card Declined'. Because our sandbox does not actually reach out to issuers we have devised specific transaction amounts that will trigger  [issuer response codes](https://cert.api2.heartlandportico.com/Gateway/PorticoDevGuide/build/PorticoDeveloperGuide/Issuer%20Response%20Codes.html) and [gateway response codes](https://cert.api2.heartlandportico.com/Gateway/PorticoDevGuide/build/PorticoDeveloperGuide/Gateway%20Response%20Codes.html). Please <a href="mailto:SecureSubmitCert@e-hps.com?subject=Hard Coded Values Spreadsheet Request">contact</a> Heartland for a complete listing of values you can charge to simulate AVS, CVV and Transaction declines, errors, and other responses that you can catch in your code:
 
@@ -433,7 +433,7 @@ All our code is open sourced and we encourage fellow developers to contribute an
 6. Create new Pull Request
 
 
-####Included Test Suite
+#### Included Test Suite
 
 The included test suite can help ensure your contribution doesn't cause unexpected errors and is a terrific resource of working examples that you can reference. You can find the test As mentioned earlier, the [here](http://github.hps.com/DevPortal/Heartland-iOS-SDK/tree/master/Example/Tests).
 
