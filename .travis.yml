@@ -4,15 +4,12 @@
 
 osx_image: xcode 8.3
 language: objective-c
-cache:
-  - bundler
-  - cocoapods
+cache: cocoapods
 podfile: Example/Podfile
+    
 before_install:
  - gem install cocoapods # Since Travis is not always on latest version
- - gem install xcpretty -N
-# - pod update --project-directory=Example
-# - pod install --project-directory=Example
+ - pod install --project-directory=Example
 
 script:
 - set -o pipefail && xcodebuild test -workspace Example/Heartland-iOS-SDK.xcworkspace -scheme Heartland-iOS-SDK-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
