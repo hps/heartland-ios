@@ -1,10 +1,4 @@
-//
-//  Heartland_GatewayTests.m
-//  Heartland-Tokenization
-//
-//  Created by Roberts, Jerry on 9/8/15.
-//  Copyright (c) 2015 Heartland Payment Systems. All rights reserved.
-//
+//  Copyright (c) 2016 Global Payments. All rights reserved.
 
 
 #import <XCTest/XCTest.h>
@@ -27,7 +21,7 @@
     
     /** NOTE: Do not include your gateway credentials in your application if you plan to distribute in the AppStore.
      This data can be easily obtained by decompiling the application on a jail broke phone. */
-#warning Do not compile your SecretApiKey into the application
+//#warning Do not compile your SecretApiKey into the application
     
     // 1.) Configure the service
     HpsServicesConfig *config = [[HpsServicesConfig alloc]
@@ -65,7 +59,7 @@
     transaction.additionalTxnFields.invoiceNumber = @"12345";
     transaction.additionalTxnFields.customerID = @"4321";
     
-  
+   
     
     // 4.) Run the transaction with the service.
     [service doTransaction:transaction
@@ -164,7 +158,7 @@
     
     /** NOTE: Do not include your gateway credentials in your application if you plan to distribute in the AppStore.
      This data can be easily obtained by decompiling the application on a jail broke phone. */
-#warning Do not compile your SecretApiKey into the application
+//#warning Do not compile your SecretApiKey into the application
     
     // 1.) Configure the service
     HpsServicesConfig *config = [[HpsServicesConfig alloc]
@@ -242,7 +236,7 @@
                             
                             /** NOTE: Do not include your gateway credentials in your application if you plan to distribute in the AppStore.
                              This data can be easily obtained by decompiling the application on a jail broke phone. */
-#warning Do not compile your SecretApiKey into the application
+//#warning Do not compile your SecretApiKey into the application
                             
                             // 1.) Configure the service
                             HpsServicesConfig *config = [[HpsServicesConfig alloc]

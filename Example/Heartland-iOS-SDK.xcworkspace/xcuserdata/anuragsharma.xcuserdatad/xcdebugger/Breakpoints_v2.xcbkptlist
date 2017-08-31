@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tests/Hps_Pax_VRF_Test.m"
+            timestampString = "525275315.152357"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "556"
+            endingLineNumber = "556"
+            landmarkName = "-test_case_11"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__32-[Hps_Pax_VRF_Test test_case_11]_block_invoke"
+                  moduleName = "Heartland-iOS-SDK_Tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anuragsharma/Documents/HeartlandProjectWork/PaxDummyTCP_1/Heartland-iOS-SDK/Example/Tests/Hps_Pax_VRF_Test.m"
+                  timestampString = "525275336.754526"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "556"
+                  endingLineNumber = "556"
+                  offsetFromSymbolStart = "3916">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__32-[Hps_Pax_VRF_Test test_case_11]_block_invoke_2"
+                  moduleName = "Heartland-iOS-SDK_Tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anuragsharma/Documents/HeartlandProjectWork/PaxDummyTCP_1/Heartland-iOS-SDK/Example/Tests/Hps_Pax_VRF_Test.m"
+                  timestampString = "525275336.757013"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "556"
+                  endingLineNumber = "556"
+                  offsetFromSymbolStart = "93">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
