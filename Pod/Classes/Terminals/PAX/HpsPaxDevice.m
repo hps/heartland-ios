@@ -333,7 +333,7 @@ withResponseBlock:(void(^)(HpsPaxGiftResponse*, NSError*))responseBlock{
 			});
 		}else{
 				//done
-			NSString *dataview = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+				//NSString *dataview = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
 				// NSLog(@"data returned device: %@", dataview);
 			dispatch_async(dispatch_get_main_queue(), ^{
 				responseBlock(data, nil);

@@ -1,0 +1,19 @@
+PODS:
+  - Heartland-iOS-SDK (1.0.9):
+    - XMLDictionary
+  - XMLDictionary (1.4.1)
+
+DEPENDENCIES:
+  - Heartland-iOS-SDK (from `../`)
+
+EXTERNAL SOURCES:
+  Heartland-iOS-SDK:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Heartland-iOS-SDK: b5fa92695eed3f81f8921bf9fbc3976b4698a3f3
+  XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
+
+PODFILE CHECKSUM: a2d4770e303e82c0989fd39f53fa31499ac49ee9
+
+COCOAPODS: 1.4.0

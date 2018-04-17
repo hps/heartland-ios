@@ -47,7 +47,7 @@
 - (NSString*) toString {
 
 	NSMutableString *results = [NSMutableString string];
-	unsigned char *bytes = [_buffer bytes];
+	const unsigned char *bytes = [_buffer bytes];
 	for(int j=0; j< [_buffer length]; j++){
 
 		if ([HpsTerminalEnums isControlCode:(Byte)bytes[j]]) {

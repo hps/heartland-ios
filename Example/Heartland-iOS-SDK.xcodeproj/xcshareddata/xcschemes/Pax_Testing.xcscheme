@@ -23,7 +23,7 @@
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Pax_Testing"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
@@ -84,6 +84,9 @@
                <Test
                   Identifier = "Hps_Pax_VRF_Test/test_case_16">
                </Test>
+               <Test
+                  Identifier = "Hps_Sip_Admin_Test/test_Disable_hostResponse_Beep">
+               </Test>
             </SkippedTests>
          </TestableReference>
       </Testables>
@@ -119,6 +122,13 @@
             ReferencedContainer = "container:Heartland-iOS-SDK.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "OS_ACTIVITY_MODE"
+            value = "disable"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

@@ -19,7 +19,6 @@
 @interface HpsBinaryDataScanner (Private)
 
 -(id)initWithData:(NSData*)data littleEndian:(BOOL)littleEndian defaultEncoding:(NSStringEncoding)defaultEncoding;
--(void)dealloc;
 -(NSException *)buildScanException;
 -(void)moveBy:(NSUInteger)count;
 

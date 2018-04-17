@@ -74,7 +74,7 @@
 + (Byte) calcLRC:(NSMutableData*) data{
     Byte LRC = 0;
     
-    unsigned char *bytes = [data bytes];
+    const unsigned char *bytes = [data bytes];
     for(int j=1; j < [data length]; j++){
        LRC ^= bytes[j];
     }    
@@ -121,4 +121,39 @@
 return [trimmedString dataUsingEncoding:NSUTF8StringEncoding];
 }
 
+
+	//HeartSip
++ (id <IHPSDeviceMessage>) BuildRequest:(NSString *) message withFormat:(MessageFormat)format {
+	NSMutableData *buffer = [[NSMutableData alloc] init];
+
+	switch(format)
+	{
+		case Visa2nd:
+		{
+			[buffer appendBytes:(char []){ HpsControlCodes_STX } length:1];
+			[buffer appendData:[message dataUsingEncoding:NSASCIIStringEncoding]];
+			[buffer appendBytes:(char []){ HpsControlCodes_ETX }  length:1];
+			Byte lrc = [HpsTerminalUtilities calcLRC:buffer];
+			[buffer appendBytes:(char []){ lrc } length:sizeof(lrc)];
+		}
+		break;
+
+		case HeartSIP:
+		{
+			//add length
+		uint16_t swapped = NSSwapHostShortToBig(message.length);
+		[buffer appendBytes:&swapped length:sizeof(swapped)];
+		//Add Message
+		[buffer appendData:[message dataUsingEncoding:NSASCIIStringEncoding]];
+}
+		break;
+		default:
+
+		break;
+			
+	}
+		//Return
+	
+	return [[HpsDeviceMessage alloc] initWithBuffer:buffer];
+}
 @end

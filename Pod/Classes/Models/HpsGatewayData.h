@@ -19,7 +19,7 @@
 @property (nonatomic, strong) NSString *responseCode;
 @property (nonatomic, strong) NSString *responseText;
 @property (nonatomic, strong) NSString *cardNumber;
-@property (nonatomic, strong) NSString *referenceNumber;
+@property (nonatomic, readwrite) int referenceNumber;
 
 @property (nonatomic, strong) NSString *gatewayResponseCode;
 @property (nonatomic, strong) NSString *gatewayResponseText;

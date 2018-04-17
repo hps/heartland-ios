@@ -24,26 +24,6 @@
     return device;
 }
 
-- (HpsCreditCard*) getCC
-{
-    HpsCreditCard *card = [[HpsCreditCard alloc] init];
-    card.cardNumber = @"4005554444444460";
-    card.expMonth = 12;
-    card.expYear = 17;
-    card.cvv = @"123";
-    return card;
-}
-
-
-- (HpsAddress*) getAddress
-{
-    HpsAddress *address = [[HpsAddress alloc] init];
-    address.address = @"1 Heartland Way";
-    address.zip = @"95124";
-    return address;
-}
-
-
 - (void) test_PAX_HTTP_Debit_Sale
 {
     XCTestExpectation *expectation = [self expectationWithDescription:@"test_PAX_HTTP_Debit_Sale"];
@@ -67,6 +47,7 @@
         if(error) XCTFail(@"Request Timed out");
     }];
 }
+
 - (void) test_PAX_HTTP_Debit_Sale33_PartialAtuh22
 {
     XCTestExpectation *expectation = [self expectationWithDescription:@"test_PAX_HTTP_Debit_Sale33_PartialAtuh22"];
@@ -94,32 +75,7 @@
 
 
 
--(void) test_Debit_Sale_Blank_Amount{
-    
-    XCTestExpectation *expectation = [self expectationWithDescription:@"test_PAX_HTTP_Debit_Sale_No_Amount"];
-    
-    HpsPaxDevice *device = [self setupDevice];
-    HpsPaxDebitSaleBuilder *builder = [[HpsPaxDebitSaleBuilder alloc] initWithDevice:device];
-    builder.referenceNumber = 5;
-    builder.allowDuplicates = YES;
-    
-    @try {
-        
-        [builder execute:^(HpsPaxDebitResponse *payload, NSError *error) {
-            XCTFail(@"Request not allowed but returned");
-            
-        }];
-    } @catch (NSException *exception) {
-        
-        [expectation fulfill];
-    }
-    
-    [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
-        if(error) XCTFail(@"Request Timed out");
-    }];
-    
-    
-}
+
 
 -(void) test_Debit_Sale0{
     

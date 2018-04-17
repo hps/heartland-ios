@@ -1,0 +1,6 @@
+framework module Pods_Heartland_iOS_SDK_Example {
+  umbrella header "Pods-Heartland-iOS-SDK_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

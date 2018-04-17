@@ -16,13 +16,15 @@
 #import "HpsTerminalResponse.h"
 
 @interface HpsPaxBaseResponse : HpsTerminalResponse <IHPSDeviceResponse>
+{
 
+}
 
-@property (nonatomic,strong) NSString *status;
-@property (nonatomic,strong) NSString *command;
-@property (nonatomic,strong) NSString *version;
-@property (nonatomic,strong) NSString *deviceResponseCode;
-@property (nonatomic,strong) NSString *deviceResponseMessage;
+//@property (nonatomic,strong) NSString *status;
+//@property (nonatomic,strong) NSString *command;
+//@property (nonatomic,strong) NSString *version;
+//@property (nonatomic,strong) NSString *deviceResponseCode;
+//@property (nonatomic,strong) NSString *deviceResponseMessage;
 @property (nonatomic,strong) HpsPaxAmountResponse *amountResponse;
 @property (nonatomic,strong) HpsPaxAccountResponse *accountResponse;
 @property (nonatomic,strong) HpsPaxTraceResponse *traceResponse;

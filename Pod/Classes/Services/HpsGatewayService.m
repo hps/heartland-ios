@@ -184,14 +184,14 @@
                                        }//header
                                    
                                        if (transactionDictionary != nil) {
-                                           chargeResponse.referenceNumber = transactionDictionary[@"CreditSale"][@"RefNbr"];
+                                           chargeResponse.referenceNumber = (int) transactionDictionary[@"CreditSale"][@"RefNbr"];
                                            chargeResponse.responseCode = transactionDictionary[@"CreditSale"][@"RspCode"];
                                            chargeResponse.responseText = transactionDictionary[@"CreditSale"][@"RspText"];
                                            chargeResponse.avsResultCode = transactionDictionary[@"CreditSale"][@"AVSRsltCode"];
                                            chargeResponse.avsResultText = transactionDictionary[@"CreditSale"][@"AVSRsltText"];
                                            chargeResponse.authorizationCode = transactionDictionary[@"CreditSale"][@"AuthCode"];
                                            chargeResponse.cardType = transactionDictionary[@"CreditSale"][@"CardType"];
-                                           chargeResponse.referenceNumber = transactionDictionary[@"CreditSale"][@"RefNbr"];
+                                           chargeResponse.referenceNumber = (int)transactionDictionary[@"CreditSale"][@"RefNbr"];
                                            
                                            //Error code checking
                                            if (![chargeResponse.responseCode isEqualToString:@"00"]) {

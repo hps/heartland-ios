@@ -30,7 +30,12 @@
 		8706DB3B29562C8A195DB4FD /* Pods_Heartland_iOS_SDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D472C6C84F02E1033D8F882 /* Pods_Heartland_iOS_SDK_Example.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		D50E0E0B693E4B509A8E491C /* Pods_Heartland_iOS_SDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EC82F001209D3ECA5AEE8C /* Pods_Heartland_iOS_SDK_Tests.framework */; };
+		DB3DC11C2004F7EA0037521A /* Hps_Sip_VRF_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DC11B2004F7EA0037521A /* Hps_Sip_VRF_Test.m */; };
 		DB8A59C11F4BDF7000B98B73 /* Hps_Pax_VRF_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8A59C01F4BDF7000B98B73 /* Hps_Pax_VRF_Test.m */; };
+		DBDA36711FAB430900CF5146 /* Hps_Sip_Admin_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDA36701FAB430900CF5146 /* Hps_Sip_Admin_Test.m */; };
+		DBDA367E1FB01C2000CF5146 /* Hps_Sip_Credit_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDA367D1FB01C2000CF5146 /* Hps_Sip_Credit_Test.m */; };
+		DBF1DE8B1FB9AEF100D57C16 /* Hps_Sip_Debit_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF1DE8A1FB9AEF100D57C16 /* Hps_Sip_Debit_Test.m */; };
+		DBF1DE8D1FB9AF0900D57C16 /* Hps_Sip_Gift_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF1DE8C1FB9AF0900D57C16 /* Hps_Sip_Gift_Test.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,8 +87,13 @@
 		93A863AAB90A2F8CE2547765 /* Pods-Heartland-iOS-SDK_Example.pax_testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartland-iOS-SDK_Example.pax_testing.xcconfig"; path = "Pods/Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example.pax_testing.xcconfig"; sourceTree = "<group>"; };
 		B3271F7E0C265B59AE8894E1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		D51EA908AC81E7B7EB89E8D5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		DB3DC11B2004F7EA0037521A /* Hps_Sip_VRF_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Sip_VRF_Test.m; sourceTree = "<group>"; };
 		DB69ED071ECA0EFF0004FEF7 /* Heartland-iOS-SDK_Tests copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Heartland-iOS-SDK_Tests copy-Info.plist"; path = "/Users/anuragsharma/Documents/HeartlandProjectWork/EnterPrise/Heartland-iOS-SDK/Example/Heartland-iOS-SDK_Tests copy-Info.plist"; sourceTree = "<absolute>"; };
 		DB8A59C01F4BDF7000B98B73 /* Hps_Pax_VRF_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_VRF_Test.m; sourceTree = "<group>"; };
+		DBDA36701FAB430900CF5146 /* Hps_Sip_Admin_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Sip_Admin_Test.m; sourceTree = "<group>"; };
+		DBDA367D1FB01C2000CF5146 /* Hps_Sip_Credit_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Sip_Credit_Test.m; sourceTree = "<group>"; };
+		DBF1DE8A1FB9AEF100D57C16 /* Hps_Sip_Debit_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Sip_Debit_Test.m; sourceTree = "<group>"; };
+		DBF1DE8C1FB9AF0900D57C16 /* Hps_Sip_Gift_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Sip_Gift_Test.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,14 +187,8 @@
 		6003F5B5195388D20070C39A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				84FFB2C71D6352E900D56BF9 /* Hps_Pax_Admin_Tests.m */,
-				84FFB2CB1D63537400D56BF9 /* Hps_Pax_Credit_Tests.m */,
-				840256421DEE1BB90078B6A2 /* Hps_Pax_Debit_Tests.m */,
-				848DD45A1D75FBDE00D3F658 /* Hps_Pax_Gift_Tests.m */,
-				84FFB2C41D63529800D56BF9 /* Hps_Pax_Connection_Tests.m */,
-				84FA62D21C035BB3007854D5 /* Heartland_GatewayTests.m */,
-				84FA62D31C035BB3007854D5 /* Heartland_TokenizationTests.m */,
-				DB8A59C01F4BDF7000B98B73 /* Hps_Pax_VRF_Test.m */,
+				DBDA366F1FAB429300CF5146 /* Sip */,
+				DBDA366D1FAB425E00CF5146 /* Pax */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
 			);
 			path = Tests;
@@ -208,6 +212,33 @@
 				D51EA908AC81E7B7EB89E8D5 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		DBDA366D1FAB425E00CF5146 /* Pax */ = {
+			isa = PBXGroup;
+			children = (
+				84FFB2C71D6352E900D56BF9 /* Hps_Pax_Admin_Tests.m */,
+				84FFB2CB1D63537400D56BF9 /* Hps_Pax_Credit_Tests.m */,
+				840256421DEE1BB90078B6A2 /* Hps_Pax_Debit_Tests.m */,
+				848DD45A1D75FBDE00D3F658 /* Hps_Pax_Gift_Tests.m */,
+				84FFB2C41D63529800D56BF9 /* Hps_Pax_Connection_Tests.m */,
+				84FA62D21C035BB3007854D5 /* Heartland_GatewayTests.m */,
+				84FA62D31C035BB3007854D5 /* Heartland_TokenizationTests.m */,
+				DB8A59C01F4BDF7000B98B73 /* Hps_Pax_VRF_Test.m */,
+			);
+			name = Pax;
+			sourceTree = "<group>";
+		};
+		DBDA366F1FAB429300CF5146 /* Sip */ = {
+			isa = PBXGroup;
+			children = (
+				DBDA36701FAB430900CF5146 /* Hps_Sip_Admin_Test.m */,
+				DBDA367D1FB01C2000CF5146 /* Hps_Sip_Credit_Test.m */,
+				DBF1DE8A1FB9AEF100D57C16 /* Hps_Sip_Debit_Test.m */,
+				DBF1DE8C1FB9AF0900D57C16 /* Hps_Sip_Gift_Test.m */,
+				DB3DC11B2004F7EA0037521A /* Hps_Sip_VRF_Test.m */,
+			);
+			name = Sip;
 			sourceTree = "<group>";
 		};
 		E706FDDAF26E6725313B27CA /* Pods */ = {
@@ -434,14 +465,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBF1DE8B1FB9AEF100D57C16 /* Hps_Sip_Debit_Test.m in Sources */,
 				840256431DEE1BB90078B6A2 /* Hps_Pax_Debit_Tests.m in Sources */,
+				DBDA36711FAB430900CF5146 /* Hps_Sip_Admin_Test.m in Sources */,
 				84FA62D61C035C47007854D5 /* Heartland_TokenizationTests.m in Sources */,
+				DBF1DE8D1FB9AF0900D57C16 /* Hps_Sip_Gift_Test.m in Sources */,
 				84FFB2C91D63534D00D56BF9 /* Hps_Pax_Connection_Tests.m in Sources */,
 				84FFB2CA1D63535000D56BF9 /* Hps_Pax_Admin_Tests.m in Sources */,
 				DB8A59C11F4BDF7000B98B73 /* Hps_Pax_VRF_Test.m in Sources */,
 				848DD45C1D75FBE500D3F658 /* Hps_Pax_Gift_Tests.m in Sources */,
+				DBDA367E1FB01C2000CF5146 /* Hps_Sip_Credit_Test.m in Sources */,
 				84FFB2CC1D63537400D56BF9 /* Hps_Pax_Credit_Tests.m in Sources */,
 				84FA62D71C035C4B007854D5 /* Heartland_GatewayTests.m in Sources */,
+				DB3DC11C2004F7EA0037521A /* Hps_Sip_VRF_Test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,7 +638,6 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
@@ -626,8 +661,8 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
