@@ -896,8 +896,8 @@ static const char _base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefgh
 
 		if ([HpsHeartSipSharedParams getInstance].class_type == RESPONSE) {
 
-			NSString *actualResponse	= [(NSString *)self stringByReplacingOccurrencesOfString:@"/n" withString:@""];
-			NSString *actualResponseS	= [actualResponse stringByReplacingOccurrencesOfString:@"\0ì" withString:@""];
+				//NSString *actualResponse	= [(NSString *)self stringByReplacingOccurrencesOfString:@"/n" withString:@""];
+				//NSString *actualResponseS	= [actualResponse stringByReplacingOccurrencesOfString:@"\0ì" withString:@""];
 				//
 				//			NSLog(@"RESPONSE_XML = %@", actualResponseS );
 		}

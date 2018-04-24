@@ -7,7 +7,7 @@
 @interface Record : NSObject
 
 @property (atomic,retain) NSString *TableCategory;
-@property (atomic,strong) Field *Field;
+@property (nonatomic,strong) Field *Field;
 @property (atomic,retain) NSMutableDictionary *Fields;
 
 @end

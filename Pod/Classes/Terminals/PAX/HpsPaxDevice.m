@@ -60,7 +60,7 @@
 				});
 			} @catch (NSException *exception) {
 				NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
-				NSError *error = [NSError errorWithDomain:errorDomain
+				NSError *error = [NSError errorWithDomain:self->errorDomain
 													 code:CocoaError
 												 userInfo:userInfo];
 
@@ -106,7 +106,7 @@
 					});
 				} @catch (NSException *exception) {
 					NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
-					NSError *error = [NSError errorWithDomain:errorDomain
+					NSError *error = [NSError errorWithDomain:self->errorDomain
 														 code:CocoaError
 													 userInfo:userInfo];
 
@@ -141,7 +141,7 @@
 				});
 			} @catch (NSException *exception) {
 				NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
-				NSError *error = [NSError errorWithDomain:errorDomain
+				NSError *error = [NSError errorWithDomain:self->errorDomain
 													 code:CocoaError
 												 userInfo:userInfo];
 
@@ -176,7 +176,7 @@
 				});
 			} @catch (NSException *exception) {
 				NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
-				NSError *error = [NSError errorWithDomain:errorDomain
+				NSError *error = [NSError errorWithDomain:self->errorDomain
 													 code:CocoaError
 												 userInfo:userInfo];
 
@@ -211,7 +211,7 @@
 				});
 			} @catch (NSException *exception) {
 				NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
-				NSError *error = [NSError errorWithDomain:errorDomain
+				NSError *error = [NSError errorWithDomain:self->errorDomain
 													 code:CocoaError
 												 userInfo:userInfo];
 

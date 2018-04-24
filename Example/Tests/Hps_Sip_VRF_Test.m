@@ -342,7 +342,7 @@
 		XCTAssertNotNil(payload);
 		XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
 
-		HpsHeartSipDeviceResponse *response = (HpsHeartSipDeviceResponse*)payload;
+			//HpsHeartSipDeviceResponse *response = (HpsHeartSipDeviceResponse*)payload;
 		[self printRecipt:(HpsHeartSipDeviceResponse *)payload];
 
 		[expectation fulfill];

@@ -51,7 +51,7 @@ NSOperationQueue *operationQueue ;
 
 			}
 
-		self.tableCategory = tableName ? tableName :_tableCategory;
+		self.tableCategory = tableName ? tableName :self->_tableCategory;
 
 	}];
 }

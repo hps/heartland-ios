@@ -34,6 +34,7 @@
 		DB8A59C11F4BDF7000B98B73 /* Hps_Pax_VRF_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8A59C01F4BDF7000B98B73 /* Hps_Pax_VRF_Test.m */; };
 		DBDA36711FAB430900CF5146 /* Hps_Sip_Admin_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDA36701FAB430900CF5146 /* Hps_Sip_Admin_Test.m */; };
 		DBDA367E1FB01C2000CF5146 /* Hps_Sip_Credit_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDA367D1FB01C2000CF5146 /* Hps_Sip_Credit_Test.m */; };
+		DBF1B0A52080B3C7007A775E /* HpsTableServicesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF1B0A42080B3C7007A775E /* HpsTableServicesTest.m */; };
 		DBF1DE8B1FB9AEF100D57C16 /* Hps_Sip_Debit_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF1DE8A1FB9AEF100D57C16 /* Hps_Sip_Debit_Test.m */; };
 		DBF1DE8D1FB9AF0900D57C16 /* Hps_Sip_Gift_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF1DE8C1FB9AF0900D57C16 /* Hps_Sip_Gift_Test.m */; };
 /* End PBXBuildFile section */
@@ -92,6 +93,7 @@
 		DB8A59C01F4BDF7000B98B73 /* Hps_Pax_VRF_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_VRF_Test.m; sourceTree = "<group>"; };
 		DBDA36701FAB430900CF5146 /* Hps_Sip_Admin_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Sip_Admin_Test.m; sourceTree = "<group>"; };
 		DBDA367D1FB01C2000CF5146 /* Hps_Sip_Credit_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Sip_Credit_Test.m; sourceTree = "<group>"; };
+		DBF1B0A42080B3C7007A775E /* HpsTableServicesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpsTableServicesTest.m; sourceTree = "<group>"; };
 		DBF1DE8A1FB9AEF100D57C16 /* Hps_Sip_Debit_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Sip_Debit_Test.m; sourceTree = "<group>"; };
 		DBF1DE8C1FB9AF0900D57C16 /* Hps_Sip_Gift_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Sip_Gift_Test.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +189,7 @@
 		6003F5B5195388D20070C39A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				DBF1B0A32080B395007A775E /* FreshTxt */,
 				DBDA366F1FAB429300CF5146 /* Sip */,
 				DBDA366D1FAB425E00CF5146 /* Pax */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
@@ -239,6 +242,14 @@
 				DB3DC11B2004F7EA0037521A /* Hps_Sip_VRF_Test.m */,
 			);
 			name = Sip;
+			sourceTree = "<group>";
+		};
+		DBF1B0A32080B395007A775E /* FreshTxt */ = {
+			isa = PBXGroup;
+			children = (
+				DBF1B0A42080B3C7007A775E /* HpsTableServicesTest.m */,
+			);
+			name = FreshTxt;
 			sourceTree = "<group>";
 		};
 		E706FDDAF26E6725313B27CA /* Pods */ = {
@@ -364,13 +375,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Heartland-iOS-SDK_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2C4AB92A6DA16A37E1341990 /* [CP] Copy Pods Resources */ = {
@@ -394,9 +408,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Heartland-iOS-SDK/Heartland_iOS_SDK.framework",
+				"${BUILT_PRODUCTS_DIR}/XMLDictionary/XMLDictionary.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Heartland_iOS_SDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XMLDictionary.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -409,9 +428,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Heartland-iOS-SDK/Heartland_iOS_SDK.framework",
+				"${BUILT_PRODUCTS_DIR}/XMLDictionary/XMLDictionary.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Heartland_iOS_SDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XMLDictionary.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -424,13 +448,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Heartland-iOS-SDK_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F4DF8EF29BD28E0291B2EB2A /* [CP] Copy Pods Resources */ = {
@@ -477,6 +504,7 @@
 				DBDA367E1FB01C2000CF5146 /* Hps_Sip_Credit_Test.m in Sources */,
 				84FFB2CC1D63537400D56BF9 /* Hps_Pax_Credit_Tests.m in Sources */,
 				84FA62D71C035C4B007854D5 /* Heartland_GatewayTests.m in Sources */,
+				DBF1B0A52080B3C7007A775E /* HpsTableServicesTest.m in Sources */,
 				DB3DC11C2004F7EA0037521A /* Hps_Sip_VRF_Test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

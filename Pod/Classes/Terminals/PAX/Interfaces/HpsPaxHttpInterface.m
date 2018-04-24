@@ -59,7 +59,7 @@
                                    //error returned
                                    dispatch_async(dispatch_get_main_queue(), ^{
                                        NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [responseError localizedDescription]};
-                                       NSError *error = [NSError errorWithDomain:errorDomain
+                                       NSError *error = [NSError errorWithDomain:self->errorDomain
                                                                             code:CocoaError
                                                                         userInfo:userInfo];
                                        
@@ -77,7 +77,7 @@
                                }else{
                                    dispatch_async(dispatch_get_main_queue(), ^{
                                        NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"No data returned."};
-                                       NSError *error = [NSError errorWithDomain:errorDomain
+                                       NSError *error = [NSError errorWithDomain:self->errorDomain
                                                                             code:GatewayError
                                                                         userInfo:userInfo];
                                        responseBlock(nil, error);

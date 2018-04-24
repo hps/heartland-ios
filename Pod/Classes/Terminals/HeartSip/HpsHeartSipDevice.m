@@ -94,7 +94,7 @@
 			} @catch (NSException *exception) {
 				NSLog(@"anurag exception =%@",exception);
 				NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
-				NSError *error = [NSError errorWithDomain:errorDomain
+				NSError *error = [NSError errorWithDomain:self->errorDomain
 													 code:CocoaError
 												 userInfo:userInfo];
 
@@ -128,7 +128,7 @@
 				});
 			} @catch (NSException *exception) {
 				NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
-				NSError *error = [NSError errorWithDomain:errorDomain
+				NSError *error = [NSError errorWithDomain:self->errorDomain
 													 code:CocoaError
 												 userInfo:userInfo];
 
@@ -162,7 +162,7 @@
 				});
 			} @catch (NSException *exception) {
 				NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
-				NSError *error = [NSError errorWithDomain:errorDomain
+				NSError *error = [NSError errorWithDomain:self->errorDomain
 													 code:CocoaError
 												 userInfo:userInfo];
 
@@ -197,7 +197,7 @@
 				});
 			} @catch (NSException *exception) {
 				NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
-				NSError *error = [NSError errorWithDomain:errorDomain
+				NSError *error = [NSError errorWithDomain:self->errorDomain
 													 code:CocoaError
 												 userInfo:userInfo];
 
@@ -232,7 +232,7 @@
 				});
 			} @catch (NSException *exception) {
 				NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
-				NSError *error = [NSError errorWithDomain:errorDomain
+				NSError *error = [NSError errorWithDomain:self->errorDomain
 													 code:CocoaError
 												 userInfo:userInfo];
 
@@ -256,7 +256,7 @@
 			});
 		}else{
 				//done
-			NSString *dataview = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+				//NSString *dataview = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
 				//NSLog(@"response xml = \n  : %@", dataview);
 			HpsHeartSipBatchResponse *response;
 			@try {
@@ -268,7 +268,7 @@
 				});
 			} @catch (NSException *exception) {
 				NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
-				NSError *error = [NSError errorWithDomain:errorDomain
+				NSError *error = [NSError errorWithDomain:self->errorDomain
 													 code:CocoaError
 												 userInfo:userInfo];
 
@@ -307,7 +307,7 @@
 				});
 			} @catch (NSException *exception) {
 				NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
-				NSError *error = [NSError errorWithDomain:errorDomain
+				NSError *error = [NSError errorWithDomain:self->errorDomain
 													 code:CocoaError
 												 userInfo:userInfo];
 

@@ -49,7 +49,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Invalid SDK configuration."};
-            NSError *error = [NSError errorWithDomain:errorDomain
+            NSError *error = [NSError errorWithDomain:self->errorDomain
                                          code:ConfigurationError
                                      userInfo:userInfo];
  
@@ -120,7 +120,7 @@
                                    //error on connection
                                    dispatch_async(dispatch_get_main_queue(), ^{
                                        NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [responseError localizedDescription]};
-                                       NSError *error = [NSError errorWithDomain:errorDomain
+                                       NSError *error = [NSError errorWithDomain:self->errorDomain
                                                                             code:CocoaError
                                                                         userInfo:userInfo];
                                        
@@ -158,7 +158,7 @@
                                                //Failed on Gateway
                                                
                                                NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Failed on issuer. See gatewayResponseCode and gatewayResponseText."};
-                                               NSError *error = [NSError errorWithDomain:errorDomain
+                                               NSError *error = [NSError errorWithDomain:self->errorDomain
                                                                                     code:IssuerError
                                                                                 userInfo:userInfo];
                                                dispatch_async(dispatch_get_main_queue(), ^{
@@ -172,7 +172,7 @@
                                            
                                            //error on header
                                            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Gateway header is missing."};
-                                           NSError *error = [NSError errorWithDomain:errorDomain
+                                           NSError *error = [NSError errorWithDomain:self->errorDomain
                                                                                 code:GatewayError
                                                                             userInfo:userInfo];
                                            
@@ -197,7 +197,7 @@
                                            if (![chargeResponse.responseCode isEqualToString:@"00"]) {
                                                //Failed on issuer
                                                NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Failed on issuer. See responseCode and responseText."};
-                                               NSError *error = [NSError errorWithDomain:errorDomain
+                                               NSError *error = [NSError errorWithDomain:self->errorDomain
                                                                                     code:IssuerError
                                                                                 userInfo:userInfo];
                                                dispatch_async(dispatch_get_main_queue(), ^{
@@ -216,7 +216,7 @@
                                            
                                            //error
                                            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Transaction error. See code."};
-                                           NSError *error = [NSError errorWithDomain:errorDomain
+                                           NSError *error = [NSError errorWithDomain:self->errorDomain
                                                                                 code:GatewayError
                                                                             userInfo:userInfo];
                                            dispatch_async(dispatch_get_main_queue(), ^{
@@ -230,7 +230,7 @@
                                        
                                        dispatch_async(dispatch_get_main_queue(), ^{
                                            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"No data returned."};
-                                           NSError *error = [NSError errorWithDomain:errorDomain
+                                           NSError *error = [NSError errorWithDomain:self->errorDomain
                                                                                 code:GatewayError
                                                                             userInfo:userInfo];
                                            responseBlock(nil, error);
@@ -243,7 +243,7 @@
                                    //or Dictionary parsing on nil errors
                                    dispatch_async(dispatch_get_main_queue(), ^{
                                        NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
-                                       NSError *error = [NSError errorWithDomain:errorDomain
+                                       NSError *error = [NSError errorWithDomain:self->errorDomain
                                                                             code:CocoaError
                                                                         userInfo:userInfo];
                                        
