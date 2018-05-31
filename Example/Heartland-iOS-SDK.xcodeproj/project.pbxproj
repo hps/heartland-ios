@@ -20,6 +20,7 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		664CFE7E20C02021007A1575 /* *.api2.heartlandportico.com.cer in Resources */ = {isa = PBXBuildFile; fileRef = 664CFE7D20C02021007A1575 /* *.api2.heartlandportico.com.cer */; };
+		6681BA0420C021D30095F5B1 /* *.api2.heartlandportico.com.cer in Resources */ = {isa = PBXBuildFile; fileRef = 664CFE7D20C02021007A1575 /* *.api2.heartlandportico.com.cer */; };
 		840256431DEE1BB90078B6A2 /* Hps_Pax_Debit_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 840256421DEE1BB90078B6A2 /* Hps_Pax_Debit_Tests.m */; };
 		848DD45C1D75FBE500D3F658 /* Hps_Pax_Gift_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DD45A1D75FBDE00D3F658 /* Hps_Pax_Gift_Tests.m */; };
 		84CD39E81C45A73E006FED91 /* heartlandlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CD39E71C45A73E006FED91 /* heartlandlogo.png */; };
@@ -331,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */,
+				6681BA0420C021D30095F5B1 /* *.api2.heartlandportico.com.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

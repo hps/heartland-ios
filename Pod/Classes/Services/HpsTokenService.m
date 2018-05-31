@@ -164,42 +164,53 @@ typedef void(^CallbackBlock)(HpsTokenData*);
     SecTrustRef serverTrust = challenge.protectionSpace.serverTrust;
     SecKeyRef actualKey = SecTrustCopyPublicKey(serverTrust);
     
-    // load the reference certificate
-    NSString *certFile = [[NSBundle mainBundle] pathForResource:@"*.api2.heartlandportico.com" ofType:@"cer"];
-    NSData* certData = [NSData dataWithContentsOfFile:certFile];
-    SecCertificateRef expectedCertificate = SecCertificateCreateWithData(NULL, (__bridge CFDataRef)certData);
+    // load the reference certificates
+    NSString *path = [[NSBundle mainBundle] bundlePath];
+    NSArray *dirFiles = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:nil];
+    NSArray *certFiles = [dirFiles filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self ENDSWITH '.cer'"]];
     
-    // extract the expected public key
-    SecKeyRef expectedKey = NULL;
-    SecCertificateRef certRefs[1] = { expectedCertificate };
-    CFArrayRef certArray = CFArrayCreate(kCFAllocatorDefault, (void *) certRefs, 1, NULL);
-    SecPolicyRef policy = SecPolicyCreateBasicX509();
-    SecTrustRef expTrust = NULL;
-    OSStatus status = SecTrustCreateWithCertificates(certArray, policy, &expTrust);
-    if (status == errSecSuccess) {
-        expectedKey = SecTrustCopyPublicKey(expTrust);
-    }
-    CFRelease(expTrust);
-    CFRelease(policy);
-    CFRelease(certArray);
+    BOOL isMatch = false;
     
-    // check a match
-    if (actualKey != NULL && expectedKey != NULL && [(__bridge id) actualKey isEqual:(__bridge id)expectedKey]) {
-        // public keys match, continue with other checks
-        [challenge.sender performDefaultHandlingForAuthenticationChallenge:challenge];
-    } else {
-        // public keys do not match
-        [challenge.sender cancelAuthenticationChallenge:challenge];
+    for (NSString *certFile in certFiles) {
+        NSString *certPath = [NSString stringWithFormat:@"%@/%@", path, certFile];
+        NSData* certData = [NSData dataWithContentsOfFile: certPath];
+        SecCertificateRef expectedCertificate = SecCertificateCreateWithData(NULL, (__bridge CFDataRef)certData);
+        
+        // extract the expected public key
+        SecKeyRef expectedKey = NULL;
+        SecCertificateRef certRefs[1] = { expectedCertificate };
+        CFArrayRef certArray = CFArrayCreate(kCFAllocatorDefault, (void *) certRefs, 1, NULL);
+        SecPolicyRef policy = SecPolicyCreateBasicX509();
+        SecTrustRef expTrust = NULL;
+        OSStatus status = SecTrustCreateWithCertificates(certArray, policy, &expTrust);
+        if (status == errSecSuccess) {
+            expectedKey = SecTrustCopyPublicKey(expTrust);
+        }
+        CFRelease(expTrust);
+        CFRelease(policy);
+        CFRelease(certArray);
+        
+        // check a match
+        if (actualKey != NULL && expectedKey != NULL && [(__bridge id) actualKey isEqual:(__bridge id)expectedKey]) {
+            // public keys match, continue with other checks
+            isMatch = true;
+            
+            if(actualKey) {
+                CFRelease(actualKey);
+            }
+            if(expectedKey) {
+                CFRelease(expectedKey);
+            }
+        }
+        
+        if (isMatch) {
+            [challenge.sender performDefaultHandlingForAuthenticationChallenge:challenge];
+            return;
+        }
     }
-    if(actualKey) {
-        CFRelease(actualKey);
-    }
-    if(expectedKey) {
-        CFRelease(expectedKey);
-    }
+    
+    // public keys do not match
+    [challenge.sender cancelAuthenticationChallenge:challenge];
 }
 
 @end
-
-
-
