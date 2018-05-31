@@ -7,8 +7,8 @@
 
 	// Block typedefs
 @class HpsHeartSipTcpInterface;
-typedef void (^ConnectionBlock)(HpsHeartSipTcpInterface*);
-typedef void (^MessageBlock)(NSData*,NSString*);
+typedef void (^HPAConnectionBlock)(HpsHeartSipTcpInterface*);
+typedef void (^HPAMessageBlock)(NSData*,NSString*);
 typedef void (^SendReponseBlock)(NSData*, NSError*);
 
 @interface HpsHeartSipTcpInterface : NSObject<IHPSDeviceCommInterface,NSStreamDelegate> {
@@ -20,17 +20,17 @@ typedef void (^SendReponseBlock)(NSData*, NSError*);
 	NSMutableData* outputBuffer;
 	BOOL isOutputStreamOpen;
 
-	MessageBlock messageReceivedBlock;
-	ConnectionBlock connectionOpenedBlock;
-	ConnectionBlock connectionFailedBlock;
-	ConnectionBlock connectionClosedBlock;
+	HPAMessageBlock messageReceivedBlock;
+	HPAConnectionBlock connectionOpenedBlock;
+	HPAConnectionBlock connectionFailedBlock;
+	HPAConnectionBlock connectionClosedBlock;
 	NSString *messageRecived;
 }
 @property (nonatomic, strong) HpsConnectionConfig *config;
-@property (atomic,copy) MessageBlock messageReceivedBlock;
-@property (atomic,copy) ConnectionBlock connectionOpenedBlock;
-@property (atomic,copy) ConnectionBlock connectionFailedBlock;
-@property (atomic,copy) ConnectionBlock connectionClosedBlock;
+@property (atomic,copy) HPAMessageBlock messageReceivedBlock;
+@property (atomic,copy) HPAConnectionBlock connectionOpenedBlock;
+@property (atomic,copy) HPAConnectionBlock connectionFailedBlock;
+@property (atomic,copy) HPAConnectionBlock connectionClosedBlock;
 @property (atomic,copy) SendReponseBlock sendResponseBlock;
 
 - (void)connect;

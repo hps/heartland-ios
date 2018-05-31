@@ -34,7 +34,7 @@ Adding this pod will also include the XMLDictionary, and Masonry cocoapod as a d
 Heartland-iOS-SDK is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile and run "pod update":
 
-```Objective-C
+```ruby
 pod 'Heartland-iOS-SDK'
 ```
 
@@ -42,7 +42,7 @@ pod 'Heartland-iOS-SDK'
 
 If you compile your app with iOS SDK 9.0 or above, you will be affected by App Transport Security. Currently, you will need to whitelist heartlandportico.com in your app by adding the following to your application's plist:
 
-```Objective-C
+```xml
 <key>NSAppTransportSecurity</key>
 <dict>
 <key>NSExceptionDomains</key>
@@ -54,7 +54,7 @@ If you compile your app with iOS SDK 9.0 or above, you will be affected by App T
             <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
             <true/>
             <key>NSTemporaryExceptionMinimumTLSVersion</key>
-            <string>1.0</string>
+            <string>1.2</string>
             <key>NSTemporaryExceptionRequiresForwardSecrecy</key>
             <false/>
         </dict>
@@ -77,13 +77,6 @@ Your keys are located under your profile information.
 You will use your public key when implementing card tokenization and your private key will be used when communicating with our Portico Gateway. More details can be found in our [documentation](http://developer.heartlandpaymentsystems.com/SecureSubmit).
 
 Note: Multi-Use tokenization is not enabled by default when creating an account. You can contact <a href="mailto:SecureSubmitCert@e-hps.com?subject=Multi-use Token Request&body=Please enable multi-use tokens on my developer portal account which was signed up under the following email : ">Heartland's Specialty Products Team</a> to have this enabled. This is also true if you wish to use Gift & Loyalty, ACH, and Debit.
-
-
-
-#### Device Activation Service
-Below is an example of how to call the Activation service for device activation.
-
-```objective-c
 
 
 ## Data Security
@@ -124,27 +117,19 @@ To summarize, when you create a `paymentMethod` using this SDK you have the foll
   You can find the latest SDK documentation along with code examples on our [Developer Portal](http://developer.heartlandpaymentsystems.com/documentation).
   In addition you can find a working example in the SDK itself under the example folder. To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-
-#### Heartland SecureSubmit Tokenization for iOS
-
-This project makes it easy to convert sensitive card data to single-use payment tokens. You can use Objective-C or Swift with this library.
-
 #### Using Swift
 
 In the pod file make sure use_frameworks! is in the top area:
-```swift
-
+```ruby
 platform :ios, '8.0'
 use_frameworks!
 pod ‘Heartland-iOS-SDK’
-
 ```
 
 #### Swift Token Service
 
 Below is an example of all that is required to convert sensitive card information into a single-use token.  The request is asynchronous so you can safely run this code on the UI thread.
 ```swift
-
 import Heartland_iOS_SDK
 
 let tokenService: HpsTokenService = HpsTokenService(publicKey:"skapi_cert_Mc-xxxxxxxxxxxxxxxxxxxxxx");
@@ -160,13 +145,12 @@ tokenService.getTokenWithCardNumber("XXXXXXXXXXXXX",
     //Call method after execution to continue.
 
 }
-
-
 ```
 
 #### Objective-C Token Service
 
 Below is an example of all that is required to convert sensitive card information into a single-use token.  The request is asynchronous so you can safely run this code on the UI thread.
+
 ```objective-c
 HpsTokenService *service = [[HpsTokenService alloc] initWithPublicKey:@"YOUR PUBLIC KEY GOES HERE"];
 
@@ -199,66 +183,14 @@ Testing your implementation in our Certification/Sandbox environment helps to id
 
 The following card numbers are used by our Certification environment to verify that your tests worked. Note that while variations (such as 4111111111111111) will work for general testing the cards listed below are required to complete certification. For card present testing Heartland can provide you with EMV enabled test cards.
 
-<table align="center">
-	<thead>
-		<tr>
-			<th scope="col">Name</th>
-			<th scope="col">Number</th>
-			<th scope="col">Exp Month</th>
-			<th scope="col">Exp Year</th>
-			<th scope="col">CVV</th>
-			<th scope="col">Address</th>
-			<th scope="col">Zip</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Visa</td>
-			<td>4012002000060016</td>
-			<td>12</td>
-			<td>2025</td>
-			<td>123</td>
-			<td>6860 Dallas Pkwy</td>
-			<td>75024</td>
-		</tr>
-		<tr>
-			<td>MasterCard</td>
-			<td>5473500000000014</td>
-			<td>12</td>
-			<td>2025</td>
-			<td>123</td>
-			<td>6860 Dallas Pkwy</td>
-			<td>75024</td>
-		</tr>
-		<tr>
-			<td>Discover</td>
-			<td>6011000990156527</td>
-			<td>12</td>
-			<td>2025</td>
-			<td>123</td>
-			<td>6860 Dallas Pkwy</td>
-			<td>75024</td>
-		</tr>
-		<tr>
-			<td>Amex</td>
-			<td>372700699251018</td>
-			<td>12</td>
-			<td>2025</td>
-			<td>1234</td>
-			<td>6860 Dallas Pkwy</td>
-			<td>75024</td>
-		</tr>
-		<tr>
-			<td>JCB</td>
-			<td>3566007770007321</td>
-			<td>12</td>
-			<td>2025</td>
-			<td>123</td>
-			<td>6860 Dallas Pkwy</td>
-			<td>75024</td>
-		</tr>
-	</tbody>
-</table>
+Name       | Number           | Exp Month | Exp Year | CVV  | Address          | Zip
+---------- | ---------------- | --------- | -------- | ---- | ---------------- | ---
+Visa       | 4012002000060016 | 12        | 2025     | 123  | 6860 Dallas Pkwy | 750241234
+MasterCard | 2223000010005780 | 12        | 2019     | 900  | 6860 Dallas Pkwy | 75024
+MasterCard | 5473500000000014 | 12        | 2025     | 123  | 6860 Dallas Pkwy | 75024
+Discover   | 6011000990156527 | 12        | 2025     | 123  | 6860             | 750241234
+Amex       | 372700699251018  | 12        | 2025     | 1234 | 6860             | 75024
+JCB        | 3566007770007321 | 12        | 2025     | 123  | 6860             | 75024
 
 #### Testing Exceptions
 
@@ -300,4 +232,4 @@ The included test suite can help ensure your contribution doesn't cause unexpect
 
 ## License
 
-Heartland-iOS-SDK is available under the EULA license. See the LICENSE file for more info.
+This project is licensed under the GNU General Public License v2.0. Please see [LICENSE.md](LICENSE.md) located at the project's root for more details.

@@ -32,10 +32,10 @@
         NSString *env = [components[1] lowercaseString];
         
         if([env isEqual:@"prod"]) {
-            self.serviceURL = @"https://api.heartlandportico.com/SecureSubmit.v1/api/token";
+            self.serviceURL = @"https://api2-c.heartlandportico.com/SecureSubmit.v1/api/token";
         }
         else if ([env isEqualToString:@"cert"]) {
-            self.serviceURL = @"https://cert.api2.heartlandportico.com/Hps.Exchange.PosGateway.Hpf.v1/api/token";
+            self.serviceURL = @"https://cert.api2-c.heartlandportico.com/Hps.Exchange.PosGateway.Hpf.v1/api/token";
         }
         else {
             self.serviceURL = @"http://gateway.e-hps.com/Hps.Exchange.PosGateway.Hpf.v1/api/token";

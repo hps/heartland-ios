@@ -24,7 +24,7 @@
 - (void)readFromStreamToInputBuffer;
 - (void)parseIncomingData;
 - (void)writeOutputBufferToStream;
-- (void)notifyConnectionBlock:(ConnectionBlock)block;
+- (void)notifyConnectionBlock:(HPAConnectionBlock)block;
 
 @end
 
@@ -379,7 +379,7 @@
 							   length:0];
 }
 
-- (void)notifyConnectionBlock:(ConnectionBlock)block {
+- (void)notifyConnectionBlock:(HPAConnectionBlock)block {
 	if (block != nil)
 		block(self);
 }
