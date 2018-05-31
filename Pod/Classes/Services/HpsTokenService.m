@@ -1,16 +1,23 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
+//
+//  TokenService.m
+//  Heartland-Tokenization
+//
+//  Created by Roberts, Jerry on 2/2/15.
+//  Copyright (c) 2015 Heartland Payment Systems. All rights reserved.
+//
 
 #import "HpsTokenService.h"
 #import "HpsTokenData.h"
 
+typedef void(^CallbackBlock)(HpsTokenData*);
 
-@interface HpsTokenService()
+@interface HpsTokenService() <NSURLConnectionDelegate>
 
 @property (nonatomic, strong) NSOperationQueue *queue;
 @property (nonatomic, strong) NSString *publicKey;
 @property (nonatomic, strong) NSString *serviceURL;
 
-
+@property (nonatomic) CallbackBlock responseBlock;
 
 @end
 
@@ -20,7 +27,7 @@
 {
     if((self = [super init]))
     {
-        self.publicKey = publicKey == nil ? @"" : [publicKey stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        self.publicKey = publicKey;
         self.queue = [[NSOperationQueue alloc] init];
         
         if(!publicKey)
@@ -52,51 +59,8 @@
                         expYear:(NSString*)expYear
                andResponseBlock:(void(^)(HpsTokenData*))responseBlock
 {
-    NSDictionary *card = @{@"number": [self dataOrDefault:cardNumber withDefault:@""],
-                           @"cvc": [self dataOrDefault:cvc withDefault:@""],
-                           @"exp_month": [self dataOrDefault:expMonth withDefault:@""],
-                           @"exp_year": [self dataOrDefault:expYear withDefault:@""],
-                           };
+    self.responseBlock = responseBlock;
     
-    [self getTokenWithCardDictionary:card
-           orEncryptedCardDictionary:nil
-                    andResponseBlock:responseBlock];
-}
-
-- (void) getTokenWithCardTrackData:(NSString*)trackData
-                  andResponseBlock:(void(^)(HpsTokenData*))responseBlock
-{
-    NSDictionary *card = @{@"track_method": @"swipe",
-                           @"track": [self dataOrDefault:trackData withDefault:@""],
-                           };
-    
-    [self getTokenWithCardDictionary:card
-           orEncryptedCardDictionary:nil
-                    andResponseBlock:responseBlock];
-}
-
-- (void) getTokenWithEncryptedCardTrackData:(NSString*)trackData
-                                trackNumber:(NSString*)trackNumber
-                                        ktb:(NSString*)ktb
-                                   pinBlock:(NSString*)pinBlock
-                           andResponseBlock:(void(^)(HpsTokenData*))responseBlock
-{
-    NSDictionary *card = @{@"track_method": @"swipe",
-                           @"track": [self dataOrDefault:trackData withDefault:@""],
-                           @"track_number": [self dataOrDefault:trackNumber withDefault:@""],
-                           @"ktb": [self dataOrDefault:ktb withDefault:@""],
-                           @"pin_block": [self dataOrDefault:pinBlock withDefault:@""],
-                           };
-    
-    [self getTokenWithCardDictionary:nil
-           orEncryptedCardDictionary:card
-                    andResponseBlock:responseBlock];
-}
-
-- (void) getTokenWithCardDictionary:(NSDictionary *)card
-          orEncryptedCardDictionary:(NSDictionary*)encryptedCard
-                   andResponseBlock:(void(^)(HpsTokenData*))responseBlock
-{
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.serviceURL]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:60];
@@ -105,17 +69,18 @@
     
     NSString *authorization = [NSString stringWithFormat:@"Basic %@", [apiKey base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength]];
     
-    NSMutableDictionary *tokenRequestData = [@{@"object": @"token",
-                                               @"token_type": @"supt",
-                                               } mutableCopy];
+    NSDictionary *card = [NSDictionary dictionaryWithObjectsAndKeys:
+                          cardNumber, @"number",
+                          cvc, @"cvc",
+                          expMonth, @"exp_month",
+                          expYear, @"exp_year", nil];
     
-    if (card) {
-        tokenRequestData[@"card"] = card;
-    } else {
-        tokenRequestData[@"encryptedcard"] = encryptedCard;
-    }
+    NSDictionary *token = [NSDictionary dictionaryWithObjectsAndKeys:
+                           @"token", @"object",
+                           @"supt", @"token_type",
+                           card, @"card", nil];
     
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:tokenRequestData
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:token
                                                        options:0
                                                          error:nil];
     
@@ -123,93 +88,118 @@
     [request setValue:authorization forHTTPHeaderField:@"Authorization"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:[@([jsonData length]) stringValue] forHTTPHeaderField:@"Content-Length"];
-    [request setHTTPBody:jsonData];    
+    [request setHTTPBody:jsonData];
     
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:self.queue
-                           completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error) {
-                               if (error != nil){
-                                   
-                                   HpsTokenData *response = [[HpsTokenData alloc] init];
-                                   response.code = [@(error.code) stringValue];
-                                   response.message = [error localizedDescription];
-                                   response.type = @"error";
-                              
-                                   
-                                   dispatch_async(dispatch_get_main_queue(), ^{
-                                       responseBlock(response);
-                                   });
-                                   
-                               }
-
-                               if (data != nil){
-                                  
-                                   
-                                   NSError *jsonError;
-                                   NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
-                                                                                        options:NSJSONReadingAllowFragments
-                                                                                          error:&jsonError];
-                                   if (jsonError != nil){
-                                       
-                                       HpsTokenData *response = [[HpsTokenData alloc] init];
-                                       response.code = [@(jsonError.code) stringValue];
-                                       response.message = [jsonError localizedDescription];
-                                       response.type = @"error";
-                                       
-                                       
-                                       dispatch_async(dispatch_get_main_queue(), ^{
-                                           responseBlock(response);
-                                       });
-                                       
-                                   }else{
-                                       
-                                   }
-
-                                   HpsTokenData *response = [[HpsTokenData alloc] init];
-                                   
-                                   if(json[@"error"])
-                                   {
-                                       response.code = json[@"error"][@"code"];
-                                       response.message = json[@"error"][@"message"];
-                                       response.param = json[@"error"][@"param"];
-                                       response.type = @"error";
-                                   }
-                                   else
-                                   {
-                                       response.tokenValue = json[@"token_value"];
-                                       response.tokenType = json[@"token_type"];
-                                       response.tokenExpire = json[@"token_expire"];
-                                       response.cardNumber = json[@"card"][@"number"];
-                                       response.type = @"token";
-                                   }
-                                   
-                                   dispatch_async(dispatch_get_main_queue(), ^{
-                                       responseBlock(response);
-                                       
-                                   });
-
-                               }else{
-                                   
-                                   HpsTokenData *response = [[HpsTokenData alloc] init];
-                                   response.code = @"01";
-                                   response.message = @"No data returned";
-                                   response.type = @"error";
-                                   dispatch_async(dispatch_get_main_queue(), ^{
-                                       responseBlock(response);
-                                   });
-                               }
-                               
-                           }];
+    NSURLConnection *connection =[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [connection start];
 }
 
-- (NSString*) dataOrDefault:(NSString*)data
-                withDefault:(NSString*)defaultData
-{
-    if (data) {
-        return data;
+// NSURLConnectionDelegate
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    if (data != nil){
+        
+        
+        NSError *jsonError;
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
+                                                             options:NSJSONReadingAllowFragments
+                                                               error:&jsonError];
+        if (jsonError != nil){
+            
+            HpsTokenData *response = [[HpsTokenData alloc] init];
+            response.code = [@(jsonError.code) stringValue];
+            response.message = [jsonError localizedDescription];
+            response.type = @"error";
+            
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.responseBlock(response);
+            });
+            
+        }
+        
+        HpsTokenData *response = [[HpsTokenData alloc] init];
+        
+        if(json[@"error"])
+        {
+            response.code = json[@"error"][@"code"];
+            response.message = json[@"error"][@"message"];
+            response.param = json[@"error"][@"param"];
+            response.type = @"error";
+        }
+        else
+        {
+            response.tokenValue = json[@"token_value"];
+            response.tokenType = json[@"token_type"];
+            response.tokenExpire = json[@"token_expire"];
+            response.cardNumber = json[@"card"][@"number"];
+            response.type = @"token";
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.responseBlock(response);
+            
+        });
     }
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    if (error != nil){
+        
+        HpsTokenData *response = [[HpsTokenData alloc] init];
+        response.code = [@(error.code) stringValue];
+        response.message = [error localizedDescription];
+        response.type = @"error";
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.responseBlock(response);
+        });
+        
+    }
+}
+
+-(void)connection:(NSURLConnection *)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+    // get the public key offered by the server
+    SecTrustRef serverTrust = challenge.protectionSpace.serverTrust;
+    SecKeyRef actualKey = SecTrustCopyPublicKey(serverTrust);
     
-    return defaultData;
+    // load the reference certificate
+    NSString *certFile = [[NSBundle mainBundle] pathForResource:@"*.api2.heartlandportico.com" ofType:@"cer"];
+    NSData* certData = [NSData dataWithContentsOfFile:certFile];
+    SecCertificateRef expectedCertificate = SecCertificateCreateWithData(NULL, (__bridge CFDataRef)certData);
+    
+    // extract the expected public key
+    SecKeyRef expectedKey = NULL;
+    SecCertificateRef certRefs[1] = { expectedCertificate };
+    CFArrayRef certArray = CFArrayCreate(kCFAllocatorDefault, (void *) certRefs, 1, NULL);
+    SecPolicyRef policy = SecPolicyCreateBasicX509();
+    SecTrustRef expTrust = NULL;
+    OSStatus status = SecTrustCreateWithCertificates(certArray, policy, &expTrust);
+    if (status == errSecSuccess) {
+        expectedKey = SecTrustCopyPublicKey(expTrust);
+    }
+    CFRelease(expTrust);
+    CFRelease(policy);
+    CFRelease(certArray);
+    
+    // check a match
+    if (actualKey != NULL && expectedKey != NULL && [(__bridge id) actualKey isEqual:(__bridge id)expectedKey]) {
+        // public keys match, continue with other checks
+        [challenge.sender performDefaultHandlingForAuthenticationChallenge:challenge];
+    } else {
+        // public keys do not match
+        [challenge.sender cancelAuthenticationChallenge:challenge];
+    }
+    if(actualKey) {
+        CFRelease(actualKey);
+    }
+    if(expectedKey) {
+        CFRelease(expectedKey);
+    }
 }
 
 @end
+
+
+
