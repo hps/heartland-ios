@@ -1,0 +1,80 @@
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#else
+#ifndef FOUNDATION_EXPORT
+#if defined(__cplusplus)
+#define FOUNDATION_EXPORT extern "C"
+#else
+#define FOUNDATION_EXPORT extern
+#endif
+#endif
+#endif
+
+#import "hps.h"
+#import "HpsAdditionalTxnFields.h"
+#import "HpsAddress.h"
+#import "HpsCardData.h"
+#import "HpsCardEntry.h"
+#import "HpsCardHolderData.h"
+#import "HpsCommon.h"
+#import "HpsCreditCard.h"
+#import "HpsEncryptionData.h"
+#import "HpsGatewayData.h"
+#import "HpsGiftCard.h"
+#import "HpsHeader.h"
+#import "HpsPosRequest.h"
+#import "HpsServicesConfig.h"
+#import "HpsTokenData.h"
+#import "HpsTransaction.h"
+#import "HpsTransactionDetails.h"
+#import "HpsGatewayService.h"
+#import "HpsTokenService.h"
+#import "HpsConnectionConfig.h"
+#import "HpsDeviceMessage.h"
+#import "HpsDeviceProtocols.h"
+#import "HpsTerminalResponse.h"
+#import "HpsPaxCreditAuthBuilder.h"
+#import "HpsPaxCreditCaptureBuilder.h"
+#import "HpsPaxCreditReturnBuilder.h"
+#import "HpsPaxCreditSaleBuilder.h"
+#import "HpsPaxCreditVerifyBuilder.h"
+#import "HpsPaxCreditVoidBuilder.h"
+#import "HpsPaxDebitReturnBuilder.h"
+#import "HpsPaxDebitSaleBuilder.h"
+#import "HpsPaxGiftAddValueBuilder.h"
+#import "HpsPaxGiftBalanceBuilder.h"
+#import "HpsPaxGiftSaleBuilder.h"
+#import "HpsPaxGiftVoidBuilder.h"
+#import "HpsPaxDevice.h"
+#import "HpsPaxMessageIDs.h"
+#import "HpsPaxHttpInterface.h"
+#import "HpsPaxTcpInterface.h"
+#import "HpsPaxAccountRequest.h"
+#import "HpsPaxAccountResponse.h"
+#import "HpsPaxAmountRequest.h"
+#import "HpsPaxAmountResponse.h"
+#import "HpsPaxAvsRequest.h"
+#import "HpsPaxAvsResponse.h"
+#import "HpsPaxBaseResponse.h"
+#import "HpsPaxBatchCloseResponse.h"
+#import "HpsPaxCashierSubGroup.h"
+#import "HpsPaxCommercialRequest.h"
+#import "HpsPaxCommercialResponse.h"
+#import "HpsPaxCreditResponse.h"
+#import "HpsPaxDebitResponse.h"
+#import "HpsPaxDeviceResponse.h"
+#import "HpsPaxEcomSubGroup.h"
+#import "HpsPaxExtDataSubGroup.h"
+#import "HpsPaxGiftResponse.h"
+#import "HpsPaxHostResponse.h"
+#import "HpsPaxInitializeResponse.h"
+#import "HpsPaxTraceRequest.h"
+#import "HpsPaxTraceResponse.h"
+#import "HpsBinaryDataScanner.h"
+#import "HpsTerminalEnums.h"
+#import "HpsTerminalUtilities.h"
+#import "HpsCardEntryViewController.h"
+
+FOUNDATION_EXPORT double Heartland_iOS_SDKVersionNumber;
+FOUNDATION_EXPORT const unsigned char Heartland_iOS_SDKVersionString[];
+

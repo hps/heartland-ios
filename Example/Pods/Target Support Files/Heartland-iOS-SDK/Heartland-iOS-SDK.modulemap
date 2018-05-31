@@ -1,0 +1,6 @@
+framework module Heartland_iOS_SDK {
+  umbrella header "Heartland-iOS-SDK-umbrella.h"
+
+  export *
+  module * { export * }
+}
