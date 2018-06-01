@@ -193,14 +193,14 @@ typedef void(^CallbackBlock)(HpsTokenData*);
         // check a match
         if (actualKey != NULL && expectedKey != NULL && [(__bridge id) actualKey isEqual:(__bridge id)expectedKey]) {
             // public keys match, continue with other checks
-            isMatch = true;
-            
-            if(actualKey) {
-                CFRelease(actualKey);
-            }
-            if(expectedKey) {
-                CFRelease(expectedKey);
-            }
+                isMatch = true;
+        }
+        
+        if(actualKey) {
+            CFRelease(actualKey);
+        }
+        if(expectedKey) {
+            CFRelease(expectedKey);
         }
         
         if (isMatch) {
