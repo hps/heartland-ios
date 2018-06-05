@@ -19,8 +19,6 @@
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
-		664CFE7E20C02021007A1575 /* *.api2.heartlandportico.com.cer in Resources */ = {isa = PBXBuildFile; fileRef = 664CFE7D20C02021007A1575 /* *.api2.heartlandportico.com.cer */; };
-		6681BA0420C021D30095F5B1 /* *.api2.heartlandportico.com.cer in Resources */ = {isa = PBXBuildFile; fileRef = 664CFE7D20C02021007A1575 /* *.api2.heartlandportico.com.cer */; };
 		840256431DEE1BB90078B6A2 /* Hps_Pax_Debit_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 840256421DEE1BB90078B6A2 /* Hps_Pax_Debit_Tests.m */; };
 		848DD45C1D75FBE500D3F658 /* Hps_Pax_Gift_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 848DD45A1D75FBDE00D3F658 /* Hps_Pax_Gift_Tests.m */; };
 		84CD39E81C45A73E006FED91 /* heartlandlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CD39E71C45A73E006FED91 /* heartlandlogo.png */; };
@@ -69,7 +67,6 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		61BF46B1C380625FF377FAA8 /* Pods-Heartland-iOS-SDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartland-iOS-SDK_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		664CFE7D20C02021007A1575 /* *.api2.heartlandportico.com.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "*.api2.heartlandportico.com.cer"; sourceTree = "<group>"; };
 		70FD3C3038658BD48AC9ADBB /* Pods-Heartland-iOS-SDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartland-iOS-SDK_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		75EF1144CF33D3C27B73A4D1 /* Pods-Heartland-iOS-SDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartland-iOS-SDK_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		840256421DEE1BB90078B6A2 /* Hps_Pax_Debit_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_Debit_Tests.m; sourceTree = "<group>"; };
@@ -118,7 +115,6 @@
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
-				664CFE7C20C02021007A1575 /* Certificates */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for Heartland-iOS-SDK */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -212,14 +208,6 @@
 				D51EA908AC81E7B7EB89E8D5 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
-			sourceTree = "<group>";
-		};
-		664CFE7C20C02021007A1575 /* Certificates */ = {
-			isa = PBXGroup;
-			children = (
-				664CFE7D20C02021007A1575 /* *.api2.heartlandportico.com.cer */,
-			);
-			path = Certificates;
 			sourceTree = "<group>";
 		};
 		E706FDDAF26E6725313B27CA /* Pods */ = {
@@ -322,7 +310,6 @@
 				84CD39E81C45A73E006FED91 /* heartlandlogo.png in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
-				664CFE7E20C02021007A1575 /* *.api2.heartlandportico.com.cer in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,7 +319,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */,
-				6681BA0420C021D30095F5B1 /* *.api2.heartlandportico.com.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

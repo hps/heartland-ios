@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Pod/Classes/**/*'
   s.resource_bundles = {
-    'Heartland-iOS-SDK' => ['Pod/Assets/*.png', 'Pod/Assets/*.xib']
+    'Heartland-iOS-SDK' => ['Pod/Assets/*.png', 'Pod/Assets/*.xib', 'Pod/Certificates/*.*']
   }
 
   s.frameworks = 'UIKit'

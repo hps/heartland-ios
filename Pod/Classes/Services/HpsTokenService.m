@@ -165,7 +165,11 @@ typedef void(^CallbackBlock)(HpsTokenData*);
     SecKeyRef actualKey = SecTrustCopyPublicKey(serverTrust);
     
     // load the reference certificates
-    NSString *path = [[NSBundle mainBundle] bundlePath];
+    NSBundle *frameworkBundle =  [NSBundle bundleForClass:[HpsTokenService class]];
+    NSURL *bundleURL = [[frameworkBundle resourceURL] URLByAppendingPathComponent:@"Heartland-iOS-SDK.bundle"];
+    NSBundle *resourceBundle = [NSBundle bundleWithURL:bundleURL];
+    
+    NSString *path = [resourceBundle bundlePath];
     NSArray *dirFiles = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:nil];
     NSArray *certFiles = [dirFiles filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self ENDSWITH '.cer'"]];
     
