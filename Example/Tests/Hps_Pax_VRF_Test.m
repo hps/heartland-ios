@@ -242,9 +242,9 @@
 	[builder execute:^(HpsPaxCreditResponse *payload, NSError *error) {
 		XCTAssertNil(error);
 		XCTAssertNotNil(payload);
-		XCTAssertEqualObjects(@"10", payload.responseCode);
-		XCTAssertEqualObjects(@"100", @(payload.transactionAmount.floatValue / 100).stringValue);
-		XCTAssertEqualObjects(@"55", @(payload.amountDue.floatValue / 100).stringValue);
+		XCTAssertEqualObjects(@"10", payload.responseCode); 
+		XCTAssertEqualObjects(@"100", @(payload.transactionAmount.floatValue).stringValue);
+		XCTAssertEqualObjects(@"55", @(payload.amountDue.floatValue).stringValue);
 		if ([payload.responseCode isEqualToString:@"10"])
 			[self printRecipt:payload];
 
@@ -587,7 +587,7 @@
 		XCTAssertNil(error);
 		XCTAssertNotNil(payload);
 		XCTAssertEqualObjects(@"0", payload.responseCode);
-		XCTAssertEqualObjects(@"10",@(payload.amountResponse.balance1 / 100).stringValue);
+		XCTAssertEqualObjects(@"10",@(payload.amountResponse.balance1).stringValue);
 		[self printRecipt:payload];
 
 		[expectation fulfill];

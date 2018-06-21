@@ -41,7 +41,7 @@
         }
         
         if (self.amountResponse != nil) {
-            self.transactionAmount = [NSNumber numberWithDouble:[self.transactionAmount doubleValue]];
+            self.transactionAmount = [NSNumber numberWithDouble:[self.transactionAmount doubleValue]/100];
             self.approvedAmount = [NSNumber numberWithDouble:self.amountResponse.approvedAmount];
             self.amountDue = [NSNumber numberWithDouble:self.amountResponse.amountDue];
         }

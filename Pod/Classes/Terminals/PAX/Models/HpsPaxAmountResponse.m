@@ -14,28 +14,28 @@
     for (NSNumber* value in items) {
         switch (i) {
             case 0:
-                self.approvedAmount = [value doubleValue];
+                self.approvedAmount = [value doubleValue]/100;
                 break;
             case 1:
-                self.amountDue = [value doubleValue];
+                self.amountDue = [value doubleValue]/100;
                 break;
             case 2:
-                self.tipAmount = [value doubleValue];
+                self.tipAmount = [value doubleValue]/100;
                 break;
             case 3:
-                self.cashBackAmount = [value doubleValue];
+                self.cashBackAmount = [value doubleValue]/100;
                 break;
             case 4:
-                self.merchantFee = [value doubleValue];
+                self.merchantFee = [value doubleValue]/100;
                 break;
             case 5:
-                self.taxAmount = [value doubleValue];
+                self.taxAmount = [value doubleValue]/100;
                 break;
             case 6:
-                self.balance1 = [value doubleValue];
+                self.balance1 = [value doubleValue]/100;
                 break;
             case 7:
-                self.balance2 = [value doubleValue];
+                self.balance2 = [value doubleValue]/100;
                 break;
                 
             default:
