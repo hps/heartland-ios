@@ -190,23 +190,19 @@ typedef void(^CallbackBlock)(HpsTokenData*);
         if (status == errSecSuccess) {
             expectedKey = SecTrustCopyPublicKey(expTrust);
         }
-        CFRelease(expTrust);
-        CFRelease(policy);
-        CFRelease(certArray);
-        
+      
         // check a match
         if (actualKey != NULL && expectedKey != NULL && [(__bridge id) actualKey isEqual:(__bridge id)expectedKey]) {
             // public keys match, continue with other checks
                 isMatch = true;
         }
         
-        if(actualKey) {
-            CFRelease(actualKey);
-        }
-        if(expectedKey) {
-            CFRelease(expectedKey);
-        }
-        
+        if (actualKey) { CFRelease(actualKey); }
+        if (expectedKey) { CFRelease(expectedKey); }
+        if (expTrust) { CFRelease(expTrust); }
+        if (certArray) { CFRelease(certArray); }
+        CFRelease(policy);
+      
         if (isMatch) {
             [challenge.sender performDefaultHandlingForAuthenticationChallenge:challenge];
             return;
