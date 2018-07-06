@@ -8,7 +8,7 @@
 
 #import "HpsTokenService.h"
 #import "HpsTokenData.h"
-
+#define CFSafeRelease(x) if (x) { CFRelease(x); x = NULL; }
 typedef void(^CallbackBlock)(HpsTokenData*);
 
 @interface HpsTokenService() <NSURLConnectionDelegate>
@@ -176,6 +176,7 @@ typedef void(^CallbackBlock)(HpsTokenData*);
     BOOL isMatch = false;
     
     for (NSString *certFile in certFiles) {
+        
         NSString *certPath = [NSString stringWithFormat:@"%@/%@", path, certFile];
         NSData* certData = [NSData dataWithContentsOfFile: certPath];
         SecCertificateRef expectedCertificate = SecCertificateCreateWithData(NULL, (__bridge CFDataRef)certData);
@@ -190,26 +191,27 @@ typedef void(^CallbackBlock)(HpsTokenData*);
         if (status == errSecSuccess) {
             expectedKey = SecTrustCopyPublicKey(expTrust);
         }
-      
+        
         // check a match
         if (actualKey != NULL && expectedKey != NULL && [(__bridge id) actualKey isEqual:(__bridge id)expectedKey]) {
             // public keys match, continue with other checks
-                isMatch = true;
+            isMatch = true;
         }
         
-        if (actualKey) { CFRelease(actualKey); }
-        if (expectedKey) { CFRelease(expectedKey); }
-        if (expTrust) { CFRelease(expTrust); }
-        if (certArray) { CFRelease(certArray); }
-        CFRelease(policy);
-      
+        CFSafeRelease(expectedKey)
+        CFSafeRelease(expTrust)
+        CFSafeRelease(certArray)
+        CFSafeRelease(policy)
+        
         if (isMatch) {
+            CFSafeRelease(actualKey)
             [challenge.sender performDefaultHandlingForAuthenticationChallenge:challenge];
             return;
         }
     }
     
     // public keys do not match
+    CFSafeRelease(actualKey)
     [challenge.sender cancelAuthenticationChallenge:challenge];
 }
 
