@@ -1,8 +1,7 @@
-//  Copyright (c) 2015 Heartland Payment Systems. All rights reserved.
-
 #import "HpsAdditionalTxnFields.h"
 
 @implementation HpsAdditionalTxnFields
+
 - (id)init {
     self = [super init];
     if (!self) return nil;
@@ -26,4 +25,5 @@
     NSString *xml = [NSString stringWithFormat:@"%@%@%@%@%@", requestXMLhead, invoiceNumber, customerID, desc, requestXMLTail];
     return xml;
 }
+
 @end

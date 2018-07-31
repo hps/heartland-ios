@@ -1,8 +1,5 @@
-	//  Copyright (c) 2017 Heartland Payment Systems. All rights reserved.
-
 #import <Foundation/Foundation.h>
 #import "HpsHeartSipDevice.h"
-
 
 @interface HpsHeartSipGiftBalanceBuilder : NSObject
 {

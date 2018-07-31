@@ -1,5 +1,3 @@
-//  Copyright (c) 2016 Global Payments. All rights reserved.
-
 #import <XCTest/XCTest.h>
 #import "HpsPaxDevice.h"
 #import "HpsCreditCard.h"
@@ -8,11 +6,8 @@
 #import "HpsPaxDeviceResponse.h"
 #import "HpsPaxCreditAuthBuilder.h"
 
-
 @interface Hps_Pax_Connection_Tests : XCTestCase
-{
-    
-}
+
 @end
 
 @implementation Hps_Pax_Connection_Tests

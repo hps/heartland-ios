@@ -1,5 +1,3 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import <Foundation/Foundation.h>
 #import "HpsPaxMessageIDs.h"
 
@@ -57,4 +55,5 @@ FOUNDATION_EXPORT NSString *const PAX_DEVICE_VERSION;
 + (NSString *) controlCodeAsciValue:(Byte)code;
 + (NSString*)entryModeToString:(HpsPaxEntryModes)entryMode;
 + (NSString*)applicationCryptogramTypeToString:(ApplicationCrytogramType)cryptoType;
+
 @end

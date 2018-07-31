@@ -1,5 +1,3 @@
- //  Copyright (c) 2016 Global Payments. All rights reserved.
-
 #import <XCTest/XCTest.h>
 #import "HpsHeartSipDeviceResponse.h"
 #import "HpsHeartSipGiftSaleBuilder.h"
@@ -8,6 +6,7 @@
 #import "HpsHeartSipGiftVoidBuilder.h"
 #import "HpsTransactionDetails.h"
 #import "HpsGiftCard.h"
+
 @interface Hps_Sip_Gift_Test : XCTestCase
 
 @end

@@ -1,11 +1,3 @@
-//
-//  TableServiceConnector.m
-//  Pods
-//
-//  Created by anurag sharma on 04/04/18.
-//
-//
-
 #import "HpsTableServiceConnector.h"
 #import "XMLDictionary.h"
 

@@ -1,5 +1,3 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import <Foundation/Foundation.h>
 #import "HpsBinaryDataScanner.h"
 #import "HpsTerminalEnums.h"
@@ -11,4 +9,5 @@
 @property (nonatomic,strong) NSString *timeStamp;
  
 - (id)initWithBinaryReader: (HpsBinaryDataScanner*)br;
+
 @end

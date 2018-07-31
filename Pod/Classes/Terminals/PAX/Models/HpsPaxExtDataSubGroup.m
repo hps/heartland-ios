@@ -1,5 +1,3 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import "HpsPaxExtDataSubGroup.h"
 
 @implementation HpsPaxExtDataSubGroup
@@ -10,7 +8,6 @@
     self.collection = [[NSMutableDictionary alloc] init];
     return self;
 }
-
 
 - (id)initWithBinaryReader: (HpsBinaryDataScanner*)br {
     self = [self init];
@@ -24,7 +21,6 @@
     }
     return self;
 }
-
 
 - (NSString*) getElementString
 {

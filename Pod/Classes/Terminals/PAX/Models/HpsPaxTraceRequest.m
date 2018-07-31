@@ -1,9 +1,8 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import "HpsPaxTraceRequest.h"
 #import "HpsTerminalEnums.h"
 
 @implementation HpsPaxTraceRequest
+
 - (NSString*) getElementString
 {
     NSMutableString *sb = [[NSMutableString alloc] init];
@@ -24,4 +23,5 @@
     
     return sb;
 }
+
 @end

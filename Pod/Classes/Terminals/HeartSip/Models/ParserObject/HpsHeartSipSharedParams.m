@@ -1,5 +1,3 @@
-	//  Copyright (c) 2017 Heartland Payment Systems. All rights reserved.
-
 #import "HpsHeartSipSharedParams.h"
 
 NSOperationQueue *operationQueue ;
@@ -15,6 +13,7 @@ NSOperationQueue *operationQueue ;
 	});
 	return instance;
 }
+
 -(id) init
 {
 	if (self = [super init])
@@ -26,6 +25,7 @@ NSOperationQueue *operationQueue ;
 		}
 	return self;
 }
+
 -(void)addTranasactionSummaryRecords:(TransactionSummaryRecord *)Record
 {
 	[self.transactionSummaryRecords addObject:Record];

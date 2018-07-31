@@ -1,8 +1,7 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import "HpsPaxCommercialResponse.h"
 
 @implementation HpsPaxCommercialResponse
+
 - (id)initWithBinaryReader: (HpsBinaryDataScanner*)br {
     self = [super init];
     if (!self) return nil;
@@ -33,4 +32,5 @@
     
     return self;
 }
+
 @end

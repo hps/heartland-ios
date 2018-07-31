@@ -1,5 +1,3 @@
-	//  Copyright (c) 2017 Heartland Payment Systems. All rights reserved.
-
 #import "HpsHeartSipBaseResponse.h"
 
 @interface HpsHeartSipDeviceResponse : HpsHeartSipBaseResponse<IHPSDeviceResponse>

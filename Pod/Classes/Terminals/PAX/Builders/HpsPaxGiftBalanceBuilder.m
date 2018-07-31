@@ -1,8 +1,7 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import "HpsPaxGiftBalanceBuilder.h"
 
 @implementation HpsPaxGiftBalanceBuilder
+
 - (id)initWithDevice: (HpsPaxDevice*)paxDevice{
     self = [super init];
     if (self != nil)
@@ -12,7 +11,6 @@
     }
     return self;
 }
-
 
 - (void) execute:(void(^)(HpsPaxGiftResponse*, NSError*))responseBlock{
     
@@ -52,7 +50,6 @@
     if (self.currencyType < 0) {
         @throw [NSException exceptionWithName:@"HpsPaxException" reason:@"currencyType is required." userInfo:nil];
     }
-    
 }
 
 @end

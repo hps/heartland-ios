@@ -1,8 +1,7 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import "HpsPaxDebitResponse.h"
 
 @implementation HpsPaxDebitResponse
+
 - (id) initWithBuffer:(NSData*)buffer{
     if((self = [super initWithMessageID:T03_RSP_DO_DEBIT andBuffer:buffer]))
     {

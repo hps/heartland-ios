@@ -34,6 +34,7 @@
 		DB8A59C11F4BDF7000B98B73 /* Hps_Pax_VRF_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8A59C01F4BDF7000B98B73 /* Hps_Pax_VRF_Test.m */; };
 		DBDA36711FAB430900CF5146 /* Hps_Sip_Admin_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDA36701FAB430900CF5146 /* Hps_Sip_Admin_Test.m */; };
 		DBDA367E1FB01C2000CF5146 /* Hps_Sip_Credit_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDA367D1FB01C2000CF5146 /* Hps_Sip_Credit_Test.m */; };
+		DBE8B01A20ECA30B006F8B97 /* HpsPayRollTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE8B01920ECA30B006F8B97 /* HpsPayRollTests.m */; };
 		DBF1B0A52080B3C7007A775E /* HpsTableServicesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF1B0A42080B3C7007A775E /* HpsTableServicesTest.m */; };
 		DBF1DE8B1FB9AEF100D57C16 /* Hps_Sip_Debit_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF1DE8A1FB9AEF100D57C16 /* Hps_Sip_Debit_Test.m */; };
 		DBF1DE8D1FB9AF0900D57C16 /* Hps_Sip_Gift_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF1DE8C1FB9AF0900D57C16 /* Hps_Sip_Gift_Test.m */; };
@@ -93,6 +94,7 @@
 		DB8A59C01F4BDF7000B98B73 /* Hps_Pax_VRF_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_VRF_Test.m; sourceTree = "<group>"; };
 		DBDA36701FAB430900CF5146 /* Hps_Sip_Admin_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Sip_Admin_Test.m; sourceTree = "<group>"; };
 		DBDA367D1FB01C2000CF5146 /* Hps_Sip_Credit_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Sip_Credit_Test.m; sourceTree = "<group>"; };
+		DBE8B01920ECA30B006F8B97 /* HpsPayRollTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpsPayRollTests.m; sourceTree = "<group>"; };
 		DBF1B0A42080B3C7007A775E /* HpsTableServicesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpsTableServicesTest.m; sourceTree = "<group>"; };
 		DBF1DE8A1FB9AEF100D57C16 /* Hps_Sip_Debit_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Sip_Debit_Test.m; sourceTree = "<group>"; };
 		DBF1DE8C1FB9AF0900D57C16 /* Hps_Sip_Gift_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Sip_Gift_Test.m; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		6003F5B5195388D20070C39A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				DBE8B01820ECA2BA006F8B97 /* Payroll */,
 				DBF1B0A32080B395007A775E /* FreshTxt */,
 				DBDA366F1FAB429300CF5146 /* Sip */,
 				DBDA366D1FAB425E00CF5146 /* Pax */,
@@ -242,6 +245,14 @@
 				DB3DC11B2004F7EA0037521A /* Hps_Sip_VRF_Test.m */,
 			);
 			name = Sip;
+			sourceTree = "<group>";
+		};
+		DBE8B01820ECA2BA006F8B97 /* Payroll */ = {
+			isa = PBXGroup;
+			children = (
+				DBE8B01920ECA30B006F8B97 /* HpsPayRollTests.m */,
+			);
+			name = Payroll;
 			sourceTree = "<group>";
 		};
 		DBF1B0A32080B395007A775E /* FreshTxt */ = {
@@ -493,6 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBF1DE8B1FB9AEF100D57C16 /* Hps_Sip_Debit_Test.m in Sources */,
+				DBE8B01A20ECA30B006F8B97 /* HpsPayRollTests.m in Sources */,
 				840256431DEE1BB90078B6A2 /* Hps_Pax_Debit_Tests.m in Sources */,
 				DBDA36711FAB430900CF5146 /* Hps_Sip_Admin_Test.m in Sources */,
 				84FA62D61C035C47007854D5 /* Heartland_TokenizationTests.m in Sources */,

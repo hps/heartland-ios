@@ -1,17 +1,10 @@
-//
-//  HpsTableService.m
-//  Pods
-//
-//  Created by anurag sharma on 06/04/18.
-//
-//
-
 #import "HpsTableService.h"
 
 @interface HpsTableService(){
 	NSString *configName;
 }
 @end
+
 @implementation HpsTableService
 
 -(instancetype)initWithConfig:(HpsTableServiceConfiguration *)config{

@@ -1,6 +1,5 @@
-	////  Copyright (c) 2017 Heartland Payment Systems. All rights reserved.
-	//
 #import "HpsHeartSipGiftSaleBuilder.h"
+
 @interface HpsHeartSipGiftSaleBuilder()
 
 @property (readwrite, strong) NSString  *cardGroup;
@@ -12,9 +11,11 @@
 @property (nonatomic, strong) NSNumber *taxAmount;
 @property (nonatomic, strong) NSNumber *totalAmount;
 @property (nonatomic, strong) NSString *serverLabel;
+
 @end
 
 @implementation HpsHeartSipGiftSaleBuilder
+
 - (id)initWithDevice: (HpsHeartSipDevice*)HeartSipDevice{
 	self = [super init];
 	if (self != nil)

@@ -1,9 +1,9 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import <Foundation/Foundation.h>
 #import "HpsBinaryDataScanner.h"
 #import "HpsTerminalEnums.h"
+
 @interface HpsPaxAccountResponse : NSObject
+
 @property (nonatomic,strong) NSString *accountNumber;
 @property (nonatomic) HpsPaxEntryModes entryMode;
 @property (nonatomic,strong) NSString *expireDate;
@@ -17,4 +17,5 @@
 @property (nonatomic) BOOL cardPressent;
 
 - (id)initWithBinaryReader: (HpsBinaryDataScanner*)br;
+
 @end

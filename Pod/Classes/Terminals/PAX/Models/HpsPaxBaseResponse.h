@@ -1,11 +1,8 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import <Foundation/Foundation.h>
 #import "HpsDeviceProtocols.h"
 #import "HpsPaxMessageIDs.h"
 #import "HpsTerminalEnums.h"
 #import "HpsBinaryDataScanner.h"
-
 #import "HpsPaxAmountResponse.h"
 #import "HpsPaxAccountResponse.h"
 #import "HpsPaxTraceResponse.h"
@@ -16,9 +13,6 @@
 #import "HpsTerminalResponse.h"
 
 @interface HpsPaxBaseResponse : HpsTerminalResponse <IHPSDeviceResponse>
-{
-
-}
 
 //@property (nonatomic,strong) NSString *status;
 //@property (nonatomic,strong) NSString *command;
@@ -32,7 +26,6 @@
 @property (nonatomic,strong) HpsPaxCommercialResponse *commercialResponse;
 @property (nonatomic,strong) HpsPaxEcomSubGroup *ecomResponse;
 @property (nonatomic,strong) HpsPaxExtDataSubGroup *extDataResponse;
-
 
 - (id) initWithMessageID:(NSString*)messageId andBuffer:(NSData*)buffer;
 - (HpsBinaryDataScanner*) parseResponse;

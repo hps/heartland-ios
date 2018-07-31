@@ -1,18 +1,13 @@
-//  Copyright (c) 2016 Global Payments. All rights reserved.
-
-
 #import <XCTest/XCTest.h>
 #import "hps.h"
 
 @interface Heartland_GatewayTests : XCTestCase
+
 @property (nonatomic, strong) NSString *publicKey;
 
 @end
 
 @implementation Heartland_GatewayTests
-
-
-
 
 - (void) testCreditSale
 {

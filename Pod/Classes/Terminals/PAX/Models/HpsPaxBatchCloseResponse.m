@@ -1,8 +1,7 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import "HpsPaxBatchCloseResponse.h"
 
 @implementation HpsPaxBatchCloseResponse
+
 - (id) initWithBuffer:(NSData*)buffer{
     if((self = [super initWithMessageID:B01_RSP_BATCH_CLOSE andBuffer:buffer]))
     {        
@@ -28,4 +27,5 @@
     return reader;
     
 }
+
 @end

@@ -1,7 +1,6 @@
-	//  Copyright (c) 2017 Heartland Payment Systems. All rights reserved.
-
 #import "HpsHeartSipDebitRefundBuilder.h"
 #import "HpsHeartSipRequest.h"
+
 @interface HpsHeartSipDebitRefundBuilder()
 
 @property (readwrite, strong) NSString  *cardGroup;

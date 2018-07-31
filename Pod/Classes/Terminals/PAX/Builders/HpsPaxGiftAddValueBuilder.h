@@ -1,7 +1,4 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import <Foundation/Foundation.h>
-
 #import "HpsTransactionDetails.h"
 #import "HpsPaxMessageIDs.h"
 #import "HpsPaxDevice.h"
@@ -10,16 +7,13 @@
 #import "HpsPaxAmountRequest.h"
 #import "HpsPaxTraceRequest.h"
 #import "HpsPaxExtDataSubGroup.h"
-
 #import "HpsGiftCard.h"
 #import "HpsPaxGiftResponse.h"
-
 
 @interface HpsPaxGiftAddValueBuilder : NSObject
 {
     HpsPaxDevice *device;
 }
-
 
 @property (nonatomic, readwrite) int referenceNumber;
 @property (nonatomic, strong) NSNumber *amount;

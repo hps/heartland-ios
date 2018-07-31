@@ -1,7 +1,6 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import "HpsPaxAmountRequest.h"
 #import "HpsTerminalEnums.h"
+
 @implementation HpsPaxAmountRequest
 
 - (NSString*) getElementString
@@ -27,6 +26,5 @@
     
     return sb;
 }
-
 
 @end

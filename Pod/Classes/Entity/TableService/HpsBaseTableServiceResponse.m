@@ -1,11 +1,3 @@
-//
-//  HpsBaseTableServiceResponse.m
-//  Pods
-//
-//  Created by anurag sharma on 04/04/18.
-//
-//
-
 #import "HpsBaseTableServiceResponse.h"
 
 @implementation HpsBaseTableServiceResponse
@@ -45,6 +37,5 @@
 {
 		[NSException raise:NSInternalInconsistencyException format:@"Method Not Implememnted %@ in %@",NSStringFromSelector(_cmd),NSStringFromClass([self class])];
 }
-
 
 @end

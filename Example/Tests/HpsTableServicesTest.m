@@ -1,15 +1,9 @@
-	//
-	//  HpsTableService.m
-	//  Heartland-iOS-SDK
-	//
-	//  Created by anurag sharma on 04/04/18.
-	//
-
 #import <XCTest/XCTest.h>
 #import "HpsTableService.h"
 #import "HpsTableServiceConfiguration.h"
 #import "HpsTicket.h"
 #import "HpsServiceContainer.h"
+
 @interface HpsTableServicesTest : XCTestCase
 @end
 static HpsTableService *_service;

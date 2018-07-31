@@ -1,8 +1,7 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import "HpsPaxCreditVerifyBuilder.h"
 
 @implementation HpsPaxCreditVerifyBuilder
+
 - (id)initWithDevice: (HpsPaxDevice*)paxDevice{
     self = [super init];
     if (self != nil)

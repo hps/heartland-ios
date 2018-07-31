@@ -2,9 +2,9 @@
 #import "HpsConnectionConfig.h"
 #import "HpsDeviceProtocols.h"
 
-
 // Block typedefs
 @class HpsPaxTcpInterface;
+
 typedef void (^ConnectionBlock)(HpsPaxTcpInterface*);
 typedef void (^MessageBlock)(HpsPaxTcpInterface*,NSString*);
 typedef void (^SendReponseBlock)(NSData*, NSError*);
@@ -37,4 +37,5 @@ typedef void (^SendReponseBlock)(NSData*, NSError*);
 @property (copy) ConnectionBlock connectionFailedBlock;
 @property (copy) ConnectionBlock connectionClosedBlock;
 @property (copy) SendReponseBlock sendResponseBlock;
+
 @end

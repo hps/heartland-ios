@@ -1,8 +1,5 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import <Foundation/Foundation.h>
 #import "HpsPaxDeviceResponse.h"
- 
 
 @interface HpsPaxBatchCloseResponse : HpsPaxDeviceResponse
 
@@ -12,10 +9,7 @@
 @property (nonatomic,strong) NSString *tid;
 @property (nonatomic,strong) NSString *mid;
 
-
 - (id) initWithBuffer:(NSData*)buffer;
 - (HpsBinaryDataScanner*) parseResponse;
-
-
 
 @end

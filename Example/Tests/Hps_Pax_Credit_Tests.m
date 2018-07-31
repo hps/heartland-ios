@@ -1,5 +1,3 @@
- //  Copyright (c) 2016 Global Payments. All rights reserved.
-
 #import <XCTest/XCTest.h>
 #import "HpsPaxDevice.h"
 #import "HpsCreditCard.h"

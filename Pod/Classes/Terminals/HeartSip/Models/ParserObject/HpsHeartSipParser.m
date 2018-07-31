@@ -1,5 +1,3 @@
-	//  Copyright (c) 2017 Heartland Payment Systems. All rights reserved.
-
 #import "HpsHeartSipParser.h"
 #import "HpsHeartSipResponse.h"
 #import "NSObject+ObjectMap.h"

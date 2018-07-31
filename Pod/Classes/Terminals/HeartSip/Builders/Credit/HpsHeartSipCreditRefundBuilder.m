@@ -1,5 +1,3 @@
-	//  Copyright (c) 2017 Heartland Payment Systems. All rights reserved.
-
 #import "HpsHeartSipCreditRefundBuilder.h"
 
 @interface HpsHeartSipCreditRefundBuilder()
@@ -10,7 +8,9 @@
 @property (readwrite, strong) NSString *cardGroup;
 @property (nonatomic, strong) NSNumber *invoiceNbr;
 @property (nonatomic, strong) NSNumber *totalAmount;
+
 @end
+
 @implementation HpsHeartSipCreditRefundBuilder
 
 - (id)initWithDevice: (HpsHeartSipDevice*)HeartSipDevice{

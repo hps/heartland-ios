@@ -1,11 +1,3 @@
-//
-//  NSMutableDictionary+ShiftAssignments.m
-//  Pods
-//
-//  Created by anurag sharma on 13/04/18.
-//
-//
-
 #import "NSMutableDictionary+ShiftAssignments.h"
 
 @implementation NSMutableDictionary (ShiftAssignments)

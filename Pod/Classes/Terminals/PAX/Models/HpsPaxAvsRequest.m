@@ -1,9 +1,8 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import "HpsPaxAvsRequest.h"
 #import "HpsTerminalEnums.h"
 
 @implementation HpsPaxAvsRequest
+
 - (NSString*) getElementString
 {
     NSMutableString *sb = [[NSMutableString alloc] init];

@@ -1,5 +1,3 @@
-	//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import "HpsPaxBaseResponse.h"
 #import "HpsTerminalUtilities.h"
 
@@ -14,6 +12,7 @@
 @property (nonatomic, strong) NSString *serviceURL;
 
 @end
+
 @implementation HpsPaxBaseResponse
 
 - (id) initWithMessageID:(NSString*)messageId andBuffer:(NSData*)buffer{

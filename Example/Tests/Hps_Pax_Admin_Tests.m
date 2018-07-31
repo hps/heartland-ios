@@ -1,12 +1,8 @@
-//  Copyright (c) 2016 Global Payments. All rights reserved.
-
 #import <XCTest/XCTest.h>
 #import "HpsPaxDevice.h"
 
 @interface Hps_Pax_Admin_Tests : XCTestCase
-{
-    
-}
+
 @end
 
 @implementation Hps_Pax_Admin_Tests

@@ -1,5 +1,3 @@
-	//  Copyright (c) 2017 Heartland Payment Systems. All rights reserved.
-
 #import "HpsHeartSipCreditVoidBuilder.h"
 
 @interface HpsHeartSipCreditVoidBuilder ()
@@ -10,6 +8,7 @@
 @end
 
 @implementation HpsHeartSipCreditVoidBuilder
+
 - (id)initWithDevice: (HpsHeartSipDevice*)HeartSipDevice{
 	self = [super init];
 	if (self != nil)

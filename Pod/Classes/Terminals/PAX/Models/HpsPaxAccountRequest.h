@@ -1,11 +1,9 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import <Foundation/Foundation.h>
 #import "HpsDeviceProtocols.h"
 
 @interface HpsPaxAccountRequest : NSObject <IHPSRequestSubGroup>
-@property (nonatomic,strong) NSString *accountNumber;
 
+@property (nonatomic,strong) NSString *accountNumber;
 @property (nonatomic,strong) NSString *expd;
 @property (nonatomic,strong) NSString *cvvCode;
 @property (nonatomic,strong) NSString *ebtType;

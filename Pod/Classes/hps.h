@@ -1,7 +1,3 @@
-//  Copyright (c) 2015 Heartland Payment Systems. All rights reserved.
-
-
-
 //services
 #import "HpsServicesConfig.h"
 #import "HpsGatewayService.h"

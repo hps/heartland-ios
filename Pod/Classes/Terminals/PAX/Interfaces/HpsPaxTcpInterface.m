@@ -21,7 +21,6 @@
 
 @end
 
-
 @implementation HpsPaxTcpInterface
 
 @synthesize messageReceivedBlock;
@@ -54,7 +53,6 @@
 - (void)disconnect {
 	[self closeConnection];
 }
-
 
 -(void) send:(id<IHPSDeviceMessage>)message andResponseBlock:(void(^)(NSData*, NSError*))responseBlock
 {

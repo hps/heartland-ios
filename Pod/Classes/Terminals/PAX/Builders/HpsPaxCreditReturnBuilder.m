@@ -1,8 +1,7 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import "HpsPaxCreditReturnBuilder.h"
 
 @implementation HpsPaxCreditReturnBuilder
+
 - (id)initWithDevice: (HpsPaxDevice*)paxDevice{
     self = [super init];
     if (self != nil)
@@ -11,7 +10,6 @@
     }
     return self;
 }
-
 
 - (void) execute:(void(^)(HpsPaxCreditResponse*, NSError*))responseBlock{
     

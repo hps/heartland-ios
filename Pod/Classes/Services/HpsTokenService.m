@@ -1,16 +1,11 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import "HpsTokenService.h"
 #import "HpsTokenData.h"
-
 
 @interface HpsTokenService()
 
 @property (nonatomic, strong) NSOperationQueue *queue;
 @property (nonatomic, strong) NSString *publicKey;
 @property (nonatomic, strong) NSString *serviceURL;
-
-
 
 @end
 

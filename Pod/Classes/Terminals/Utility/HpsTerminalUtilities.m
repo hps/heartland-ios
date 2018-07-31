@@ -1,5 +1,3 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import "HpsTerminalUtilities.h"
 #import "HpsTerminalEnums.h"
 
@@ -156,4 +154,5 @@ return [trimmedString dataUsingEncoding:NSUTF8StringEncoding];
 	
 	return [[HpsDeviceMessage alloc] initWithBuffer:buffer];
 }
+
 @end

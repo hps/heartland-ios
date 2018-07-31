@@ -1,11 +1,3 @@
-//
-//  HpsServicesConfig.h
-//  SecureSubmit
-//
-//  Created by Roberts, Jerry on 7/10/14.
-//  Copyright (c) 2014 Heartland Payment Systems. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
 @interface HpsServicesConfig : NSObject

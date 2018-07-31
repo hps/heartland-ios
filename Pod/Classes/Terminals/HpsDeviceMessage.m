@@ -1,15 +1,8 @@
-//
-//  HpsDeviceMessage.m
-//  Pods
-//
-//  Created by Shaunti Fondrisi on 5/12/16.
-//
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import "HpsDeviceMessage.h"
 #import "HpsTerminalEnums.h"
 
 @implementation HpsDeviceMessage
+
 - (id) initWithBuffer:(NSData*)buffer{
     if((self = [super init]))
     {

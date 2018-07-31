@@ -1,11 +1,3 @@
-//
-//  HpsCardEntry.m
-//  Copyright (c) 2015 Heartland Payment Systems. All rights reserved.
-//
-//  Created by Shaunti Fondrisi on 11/3/15.
-//
-//
-
 #import "HpsCardEntry.h"
 #import "HPSCardEntryViewController.h"
 

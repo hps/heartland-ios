@@ -1,14 +1,7 @@
-//
-//  HpsCardData.m
-//  Copyright (c) 2015 Heartland Payment Systems. All rights reserved.
-//
-//  Created by Shaunti Fondrisi on 12/8/15.
-//
-//
-
 #import "HpsCardData.h"
 
 @implementation HpsCardData
+
 - (NSObject*) init {
     self = [super init];    
     

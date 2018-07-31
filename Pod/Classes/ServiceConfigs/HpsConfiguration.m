@@ -1,11 +1,3 @@
-//
-//  HpsConfiguration.m
-//  Pods
-//
-//  Created by anurag sharma on 10/04/18.
-//
-//
-
 #import "HpsConfiguration.h"
 
 @implementation HpsConfiguration

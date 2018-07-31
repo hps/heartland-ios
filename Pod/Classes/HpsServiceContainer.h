@@ -1,12 +1,3 @@
-//
-//  HpsServiceContainer.h
-//  Pods
-//
-//  Created by anurag sharma on 10/04/18.
-//
-//
-
-
 #import <Foundation/Foundation.h>
 #import "HpsConfiguredServices.h"
 #import "HpsTableServiceConnector.h"
@@ -14,10 +5,12 @@
 
 @interface HpsServiceContainer : NSObject
 
- @property NSMutableDictionary *configurations;
+@property NSMutableDictionary *configurations;
+
 + (id)sharedInstance;
 + (void)configureService :(HpsConfiguration *)config;
 -(HpsConfiguredServices*) GetConfiguration:(NSString *)configName;
 -(void)addConfiguration:(NSString *)configName withConfigServices:(HpsConfiguredServices*) config;
--(HpsTableServiceConnector *) GetTableServiceClient:(NSString *) configName ;
+-(HpsTableServiceConnector *) GetTableServiceClient:(NSString *) configName;
+
 @end

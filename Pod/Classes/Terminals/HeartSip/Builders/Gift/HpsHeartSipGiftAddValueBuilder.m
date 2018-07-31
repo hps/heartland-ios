@@ -1,5 +1,3 @@
-//  Copyright (c) 2017 Heartland Payment Systems. All rights reserved.
-
 #import "HpsHeartSipGiftAddValueBuilder.h"
 
 @interface HpsHeartSipGiftAddValueBuilder()
@@ -11,6 +9,7 @@
 @property (nonatomic, strong) NSNumber *totalAmount;
 
 @end
+
 @implementation HpsHeartSipGiftAddValueBuilder
 
 - (id)initWithDevice: (HpsHeartSipDevice*)HeartSipDevice{

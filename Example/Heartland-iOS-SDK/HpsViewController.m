@@ -1,15 +1,7 @@
-//
-//  HpsViewController.m
-//  Heartland-iOS-SDK
-//
-//  Created by Shaunti Fondrisi on 11/23/2015.
-//  Copyright (c) 2015 Shaunti Fondrisi. All rights reserved.
-//
 
 #import "HpsViewController.h"
 #import "hps.h"
 #import "HpsHeartSipDevice.h"
-
 
 @interface HpsViewController ()
 {

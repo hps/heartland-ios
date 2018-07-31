@@ -1,11 +1,3 @@
-//
-//  HpsServerAssignmentResponse.m
-//  Pods
-//
-//  Created by anurag sharma on 12/04/18.
-//
-//
-
 #import "HpsServerAssignmentResponse.h"
 
 @implementation HpsServerAssignmentResponse{
@@ -51,4 +43,5 @@
 
 NSLog(@"*** Assignments = %@",self.assignments);
 }
+
 @end

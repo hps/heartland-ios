@@ -1,5 +1,3 @@
- //  Copyright (c) 2016 Global Payments. All rights reserved.
-
 #import <XCTest/XCTest.h>
 #import "HpsHeartSipDevice.h"
 #import "HpsCreditCard.h"
@@ -16,8 +14,6 @@
 @end
 
 @implementation Hps_Sip_Credit_Test
-
- //  Copyright (c) 2016 Global Payments. All rights reserved.
 
 - (HpsHeartSipDevice*) setupDevice
 {

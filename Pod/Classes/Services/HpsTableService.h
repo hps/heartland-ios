@@ -1,11 +1,3 @@
-//
-//  HpsTableService.h
-//  Pods
-//
-//  Created by anurag sharma on 06/04/18.
-//
-//
-
 #import <Foundation/Foundation.h>
 #import "HpsTableServiceConfiguration.h"
 #import "HpsLoginResponse.h"

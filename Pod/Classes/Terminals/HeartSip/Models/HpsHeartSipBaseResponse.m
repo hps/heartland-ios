@@ -1,11 +1,10 @@
-	//  Copyright (c) 2017 Heartland Payment Systems. All rights reserved.
-
 #import "HpsHeartSipBaseResponse.h"
 #import "HpsHeartSipParser.h"
 
 @interface HpsHeartSipBaseResponse()
 
 @end
+
 @implementation HpsHeartSipBaseResponse
 
 -(id)initWithHeartSipBaseResponse:(NSData *)data withParameters:(NSArray *)messageIds
@@ -17,7 +16,7 @@
 			//NSArray *ar = [xmlString componentsSeparatedByString:[HpsTerminalEnums controlCodeString:HpsControlCodes_FS]];
 		id <SipResposeInterface> responeN = [HpsHeartSipParser parseResponseWithXmlString:xmlString] ;
 		
-  		[self mapResponse:responeN];
+		[self mapResponse:responeN];
 		}
 
 	return self;
@@ -57,9 +56,10 @@
 	NSArray *acceptedCodes = @[@"0" ,@"85"];
 	if([acceptedCodes containsObject:response]){
 		return @"00";
-		}
-return response;
+	}
+	return response;
 }
+
 -(NSString *)toString{
 	return _response;
 }

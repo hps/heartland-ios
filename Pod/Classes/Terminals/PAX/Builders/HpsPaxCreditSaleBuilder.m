@@ -1,9 +1,7 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import "HpsPaxCreditSaleBuilder.h"
 
-
 @implementation HpsPaxCreditSaleBuilder
+
 - (id)initWithDevice: (HpsPaxDevice*)paxDevice{
     self = [super init];
     if (self != nil)
@@ -12,7 +10,6 @@
     }
     return self;   
 }
-
 
 - (void) execute:(void(^)(HpsPaxCreditResponse*, NSError*))responseBlock{
 
@@ -90,4 +87,5 @@
         @throw [NSException exceptionWithName:@"HpsPaxException" reason:@"Only one payment method allowed." userInfo:nil];
     }
 }
+
 @end

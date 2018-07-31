@@ -1,9 +1,7 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
-
 #import "HpsPaxCreditResponse.h"
 
 @implementation HpsPaxCreditResponse
+
 - (id) initWithBuffer:(NSData*)buffer{
     if((self = [super initWithMessageID:T01_RSP_DO_CREDIT andBuffer:buffer]))
     {

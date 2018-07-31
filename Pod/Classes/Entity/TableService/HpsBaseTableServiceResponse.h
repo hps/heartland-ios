@@ -1,11 +1,3 @@
-//
-//  HpsBaseTableServiceResponse.h
-//  Pods
-//
-//  Created by anurag sharma on 04/04/18.
-//
-//
-
 #import <Foundation/Foundation.h>
 
 @interface HpsBaseTableServiceResponse : NSObject
@@ -18,4 +10,5 @@
 -(id)initWithResponseDictionary:(NSDictionary *)response;
 -(void)mapResponse;
 //-(NSString *)normalizeResponse:(NSString *)responseCode;
+
 @end

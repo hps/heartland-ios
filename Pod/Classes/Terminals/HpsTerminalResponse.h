@@ -1,11 +1,10 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import <Foundation/Foundation.h>
 #import "HpsDeviceProtocols.h"
 #import "HpsTokenData.h"
 #import "HpsTerminalEnums.h"
 #import "HpsPaxHostResponse.h"
 #import "HpsHeartSipResponse.h"
+
 @class HpsHeartSipResponse;
 
 @interface HpsTerminalResponse : NSObject

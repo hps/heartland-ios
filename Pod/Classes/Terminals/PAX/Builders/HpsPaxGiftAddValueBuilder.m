@@ -1,8 +1,7 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import "HpsPaxGiftAddValueBuilder.h"
 
 @implementation HpsPaxGiftAddValueBuilder
+
 - (id)initWithDevice: (HpsPaxDevice*)paxDevice{
     self = [super init];
     if (self != nil)
@@ -12,7 +11,6 @@
     }
     return self;
 }
-
 
 - (void) execute:(void(^)(HpsPaxGiftResponse*, NSError*))responseBlock{
     

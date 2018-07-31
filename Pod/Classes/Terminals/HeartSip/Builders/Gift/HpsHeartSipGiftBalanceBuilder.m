@@ -1,6 +1,5 @@
-	//  Copyright (c) 2017 Heartland Payment Systems. All rights reserved.
-
 #import "HpsHeartSipGiftBalanceBuilder.h"
+
 @interface HpsHeartSipGiftBalanceBuilder()
 
 @property (readwrite, strong) NSString  *cardGroup;
@@ -11,6 +10,7 @@
 @end
 
 @implementation HpsHeartSipGiftBalanceBuilder
+
 - (id)initWithDevice: (HpsHeartSipDevice*)HeartSipDevice{
 	self = [super init];
 	if (self != nil)

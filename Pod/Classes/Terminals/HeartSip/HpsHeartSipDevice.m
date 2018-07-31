@@ -1,9 +1,8 @@
-	//  Copyright (c) 2017 Heartland Payment Systems. All rights reserved.
-
 #import "HpsHeartSipDevice.h"
 #import "HpsTerminalUtilities.h"
 #import "HpsTerminalEnums.h"
 #import "HpsHeartSipTcpInterface.h"
+
 #define RESET_REQUEST @"<SIP><Version>1.0</Version><ECRId>1004</ECRId><Request>Reset</Request></SIP>"
 #define REBOOT_REQUEST @"<SIP><Version>1.0</Version><ECRId>1004</ECRId><Request>Reboot</Request></SIP>"
 #define CLOSELANE_REQUEST @"<SIP><Version>1.0</Version><ECRId>1004</ECRId><Request>LaneClose</Request></SIP>"

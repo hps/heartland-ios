@@ -1,7 +1,7 @@
-	//  Copyright (c) 2017 Heartland Payment Systems. All rights reserved.
-
 #import "Field.h"
+
 @implementation Field
+
 @synthesize Key,Value;
 
 //-(NSString *)Key{

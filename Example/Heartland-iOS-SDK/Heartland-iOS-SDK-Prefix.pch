@@ -1,8 +1,3 @@
-//
-//  Prefix header
-//
-//  The contents of this file are implicitly included at the beginning of every source file.
-//
 
 #import <Availability.h>
 
@@ -13,7 +8,5 @@
 #ifdef __OBJC__
     @import UIKit;
     @import Foundation;
-
-    
 
 #endif

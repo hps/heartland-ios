@@ -1,8 +1,7 @@
-	//  Copyright (c) 2017 Heartland Payment Systems. All rights reserved.
-
 #import "HpsHeartSipDeviceResponse.h"
 
 @implementation HpsHeartSipDeviceResponse
+
 - (id)initWithHeartSipDeviceResponse:(NSData *)data withParameters:(NSArray *)messageIds{
 
 	if (self = [super initWithHeartSipBaseResponse:data withParameters:messageIds])

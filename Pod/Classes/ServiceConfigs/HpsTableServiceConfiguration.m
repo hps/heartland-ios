@@ -1,12 +1,5 @@
-//
-//  HpsTableServiceConfiguration.m
-//  Pods
-//
-//  Created by anurag sharma on 06/04/18.
-//
-//
-
 #import "HpsTableServiceConfiguration.h"
+
 @implementation HpsTableServiceConfiguration
 
 -(void)ConfigureContainer:(HpsConfiguredServices *)services{

@@ -1,5 +1,3 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import <Foundation/Foundation.h>
 #import "HpsPaxMessageIDs.h"
 #import "HpsCreditCard.h"
@@ -15,7 +13,6 @@
 #import "HpsPaxEcomSubGroup.h"
 #import "HpsPaxExtDataSubGroup.h"
 #import "HpsPaxDevice.h"
-
 
 @interface HpsPaxCreditSaleBuilder : NSObject
 {
@@ -35,4 +32,5 @@
 
 - (void) execute:(void(^)(HpsPaxCreditResponse*, NSError*))responseBlock;
 - (id)initWithDevice: (HpsPaxDevice*)paxDevice;
+
 @end

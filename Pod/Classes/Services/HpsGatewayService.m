@@ -1,11 +1,3 @@
-//
-//  HpsService.m
-//  SecureSubmit
-//
-//  Created by Roberts, Jerry on 7/21/14.
-//  Copyright (c) 2014 Heartland Payment Systems. All rights reserved.
-//
-
 #import "HpsGatewayService.h"
 #import "HpsServicesConfig.h"
 #import "XMLDictionary.h"
@@ -20,6 +12,7 @@
 {
     NSString *errorDomain;
 }
+
 @property (strong, nonatomic) HpsServicesConfig *config;
 @property (nonatomic, strong) NSOperationQueue *queue;
 

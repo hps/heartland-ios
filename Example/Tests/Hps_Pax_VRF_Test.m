@@ -1,11 +1,3 @@
-	//
-	//  Hps_Pax_VRF_Test.m
-	//  Heartland-iOS-SDK
-	//
-	//  Created by anurag sharma on 22/08/17.
-	//  Copyright © 2017 Shaunti Fondrisi. All rights reserved.
-	//
-
 #import <XCTest/XCTest.h>
 #import "HpsPaxDevice.h"
 #import "HpsCreditCard.h"

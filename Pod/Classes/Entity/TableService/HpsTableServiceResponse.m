@@ -1,11 +1,3 @@
-//
-//  HpsTableServiceResponse.m
-//  Pods
-//
-//  Created by anurag sharma on 04/04/18.
-//
-//
-
 #import "HpsTableServiceResponse.h"
 #import "HpsServiceContainer.h"
 
@@ -21,7 +13,6 @@
 
 	return self;
 }
-
 
 -(void)mapResponse{
 

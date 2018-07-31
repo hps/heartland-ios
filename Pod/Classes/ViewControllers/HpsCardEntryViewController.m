@@ -1,11 +1,3 @@
-//
-//  HPSCardEntryViewController.m
-//  Heartland E-Cart
-//
-//  Created by Shaunti Fondrisi on 10/23/15.
-//  Copyright © 2015 Heartland Payment Systems. All rights reserved.
-//
-
 #import "HpsCardEntryViewController.h"
 #import "HpsTokenService.h"
 #import "HpsTokenData.h"
@@ -19,6 +11,7 @@
     UITextField *cardExpiresMonthText;
     UITextField *cardExpiresYearText;
 }
+
 @property (strong, nonatomic) UIScrollView* scrollView;
 
 @end
@@ -191,7 +184,6 @@
      
      */
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

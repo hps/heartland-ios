@@ -1,8 +1,7 @@
-	//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import "HpsPaxDeviceResponse.h"
 
 @implementation HpsPaxDeviceResponse
+
 - (id) initWithMessageID:(NSString*)messageId andBuffer:(NSData*)buffer{
 	if((self = [super initWithMessageID:messageId andBuffer:buffer]))
 		{

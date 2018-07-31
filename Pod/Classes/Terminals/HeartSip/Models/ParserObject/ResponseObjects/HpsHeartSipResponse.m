@@ -1,18 +1,16 @@
-	//  Copyright (c) 2017 Heartland Payment Systems. All rights reserved.
-
-
 #import "HpsHeartSipResponse.h"
 #import "HpsHeartSipSharedParams.h"
+
 @interface HpsHeartSipResponse()
-{
-}
 
 @property (readwrite,retain) NSMutableDictionary *params;
 
 @end
+
 static int IsFieldEnable;
 
 @implementation HpsHeartSipResponse
+
 -(id)init{
 	if(self = [super init])
 		{

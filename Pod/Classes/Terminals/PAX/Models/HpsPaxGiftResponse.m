@@ -1,8 +1,7 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import "HpsPaxGiftResponse.h"
 
 @implementation HpsPaxGiftResponse
+
 - (id) initWithBuffer:(NSData*)buffer{
     if((self = [super initWithMessageID:T07_RSP_DO_GIFT andBuffer:buffer]))
     {

@@ -1,8 +1,7 @@
-	//  Copyright (c) 2017 Heartland Payment Systems. All rights reserved.
-
 #import <Foundation/Foundation.h>
 #import "TransactionSummaryRecord.h"
 #import "CardSummaryRecord.h"
+
 typedef NS_ENUM(NSInteger,CLASS_TYPE)
 {
 	REQUEST,

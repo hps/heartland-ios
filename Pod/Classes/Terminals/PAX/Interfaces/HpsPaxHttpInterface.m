@@ -1,8 +1,5 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import "HpsPaxHttpInterface.h"
 #import "HpsCommon.h"
-
 
 @interface HpsPaxHttpInterface()
 {
@@ -12,8 +9,6 @@
 @property (nonatomic, strong) NSOperationQueue *queue;
 
 @end
-
-
 
 @implementation HpsPaxHttpInterface
 
@@ -88,7 +83,5 @@
     
   
 }
-
-
 
 @end

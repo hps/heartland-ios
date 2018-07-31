@@ -1,11 +1,3 @@
-//
-//  NSInputStream+Hps.m
-//  Pods
-//
-//  Created by anurag sharma on 30/01/18.
-//
-//
-
 #import "NSInputStream+Hps.h"
 
 @implementation NSInputStream (Hps)

@@ -1,8 +1,7 @@
-//  Copyright (c) 2016 Heartland Payment Systems. All rights reserved.
-
 #import "HpsPaxAvsResponse.h"
 
 @implementation HpsPaxAvsResponse
+
 - (id)initWithBinaryReader: (HpsBinaryDataScanner*)br {
     self = [super init];
     if (!self) return nil;

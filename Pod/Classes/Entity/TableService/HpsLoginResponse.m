@@ -1,11 +1,3 @@
-//
-//  HpsLoginResponse.m
-//  Pods
-//
-//  Created by anurag sharma on 06/04/18.
-//
-//
-
 #import "HpsLoginResponse.h"
 
 @implementation HpsLoginResponse

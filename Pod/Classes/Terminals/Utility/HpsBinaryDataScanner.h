@@ -1,17 +1,3 @@
-
-//
-//  BinaryDataScanner.m
-//
-//  Copyright 2009 Dave Peck <davepeck [at] davepeck [dot] org>. All rights reserved.
-//  http://davepeck.org/
-//
-//  This class makes it quite a bit easier to read sequential binary files in Objective-C.
-//
-//  This code is released under the BSD license.
-
-//2016
-//Corrected for ARC - Shaunti Fondrisi
-
 #import <Foundation/Foundation.h>
 
 @interface HpsBinaryDataScanner : NSObject{
@@ -39,6 +25,5 @@
 -(NSString*) readStringOfLength:(NSUInteger)count handleNullTerminatorAfter:(BOOL)handleNull encoding:(NSStringEncoding)overrideEncoding;
 -(NSArray*) readArrayOfNullTerminatedStrings:(NSUInteger)count;
 -(NSArray*) readArrayOfNullTerminatedStrings:(NSUInteger)count encoding:(NSStringEncoding)overrideEncoding;
-
 
 @end

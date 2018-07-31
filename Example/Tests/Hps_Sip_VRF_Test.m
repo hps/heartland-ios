@@ -1,11 +1,3 @@
-	//
-	//  Hps_Sip_VRF_Test.m
-	//  Heartland-iOS-SDK
-	//
-	//  Created by anurag sharma on 09/01/18.
-	//  Copyright © 2018 Shaunti Fondrisi. All rights reserved.
-	//
-
 #import <XCTest/XCTest.h>
 #import "HpsHeartSipDevice.h"
 #import "HpsCreditCard.h"

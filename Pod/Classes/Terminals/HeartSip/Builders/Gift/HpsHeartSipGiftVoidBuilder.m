@@ -8,6 +8,7 @@
 @property (readwrite, strong) NSNumber *confirmAmount;
 
 @end
+
 @implementation HpsHeartSipGiftVoidBuilder
 
 - (id)initWithDevice: (HpsHeartSipDevice*)HeartSipDevice{

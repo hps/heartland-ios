@@ -1,5 +1,3 @@
-	//  Copyright (c) 2017 Heartland Payment Systems. All rights reserved.
-
 #import "HpsTerminalResponse.h"
 #import "HpsDeviceProtocols.h"
 #import "HpsHeartSipRequest.h"

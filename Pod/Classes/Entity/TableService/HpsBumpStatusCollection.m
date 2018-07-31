@@ -1,11 +1,3 @@
-//
-//  HpsBumpStatusCollection.m
-//  Pods
-//
-//  Created by anurag sharma on 10/04/18.
-//
-//
-
 #import "HpsBumpStatusCollection.h"
 
 @implementation HpsBumpStatusCollection

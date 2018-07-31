@@ -1,11 +1,3 @@
-//
-//  HpsHeader.h
-//  Copyright (c) 2015 Heartland Payment Systems. All rights reserved.
-//
-//  Created by Shaunti Fondrisi on 12/8/15.
-//
-//
-
 #import <Foundation/Foundation.h>
 
 @interface HpsHeader : NSObject
