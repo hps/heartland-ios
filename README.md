@@ -171,7 +171,7 @@ HpsTokenService *service = [[HpsTokenService alloc] initWithPublicKey:@"YOUR PUB
                }];
 ```
 
-*Quick Tip*: The included [test suite](http://github.hps.com/DevPortal/Heartland-iOS-SDK/tree/master/Example/Tests) can be a great source of code samples for using the SDK!
+*Quick Tip*: The included [test suite](https://github.com/hps/heartland-ios/tree/master/Example/Tests) can be a great source of code samples for using the SDK!
 
 ## Testing & Certification
 
