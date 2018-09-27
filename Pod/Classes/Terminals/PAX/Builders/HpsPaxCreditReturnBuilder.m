@@ -97,6 +97,8 @@
             @throw [NSException exceptionWithName:@"HpsPaxException" reason:@"Authcode is required when using a transaction id." userInfo:nil];
         }
     }
+
+	[self.address isZipcodeValid];
 }
 
 @end

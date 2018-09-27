@@ -163,6 +163,14 @@ typedef NS_ENUM(NSInteger, PayGroupFrequency) {
     Weekly = 52
 };
 
+typedef NS_ENUM(NSInteger, TypeOfCard) {
+	Visa = 1,
+	MasterCard = 2,
+	Amex = 3,
+	Discover = 4,
+	Jcb = 5,
+	GiftCard = 6
+};
 
 @interface HpsEnum : NSObject
 

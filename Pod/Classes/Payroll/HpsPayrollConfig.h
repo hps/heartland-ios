@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 
+static NSInteger timeoutValue  = 65000;
+
 @interface HpsPayrollConfig : NSObject
 
 @property (nonatomic,assign) NSString* userName;

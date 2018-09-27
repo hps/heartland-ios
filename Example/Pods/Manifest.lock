@@ -1,5 +1,5 @@
 PODS:
-  - Heartland-iOS-SDK (1.1.2):
+  - Heartland-iOS-SDK (1.1.4):
     - XMLDictionary
   - XMLDictionary (1.4.1)
 
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Heartland-iOS-SDK: a942dc8d1fb9dd9f34ed793369ef33f1de281475
+  Heartland-iOS-SDK: 4db063c4f50694611177d16ac9361698b1a01796
   XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
 
 PODFILE CHECKSUM: a2d4770e303e82c0989fd39f53fa31499ac49ee9

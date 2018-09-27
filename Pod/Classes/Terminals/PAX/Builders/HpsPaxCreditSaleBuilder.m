@@ -86,6 +86,8 @@
     if (i > 1) {
         @throw [NSException exceptionWithName:@"HpsPaxException" reason:@"Only one payment method allowed." userInfo:nil];
     }
+
+	[self.address isZipcodeValid];
 }
 
 @end

@@ -143,6 +143,7 @@
 #import "HpsTerminalUtilities.h"
 #import "NSObject+ObjectMap.h"
 #import "HpsCardEntryViewController.h"
+#import "HpsCardInfoViewController.h"
 
 FOUNDATION_EXPORT double Heartland_iOS_SDKVersionNumber;
 FOUNDATION_EXPORT const unsigned char Heartland_iOS_SDKVersionString[];

@@ -62,7 +62,8 @@
     if (self.creditCard == nil) {
         @throw [NSException exceptionWithName:@"HpsPaxException" reason:@"No payment type." userInfo:nil];
     }
-    
+
+	[self.address isZipcodeValid];
 }
 
 @end

@@ -8,4 +8,6 @@
 @property (nonatomic, strong) NSString* zip;
 @property (nonatomic, strong) NSString* country;
 
+-(void)isZipcodeValid;
+
 @end

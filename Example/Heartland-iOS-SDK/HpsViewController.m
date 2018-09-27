@@ -2,8 +2,9 @@
 #import "HpsViewController.h"
 #import "hps.h"
 #import "HpsHeartSipDevice.h"
+#import "HpsCardInfoViewController.h"
 
-@interface HpsViewController ()
+@interface HpsViewController ()<ITokenDelegate>
 {
     HpsTokenData *tokenResponse;
 }
@@ -18,6 +19,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	[self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,6 +83,22 @@
     }
 }
 
+- (IBAction)showUI_Drop:(id)sender {
 
+		//Test UI-Drop Component
+	HpsCardInfoViewController *vc = [[HpsCardInfoViewController alloc] init];
+	vc.apiKey = @"pkapi_cert_P6dRqs1LzfWJ6HgGVZ";
+	vc.delegate = self;
+		//	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+		//	nav.navigationBarHidden = NO;
+	[self.navigationController pushViewController:vc animated:YES];
+
+}
+
+-(void)didReceiveToken:(HpsTokenData *)tokenData {
+	if (tokenData != nil) {
+		NSLog(@"HpsTokenData:%@",tokenData.description);
+	}
+}
 
 @end
