@@ -19,6 +19,7 @@
 		06E257B37816D0A2B5AD2EE97EAD4E82 /* HpsCardEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 5816BD064781E80701BF4B935F9D9BD7 /* HpsCardEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08E5961A80C580B210BA7D1C596C9981 /* HpsPayrollRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 604266D769C4A9B73A6C5D0427AAF1C8 /* HpsPayrollRecord.m */; };
 		08F9432E5A48CEF40B28B6FFE3BF6F03 /* HpsPaxInitializeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC043BC41E0A703AC66059CEDFFEFF8 /* HpsPaxInitializeResponse.m */; };
+		0919EC8D7DA4D499C692A5140D48640E /* icon_amex.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EE2B7BE956C5578432B2C880B7C2795 /* icon_amex.png */; };
 		095E7BE103842DAD4FF97DC3AA3B3ABC /* HpsHeartSipResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = C78D020966E5DE93ECBB338D0C9B109C /* HpsHeartSipResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0B07C9DF103265F04F148F95B8FB272F /* HpsHeartSipTcpInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = DD442863BDA6DC45897CCB62C97655EC /* HpsHeartSipTcpInterface.m */; };
 		0C43994FC3A75D05F267505928464551 /* HpsHeartSipCreditSaleBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 24413D0AF4D727708EE3DAAC33590186 /* HpsHeartSipCreditSaleBuilder.m */; };
@@ -52,6 +53,7 @@
 		231448AE8950948D3DE6D25C3CB0036D /* HpsTerminalEnums.m in Sources */ = {isa = PBXBuildFile; fileRef = FF279A7A8A9F01B1193C01EE98FC81A2 /* HpsTerminalEnums.m */; };
 		2671F0777A87393151498A03BDC7EF54 /* HpsPaxAvsResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF8B174D7024850BFFE1E26075E69BD /* HpsPaxAvsResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		289F2EEB712E4917932D35F9603DAE35 /* NSData+SM_EncryptionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 010E1FF409F4563EF419D36EB3B97118 /* NSData+SM_EncryptionHelper.m */; };
+		29E20D7A002E2E9DF938484813A5C99E /* icon_jcb.png in Resources */ = {isa = PBXBuildFile; fileRef = A6577BE55A9D8DDC742FBCC468C3E691 /* icon_jcb.png */; };
 		2AC9957EAB6D2AA0A2511FCFD17480E9 /* HpsHeartSipDebitSaleBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = D467A25C0C50F5685F0CDF920C210ABF /* HpsHeartSipDebitSaleBuilder.m */; };
 		2B772EB1F4F5B8FD552B4D2C56376580 /* HpsPaxDeviceResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = BB7B5F26A496785F8CC487E447531135 /* HpsPaxDeviceResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B8FCB0488F1F339DFB6DC026EA56DE6 /* HpsAdditionalTxnFields.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0789A7F58A75A360C5DF477B105BEE /* HpsAdditionalTxnFields.m */; };
@@ -67,6 +69,8 @@
 		349BEFF00AA68A8B4B32A3D0E29854F8 /* NSInputStream+Hps.h in Headers */ = {isa = PBXBuildFile; fileRef = 433ED548D6CC2A54B6727A5A2F2F0020 /* NSInputStream+Hps.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3544ECA66EE17CEE1ED504F6984F7BB4 /* HpsPaxCommercialResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A68AA81AB1DE06DF45F094EB3E1BB15 /* HpsPaxCommercialResponse.m */; };
 		36521696693A73DCC1842250D094FD60 /* HpsClientInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 646EB49E79F15CEEA7435BD1BC18C638 /* HpsClientInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3799C528A7380B1063CBDBE77C649212 /* icon_cards.png in Resources */ = {isa = PBXBuildFile; fileRef = 453E71F5F27BA26D00F41EAB131A3208 /* icon_cards.png */; };
+		3AE4EE822950352328E54562A0E63C71 /* icon_cvv.png in Resources */ = {isa = PBXBuildFile; fileRef = 44E9C664863FD0148D29EA1AE16CBC2E /* icon_cvv.png */; };
 		3C26E41B14766863369AB29AB0872DF1 /* HpsHeartSipInitializeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC2BD387EE8253A7A1294A7AA0E4DC6 /* HpsHeartSipInitializeResponse.m */; };
 		3C7C56D185595E9B8EED1764B9D31022 /* Field.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B69648E72A5487BBD04DD13A17B1E21 /* Field.m */; };
 		3CA369C672874DC585778D1F35022B73 /* HpsLaborField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE278A9E90896033FCCEBFCF77B1B2B /* HpsLaborField.m */; };
@@ -82,7 +86,6 @@
 		4479CB692CEEBA4FB806A60AABF790C7 /* HpsHeartSipSharedParams.m in Sources */ = {isa = PBXBuildFile; fileRef = A17F3D61F53DBC4ACAD4F86E6B0CF3FA /* HpsHeartSipSharedParams.m */; };
 		46225E6F1448EAE9F83B012A416ED67E /* HpsPaxExtDataSubGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = DA97F01A85BC95815741E7B3F0C665C8 /* HpsPaxExtDataSubGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4665B6ABCE8D8574A26B99DEDEABFAD4 /* HpsCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0879419072D3C5AF5FECAEF600D4CF /* HpsCommon.m */; };
-		46B02F9001A591531967598D7E09FA44 /* HpsCardEntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E31F569A5A8C99A676DDCF41269DAFDC /* HpsCardEntryViewController.xib */; };
 		4711CC635CBD59AA17B614675C4E5BC6 /* HpsPaxDebitResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 87B93571E7C8CB66E5501828BE58EECC /* HpsPaxDebitResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		47C758AF9A05CDEA15E78E5A1CE5AFDA /* HpsTicket.h in Headers */ = {isa = PBXBuildFile; fileRef = 229A76CFB9D4298A5C552B4E572A02FE /* HpsTicket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		47CBBB7C00E1498475204589096849C9 /* HpsServiceContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D72DE2D384DAB2ACF0350E238E71CB7 /* HpsServiceContainer.m */; };
@@ -103,15 +106,14 @@
 		54FD96E1B2BDC6769F3B399C44B38465 /* HpsPayrollCollectionItem.h in Headers */ = {isa = PBXBuildFile; fileRef = EF1B771C399069F7D92D22130645F079 /* HpsPayrollCollectionItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		558FA7A137C7789CF9DBF4EEADBE57C7 /* HpsHeartSipCreditRefundBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C28850414FB36641E861DFE4C14472D /* HpsHeartSipCreditRefundBuilder.m */; };
 		58F18686135EE898A98ABE8EB6E03BD0 /* HpsHeartSipGiftSaleBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FC74F0117F1BE4B4FA320925F9C1FF04 /* HpsHeartSipGiftSaleBuilder.m */; };
+		59584F4494CCD52C3F22A8DC450C798A /* icon_discover.png in Resources */ = {isa = PBXBuildFile; fileRef = D90326E7FC6EDB5591501EA5A455D6FF /* icon_discover.png */; };
 		59C83FB11593BEAC57A8EE9D0FF8F99B /* HpsPayItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EB71306685E7C20839A5532E8FD40FDF /* HpsPayItem.m */; };
 		5AEB803E04CF4975F274D013B6D28542 /* HpsPaxCreditVerifyBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB75AEC17C9363A2572F72069E21509 /* HpsPaxCreditVerifyBuilder.m */; };
 		5B5DCA2D1CE08A0634EEDB59A5A455F3 /* HpsTerminationReason.h in Headers */ = {isa = PBXBuildFile; fileRef = C2A683F6D71B12887937B946C50ED177 /* HpsTerminationReason.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5C4B09AEAF9BF5AB7898D28387094D47 /* HpsPayrollConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6904418287C54BEC30785AA0CDBD84CB /* HpsPayrollConfig.m */; };
-		5DC6642E6C4D7B3E86C932A7086256AE /* icon_mastercard.png in Resources */ = {isa = PBXBuildFile; fileRef = 46DA5076B0F29B70BC0ADEC32060A7D2 /* icon_mastercard.png */; };
 		5DE0B95DD9168BF9FFA2E127C3F006A2 /* HeartSIPEnums.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A0A420C67A4FFB4233B588CC49C37C /* HeartSIPEnums.m */; };
 		5FCEEB79AD30B4374D065F264F319D56 /* HpsServiceConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 24D6783FFE1296BB520E9A5373417406 /* HpsServiceConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		612E6A7BBCE769EA657BAEEB4B32F852 /* HpsPaxMessageIDs.h in Headers */ = {isa = PBXBuildFile; fileRef = A298C580CEA40F6D4E4E0E5968A2342D /* HpsPaxMessageIDs.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		617E9A684A4C5FE2CFFF55B21EF8F5DE /* icon_jcb.png in Resources */ = {isa = PBXBuildFile; fileRef = 93656B716D3D78BEBE2F1830327F29BC /* icon_jcb.png */; };
 		629055C4C7FCD2C27B4BCB586111EE52 /* HpsServicesConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 463ABA5231A945EF7CA6FE3FD5E34501 /* HpsServicesConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		638428DBBD9F34E62FEAD48BC6BCAD37 /* HpsPaxGiftVoidBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B5061AE3BDA6A498184D5431A9C21E /* HpsPaxGiftVoidBuilder.m */; };
 		6531959933021A0DDE15A9A27F983CF3 /* XMLDictionary-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C270AEFFFC5901D0F2E1362268053C77 /* XMLDictionary-dummy.m */; };
@@ -142,7 +144,6 @@
 		783EBFD9554393FEB6D02D07527D9284 /* HpsEnum.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AE358AB4131162C861D018C85136ED /* HpsEnum.m */; };
 		7B991C8E159728B5BD670A0A377AAA5A /* HpsEmployeeFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D54BB35CFAC06D5581CC3435AB2CD4 /* HpsEmployeeFinder.m */; };
 		7C3BEF64084F13D8269F313644557033 /* HpsCardEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9EDFC4696C60D707B6FC089B65C631 /* HpsCardEntry.m */; };
-		7D5C9AF9C6FB6DC58A001D7D86005956 /* icon_amex.png in Resources */ = {isa = PBXBuildFile; fileRef = A97610AC98522771D17259800B4CE2A2 /* icon_amex.png */; };
 		7DE6E714FD887F4F01A991E1D58F5523 /* HpsPaxTcpInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 921B822CF76BD6684F67895ABF331D31 /* HpsPaxTcpInterface.m */; };
 		7FE169716381ECE0B66E87CDF606E9FF /* HpsPaxAmountResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A7FFB4ADAF76A8CA5C49DD67A93F65 /* HpsPaxAmountResponse.m */; };
 		80D5272295F3CC10D3050D8EBC5554DD /* HpsHeartSipCreditAuthBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B7B43A7DD52F65B87328CBCC4FDB89 /* HpsHeartSipCreditAuthBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -169,7 +170,6 @@
 		91F0CB8E2AB300C3CC6EBA67A943C542 /* HpsPaxAmountRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C509A3E2697989DC5906AD35EC87A266 /* HpsPaxAmountRequest.m */; };
 		92BD2B87450BBD054A2D63AFCC296C91 /* NSMutableDictionary+ShiftAssignments.h in Headers */ = {isa = PBXBuildFile; fileRef = FA7B19A2DED730747AE9C551595412EE /* NSMutableDictionary+ShiftAssignments.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		92CC33155546068A1651895A052FB5DD /* HpsCardInfoViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F8A6C263ABDCA34911A550C6F31D3C8 /* HpsCardInfoViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		94DEFBC7C2B8AB1C9E994C7CDBC11EA5 /* icon_cvv.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E4909259160E33165314A4AD89B005 /* icon_cvv.png */; };
 		960E8A648FC76E9168C261C46FD5C7FA /* HpsPayGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFAEB954AEFF8184581E69082315404 /* HpsPayGroup.m */; };
 		97C073C0A8CE51DFD6D100FB2DA83699 /* HpsAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 154D1D88BD653254650507647FDB06DA /* HpsAddress.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		98AB3538CA59ECD07B96565F10381FD7 /* HpsLoginResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DBE89FC15FD84D261FCC393B77C82FB /* HpsLoginResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -178,7 +178,6 @@
 		9C37E07F5942C864D33AAB8D99D4395D /* HpsHeartSipGiftSaleBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 88F2B83F6DDC3E9A6C3FAD975B03A09D /* HpsHeartSipGiftSaleBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C79EE93F35D6993A2945A5BF4A3E080 /* HpsTerminalUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 878461FAB599DBF3AAE94496AC29E403 /* HpsTerminalUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CAA429AD2D815209E63A21C31DDBD42 /* HpsPaxTraceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB67F5EE5C71401E1C8056F975C4612 /* HpsPaxTraceResponse.m */; };
-		9D2F56ACE9FABC1EF97AF420CA952BE7 /* icon_cards.png in Resources */ = {isa = PBXBuildFile; fileRef = 57E7ED091283D2183E557ACB0A60AE6B /* icon_cards.png */; };
 		9E1962AAFBE134015594759FCF6C2453 /* HpsPaxGiftAddValueBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0332918B94DC3717A1A088C91CB8C8AC /* HpsPaxGiftAddValueBuilder.m */; };
 		9F007EFE208916636A2BD01F70DF7300 /* HpsEmployee.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFF2BFFB26315C7F3B7443F82C88722 /* HpsEmployee.m */; };
 		A0FB783BEB5C8DDE2A805E8F50B444DC /* HpsHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 952CFEADAED0349350A7231CA22CF7F9 /* HpsHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -186,7 +185,7 @@
 		A1FC6A88F889C8FFE5A31DBA63411909 /* NSData+SM_EncryptionHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = DE1CA136C54774517C49ED4F41A3D8E9 /* NSData+SM_EncryptionHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A258C3325977BBE0CD7101BED9B5C45D /* HpsHeartSipBaseResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = B8D379FB4FE8A0C9735777F437F3AA91 /* HpsHeartSipBaseResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A35471B494FBC4A7329C3482776C69B9 /* HpsPaxHttpInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CA0C61D8D4696D227F363C932E2231 /* HpsPaxHttpInterface.m */; };
-		A3D87C5A9E899BDE276AD413789D737A /* icon_discover.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E0E271224B0374B60401B44189EC843 /* icon_discover.png */; };
+		A36EE83E836173DD68B75F1B5CEA1E22 /* HPSCardEntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE95C6100A39AC39022C47720352BDD2 /* HPSCardEntryViewController.xib */; };
 		A48E82329786514C584D338822D78B14 /* HpsPaxAmountResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 946D9A473D016EE8F8B68A0CDEBCE5E9 /* HpsPaxAmountResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A70057149CD1B6DA9DE12B9E336AB729 /* HpsPaxCreditAuthBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C68FE70C14BBF29A19E3D46956A21D2 /* HpsPaxCreditAuthBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A7012F2DBCADB13966B636A37F2632B7 /* HpsPaxBatchCloseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BD6C2E2C864CC9481C85543A4922CF /* HpsPaxBatchCloseResponse.m */; };
@@ -200,8 +199,8 @@
 		AAC0DFDC1A3A43266FC01B9380261410 /* HpsJsonDoc.h in Headers */ = {isa = PBXBuildFile; fileRef = E0F2F08473D2A9C0EFBC335C89DAFA71 /* HpsJsonDoc.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ABE671CD8E8DE5053FC29DB20F54A7E3 /* HpsGatewayResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = C274F854DAA0A771C0110167992C69C1 /* HpsGatewayResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ABF19AD1E8B17AD77B3C82B513388CAD /* HpsPaxAccountRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 078DFDFFF97058AEE6D367309A77A3F4 /* HpsPaxAccountRequest.m */; };
+		ABFB54CDE5C089E231EE098EBEACEEC1 /* icon_visa.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B10C17CCE18297A5EBFC917D4F96DA9 /* icon_visa.png */; };
 		AC16371600B9192D8EDD3CBE06F7FFAE /* CardSummaryRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1D9A937C1F9C2D0E80285B41CD8D95 /* CardSummaryRecord.m */; };
-		ADF6FCCBB4EDA5E9074B0BFD09C662E2 /* heartlandlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6177D7995D02A7D12D9FF72186421999 /* heartlandlogo.png */; };
 		AE28C7127E067EEF2E53491EF74F2CD9 /* HpsHeartSipBaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE86EEAD8C8E83D7DAEEB26B1FEEE88 /* HpsHeartSipBaseResponse.m */; };
 		AE70E84A5E8469363210D982371443F3 /* HpsRestGateway.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B6B202B8DBEDD298FA0E337A4FB9054 /* HpsRestGateway.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE827C0E94E14DA97D8FFB61184D359D /* HpsPaxAmountRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = E6B4F4F92D4CA28EDB17F2124504EA96 /* HpsPaxAmountRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -213,13 +212,13 @@
 		B58DBA733E8C2D1399E5975D04410973 /* HpsCardEntryViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 58674D950104C0A4A09863D964B480BC /* HpsCardEntryViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6D3A00E009DB3D66AE3731698F55108 /* HpsCardHolderData.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A660C5AB3C626B07862BB72699BB6B /* HpsCardHolderData.m */; };
 		B70A498BFF6C0274E26C3CC3EB6A1163 /* HpsPayrollService.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B1DE4B5A43DD9046A3BB72C724B8E8 /* HpsPayrollService.m */; };
-		B841DFB386291F3B4E3C187F7E3993B6 /* icon_visa.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD15C7B50C2F55414E00218E4956888 /* icon_visa.png */; };
 		B8DA7B16890B1FF751E6C7AB5770AED8 /* HpsCardData.m in Sources */ = {isa = PBXBuildFile; fileRef = F21E4E32C9DF1A39F624E2CD36591B6A /* HpsCardData.m */; };
 		B8EF2C531611B270D7D3EDE9647936A5 /* HpsHeartSipInitializeResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 402FC250759DACC58F2C710E8952BE91 /* HpsHeartSipInitializeResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B990894B7E747178E56A1082E801958A /* HpsEncryptionData.h in Headers */ = {isa = PBXBuildFile; fileRef = A2F131D3904ADDA2A51FD635D6DD4B4E /* HpsEncryptionData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA452ADDE018EA06D5C3FB0B7FCA90D9 /* HpsPaxCreditResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A43ED9182789AB2D02CDBAAF11C636A6 /* HpsPaxCreditResponse.m */; };
 		BA5AAC701D2CD7455B7431DF8A97B8DD /* HpsWorkLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = DEA4ECE71912E0FE8F0BA7EDAE5C2A7F /* HpsWorkLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BAE2A1921C5D66148C39BD5E61F38E29 /* HpsDeviceProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F82EEF3D4519838ECD9DB4F73B52B74 /* HpsDeviceProtocols.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB89FCCA77C29709DF1AC2D4E49C89DB /* icon_mastercard.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9B4CC402B871291CE1801F071767C2 /* icon_mastercard.png */; };
 		BD310C437A1151DFD0B531BB83605CE6 /* HpsPayGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = E5B5DAA41748B87ED1974959B9D0251D /* HpsPayGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF46967F1F944416B11D01D30C4F5C07 /* HpsPayrollCollectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CF25C1581E37EBC951E230D75190C4F3 /* HpsPayrollCollectionItem.m */; };
 		C041A066E5CD13D1DBB65E6F37AD7AE2 /* HpsLaborFieldLookup.h in Headers */ = {isa = PBXBuildFile; fileRef = DDE374432D0F03F133558E1FF92B009E /* HpsLaborFieldLookup.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -245,7 +244,6 @@
 		CBA6FE90D9B3E049F06A5BEF0B0457F2 /* HpsConfiguredServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E750B7C8B613FAC45885C9A5DD16D43 /* HpsConfiguredServices.m */; };
 		CD2AFCC3CA44A4334D9558125C36B72F /* HpsPaxGiftBalanceBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = BF6A6C90228EB4FC418537130463B06C /* HpsPaxGiftBalanceBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD3C44CD7FF8B6460B9C90AB68AE91F0 /* HpsTableServiceConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 410B95B32A417ECCA5F707F65B8E70EB /* HpsTableServiceConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD8D6ED35B13FF28E790B4FA4540CA07 /* icon_card_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = B27050F35662705D2E15A130EB67FA62 /* icon_card_empty.png */; };
 		CE6AA7F4820780DF2D5814790DAFDB31 /* HpsHeartSipGiftAddValueBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5180F8EF180A8191111AA6312A0FCB86 /* HpsHeartSipGiftAddValueBuilder.m */; };
 		CF94844CBA37A3EA7BF60199BC04CDF3 /* HpsBumpStatusCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 97AC2CFC5554A4B2C46CC6FA8B39789E /* HpsBumpStatusCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D004098555DC74F89EC42FE9BD5C7D0F /* HpsHeartSipDebitSaleBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = A7CF2297F3F99B63425EBDED131F9827 /* HpsHeartSipDebitSaleBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -280,6 +278,7 @@
 		EB2877D54578CC3441B6DFC29AC1645B /* NSObject+ObjectMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A65535E5129338C8DA26E6AB2286A6 /* NSObject+ObjectMap.m */; };
 		EC1A4932B474FA68B3FD49E5AE47BDBB /* HpsConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 24457C988E926C66D3E000B8AC6B8C7B /* HpsConfiguration.m */; };
 		ED12DE2BEF16F21493F2404135BE111A /* HpsTerminalUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 431F75FDB97E406614853F508F25A14F /* HpsTerminalUtilities.m */; };
+		EDDBBCA0C0B3FD398E5C4A86B09F71DC /* icon_card_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = E3F667ECB0511FB6B464F32FC6B5F234 /* icon_card_empty.png */; };
 		EF3E4EDF0A4928A8AD5E84D9F7A298F8 /* HpsPayrollEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 817DFC33AB5993EAB9DE5AC83EBCE0DB /* HpsPayrollEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F11FEEC5500F51DA46BB437A920E16DB /* CardSummaryRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 02D70FF31141CAEDD766D1D698712371 /* CardSummaryRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F17E385667A7FA52705D96CD2EFEFE1A /* HpsHeartSipCreditCaptureBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9888CD0A86CAC8B1A5BDB9D9E6F452 /* HpsHeartSipCreditCaptureBuilder.m */; };
@@ -294,6 +293,7 @@
 		FBC0FE0D7A5545A5B26806904F7FE94B /* HpsPaxGiftResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE2F27808A4AE309A97D94FC2AAC536 /* HpsPaxGiftResponse.m */; };
 		FBD8FF5342F24AB0E6C1785DBB2F9D74 /* HpsPosRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = E913F710298C1C0B9210615E62363492 /* HpsPosRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FD83AC2B28B14CE5A5C0B70BED601C9E /* HpsPaxDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 71E25B68F9E3D4DB52FA9FCBAFD015F0 /* HpsPaxDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE3210A1782BC44304042A7BF89B5188 /* heartlandlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EADAE7D91711F47B1422678124BE14B /* heartlandlogo.png */; };
 		FE63A5AE831ED1F4C680578AB05E9A8E /* HpsHeartSipRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = DD8504545EE92BE9E85079004F4AE533 /* HpsHeartSipRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FEC6EE8F8C333F7BDF82CDC940A01BA1 /* HpsGiftCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 708BA62F26AF44F69CBFB9C715FDC56D /* HpsGiftCard.m */; };
 		FF293902E8F0F4CCD116BB69B4EC2B7D /* HpsHeartSipCreditAuthBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 315BED9B14CEA2555CE8CD4463581639 /* HpsHeartSipCreditAuthBuilder.m */; };
@@ -379,7 +379,6 @@
 		17AE358AB4131162C861D018C85136ED /* HpsEnum.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsEnum.m; sourceTree = "<group>"; };
 		17BEE4E13BAB55E8E3D43AF5DA20C17C /* HpsPaxCreditAuthBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxCreditAuthBuilder.m; sourceTree = "<group>"; };
 		17CC634C287FACDA8C32DA5107A6EC40 /* HpsAdditionalTxnFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsAdditionalTxnFields.h; sourceTree = "<group>"; };
-		1A814F6C4E89CE7C72E9BD15FA70B404 /* LICENSE.md */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.md; sourceTree = "<group>"; };
 		1B6B202B8DBEDD298FA0E337A4FB9054 /* HpsRestGateway.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsRestGateway.h; sourceTree = "<group>"; };
 		1B96F103E8357B56B35C28CF9949E6A3 /* Pods_Heartland_iOS_SDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Heartland_iOS_SDK_Tests.framework; path = "Pods-Heartland-iOS-SDK_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFEFEA1A665107E6DF868276E9E11AE /* HpsPaxEcomSubGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxEcomSubGroup.h; sourceTree = "<group>"; };
@@ -388,6 +387,7 @@
 		1D72DE2D384DAB2ACF0350E238E71CB7 /* HpsServiceContainer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HpsServiceContainer.m; path = Pod/Classes/HpsServiceContainer.m; sourceTree = "<group>"; };
 		1D742EF05546F9F4C8D3E279A9A506A6 /* TransactionSummaryRecord.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TransactionSummaryRecord.h; sourceTree = "<group>"; };
 		1DC14DEFD2EA8DF679702581182D86AF /* HpsPayrollRecord.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPayrollRecord.h; sourceTree = "<group>"; };
+		1EE2B7BE956C5578432B2C880B7C2795 /* icon_amex.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_amex.png; path = Pod/Assets/icon_amex.png; sourceTree = "<group>"; };
 		1EFF2BFFB26315C7F3B7443F82C88722 /* HpsEmployee.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsEmployee.m; sourceTree = "<group>"; };
 		1F72A8C7F8A84E94CB9DC3CE03CCD4A8 /* HpsTransaction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsTransaction.m; sourceTree = "<group>"; };
 		1F82EEF3D4519838ECD9DB4F73B52B74 /* HpsDeviceProtocols.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsDeviceProtocols.h; sourceTree = "<group>"; };
@@ -397,7 +397,6 @@
 		20A9F40C3786C158E76EE297D1874675 /* HpsPayRollRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPayRollRequest.h; sourceTree = "<group>"; };
 		229A76CFB9D4298A5C552B4E572A02FE /* HpsTicket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsTicket.h; sourceTree = "<group>"; };
 		22AEB7A45A37E5B23410C53204CB1F07 /* HpsDeviceMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsDeviceMessage.h; sourceTree = "<group>"; };
-		22E4909259160E33165314A4AD89B005 /* icon_cvv.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_cvv.png; path = Pod/Assets/icon_cvv.png; sourceTree = "<group>"; };
 		244098048CDAC72AFB258D6F110C146C /* HpsPayRollRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPayRollRequest.m; sourceTree = "<group>"; };
 		24413D0AF4D727708EE3DAAC33590186 /* HpsHeartSipCreditSaleBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsHeartSipCreditSaleBuilder.m; sourceTree = "<group>"; };
 		24457C988E926C66D3E000B8AC6B8C7B /* HpsConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsConfiguration.m; sourceTree = "<group>"; };
@@ -415,11 +414,9 @@
 		333ED4A118949C1A50867157D69278D2 /* HpsPaxEcomSubGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxEcomSubGroup.m; sourceTree = "<group>"; };
 		3485C31C059E1E5EBC75A5E217BD0EFF /* HpsPaxCashierSubGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxCashierSubGroup.h; sourceTree = "<group>"; };
 		356A42C009CD9EA9CD28F86A285D8A73 /* Heartland-iOS-SDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Heartland-iOS-SDK.modulemap"; sourceTree = "<group>"; };
-		3A3CD9E4B9FC905742FC567425838AFB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		3B3B083A114BA510A3A75745B6195FF5 /* HpsPaxDebitSaleBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxDebitSaleBuilder.m; sourceTree = "<group>"; };
 		3C37485F733C1EFADF39D11FC1B290E9 /* HpsPaxCommercialResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxCommercialResponse.h; sourceTree = "<group>"; };
 		3DBE89FC15FD84D261FCC393B77C82FB /* HpsLoginResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsLoginResponse.h; sourceTree = "<group>"; };
-		3E0E271224B0374B60401B44189EC843 /* icon_discover.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_discover.png; path = Pod/Assets/icon_discover.png; sourceTree = "<group>"; };
 		3E34AA7F23149272128CD851DC3082C4 /* HpsHeartSipCreditSaleBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHeartSipCreditSaleBuilder.h; sourceTree = "<group>"; };
 		3F3386A1D42CEC27E5C8AADC20F500DC /* HpsTransactionDetails.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsTransactionDetails.m; sourceTree = "<group>"; };
 		3F6D2AA985483512258B9807F1C18E8C /* Pods_Heartland_iOS_SDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Heartland_iOS_SDK_Example.framework; path = "Pods-Heartland-iOS-SDK_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -437,8 +434,9 @@
 		433ED548D6CC2A54B6727A5A2F2F0020 /* NSInputStream+Hps.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSInputStream+Hps.h"; sourceTree = "<group>"; };
 		44920257BEBAD528DCD0A2C34AA271C0 /* HpsClientInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsClientInfo.m; sourceTree = "<group>"; };
 		44BEC0B4705F1D88845B13D36FF0A4AD /* Rfc2898DeriveBytes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Rfc2898DeriveBytes.h; sourceTree = "<group>"; };
+		44E9C664863FD0148D29EA1AE16CBC2E /* icon_cvv.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_cvv.png; path = Pod/Assets/icon_cvv.png; sourceTree = "<group>"; };
+		453E71F5F27BA26D00F41EAB131A3208 /* icon_cards.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_cards.png; path = Pod/Assets/icon_cards.png; sourceTree = "<group>"; };
 		463ABA5231A945EF7CA6FE3FD5E34501 /* HpsServicesConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsServicesConfig.h; sourceTree = "<group>"; };
-		46DA5076B0F29B70BC0ADEC32060A7D2 /* icon_mastercard.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_mastercard.png; path = Pod/Assets/icon_mastercard.png; sourceTree = "<group>"; };
 		47122507B958867D15C4F9E246079AD6 /* HpsServerAssignmentResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsServerAssignmentResponse.m; sourceTree = "<group>"; };
 		47485192EEA8CBC633C52F0C0F7A7B00 /* HpsPaxBaseResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxBaseResponse.h; sourceTree = "<group>"; };
 		48ED6F513B57305E0DAC7DC423554ECD /* XMLDictionary-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XMLDictionary-umbrella.h"; sourceTree = "<group>"; };
@@ -459,7 +457,6 @@
 		544CE90A3BE9063AF14A95FAB81542AE /* HpsTableServiceConnector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsTableServiceConnector.h; sourceTree = "<group>"; };
 		555A33FB1D4AC5344DF07DBE031190DC /* HpsPaxCreditCaptureBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxCreditCaptureBuilder.m; sourceTree = "<group>"; };
 		56CBA65B578E766413ABC8342809C329 /* XMLDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XMLDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		57E7ED091283D2183E557ACB0A60AE6B /* icon_cards.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_cards.png; path = Pod/Assets/icon_cards.png; sourceTree = "<group>"; };
 		5816BD064781E80701BF4B935F9D9BD7 /* HpsCardEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsCardEntry.h; sourceTree = "<group>"; };
 		582BC88D23C40578701BE0BB5038DBC3 /* HpsTransactionDetails.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsTransactionDetails.h; sourceTree = "<group>"; };
 		58674D950104C0A4A09863D964B480BC /* HpsCardEntryViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsCardEntryViewController.h; sourceTree = "<group>"; };
@@ -477,7 +474,6 @@
 		6091B748D3BEE16F15C5E6C41EAE29C8 /* HpsPayrollService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPayrollService.h; sourceTree = "<group>"; };
 		60E9C54CAAA1F6B3D10B5FBF3832AA1C /* HpsTerminalEnums.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsTerminalEnums.h; sourceTree = "<group>"; };
 		6101ED2EC9DF9A3D6F9ED50C904B3DA2 /* HpsConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsConfiguration.h; sourceTree = "<group>"; };
-		6177D7995D02A7D12D9FF72186421999 /* heartlandlogo.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = heartlandlogo.png; path = Pod/Assets/heartlandlogo.png; sourceTree = "<group>"; };
 		62B1DE4B5A43DD9046A3BB72C724B8E8 /* HpsPayrollService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPayrollService.m; sourceTree = "<group>"; };
 		62C76EAFE4212A93D15FE8B367C29B3B /* Pods-Heartland-iOS-SDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Heartland-iOS-SDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6329FB0DAAD0A0E969C7CE3299002907 /* TransactionSummaryRecord.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TransactionSummaryRecord.m; sourceTree = "<group>"; };
@@ -497,7 +493,6 @@
 		6C07F40A1916C2B87332C7A1FBC2AB15 /* HpsLaborFieldLookup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsLaborFieldLookup.m; sourceTree = "<group>"; };
 		6C3650ED6A16F429AC91FC6E3F2132BC /* HpsHeartSipGiftBalanceBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsHeartSipGiftBalanceBuilder.m; sourceTree = "<group>"; };
 		6C68FE70C14BBF29A19E3D46956A21D2 /* HpsPaxCreditAuthBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxCreditAuthBuilder.h; sourceTree = "<group>"; };
-		6CD15C7B50C2F55414E00218E4956888 /* icon_visa.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_visa.png; path = Pod/Assets/icon_visa.png; sourceTree = "<group>"; };
 		6D1C573218D4262B6301D5F6A5C0CAE8 /* HpsTerminalResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsTerminalResponse.h; sourceTree = "<group>"; };
 		70696DA7C40AF2FE3F0773D4502494DF /* HpsGiftCard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsGiftCard.h; sourceTree = "<group>"; };
 		708BA62F26AF44F69CBFB9C715FDC56D /* HpsGiftCard.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsGiftCard.m; sourceTree = "<group>"; };
@@ -538,11 +533,9 @@
 		8F670EE267CAC8325C7A545E66058148 /* HpsPaxAvsRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxAvsRequest.m; sourceTree = "<group>"; };
 		90BF2A68195217DEFE59E27ECBDFEA81 /* HpsPaxGiftResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxGiftResponse.h; sourceTree = "<group>"; };
 		91B7B43A7DD52F65B87328CBCC4FDB89 /* HpsHeartSipCreditAuthBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHeartSipCreditAuthBuilder.h; sourceTree = "<group>"; };
-		91D3AE2554E9ED99E36479DF84E0CA37 /* Heartland-iOS-SDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = "Heartland-iOS-SDK.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		921B822CF76BD6684F67895ABF331D31 /* HpsPaxTcpInterface.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxTcpInterface.m; sourceTree = "<group>"; };
 		92A8D9BB81AF4F493E9C165E7C5ACFDC /* HpsPaxCreditVoidBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxCreditVoidBuilder.h; sourceTree = "<group>"; };
 		92F2AFBAFD4B19847CB689795A6C3DD9 /* HpsWorkLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsWorkLocation.m; sourceTree = "<group>"; };
-		93656B716D3D78BEBE2F1830327F29BC /* icon_jcb.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_jcb.png; path = Pod/Assets/icon_jcb.png; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		946D9A473D016EE8F8B68A0CDEBCE5E9 /* HpsPaxAmountResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxAmountResponse.h; sourceTree = "<group>"; };
 		949CA18EBF237624E4F41D8AE4A1DE26 /* HpsTransaction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsTransaction.h; sourceTree = "<group>"; };
@@ -551,10 +544,12 @@
 		97AC2CFC5554A4B2C46CC6FA8B39789E /* HpsBumpStatusCollection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsBumpStatusCollection.h; sourceTree = "<group>"; };
 		994C9F75B9AA9D9096F0D1C82AC2FF3F /* Record.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
 		995D261C9E3C25DCAC111C4C772CC445 /* HpsPaxGiftVoidBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxGiftVoidBuilder.h; sourceTree = "<group>"; };
+		9B10C17CCE18297A5EBFC917D4F96DA9 /* icon_visa.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_visa.png; path = Pod/Assets/icon_visa.png; sourceTree = "<group>"; };
 		9C059FEAB870EBC0260BB2D218D5D479 /* XMLDictionary.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = XMLDictionary.modulemap; sourceTree = "<group>"; };
 		9CB67F5EE5C71401E1C8056F975C4612 /* HpsPaxTraceResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxTraceResponse.m; sourceTree = "<group>"; };
 		9DCCB2F8BE89E08AA071D690BF87F7BA /* HpsEmployee.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsEmployee.h; sourceTree = "<group>"; };
 		9E00C3DA1771A9F134A9E653FF9445E9 /* HpsTableServiceConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsTableServiceConfiguration.m; sourceTree = "<group>"; };
+		9EADAE7D91711F47B1422678124BE14B /* heartlandlogo.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = heartlandlogo.png; path = Pod/Assets/heartlandlogo.png; sourceTree = "<group>"; };
 		9F732E7393E86E8113DF298ED89AAC47 /* HpsTerminationReason.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsTerminationReason.m; sourceTree = "<group>"; };
 		A0A74F4EB8A4E8EFBE960F12991AB399 /* HpsPaxAvsRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxAvsRequest.h; sourceTree = "<group>"; };
 		A15942436048E7A475FAD26B12B43460 /* HpsPaxTraceResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxTraceResponse.h; sourceTree = "<group>"; };
@@ -564,6 +559,7 @@
 		A2F131D3904ADDA2A51FD635D6DD4B4E /* HpsEncryptionData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsEncryptionData.h; sourceTree = "<group>"; };
 		A43ED9182789AB2D02CDBAAF11C636A6 /* HpsPaxCreditResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxCreditResponse.m; sourceTree = "<group>"; };
 		A4A7FFB4ADAF76A8CA5C49DD67A93F65 /* HpsPaxAmountResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxAmountResponse.m; sourceTree = "<group>"; };
+		A6577BE55A9D8DDC742FBCC468C3E691 /* icon_jcb.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_jcb.png; path = Pod/Assets/icon_jcb.png; sourceTree = "<group>"; };
 		A6CA0C61D8D4696D227F363C932E2231 /* HpsPaxHttpInterface.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxHttpInterface.m; sourceTree = "<group>"; };
 		A6D98E82D1DCF031483CFB7F1093C082 /* HpsPayrollEntity.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPayrollEntity.m; sourceTree = "<group>"; };
 		A7C85D0EF572A5E474A4EE1E2ECCC8D5 /* HpsHeartSipBatchResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsHeartSipBatchResponse.m; sourceTree = "<group>"; };
@@ -571,16 +567,16 @@
 		A7D54BB35CFAC06D5581CC3435AB2CD4 /* HpsEmployeeFinder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsEmployeeFinder.m; sourceTree = "<group>"; };
 		A8FB499C667E5160CCA6757B2CF007D9 /* Pods-Heartland-iOS-SDK_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Heartland-iOS-SDK_Example-frameworks.sh"; sourceTree = "<group>"; };
 		A93F244DE244E2498C3C38005984F955 /* HpsPaxCommercialRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxCommercialRequest.m; sourceTree = "<group>"; };
-		A97610AC98522771D17259800B4CE2A2 /* icon_amex.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_amex.png; path = Pod/Assets/icon_amex.png; sourceTree = "<group>"; };
 		AA0879419072D3C5AF5FECAEF600D4CF /* HpsCommon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsCommon.m; sourceTree = "<group>"; };
+		AA632704663F458C845A82C58162AF8A /* Heartland-iOS-SDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = "Heartland-iOS-SDK.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		ABB75AEC17C9363A2572F72069E21509 /* HpsPaxCreditVerifyBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxCreditVerifyBuilder.m; sourceTree = "<group>"; };
+		AD9B4CC402B871291CE1801F071767C2 /* icon_mastercard.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_mastercard.png; path = Pod/Assets/icon_mastercard.png; sourceTree = "<group>"; };
 		AE364647424DA0A11132EC39FE2AC233 /* HpsHeartSipCreditVerifyBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsHeartSipCreditVerifyBuilder.m; sourceTree = "<group>"; };
 		AEB00D5C46072158F43852280330CEC9 /* HpsPaxMessageIDs.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxMessageIDs.m; sourceTree = "<group>"; };
 		AEC2BD387EE8253A7A1294A7AA0E4DC6 /* HpsHeartSipInitializeResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsHeartSipInitializeResponse.m; sourceTree = "<group>"; };
 		AF9F30E0107BCD67E605C8773404AD75 /* Pods-Heartland-iOS-SDK_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Heartland-iOS-SDK_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B089A907B725912C43D47AA9AFC2FF5D /* HpsDeviceProtocols.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsDeviceProtocols.m; sourceTree = "<group>"; };
 		B1D5F0E2FA92E756D7D0B88A56158399 /* HpsHeartSipGiftBalanceBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHeartSipGiftBalanceBuilder.h; sourceTree = "<group>"; };
-		B27050F35662705D2E15A130EB67FA62 /* icon_card_empty.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_card_empty.png; path = Pod/Assets/icon_card_empty.png; sourceTree = "<group>"; };
 		B4D21D97864ABC66A30ADD4A9AC09E56 /* HpsConnectionConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsConnectionConfig.h; sourceTree = "<group>"; };
 		B8D379FB4FE8A0C9735777F437F3AA91 /* HpsHeartSipBaseResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHeartSipBaseResponse.h; sourceTree = "<group>"; };
 		B989129D795A2D9BF8E611742A41FF19 /* HpsHeartSipDevice.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsHeartSipDevice.m; sourceTree = "<group>"; };
@@ -606,10 +602,12 @@
 		C78D020966E5DE93ECBB338D0C9B109C /* HpsHeartSipResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHeartSipResponse.h; sourceTree = "<group>"; };
 		C8247B93FAC9C6C062A70EB636952958 /* HpsPaxAvsResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxAvsResponse.m; sourceTree = "<group>"; };
 		C836E28E65862182AAECBBC121D85ED7 /* HpsPaxHostResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxHostResponse.m; sourceTree = "<group>"; };
+		C904F98F07822F634E849A0D0DE2E4CC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		CA366FB25A78C5A08698B64B9C43314D /* HpsPaxAccountRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxAccountRequest.h; sourceTree = "<group>"; };
 		CA89EB8366DD033FE24F1B7717D3C99E /* HpsEmployeeFinder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsEmployeeFinder.h; sourceTree = "<group>"; };
 		CD9888CD0A86CAC8B1A5BDB9D9E6F452 /* HpsHeartSipCreditCaptureBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsHeartSipCreditCaptureBuilder.m; sourceTree = "<group>"; };
 		CE4B977FDDF201EC7DA6CC0E724F2FC2 /* XMLDictionary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XMLDictionary.h; path = XMLDictionary/XMLDictionary.h; sourceTree = "<group>"; };
+		CE95C6100A39AC39022C47720352BDD2 /* HPSCardEntryViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = HPSCardEntryViewController.xib; path = Pod/Assets/HPSCardEntryViewController.xib; sourceTree = "<group>"; };
 		CF25C1581E37EBC951E230D75190C4F3 /* HpsPayrollCollectionItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPayrollCollectionItem.m; sourceTree = "<group>"; };
 		CFC043BC41E0A703AC66059CEDFFEFF8 /* HpsPaxInitializeResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxInitializeResponse.m; sourceTree = "<group>"; };
 		D467A25C0C50F5685F0CDF920C210ABF /* HpsHeartSipDebitSaleBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsHeartSipDebitSaleBuilder.m; sourceTree = "<group>"; };
@@ -619,6 +617,7 @@
 		D82A6AEC0ECE3EB65B6DDBB1FC264710 /* Pods-Heartland-iOS-SDK_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Heartland-iOS-SDK_Example-resources.sh"; sourceTree = "<group>"; };
 		D82D1B4F98C3C15B3E1EEE7224083658 /* HpsServiceConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsServiceConfig.m; sourceTree = "<group>"; };
 		D86CA2D25C3DA8595C35E54D557B86B2 /* HpsPaxGiftSaleBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxGiftSaleBuilder.h; sourceTree = "<group>"; };
+		D90326E7FC6EDB5591501EA5A455D6FF /* icon_discover.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_discover.png; path = Pod/Assets/icon_discover.png; sourceTree = "<group>"; };
 		DA97F01A85BC95815741E7B3F0C665C8 /* HpsPaxExtDataSubGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxExtDataSubGroup.h; sourceTree = "<group>"; };
 		DC37B304D4355A85D9816541C4DA86CD /* HpsPayrollConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPayrollConfig.h; sourceTree = "<group>"; };
 		DD1D9A937C1F9C2D0E80285B41CD8D95 /* CardSummaryRecord.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CardSummaryRecord.m; sourceTree = "<group>"; };
@@ -632,7 +631,7 @@
 		E0F2F08473D2A9C0EFBC335C89DAFA71 /* HpsJsonDoc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsJsonDoc.h; sourceTree = "<group>"; };
 		E1A0A420C67A4FFB4233B588CC49C37C /* HeartSIPEnums.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HeartSIPEnums.m; sourceTree = "<group>"; };
 		E290022C0EF47CB5A0CB636EB2F65E9B /* HpsTableService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsTableService.h; sourceTree = "<group>"; };
-		E31F569A5A8C99A676DDCF41269DAFDC /* HpsCardEntryViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = HpsCardEntryViewController.xib; path = Pod/Assets/HpsCardEntryViewController.xib; sourceTree = "<group>"; };
+		E3F667ECB0511FB6B464F32FC6B5F234 /* icon_card_empty.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_card_empty.png; path = Pod/Assets/icon_card_empty.png; sourceTree = "<group>"; };
 		E4EFD8A65A4BCD0ECB2772739D6E2487 /* HpsLoginResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsLoginResponse.m; sourceTree = "<group>"; };
 		E5B5DAA41748B87ED1974959B9D0251D /* HpsPayGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPayGroup.h; sourceTree = "<group>"; };
 		E5DABEE836ACB500054C02C47AFB618D /* HpsLaborField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsLaborField.h; sourceTree = "<group>"; };
@@ -662,6 +661,7 @@
 		F1716B4059268967DF201C2A5C9A450C /* Pods-Heartland-iOS-SDK_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Heartland-iOS-SDK_Tests-dummy.m"; sourceTree = "<group>"; };
 		F1AE6D0F7441952415F930C2A4196E32 /* HpsPaxGiftAddValueBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxGiftAddValueBuilder.h; sourceTree = "<group>"; };
 		F21E4E32C9DF1A39F624E2CD36591B6A /* HpsCardData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsCardData.m; sourceTree = "<group>"; };
+		F39743E1AC324702E59E762A85FDFE5C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		F410DB78409BDED87941F7E5A166A6A0 /* HpsPaxGiftSaleBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxGiftSaleBuilder.m; sourceTree = "<group>"; };
 		F535745C973D08436EFC930BBF96582A /* Pods-Heartland-iOS-SDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Heartland-iOS-SDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F680193A2458FF574E422292190C5FE7 /* HpsHeartSipCreditVerifyBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHeartSipCreditVerifyBuilder.h; sourceTree = "<group>"; };
@@ -801,23 +801,6 @@
 			path = ParserObject;
 			sourceTree = "<group>";
 		};
-		1B1643CE6FDB1B1607AF716A48A4FBD2 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				6177D7995D02A7D12D9FF72186421999 /* heartlandlogo.png */,
-				E31F569A5A8C99A676DDCF41269DAFDC /* HpsCardEntryViewController.xib */,
-				A97610AC98522771D17259800B4CE2A2 /* icon_amex.png */,
-				B27050F35662705D2E15A130EB67FA62 /* icon_card_empty.png */,
-				57E7ED091283D2183E557ACB0A60AE6B /* icon_cards.png */,
-				22E4909259160E33165314A4AD89B005 /* icon_cvv.png */,
-				3E0E271224B0374B60401B44189EC843 /* icon_discover.png */,
-				93656B716D3D78BEBE2F1830327F29BC /* icon_jcb.png */,
-				46DA5076B0F29B70BC0ADEC32060A7D2 /* icon_mastercard.png */,
-				6CD15C7B50C2F55414E00218E4956888 /* icon_visa.png */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		24D645EC814CF1EC345FD51B9B0A267E /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -825,6 +808,23 @@
 			);
 			name = Entity;
 			path = Pod/Classes/Entity;
+			sourceTree = "<group>";
+		};
+		26258B6EAC4ECE56FF97850DBA694A4B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9EADAE7D91711F47B1422678124BE14B /* heartlandlogo.png */,
+				CE95C6100A39AC39022C47720352BDD2 /* HPSCardEntryViewController.xib */,
+				1EE2B7BE956C5578432B2C880B7C2795 /* icon_amex.png */,
+				E3F667ECB0511FB6B464F32FC6B5F234 /* icon_card_empty.png */,
+				453E71F5F27BA26D00F41EAB131A3208 /* icon_cards.png */,
+				44E9C664863FD0148D29EA1AE16CBC2E /* icon_cvv.png */,
+				D90326E7FC6EDB5591501EA5A455D6FF /* icon_discover.png */,
+				A6577BE55A9D8DDC742FBCC468C3E691 /* icon_jcb.png */,
+				AD9B4CC402B871291CE1801F071767C2 /* icon_mastercard.png */,
+				9B10C17CCE18297A5EBFC917D4F96DA9 /* icon_visa.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		2BACAE26459AE9B62A26FB89537436D8 /* Debit */ = {
@@ -986,8 +986,8 @@
 				44F4DC5DDB24A0ED3FB9D593D6B377E1 /* Gateways */,
 				F4C482558674FAAF691BFEDFD298384F /* Models */,
 				389533D58E25C3A15C1F732572008222 /* Payroll */,
-				95FC73D2D98CFD4337AABEA85E8332F5 /* Pod */,
-				1B1643CE6FDB1B1607AF716A48A4FBD2 /* Resources */,
+				B42E3BBDEC0917BE1162765E694D88B2 /* Pod */,
+				26258B6EAC4ECE56FF97850DBA694A4B /* Resources */,
 				86DEE6D4F152C91C5F84AF1BCE27F886 /* ServiceConfigs */,
 				FD77EA2FF060A14584C6B6CCE3FCC18F /* Services */,
 				5370326A4F9D063A52086C6498670822 /* Support Files */,
@@ -1190,16 +1190,6 @@
 			path = "Target Support Files/Pods-Heartland-iOS-SDK_Tests";
 			sourceTree = "<group>";
 		};
-		95FC73D2D98CFD4337AABEA85E8332F5 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				91D3AE2554E9ED99E36479DF84E0CA37 /* Heartland-iOS-SDK.podspec */,
-				1A814F6C4E89CE7C72E9BD15FA70B404 /* LICENSE.md */,
-				3A3CD9E4B9FC905742FC567425838AFB /* README.md */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
 		993EAF7D42B4B8047AD8C749036C475B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1220,6 +1210,16 @@
 				45698CA59A092B4C6EDD65DE44E1040F /* Heartland-iOS-SDK */,
 			);
 			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		B42E3BBDEC0917BE1162765E694D88B2 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				AA632704663F458C845A82C58162AF8A /* Heartland-iOS-SDK.podspec */,
+				F39743E1AC324702E59E762A85FDFE5C /* LICENSE */,
+				C904F98F07822F634E849A0D0DE2E4CC /* README.md */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		BFFEA28FC2D2CC7D1B5BF88B3156F802 /* Builders */ = {
@@ -1587,7 +1587,7 @@
 			buildPhases = (
 				A153B822209199E2CD70AD40E6ED7E8E /* Sources */,
 				EE4805E35A5AE2E7BE507672EE2AB2DE /* Frameworks */,
-				A0142FB697801CE1B41A25B676DAC87F /* Resources */,
+				0815EF9FDABAD7024150F47EDE0D285F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -1684,28 +1684,28 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0815EF9FDABAD7024150F47EDE0D285F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE3210A1782BC44304042A7BF89B5188 /* heartlandlogo.png in Resources */,
+				A36EE83E836173DD68B75F1B5CEA1E22 /* HPSCardEntryViewController.xib in Resources */,
+				0919EC8D7DA4D499C692A5140D48640E /* icon_amex.png in Resources */,
+				EDDBBCA0C0B3FD398E5C4A86B09F71DC /* icon_card_empty.png in Resources */,
+				3799C528A7380B1063CBDBE77C649212 /* icon_cards.png in Resources */,
+				3AE4EE822950352328E54562A0E63C71 /* icon_cvv.png in Resources */,
+				59584F4494CCD52C3F22A8DC450C798A /* icon_discover.png in Resources */,
+				29E20D7A002E2E9DF938484813A5C99E /* icon_jcb.png in Resources */,
+				BB89FCCA77C29709DF1AC2D4E49C89DB /* icon_mastercard.png in Resources */,
+				ABFB54CDE5C089E231EE098EBEACEEC1 /* icon_visa.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		23D7A5379018DF685FED98AFE385DDE2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				755BA16DDAE3AB84A85A3FD5C35B5467 /* Heartland-iOS-SDK.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0142FB697801CE1B41A25B676DAC87F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ADF6FCCBB4EDA5E9074B0BFD09C662E2 /* heartlandlogo.png in Resources */,
-				46B02F9001A591531967598D7E09FA44 /* HpsCardEntryViewController.xib in Resources */,
-				7D5C9AF9C6FB6DC58A001D7D86005956 /* icon_amex.png in Resources */,
-				CD8D6ED35B13FF28E790B4FA4540CA07 /* icon_card_empty.png in Resources */,
-				9D2F56ACE9FABC1EF97AF420CA952BE7 /* icon_cards.png in Resources */,
-				94DEFBC7C2B8AB1C9E994C7CDBC11EA5 /* icon_cvv.png in Resources */,
-				A3D87C5A9E899BDE276AD413789D737A /* icon_discover.png in Resources */,
-				617E9A684A4C5FE2CFFF55B21EF8F5DE /* icon_jcb.png in Resources */,
-				5DC6642E6C4D7B3E86C932A7086256AE /* icon_mastercard.png in Resources */,
-				B841DFB386291F3B4E3C187F7E3993B6 /* icon_visa.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
