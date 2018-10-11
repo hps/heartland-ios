@@ -2,7 +2,7 @@
 #import "HpsDeviceProtocols.h"
 #import "HpsDeviceMessage.h"
 #import "HpsTerminalEnums.h"
-#import "HeartSIPEnums.h"
+#import "HpaEnums.h"
 
 @interface HpsTerminalUtilities : NSObject
 {

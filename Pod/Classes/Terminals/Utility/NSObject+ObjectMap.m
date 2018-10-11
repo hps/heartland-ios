@@ -144,7 +144,7 @@ static const char _base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefgh
 		}
 		else{
 				//NSLog(@"***Scanner become Nil***");
-				//	@throw [NSException exceptionWithName:@"HpsHeartSipException" reason:@"Parsing Exception due to Corrupt Data" userInfo:nil];
+				//	@throw [NSException exceptionWithName:@"HpsHpaException" reason:@"Parsing Exception due to Corrupt Data" userInfo:nil];
 		}
 
 
@@ -183,7 +183,7 @@ static const char _base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefgh
 			}
 		}
 	} @catch (NSException *exception) {
-		@throw [NSException exceptionWithName:@"HpsHeartSipException" reason:@"Parsing Exception due to key value" userInfo:nil];
+		@throw [NSException exceptionWithName:@"HpsHpaException" reason:@"Parsing Exception due to key value" userInfo:nil];
 	}
 
 
@@ -247,7 +247,7 @@ static const char _base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefgh
 
 
 	} @catch (NSException *exception) {
-		@throw [NSException exceptionWithName:@"HpsHeartSipException" reason:@"Parsing Exception due to key value" userInfo:nil];
+		@throw [NSException exceptionWithName:@"HpsHpaException" reason:@"Parsing Exception due to key value" userInfo:nil];
 	} 			// Return the object
 	return objForKey;
 }
@@ -286,7 +286,7 @@ static const char _base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefgh
 
 
 	} @catch (NSException *exception) {
-		@throw [NSException exceptionWithName:@"HpsHeartSipException" reason:@"Parsing Exception due to key value" userInfo:nil];
+		@throw [NSException exceptionWithName:@"HpsHpaException" reason:@"Parsing Exception due to key value" userInfo:nil];
 	}
 		// Return the object
 	return returnObj;
@@ -377,7 +377,7 @@ static const char _base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefgh
 		}
 
 	} @catch (NSException *exception) {
-		@throw [NSException exceptionWithName:@"HpsHeartSipException" reason:@"Parsing Exception due to key value" userInfo:nil];
+		@throw [NSException exceptionWithName:@"HpsHpaException" reason:@"Parsing Exception due to key value" userInfo:nil];
 	}
 	return newObject;
 }
@@ -501,7 +501,7 @@ static const char _base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefgh
 	}
 	@catch (NSException *exception)
 	{
-	@throw [NSException exceptionWithName:@"HpsHeartSipException" reason:@"Parsing Exception due to key value" userInfo:nil];
+	@throw [NSException exceptionWithName:@"HpsHpaException" reason:@"Parsing Exception due to key value" userInfo:nil];
 	}
 }
 
@@ -573,7 +573,7 @@ static const char _base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefgh
 
 		}
 	} @catch (NSException *exception) {
-		@throw [NSException exceptionWithName:@"HpsHeartSipException" reason:@"Parsing Exception due to key value" userInfo:nil];
+		@throw [NSException exceptionWithName:@"HpsHpaException" reason:@"Parsing Exception due to key value" userInfo:nil];
 	}
 	return self;
 }
@@ -589,7 +589,7 @@ static const char _base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefgh
 			[objectDict setValue:[self valueForKey:key] forKey:key];
 		}
 	} @catch (NSException *exception) {
-		@throw [NSException exceptionWithName:@"HpsHeartSipException" reason:@"Parsing Exception due to key value" userInfo:nil];
+		@throw [NSException exceptionWithName:@"HpsHpaException" reason:@"Parsing Exception due to key value" userInfo:nil];
 	}
 
 	return objectDict;
@@ -840,7 +840,7 @@ static const char _base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefgh
 		//NSString *className = name ? name : [NSString stringWithFormat:@"%s", class_getName([self class])];
 		//NSString *className = name ? name : [NSString stringWithFormat:@"%s", class_getName([@"SIP" class])];
 	NSString *className;
-	if ([HpsHeartSipSharedParams getInstance].class_type == REQUEST) {
+	if ([HpsHpaSharedParams getInstance].class_type == REQUEST) {
 		className = name ? name : [NSString stringWithFormat:@"%@", @"SIP"];
 	}
 	else{
@@ -864,7 +864,7 @@ static const char _base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefgh
 		// self is a String or Number
 	else if ([self isKindOfClass:[NSString class]] || [self isKindOfClass:[NSNumber class]]) {
 
-		if ([HpsHeartSipSharedParams getInstance].class_type == RESPONSE) {
+		if ([HpsHpaSharedParams getInstance].class_type == RESPONSE) {
 
 				//NSString *actualResponse	= [(NSString *)self stringByReplacingOccurrencesOfString:@"/n" withString:@""];
 				//NSString *actualResponseS	= [actualResponse stringByReplacingOccurrencesOfString:@"\0ì" withString:@""];

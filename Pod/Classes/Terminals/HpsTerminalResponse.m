@@ -1,14 +1,14 @@
 #import "HpsTerminalResponse.h"
-#import "HpsHeartSipSharedParams.h"
+#import "HpsHpaSharedParams.h"
 
 @implementation HpsTerminalResponse
 
-- (void) mapResponse:(id <SipResposeInterface>) response
+- (void) mapResponse:(id <HpaResposeInterface>) response
 {
 	self.version = response.Version;
 	self.status = response.MultipleMessage;
 	self.responseText = response.Response;
-	NSMutableDictionary *paramDictionary = [HpsHeartSipSharedParams getInstance].params;
+	NSMutableDictionary *paramDictionary = [HpsHpaSharedParams getInstance].params;
 	self.terminalSerialNumber = paramDictionary[@"TERMINAL INFORMATION"][@"SERIAL NUMBER"];
 	if (response.ResponseId) {
 		self.transactionId =  response.ResponseId.intValue;

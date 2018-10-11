@@ -1,25 +1,25 @@
 
 #import "HpsAppDelegate.h"
-#import "HpsHeartSipDevice.h"
+#import "HpsHpaDevice.h"
 
 @implementation HpsAppDelegate
-- (HpsHeartSipDevice*) setupDevice
+- (HpsHpaDevice*) setupDevice
 {
 	HpsConnectionConfig *config = [[HpsConnectionConfig alloc] init];
 	config.ipAddress = @"10.12.220.130";
 	config.port = @"12345";
 	config.connectionMode = HpsConnectionModes_TCP_IP;
-	HpsHeartSipDevice * device = [[HpsHeartSipDevice alloc] initWithConfig:config];
+	HpsHpaDevice * device = [[HpsHpaDevice alloc] initWithConfig:config];
 	return device;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-//	HpsHeartSipDevice *device = [self setupDevice];
+//	HpsHpaDevice *device = [self setupDevice];
 //
 //	[device initialize:^(id<IInitializeResponse> payload, NSError *error) {
-//		HpsHeartSipInitializeResponse *response = (HpsHeartSipInitializeResponse *)payload;
+//		HpsHpaInitializeResponse *response = (HpsHpaInitializeResponse *)payload;
 //
 //		NSLog(@"Response = %@ ,serial Number = %@",response.response ,response.serialNumber );
 //	}];

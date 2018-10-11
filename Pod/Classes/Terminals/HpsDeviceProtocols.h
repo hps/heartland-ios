@@ -40,7 +40,7 @@
 
 //@optional
 @end
-#pragma mark - HeartSipInterfaces
+#pragma mark - HpaInterfaces
 
 @protocol IBatchCloseResponse <IHPSDeviceResponse>
 

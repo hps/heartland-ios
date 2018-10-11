@@ -120,7 +120,7 @@ return [trimmedString dataUsingEncoding:NSUTF8StringEncoding];
 }
 
 
-	//HeartSip
+	//HPA
 + (id <IHPSDeviceMessage>) BuildRequest:(NSString *) message withFormat:(MessageFormat)format {
 	NSMutableData *buffer = [[NSMutableData alloc] init];
 
@@ -136,7 +136,7 @@ return [trimmedString dataUsingEncoding:NSUTF8StringEncoding];
 		}
 		break;
 
-		case HeartSIP:
+		case HPA:
 		{
 			//add length
 		uint16_t swapped = NSSwapHostShortToBig(message.length);

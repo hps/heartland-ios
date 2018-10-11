@@ -1,7 +1,7 @@
 
 #import "HpsViewController.h"
 #import "hps.h"
-#import "HpsHeartSipDevice.h"
+#import "HpsHpaDevice.h"
 #import "HpsCardInfoViewController.h"
 
 @interface HpsViewController ()<ITokenDelegate>
@@ -33,7 +33,7 @@
 }
 
 - (IBAction)getTokenTouched:(id)sender {
-	[self checkSipInit];
+	[self checkHpaInit];
 //    HpsTokenService *service = [[HpsTokenService alloc] initWithPublicKey:@"pkapi_cert_P6dRqs1LzfWJ6HgGVZ"];
 //    tokenResponse = nil;
 //    [service getTokenWithCardNumber:@"4242424242424242"
@@ -50,22 +50,22 @@
 //                   }];
 
 }
-- (HpsHeartSipDevice*) setupDevice
+- (HpsHpaDevice*) setupDevice
 {
 	HpsConnectionConfig *config = [[HpsConnectionConfig alloc] init];
 	config.ipAddress = @"10.12.220.130";
 	config.port = @"12345";
 	config.connectionMode = HpsConnectionModes_TCP_IP;
-	HpsHeartSipDevice * device = [[HpsHeartSipDevice alloc] initWithConfig:config];
+	HpsHpaDevice * device = [[HpsHpaDevice alloc] initWithConfig:config];
 	return device;
 }
 
--(void)checkSipInit{
-	HpsHeartSipDevice *device = [self setupDevice];
+-(void)checkHpaInit{
+	HpsHpaDevice *device = [self setupDevice];
 
 	[device initialize:^(id<IInitializeResponse> payload, NSError *error) {
 
-		HpsHeartSipInitializeResponse *response = (HpsHeartSipInitializeResponse *)payload;
+		HpsHpaInitializeResponse *response = (HpsHpaInitializeResponse *)payload;
 
 		NSLog(@"%@",[response toString]);
 

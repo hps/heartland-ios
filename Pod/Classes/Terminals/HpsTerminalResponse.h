@@ -3,9 +3,9 @@
 #import "HpsTokenData.h"
 #import "HpsTerminalEnums.h"
 #import "HpsPaxHostResponse.h"
-#import "HpsHeartSipResponse.h"
+#import "HpsHpaResponse.h"
 
-@class HpsHeartSipResponse;
+@class HpsHpaResponse;
 
 @interface HpsTerminalResponse : NSObject
 
@@ -62,6 +62,6 @@
 @property (nonatomic,strong) NSString *terminalVerficationResult;
 @property (nonatomic,strong) NSString *terminalSerialNumber;
 
-- (void) mapResponse:(id <SipResposeInterface>) response;
+- (void) mapResponse:(id <HpaResposeInterface>) response;
 
 @end

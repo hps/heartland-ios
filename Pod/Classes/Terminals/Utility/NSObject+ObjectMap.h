@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
-#import "HpsHeartSipSharedParams.h"
+#import "HpsHpaSharedParams.h"
 
 #define OMDateFormat @"yyyy-MM-dd'T'HH:mm:ss.SSS"
 #define OMTimeZone @"UTC"
