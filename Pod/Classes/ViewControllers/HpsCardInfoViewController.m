@@ -93,7 +93,7 @@
 
 	UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
 								   initWithTitle:@"Back"
-								   style:UIBarButtonItemStyleBordered
+								   style:UIBarButtonItemStylePlain
 								   target:self
 								   action:@selector(goBack)];
 
