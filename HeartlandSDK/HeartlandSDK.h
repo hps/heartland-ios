@@ -17,3 +17,17 @@ FOUNDATION_EXPORT const unsigned char HeartlandSDKVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <HeartlandSDK/PublicHeader.h>
 
 
+//services
+#import <HeartlandSDK/HpsServicesConfig.h>
+#import <HeartlandSDK/HpsGatewayService.h>
+#import <HeartlandSDK/HpsTokenService.h>
+
+//models
+#import <HeartlandSDK/HpsTransaction.h>
+#import <HeartlandSDK/HpsTokenData.h>
+#import <HeartlandSDK/HpsGatewayData.h>
+#import <HeartlandSDK/HpsCardData.h>
+#import <HeartlandSDK/HpsCardHolderData.h>
+#import <HeartlandSDK/HpsAdditionalTxnFields.h>
+
+#import<HeartlandSDK/HpsCardEntryViewController.h>
