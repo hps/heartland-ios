@@ -55,7 +55,7 @@
 	HpsHpaDevice *device = [self setupDevice];
 
 	HpsHpaStartCardBuilder *builder = [[HpsHpaStartCardBuilder alloc] initWithDevice:device];
-	builder.cardGroup = HPA_CARD_GROUP_toString[CREDIT];
+	builder.cardGroup = HPA_CARD_GROUP_toString[CARD_GROUP_CREDIT];
 	builder.referenceNumber = [device generateNumber];
 
 	[builder execute:^(id<IHPSDeviceResponse> payload, NSError *error) {

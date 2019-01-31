@@ -42,11 +42,11 @@ NSString * const HPA_DOWNLOAD_TYPE_toString[] = {
 
 NSString * const HPA_CARD_GROUP_toString[] = {
 
-	[ CREDIT ] = @"Credit",
-	[ DEBIT ] = @"Debit",
-	[ GIFT ] = @"Gift",
-	[ EBT ] = @"EBT",
-	[ ALL ] = @"All"
+	[ CARD_GROUP_CREDIT ] = @"Credit",
+	[ CARD_GROUP_DEBIT ] = @"Debit",
+	[ CARD_GROUP_GIFT ] = @"Gift",
+	[ CARD_GROUP_EBT ] = @"EBT",
+	[ CARD_GROUP_ALL ] = @"All"
 };
 
 @end
