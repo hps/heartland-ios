@@ -10,7 +10,7 @@
 - (HpsHpaDevice*) setupDevice
 {
 	HpsConnectionConfig *config = [[HpsConnectionConfig alloc] init];
-	config.ipAddress = @"10.12.220.130";
+	config.ipAddress = @"10.12.220.39";
 	config.port = @"12345";
 	config.connectionMode = HpsConnectionModes_TCP_IP;
 	HpsHpaDevice * device = [[HpsHpaDevice alloc] initWithConfig:config];

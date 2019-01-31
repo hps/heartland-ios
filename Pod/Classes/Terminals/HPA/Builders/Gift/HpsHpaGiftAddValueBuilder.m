@@ -2,7 +2,7 @@
 
 @interface HpsHpaGiftAddValueBuilder()
 
-@property (readwrite, strong) NSString  *cardGroup;
+@property (readwrite, strong) NSString *cardGroup;
 @property (readwrite, strong) NSNumber *version;
 @property (readwrite, strong) NSString *ecrId;
 @property (readwrite, strong) NSNumber *confirmAmount;

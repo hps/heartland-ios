@@ -2,15 +2,15 @@
 
 @interface HpsHpaGiftSaleBuilder()
 
-@property (readwrite, strong) NSString  *cardGroup;
+@property (readwrite, strong) NSString *cardGroup;
 @property (readwrite, strong) NSNumber *version;
 @property (readwrite, strong) NSString *ecrId;
 @property (readwrite, strong) NSNumber *confirmAmount;
-@property (nonatomic, strong) NSNumber *invoiceNbr;
+@property (nonatomic, strong) NSNumber *tipAmount;
 @property (nonatomic, strong) NSNumber *baseAmount;
 @property (nonatomic, strong) NSNumber *taxAmount;
 @property (nonatomic, strong) NSNumber *totalAmount;
-@property (nonatomic, strong) NSString *serverLabel;
+@property (nonatomic, strong) NSNumber *ebtAmount;
 
 @end
 
@@ -32,19 +32,12 @@
 
 - (void) execute:(void(^)(id<IHPSDeviceResponse>, NSError*))responseBlock{
 	self.totalAmount = [NSNumber numberWithFloat:(self.amount.doubleValue * 100)];
+	self.baseAmount = [NSNumber numberWithFloat:(self.amount.doubleValue * 100)];
+	self.ebtAmount = [NSNumber numberWithFloat:(self.amount.doubleValue * 100)];
 	[self validate];
 
 	HpsHpaRequest *request_sale = [[HpsHpaRequest alloc]
-										initWithCreditSaleRequestwithVersion:(self.version.stringValue ? self.version.stringValue :@"1.0")
-										withEcrId:( self.ecrId ? self.ecrId :@"1004")
-										withRequest:HPA_MSG_ID_toString[CREDIT_SALE]
-										withCardGroup:self.cardGroup
-										withConfirmAmount:(self.confirmAmount.stringValue ?self.confirmAmount.stringValue :@"0")
-										withInvoiceNbr:(self.details.invoiceNumber ? self.details.invoiceNumber :nil)
-										withBaseAmount:(self.baseAmount.stringValue ?self.baseAmount.stringValue :nil)
-										withTaxAmount:(self.taxAmount.stringValue ?self.taxAmount.stringValue :nil)
-										withTotalAmount:(self.totalAmount.stringValue ? self.totalAmount.stringValue :nil)
-										withServerLabel:(self.serverLabel ? self.serverLabel :nil)];
+										initWithCreditSaleRequestwithVersion:(self.version.stringValue ? self.version.stringValue :@"1.0") withEcrId:(self.ecrId ? self.ecrId :@"1004") withRequest:HPA_MSG_ID_toString[CREDIT_SALE] withCardGroup:self.cardGroup withConfirmAmount:(self.confirmAmount.stringValue ?self.confirmAmount.stringValue :@"0") withBaseAmount:(self.baseAmount.stringValue ? self.baseAmount.stringValue :nil) withTipAmount:(self.tipAmount.stringValue ? self.tipAmount.stringValue :nil) withTaxAmount:(self.taxAmount.stringValue ?self.taxAmount.stringValue :nil) withEBTAmount:(self.ebtAmount.stringValue ? self.ebtAmount.stringValue :nil) withTotalAmount:(self.totalAmount.stringValue ? self.totalAmount.stringValue :nil)];
 
 	request_sale.RequestId = self.referenceNumber;
 

@@ -18,7 +18,7 @@
 - (HpsHpaDevice*) setupDevice
 {
 	HpsConnectionConfig *config = [[HpsConnectionConfig alloc] init];
-	config.ipAddress = @"10.12.220.130";
+	config.ipAddress = @"10.12.220.39";
 	config.port = @"12345";
 	config.connectionMode = HpsConnectionModes_TCP_IP;
 	HpsHpaDevice * device = [[HpsHpaDevice alloc] initWithConfig:config];
@@ -30,6 +30,7 @@
 	XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit Sale fail No Amount"];
 	HpsHpaDevice *device = [self setupDevice];
 	HpsHpaCreditSaleBuilder *builder = [[HpsHpaCreditSaleBuilder alloc] initWithDevice:device];
+	builder.referenceNumber = [device generateNumber];
 
 	@try {
 		[builder execute:^(id<IHPSDeviceResponse>payload, NSError *error)
@@ -40,6 +41,7 @@
 	} @catch (NSException *exception) {
 		[expectation fulfill];
 	}
+	
 	[self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
 		if(error) XCTFail(@"Request Timed out");
 	}];
@@ -51,6 +53,7 @@
 	XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa CreditRefund failed No Amount"];
 	HpsHpaDevice *device = [self setupDevice];
 	HpsHpaCreditRefundBuilder *builder = [[HpsHpaCreditRefundBuilder alloc]initWithDevice:device];
+	builder.referenceNumber = [device generateNumber];
 
 	@try {
 		[builder execute:^(id<IHPSDeviceResponse>payload, NSError *error)
@@ -71,10 +74,12 @@
 -(void) test_Credit_Auth_No_Amount
 {
 	XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit Auth No Amount"];
+
 	HpsHpaDevice *device = [self setupDevice];
 
 	HpsHpaCreditAuthBuilder *builder = [[HpsHpaCreditAuthBuilder alloc]initWithDevice:device];
 	builder.amount = [NSNumber numberWithDouble:11.52];
+	builder.referenceNumber = [device generateNumber];
 
 	@try {
 		[builder execute:^(id<IHPSDeviceResponse>payload, NSError *error)
@@ -100,8 +105,10 @@
 -(void) test_Credit_Void_No_Transaction_Id
 {
 	XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa CreditVoid failed NoTransactionId"];
+
 	HpsHpaDevice *device = [self setupDevice];
 	HpsHpaCreditVoidBuilder *builder = [[HpsHpaCreditVoidBuilder alloc]initWithDevice:device];
+	builder.referenceNumber = [device generateNumber];
 
 	@try {
 		[builder execute:^(id<IHPSDeviceResponse>payload, NSError *error)
@@ -122,6 +129,7 @@
 -(void) test_Credit_Capture_No_TransactionId
 {
 	XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit capture no transactionID"];
+
 	HpsHpaDevice *device = [self setupDevice];
 	HpsHpaCreditCaptureBuilder *builder = [[HpsHpaCreditCaptureBuilder alloc]initWithDevice:device];
 
@@ -141,21 +149,36 @@
 }
 
 #pragma mark :- wait and Reset
--(void) waitAndReset:(HpsHpaDevice *)device
+-(void) waitAndReset:(HpsHpaDevice *)device completion:(void(^)(BOOL success))responseBlock
 {
 	NSLog(@"Resetting Device ...");
-	[self performSelector:@selector(reset:) withObject:device afterDelay:3.0 ];
-	NSLog(@"Device Resetted ...");
+
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[device reset:^(id<IHPSDeviceResponse> payload, NSError *error) {
+			if (payload != nil){
+				if ([payload.deviceResponseCode isEqualToString:@"00"]){
+				NSLog(@"Device Resetted ...");
+				responseBlock(YES);
+				}
+			}else {
+				NSLog(@"Device Not Resetted ...");
+				responseBlock(NO);
+			}
+		}];
+	});
 }
 
 #pragma mark :- Other CreditTest
 - (void) test_Credit_Sale
 {
 	XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit fail MultiplePayments"];
+
 	HpsHpaDevice *device = [self setupDevice];
+
 	HpsHpaCreditSaleBuilder *builder = [[HpsHpaCreditSaleBuilder alloc] initWithDevice:device];
 	builder.amount = [NSNumber numberWithDouble:11.52];
-	builder.referenceNumber = 1;
+	builder.referenceNumber = [device generateNumber];
+
 	[builder execute:^(id <IHPSDeviceResponse> payload, NSError *error){
 		XCTAssertNil(error);
 		XCTAssertNotNil(payload);
@@ -164,7 +187,8 @@
 		[expectation fulfill];
 
 	}];
-	[self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
+
+	[self waitForExpectationsWithTimeout:120.0 handler:^(NSError *error) {
 		if(error) XCTFail(@"Request Timed out");
 	}];
 
@@ -174,17 +198,20 @@
 -(void) test_Credit_Refund_By_Card
 {
 	XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit Refund "];
+
 	HpsHpaDevice *device = [self setupDevice];
 
 	HpsHpaCreditRefundBuilder *builder = [[HpsHpaCreditRefundBuilder alloc]initWithDevice:device];
 	builder.amount = [NSNumber numberWithDouble:11.52];
-	builder.referenceNumber = 1;
+	builder.referenceNumber = [device generateNumber];
+
 	[builder execute:^(id<IHPSDeviceResponse>payload, NSError *error) {
 		XCTAssertNil(error);
 		XCTAssertNotNil(payload);
 		XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
 		[expectation fulfill];
 	}];
+
 	[self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
 		if(error) XCTFail(@"Request Timed out");
 	}];
@@ -193,34 +220,42 @@
 -(void) test_Credit_Void
 {
 	XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit void "];
+
 	HpsHpaDevice *device = [self setupDevice];
 
 	HpsHpaCreditSaleBuilder *builder = [[HpsHpaCreditSaleBuilder alloc] initWithDevice:device];
 	builder.amount = [NSNumber numberWithDouble:11.52];
-	builder.referenceNumber = 1;
+	builder.referenceNumber = [device generateNumber];
+
 	[builder execute:^(id <IHPSDeviceResponse> payload, NSError *error){
 		XCTAssertNil(error);
 		XCTAssertNotNil(payload);
 		XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
-		//[self waitAndReset:device];
+		
 		HpsHpaCreditVoidBuilder *voidbuilder = [[HpsHpaCreditVoidBuilder alloc]initWithDevice:device];
 		voidbuilder.transactionId = [NSNumber numberWithInt:((HpsHpaDeviceResponse *)payload).transactionId];
+		voidbuilder.referenceNumber = [device generateNumber];
 
-		@try {
-			[voidbuilder execute:^(id<IHPSDeviceResponse>payload, NSError *error) {
-				XCTAssertNil(error);
-				XCTAssertNotNil(payload);
-				XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
-				[expectation fulfill];
+		[self waitAndReset:device completion:^(BOOL success) {
+			if (success) {
+				@try {
+					[voidbuilder execute:^(id<IHPSDeviceResponse>payload, NSError *error) {
+						XCTAssertNil(error);
+						XCTAssertNotNil(payload);
+						XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
+						[expectation fulfill];
 
-			}];
-		} @catch (NSException *exception) {
-			XCTFail(@"%@",exception.description);
-		}
-
+					}];
+				} @catch (NSException *exception) {
+					XCTFail(@"Credit_Void_Failed: %@",exception.description);
+				}
+			}else {
+				XCTFail(@"Credit_Void_Failed");
+			}
+		}];
 	}];
 	
-	[self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
+	[self waitForExpectationsWithTimeout:120.0 handler:^(NSError *error) {
 		if(error) XCTFail(@"Request Timed out");
 	}];
 
@@ -229,16 +264,20 @@
 -(void) test_Credit_Auth
 {
 	XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit Auth"];
+
 	HpsHpaDevice *device = [self setupDevice];
+
 	HpsHpaCreditAuthBuilder *builder = [[HpsHpaCreditAuthBuilder alloc] initWithDevice:device];
 	builder.amount = [NSNumber numberWithDouble:11.52];
-	builder.referenceNumber = 1;
+	builder.referenceNumber = [device generateNumber];
+
 	[builder execute:^(id <IHPSDeviceResponse> payload, NSError *error){
 		XCTAssertNil(error);
 		XCTAssertNotNil(payload);
 		XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
 		[expectation fulfill];
 	}];
+
 	[self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
 		if(error) XCTFail(@"Request Timed out");
 	}];
@@ -247,26 +286,44 @@
 -(void) test_Credit_Capture
 {
 	XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit Capture"];
+
 	HpsHpaDevice *device = [self setupDevice];
+
 	HpsHpaCreditAuthBuilder *builder = [[HpsHpaCreditAuthBuilder alloc] initWithDevice:device];
 	builder.amount = [NSNumber numberWithDouble:11.52];
-	builder.referenceNumber = 1;
+	builder.referenceNumber = [device generateNumber];
+
 	[builder execute:^(id <IHPSDeviceResponse> payload, NSError *error){
 		XCTAssertNil(error);
 		XCTAssertNotNil(payload);
 		XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
-		[self waitAndReset:device];
+
 		HpsHpaCreditCaptureBuilder *caputureBuilder = [[HpsHpaCreditCaptureBuilder alloc]initWithDevice:device];
 		caputureBuilder.transactionId = [NSNumber numberWithInteger:((HpsHpaDeviceResponse *)payload).transactionId];
-		[caputureBuilder execute:^(id<IHPSDeviceResponse>response, NSError *error) {
-			XCTAssertNil(error);
-			XCTAssertNotNil(response);
-			XCTAssertEqualObjects(@"00", response.deviceResponseCode);
-			[expectation fulfill];
+		caputureBuilder.referenceNumber = [device generateNumber];
+
+		[self waitAndReset:device completion:^(BOOL success) {
+
+			if (success) {
+
+				@try {
+					[caputureBuilder execute:^(id<IHPSDeviceResponse>response, NSError *error) {
+						XCTAssertNil(error);
+						XCTAssertNotNil(response);
+						XCTAssertEqualObjects(@"00", response.deviceResponseCode);
+						[expectation fulfill];
+					}];
+				} @catch (NSException *exception) {
+					XCTFail(@"Credit_Capture_Failed: %@",exception.description);
+				}
+			}else {
+				XCTFail(@"Credit_Capture_Failed");
+			}
+
 		}];
 
-
 	}];
+
 	[self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
 		if(error) XCTFail(@"Request Timed out");
 	}];
@@ -274,16 +331,21 @@
 }
 
 -(void) test_Credit_Verify{
+
 	XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit fail MultiplePayments"];
+
 	HpsHpaDevice *device = [self setupDevice];
+
 	HpsHpaCreditVerifyBuilder *builder = [[HpsHpaCreditVerifyBuilder alloc]initWithDevice:device];
-	builder.referenceNumber = 1;
+	builder.referenceNumber = [device generateNumber];
+
 	[builder execute:^(id<IHPSDeviceResponse>payload, NSError *error) {
 		XCTAssertNil(error);
 		XCTAssertNotNil(payload);
 		XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
 		[expectation fulfill];
 	}];
+
 	[self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
 		if(error) XCTFail(@"Request Timed out");
 	}];

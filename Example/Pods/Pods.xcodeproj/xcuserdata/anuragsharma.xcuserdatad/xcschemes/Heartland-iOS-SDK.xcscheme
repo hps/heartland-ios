@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "218937DAB66931F2CEDF0EB86712AA1A"
+               BlueprintIdentifier = "02C0F273ED8589B4E6DDCB147637626E"
                BuildableName = "Heartland_iOS_SDK.framework"
                BlueprintName = "Heartland-iOS-SDK"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "218937DAB66931F2CEDF0EB86712AA1A"
+            BlueprintIdentifier = "02C0F273ED8589B4E6DDCB147637626E"
             BuildableName = "Heartland_iOS_SDK.framework"
             BlueprintName = "Heartland-iOS-SDK"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -22,7 +22,7 @@
 - (HpsHpaDevice*) setupDevice
 {
 	HpsConnectionConfig *config = [[HpsConnectionConfig alloc] init];
-	config.ipAddress = @"10.12.220.130";
+	config.ipAddress = @"10.12.220.39";
 	config.port = @"12345";
 	config.connectionMode = HpsConnectionModes_TCP_IP;
 	HpsHpaDevice * device = [[HpsHpaDevice alloc] initWithConfig:config];
@@ -88,12 +88,23 @@
 
 #pragma mark -
 #pragma mark :- wait and Reset
-
--(void) waitAndReset:(HpsHpaDevice *)device
+-(void) waitAndReset:(HpsHpaDevice *)device completion:(void(^)(BOOL success))responseBlock
 {
 	NSLog(@"Resetting Device ...");
-	[self performSelector:@selector(reset:) withObject:device afterDelay:3.0 ];
-	NSLog(@"Device Resetted ...");
+	
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[device reset:^(id<IHPSDeviceResponse> payload, NSError *error) {
+			if (payload != nil){
+				if ([payload.deviceResponseCode isEqualToString:@"00"]){
+					NSLog(@"Device Resetted ...");
+					responseBlock(YES);
+				}
+			}else {
+				NSLog(@"Device Not Resetted ...");
+				responseBlock(NO);
+			}
+		}];
+	});
 }
 
 #pragma mark -
@@ -111,11 +122,14 @@
 {
 	[self writeStringToFile:@"TEST CASE #1 – Contact Chip and Signature – Offline \n"];
 
-	__weak XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit fail MultiplePayments"];
+	XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit fail MultiplePayments"];
+
 	HpsHpaDevice *device = [self setupDevice];
+
 	HpsHpaCreditSaleBuilder *builder = [[HpsHpaCreditSaleBuilder alloc] initWithDevice:device];
 	builder.amount = [NSNumber numberWithDouble:23];
-	builder.referenceNumber = 1;
+	builder.referenceNumber = [device generateNumber];
+
 	[builder execute:^(id <IHPSDeviceResponse> payload, NSError *error){
 		XCTAssertNil(error);
 		XCTAssertNotNil(payload);
@@ -126,6 +140,7 @@
 		[expectation fulfill];
 
 	}];
+
 	[self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
 
 		if(error) XCTFail(@"Request Timed out");
@@ -163,11 +178,14 @@
 {
 	[self writeStringToFile:@"TEST CASE #3 - Approved Sale with Offline PIN \n"];
 
-	__weak XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit fail MultiplePayments"];
+	XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit fail MultiplePayments"];
+
 	HpsHpaDevice *device = [self setupDevice];
+
 	HpsHpaCreditSaleBuilder *builder = [[HpsHpaCreditSaleBuilder alloc] initWithDevice:device];
 	builder.amount = [NSNumber numberWithDouble:25];
-	builder.referenceNumber = 2;
+	builder.referenceNumber = [device generateNumber];
+
 	[builder execute:^(id <IHPSDeviceResponse> payload, NSError *error){
 		XCTAssertNil(error);
 		XCTAssertNotNil(payload);
@@ -180,6 +198,7 @@
 		[expectation fulfill];
 
 	}];
+
 	[self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
 
 		if(error) XCTFail(@"Request Timed out");
@@ -201,11 +220,14 @@
 {
 	[self writeStringToFile:@"TEST CASE #4 - Manually Entered Sale with AVS & CVV2/CID \n"];
 
-	__weak XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit fail MultiplePayments"];
+	XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit fail MultiplePayments"];
+
 	HpsHpaDevice *device = [self setupDevice];
+
 	HpsHpaCreditSaleBuilder *builder = [[HpsHpaCreditSaleBuilder alloc] initWithDevice:device];
 	builder.amount = [NSNumber numberWithDouble:118.00];
-	builder.referenceNumber = 2;
+	builder.referenceNumber = [device generateNumber];
+
 	[builder execute:^(id <IHPSDeviceResponse> payload, NSError *error){
 		XCTAssertNil(error);
 		XCTAssertNotNil(payload);
@@ -220,6 +242,7 @@
 		[expectation fulfill];
 
 	}];
+
 	[self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
 
 		if(error) XCTFail(@"Request Timed out");
@@ -240,11 +263,14 @@
 {
 	[self writeStringToFile:@" TEST CASE #5 - Partial Approval \n"];
 
-	__weak XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit fail MultiplePayments"];
+	XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit fail MultiplePayments"];
+
 	HpsHpaDevice *device = [self setupDevice];
+
 	HpsHpaCreditSaleBuilder *builder = [[HpsHpaCreditSaleBuilder alloc] initWithDevice:device];
 	builder.amount = [NSNumber numberWithDouble:155.00];
-	builder.referenceNumber = 2;
+	builder.referenceNumber = [device generateNumber];
+
 	[builder execute:^(id <IHPSDeviceResponse> payload, NSError *error){
 		XCTAssertNil(error);
 		XCTAssertNotNil(payload);
@@ -258,6 +284,7 @@
 		[expectation fulfill];
 
 	}];
+
 	[self waitForExpectationsWithTimeout:160.0 handler:^(NSError *error) {
 
 		if(error) XCTFail(@"Request Timed out");
@@ -276,38 +303,47 @@
 {
 	[self writeStringToFile:@" TEST CASE #6 - Online Void \n"];
 
-	__weak XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit void "];
+	XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit void "];
+
 	HpsHpaDevice *device = [self setupDevice];
 
 	HpsHpaCreditSaleBuilder *builder = [[HpsHpaCreditSaleBuilder alloc] initWithDevice:device];
 	builder.amount = [NSNumber numberWithDouble:10];
-	builder.referenceNumber = 2;
+	builder.referenceNumber = [device generateNumber];
+
 	[builder execute:^(id <IHPSDeviceResponse> payload, NSError *error){
 		XCTAssertNil(error);
 		XCTAssertNotNil(payload);
 		XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
-			//	[self waitAndReset:device];
+
 		HpsHpaCreditVoidBuilder *voidbuilder = [[HpsHpaCreditVoidBuilder alloc]initWithDevice:device];
 		voidbuilder.transactionId = [NSNumber numberWithInt:((HpsHpaDeviceResponse *)payload).transactionId];
 		NSLog(@"#### transactionID = %@",[NSNumber numberWithInt:((HpsHpaDeviceResponse *)payload).transactionId]);
-		@try {
-			[voidbuilder execute:^(id<IHPSDeviceResponse>payload, NSError *error) {
-				XCTAssertNil(error);
-				XCTAssertNotNil(payload);
-				XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
-				NSLog(@"Response = %@",payload.toString);
-				NSLog(@"Host Reference Number = %d",((HpsTerminalResponse *)payload).transactionId);
-					//[self writeStringToFile:[NSString stringWithFormat:@"Transaction ID: %d \n",((HpsTerminalResponse *)payload).transactionId]];
-				[self printRecipt:(HpsHpaDeviceResponse *)payload];
 
-				[expectation fulfill];
+		[self waitAndReset:device completion:^(BOOL success) {
+			if (success) {
+				@try {
+					[voidbuilder execute:^(id<IHPSDeviceResponse>payload, NSError *error) {
+						XCTAssertNil(error);
+						XCTAssertNotNil(payload);
+						XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
+						NSLog(@"Response = %@",payload.toString);
+						NSLog(@"Host Reference Number = %d",((HpsTerminalResponse *)payload).transactionId);
+							//[self writeStringToFile:[NSString stringWithFormat:@"Transaction ID: %d \n",((HpsTerminalResponse *)payload).transactionId]];
+						[self printRecipt:(HpsHpaDeviceResponse *)payload];
 
-			}];
-		} @catch (NSException *exception) {
-			XCTFail(@"%@",exception.description);
-		}
+						[expectation fulfill];
+					}];
+				} @catch (NSException *exception) {
+					XCTFail(@"Credit_Void_Failed: %@",exception.description);
+				}
+			}else {
+				XCTFail(@"Credit_Void_Failed");
+			}
+		}];
 	}];
-	[self waitForExpectationsWithTimeout:160.0 handler:^(NSError *error) {
+
+	[self waitForExpectationsWithTimeout:120.0 handler:^(NSError *error) {
 
 		if(error) XCTFail(@"Request Timed out");
 	}];
@@ -325,7 +361,7 @@
 {
 	[self writeStringToFile:@" TEST CASE  #8 – Process Lane Open on Hpa \n"];
 
-	__weak XCTestExpectation *expectation = [self expectationWithDescription:@"test_Hpa_TCP_Lane_Open"];
+	XCTestExpectation *expectation = [self expectationWithDescription:@"test_Hpa_TCP_Lane_Open"];
 
 	HpsHpaDevice *device = [self setupDevice];
 
@@ -358,12 +394,14 @@
 {
 	[self writeStringToFile:@" TEST CASE #9 – Credit Return \n"];
 
-	__weak XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit Refund "];
+	XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit Refund "];
+
 	HpsHpaDevice *device = [self setupDevice];
 
 	HpsHpaCreditRefundBuilder *builder = [[HpsHpaCreditRefundBuilder alloc]initWithDevice:device];
 	builder.amount = [NSNumber numberWithDouble:9];
-	builder.referenceNumber = 1;
+	builder.referenceNumber = [device generateNumber];
+
 	[builder execute:^(id<IHPSDeviceResponse>payload, NSError *error) {
 		XCTAssertNil(error);
 		XCTAssertNotNil(payload);
@@ -374,6 +412,7 @@
 
 		[expectation fulfill];
 	}];
+
 	[self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
 
 		if(error) XCTFail(@"Request Timed out");
@@ -403,12 +442,13 @@
 {
 	[self writeStringToFile:@" TEST CASE #10a – HMS Gift \n"];
 
-	__weak XCTestExpectation *expectation = [self expectationWithDescription:@"test_Hpa_HTTP_Gift_Balance"];
+	XCTestExpectation *expectation = [self expectationWithDescription:@"test_Hpa_HTTP_Gift_Balance"];
 
 	HpsHpaDevice *device = [self setupDevice];
 
 	HpsHpaGiftBalanceBuilder *builder = [[HpsHpaGiftBalanceBuilder alloc] initWithDevice:device];
-	builder.referenceNumber = 1;
+	builder.referenceNumber = [device generateNumber];
+
 	[builder execute:^(id <IHPSDeviceResponse> payload, NSError *error) {
 		XCTAssertNil(error);
 		XCTAssertNotNil(payload);
@@ -434,13 +474,13 @@
 {
 	[self writeStringToFile:@"TEST CASE #10b – HMS Gift \n"];
 
-	__weak XCTestExpectation *expectation = [self expectationWithDescription:@"test_Hpa_HTTP_Gift_AddValue"];
+	XCTestExpectation *expectation = [self expectationWithDescription:@"test_Hpa_HTTP_Gift_AddValue"];
 
 	HpsHpaDevice *device = [self setupDevice];
 
 	HpsHpaGiftAddValueBuilder *builder = [[HpsHpaGiftAddValueBuilder alloc] initWithDevice:device];
 	builder.amount = [NSNumber numberWithDouble:8.0];
-	builder.referenceNumber = 1;
+	builder.referenceNumber = [device generateNumber];
 
 	[builder execute:^(id <IHPSDeviceResponse> payload, NSError *error) {
 		XCTAssertNil(error);
@@ -464,13 +504,13 @@
 {
 	[self writeStringToFile:@"TEST CASE #10c – HMS Gift \n"];
 
-	__weak XCTestExpectation *expectation = [self expectationWithDescription:@"test_Hpa_HTTP_Loyalty_Sale"];
+	XCTestExpectation *expectation = [self expectationWithDescription:@"test_Hpa_HTTP_Loyalty_Sale"];
 
 	HpsHpaDevice *device = [self setupDevice];
 
 	HpsHpaGiftSaleBuilder *builder = [[HpsHpaGiftSaleBuilder alloc] initWithDevice:device];
 	builder.amount = [NSNumber numberWithDouble:1.0];
-	builder.referenceNumber = 1;
+	builder.referenceNumber = [device generateNumber];
 
 	[builder execute:^(id<IHPSDeviceResponse> payload, NSError *error){
 		XCTAssertNil(error);
@@ -506,7 +546,7 @@
 -(void)test_Case13{
 	[self writeStringToFile:@"TEST CASE #13 – Batch Close \n"];
 
-	__weak XCTestExpectation *expectation = [self expectationWithDescription:@"test_Hpa_Batch_Close"];
+	XCTestExpectation *expectation = [self expectationWithDescription:@"test_Hpa_Batch_Close"];
 
 	HpsHpaDevice *device = [self setupDevice];
 	[device batchClose:^(id<IBatchCloseResponse>payload, NSError *error) {

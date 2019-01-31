@@ -4,10 +4,10 @@
 
 @property (readwrite, strong) NSNumber *version;
 @property (readwrite, strong) NSString *ecrId;
+@property (readwrite, strong) NSString *cardGroup;
 @property (readwrite, strong) NSNumber *confirmAmount;
-@property (readwrite, strong) NSString  *cardGroup;
-@property (nonatomic, strong) NSNumber *invoiceNbr;
 @property (nonatomic, strong) NSNumber *totalAmount;
+
 @end
 
 @implementation HpsHpaCreditAuthBuilder
@@ -27,10 +27,9 @@
 - (void) execute:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock{
 	NSLog(@"Auth builder Execute ....");
 	self.totalAmount = [NSNumber numberWithFloat:(self.amount.doubleValue * 100)];
-	self.confirmAmount = self.totalAmount;
-	self.invoiceNbr = [NSNumber numberWithInteger:self.referenceNumber];
+	self.confirmAmount = [NSNumber numberWithDouble:0];
 	[self validate];
-	HpsHpaRequest *request_auth = [[HpsHpaRequest alloc] initWithCreditAuthRequestwithVersion:(self.version.stringValue ? self.version.stringValue :@"1.0") withEcrId:( self.ecrId ? self.ecrId :@"1004") withRequest:HPA_MSG_ID_toString[CREDIT_AUTH] withConfirmAmount:(self.confirmAmount.stringValue ?self.confirmAmount.stringValue :@"0") withInvoiceNbr:self.invoiceNbr.stringValue withTotalAmount:self.totalAmount.stringValue];
+	HpsHpaRequest *request_auth = [[HpsHpaRequest alloc] initWithCreditAuthRequestwithVersion:(self.version.stringValue ? self.version.stringValue :@"1.0") withEcrId:( self.ecrId ? self.ecrId :@"1004") withRequest:HPA_MSG_ID_toString[CREDIT_AUTH] withConfirmAmount:(self.confirmAmount.stringValue ?self.confirmAmount.stringValue :@"0") withTotalAmount:self.totalAmount.stringValue];
 	request_auth.RequestId = self.referenceNumber;
 	[device processTransactionWithRequest:request_auth withResponseBlock:^(id<IHPSDeviceResponse> respose, NSError *error)
 	 {

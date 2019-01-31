@@ -34,6 +34,7 @@
 
 	self.invoiceNbr = [NSNumber numberWithInteger:self.referenceNumber];
 	self.totalAmount = [NSNumber numberWithFloat:(self.amount.doubleValue * 100)] ;
+	self.baseAmount = [NSNumber numberWithFloat:(self.amount.doubleValue * 100)] ;
 	[self validate];
 	HpsHpaRequest *request_sale = [[HpsHpaRequest alloc]
 										initWithDebitSaleRequestwithVersion:(self.version.stringValue ? self.version.stringValue :@"1.0")

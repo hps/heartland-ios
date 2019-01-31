@@ -31,4 +31,7 @@
 	// processTransaction
 -(void)processTransactionWithRequest:(HpsHpaRequest*)HpsHpaRequest withResponseBlock:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
 
+	//Random Number
+-(int)generateNumber;
+
 @end

@@ -2,21 +2,12 @@
 #import "HpsTerminalUtilities.h"
 #import "HpsTerminalEnums.h"
 #import "HpsHpaTcpInterface.h"
-
-#define RESET_REQUEST @"<SIP><Version>1.0</Version><ECRId>1004</ECRId><Request>Reset</Request></SIP>"
-#define REBOOT_REQUEST @"<SIP><Version>1.0</Version><ECRId>1004</ECRId><Request>Reboot</Request></SIP>"
-#define CLOSELANE_REQUEST @"<SIP><Version>1.0</Version><ECRId>1004</ECRId><Request>LaneClose</Request></SIP>"
-#define OPENLANE_REQUEST @"<SIP><Version>1.0</Version><ECRId>1004</ECRId><Request>LaneOpen</Request></SIP>"
-#define BATCHCLOSE_REQUEST @"<SIP><Version>1.0</Version><ECRId>1004</ECRId><Request>CloseBatch</Request></SIP>"
-	//#define DISABLE_HOST_RESPONSE_BEEP @""
-#define INITIALIZE_REQUEST @"<SIP><Version>1.0</Version><ECRId>1004</ECRId><Request>GetAppInfoReport</Request></SIP>"
-
 #import "NSObject+ObjectMap.h"
 
-@implementation HpsHpaDevice
-{
+//#define DISABLE_HOST_RESPONSE_BEEP @""
 
-}
+@implementation HpsHpaDevice
+
 - (instancetype) initWithConfig:(HpsConnectionConfig*)config
 {
 	if((self = [super init]))
@@ -67,7 +58,11 @@
 }
 
 - (void) initialize:(void(^)(id <IInitializeResponse>, NSError*))responseBlock{
-	id<IHPSDeviceMessage> request	= [HpsTerminalUtilities	BuildRequest:INITIALIZE_REQUEST withFormat:format];
+
+	NSString *strInitialize = [NSString stringWithFormat:@"<SIP><Version>1.0</Version><ECRId>1004</ECRId><Request>GetAppInfoReport</Request><RequestId>%d</RequestId></SIP>",[self generateNumber]];
+
+	id<IHPSDeviceMessage> request	= [HpsTerminalUtilities	BuildRequest:strInitialize withFormat:format];
+
 	NSLog(@"Step 2");
 	[self.interface send:request andResponseBlock:^(NSData *data, NSError *error) {
 		if (error) {
@@ -106,7 +101,11 @@
 }
 
 - (void) openLane:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock{
-	id<IHPSDeviceMessage> request	= [HpsTerminalUtilities	BuildRequest:OPENLANE_REQUEST withFormat:format  ];
+
+	NSString *strLaneOpen = [NSString stringWithFormat:@"<SIP><Version>1.0</Version><ECRId>1004</ECRId><Request>LaneOpen</Request><RequestId>%d</RequestId></SIP>",[self generateNumber]];
+
+	id<IHPSDeviceMessage> request	= [HpsTerminalUtilities	BuildRequest:strLaneOpen withFormat:format];
+
 	[self.interface send:request andResponseBlock:^(NSData *data, NSError *error) {
 		if (error) {
 			dispatch_async(dispatch_get_main_queue(), ^{
@@ -140,7 +139,11 @@
 }
 
 - (void) closeLane:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock{
-	id<IHPSDeviceMessage> request	= [HpsTerminalUtilities	BuildRequest:CLOSELANE_REQUEST withFormat:format  ];
+
+	NSString *strLaneClose = [NSString stringWithFormat:@"<SIP><Version>1.0</Version><ECRId>1004</ECRId><Request>LaneClose</Request><RequestId>%d</RequestId></SIP>",[self generateNumber]];
+
+	id<IHPSDeviceMessage> request	= [HpsTerminalUtilities	BuildRequest:strLaneClose withFormat:format];
+
 	[self.interface send:request andResponseBlock:^(NSData *data, NSError *error) {
 		if (error) {
 			dispatch_async(dispatch_get_main_queue(), ^{
@@ -174,7 +177,10 @@
 }
 
 - (void) reboot:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock{
-	id<IHPSDeviceMessage> request	= [HpsTerminalUtilities	BuildRequest:REBOOT_REQUEST withFormat:format];
+
+	NSString *strReboot = [NSString stringWithFormat:@"<SIP><Version>1.0</Version><ECRId>1004</ECRId><Request>Reboot</Request><RequestId>%d</RequestId></SIP>",[self generateNumber]];
+
+	id<IHPSDeviceMessage> request	= [HpsTerminalUtilities	BuildRequest:strReboot withFormat:format];
 
 	[self.interface send:request andResponseBlock:^(NSData *data, NSError *error) {
 		if (error) {
@@ -210,7 +216,10 @@
 }
 
 - (void) reset:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock{
-	id<IHPSDeviceMessage> request	= [HpsTerminalUtilities	BuildRequest:RESET_REQUEST withFormat:format];
+
+	NSString *strReset = [NSString stringWithFormat:@"<SIP><Version>1.0</Version><ECRId>1004</ECRId><Request>Reset</Request><RequestId>%d</RequestId></SIP>",[self generateNumber]];
+
+	id<IHPSDeviceMessage> request	= [HpsTerminalUtilities	BuildRequest:strReset withFormat:format];
 
 	[self.interface send:request andResponseBlock:^(NSData *data, NSError *error) {
 		if (error) {
@@ -246,7 +255,9 @@
 
 - (void) batchClose:(void(^)(id <IBatchCloseResponse> , NSError*))responseBlock{
 
-	id<IHPSDeviceMessage> request	= [HpsTerminalUtilities	BuildRequest:BATCHCLOSE_REQUEST withFormat:format];
+	NSString *strBatchClose = [NSString stringWithFormat:@"<SIP><Version>1.0</Version><ECRId>1004</ECRId><Request>CloseBatch</Request></SIP><RequestId>%d</RequestId></SIP>",[self generateNumber]];
+
+	id<IHPSDeviceMessage> request	= [HpsTerminalUtilities	BuildRequest:strBatchClose withFormat:format];
 
 	[self.interface send:request andResponseBlock:^(NSData *data, NSError *error) {
 		if (error) {
@@ -316,6 +327,13 @@
 			}
 		}
 	}];
+}
+
+#pragma mark -
+#pragma mark Random Number Generator
+-(int)generateNumber {
+
+	return arc4random_uniform(999999999);
 }
 
 #pragma mark -

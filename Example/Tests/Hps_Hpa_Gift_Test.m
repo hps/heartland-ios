@@ -16,7 +16,7 @@
 - (HpsHpaDevice*) setupDevice
 {
 	HpsConnectionConfig *config = [[HpsConnectionConfig alloc] init];
-	config.ipAddress = @"10.12.220.130";
+	config.ipAddress = @"10.12.220.39";
 	config.port = @"12345";
 	config.connectionMode = HpsConnectionModes_TCP_IP;
 	HpsHpaDevice * device = [[HpsHpaDevice alloc] initWithConfig:config];
@@ -32,7 +32,8 @@
 
 	HpsHpaGiftSaleBuilder *builder = [[HpsHpaGiftSaleBuilder alloc] initWithDevice:device];
 	builder.amount = [NSNumber numberWithDouble:10.0];
-	builder.referenceNumber = 1;
+	builder.referenceNumber = [device generateNumber];
+
 	[builder execute:^(id<IHPSDeviceResponse> payload, NSError *error){
 		XCTAssertNil(error);
 		XCTAssertNotNil(payload);
@@ -40,6 +41,7 @@
 		[expectation fulfill];
 
 	}];
+
 	[self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
 		if(error) XCTFail(@"Request Timed out");
 	}];
@@ -53,7 +55,7 @@
 
 	HpsHpaGiftSaleBuilder *builder = [[HpsHpaGiftSaleBuilder alloc] initWithDevice:device];
 	builder.amount = [NSNumber numberWithDouble:8.0];
-	builder.referenceNumber = 3;
+	builder.referenceNumber = [device generateNumber];
 
 	HpsTransactionDetails *details = [[HpsTransactionDetails alloc] init];
 	details.invoiceNumber = @"1234";
@@ -80,8 +82,8 @@
 
 	HpsHpaGiftSaleBuilder *builder = [[HpsHpaGiftSaleBuilder alloc] initWithDevice:device];
 	builder.amount = [NSNumber numberWithDouble:18.0];
-	builder.referenceNumber = 5;
-		//builder.currencyType = HpsCurrencyCodes_POINTS;
+	builder.referenceNumber = [device generateNumber];
+	//builder.currencyType = HpsCurrencyCodes_POINTS;
 
 	[builder execute:^(id<IHPSDeviceResponse> payload, NSError *error){
 		XCTAssertNil(error);
@@ -103,7 +105,7 @@
 	HpsHpaDevice *device = [self setupDevice];
 
 	HpsHpaGiftSaleBuilder *builder = [[HpsHpaGiftSaleBuilder alloc] initWithDevice:device];
-	builder.referenceNumber = 5;
+	builder.referenceNumber = [device generateNumber];
 
 	@try {
 		[builder execute:^(id <IHPSDeviceResponse> payload, NSError *error) {
@@ -152,7 +154,7 @@
 
 	HpsHpaGiftAddValueBuilder *builder = [[HpsHpaGiftAddValueBuilder alloc] initWithDevice:device];
 	builder.amount = [NSNumber numberWithDouble:11.0];
-	builder.referenceNumber = 7;
+	builder.referenceNumber = [device generateNumber];
 
 	[builder execute:^(id <IHPSDeviceResponse> payload, NSError *error) {
 		XCTAssertNil(error);
@@ -175,7 +177,7 @@
 
 	HpsHpaGiftAddValueBuilder *builder = [[HpsHpaGiftAddValueBuilder alloc] initWithDevice:device];
 	builder.amount = [NSNumber numberWithDouble:11.0];
-	builder.referenceNumber = 8;
+	builder.referenceNumber = [device generateNumber];
 	builder.currencyType = HpsCurrencyCodes_POINTS;
 
 	[builder execute:^(id <IHPSDeviceResponse> payload, NSError *error) {
@@ -198,7 +200,7 @@
 	HpsHpaDevice *device = [self setupDevice];
 
 	HpsHpaGiftAddValueBuilder *builder = [[HpsHpaGiftAddValueBuilder alloc] initWithDevice:device];
-	builder.referenceNumber = 9;
+	builder.referenceNumber = [device generateNumber];
 
 	@try {
 		[builder execute:^(id <IHPSDeviceResponse> payload, NSError *error) {
@@ -221,7 +223,7 @@
 	HpsHpaDevice *device = [self setupDevice];
 
 	HpsHpaGiftAddValueBuilder *builder = [[HpsHpaGiftAddValueBuilder alloc] initWithDevice:device];
-	builder.referenceNumber = 10;
+	builder.referenceNumber = [device generateNumber];
 	builder.currencyType = -1;
 
 	@try {
@@ -239,11 +241,23 @@
 }
 
 #pragma mark :- GiftVoid
--(void) waitAndReset:(HpsHpaDevice *)device
+-(void) waitAndReset:(HpsHpaDevice *)device completion:(void(^)(BOOL success))responseBlock
 {
 	NSLog(@"Resetting Device ...");
-	[self performSelector:@selector(reset:) withObject:device afterDelay:3.0 ];
-	NSLog(@"Device Resetted ...");
+
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[device reset:^(id<IHPSDeviceResponse> payload, NSError *error) {
+			if (payload != nil){
+				if ([payload.deviceResponseCode isEqualToString:@"00"]){
+					NSLog(@"Device Resetted ...");
+					responseBlock(YES);
+				}
+			}else {
+				NSLog(@"Device Not Resetted ...");
+				responseBlock(NO);
+			}
+		}];
+	});
 }
 
 - (void) test_Hpa_HTTP_Gift_Void
@@ -254,29 +268,38 @@
 
 	HpsHpaGiftSaleBuilder *builder = [[HpsHpaGiftSaleBuilder alloc] initWithDevice:device];
 	builder.amount = [NSNumber numberWithDouble:12.0];
-	builder.referenceNumber = 13;
+	builder.referenceNumber = [device generateNumber];
 
 	[builder execute:^(id <IHPSDeviceResponse> payload, NSError *error) {
 
-		HpsHpaGiftVoidBuilder *vbuilder = [[HpsHpaGiftVoidBuilder alloc] initWithDevice:device];
-		vbuilder.referenceNumber = 13;
-		vbuilder.transactionId = ((HpsHpaDeviceResponse*)payload).transactionId;
-		//[self waitAndReset:device];
-		@try {
-			[vbuilder execute:^(id <IHPSDeviceResponse> payload, NSError *error)
-			 {
-				XCTAssertNil(error);
-				XCTAssertNotNil(payload);
-				XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
-				[expectation fulfill];
-			 }];
-		} @catch (NSException *exception) {
-			NSLog(@"%@", expectation);
-		}
+		XCTAssertNil(error);
+		XCTAssertNotNil(payload);
+		XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
 
+		HpsHpaGiftVoidBuilder *vbuilder = [[HpsHpaGiftVoidBuilder alloc] initWithDevice:device];
+		vbuilder.referenceNumber = [device generateNumber];
+		vbuilder.transactionId = ((HpsHpaDeviceResponse*)payload).transactionId;
+
+		[self waitAndReset:device completion:^(BOOL success) {
+			if (success) {
+				@try {
+					[vbuilder execute:^(id <IHPSDeviceResponse> payload, NSError *error)
+					 {
+					 XCTAssertNil(error);
+					 XCTAssertNotNil(payload);
+					 XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
+					 [expectation fulfill];
+					 }];
+				} @catch (NSException *exception) {
+					NSLog(@"Gift_Void_Failed: %@", expectation);
+				}
+			}else {
+				XCTFail(@"Gift_Void_Failed");
+			}
+		}];
 	}];
 
-	[self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
+	[self waitForExpectationsWithTimeout:120.0 handler:^(NSError *error) {
 		if(error) XCTFail(@"Request Timed out");
 	}];
 }
@@ -288,7 +311,7 @@
 	HpsHpaDevice *device = [self setupDevice];
 
 	HpsHpaGiftVoidBuilder *builder = [[HpsHpaGiftVoidBuilder alloc] initWithDevice:device];
-	builder.referenceNumber = 14;
+	builder.referenceNumber = [device generateNumber];
 
 	@try {
 		[builder execute:^(id <IHPSDeviceResponse> payload, NSError *error) {
@@ -312,7 +335,8 @@
 	HpsHpaDevice *device = [self setupDevice];
 
 	HpsHpaGiftBalanceBuilder *builder = [[HpsHpaGiftBalanceBuilder alloc] initWithDevice:device];
-	builder.referenceNumber = 15;
+	builder.referenceNumber = [device generateNumber];
+
 	[builder execute:^(id <IHPSDeviceResponse> payload, NSError *error) {
 		XCTAssertNil(error);
 		XCTAssertNotNil(payload);
@@ -333,8 +357,8 @@
 	HpsHpaDevice *device = [self setupDevice];
 
 	HpsHpaGiftBalanceBuilder *builder = [[HpsHpaGiftBalanceBuilder alloc] initWithDevice:device];
-	builder.referenceNumber = 16;
-		//	builder.currencyType = HpsCurrencyCodes_POINTS;
+	builder.referenceNumber = [device generateNumber];
+	//builder.currencyType = HpsCurrencyCodes_POINTS;
 
 	[builder execute:^(id <IHPSDeviceResponse> payload, NSError *error) {
 		XCTAssertNil(error);

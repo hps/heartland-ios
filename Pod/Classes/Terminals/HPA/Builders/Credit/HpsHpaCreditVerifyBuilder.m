@@ -18,28 +18,20 @@
 		device = HpaDevice;
 		self.version = [NSNumber numberWithDouble:1.0];
 		self.ecrId = @"1004";
-		self.cardGroup = @"Credit";
 		}
 	return self;
 }
 
 - (void) execute:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock{
-	self.totalAmount = [NSNumber numberWithFloat:(self.amount.doubleValue * 100)] ;
-	self.invoiceNumber = [NSNumber numberWithInteger:self.referenceNumber];
-	[self validate];
-	self.cardGroup = @"Credit";
 
-	HpsHpaRequest *request_verify = [[HpsHpaRequest alloc]
-										  initWithCreditSaleRequestwithVersion:(self.version.stringValue ? self.version.stringValue :@"1.0")
-										  withEcrId:( self.ecrId ? self.ecrId :@"1004")
-										  withRequest:@"CardVerify"
-										  withCardGroup:self.cardGroup
-										  withConfirmAmount:nil
-										  withInvoiceNbr:nil
-										  withBaseAmount:nil
-										  withTaxAmount:nil
-										  withTotalAmount:nil
-										  withServerLabel:nil];
+	self.totalAmount = [NSNumber numberWithFloat:(self.amount.doubleValue * 100)];
+
+	[self validate];
+
+	self.cardGroup = @"All";
+
+	HpsHpaRequest *request_verify = [[HpsHpaRequest alloc] initWithCreditVerifyRequestwithVersion:(self.version.stringValue ? self.version.stringValue :@"1.0") withEcrId:(self.ecrId ? self.ecrId :@"1004") withRequest:HPA_MSG_ID_toString[CARD_VERIFY] withCardGroup:self.cardGroup];
+
 	request_verify.RequestId = self.referenceNumber;
 
 	[device processTransactionWithRequest:request_verify withResponseBlock:^(id<IHPSDeviceResponse> respose, NSError *error){

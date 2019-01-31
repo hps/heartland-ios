@@ -19,6 +19,7 @@
 @property (nonatomic,retain) NSString *InvoiceNbr;
 @property (nonatomic,retain) NSString *BaseAmount;
 @property (nonatomic,retain) NSString *TaxAmount;
+@property (nonatomic,retain) NSString *EBTAmount;
 @property (nonatomic,retain) NSString *TotalAmount;
 @property (nonatomic,retain) NSString *ServerLabel;
 @property (nonatomic, readwrite) int RequestId;
@@ -26,20 +27,34 @@
 @property (nonatomic,retain) NSString *TransactionId;
 	//Tip
 @property (nonatomic,retain) NSString *TipAmount;
+	//StartDownload
+@property (nonatomic,retain) NSString *HUDSURL;
+@property (nonatomic,retain) NSString *HUDSPORT;
+@property (nonatomic,retain) NSString *TerminalID;
+@property (nonatomic,retain) NSString *ApplicationID;
+@property (nonatomic,retain) NSString *DownloadType;
+@property (nonatomic,retain) NSString *DownloadTime;
+	//LineItem
+@property (nonatomic,retain) NSString *LineItemTextLeft;
+@property (nonatomic,retain) NSString *LineItemTextRight;
+@property (nonatomic,retain) NSString *LineItemRunningTextLeft;
+@property (nonatomic,retain) NSString *LineItemRunningTextRight;
 
 	//Credit
 
--(id)initWithCreditSaleRequestwithVersion:(NSString *)version withEcrId:(NSString *)EcrID withRequest:(NSString*)requset withCardGroup:(NSString *)cardGroup withConfirmAmount:(NSString *)confirmAmount withInvoiceNbr:(NSString*)invoiceNbr withBaseAmount:(NSString *)baseAmount withTaxAmount:(NSString *)taxAmount withTotalAmount:(NSString *)totalAmount withServerLabel:serverLabel;
+-(id)initWithCreditSaleRequestwithVersion:(NSString *)version withEcrId:(NSString *)EcrID withRequest:(NSString*)requset withCardGroup:(NSString *)cardGroup withConfirmAmount:(NSString *)confirmAmount withBaseAmount:(NSString *)baseAmount withTipAmount:(NSString*)tipAmount withTaxAmount:(NSString *)taxAmount withEBTAmount:(NSString*)ebtAmount withTotalAmount:(NSString *)totalAmount;
 
 -(id)initWithCreditRefundRequestwithVersion:(NSString *)version withEcrId:(NSString *)EcrID withRequest:(NSString*)requset withCardGroup:(NSString *)cardGroup withConfirmAmount:(NSString *)confirmAmount withInvoiceNbr:(NSString*)invoiceNbr withTotalAmount:(NSString *)totalAmount;
 
--(id)initWithCreditAuthRequestwithVersion:(NSString *)version withEcrId:(NSString *)EcrID withRequest:(NSString*)requset withConfirmAmount:(NSString *)confirmAmount withInvoiceNbr:(NSString*)invoiceNbr withTotalAmount:(NSString *)totalAmount;
+-(id)initWithCreditAuthRequestwithVersion:(NSString *)version withEcrId:(NSString *)EcrID withRequest:(NSString*)requset withConfirmAmount:(NSString *)confirmAmount withTotalAmount:(NSString *)totalAmount;
 
--(id) initWithCreditAuthCompleteWithVersion:(NSString *)version withEcrId:(NSString *)ecrID withRequest:(NSString *)request withTransactionId:(NSString *)transactionId withConfirmAmount:(NSString *)confirmAmount withTotalAmount:(NSString *)totalAmount withTipAmount:(NSString *)tipAmount;
+-(id) initWithCreditAuthCompleteWithVersion:(NSString *)version withEcrId:(NSString *)ecrID withRequest:(NSString *)request withTransactionId:(NSString *)transactionId withTotalAmount:(NSString *)totalAmount withTipAmount:(NSString *)tipAmount;
 
--(id) initWithVoidTransacationRequestwithVersion:(NSString *)version withEcrId:(NSString *)EcrID withRequest:(NSString*)requset withTransactionID:(NSString *)transactionID;
+-(id) initWithVoidTransacationRequestwithVersion:(NSString *)version withEcrId:(NSString *)EcrID withRequest:(NSString*)requset withCardGroup:(NSString*)cardGroup withTransactionID:(NSString *)transactionID;
 
 -(id) initWithCreditTipAdjustwithVersion:(NSString *)version withEcrId:(NSString *)EcrID withRequest:(NSString*)requset withTransactionID:(NSString *)transactionID withTipAmount:(NSString *)tipAmount;
+
+-(id)initWithCreditVerifyRequestwithVersion:(NSString *)version withEcrId:(NSString *)EcrID withRequest:(NSString*)requset withCardGroup:(NSString *)cardGroup;
 
 
 	//Debit
@@ -52,6 +67,15 @@
 -(id)initWithAddValueWihVersion:(NSString *)version withEcrId:(NSString *)ecrId withRequest:(NSString *)request withTotalAmount:(NSString *)totalAmount;
 
 -(id)initWithGiftBalanceWihVersion:(NSString *)version withEcrId:(NSString *)ecrId withRequest:(NSString *)request withCardGroup:(NSString *)cardGroup;
+
+	//Start Download
+-(id)initToStartDownloadWithVersion:(NSString *)version withEcrId:(NSString *)ecrId withRequest:(NSString *)request withHUDSURL:(NSString*)url withHUDSPORT:(NSString*)hudSport withTerminal:(NSString*)terminal withAppId:(NSString*)appId withDownloadType:(NSString*)downloadType andDownloadTime:(NSString*)downloadTime;
+
+	//Start Card
+-(id)initToStartCardWithVersion:(NSString *)version withEcrId:(NSString *)ecrId withRequest:(NSString *)request andCardGroup:(NSString*)cardGroup;
+
+	//LineItem
+-(id)initToAddLineItemWithVersion:(NSString *)version withEcrId:(NSString *)ecrId andRequest:(NSString *)request;
 
 -(NSString *)toString;
 

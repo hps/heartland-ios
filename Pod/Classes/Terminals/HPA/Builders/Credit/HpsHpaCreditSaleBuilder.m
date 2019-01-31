@@ -1,15 +1,15 @@
 #import "HpsHpaCreditSaleBuilder.h"
 
 @interface HpsHpaCreditSaleBuilder()
-@property (readwrite, strong) NSString  *cardGroup;
+@property (readwrite, strong) NSString *cardGroup;
 @property (readwrite, strong) NSNumber *version;
 @property (readwrite, strong) NSString *ecrId;
 @property (readwrite, strong) NSNumber *confirmAmount;
-@property (nonatomic, strong) NSNumber *invoiceNbr;
 @property (nonatomic, strong) NSNumber *baseAmount;
+@property (nonatomic, strong) NSNumber *tipAmount;
 @property (nonatomic, strong) NSNumber *taxAmount;
+@property (nonatomic, strong) NSNumber *ebtAmount;
 @property (nonatomic, strong) NSNumber *totalAmount;
-@property (nonatomic, strong) NSString *serverLabel;
 
 @end
 
@@ -30,8 +30,9 @@
 
 - (void) execute:(void(^)(id<IHPSDeviceResponse>, NSError*))responseBlock{
 
-	self.totalAmount = [NSNumber numberWithFloat:(self.amount.doubleValue * 100)] ;
-	self.invoiceNbr = [NSNumber numberWithInteger:self.referenceNumber];
+	self.totalAmount = [NSNumber numberWithFloat:(self.amount.doubleValue * 100)];
+	self.ebtAmount = [NSNumber numberWithInteger:(self.amount.doubleValue * 100)];
+	self.baseAmount = [NSNumber numberWithFloat:(self.amount.doubleValue * 100)];
 	[self validate];
 	self.cardGroup = @"Credit";
 	HpsHpaRequest *request_sale = [[HpsHpaRequest alloc]
@@ -40,11 +41,11 @@
 										withRequest:HPA_MSG_ID_toString[CREDIT_SALE]
 										withCardGroup:self.cardGroup
 										withConfirmAmount:(self.confirmAmount.stringValue ?self.confirmAmount.stringValue :@"0")
-										withInvoiceNbr:(self.invoiceNbr.stringValue ? self.invoiceNbr.stringValue :nil)
 										withBaseAmount:(self.baseAmount.stringValue ?self.baseAmount.stringValue :nil)
+								   		withTipAmount:(self.tipAmount.stringValue ?self.tipAmount.stringValue :nil)
 										withTaxAmount:(self.taxAmount.stringValue ?self.taxAmount.stringValue :nil)
-										withTotalAmount:(self.totalAmount.stringValue ? self.totalAmount.stringValue :nil)
-										withServerLabel:(self.serverLabel ? self.serverLabel :nil)];
+								   		withEBTAmount:(self.ebtAmount.stringValue ?self.ebtAmount.stringValue :nil)
+										withTotalAmount:(self.totalAmount.stringValue ? self.totalAmount.stringValue :nil)];
 
 	request_sale.RequestId = self.referenceNumber;
 

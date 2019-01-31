@@ -4,9 +4,6 @@
 
 @property (readwrite, strong) NSNumber *version;
 @property (readwrite, strong) NSString *ecrId;
-@property (readwrite, strong) NSNumber *confirmAmount;
-@property (readwrite, strong) NSString *cardGroup;
-@property (readwrite, strong) NSString *request;
 @property (nonatomic, strong) NSNumber *totalAmount;
 
 @end
@@ -20,9 +17,6 @@
 		device = HpaDevice;
 		self.version = [NSNumber numberWithDouble:1.0];
 		self.ecrId = @"1004";
-		self.confirmAmount = [NSNumber numberWithDouble:0];
-		self.cardGroup = @"Credit";
-		self.request = @"CreditAuthComplete";
 		}
 	return self;
 }
@@ -33,7 +27,9 @@
 	self.totalAmount = [NSNumber numberWithFloat:(self.amount.doubleValue * 100)] ;
 	[self validate];
 
-	HpsHpaRequest *request_authComplete = [ [HpsHpaRequest alloc]initWithCreditAuthCompleteWithVersion:self.version.stringValue withEcrId:self.ecrId withRequest:self.request withTransactionId:self.transactionId.stringValue withConfirmAmount:self.confirmAmount.stringValue withTotalAmount:self.totalAmount.stringValue withTipAmount:self.gratuity.stringValue];
+	HpsHpaRequest *request_authComplete = [ [HpsHpaRequest alloc]initWithCreditAuthCompleteWithVersion:self.version.stringValue withEcrId:self.ecrId withRequest:HPA_MSG_ID_toString[CAPTURE] withTransactionId:self.transactionId.stringValue withTotalAmount:self.totalAmount.stringValue withTipAmount:self.gratuity.stringValue];
+	
+	request_authComplete.RequestId = self.referenceNumber;
 
 	[device processTransactionWithRequest:request_authComplete withResponseBlock:^(id<IHPSDeviceResponse> respose, NSError *error)
 	 {

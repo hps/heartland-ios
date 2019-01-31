@@ -2,6 +2,7 @@
 
 @interface HpsHpaCreditVoidBuilder ()
 
+@property (readwrite, strong) NSString *cardGroup;
 @property (readwrite, strong) NSNumber *version;
 @property (readwrite, strong) NSString *ecrId;
 
@@ -24,8 +25,12 @@
 
 	[self validate];
 
-	HpsHpaRequest *request_Void = [[HpsHpaRequest alloc]initWithVoidTransacationRequestwithVersion:(self.version.stringValue ? self.version.stringValue :@"1.0") withEcrId:( self.ecrId ? self.ecrId :@"1004") withRequest:HPA_MSG_ID_toString[CREDIT_VOID] withTransactionID:self.transactionId.stringValue];
+	self.cardGroup = @"Credit";
 
+	HpsHpaRequest *request_Void = [[HpsHpaRequest alloc]initWithVoidTransacationRequestwithVersion:(self.version.stringValue ? self.version.stringValue :@"1.0") withEcrId:( self.ecrId ? self.ecrId :@"1004") withRequest:HPA_MSG_ID_toString[CREDIT_VOID] withCardGroup:self.cardGroup withTransactionID:self.transactionId.stringValue];
+
+	request_Void.RequestId = self.referenceNumber;
+	
 	[device processTransactionWithRequest:request_Void withResponseBlock:^(id<IHPSDeviceResponse> respose, NSError *error)
 	 {
 	 dispatch_async(dispatch_get_main_queue(), ^{

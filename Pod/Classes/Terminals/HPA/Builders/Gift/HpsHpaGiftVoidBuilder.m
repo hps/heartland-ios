@@ -2,7 +2,7 @@
 
 @interface HpsHpaGiftVoidBuilder()
 
-@property (readwrite, strong) NSString  *cardGroup;
+@property (readwrite, strong) NSString *cardGroup;
 @property (readwrite, strong) NSNumber *version;
 @property (readwrite, strong) NSString *ecrId;
 @property (readwrite, strong) NSNumber *confirmAmount;
@@ -19,7 +19,7 @@
 		self.version = [NSNumber numberWithDouble:1.0];
 		self.ecrId = @"1004";
 		self.confirmAmount = [NSNumber numberWithDouble:0];
-		self.cardGroup = @"Gift";
+		//self.cardGroup = @"Gift";
 		}
 	return self;
 }
@@ -28,7 +28,9 @@
 
 	[self validate];
 
-	HpsHpaRequest *request_Void = [[HpsHpaRequest alloc]initWithVoidTransacationRequestwithVersion:(self.version.stringValue ? self.version.stringValue :@"1.0") withEcrId:( self.ecrId ? self.ecrId :@"1004") withRequest:HPA_MSG_ID_toString[CREDIT_VOID] withTransactionID:[NSString stringWithFormat:@"%d",self.transactionId]];
+	self.cardGroup = @"GIFT";
+
+	HpsHpaRequest *request_Void = [[HpsHpaRequest alloc]initWithVoidTransacationRequestwithVersion:(self.version.stringValue ? self.version.stringValue :@"1.0") withEcrId:( self.ecrId ? self.ecrId :@"1004") withRequest:HPA_MSG_ID_toString[CREDIT_VOID] withCardGroup:self.cardGroup withTransactionID:[NSString stringWithFormat:@"%d",self.transactionId]];
 	request_Void.RequestId = self.referenceNumber;
 
 	[device processTransactionWithRequest:request_Void withResponseBlock:^(id<IHPSDeviceResponse> respose, NSError *error)

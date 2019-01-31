@@ -14,7 +14,7 @@
 - (HpsHpaDevice*) setupDevice
 {
 	HpsConnectionConfig *config = [[HpsConnectionConfig alloc] init];
-	config.ipAddress = @"10.12.220.130";
+	config.ipAddress = @"10.12.220.39";
 	config.port = @"12345";
 	config.connectionMode = HpsConnectionModes_TCP_IP;
 	HpsHpaDevice * device = [[HpsHpaDevice alloc] initWithConfig:config];
@@ -26,11 +26,11 @@
 	XCTestExpectation *expectation = [self expectationWithDescription:@"test_Hpa_TCP_Debit_Sale"];
 	
 	HpsHpaDevice *device = [self setupDevice];
+
 	HpsHpaDebitSaleBuilder *builder = [[HpsHpaDebitSaleBuilder alloc] initWithDevice:device];
 	builder.amount = [NSNumber numberWithDouble:10.22];
-	builder.referenceNumber = 5;
+	builder.referenceNumber = [device generateNumber];
 	builder.allowDuplicates = YES;
-	
 	
 	[builder execute:^(id<IHPSDeviceResponse>payload, NSError *error) {
 		XCTAssertNil(error);
@@ -38,6 +38,7 @@
 		XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
 		[expectation fulfill];
 	}];
+	
 	[self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
 		if(error) XCTFail(@"Request Timed out");
 	}];
@@ -48,8 +49,9 @@
 	XCTestExpectation *expectation = [self expectationWithDescription:@"test_Hpa_TCP_Debit_Sale_No_Amount"];
 	
 	HpsHpaDevice *device = [self setupDevice];
+
 	HpsHpaDebitSaleBuilder *builder = [[HpsHpaDebitSaleBuilder alloc] initWithDevice:device];
-	builder.referenceNumber = 5;
+	builder.referenceNumber = [device generateNumber];
 	builder.allowDuplicates = YES;
 	
 	@try {
@@ -62,6 +64,7 @@
 		
 		[expectation fulfill];
 	}
+
 	[self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
 		if(error) XCTFail(@"Request Timed out");
 	}];
@@ -73,9 +76,11 @@
 	XCTestExpectation *expectation = [self expectationWithDescription:@"test_Hpa_TCP_Debit_Refund"];
 	
 	HpsHpaDevice *device = [self setupDevice];
+
 	HpsHpaDebitRefundBuilder *builder = [[HpsHpaDebitRefundBuilder alloc] initWithDevice:device];
 	builder.amount = [NSNumber numberWithDouble:10.22];
-	builder.referenceNumber = 5;
+	builder.referenceNumber = [device generateNumber];
+
 	[builder execute:^(id<IHPSDeviceResponse> payload, NSError *error) {
 		XCTAssertNil(error);
 		XCTAssertNotNil(payload);
@@ -83,6 +88,7 @@
 		[expectation fulfill];
 		
 	}];
+
 	[self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
 		if(error) XCTFail(@"Request Timed out");
 	}];
