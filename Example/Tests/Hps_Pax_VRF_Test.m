@@ -4,6 +4,7 @@
 #import "HpsAddress.h"
 #import "HpsPaxCreditSaleBuilder.h"
 #import "HpsPaxDeviceResponse.h"
+#import "HpsPaxCreditAdjustBuilder.h"
 #import "HpsPaxCreditAuthBuilder.h"
 #import "HpsPaxCreditCaptureBuilder.h"
 #import "HpsPaxCreditReturnBuilder.h"
@@ -667,6 +668,53 @@
 	[self waitForExpectationsWithTimeout:90.0 handler:^(NSError *error) {
 		if(error) XCTFail(@"Request Timed out");
 	}];
+}
+
+#pragma mark -
+#pragma mark Tip Adjustment using Sale Adjust
+- (void) test_case_13
+{
+    NSLog(@"CONDITIONAL TEST CASE 13 – Tip Adjustment");
+    [self writeStringToFile:@"CONDITIONAL TEST CASE 13 – Tip Adjustment \n"];
+    XCTestExpectation *expectation = [self expectationWithDescription:@"test_PAX_HTTP_Sale_Adjust"];
+    
+    HpsPaxDevice *device = [self setupDevice];
+    HpsPaxCreditSaleBuilder *builder = [[HpsPaxCreditSaleBuilder alloc] initWithDevice:device];
+    builder.amount = [NSNumber numberWithDouble:15.12];
+    builder.referenceNumber = 19;
+    builder.allowDuplicates = YES;
+    [self writeStringToFile:@"Sale :-\n"];
+    
+    [builder execute:^(HpsPaxCreditResponse *payload, NSError *error) {
+        
+        XCTAssertNil(error);
+        XCTAssertEqualObjects(@"00", payload.responseCode);
+        XCTAssertNotNil(payload);
+        [self printRecipt:payload];
+        //Adjust
+        HpsPaxCreditAdjustBuilder *abuilder = [[HpsPaxCreditAdjustBuilder alloc] initWithDevice:device];
+        abuilder.transactionId = payload.transactionId;
+        abuilder.referenceNumber = 20;
+        abuilder.amount = [NSNumber numberWithDouble:18.12];
+        [self writeStringToFile:@"Adjust \n"];
+        
+        [abuilder execute:^(HpsPaxCreditResponse *apayload, NSError *aerror) {
+            
+            XCTAssertNil(aerror);
+            XCTAssertEqualObjects(@"00", apayload.responseCode);
+            XCTAssertNotNil(apayload);
+            [self printRecipt:apayload];
+            [expectation fulfill];
+            
+        }];
+        
+    }];
+    
+    [self waitForExpectationsWithTimeout:56000.0 handler:^(NSError *error) {
+        if(error) XCTFail(@"Request Timed out");
+    }];
+    
+    
 }
 
 @end
