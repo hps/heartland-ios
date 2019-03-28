@@ -44,6 +44,19 @@ typedef NS_ENUM(NSInteger, PayTypeCode) {
     ManualSalary
 };
 
+typedef NS_ENUM(NSInteger, PaymentMethodType) {
+    Reference,
+    Credit,
+    Debit,
+    EBT,
+    Cash,
+    ACH,
+    Gift,
+    Recurring,
+    Other,
+    AltPayment
+};
+
 typedef NS_ENUM(NSInteger, EntryMethod) {
     Manual,
     Swipe,

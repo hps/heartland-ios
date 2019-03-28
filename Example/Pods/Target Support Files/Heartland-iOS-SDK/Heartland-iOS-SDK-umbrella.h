@@ -104,6 +104,7 @@
 #import "HpsDeviceProtocols.h"
 #import "HpsTerminalResponse.h"
 #import "NSInputStream+Hps.h"
+#import "HpsPaxCreditAdjustBuilder.h"
 #import "HpsPaxCreditAuthBuilder.h"
 #import "HpsPaxCreditCaptureBuilder.h"
 #import "HpsPaxCreditReturnBuilder.h"

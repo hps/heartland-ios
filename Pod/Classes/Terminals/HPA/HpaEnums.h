@@ -46,11 +46,11 @@ typedef NS_ENUM(NSInteger, HPA_DOWNLOAD_TYPE) {
 };
 
 typedef NS_ENUM(NSInteger, HPA_CARD_GROUP) {
-	CARD_GROUP_CREDIT,
-	CARD_GROUP_DEBIT,
-	CARD_GROUP_GIFT,
-	CARD_GROUP_EBT,
-	CARD_GROUP_ALL
+	CREDIT,
+	DEBIT,
+	GIFT,
+	EBT,
+	ALL
 };
 
 @interface HpaEnums : NSObject

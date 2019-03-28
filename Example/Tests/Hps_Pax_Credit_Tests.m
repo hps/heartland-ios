@@ -4,6 +4,7 @@
 #import "HpsAddress.h"
 #import "HpsPaxCreditSaleBuilder.h"
 #import "HpsPaxDeviceResponse.h"
+#import "HpsPaxCreditAdjustBuilder.h"
 #import "HpsPaxCreditAuthBuilder.h"
 #import "HpsPaxCreditCaptureBuilder.h"
 #import "HpsPaxCreditReturnBuilder.h"
@@ -32,7 +33,7 @@
     HpsCreditCard *card = [[HpsCreditCard alloc] init];
     card.cardNumber = @"4005554444444460";
     card.expMonth = 12;
-    card.expYear = 18;
+    card.expYear = 25;
     card.cvv = @"123";
     return card;
 }
@@ -249,6 +250,27 @@
     }];
 }
 
+- (void) test_PAX_HTTP_Adjust_Fail_No_Transaction_ID
+{
+    XCTestExpectation *expectation = [self expectationWithDescription:@"test_PAX_HTTP_Adjust_Fail_No_Transaction_ID"];
+
+    HpsPaxDevice *device = [self setupDevice];
+    HpsPaxCreditAdjustBuilder *builder = [[HpsPaxCreditAdjustBuilder alloc] initWithDevice:device];
+    builder.referenceNumber = 1;
+
+    @try {
+        [builder execute:^(HpsPaxCreditResponse *payload, NSError *error) {
+
+            XCTFail(@"Request not allowed but returned");
+        }];
+    } @catch (NSException *exception) {
+        [expectation fulfill];
+    }
+
+    [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
+        if(error) XCTFail(@"Request Timed out");
+    }];
+}
 
 - (void) test_PAX_HTTP_Capture_Fail_No_Transaction_ID
 {
@@ -370,6 +392,45 @@
     }];
 }
 
+- (void) test_PAX_HTTP_Sale_Adjust
+{
+    XCTestExpectation *expectation = [self expectationWithDescription:@"test_PAX_HTTP_Sale_Adjust"];
+
+    HpsPaxDevice *device = [self setupDevice];
+    HpsPaxCreditSaleBuilder *builder = [[HpsPaxCreditSaleBuilder alloc] initWithDevice:device];
+    builder.amount = [NSNumber numberWithDouble:27.0];
+    builder.referenceNumber = 1;
+    builder.allowDuplicates = YES;
+    builder.creditCard = [self getCC];
+    builder.address = [self getAddress];
+
+    [builder execute:^(HpsPaxCreditResponse *payload, NSError *error) {
+
+        XCTAssertNil(error);
+        XCTAssertEqualObjects(@"00", payload.responseCode);
+        XCTAssertNotNil(payload);
+
+        //Adjust
+        HpsPaxCreditAdjustBuilder *abuilder = [[HpsPaxCreditAdjustBuilder alloc] initWithDevice:device];
+        abuilder.transactionId = payload.transactionId;
+        abuilder.referenceNumber = 2;
+        abuilder.amount = [NSNumber numberWithDouble:15.0];
+
+        [abuilder execute:^(HpsPaxCreditResponse *apayload, NSError *aerror) {
+
+            XCTAssertNil(aerror);
+            XCTAssertEqualObjects(@"00", apayload.responseCode);
+            XCTAssertNotNil(apayload);
+            [expectation fulfill];
+
+        }];
+
+    }];
+
+    [self waitForExpectationsWithTimeout:56000.0 handler:^(NSError *error) {
+        if(error) XCTFail(@"Request Timed out");
+    }];
+}
 
 - (void) test_PAX_HTTP_Auth_Capture
 {
