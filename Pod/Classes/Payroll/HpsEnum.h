@@ -48,7 +48,7 @@ typedef NS_ENUM(NSInteger, PaymentMethodType) {
     Reference,
     Credit,
     Debit,
-    EBT,
+    Ebt,
     Cash,
     ACH,
     Gift,

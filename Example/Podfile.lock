@@ -6,9 +6,13 @@ PODS:
 DEPENDENCIES:
   - Heartland-iOS-SDK (from `../`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - XMLDictionary
+
 EXTERNAL SOURCES:
   Heartland-iOS-SDK:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   Heartland-iOS-SDK: 53735564146113771b087a966972e9ce942e1f25
@@ -16,4 +20,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: a2d4770e303e82c0989fd39f53fa31499ac49ee9
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
