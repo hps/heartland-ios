@@ -16,6 +16,7 @@
 #import "HpsPaxGiftBalanceBuilder.h"
 #import "HpsPaxGiftResponse.h"
 #import "HpsPaxGiftSaleBuilder.h"
+#import "HpsPaxGiftActivateBuilder.h"
 #import "HpsPaxGiftAddValueBuilder.h"
 #import "HpsPaxBaseResponse.h"
 
@@ -642,6 +643,31 @@
 		if(error) XCTFail(@"Request Timed out");
 	}];
 
+}
+
+- (void) test_case_12d
+{
+    NSLog(@"CONDITIONAL TEST CASE 12 – HMS Gift");
+    [self writeStringToFile:@"CONDITIONAL TEST CASE 12 – HMS Gift Activate \n"];
+    XCTestExpectation *expectation = [self expectationWithDescription:@"test_PAX_HTTP_Gift_Activate"];
+    
+    HpsPaxDevice *device = [self setupDevice];
+    HpsPaxGiftActivateBuilder *builder = [[HpsPaxGiftActivateBuilder alloc] initWithDevice:device];
+    builder.amount = [NSNumber numberWithDouble:8.0];
+    builder.referenceNumber = 19;
+    
+    [builder execute:^(HpsPaxGiftResponse *payload, NSError *error) {
+        XCTAssertNil(error);
+        XCTAssertNotNil(payload);
+        XCTAssertEqualObjects(@"0", payload.responseCode);
+        [self printRecipt:payload];
+        [expectation fulfill];
+        
+    }];
+    
+    [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
+        if(error) XCTFail(@"Request Timed out");
+    }];
 }
 
 #pragma mark -
