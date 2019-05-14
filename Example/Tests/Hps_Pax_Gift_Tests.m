@@ -159,27 +159,26 @@
 	}];
 }
 
-
 - (void) test_PAX_HTTP_Gift_Activate
 {
     XCTestExpectation *expectation = [self expectationWithDescription:@"test_PAX_HTTP_Gift_Activate"];
-    
+
     HpsPaxDevice *device = [self setupDevice];
     HpsGiftCard *card = [self getCard];
-    
+
     HpsPaxGiftActivateBuilder *builder = [[HpsPaxGiftActivateBuilder alloc] initWithDevice:device];
     builder.amount = [NSNumber numberWithDouble:13.0];
     builder.referenceNumber = 7;
     builder.giftCard = card;
-    
+
     [builder execute:^(HpsPaxGiftResponse *payload, NSError *error) {
         XCTAssertNil(error);
         XCTAssertNotNil(payload);
         XCTAssertEqualObjects(@"0", payload.responseCode);
         [expectation fulfill];
-    
+
     }];
-    
+
     [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
         if(error) XCTFail(@"Request Timed out");
     }];
@@ -262,21 +261,21 @@
 - (void) test_PAX_HTTP_Gift_Activate_Fail_No_Amount
 {
     XCTestExpectation *expectation = [self expectationWithDescription:@"test_PAX_HTTP_Gift_Activate_Fail_No_Amount"];
-    
+
     HpsPaxDevice *device = [self setupDevice];
-    
+
     HpsPaxGiftActivateBuilder *builder = [[HpsPaxGiftActivateBuilder alloc] initWithDevice:device];
     builder.referenceNumber = 9;
-    
+
     @try {
         [builder execute:^(HpsPaxGiftResponse *payload, NSError *error) {
-            
+
             XCTFail(@"Request not allowed but returned");
         }];
     } @catch (NSException *exception) {
         [expectation fulfill];
     }
-    
+
     [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
         if(error) XCTFail(@"Request Timed out");
     }];
@@ -311,24 +310,24 @@
 - (void) test_PAX_HTTP_Gift_Activate_Fail_No_Currency
 {
     XCTestExpectation *expectation = [self expectationWithDescription:@"test_PAX_HTTP_Gift_Activate_Fail_No_Currency"];
-    
+
     HpsPaxDevice *device = [self setupDevice];
     HpsGiftCard *card = [self getCard];
-    
+
     HpsPaxGiftActivateBuilder *builder = [[HpsPaxGiftActivateBuilder alloc] initWithDevice:device];
     builder.referenceNumber = 10;
     builder.giftCard = card;
     builder.currencyType = -1;
-    
+
     @try {
         [builder execute:^(HpsPaxGiftResponse *payload, NSError *error) {
-            
+
             XCTFail(@"Request not allowed but returned");
         }];
     } @catch (NSException *exception) {
         [expectation fulfill];
     }
-    
+
     [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
         if(error) XCTFail(@"Request Timed out");
     }];
