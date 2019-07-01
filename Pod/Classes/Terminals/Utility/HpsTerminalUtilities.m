@@ -15,13 +15,15 @@
 
 + (NSString*) getElementString:(NSArray*)elements{
 	NSMutableString *sb = [[NSMutableString alloc] init];
+	NSData *fs_code_d = [[NSData alloc] initWithBytes:(char []){ 0x1C } length:1];
+	NSString *fs_code_s = [[NSString alloc] initWithData:fs_code_d encoding:NSUTF8StringEncoding];
 	for (int i = 0; i < elements.count; i++) {
 
 		id thing = elements[i];
 
 		if ([thing isKindOfClass:[NSArray class]]) {
 			for (NSString *thisString in thing) {
-				[sb appendString:[HpsTerminalEnums controlCodeString:HpsControlCodes_FS]];
+				[sb appendString:fs_code_s];
 				[sb appendString:thisString];
 			}
 		}else if ([HpsTerminalEnums isControlCode:(Byte)thing]){
