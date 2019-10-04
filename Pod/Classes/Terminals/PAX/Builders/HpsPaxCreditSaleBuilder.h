@@ -29,6 +29,7 @@
 @property (nonatomic, readwrite) BOOL allowDuplicates;
 @property (nonatomic, strong) NSNumber *gratuity;
 @property (nonatomic, readwrite) BOOL signatureCapture;
+@property (nonatomic, readwrite) BOOL tipRequest;
 
 - (void) execute:(void(^)(HpsPaxCreditResponse*, NSError*))responseBlock;
 - (id)initWithDevice: (HpsPaxDevice*)paxDevice;
