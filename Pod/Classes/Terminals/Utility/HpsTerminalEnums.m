@@ -55,8 +55,7 @@ NSString *const PAX_DEVICE_VERSION = @"1.35";
     
 }
 + (NSString*) controlCodeString:(Byte)code{
-    NSData *code_d = [[NSData alloc] initWithBytes:(char []){ code } length:1];
-    return [[NSString alloc] initWithData:code_d encoding:NSUTF8StringEncoding];
+    return [NSString stringWithFormat:@"%c",code];
 }
 
 + (NSString *) controlCodeAsciValue:(Byte)code{
