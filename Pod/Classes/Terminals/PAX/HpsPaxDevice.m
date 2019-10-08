@@ -309,17 +309,16 @@ withResponseBlock:(void(^)(HpsPaxGiftResponse*, NSError*))responseBlock{
 	NSMutableArray *commands = [[NSMutableArray alloc] init];
 	[commands addObject:txnType];
 
-	NSString* fs_code = [HpsTerminalEnums controlCodeString:HpsControlCodes_FS];
-	[commands addObject:fs_code];
+	[commands addObject:[NSString stringWithFormat:@"%c",HpsControlCodes_FS]];
 	if (subGroups.count > 0) {
 		[commands addObject:[subGroups objectAtIndex:0]];
 		for (int i = 1; i < subGroups.count ; i++) {
 
-			[commands addObject:fs_code];
+			[commands addObject:[NSString stringWithFormat:@"%c",HpsControlCodes_FS]];
 			[commands addObject:[subGroups objectAtIndex:i]];
 		}
 	}else{
-		[commands addObject:fs_code];
+		[commands addObject:[NSString stringWithFormat:@"%c",HpsControlCodes_FS]];
 	}
 
 		//Run on device

@@ -21,7 +21,7 @@
 
 		if ([thing isKindOfClass:[NSArray class]]) {
 			for (NSString *thisString in thing) {
-				[sb appendString:[HpsTerminalEnums controlCodeString:HpsControlCodes_FS]];
+				[sb appendString:[NSString stringWithFormat:@"%c",HpsControlCodes_FS]];
 				[sb appendString:thisString];
 			}
 		}else if ([HpsTerminalEnums isControlCode:(Byte)thing]){
