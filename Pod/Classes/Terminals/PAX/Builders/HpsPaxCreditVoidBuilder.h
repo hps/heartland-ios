@@ -18,6 +18,7 @@
 
 @property (nonatomic, readwrite) int referenceNumber;
 @property (nonatomic, readwrite) int transactionId;
+@property (nonatomic, readwrite) int transactionNumber;
 
 - (void) execute:(void(^)(HpsPaxCreditResponse*, NSError*))responseBlock;
 - (id)initWithDevice: (HpsPaxDevice*)paxDevice;

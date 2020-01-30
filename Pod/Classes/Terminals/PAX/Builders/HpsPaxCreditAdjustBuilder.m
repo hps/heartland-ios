@@ -30,6 +30,9 @@
 
     HpsPaxTraceRequest *traceRequest = [[HpsPaxTraceRequest alloc] init];
     traceRequest.referenceNumber = [NSString stringWithFormat:@"%d", self.referenceNumber];
+    if (self.transactionNumber != 0) {
+        traceRequest.transactionNumber = [NSString stringWithFormat:@"%d", self.transactionNumber];
+    }
     [subgroups addObject:traceRequest];
 
     HpsPaxAvsRequest *avsRequest = [[HpsPaxAvsRequest alloc] init];
@@ -55,8 +58,8 @@
 
 - (void) validate
 {
-    if (self.transactionId <= 0) {
-        @throw [NSException exceptionWithName:@"HpsPaxException" reason:@"transactionId is required." userInfo:nil];
+    if (self.transactionId <= 0 && self.transactionNumber <= 0) {
+        @throw [NSException exceptionWithName:@"HpsPaxException" reason:@"transactionId or transactionNumber is required." userInfo:nil];
     }
 
 }
