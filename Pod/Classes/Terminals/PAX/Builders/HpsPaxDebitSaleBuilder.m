@@ -38,6 +38,9 @@
     [subgroups addObject:[[HpsPaxCashierSubGroup alloc] init]];
         
     HpsPaxExtDataSubGroup *extData = [[HpsPaxExtDataSubGroup alloc] init];
+    if (self.tipRequest){
+        [extData.collection setObject:@"1" forKey:PAX_EXT_DATA_TIP_REQUEST];
+    }
     [subgroups addObject:extData];
     
     [device doDebit:PAX_TXN_TYPE_SALE_REDEEM andSubGroups:subgroups withResponseBlock:^(HpsPaxDebitResponse *response, NSError *error) {
