@@ -53,7 +53,8 @@
                                {
                                    //error returned
                                    dispatch_async(dispatch_get_main_queue(), ^{
-                                       NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [responseError localizedDescription]};
+                                       NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [responseError localizedDescription],
+                                                                  @"URLResponseErrorCodeKey": @(responseError.code)};
                                        NSError *error = [NSError errorWithDomain:self->errorDomain
                                                                             code:CocoaError
                                                                         userInfo:userInfo];
