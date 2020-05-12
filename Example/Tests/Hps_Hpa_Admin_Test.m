@@ -10,7 +10,7 @@
 - (HpsHpaDevice*) setupDevice
 {
 	HpsConnectionConfig *config = [[HpsConnectionConfig alloc] init];
-	config.ipAddress = @"10.12.220.39";
+	config.ipAddress = @"10.138.141.26";
 	config.port = @"12345";
 	config.connectionMode = HpsConnectionModes_TCP_IP;
 	HpsHpaDevice * device = [[HpsHpaDevice alloc] initWithConfig:config];
@@ -156,6 +156,39 @@
 	[self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
 		if(error) XCTFail(@"Request Timed out");
 	}];
+}
+
+-(void) test_Set_SAF_Mode_On{
+    XCTestExpectation *expectation = [self expectationWithDescription:@"test_Hpa_HTTP_SAF_Mode_On"];
+    
+    HpsHpaDevice *device = [self setupDevice];
+    [device setSAFMode:YES response:^(id<IHPSDeviceResponse>payload, NSError *error) {
+        XCTAssertNil(error);
+        XCTAssertNotNil(payload);
+        XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
+        [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
+        if(error) XCTFail(@"Request Timed out");
+    }];
+    
+}
+
+-(void) test_Set_SAF_Mode_Off{
+    XCTestExpectation *expectation = [self expectationWithDescription:@"test_Hpa_HTTP_SAF_Mode_Off"];
+    
+    HpsHpaDevice *device = [self setupDevice];
+    [device setSAFMode:NO response:^(id<IHPSDeviceResponse>payload, NSError *error) {
+        XCTAssertNil(error);
+        XCTAssertNotNil(payload);
+        XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
+        [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
+        if(error) XCTFail(@"Request Timed out");
+    }];
 }
 
 

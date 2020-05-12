@@ -19,6 +19,9 @@
 @property (nonatomic,strong) NSString *deviceResponseMessage;
 @optional
 -(NSString*)toString;
+@property (nonatomic) BOOL storedResponse;
+@property (nonatomic,readwrite) int transactionId;
+@property (nonatomic,readwrite) int lastResponseTransactionId;
 
 @end
 
@@ -65,6 +68,8 @@
 - (void) reboot:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
 - (void) reset:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
 - (void) batchClose:(void(^)(id <IBatchCloseResponse> , NSError*))responseBlock;
+- (void) GetLastResponse:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
+- (void) setSAFMode:(BOOL)isSAF response:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
 
 @end
 

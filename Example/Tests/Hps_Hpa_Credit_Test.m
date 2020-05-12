@@ -18,7 +18,7 @@
 - (HpsHpaDevice*) setupDevice
 {
 	HpsConnectionConfig *config = [[HpsConnectionConfig alloc] init];
-	config.ipAddress = @"10.12.220.39";
+	config.ipAddress = @"10.138.141.26";
 	config.port = @"12345";
 	config.connectionMode = HpsConnectionModes_TCP_IP;
 	HpsHpaDevice * device = [[HpsHpaDevice alloc] initWithConfig:config];
@@ -192,6 +192,99 @@
 		if(error) XCTFail(@"Request Timed out");
 	}];
 
+}
+
+- (void) test_Lost_Transaction_Recovery
+{
+	XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa lost transaction recovery"];
+
+	HpsHpaDevice *device = [self setupDevice];
+
+	HpsHpaCreditSaleBuilder *builder = [[HpsHpaCreditSaleBuilder alloc] initWithDevice:device];
+	builder.amount = [NSNumber numberWithDouble:11.52];
+	builder.referenceNumber =  [device generateNumber];
+
+	[builder execute:^(id <IHPSDeviceResponse> payload, NSError *error){
+
+		XCTAssertNil(error);
+		XCTAssertNotNil(payload);
+		XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
+
+		//Proceed only when credit sale is success
+		if([payload.deviceResponseCode isEqualToString:@"00"]){
+			[self waitAndReset:device completion:^(BOOL success) {
+				if (success) {
+					@try {
+						//execute credit sale with same request id
+						[builder execute:^(id<IHPSDeviceResponse>DuplicatePayload, NSError *error) {
+							XCTAssertNil(error);
+							XCTAssertNotNil(DuplicatePayload);
+							XCTAssertEqualObjects(@"00", DuplicatePayload.deviceResponseCode);
+							XCTAssertTrue(DuplicatePayload.storedResponse);
+							XCTAssertEqual(payload.transactionId, DuplicatePayload.transactionId);
+							[expectation fulfill];
+
+						}];
+					} @catch (NSException *exception) {
+						XCTFail(@"Lost_Transaction_Recovery_Failed: %@",exception.description);
+					}
+				} else {
+					XCTFail(@"Lost_Transaction_Recovery_Failed");
+				}
+			}];
+	}else {
+		XCTFail(@"Lost_Transaction_Recovery_Failed");
+		[expectation fulfill];
+
+	}
+	}];
+	[self waitForExpectationsWithTimeout:120.0 handler:^(NSError *error) {
+		if(error) XCTFail(@"Request Timed out");
+	}];
+
+}
+
+
+- (void) test_Get_Last_Response
+{
+    XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Get Last Response"];
+    HpsHpaDevice *device = [self setupDevice];
+    
+    HpsHpaCreditSaleBuilder *builder = [[HpsHpaCreditSaleBuilder alloc] initWithDevice:device];
+    builder.amount = [NSNumber numberWithDouble:11.52];
+    builder.referenceNumber =  [device generateNumber];
+    
+    [builder execute:^(id <IHPSDeviceResponse> payload, NSError *error){
+        
+        XCTAssertNil(error);
+        XCTAssertNotNil(payload);
+        
+       //whether Credit sale is success or failure, it will compare the transactionId
+        [self waitAndReset:device completion:^(BOOL success) {
+                if (success) {
+                    @try {
+                        //execute credit sale with same request id
+                        [device GetLastResponse:^(id<IHPSDeviceResponse>LastResponsePayload, NSError *error) {
+                            XCTAssertNil(error);
+                            XCTAssertNotNil(LastResponsePayload);
+                            XCTAssertEqualObjects(@"00", LastResponsePayload.deviceResponseCode);
+                            XCTAssertEqual(payload.transactionId, LastResponsePayload.lastResponseTransactionId);
+                            [expectation fulfill];
+                            
+                        }];
+                    } @catch (NSException *exception) {
+                        XCTFail(@"Get_Last_Response_Failed: %@",exception.description);
+                    }
+                } else {
+                    XCTFail(@"Get_Last_Response_Failed");
+                }
+            }];
+
+    }];
+    [self waitForExpectationsWithTimeout:120.0 handler:^(NSError *error) {
+        if(error) XCTFail(@"Request Timed out");
+    }];
+    
 }
 
 

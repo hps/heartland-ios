@@ -8,6 +8,10 @@
 #import "HpsHpaDeviceResponse.h"
 #import "HpsHpaBatchResponse.h"
 #import "HpsHpaRequest.h"
+#import "HpsHpaSafResponse.h"
+#import "HpsHpaDiagnosticResponse.h"
+#import "HpsHpaEodResponse.h"
+
 
 @interface HpsHpaDevice : NSObject<IDeviceInterface>
 {
@@ -28,9 +32,16 @@
 - (void) reboot:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
 - (void) reset:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
 - (void) batchClose:(void(^)(id <IBatchCloseResponse> , NSError*))responseBlock;
+- (void) GetLastResponse:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
+- (void) setSAFMode:(BOOL)isSAF response:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
 	// processTransaction
 -(void)processTransactionWithRequest:(HpsHpaRequest*)HpsHpaRequest withResponseBlock:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
-
+  //Get Diagnostic Report
+- (void) getDiagnosticReport:(HpsHpaRequest*)HpsHpaRequest withResponseBlock:(void(^)(HpsHpaDiagnosticResponse*, NSError*))responseBlock;
+  //SAF
+-(void)processSAFWithRequest:(HpsHpaRequest*)HpsHpaRequest withResponseBlock:(void(^)(HpsHpaSafResponse*, NSError*))responseBlock;
+  //EOD
+-(void)processEODWithRequest:(HpsHpaRequest*)HpsHpaRequest withResponseBlock:(void(^)(HpsHpaEodResponse*, NSError*))responseBlock;
 	//Random Number
 -(int)generateNumber;
 

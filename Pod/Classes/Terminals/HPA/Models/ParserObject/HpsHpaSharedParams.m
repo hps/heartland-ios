@@ -19,7 +19,8 @@ NSOperationQueue *operationQueue ;
 	if (self = [super init])
 		{
 		self.params = [NSMutableDictionary new];
-	 operationQueue = [[NSOperationQueue alloc] init];
+        self.paramsInArray = [NSMutableDictionary new];
+        operationQueue = [[NSOperationQueue alloc] init];
 		_transactionSummaryRecords = [NSMutableArray new];;
 		_cardSummaryRecords = [NSMutableArray new];
 		}
@@ -34,6 +35,11 @@ NSOperationQueue *operationQueue ;
 -(void)addCardSummaryRecords:(CardSummaryRecord *)Record
 {
 	[self.cardSummaryRecords addObject:Record];
+}
+
+-(void)setLastResponseData:(HpsLastResponse *)Response
+{
+    self.lastResponse = Response;
 }
 
 -(void)addParaMeter:(NSString*)tableName withValues:(NSDictionary *)values
@@ -54,6 +60,14 @@ NSOperationQueue *operationQueue ;
 		self.tableCategory = tableName ? tableName :self->_tableCategory;
 
 	}];
+}
+
+-(void)addParamInArray:(NSString*)tableName withValues:(NSMutableArray *)data
+{
+    
+    [[HpsHpaSharedParams getInstance].paramsInArray setValue:data forKey:tableName?tableName:self.tableCategory];
+    
+    
 }
 
 @end

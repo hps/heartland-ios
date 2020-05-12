@@ -35,7 +35,7 @@
 			self.entryMode = self.accountResponse.entryMode;
 			self.expirationDate = self.accountResponse.expireDate;
 			self.paymentType = self.accountResponse.cardType;
-			self.cardHolderName = self.accountResponse.cardHolder;
+            self.cardholderName = self.accountResponse.cardHolder;
 			self.cvvResponseCode = self.accountResponse.cvdApprovalCode;
 			self.cvvResponseText = self.accountResponse.cvdMessage;
 			self.cardPresent = self.accountResponse.cardPressent;

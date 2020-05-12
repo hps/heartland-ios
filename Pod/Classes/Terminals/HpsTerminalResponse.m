@@ -17,6 +17,8 @@
 		self.transactionId =  response.TransactionId.intValue;
 
 	}
+    self.lastResponseTransactionId = [HpsHpaSharedParams getInstance].lastResponse.ResponseId.intValue;
+    
 }
 
 @end

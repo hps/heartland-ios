@@ -3,6 +3,7 @@
 #import "Record.h"
 #import "CardSummaryRecord.h"
 #import "TransactionSummaryRecord.h"
+#import "HpsLastResponse.h"
 
 @protocol HpaResposeInterface
 
@@ -43,6 +44,7 @@
 @property (readonly,retain) NSString *AuthAmount;
 @property (readonly,retain) NSString *SettleAmount;
 @property (readonly,retain) NSString *RequestAmount;
+@property (readonly,retain) NSString *StoredResponse;
 
 @property (readonly,retain) NSString *SIPId;
 @property (readonly,retain) NSString *Response;
@@ -57,6 +59,8 @@
 @property (readonly,retain) NSString *Result;
 @property (readonly,retain) NSString *TransactionId;
 @property (readonly,retain) NSString *ResponseId;
+@property (readonly,retain) NSString *RequestId;
+@property (readonly,retain) Record *Record;
 
 @property (readonly,retain) NSString *CVVResultText;
 
@@ -74,8 +78,18 @@
 @property (readonly,retain) NSString *BatchTxnCnt;
 @property (readonly,retain) CardSummaryRecord *CardSummaryRecord;
 @property (readonly,retain) TransactionSummaryRecord *TransactionSummaryRecord;
-@property (readonly,retain) NSString *CardHolderName;
+@property (readonly,retain) NSString *CardholderName;
+@property (readonly,retain) HpsLastResponse *LastResponse;
 
+    //EOD
+@property (readonly,retain) NSString *Reversal;
+@property (readonly,retain) NSString *EMVOfflineDecline;
+@property (readonly,retain) NSString *TransactionCertificate;
+@property (readonly,retain) NSString *Attachment;
+@property (readonly,retain) NSString *SendSAF;
+@property (readonly,retain) NSString *BatchClose;
+@property (readonly,retain) NSString *HeartBeat;
+@property (readonly,retain) NSString *EMVPDL;
 
 @end
 
@@ -119,6 +133,7 @@
 @property (readonly,retain) NSString *AuthAmount;
 @property (readonly,retain) NSString *SettleAmount;
 @property (readonly,retain) NSString *RequestAmount;
+@property (readonly,retain) NSString *StoredResponse;
 
 @property (readonly,retain) NSString *SIPId;
 @property (readonly,retain) NSString *Response;
@@ -133,7 +148,9 @@
 @property (readonly,retain) NSString *Result;
 @property (readonly,retain) NSString *TransactionId;
 @property (readonly,retain) NSString *ResponseId;
+@property (readonly,retain) NSString *RequestId;
 @property (readonly,retain) Record *Record;
+@property (readonly,retain) HpsLastResponse *LastResponse;
 
 	//Batch
 @property (readonly,retain) NSString *DeviceId;
@@ -149,8 +166,18 @@
 @property (readonly,retain) NSString *BatchTxnCnt;
 @property (readonly,retain) CardSummaryRecord *CardSummaryRecord;
 @property (readonly,retain) TransactionSummaryRecord *TransactionSummaryRecord;
-@property (readonly,retain) NSString *CardHolderName;
+@property (readonly,retain) NSString *CardholderName;
 
+
+    //EOD
+@property (readonly,retain) NSString *Reversal;
+@property (readonly,retain) NSString *EMVOfflineDecline;
+@property (readonly,retain) NSString *TransactionCertificate;
+@property (readonly,retain) NSString *Attachment;
+@property (readonly,retain) NSString *SendSAF;
+@property (readonly,retain) NSString *BatchClose;
+@property (readonly,retain) NSString *HeartBeat;
+@property (readonly,retain) NSString *EMVPDL;
 -(id)initWithXMLData:(NSData *)data withSetRecord:(BOOL)value;
 
 @end

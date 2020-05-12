@@ -39,6 +39,13 @@
 @property (nonatomic,retain) NSString *LineItemTextRight;
 @property (nonatomic,retain) NSString *LineItemRunningTextLeft;
 @property (nonatomic,retain) NSString *LineItemRunningTextRight;
+    //Diagnostic
+@property (nonatomic,retain) NSString *FieldCount;
+
+//SendFile
+@property (nonatomic,retain) NSString *FileName;
+@property (nonatomic,retain) NSString *FileSize;
+@property (nonatomic,retain) NSString *FileData;
 
 	//Credit
 
@@ -68,6 +75,11 @@
 
 -(id)initWithGiftBalanceWihVersion:(NSString *)version withEcrId:(NSString *)ecrId withRequest:(NSString *)request withCardGroup:(NSString *)cardGroup;
 
+//EBT
+-(id)initWithEBTSaleRequestwithVersion:(NSString *)version withEcrId:(NSString *)EcrID withRequest:(NSString*)requset withCardGroup:(NSString *)cardGroup withConfirmAmount:(NSString *)confirmAmount withBaseAmount:(NSString *)baseAmount withTipAmount:(NSString*)tipAmount withTaxAmount:(NSString *)taxAmount withEBTAmount:(NSString*)ebtAmount withTotalAmount:(NSString *)totalAmount;
+-(id)initWithEBTRefundRequestwithVersion:(NSString *)version withEcrId:(NSString *)EcrID withRequest:(NSString *)requset withCardGroup:(NSString *)cardGroup withConfirmAmount:(NSString *)confirmAmount withInvoiceNbr:(NSString *)invoiceNbr withTotalAmount:(NSString *)totalAmount;
+-(id)initWithEBTBalanceWihVersion:(NSString *)version withEcrId:(NSString *)ecrId withRequest:(NSString *)request withCardGroup:(NSString *)cardGroup;
+
 	//Start Download
 -(id)initToStartDownloadWithVersion:(NSString *)version withEcrId:(NSString *)ecrId withRequest:(NSString *)request withHUDSURL:(NSString*)url withHUDSPORT:(NSString*)hudSport withTerminal:(NSString*)terminal withAppId:(NSString*)appId withDownloadType:(NSString*)downloadType andDownloadTime:(NSString*)downloadTime;
 
@@ -77,6 +89,20 @@
 	//LineItem
 -(id)initToAddLineItemWithVersion:(NSString *)version withEcrId:(NSString *)ecrId andRequest:(NSString *)request;
 
+   //Diagnostic Report
+-(id)initToGetDiagnosticReport:(NSString *)version withEcrId:(NSString *)ecrId withFieldCount:(NSString*)fieldCount andRequest:(NSString *)request;
+
+   //SAF
+-(id)initSendSAFWithVersion:(NSString *)version withEcrId:(NSString *)ecrId andRequest:(NSString *)request;
+
+    //EOD
+-(id)initExecuteEODWithVersion:(NSString *)version withEcrId:(NSString *)ecrId andRequest:(NSString *)request;
+
+//Send File
+-(id)initToSendFileNameWithVersion:(NSString *)version withEcrId:(NSString *)ecrId withRequest:(NSString *)request withFileName:(NSString*)fileName withFileSize:(NSString*)fileSize andMultipleMessage:(NSString*)multipleMessage;
+-(id)initToSendFileDataWithVersion:(NSString *)version withEcrId:(NSString *)ecrId withRequest:(NSString *)request withFileData:(NSString*)fileData andMultipleMessage:(NSString*)multipleMessage;
+
 -(NSString *)toString;
 
 @end
+

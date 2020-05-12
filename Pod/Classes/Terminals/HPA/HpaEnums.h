@@ -4,6 +4,7 @@ extern NSString * const HPA_DOWNLOAD_TIME_toString[];
 extern NSString * const HPA_DOWNLOAD_URL_toString[];
 extern NSString * const HPA_DOWNLOAD_TYPE_toString[];
 extern NSString * const HPA_CARD_GROUP_toString[];
+extern NSString * const HPA_SUMMARY_TYPE_toString[];
 
 typedef NS_ENUM(NSInteger, MessageFormat)
 {
@@ -27,7 +28,11 @@ typedef NS_ENUM(NSInteger, HPA_MSG_ID) {
 	ADD_VALUE,
 	TIP_ADJUST,
 	GET_INFO_REPORT,
-	CAPTURE
+	CAPTURE,
+    SEND_SAF,
+    GET_DIAGNOSTIC_REPORT,
+    EXECUTE_EOD,
+    SEND_FILE
 };
 
 typedef NS_ENUM(NSInteger, HPA_DOWNLOAD_TIME) {
@@ -51,6 +56,16 @@ typedef NS_ENUM(NSInteger, HPA_CARD_GROUP) {
 	GIFT,
 	EBT,
 	ALL
+};
+typedef NS_ENUM(NSInteger, HPA_SUMMARY_TYPE) {
+    APPROVED,
+    PARTIALLY_APPROVED,
+    VOID_APPROVED,
+    PENDING,
+    VOID_PENDING,
+    DECLINED,
+    VOID_DECLINED,
+    OFFLINE_APPROVED
 };
 
 @interface HpaEnums : NSObject
