@@ -32,7 +32,7 @@
 
 		if (self.accountResponse != nil) {
 			self.maskedCardNumber = self.accountResponse.accountNumber;
-			self.entryMode = self.accountResponse.entryMode;
+			self.entryMode = (int)self.accountResponse.entryMode;
 			self.expirationDate = self.accountResponse.expireDate;
 			self.paymentType = self.accountResponse.cardType;
             self.cardholderName = self.accountResponse.cardHolder;
