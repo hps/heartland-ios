@@ -31,7 +31,6 @@
 - (void) openLane:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
 - (void) reboot:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
 - (void) reset:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
-- (void) batchClose:(void(^)(id <IBatchCloseResponse> , NSError*))responseBlock;
 - (void) GetLastResponse:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
 - (void) setSAFMode:(BOOL)isSAF response:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
 	// processTransaction

@@ -253,43 +253,6 @@
 
 }
 
-- (void) batchClose:(void(^)(id <IBatchCloseResponse> , NSError*))responseBlock{
-
-	NSString *strBatchClose = [NSString stringWithFormat:@"<SIP><Version>1.0</Version><ECRId>1004</ECRId><Request>CloseBatch</Request></SIP><RequestId>%d</RequestId></SIP>",[self generateNumber]];
-
-	id<IHPSDeviceMessage> request	= [HpsTerminalUtilities	BuildRequest:strBatchClose withFormat:format];
-
-	[self.interface send:request andResponseBlock:^(NSData *data, NSError *error) {
-		if (error) {
-			dispatch_async(dispatch_get_main_queue(), ^{
-				responseBlock(nil, error);
-			});
-		}else{
-				//done
-				//NSString *dataview = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-				//NSLog(@"response xml = \n  : %@", dataview);
-			HpsHpaBatchResponse *response;
-			@try {
-					//parse data
-
-				response = [[HpsHpaBatchResponse alloc]initWithHpaBatchResponse:data withParameters:nil];
-				dispatch_async(dispatch_get_main_queue(), ^{
-					responseBlock(response, nil);
-				});
-			} @catch (NSException *exception) {
-				NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
-				NSError *error = [NSError errorWithDomain:self->errorDomain
-													 code:CocoaError
-												 userInfo:userInfo];
-
-				dispatch_async(dispatch_get_main_queue(), ^{
-					responseBlock(nil, error);
-				});
-			}
-		}
-	}];
-}
-
 - (void) setSAFMode:(BOOL)isSAF response:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock{
     NSLog(@"SAF Mode : %d",isSAF);
     NSString *strSetSAFMode = [NSString stringWithFormat:@"<SIP><Version>1.0</Version><ECRId>1004</ECRId><Request>SetParameter</Request><RequestId>%d</RequestId><FieldCount>1</FieldCount><Key>STORMD</Key><Value>%d</Value></SIP>",[self generateNumber],isSAF?1:0];

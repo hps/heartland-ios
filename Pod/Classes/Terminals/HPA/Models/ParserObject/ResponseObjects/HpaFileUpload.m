@@ -11,7 +11,7 @@
         NSData *data = [NSData dataWithContentsOfURL:url];
         self.fileName = url.lastPathComponent;
         self.hexData = [self dataTohex:data];
-        self.fileSize = [NSString stringWithFormat:@"%ld",data.length];
+        self.fileSize = [NSString stringWithFormat:@"%lu",(unsigned long)data.length];
     }
     return self;
 }

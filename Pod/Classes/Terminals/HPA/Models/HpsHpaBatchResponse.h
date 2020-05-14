@@ -4,7 +4,7 @@
 #import "CardSummary.h"
 
 
-@interface HpsHpaBatchResponse : HpsHpaBaseResponse<IBatchCloseResponse>
+@interface HpsHpaBatchResponse : HpsHpaBaseResponse
 
 @property(nonatomic,strong) BatchSummary *batchSummary;
 @property(nonatomic,strong) CardSummary *visaCardSummary;
@@ -15,7 +15,6 @@
 @property(nonatomic,strong) NSMutableArray *transactionSummaries;
 @property (nonatomic,strong) NSString *responseCode;
 @property (nonatomic,strong) NSString *deviceId;
-@property (nonatomic,strong) NSString *responseText;
 
 - (id)initWithHpaBatchResponse:(NSData *)data withParameters:(NSArray *)messageIds;
 
@@ -23,6 +22,5 @@
 - (void)mapBatchSummary:(id <HpaResposeInterface>) response;
 - (void) mapCardSummaryData:(id <HpaResposeInterface>) response;
 -(void)mapTransactionSummary:(id <HpaResposeInterface>) response;
--(NSString *)toString;
 
 @end

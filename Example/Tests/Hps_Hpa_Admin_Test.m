@@ -124,25 +124,6 @@
 	}];
 }
 
--(void) test_Batch_Close{
-	XCTestExpectation *expectation = [self expectationWithDescription:@"test_Hpa_HTTP_Reboot"];
-
-	HpsHpaDevice *device = [self setupDevice];
-	[device batchClose:^(id<IBatchCloseResponse>payload, NSError *error) {
-		XCTAssertNil(error);
-		XCTAssertNotNil(payload);
-		XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
-
-		HpsHpaBatchResponse *response = (HpsHpaBatchResponse*)payload;
-		NSLog(@"%@", [response toString]);
-		[expectation fulfill];
-	}];
-	[self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
-		if(error) XCTFail(@"Request Timed out");
-	}];
-
-}
-
 - (void) test_Hpa_HTTP_Cancel
 {
 	XCTestExpectation *expectation = [self expectationWithDescription:@"test_Hpa_HTTP_Cancel"];
