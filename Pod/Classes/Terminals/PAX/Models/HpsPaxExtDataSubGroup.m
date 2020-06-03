@@ -17,7 +17,9 @@
  
     for (NSString* value in items) {
         NSArray *kvp = [value componentsSeparatedByString:@"="];
-        [self.collection setObject:kvp[1] forKey:kvp[0]];
+        if (kvp.count > 1) {
+            [self.collection setObject:kvp[1] forKey:kvp[0]];
+        }
     }
     return self;
 }
