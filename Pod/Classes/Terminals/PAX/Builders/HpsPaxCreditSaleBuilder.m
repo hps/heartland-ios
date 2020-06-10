@@ -53,7 +53,10 @@
     [subgroups addObject:account];
     
     HpsPaxTraceRequest *traceRequest = [[HpsPaxTraceRequest alloc] init];
-    traceRequest.ecrTransId = [HpsPaxCreditSaleBuilder newECRTransactionId];
+    
+    _ecrTransId = [HpsPaxCreditSaleBuilder newECRTransactionId];
+    traceRequest.ecrTransId = _ecrTransId;
+    
     traceRequest.referenceNumber = [NSString stringWithFormat:@"%d", self.referenceNumber];
     if (self.details != nil) {
         traceRequest.invoiceNumber = self.details.invoiceNumber;
