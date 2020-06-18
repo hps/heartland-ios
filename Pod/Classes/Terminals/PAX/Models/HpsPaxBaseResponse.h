@@ -11,6 +11,8 @@
 #import "HpsPaxEcomSubGroup.h"
 #import "HpsPaxExtDataSubGroup.h"
 #import "HpsTerminalResponse.h"
+#import "HpsPaxCashierSubGroup.h"
+#import "HpsPaxCheckResponse.h"
 
 @interface HpsPaxBaseResponse : HpsTerminalResponse <IHPSDeviceResponse>
 
@@ -26,6 +28,9 @@
 @property (nonatomic,strong) HpsPaxCommercialResponse *commercialResponse;
 @property (nonatomic,strong) HpsPaxEcomSubGroup *ecomResponse;
 @property (nonatomic,strong) HpsPaxExtDataSubGroup *extDataResponse;
+@property (nonatomic,strong) HpsPaxCashierSubGroup *cashierResponse;
+@property (nonatomic,strong) HpsPaxCheckResponse *checkResponse;
+
 
 - (id) initWithMessageID:(NSString*)messageId andBuffer:(NSData*)buffer;
 - (HpsBinaryDataScanner*) parseResponse;

@@ -53,22 +53,31 @@
             </BuildableReference>
             <SkippedTests>
                <Test
-                  Identifier = "Hps_Pax_Admin_Tests">
+                  Identifier = "Hps_Hpa_Admin_Test">
+               </Test>
+               <Test
+                  Identifier = "Hps_Hpa_Credit_Test">
+               </Test>
+               <Test
+                  Identifier = "Hps_Hpa_Debit_Test">
+               </Test>
+               <Test
+                  Identifier = "Hps_Hpa_EBT_Test">
+               </Test>
+               <Test
+                  Identifier = "Hps_Hpa_EOD_Test">
+               </Test>
+               <Test
+                  Identifier = "Hps_Hpa_Gift_Test">
+               </Test>
+               <Test
+                  Identifier = "Hps_Hpa_Report_Test">
+               </Test>
+               <Test
+                  Identifier = "Hps_Hpa_VRF_Test">
                </Test>
                <Test
                   Identifier = "Hps_Pax_BatchMessage_Tests">
-               </Test>
-               <Test
-                  Identifier = "Hps_Pax_Connection_Tests">
-               </Test>
-               <Test
-                  Identifier = "Hps_Pax_Credit_Tests">
-               </Test>
-               <Test
-                  Identifier = "Hps_Pax_Debit_Tests">
-               </Test>
-               <Test
-                  Identifier = "Hps_Pax_Gift_Tests">
                </Test>
             </SkippedTests>
          </TestableReference>

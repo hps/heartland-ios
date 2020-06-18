@@ -26,6 +26,9 @@
     [subgroups addObject:amounts];
     
     HpsPaxAccountRequest *account = [[HpsPaxAccountRequest alloc] init];
+    if (self.allowDuplicates) {
+        account.dupOverrideFlag = @"1";
+    }
     [subgroups addObject:account];
     
     HpsPaxTraceRequest *traceRequest = [[HpsPaxTraceRequest alloc] init];

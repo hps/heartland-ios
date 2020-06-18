@@ -15,7 +15,7 @@
 - (HpsPaxDevice*) setupDevice
 {
     HpsConnectionConfig *config = [[HpsConnectionConfig alloc] init];
-    config.ipAddress = @"10.12.220.172";
+    config.ipAddress = @"192.168.1.12";
     config.port = @"10009";
     config.connectionMode = HpsConnectionModes_TCP_IP;
     HpsPaxDevice * device = [[HpsPaxDevice alloc] initWithConfig:config];
@@ -30,7 +30,7 @@
     HpsPaxDebitSaleBuilder *builder = [[HpsPaxDebitSaleBuilder alloc] initWithDevice:device];
     builder.amount = [NSNumber numberWithDouble:10.0];
     builder.referenceNumber = 5;
-    builder.allowDuplicates = YES;
+    builder.allowDuplicates = NO;
     
     [builder execute:^(HpsPaxDebitResponse *payload, NSError *error) {
         XCTAssertNil(error);

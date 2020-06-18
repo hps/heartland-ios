@@ -291,8 +291,16 @@
 		E2385A3B23EAE1B300C56050 /* BatchSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = E2385A3523EAE1B200C56050 /* BatchSummary.m */; };
 		E2385A3C23EAE1B300C56050 /* BatchSummary.h in Headers */ = {isa = PBXBuildFile; fileRef = E2385A3623EAE1B200C56050 /* BatchSummary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2385A3D23EAE1B300C56050 /* CardSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = E2385A3723EAE1B200C56050 /* CardSummary.m */; };
+		E24FA42B2448756900F26D3A /* HpsPaxCheckResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = E24FA4292448756900F26D3A /* HpsPaxCheckResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E24FA42C2448756900F26D3A /* HpsPaxCheckResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E24FA42A2448756900F26D3A /* HpsPaxCheckResponse.m */; };
+		E2576C30243C7CF7002E4CA4 /* HpsPaxLocalDetailReportBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = E2576C2E243C7CF7002E4CA4 /* HpsPaxLocalDetailReportBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2576C31243C7CF7002E4CA4 /* HpsPaxLocalDetailReportBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = E2576C2F243C7CF7002E4CA4 /* HpsPaxLocalDetailReportBuilder.m */; };
+		E2576C34243C87C7002E4CA4 /* HpsPaxLocalDetailResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = E2576C32243C87C7002E4CA4 /* HpsPaxLocalDetailResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2576C35243C87C7002E4CA4 /* HpsPaxLocalDetailResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E2576C33243C87C7002E4CA4 /* HpsPaxLocalDetailResponse.m */; };
 		E26E2E9A236AF17E0091ACA6 /* HpsLastResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = E26E2E98236AF17E0091ACA6 /* HpsLastResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E26E2E9B236AF17E0091ACA6 /* HpsLastResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E26E2E99236AF17E0091ACA6 /* HpsLastResponse.m */; };
+		E2732E2D245FFEA4002DA6E0 /* HpaPaxSafReportResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = E2732E2B245FFEA4002DA6E0 /* HpaPaxSafReportResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2732E2E245FFEA4002DA6E0 /* HpaPaxSafReportResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E2732E2C245FFEA4002DA6E0 /* HpaPaxSafReportResponse.m */; };
 		E27CC35B2362D416004CB042 /* HpsHpaSafBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = E27CC3592362D416004CB042 /* HpsHpaSafBuilder.m */; };
 		E27CC35C2362D416004CB042 /* HpsHpaSafBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = E27CC35A2362D416004CB042 /* HpsHpaSafBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E27CC3632362D43C004CB042 /* SummaryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E27CC35D2362D43C004CB042 /* SummaryResponse.m */; };
@@ -301,6 +309,10 @@
 		E27CC3662362D43C004CB042 /* HpsHpaSafResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = E27CC3602362D43C004CB042 /* HpsHpaSafResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E27CC3672362D43C004CB042 /* SummaryResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = E27CC3612362D43C004CB042 /* SummaryResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E27CC3682362D43C004CB042 /* HpsHpaSafResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E27CC3622362D43C004CB042 /* HpsHpaSafResponse.m */; };
+		E2A3363E2455C9300041AD64 /* HpaPaxSafUploadResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A3363C2455C9300041AD64 /* HpaPaxSafUploadResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2A3363F2455C9300041AD64 /* HpaPaxSafUploadResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A3363D2455C9300041AD64 /* HpaPaxSafUploadResponse.m */; };
+		E2A336422456B7BC0041AD64 /* HpaPaxSafDeleteResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A336402456B7BB0041AD64 /* HpaPaxSafDeleteResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2A336432456B7BC0041AD64 /* HpaPaxSafDeleteResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A336412456B7BB0041AD64 /* HpaPaxSafDeleteResponse.m */; };
 		E2A995CC237A82BE00D0C429 /* HpsHpaDiagnosticBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A995CA237A82BE00D0C429 /* HpsHpaDiagnosticBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2A995CD237A82BE00D0C429 /* HpsHpaDiagnosticBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A995CB237A82BE00D0C429 /* HpsHpaDiagnosticBuilder.m */; };
 		E2A995D0237A8F8C00D0C429 /* HpsHpaDiagnosticResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = E2A995CE237A8F8C00D0C429 /* HpsHpaDiagnosticResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -694,8 +706,16 @@
 		E2385A3523EAE1B200C56050 /* BatchSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatchSummary.m; sourceTree = "<group>"; };
 		E2385A3623EAE1B200C56050 /* BatchSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatchSummary.h; sourceTree = "<group>"; };
 		E2385A3723EAE1B200C56050 /* CardSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardSummary.m; sourceTree = "<group>"; };
+		E24FA4292448756900F26D3A /* HpsPaxCheckResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsPaxCheckResponse.h; sourceTree = "<group>"; };
+		E24FA42A2448756900F26D3A /* HpsPaxCheckResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsPaxCheckResponse.m; sourceTree = "<group>"; };
+		E2576C2E243C7CF7002E4CA4 /* HpsPaxLocalDetailReportBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsPaxLocalDetailReportBuilder.h; sourceTree = "<group>"; };
+		E2576C2F243C7CF7002E4CA4 /* HpsPaxLocalDetailReportBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsPaxLocalDetailReportBuilder.m; sourceTree = "<group>"; };
+		E2576C32243C87C7002E4CA4 /* HpsPaxLocalDetailResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsPaxLocalDetailResponse.h; sourceTree = "<group>"; };
+		E2576C33243C87C7002E4CA4 /* HpsPaxLocalDetailResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsPaxLocalDetailResponse.m; sourceTree = "<group>"; };
 		E26E2E98236AF17E0091ACA6 /* HpsLastResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsLastResponse.h; sourceTree = "<group>"; };
 		E26E2E99236AF17E0091ACA6 /* HpsLastResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsLastResponse.m; sourceTree = "<group>"; };
+		E2732E2B245FFEA4002DA6E0 /* HpaPaxSafReportResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpaPaxSafReportResponse.h; sourceTree = "<group>"; };
+		E2732E2C245FFEA4002DA6E0 /* HpaPaxSafReportResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpaPaxSafReportResponse.m; sourceTree = "<group>"; };
 		E27CC3592362D416004CB042 /* HpsHpaSafBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpsHpaSafBuilder.m; sourceTree = "<group>"; };
 		E27CC35A2362D416004CB042 /* HpsHpaSafBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HpsHpaSafBuilder.h; sourceTree = "<group>"; };
 		E27CC35D2362D43C004CB042 /* SummaryResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryResponse.m; sourceTree = "<group>"; };
@@ -705,6 +725,10 @@
 		E27CC3612362D43C004CB042 /* SummaryResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryResponse.h; sourceTree = "<group>"; };
 		E27CC3622362D43C004CB042 /* HpsHpaSafResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpsHpaSafResponse.m; sourceTree = "<group>"; };
 		E290022C0EF47CB5A0CB636EB2F65E9B /* HpsTableService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsTableService.h; sourceTree = "<group>"; };
+		E2A3363C2455C9300041AD64 /* HpaPaxSafUploadResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpaPaxSafUploadResponse.h; sourceTree = "<group>"; };
+		E2A3363D2455C9300041AD64 /* HpaPaxSafUploadResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpaPaxSafUploadResponse.m; sourceTree = "<group>"; };
+		E2A336402456B7BB0041AD64 /* HpaPaxSafDeleteResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpaPaxSafDeleteResponse.h; sourceTree = "<group>"; };
+		E2A336412456B7BB0041AD64 /* HpaPaxSafDeleteResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpaPaxSafDeleteResponse.m; sourceTree = "<group>"; };
 		E2A995CA237A82BE00D0C429 /* HpsHpaDiagnosticBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsHpaDiagnosticBuilder.h; sourceTree = "<group>"; };
 		E2A995CB237A82BE00D0C429 /* HpsHpaDiagnosticBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsHpaDiagnosticBuilder.m; sourceTree = "<group>"; };
 		E2A995CE237A8F8C00D0C429 /* HpsHpaDiagnosticResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsHpaDiagnosticResponse.h; sourceTree = "<group>"; };
@@ -1319,6 +1343,8 @@
 				C4346C0A7B339C15C1AC7185CB91232A /* HpsPaxGiftSaleBuilder.m */,
 				76A5DE88374517271CD92817E1905207 /* HpsPaxGiftVoidBuilder.h */,
 				69DC356D386591A023AA1296AB406F45 /* HpsPaxGiftVoidBuilder.m */,
+				E2576C2E243C7CF7002E4CA4 /* HpsPaxLocalDetailReportBuilder.h */,
+				E2576C2F243C7CF7002E4CA4 /* HpsPaxLocalDetailReportBuilder.m */,
 			);
 			path = Builders;
 			sourceTree = "<group>";
@@ -1465,6 +1491,8 @@
 		FFF64AA6BBCA359A7DD80049B330BC90 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E2576C32243C87C7002E4CA4 /* HpsPaxLocalDetailResponse.h */,
+				E2576C33243C87C7002E4CA4 /* HpsPaxLocalDetailResponse.m */,
 				8473E8DA573DA0DE850A2AB4DE7D462F /* HpsPaxAccountRequest.h */,
 				5717E892C860650E2994E462CC15F989 /* HpsPaxAccountRequest.m */,
 				36471758EB3FE348F938E7CAD9BF5971 /* HpsPaxAccountResponse.h */,
@@ -1507,6 +1535,14 @@
 				591BA3C5400EB80392D021CA287A51E2 /* HpsPaxTraceRequest.m */,
 				6D214D66E09F15F3208C3C872D6DD754 /* HpsPaxTraceResponse.h */,
 				9129660F774B9B42C79AF10B61ED4088 /* HpsPaxTraceResponse.m */,
+				E24FA4292448756900F26D3A /* HpsPaxCheckResponse.h */,
+				E24FA42A2448756900F26D3A /* HpsPaxCheckResponse.m */,
+				E2A3363C2455C9300041AD64 /* HpaPaxSafUploadResponse.h */,
+				E2A3363D2455C9300041AD64 /* HpaPaxSafUploadResponse.m */,
+				E2A336402456B7BB0041AD64 /* HpaPaxSafDeleteResponse.h */,
+				E2A336412456B7BB0041AD64 /* HpaPaxSafDeleteResponse.m */,
+				E2732E2B245FFEA4002DA6E0 /* HpaPaxSafReportResponse.h */,
+				E2732E2C245FFEA4002DA6E0 /* HpaPaxSafReportResponse.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1543,6 +1579,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E24FA42B2448756900F26D3A /* HpsPaxCheckResponse.h in Headers */,
+				E2576C30243C7CF7002E4CA4 /* HpsPaxLocalDetailReportBuilder.h in Headers */,
+				E2576C34243C87C7002E4CA4 /* HpsPaxLocalDetailResponse.h in Headers */,
+				E2732E2D245FFEA4002DA6E0 /* HpaPaxSafReportResponse.h in Headers */,
+				E2A336422456B7BC0041AD64 /* HpaPaxSafDeleteResponse.h in Headers */,
+				E2A3363E2455C9300041AD64 /* HpaPaxSafUploadResponse.h in Headers */,
 				E2B1C2002419183A0040D5C7 /* HpsHpaEBTBalanceBuilder.h in Headers */,
 				E2B1C2042419183A0040D5C7 /* HpsHpaEBTRefundBuilder.h in Headers */,
 				E2B1C2022419183A0040D5C7 /* HpsHpaEBTSaleBuilder.h in Headers */,
@@ -1939,6 +1981,7 @@
 				22D5AE2772E16754A296B13172578F7B /* HpsHpaCreditSaleBuilder.m in Sources */,
 				16A6C5563F7C015D1F04DB21651E2B79 /* HpsHpaCreditVerifyBuilder.m in Sources */,
 				B6CA9DBDAE1370BAD05F421A11B0A617 /* HpsHpaCreditVoidBuilder.m in Sources */,
+				E2732E2E245FFEA4002DA6E0 /* HpaPaxSafReportResponse.m in Sources */,
 				F6C6166F8BE569A58EE875F81D996E46 /* HpsHpaDebitRefundBuilder.m in Sources */,
 				7D9232140A923721F0F021D7F5778CA4 /* HpsHpaDebitSaleBuilder.m in Sources */,
 				E26E2E9B236AF17E0091ACA6 /* HpsLastResponse.m in Sources */,
@@ -1946,7 +1989,9 @@
 				4AD4563385FE1B11186B4087291B0B3C /* HpsHpaDeviceResponse.m in Sources */,
 				0ADF1B6E487D0F7209620BA6D9DDFAFB /* HpsHpaDownloadBuilder.m in Sources */,
 				0B1E0E451A9EC44F3954FB5D6E26D53A /* HpsHpaGiftAddValueBuilder.m in Sources */,
+				E2576C35243C87C7002E4CA4 /* HpsPaxLocalDetailResponse.m in Sources */,
 				9E601558A1C455522EF9F13AFDBECE72 /* HpsHpaGiftBalanceBuilder.m in Sources */,
+				E2A336432456B7BC0041AD64 /* HpaPaxSafDeleteResponse.m in Sources */,
 				45550D521DD93428088A59CE57F79EC7 /* HpsHpaGiftSaleBuilder.m in Sources */,
 				3FA3D3509B0A776AB429EFCF3380957E /* HpsHpaGiftVoidBuilder.m in Sources */,
 				E2A995D1237A8F8C00D0C429 /* HpsHpaDiagnosticResponse.m in Sources */,
@@ -1960,6 +2005,7 @@
 				A4FB8AB18C2C94939F0A0DC29A51C6F6 /* HpsHpaStartCardBuilder.m in Sources */,
 				E2B1C2052419183A0040D5C7 /* HpsHpaEBTRefundBuilder.m in Sources */,
 				E6C35A305760F93161FBC57F7D014D94 /* HpsHpaTcpInterface.m in Sources */,
+				E24FA42C2448756900F26D3A /* HpsPaxCheckResponse.m in Sources */,
 				E27CC3652362D43C004CB042 /* HpsTransactionSummary.m in Sources */,
 				2722CFD2A8CCA6AD4948B356DA125E8F /* HpsJsonDoc.m in Sources */,
 				BD51FCE6370DCCF6A2066ABB675E9C7F /* HpsLaborField.m in Sources */,
@@ -2004,6 +2050,7 @@
 				60819567AEA4D7D997FC4ADB046E13C5 /* HpsPaxInitializeResponse.m in Sources */,
 				32845167CBE58CF8FB082E16221BAB5B /* HpsPaxMessageIDs.m in Sources */,
 				D6A28CE0DBD063BEF85509A498CECCDF /* HpsPaxTcpInterface.m in Sources */,
+				E2A3363F2455C9300041AD64 /* HpaPaxSafUploadResponse.m in Sources */,
 				37D47ADACF37108E00101EBE719CF096 /* HpsPaxTraceRequest.m in Sources */,
 				55CC903F7DE5E59139A47B646FD82503 /* HpsPaxTraceResponse.m in Sources */,
 				71C238168CED0D01B7726C862684159E /* HpsPayGroup.m in Sources */,
@@ -2045,6 +2092,7 @@
 				027FEBEF3915FABC078A566B1468BBDE /* NSData+SM_EncryptionHelper.m in Sources */,
 				2BAC59E85D22DA746BCF26804D6FD359 /* NSInputStream+Hps.m in Sources */,
 				148DF91ED24BF7F10207621FFB41A21E /* NSMutableDictionary+ShiftAssignments.m in Sources */,
+				E2576C31243C7CF7002E4CA4 /* HpsPaxLocalDetailReportBuilder.m in Sources */,
 				782405CCA9BBDD0DE313EE3AE680443C /* NSObject+ObjectMap.m in Sources */,
 				491A10B9B0768D27A7C0F12FDE04343D /* Record.m in Sources */,
 				48B4402A5CE44A76EA97E1EC2741723A /* Rfc2898DeriveBytes.m in Sources */,

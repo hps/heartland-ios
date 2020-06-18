@@ -136,6 +136,7 @@
 #import "HpsPaxGiftBalanceBuilder.h"
 #import "HpsPaxGiftSaleBuilder.h"
 #import "HpsPaxGiftVoidBuilder.h"
+#import "HpsPaxLocalDetailReportBuilder.h"
 #import "HpsPaxDevice.h"
 #import "HpsPaxMessageIDs.h"
 #import "HpsPaxHttpInterface.h"
@@ -161,12 +162,18 @@
 #import "HpsPaxInitializeResponse.h"
 #import "HpsPaxTraceRequest.h"
 #import "HpsPaxTraceResponse.h"
+#import "HpsPaxLocalDetailResponse.h"
+#import "HpsPaxCheckResponse.h"
+#import "HpaPaxSafUploadResponse.h"
+#import "HpaPaxSafDeleteResponse.h"
+#import "HpaPaxSafReportResponse.h"
 #import "HpsBinaryDataScanner.h"
 #import "HpsTerminalEnums.h"
 #import "HpsTerminalUtilities.h"
 #import "NSObject+ObjectMap.h"
 #import "HpsCardEntryViewController.h"
 #import "HpsCardInfoViewController.h"
+#import "HpaPaxSafDeleteResponse.h"
 
 FOUNDATION_EXPORT double Heartland_iOS_SDKVersionNumber;
 FOUNDATION_EXPORT const unsigned char Heartland_iOS_SDKVersionString[];

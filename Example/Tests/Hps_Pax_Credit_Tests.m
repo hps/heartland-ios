@@ -21,9 +21,9 @@
     HpsConnectionConfig *config = [[HpsConnectionConfig alloc] init];
    // config.ipAddress = @"10.12.220.113";
     //config.port = @"80";
-    config.ipAddress = @"10.12.220.172";
+    config.ipAddress = @"192.168.1.12";
     config.port = @"10009";
-    config.connectionMode = HpsConnectionModes_HTTP;
+    config.connectionMode = HpsConnectionModes_TCP_IP;
     HpsPaxDevice * device = [[HpsPaxDevice alloc] initWithConfig:config];
     return device;
 }

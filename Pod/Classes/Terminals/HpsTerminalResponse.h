@@ -47,6 +47,7 @@
 @property (nonatomic) BOOL taxExept;
 @property (nonatomic,strong) NSString *taxExeptId;
 @property (nonatomic,strong) NSString *paymentType; //ticket number missing
+@property (nonatomic,strong) NSString *merchantFee;
 
 @property (nonatomic,strong) NSNumber *approvedAmount;
 @property (nonatomic,strong) HpsPaxHostResponse *hostResponse;

@@ -21,6 +21,7 @@
 @property (nonatomic, strong) HpsGiftCard *giftCard;
 @property (nonatomic, strong) HpsTransactionDetails *details;
 @property (nonatomic) int currencyType;
+@property (nonatomic, readwrite) BOOL allowDuplicates;
 
 - (void) execute:(void(^)(HpsPaxGiftResponse*, NSError*))responseBlock;
 - (id)initWithDevice: (HpsPaxDevice*)paxDevice;

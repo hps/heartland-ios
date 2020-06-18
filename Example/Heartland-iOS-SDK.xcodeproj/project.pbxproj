@@ -39,6 +39,8 @@
 		DBF1B0A52080B3C7007A775E /* HpsTableServicesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF1B0A42080B3C7007A775E /* HpsTableServicesTest.m */; };
 		DBF1DE8B1FB9AEF100D57C16 /* Hps_Hpa_Debit_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF1DE8A1FB9AEF100D57C16 /* Hps_Hpa_Debit_Test.m */; };
 		DBF1DE8D1FB9AF0900D57C16 /* Hps_Hpa_Gift_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF1DE8C1FB9AF0900D57C16 /* Hps_Hpa_Gift_Test.m */; };
+		E2576C2D243C78D1002E4CA4 /* Hps_Pax_Report_test.m in Sources */ = {isa = PBXBuildFile; fileRef = E2576C2C243C78D1002E4CA4 /* Hps_Pax_Report_test.m */; };
+		E2A3363B2455C6950041AD64 /* Hps_Pax_Batch_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A3363A2455C6950041AD64 /* Hps_Pax_Batch_Tests.m */; };
 		E2B1C1BC2403DFF20040D5C7 /* Hps_Hpa_EOD_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B1C1BB2403DFF20040D5C7 /* Hps_Hpa_EOD_Test.m */; };
 		E2B1C1EB24190C820040D5C7 /* Hps_Hpa_EBT_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B1C1EA24190C820040D5C7 /* Hps_Hpa_EBT_Test.m */; };
 /* End PBXBuildFile section */
@@ -102,6 +104,8 @@
 		DBF1B0A42080B3C7007A775E /* HpsTableServicesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpsTableServicesTest.m; sourceTree = "<group>"; };
 		DBF1DE8A1FB9AEF100D57C16 /* Hps_Hpa_Debit_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_Debit_Test.m; sourceTree = "<group>"; };
 		DBF1DE8C1FB9AF0900D57C16 /* Hps_Hpa_Gift_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_Gift_Test.m; sourceTree = "<group>"; };
+		E2576C2C243C78D1002E4CA4 /* Hps_Pax_Report_test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_Report_test.m; sourceTree = "<group>"; };
+		E2A3363A2455C6950041AD64 /* Hps_Pax_Batch_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_Batch_Tests.m; sourceTree = "<group>"; };
 		E2B1C1BB2403DFF20040D5C7 /* Hps_Hpa_EOD_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_EOD_Test.m; sourceTree = "<group>"; };
 		E2B1C1EA24190C820040D5C7 /* Hps_Hpa_EBT_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_EBT_Test.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,6 +241,8 @@
 				84FA62D21C035BB3007854D5 /* Heartland_GatewayTests.m */,
 				84FA62D31C035BB3007854D5 /* Heartland_TokenizationTests.m */,
 				DB8A59C01F4BDF7000B98B73 /* Hps_Pax_VRF_Test.m */,
+				E2576C2C243C78D1002E4CA4 /* Hps_Pax_Report_test.m */,
+				E2A3363A2455C6950041AD64 /* Hps_Pax_Batch_Tests.m */,
 			);
 			name = Pax;
 			sourceTree = "<group>";
@@ -483,7 +489,9 @@
 			files = (
 				DBF1DE8B1FB9AEF100D57C16 /* Hps_Hpa_Debit_Test.m in Sources */,
 				DBE8B01A20ECA30B006F8B97 /* HpsPayRollTests.m in Sources */,
+				E2576C2D243C78D1002E4CA4 /* Hps_Pax_Report_test.m in Sources */,
 				840256431DEE1BB90078B6A2 /* Hps_Pax_Debit_Tests.m in Sources */,
+				E2A3363B2455C6950041AD64 /* Hps_Pax_Batch_Tests.m in Sources */,
 				E2B1C1EB24190C820040D5C7 /* Hps_Hpa_EBT_Test.m in Sources */,
 				E2B1C1BC2403DFF20040D5C7 /* Hps_Hpa_EOD_Test.m in Sources */,
 				DBDA36711FAB430900CF5146 /* Hps_Hpa_Admin_Test.m in Sources */,
