@@ -224,7 +224,7 @@
 
 - (void) setSafMode:(SafMode)safMode withResponseBlock:(void(^)(HpsPaxDeviceResponse*, NSError*))responseBlock{
    
-    NSString *strSafMode = [NSString stringWithFormat:@"%ld",safMode];
+    NSString *strSafMode = [NSString stringWithFormat:@"%ld",(long)safMode];
     NSMutableArray *commands = [[NSMutableArray alloc] init];
     [commands addObject:strSafMode];
     NSString* fs_code = [HpsTerminalEnums controlCodeString:HpsControlCodes_FS];
@@ -266,7 +266,7 @@
 
 - (void) safUpload:(SafIndicator)safIndicator withResponseBlock:(void(^)(HpaPaxSafUploadResponse*, NSError*))responseBlock{
     
-    NSString *strSafIndicator = [NSString stringWithFormat:@"%ld",safIndicator];
+    NSString *strSafIndicator = [NSString stringWithFormat:@"%ld",(long)safIndicator];
     NSMutableArray *commands = [[NSMutableArray alloc] init];
     [commands addObject:strSafIndicator];
    
@@ -303,7 +303,7 @@
 
 - (void) safDelete:(SafIndicator)safIndicator withResponseBlock:(void(^)(HpaPaxSafDeleteResponse*, NSError*))responseBlock{
     
-    NSString *strSafIndicator = [NSString stringWithFormat:@"%ld",safIndicator];
+    NSString *strSafIndicator = [NSString stringWithFormat:@"%ld",(long)safIndicator];
     NSMutableArray *commands = [[NSMutableArray alloc] init];
     [commands addObject:strSafIndicator];
     
@@ -340,7 +340,7 @@
 
 - (void) safReport:(SafIndicator)safIndicator withResponseBlock:(void(^)(HpaPaxSafReportResponse*, NSError*))responseBlock{
     
-    NSString *strSafIndicator = [NSString stringWithFormat:@"%ld",safIndicator];
+    NSString *strSafIndicator = [NSString stringWithFormat:@"%ld",(long)safIndicator];
     NSMutableArray *commands = [[NSMutableArray alloc] init];
     [commands addObject:strSafIndicator];
     
