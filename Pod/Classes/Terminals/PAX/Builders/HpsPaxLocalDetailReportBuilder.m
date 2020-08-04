@@ -23,7 +23,7 @@
         [extData.collection setObject:self.searchData forKey:PAX_EXT_DATA_MERCHANT_ID];
     }
     
-     if ([PAX_SEARCH_CRITERIA_toString[self.searchCriteria] isEqualToString:PAX_SEARCH_CRITERIA_toString[MERCHANT_ID]] && self.searchData != nil) {
+     if ([PAX_SEARCH_CRITERIA_toString[self.searchCriteria] isEqualToString:PAX_SEARCH_CRITERIA_toString[MERCHANT_NAME]] && self.searchData != nil) {
         [extData.collection setObject:self.searchData forKey:PAX_EXT_DATA_MERCHANT_NAME];
     }
     [subgroups addObject:extData];

@@ -7,6 +7,8 @@
 @property (nonatomic,strong) NSString *authCode;
 @property (nonatomic,strong) NSString *transactionNumber;
 @property (nonatomic,strong) NSString *timeStamp;
+@property (nonatomic,strong) NSString *ecrTransId;
+@property (nonatomic,strong) NSString *clientTransactionId;
 
 - (NSString*) getElementString;
 

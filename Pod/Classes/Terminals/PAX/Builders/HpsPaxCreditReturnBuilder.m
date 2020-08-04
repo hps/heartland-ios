@@ -42,6 +42,9 @@
     
     HpsPaxTraceRequest *traceRequest = [[HpsPaxTraceRequest alloc] init];
     traceRequest.referenceNumber = [NSString stringWithFormat:@"%d", self.referenceNumber];
+    if (self.clientTransactionId != nil)
+    traceRequest.clientTransactionId = self.clientTransactionId;
+    
     if (self.details != nil) {
         traceRequest.invoiceNumber = self.details.invoiceNumber;
     }

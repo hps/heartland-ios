@@ -30,6 +30,8 @@
     
     HpsPaxTraceRequest *traceRequest = [[HpsPaxTraceRequest alloc] init];
     traceRequest.referenceNumber = [NSString stringWithFormat:@"%d", self.referenceNumber];
+    if (self.clientTransactionId != nil)
+        traceRequest.clientTransactionId = self.clientTransactionId;
     [subgroups addObject:traceRequest];
     
     HpsPaxAvsRequest *avsRequest = [[HpsPaxAvsRequest alloc] init];

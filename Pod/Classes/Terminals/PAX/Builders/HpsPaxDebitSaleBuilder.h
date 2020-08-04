@@ -23,6 +23,7 @@
 @property (nonatomic, strong) NSNumber *cashBack;
 @property (nonatomic, strong) HpsTransactionDetails *details;
 @property (nonatomic, readwrite) BOOL allowDuplicates;
+@property (nonatomic, strong) NSString *clientTransactionId;
 
 - (void) execute:(void(^)(HpsPaxDebitResponse*, NSError*))responseBlock;
 - (id)initWithDevice: (HpsPaxDevice*)paxDevice;
