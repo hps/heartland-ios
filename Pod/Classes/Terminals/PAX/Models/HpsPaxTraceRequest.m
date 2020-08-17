@@ -20,6 +20,9 @@
     [sb appendString:[HpsTerminalEnums controlCodeString:HpsControlCodes_US]];
     
     if (self.timeStamp != nil && self.timeStamp.length > 0) [sb appendString:self.timeStamp];
+    [sb appendString:[HpsTerminalEnums controlCodeString:HpsControlCodes_US]];
+    
+    if (self.ecrTransId != nil && self.ecrTransId.length > 0) [sb appendString:self.ecrTransId];
     
     return sb;
 }

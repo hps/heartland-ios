@@ -30,6 +30,7 @@
 @property (nonatomic, strong) NSNumber *gratuity;
 @property (nonatomic, readwrite) BOOL signatureCapture;
 @property (nonatomic, readwrite) BOOL tipRequest;
+@property (nonatomic, strong) NSString *ecrTransId;
 
 - (void) execute:(void(^)(HpsPaxCreditResponse*, NSError*))responseBlock;
 - (id)initWithDevice: (HpsPaxDevice*)paxDevice;

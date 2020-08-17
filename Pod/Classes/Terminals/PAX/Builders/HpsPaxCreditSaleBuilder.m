@@ -11,6 +11,20 @@
     return self;   
 }
 
+// 16 digit unique numeric id from current time interval
++ (NSString *)newECRTransactionId {
+    NSNumberFormatter *formatter = NSNumberFormatter.new;
+    formatter.usesSignificantDigits = YES;
+    formatter.minimumSignificantDigits = 16;
+    formatter.maximumSignificantDigits = 16;
+    
+    NSTimeInterval now = [NSDate.new timeIntervalSince1970];
+    NSString *nowNumString = [formatter stringFromNumber:@(now)];
+    NSString *result = [nowNumString stringByReplacingOccurrencesOfString:@"." withString:@""];
+    
+    return result;
+}
+
 - (void) execute:(void(^)(HpsPaxCreditResponse*, NSError*))responseBlock{
 
     [self validate];
@@ -39,6 +53,10 @@
     [subgroups addObject:account];
     
     HpsPaxTraceRequest *traceRequest = [[HpsPaxTraceRequest alloc] init];
+    
+    _ecrTransId = [HpsPaxCreditSaleBuilder newECRTransactionId];
+    traceRequest.ecrTransId = _ecrTransId;
+    
     traceRequest.referenceNumber = [NSString stringWithFormat:@"%d", self.referenceNumber];
     if (self.details != nil) {
         traceRequest.invoiceNumber = self.details.invoiceNumber;
