@@ -40,6 +40,7 @@
 	}
 
 	NSLog(@"\r response_toString = %@ \r",[self toString]);
+    [[MBLogger sharedInstance] sysLog:[NSString stringWithFormat:@"PAX response str: %@",[self toString]] fromClass:[self class] calledBy:_cmd];
 	return binaryReader;
 }
 

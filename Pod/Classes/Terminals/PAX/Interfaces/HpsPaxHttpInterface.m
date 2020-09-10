@@ -41,6 +41,8 @@
                            [data base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed]];
     
     NSLog(@"181189=%@",urlString);
+    [[MBLogger sharedInstance] sysLog:[NSString stringWithFormat:@"PAX request url: %@",urlString] fromClass:[self class] calledBy:_cmd];
+    [[MBLogger sharedInstance] sysLog:[NSString stringWithFormat:@"PAX request: %@", message.toString] fromClass:[self class] calledBy:_cmd];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:160];
