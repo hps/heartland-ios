@@ -7,6 +7,9 @@
 @property (nonatomic, strong) NSString *avsResultText;
 @property (nonatomic, strong) NSString *authorizationCode;
 
+@property (nonatomic, strong) NSString *cvvResultCode;
+@property (nonatomic, strong) NSString *cvvResultText;
+
 @property (nonatomic, strong) NSString *cardType;
 @property (nonatomic, strong) NSString *responseCode;
 @property (nonatomic, strong) NSString *responseText;
