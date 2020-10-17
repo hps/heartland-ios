@@ -20,7 +20,7 @@
     
     NSTimeInterval now = [NSDate.new timeIntervalSince1970];
     NSString *nowNumString = [formatter stringFromNumber:@(now)];
-    NSString *result = [nowNumString stringByReplacingOccurrencesOfString:@"." withString:@""];
+    NSString *result = [nowNumString stringByReplacingOccurrencesOfString:formatter.decimalSeparator withString:@""];
     
     return result;
 }
