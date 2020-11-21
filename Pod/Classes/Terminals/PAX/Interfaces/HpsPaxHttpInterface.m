@@ -81,4 +81,10 @@
     [task resume];
 }
 
+- (void)cancelPendingTask {
+    if (_pendingTask) {
+        [_pendingTask cancel];
+    }
+}
+
 @end
