@@ -26,9 +26,9 @@ NS_ASSUME_NONNULL_BEGIN
     HpsPaxDevice *device;
 }
 
-@property (nonatomic, readwrite) int referenceNumber;
-@property (nonatomic, readwrite) int transactionId;
-@property (nonatomic, readwrite) int transactionNumber;
+@property (nonatomic, readwrite) NSInteger referenceNumber;
+@property (nonatomic, readwrite) NSInteger transactionId;
+@property (nonatomic, readwrite) NSInteger transactionNumber;
 
 - (void)execute:(void(^)(HpsPaxDebitResponse*, NSError*))responseBlock;
 - (id)initWithDevice: (HpsPaxDevice*)paxDevice;

@@ -34,9 +34,9 @@
     [subgroups addObject:account];
     
     HpsPaxTraceRequest *traceRequest = [[HpsPaxTraceRequest alloc] init];
-    traceRequest.referenceNumber = [NSString stringWithFormat:@"%d", self.referenceNumber];
+    traceRequest.referenceNumber = [NSString stringWithFormat:@"%ld", (long)self.referenceNumber];
     if (self.transactionNumber != 0) {
-        traceRequest.transactionNumber = [NSString stringWithFormat:@"%d", self.transactionNumber];
+        traceRequest.transactionNumber = [NSString stringWithFormat:@"%ld", (long)self.transactionNumber];
     }
     [subgroups addObject:traceRequest];
     
@@ -50,7 +50,7 @@
     HpsPaxExtDataSubGroup *extData = [[HpsPaxExtDataSubGroup alloc] init];
     
     if (self.transactionId != 0) {
-        [extData.collection setObject:[NSString stringWithFormat:@"%d", self.transactionId] forKey:PAX_EXT_DATA_HOST_REFERENCE_NUMBER.uppercaseString];
+        [extData.collection setObject:[NSString stringWithFormat:@"%ld", (long)self.transactionId] forKey:PAX_EXT_DATA_HOST_REFERENCE_NUMBER.uppercaseString];
     }
     [subgroups addObject:extData];
     
