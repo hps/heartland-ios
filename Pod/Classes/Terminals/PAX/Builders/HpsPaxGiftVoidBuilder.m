@@ -58,8 +58,8 @@
         @throw [NSException exceptionWithName:@"HpsPaxException" reason:@"currencyType is required." userInfo:nil];
     }
     
-    if (self.transactionId <= 0) {
-        @throw [NSException exceptionWithName:@"HpsPaxException" reason:@"transactionId is required." userInfo:nil];
+    if (self.transactionId <= 0 && self.transactionNumber == 0) {
+        @throw [NSException exceptionWithName:@"HpsPaxException" reason:@"either transactionId or transactionNumber is required." userInfo:nil];
     }
     
 }
