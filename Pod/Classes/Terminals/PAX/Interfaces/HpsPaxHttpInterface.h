@@ -10,5 +10,6 @@
 -(void) connect;
 -(void) disconnect;
 -(void) send:(id<IHPSDeviceMessage>)message andResponseBlock:(void(^)(NSData*, NSError*))responseBlock;
+- (void)cancelPendingTask;
 
 @end

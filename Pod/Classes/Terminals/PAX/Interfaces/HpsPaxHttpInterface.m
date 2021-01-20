@@ -6,7 +6,7 @@
      NSString *errorDomain;
 }
 
-@property (nonatomic, strong) NSOperationQueue *queue;
+@property (strong, nonatomic) NSURLSessionDataTask *pendingTask;
 
 @end
 
@@ -17,7 +17,6 @@
     if((self = [super init]))
     {
         self.config = config;
-        self.queue = [[NSOperationQueue alloc] init];
         errorDomain = [HpsCommon sharedInstance].hpsErrorDomain;
     }
     return self;
@@ -47,44 +46,45 @@
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:160];
   
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:self.queue
-                           completionHandler:^(NSURLResponse *urlResponse, NSData *responseData, NSError *responseError) {
-                               
-                               if( responseError )
-                               {
-                                   //error returned
-                                   dispatch_async(dispatch_get_main_queue(), ^{
-                                       NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [responseError localizedDescription],
-                                                                  @"URLResponseErrorCodeKey": @(responseError.code)};
-                                       NSError *error = [NSError errorWithDomain:self->errorDomain
-                                                                            code:CocoaError
-                                                                        userInfo:userInfo];
-                                       
-                                       responseBlock(nil, error);
-                                       
-                                   });
-                                   return;
-                               }
-                               
-                               if (responseData != nil){
-                                   //Success
-                                   dispatch_async(dispatch_get_main_queue(), ^{
-                                       responseBlock(responseData, nil);
-                                   });
-                               }else{
-                                   dispatch_async(dispatch_get_main_queue(), ^{
-                                       NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"No data returned."};
-                                       NSError *error = [NSError errorWithDomain:self->errorDomain
-                                                                            code:GatewayError
-                                                                        userInfo:userInfo];
-                                       responseBlock(nil, error);
-                                   });
-                               }//response data != nil
-                               
-                           }];
+    NSURLSessionDataTask *task = [NSURLSession.sharedSession dataTaskWithRequest:request
+                                                               completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+                                  {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self setPendingTask:nil];
+            
+            if (error) {
+                NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [error localizedDescription],
+                                           @"URLResponseErrorCodeKey": @(error.code)};
+                NSError *error = [NSError errorWithDomain:self->errorDomain
+                                                     code:CocoaError
+                                                 userInfo:userInfo];
+                
+                responseBlock(nil, error);
+                
+                return;
+            }
+            
+            if (data) {
+                responseBlock(data, nil);
+            } else {
+                NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"No data returned."};
+                NSError *miscError = [NSError errorWithDomain:self->errorDomain
+                                                         code:GatewayError
+                                                     userInfo:userInfo];
+                responseBlock(nil, miscError);
+            }
+        });
+    }];
     
-  
+    _pendingTask = task;
+    
+    [task resume];
+}
+
+- (void)cancelPendingTask {
+    if (_pendingTask) {
+        [_pendingTask cancel];
+    }
 }
 
 @end

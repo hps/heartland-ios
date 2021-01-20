@@ -46,4 +46,8 @@ withResponseBlock:(void(^)(HpsPaxGiftResponse*, NSError*))responseBlock;
 //batch
 - (void) batchClose:(void(^)(HpsPaxBatchCloseResponse*, NSError*))responseBlock;
 
+//misc
+
+- (void)interfaceCancelPendingTask;
+
 @end

@@ -380,4 +380,14 @@ withResponseBlock:(void(^)(HpsPaxGiftResponse*, NSError*))responseBlock{
 	NSLog(@"Recipt = %@", recipt);
 }
 
+- (void)interfaceCancelPendingTask {
+    if (!_interface || ![(NSObject *)_interface isKindOfClass:HpsPaxHttpInterface.class]) {
+        return;
+    }
+    
+    HpsPaxHttpInterface *httpInterface = (HpsPaxHttpInterface *)_interface;
+    
+    [httpInterface cancelPendingTask];
+}
+
 @end
