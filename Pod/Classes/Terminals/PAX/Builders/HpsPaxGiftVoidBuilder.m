@@ -26,6 +26,11 @@
     
     HpsPaxTraceRequest *traceRequest = [[HpsPaxTraceRequest alloc] init];
     traceRequest.referenceNumber = [NSString stringWithFormat:@"%d", self.referenceNumber];
+    
+    if (_transactionNumber) {
+        traceRequest.transactionNumber = @(_transactionNumber).stringValue;
+    }
+    
     [subgroups addObject:traceRequest];
     
     HpsPaxCashierSubGroup *cashierRequest = [[HpsPaxCashierSubGroup alloc]init];
