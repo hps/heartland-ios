@@ -17,6 +17,7 @@
 
 @property (nonatomic, readwrite) int referenceNumber;
 @property (nonatomic, readwrite) int transactionId;
+@property (nonatomic, readwrite) int transactionNumber;
 @property (nonatomic) int currencyType;
 
 - (void) execute:(void(^)(HpsPaxGiftResponse*, NSError*))responseBlock;
