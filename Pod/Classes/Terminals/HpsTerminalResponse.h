@@ -61,6 +61,7 @@
 @property (nonatomic,strong) NSString *cardHolderVerificationMethod;
 @property (nonatomic,strong) NSString *terminalVerficationResult;
 @property (nonatomic,strong) NSString *terminalSerialNumber;
+@property (nonatomic,strong) NSString *transactionStatusInformation;
 
 - (void) mapResponse:(id <HpaResposeInterface>) response;
 

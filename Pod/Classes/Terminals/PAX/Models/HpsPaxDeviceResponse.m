@@ -72,7 +72,7 @@
 			self.applicationCrytptogram = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_TRANSACTION_CERTIFICATE];
 			self.cardHolderVerificationMethod = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_CUSTOMER_VERIFICATION_METHOD];
 			self.terminalVerficationResult = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_TERMINAL_VERIFICATION_RESULTS];
-
+            self.transactionStatusInformation = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_TRANSACTION_STATUS_INFORMATION];
 		}
 	} @catch (NSException *exception) {
 		NSLog(@"Error on mapResponse");
