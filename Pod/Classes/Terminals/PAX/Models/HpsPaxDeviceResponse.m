@@ -65,6 +65,7 @@
 			self.cardBin = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_CARD_BIN];
 			self.signatureStatus = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_SIGNATURE_STATUS];
             self.pinEntryStatus = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_PIN_ENTRY_STATUS];
+            self.printLines = self.printLinesFromExtData;
 
 			self.applicationPrefferedName = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_APPLICATION_PREFERRED_NAME];
 			self.applicationName = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_APPLICATION_LABEL];
@@ -78,6 +79,28 @@
 	} @catch (NSException *exception) {
 		NSLog(@"Error on mapResponse");
 	}
+}
+
+- (NSArray<NSString *> *)printLinesFromExtData {
+    NSArray<NSString *> *keys = @[
+        PAX_EXT_DATA_PRINT_LINE_1,
+        PAX_EXT_DATA_PRINT_LINE_2,
+        PAX_EXT_DATA_PRINT_LINE_3,
+        PAX_EXT_DATA_PRINT_LINE_4,
+        PAX_EXT_DATA_PRINT_LINE_5
+    ];
+    
+    NSMutableArray<NSString *> *printLinesFromExtData = NSMutableArray.new;
+    
+    for (NSString *key in keys) {
+        NSString *printLine = [self.extDataResponse.collection objectForKey:key];
+        
+        if (printLine && printLine.length) {
+            [printLinesFromExtData addObject:printLine];
+        }
+    }
+    
+    return [NSArray arrayWithArray:printLinesFromExtData];
 }
 
 @end
