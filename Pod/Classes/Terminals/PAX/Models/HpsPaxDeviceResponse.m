@@ -64,6 +64,7 @@
 
 			self.cardBin = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_CARD_BIN];
 			self.signatureStatus = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_SIGNATURE_STATUS];
+            self.pinEntryStatus = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_PIN_ENTRY_STATUS];
 
 			self.applicationPrefferedName = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_APPLICATION_PREFERRED_NAME];
 			self.applicationName = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_APPLICATION_LABEL];

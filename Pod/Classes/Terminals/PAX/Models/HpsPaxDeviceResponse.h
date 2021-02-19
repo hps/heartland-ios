@@ -13,6 +13,7 @@
 
 @property (nonatomic,strong) NSString *responseCode;
 @property (nonatomic,strong) NSString *referenceNumber;
+@property (nonatomic,strong) NSString *pinEntryStatus;
 
 - (id) initWithMessageID:(NSString*)messageId andBuffer:(NSData*)buffer;
 - (HpsBinaryDataScanner*) parseResponse;
