@@ -14,7 +14,11 @@
 @property (nonatomic,strong) NSString *responseCode;
 @property (nonatomic,strong) NSString *referenceNumber;
 @property (nonatomic,strong) NSString *pinEntryStatus;
-@property (nonatomic,strong) NSArray<NSString *> *printLines;
+@property (nonatomic,strong) NSString *printLine1;
+@property (nonatomic,strong) NSString *printLine2;
+@property (nonatomic,strong) NSString *printLine3;
+@property (nonatomic,strong) NSString *printLine4;
+@property (nonatomic,strong) NSString *printLine5;
 
 - (id) initWithMessageID:(NSString*)messageId andBuffer:(NSData*)buffer;
 - (HpsBinaryDataScanner*) parseResponse;
