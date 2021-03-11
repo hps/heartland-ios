@@ -45,9 +45,8 @@
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:160];
   
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:self.queue
-                           completionHandler:^(NSURLResponse *urlResponse, NSData *responseData, NSError *responseError) {
+    [[NSURLSession sharedSession] dataTaskWithRequest:request
+                                    completionHandler:^(NSData *responseData, NSURLResponse *urlResponse, NSError *responseError) {
                                
                                if( responseError )
                                {

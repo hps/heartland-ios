@@ -1,0 +1,35 @@
+framework module GlobalMobileSDK {
+
+    umbrella header "GlobalMobileSDK.h"
+    export *
+}
+
+framework module GlobalMobileSDK_Private {
+
+    module Utils {
+        header "PorticoUtility.h"
+        header "TLVDecoder.h"
+        header "EMVTagDescriptor.h"
+        header "TLVUtility.h"
+        header "Utilities.h"
+        header "TLVObject.h"
+        header "TLVParser.h"
+    }
+
+    module BBPOS {
+        header "CAPK.h"
+        header "BBDeviceController.h"
+        header "BBDeviceSPoCController.h"
+        header "VASMerchantConfig.h"
+    }
+
+    module Unimag {
+        header "MTSCRA.h"
+    }
+}
+
+
+module GlobalMobileSDK.Swift {
+    header "GlobalMobileSDK-Swift.h"
+    requires objc
+}

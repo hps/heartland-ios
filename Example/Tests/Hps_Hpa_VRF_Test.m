@@ -87,7 +87,7 @@
     NSLog(@"Recipt = %@", recipt);
     
     [self writeStringToFile:[NSString stringWithFormat:@"Host Reference Number: %@ \n",response.hostResponse.hostReferenceNumber]];
-    [self writeStringToFile:[NSString stringWithFormat:@"Transaction ID: %d \n",response.transactionId]];
+    [self writeStringToFile:[NSString stringWithFormat:@"Transaction ID: %@ \n",response.transactionId]];
     
     [self writeStringToFile:[NSString stringWithFormat:@"Recipt : %@ \n\n",recipt]];
     
@@ -142,7 +142,7 @@
         XCTAssertNotNil(payload);
         XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
         NSLog(@"Response = %@",payload.toString);
-        NSLog(@"Host Reference Number = %d",((HpsTerminalResponse *)payload).transactionId);
+        NSLog(@"Host Reference Number = %@",((HpsTerminalResponse *)payload).transactionId);
         [self printRecipt:(HpsHpaDeviceResponse *)payload];
         [expectation fulfill];
         
@@ -190,7 +190,7 @@
         XCTAssertNotNil(payload);
         XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
         NSLog(@"Response = %@",payload.toString);
-        NSLog(@"Host Reference Number = %d",((HpsTerminalResponse *)payload).transactionId);
+        NSLog(@"Host Reference Number = %@",((HpsTerminalResponse *)payload).transactionId);
         [self printRecipt:(HpsHpaDeviceResponse *)payload];
         [expectation fulfill];
         
@@ -219,7 +219,7 @@
         XCTAssertNotNil(payload);
         XCTAssertEqualObjects(@"10", payload.deviceResponseCode);
         NSLog(@"Response = %@",payload.toString);
-        NSLog(@"Host Reference Number = %d",((HpsTerminalResponse *)payload).transactionId);
+        NSLog(@"Host Reference Number = %@",((HpsTerminalResponse *)payload).transactionId);
         [self printRecipt:(HpsHpaDeviceResponse *)payload];
         [expectation fulfill];
         
@@ -271,7 +271,7 @@
                         XCTAssertNotNil(payload);
                         XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
                         NSLog(@"Response = %@",payload.toString);
-                        NSLog(@"Host Reference Number = %d",((HpsTerminalResponse *)payload).transactionId);
+                        NSLog(@"Host Reference Number = %@",((HpsTerminalResponse *)payload).transactionId);
                         //[self writeStringToFile:[NSString stringWithFormat:@"Transaction ID: %d \n",((HpsTerminalResponse *)payload).transactionId]];
                         [self printRecipt:(HpsHpaDeviceResponse *)payload];
                         
@@ -317,7 +317,7 @@
         XCTAssertNotNil(payload);
         XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
         NSLog(@"Response = %@",payload.toString);
-        NSLog(@"Host Reference Number = %d",((HpsTerminalResponse *)payload).transactionId);
+        NSLog(@"Host Reference Number = %@",((HpsTerminalResponse *)payload).transactionId);
         [self printRecipt:(HpsHpaDeviceResponse *)payload];
         
         [expectation fulfill];
@@ -359,7 +359,7 @@
         //XCTAssertEqualObjects(@"M", ((HpsTerminalResponse*)payload).cvvResponseCode);
         
         NSLog(@"Response = %@",payload.toString);
-        NSLog(@"Host Reference Number = %d",((HpsTerminalResponse *)payload).transactionId);
+        NSLog(@"Host Reference Number = %@",((HpsTerminalResponse *)payload).transactionId);
         
         [self printRecipt:(HpsHpaDeviceResponse *)payload];
         [expectation fulfill];
@@ -403,7 +403,7 @@
         XCTAssertNotNil(payload);
         XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
         NSLog(@"Response = %@",payload.toString);
-        NSLog(@"Host Reference Number = %d",((HpsTerminalResponse *)payload).transactionId);
+        NSLog(@"Host Reference Number = %@",((HpsTerminalResponse *)payload).transactionId);
         [self printRecipt:(HpsHpaDeviceResponse *)payload];
         
         [expectation fulfill];
@@ -439,7 +439,7 @@
         XCTAssertNotNil(payload);
         XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
         NSLog(@"Response = %@",payload.toString);
-        NSLog(@"Host Reference Number = %d",((HpsTerminalResponse *)payload).transactionId);
+        NSLog(@"Host Reference Number = %@",((HpsTerminalResponse *)payload).transactionId);
         [self printRecipt:(HpsHpaDeviceResponse *)payload];
         [expectation fulfill];
         
@@ -472,7 +472,7 @@
         XCTAssertNotNil(payload);
         XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
         NSLog(@"Response = %@",payload.toString);
-        NSLog(@"Host Reference Number = %d",((HpsTerminalResponse *)payload).transactionId);
+        NSLog(@"Host Reference Number = %@",((HpsTerminalResponse *)payload).transactionId);
         [self printRecipt:(HpsHpaDeviceResponse *)payload];
         [expectation fulfill];
     }];
@@ -499,7 +499,7 @@
         XCTAssertNotNil(payload);
         XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
         NSLog(@"Response = %@",payload.toString);
-        NSLog(@"Host Reference Number = %d",((HpsTerminalResponse *)payload).transactionId);
+        NSLog(@"Host Reference Number = %@",((HpsTerminalResponse *)payload).transactionId);
         [self printRecipt:(HpsHpaDeviceResponse *)payload];
         [expectation fulfill];
         
@@ -526,7 +526,7 @@
         XCTAssertNotNil(payload);
         XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
         NSLog(@"Response = %@",payload.toString);
-        NSLog(@"Host Reference Number = %d",((HpsTerminalResponse *)payload).transactionId);
+        NSLog(@"Host Reference Number = %@",((HpsTerminalResponse *)payload).transactionId);
         [self printRecipt:(HpsHpaDeviceResponse *)payload];
         [expectation fulfill];
         
@@ -588,7 +588,7 @@
         XCTAssertNotNil(payload);
         XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
         NSLog(@"Response = %@",payload.toString);
-        NSLog(@"Host Reference Number = %d",((HpsTerminalResponse *)payload).transactionId);
+        NSLog(@"Host Reference Number = %@",((HpsTerminalResponse *)payload).transactionId);
         [self printRecipt:(HpsHpaDeviceResponse *)payload];
         
         [expectation fulfill];
@@ -618,7 +618,7 @@
         double balance = ((HpsHpaDeviceResponse *)payload).balanceAmount.doubleValue;
         XCTAssertEqualObjects([NSNumber numberWithDouble:10], [NSNumber numberWithDouble:balance]);
         NSLog(@"Response = %@",payload.toString);
-        NSLog(@"Host Reference Number = %d",((HpsTerminalResponse *)payload).transactionId);
+        NSLog(@"Host Reference Number = %@",((HpsTerminalResponse *)payload).transactionId);
         [self printRecipt:(HpsHpaDeviceResponse *)payload];
         
         [expectation fulfill];
@@ -649,7 +649,7 @@
         XCTAssertNotNil(payload);
         XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
         NSLog(@"Response = %@",payload.toString);
-        NSLog(@"Host Reference Number = %d",((HpsTerminalResponse *)payload).transactionId);
+        NSLog(@"Host Reference Number = %@",((HpsTerminalResponse *)payload).transactionId);
         [self printRecipt:(HpsHpaDeviceResponse *)payload];
         
         [expectation fulfill];
@@ -690,7 +690,7 @@
         XCTAssertNotNil(payload);
         XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
         NSLog(@"Response = %@",payload.toString);
-        NSLog(@"Host Reference Number = %d",((HpsTerminalResponse *)payload).transactionId);
+        NSLog(@"Host Reference Number = %@",((HpsTerminalResponse *)payload).transactionId);
         [self printRecipt:(HpsHpaDeviceResponse *)payload];
         [expectation fulfill];
         

@@ -321,8 +321,12 @@
 
 
 				HpsHpaResponse *responseToCheckMultiMessage = [[HpsHpaResponse alloc]initWithXMLData:inputBuffer];
-
-				if (responseToCheckMultiMessage.MultipleMessage.integerValue == 0)
+                
+                if ([responseToCheckMultiMessage.Response isEqualToString: HPA_MSG_ID_toString[NOTIFICATION]])
+                {
+                    NSLog(@"\n\n Discard Notification response...\n");
+                }
+				else if (responseToCheckMultiMessage.MultipleMessage.integerValue == 0)
 					{
 					NSString* bufferString = [[NSString alloc] initWithBytesNoCopy:[inputBuffer mutableBytes]
 																			length:[inputBuffer length]

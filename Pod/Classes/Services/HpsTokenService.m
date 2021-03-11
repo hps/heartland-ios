@@ -120,9 +120,8 @@
     [request setValue:[@([jsonData length]) stringValue] forHTTPHeaderField:@"Content-Length"];
     [request setHTTPBody:jsonData];    
     
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:self.queue
-                           completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error) {
+    [[NSURLSession sharedSession] dataTaskWithRequest:request
+                                    completionHandler:^(NSData *data, NSURLResponse *urlResponse, NSError *error) {
                                if (error != nil){
                                    
                                    HpsTokenData *response = [[HpsTokenData alloc] init];

@@ -89,7 +89,7 @@
 	XCTestExpectation *expectation = [self expectationWithDescription:@"test_Hpa_HTTP_Reboot"];
 
 	HpsHpaDevice *device = [self setupDevice];
-	[device reboot:^(HpsHpaDeviceResponse *payload, NSError *error) {
+	[device reboot:^(id<IHPSDeviceResponse>payload, NSError *error) {
 		XCTAssertNil(error);
 		XCTAssertNotNil(payload);
 		XCTAssertEqualObjects(@"00", payload.deviceResponseCode);

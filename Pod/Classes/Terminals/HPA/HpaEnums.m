@@ -23,7 +23,8 @@ NSString * const HPA_MSG_ID_toString[] = {
     [ SEND_SAF ] = @"SendSAF",
     [ GET_DIAGNOSTIC_REPORT ] = @"GetDiagnosticReport",
     [ EXECUTE_EOD ] = @"EOD",
-    [ SEND_FILE] = @"SendFile"
+    [ SEND_FILE] = @"SendFile",
+    [ NOTIFICATION] = @"Notification",
 };
 
 NSString * const HPA_DOWNLOAD_TIME_toString[] = {

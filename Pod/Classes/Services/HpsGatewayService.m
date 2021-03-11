@@ -104,9 +104,8 @@
     [request setValue:@"text/xml; charset=utf-8;" forHTTPHeaderField:@"Content-Type"];
     
     
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:self.queue
-                           completionHandler:^(NSURLResponse *response, NSData *responseData, NSError *responseError) {
+    [[NSURLSession sharedSession] dataTaskWithRequest:request
+                                    completionHandler:^(NSData *responseData, NSURLResponse *response, NSError *responseError) {
                                
                                if( responseError )
                                {
