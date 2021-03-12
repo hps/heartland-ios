@@ -18,6 +18,7 @@
 				551DB60B4F9AB0D8AF42F0079FEE0E6A /* PBXTargetDependency */,
 			);
 			name = VitalSDK;
+			productName = VitalSDK;
 		};
 		14FF852C7788D6F4135616C400496AB0 /* BBPOS */ = {
 			isa = PBXAggregateTarget;
@@ -28,6 +29,7 @@
 			dependencies = (
 			);
 			name = BBPOS;
+			productName = BBPOS;
 		};
 		7B4413BA6BD59E726C99DEAC08EF1125 /* GlobalPaymentsApi */ = {
 			isa = PBXAggregateTarget;
@@ -38,6 +40,7 @@
 			dependencies = (
 			);
 			name = GlobalPaymentsApi;
+			productName = GlobalPaymentsApi;
 		};
 /* End PBXAggregateTarget section */
 
@@ -117,6 +120,29 @@
 		32420A6CBA4A70896C0142A3328C12B0 /* HpsLastResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B19A588295A3E550DAB974A0EDF7051 /* HpsLastResponse.m */; };
 		3269FC48B03C58CC4D6F3EF469316074 /* HpsPaxCreditVoidBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AA2DBCC0DD1F3DBB956876F65749784 /* HpsPaxCreditVoidBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3322425BEE0E6845490C6F66160DA657 /* HpsPaxCreditResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD9C3DB7CA61D6A8A35A498F17669C0 /* HpsPaxCreditResponse.m */; };
+		34517E8625FAACD0006C9BD9 /* GMSDeviceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517E8525FAACD0006C9BD9 /* GMSDeviceDelegate.swift */; };
+		34517E9825FAAD0A006C9BD9 /* GMSTransactionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517E9725FAAD0A006C9BD9 /* GMSTransactionDelegate.swift */; };
+		34517EA325FAAD86006C9BD9 /* GMSDeviceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517EA225FAAD86006C9BD9 /* GMSDeviceInterface.swift */; };
+		34517EAD25FAADAD006C9BD9 /* GMSBaseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517EAC25FAADAD006C9BD9 /* GMSBaseBuilder.swift */; };
+		34517EB725FAB078006C9BD9 /* GMSDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517EB625FAB078006C9BD9 /* GMSDevice.swift */; };
+		34517EC125FAB444006C9BD9 /* GMSRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517EC025FAB444006C9BD9 /* GMSRequestHelper.swift */; };
+		34517ECB25FAB44F006C9BD9 /* GMSResponseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517ECA25FAB44F006C9BD9 /* GMSResponseHelper.swift */; };
+		34517ED525FAB789006C9BD9 /* GMSBatchCloseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517ED425FAB789006C9BD9 /* GMSBatchCloseBuilder.swift */; };
+		34517EDF25FAB795006C9BD9 /* GMSCreditAdjustBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517EDE25FAB795006C9BD9 /* GMSCreditAdjustBuilder.swift */; };
+		34517EE925FAB7A6006C9BD9 /* GMSCreditAuthBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517EE825FAB7A6006C9BD9 /* GMSCreditAuthBuilder.swift */; };
+		34517EF325FAB7B0006C9BD9 /* GMSCreditCaptureBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517EF225FAB7B0006C9BD9 /* GMSCreditCaptureBuilder.swift */; };
+		34517EFD25FAB7BF006C9BD9 /* GMSCreditReturnBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517EFC25FAB7BF006C9BD9 /* GMSCreditReturnBuilder.swift */; };
+		34517F0725FAB7CC006C9BD9 /* GMSCreditSaleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517F0625FAB7CC006C9BD9 /* GMSCreditSaleBuilder.swift */; };
+		34517F1125FAB7D9006C9BD9 /* GMSCreditVoidBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517F1025FAB7D9006C9BD9 /* GMSCreditVoidBuilder.swift */; };
+		34517F1B25FAC940006C9BD9 /* HpsWiseCubeDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517F1A25FAC940006C9BD9 /* HpsWiseCubeDevice.swift */; };
+		34517F4525FAE837006C9BD9 /* HpsWiseCubeCreditVoidBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517F4425FAE837006C9BD9 /* HpsWiseCubeCreditVoidBuilder.swift */; };
+		34517F5725FAE852006C9BD9 /* HpsWiseCubeCreditSaleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517F5625FAE852006C9BD9 /* HpsWiseCubeCreditSaleBuilder.swift */; };
+		34517F6125FAE860006C9BD9 /* HpsWiseCubeCreditReturnBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517F6025FAE860006C9BD9 /* HpsWiseCubeCreditReturnBuilder.swift */; };
+		34517F6B25FAE86F006C9BD9 /* HpsWiseCubeCreditCaptureBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517F6A25FAE86F006C9BD9 /* HpsWiseCubeCreditCaptureBuilder.swift */; };
+		34517F7525FAE87C006C9BD9 /* HpsWiseCubeCreditAuthBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517F7425FAE87C006C9BD9 /* HpsWiseCubeCreditAuthBuilder.swift */; };
+		34517F7F25FAE88B006C9BD9 /* HpsWiseCubeCreditAdjustBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517F7E25FAE88B006C9BD9 /* HpsWiseCubeCreditAdjustBuilder.swift */; };
+		34517F8925FAE89E006C9BD9 /* HpsWiseCubeBatchCloseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517F8825FAE89E006C9BD9 /* HpsWiseCubeBatchCloseBuilder.swift */; };
+		34517F9325FAE8AD006C9BD9 /* HpsWiseCubeBaseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34517F9225FAE8AD006C9BD9 /* HpsWiseCubeBaseBuilder.swift */; };
 		34D38AD936D8412DA571C79AE715918E /* Pods-Heartland-iOS-SDK_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 00456968C3A11B9FDF14BEC9CCD14FF5 /* Pods-Heartland-iOS-SDK_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		35B161D4ABC4C76D31B834585A47A950 /* HpsLaborField.m in Sources */ = {isa = PBXBuildFile; fileRef = 02944E3B517B35E11D71F55B136C37C5 /* HpsLaborField.m */; };
 		35DC81ECD854824AF7E3C2A55A5C1844 /* HpsServerListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B807931154EF01A133F079C407287529 /* HpsServerListResponse.m */; };
@@ -556,7 +582,7 @@
 		158550A52B42B333B682D5FB3810CCBA /* HpsTokenData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsTokenData.h; sourceTree = "<group>"; };
 		15FDE1D7B37984909AC901163FFA47BF /* HpsHpaDevice.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsHpaDevice.m; sourceTree = "<group>"; };
 		16A0A4245CED7A005CA2E0CAEA379388 /* Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig"; sourceTree = "<group>"; };
-		17EF20E439A9C8C01326CF64D41D3574 /* Heartland_iOS_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Heartland_iOS_SDK.framework; path = "Heartland-iOS-SDK.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		17EF20E439A9C8C01326CF64D41D3574 /* Heartland_iOS_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Heartland_iOS_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18211B7B0EBF89DD4AAC8A0B215E554A /* Pods-Heartland-iOS-SDK_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Heartland-iOS-SDK_Example-frameworks.sh"; sourceTree = "<group>"; };
 		1959F4C024A68B28BB0B446F716AD440 /* HpsHpaCreditVerifyBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsHpaCreditVerifyBuilder.m; sourceTree = "<group>"; };
 		19799EE9EADBCF929E216337213AC4AA /* HpsLaborField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsLaborField.h; sourceTree = "<group>"; };
@@ -565,7 +591,7 @@
 		1AB0BF20FF4A07BB07FC5F97D7E3ACE6 /* Pods-Heartland-iOS-SDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Heartland-iOS-SDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1B2350115DBFAE16BAA0F1793B5AF5D7 /* HpsTableServiceConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsTableServiceConfiguration.h; sourceTree = "<group>"; };
 		1B5DA9E76BE29371D3A25E0C1A1BD350 /* HpsTerminalUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsTerminalUtilities.m; sourceTree = "<group>"; };
-		1C0145BEC8AF694DEF45A92DD7EEA01B /* GlobalMobileSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = GlobalMobileSDK.xcframework; sourceTree = "<group>"; };
+		1C0145BEC8AF694DEF45A92DD7EEA01B /* GlobalMobileSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = GlobalMobileSDK.xcframework; sourceTree = "<group>"; };
 		1C136FB3ED59B4B9BF61A8BC915B88AB /* HpsPaxCreditResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxCreditResponse.h; sourceTree = "<group>"; };
 		1DA73F023BD6FE634A92D93131829E7B /* HpsC2xCreditCaptureBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HpsC2xCreditCaptureBuilder.swift; sourceTree = "<group>"; };
 		1DAF01B5226ABE96CDDADE4F8B1DCFB0 /* HpsPaxCreditSaleBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxCreditSaleBuilder.m; sourceTree = "<group>"; };
@@ -602,6 +628,29 @@
 		31B80BAD806BCD30BDB4D23C30427C17 /* HpsTransactionType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HpsTransactionType.swift; sourceTree = "<group>"; };
 		32D41DE4BE6B989F0120B457A7D540D6 /* HpsPayRollRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPayRollRequest.h; sourceTree = "<group>"; };
 		341D120292F7AF21D3FF0EDB0007D479 /* HpsC2xDeviceDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HpsC2xDeviceDelegate.swift; sourceTree = "<group>"; };
+		34517E8525FAACD0006C9BD9 /* GMSDeviceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSDeviceDelegate.swift; sourceTree = "<group>"; };
+		34517E9725FAAD0A006C9BD9 /* GMSTransactionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSTransactionDelegate.swift; sourceTree = "<group>"; };
+		34517EA225FAAD86006C9BD9 /* GMSDeviceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSDeviceInterface.swift; sourceTree = "<group>"; };
+		34517EAC25FAADAD006C9BD9 /* GMSBaseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSBaseBuilder.swift; sourceTree = "<group>"; };
+		34517EB625FAB078006C9BD9 /* GMSDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSDevice.swift; sourceTree = "<group>"; };
+		34517EC025FAB444006C9BD9 /* GMSRequestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSRequestHelper.swift; sourceTree = "<group>"; };
+		34517ECA25FAB44F006C9BD9 /* GMSResponseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSResponseHelper.swift; sourceTree = "<group>"; };
+		34517ED425FAB789006C9BD9 /* GMSBatchCloseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSBatchCloseBuilder.swift; sourceTree = "<group>"; };
+		34517EDE25FAB795006C9BD9 /* GMSCreditAdjustBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSCreditAdjustBuilder.swift; sourceTree = "<group>"; };
+		34517EE825FAB7A6006C9BD9 /* GMSCreditAuthBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSCreditAuthBuilder.swift; sourceTree = "<group>"; };
+		34517EF225FAB7B0006C9BD9 /* GMSCreditCaptureBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSCreditCaptureBuilder.swift; sourceTree = "<group>"; };
+		34517EFC25FAB7BF006C9BD9 /* GMSCreditReturnBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSCreditReturnBuilder.swift; sourceTree = "<group>"; };
+		34517F0625FAB7CC006C9BD9 /* GMSCreditSaleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSCreditSaleBuilder.swift; sourceTree = "<group>"; };
+		34517F1025FAB7D9006C9BD9 /* GMSCreditVoidBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSCreditVoidBuilder.swift; sourceTree = "<group>"; };
+		34517F1A25FAC940006C9BD9 /* HpsWiseCubeDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsWiseCubeDevice.swift; sourceTree = "<group>"; };
+		34517F4425FAE837006C9BD9 /* HpsWiseCubeCreditVoidBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsWiseCubeCreditVoidBuilder.swift; sourceTree = "<group>"; };
+		34517F5625FAE852006C9BD9 /* HpsWiseCubeCreditSaleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsWiseCubeCreditSaleBuilder.swift; sourceTree = "<group>"; };
+		34517F6025FAE860006C9BD9 /* HpsWiseCubeCreditReturnBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsWiseCubeCreditReturnBuilder.swift; sourceTree = "<group>"; };
+		34517F6A25FAE86F006C9BD9 /* HpsWiseCubeCreditCaptureBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsWiseCubeCreditCaptureBuilder.swift; sourceTree = "<group>"; };
+		34517F7425FAE87C006C9BD9 /* HpsWiseCubeCreditAuthBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsWiseCubeCreditAuthBuilder.swift; sourceTree = "<group>"; };
+		34517F7E25FAE88B006C9BD9 /* HpsWiseCubeCreditAdjustBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsWiseCubeCreditAdjustBuilder.swift; sourceTree = "<group>"; };
+		34517F8825FAE89E006C9BD9 /* HpsWiseCubeBatchCloseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsWiseCubeBatchCloseBuilder.swift; sourceTree = "<group>"; };
+		34517F9225FAE8AD006C9BD9 /* HpsWiseCubeBaseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsWiseCubeBaseBuilder.swift; sourceTree = "<group>"; };
 		346361919D1C54D8CA9DAD63D60680BE /* HpsHpaCreditVerifyBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHpaCreditVerifyBuilder.h; sourceTree = "<group>"; };
 		363147A8BE22AD9C86FB5BC5B5CDD28E /* HpsHpaGiftVoidBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsHpaGiftVoidBuilder.m; sourceTree = "<group>"; };
 		364CC9211F956F2D95328E799278C4B0 /* HpsPaxLocalDetailResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxLocalDetailResponse.h; sourceTree = "<group>"; };
@@ -628,7 +677,7 @@
 		40A9352A42A048A106017C5BECFB6C0F /* HpsTableServiceResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsTableServiceResponse.m; sourceTree = "<group>"; };
 		4133BDDC55BF15AB02245CA7465B6D93 /* Heartland-iOS-SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Heartland-iOS-SDK.release.xcconfig"; sourceTree = "<group>"; };
 		415573D29C222348E0C79B39BA94470F /* icon_card_empty.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_card_empty.png; path = Pod/Assets/icon_card_empty.png; sourceTree = "<group>"; };
-		427F9BB12A3C9D9E3ECCB0E4E6370424 /* Pods_Heartland_iOS_SDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Heartland_iOS_SDK_Tests.framework; path = "Pods-Heartland-iOS-SDK_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		427F9BB12A3C9D9E3ECCB0E4E6370424 /* Pods_Heartland_iOS_SDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartland_iOS_SDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42CE64762D3DA74933DE6546F593463D /* Pods-Heartland-iOS-SDK_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Heartland-iOS-SDK_Tests-dummy.m"; sourceTree = "<group>"; };
 		436CF415214F8B8521DC805A12ACBC0A /* HpsRestGateway.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsRestGateway.m; sourceTree = "<group>"; };
 		43DE4F9CDA02BF97F9130D40B58500A2 /* HpsC2xCreditVoidBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HpsC2xCreditVoidBuilder.swift; sourceTree = "<group>"; };
@@ -745,9 +794,9 @@
 		879A7AAD26112884F437D9D33B030661 /* Pods-Heartland-iOS-SDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Heartland-iOS-SDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		87FFEB667096FB946821FA516CF06CA5 /* HpsPaxBatchCloseResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxBatchCloseResponse.m; sourceTree = "<group>"; };
 		884755432EB0B585E1EFD5E90B0F2437 /* HpsHpaDebitSaleBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsHpaDebitSaleBuilder.m; sourceTree = "<group>"; };
-		88E061C7193F298D1870D99CFCE39CAF /* Heartland-iOS-SDK.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Heartland-iOS-SDK.bundle"; path = "Heartland-iOS-SDK-Heartland-iOS-SDK.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		88E061C7193F298D1870D99CFCE39CAF /* Heartland-iOS-SDK.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Heartland-iOS-SDK.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A566AE4EDC669F67A95F7A2F3777CA6 /* icon_visa.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_visa.png; path = Pod/Assets/icon_visa.png; sourceTree = "<group>"; };
-		8B2D4B0CFB6BDBE0DFC2C0605DCD5BBD /* Pods_Heartland_iOS_SDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Heartland_iOS_SDK_Example.framework; path = "Pods-Heartland-iOS-SDK_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B2D4B0CFB6BDBE0DFC2C0605DCD5BBD /* Pods_Heartland_iOS_SDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartland_iOS_SDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C1ED15B12C7D0C752B8709B5D83C3D5 /* HpsPaxCreditAuthBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxCreditAuthBuilder.h; sourceTree = "<group>"; };
 		8CB91DA1BED5F80939264FB561ADB9F7 /* HpsCardEntry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsCardEntry.m; sourceTree = "<group>"; };
 		8DBA1F3E994023D8D80DD655B9DA2F56 /* HpsPayGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPayGroup.m; sourceTree = "<group>"; };
@@ -767,7 +816,7 @@
 		92BAAF4B84C6F02F6E273CF20415FF02 /* HpsHpaInitializeResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHpaInitializeResponse.h; sourceTree = "<group>"; };
 		92FEDA697B47F6173658CF88A8B98F88 /* HpsLoginResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsLoginResponse.h; sourceTree = "<group>"; };
 		93448699E972F477E7D94C00EE377154 /* HpsHpaEBTRefundBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHpaEBTRefundBuilder.h; sourceTree = "<group>"; };
-		938A41DA9BCE821549BF4E09DFBA63E1 /* Heartland-iOS-SDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "Heartland-iOS-SDK.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		938A41DA9BCE821549BF4E09DFBA63E1 /* Heartland-iOS-SDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = "Heartland-iOS-SDK.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		938AF4FB035E57E3D33F2CC4ED5A5AA0 /* GMSClientAppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GMSClientAppDelegate.swift; sourceTree = "<group>"; };
 		93AE09E04AA6D29AE6B117AFA18B3EB4 /* HpsPaxAvsRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxAvsRequest.h; sourceTree = "<group>"; };
 		93F956C52E26C6DEBCBCB05ACD90E372 /* HpsServicesConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsServicesConfig.h; sourceTree = "<group>"; };
@@ -783,7 +832,7 @@
 		9B63AB0FFD4CE2C26D846505E1F67BD4 /* HpsPaxDevice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxDevice.h; sourceTree = "<group>"; };
 		9C157B0F500C006C7B960CEBF70A943C /* HpsGiftCard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsGiftCard.h; sourceTree = "<group>"; };
 		9C36529E25CE93A2535A82F7F6E570EE /* HpsPaxAvsRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxAvsRequest.m; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A02D52F5C54815799544667CE1CB5BB1 /* HpsPayrollEntity.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPayrollEntity.m; sourceTree = "<group>"; };
 		A0451959EA2C88792D6A685B6420CB0F /* HpsC2xEnums.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HpsC2xEnums.swift; sourceTree = "<group>"; };
 		A0C0DA55815C9C685C8A10D7DE086CE7 /* NSObject+ObjectMap.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ObjectMap.m"; sourceTree = "<group>"; };
@@ -859,7 +908,7 @@
 		C93D59043B3E5D8A3418D569E69E39D0 /* HpsPaxMessageIDs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxMessageIDs.h; sourceTree = "<group>"; };
 		C98AC66B25BFF74E159D1CFC5CF2A4A1 /* CardSummary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CardSummary.h; sourceTree = "<group>"; };
 		C9CF51EE5EB2A8C443633DBE2DB0D128 /* HpaPaxSafReportResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpaPaxSafReportResponse.m; sourceTree = "<group>"; };
-		C9D10D63EBB783DD714A6E9228B6EF00 /* XMLDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = XMLDictionary.framework; path = XMLDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9D10D63EBB783DD714A6E9228B6EF00 /* XMLDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XMLDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB36B708D4686A3FA1EF0DC607DC25D6 /* HpsTerminalEnums.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsTerminalEnums.m; sourceTree = "<group>"; };
 		CBF73B432D292F2A0DA0B8428B2B0ADF /* SummaryResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SummaryResponse.h; sourceTree = "<group>"; };
 		CBF9300B23530F7005719535A2E2DBD1 /* HpsServerAssignmentResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsServerAssignmentResponse.m; sourceTree = "<group>"; };
@@ -876,7 +925,7 @@
 		D041F51B6DC451ADB6D966EED4DBD2DA /* HpsEmployeeFinder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsEmployeeFinder.h; sourceTree = "<group>"; };
 		D0C4915D4022C082A6B88414ADA543D2 /* HpsPaxTraceRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxTraceRequest.h; sourceTree = "<group>"; };
 		D1152DEA4B8F6A298E5E0DD776665340 /* HpsPaxHostResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxHostResponse.m; sourceTree = "<group>"; };
-		D22C2C5A3DF0166A434AF4F16B0B177C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		D22C2C5A3DF0166A434AF4F16B0B177C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D24C6EC0FE93F2B1FBF0C87CD57B61AA /* HpsPayrollConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPayrollConfig.m; sourceTree = "<group>"; };
 		D2DB3B37C9CC8DD912EA9ED5A0888EEB /* HpsPaxCheckResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxCheckResponse.m; sourceTree = "<group>"; };
 		D326CF26E63C6CE203CD1E2A417EFF19 /* Field.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Field.m; sourceTree = "<group>"; };
@@ -914,8 +963,8 @@
 		E81EE9859D826CC8EC23CF35C9FA0995 /* HpsPaxGiftActivateBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxGiftActivateBuilder.m; sourceTree = "<group>"; };
 		E8E16AF2C0D49C92FDBAD784F019C156 /* HpsBumpStatusCollection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsBumpStatusCollection.h; sourceTree = "<group>"; };
 		EA0982D6E94039854FCDAEA0B5D87EC6 /* HpsPayrollCollectionItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPayrollCollectionItem.h; sourceTree = "<group>"; };
-		EB431A45060C6DCADCBC60091C7D647B /* GlobalPaymentsApi.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = GlobalPaymentsApi.xcframework; sourceTree = "<group>"; };
-		ED0F95BAE18CEABF9F9F66875D31C898 /* BBPOS.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = BBPOS.xcframework; sourceTree = "<group>"; };
+		EB431A45060C6DCADCBC60091C7D647B /* GlobalPaymentsApi.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = GlobalPaymentsApi.xcframework; sourceTree = "<group>"; };
+		ED0F95BAE18CEABF9F9F66875D31C898 /* BBPOS.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = BBPOS.xcframework; sourceTree = "<group>"; };
 		EF6E7E432081FA484AA47227D40F2BE3 /* HpsPaxCreditAuthBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxCreditAuthBuilder.m; sourceTree = "<group>"; };
 		EFEA32B129AAA36F73B16B624D93AE1C /* HpsHpaHeartBeatResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHpaHeartBeatResponse.h; sourceTree = "<group>"; };
 		F0119A7DB9EF166A03EF86EA897016AA /* HpsPayrollConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPayrollConfig.h; sourceTree = "<group>"; };
@@ -936,7 +985,7 @@
 		FED6EB72A329F65A86FDA9D1BADA4620 /* HpsPaxHostResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxHostResponse.h; sourceTree = "<group>"; };
 		FF33AAF99BA398A06DF0273BA4291E0E /* HpsEmployeeFinder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsEmployeeFinder.m; sourceTree = "<group>"; };
 		FFB33A633EA10AD58B94684969D21F86 /* HpsPaxCashierSubGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxCashierSubGroup.m; sourceTree = "<group>"; };
-		FFEFECD3C8E1D5AD6A2D4CAA863B8F3A /* LICENSE.md */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.md; sourceTree = "<group>"; };
+		FFEFECD3C8E1D5AD6A2D4CAA863B8F3A /* LICENSE.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1073,7 +1122,6 @@
 				5386D64376B0850884EC4CF2E5335A36 /* HpsPaxTraceResponse.h */,
 				57390E2D5634E8ED977F1A51A61B5DF3 /* HpsPaxTraceResponse.m */,
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -1083,7 +1131,6 @@
 				92D266EF54FA7E8D71B3CC4281A1F181 /* Frameworks */,
 				CA6F85CFB3E0D08A6D29F51E94321AFC /* Support Files */,
 			);
-			name = GlobalPaymentsApi;
 			path = GlobalPaymentsApi;
 			sourceTree = "<group>";
 		};
@@ -1116,6 +1163,56 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		34517E8425FA9FEB006C9BD9 /* WiseCube */ = {
+			isa = PBXGroup;
+			children = (
+				34517F1A25FAC940006C9BD9 /* HpsWiseCubeDevice.swift */,
+				34517F4225FAE80E006C9BD9 /* Builders */,
+				34517F4325FAE817006C9BD9 /* Delegates */,
+			);
+			path = WiseCube;
+			sourceTree = "<group>";
+		};
+		34517EA125FAAD3E006C9BD9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				938AF4FB035E57E3D33F2CC4ED5A5AA0 /* GMSClientAppDelegate.swift */,
+				34517E8525FAACD0006C9BD9 /* GMSDeviceDelegate.swift */,
+				34517E9725FAAD0A006C9BD9 /* GMSTransactionDelegate.swift */,
+				34517EA225FAAD86006C9BD9 /* GMSDeviceInterface.swift */,
+				34517ED425FAB789006C9BD9 /* GMSBatchCloseBuilder.swift */,
+				34517EDE25FAB795006C9BD9 /* GMSCreditAdjustBuilder.swift */,
+				34517EE825FAB7A6006C9BD9 /* GMSCreditAuthBuilder.swift */,
+				34517EF225FAB7B0006C9BD9 /* GMSCreditCaptureBuilder.swift */,
+				34517EFC25FAB7BF006C9BD9 /* GMSCreditReturnBuilder.swift */,
+				34517F0625FAB7CC006C9BD9 /* GMSCreditSaleBuilder.swift */,
+				34517F1025FAB7D9006C9BD9 /* GMSCreditVoidBuilder.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		34517F4225FAE80E006C9BD9 /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				34517F9225FAE8AD006C9BD9 /* HpsWiseCubeBaseBuilder.swift */,
+				34517F8825FAE89E006C9BD9 /* HpsWiseCubeBatchCloseBuilder.swift */,
+				34517F7E25FAE88B006C9BD9 /* HpsWiseCubeCreditAdjustBuilder.swift */,
+				34517F7425FAE87C006C9BD9 /* HpsWiseCubeCreditAuthBuilder.swift */,
+				34517F6A25FAE86F006C9BD9 /* HpsWiseCubeCreditCaptureBuilder.swift */,
+				34517F6025FAE860006C9BD9 /* HpsWiseCubeCreditReturnBuilder.swift */,
+				34517F5625FAE852006C9BD9 /* HpsWiseCubeCreditSaleBuilder.swift */,
+				34517F4425FAE837006C9BD9 /* HpsWiseCubeCreditVoidBuilder.swift */,
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
+		34517F4325FAE817006C9BD9 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		4027CF30805F67DF745471AB98B9ADFD /* Gift */ = {
 			isa = PBXGroup;
 			children = (
@@ -1128,7 +1225,6 @@
 				F76DD894DFC0393CA990A32F6B1A69AE /* HpsHpaGiftVoidBuilder.h */,
 				363147A8BE22AD9C86FB5BC5B5CDD28E /* HpsHpaGiftVoidBuilder.m */,
 			);
-			name = Gift;
 			path = Gift;
 			sourceTree = "<group>";
 		};
@@ -1164,7 +1260,6 @@
 				3B5FD875F9E2841F3A56B5AE7AD7F7A8 /* TransactionSummaryRecord.h */,
 				C2C0B4BD3ACE914C45D8ACDAD7F24A4B /* TransactionSummaryRecord.m */,
 			);
-			name = ResponseObjects;
 			path = ResponseObjects;
 			sourceTree = "<group>";
 		};
@@ -1180,7 +1275,6 @@
 				67FDFBF45E9EAF60B238FB143874A514 /* HpsC2xCreditSaleBuilder.swift */,
 				43DE4F9CDA02BF97F9130D40B58500A2 /* HpsC2xCreditVoidBuilder.swift */,
 			);
-			name = Builders;
 			path = Builders;
 			sourceTree = "<group>";
 		};
@@ -1194,7 +1288,6 @@
 				CB452D357AF181AB3286DD0AB8FB08B5 /* RequestObjects */,
 				46AF1E1C0F517C7255E390B271B8C368 /* ResponseObjects */,
 			);
-			name = ParserObject;
 			path = ParserObject;
 			sourceTree = "<group>";
 		};
@@ -1268,7 +1361,6 @@
 				D3AC5875F9F72858C598A38927AF39C0 /* HpsPaxLocalDetailReportBuilder.h */,
 				00FD340A503451842CFC73CC1F4E12C9 /* HpsPaxLocalDetailReportBuilder.m */,
 			);
-			name = Builders;
 			path = Builders;
 			sourceTree = "<group>";
 		};
@@ -1283,7 +1375,6 @@
 				AF7B1570B5D0C3722B867E4CAAE651D1 /* Interfaces */,
 				A0E89CF4B11E80A8334DE0083C015EE4 /* Models */,
 			);
-			name = HPA;
 			path = HPA;
 			sourceTree = "<group>";
 		};
@@ -1302,7 +1393,6 @@
 				4A4941881E7118AB21F23F00C1F79240 /* Builders */,
 				EE6CA2BE632BCBD76B4E511F45E2361C /* Delegates */,
 			);
-			name = C2X;
 			path = C2X;
 			sourceTree = "<group>";
 		};
@@ -1358,7 +1448,6 @@
 				E9637AF8FF68EDFD23953AB2E134517D /* Interfaces */,
 				0E97D4AC8CC80194335CFDB431386991 /* Models */,
 			);
-			name = PAX;
 			path = PAX;
 			sourceTree = "<group>";
 		};
@@ -1382,7 +1471,6 @@
 				DD98BE3C7A47E92A3325EF5FDB77820F /* NSMutableDictionary+ShiftAssignments.h */,
 				99A71B8FC85DDA6DA6A907971390B113 /* NSMutableDictionary+ShiftAssignments.m */,
 			);
-			name = TableService;
 			path = TableService;
 			sourceTree = "<group>";
 		};
@@ -1412,7 +1500,6 @@
 				306AEEE4E8634D484FE45AD5C3AEEBAC /* Frameworks */,
 				DD5B068E01CDEBF5C4E87D3DA71022E2 /* Support Files */,
 			);
-			name = BBPOS;
 			path = BBPOS;
 			sourceTree = "<group>";
 		};
@@ -1431,7 +1518,6 @@
 				6597D608DE5288C0CA32BAE042738F16 /* HpsHpaInitializeResponse.m */,
 				52711510F8F3FB0EF6A23EE7F7CD7315 /* ParserObject */,
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -1474,7 +1560,6 @@
 				0C091050EAA7A25BA2C5BE28AC8FC380 /* Frameworks */,
 				599E4C00F5328F257A7D16DBD0DEB4E9 /* Support Files */,
 			);
-			name = VitalSDK;
 			path = VitalSDK;
 			sourceTree = "<group>";
 		};
@@ -1485,7 +1570,6 @@
 				A52FBD1777EE7F37FAA22E18FA76F993 /* XMLDictionary.m */,
 				CCCA2253A22558A38CCEABD815165E49 /* Support Files */,
 			);
-			name = XMLDictionary;
 			path = XMLDictionary;
 			sourceTree = "<group>";
 		};
@@ -1519,7 +1603,6 @@
 				06B3519FA8F133A3E15F4856D59B9236 /* HpsHpaTcpInterface.h */,
 				3A9B9937FDB9CB49D1BB53543EE6D474 /* HpsHpaTcpInterface.m */,
 			);
-			name = Interfaces;
 			path = Interfaces;
 			sourceTree = "<group>";
 		};
@@ -1540,7 +1623,6 @@
 				7CA013E9E419CF20C06D1EF524F0574E /* HpsHpaDebitSaleBuilder.h */,
 				884755432EB0B585E1EFD5E90B0F2437 /* HpsHpaDebitSaleBuilder.m */,
 			);
-			name = Debit;
 			path = Debit;
 			sourceTree = "<group>";
 		};
@@ -1564,7 +1646,6 @@
 				FB47E697EEAE24439226A5CB96B954FB /* EBT */,
 				4027CF30805F67DF745471AB98B9ADFD /* Gift */,
 			);
-			name = Builders;
 			path = Builders;
 			sourceTree = "<group>";
 		};
@@ -1613,6 +1694,7 @@
 				802585E8611ED23F26E0BD3F99A73EED /* C2X */,
 				6C2879B545A295CD873FCC90160A0D45 /* HPA */,
 				8A8FA9E077296F8B3C36F314BDEF2FC4 /* PAX */,
+				34517E8425FA9FEB006C9BD9 /* WiseCube */,
 				F73352C3EB7486DED122D28026C40FCA /* Utility */,
 			);
 			name = Terminals;
@@ -1625,7 +1707,6 @@
 				1E31BD4DEF4915F35FC4163488E7C5BC /* HpsHpaRequest.h */,
 				94FE974F15E4D7F8249EBFFE20095FB7 /* HpsHpaRequest.m */,
 			);
-			name = RequestObjects;
 			path = RequestObjects;
 			sourceTree = "<group>";
 		};
@@ -1659,7 +1740,7 @@
 		D9F19CF135DF82639D979AEAAEDB0113 /* GlobalMobileSDK */ = {
 			isa = PBXGroup;
 			children = (
-				938AF4FB035E57E3D33F2CC4ED5A5AA0 /* GMSClientAppDelegate.swift */,
+				34517EA125FAAD3E006C9BD9 /* Protocols */,
 				69FC02B7C180917B07B12F63A73B6F31 /* GMSConfiguration.swift */,
 				5209B32663FFEA25801930A74FE379F3 /* GMSError.swift */,
 				372887B7E1C4932B5DE2CDB5E75B68E8 /* GMSTransactionResponse.swift */,
@@ -1668,8 +1749,11 @@
 				C664818B8942E0F21BB20C38650A6C11 /* HpsTerminalInfo.swift */,
 				14C79DE9001FB1A0AB151AA89D88FF9B /* HpsTransactionStatus.swift */,
 				31B80BAD806BCD30BDB4D23C30427C17 /* HpsTransactionType.swift */,
+				34517EAC25FAADAD006C9BD9 /* GMSBaseBuilder.swift */,
+				34517EB625FAB078006C9BD9 /* GMSDevice.swift */,
+				34517EC025FAB444006C9BD9 /* GMSRequestHelper.swift */,
+				34517ECA25FAB44F006C9BD9 /* GMSResponseHelper.swift */,
 			);
-			name = GlobalMobileSDK;
 			path = GlobalMobileSDK;
 			sourceTree = "<group>";
 		};
@@ -1702,7 +1786,6 @@
 				4E1E3465FDDF569480BF55D6277F7B2E /* HpsHpaSafBuilder.h */,
 				A8FCE729A26A9743238F4FCB40555B5F /* HpsHpaSafBuilder.m */,
 			);
-			name = Credit;
 			path = Credit;
 			sourceTree = "<group>";
 		};
@@ -1768,7 +1851,6 @@
 				8DCDB27517E437CE290AC77D6323ED0F /* HpsPaxTcpInterface.h */,
 				91789B95697E82B9D65A0A89A419451C /* HpsPaxTcpInterface.m */,
 			);
-			name = Interfaces;
 			path = Interfaces;
 			sourceTree = "<group>";
 		};
@@ -1778,7 +1860,6 @@
 				341D120292F7AF21D3FF0EDB0007D479 /* HpsC2xDeviceDelegate.swift */,
 				57B0DBE34D7F0D29E308EB3DF57DF0B2 /* HpsC2xTransactionDelegate.swift */,
 			);
-			name = Delegates;
 			path = Delegates;
 			sourceTree = "<group>";
 		};
@@ -1835,7 +1916,6 @@
 				A0C0DA55815C9C685C8A10D7DE086CE7 /* NSObject+ObjectMap.m */,
 				D9F19CF135DF82639D979AEAAEDB0113 /* GlobalMobileSDK */,
 			);
-			name = Utility;
 			path = Utility;
 			sourceTree = "<group>";
 		};
@@ -1849,7 +1929,6 @@
 				D3BB7415C047A5EA498AE595E2105111 /* HpsHpaEBTSaleBuilder.h */,
 				3894563DE59573944345CD2D92F7D745 /* HpsHpaEBTSaleBuilder.m */,
 			);
-			name = EBT;
 			path = EBT;
 			sourceTree = "<group>";
 		};
@@ -2340,13 +2419,16 @@
 				A138F6724504063D1CA5D72DFBB61BED /* GMSClientAppDelegate.swift in Sources */,
 				763F77E123129C9E3081B414AD9EE8D1 /* GMSConfiguration.swift in Sources */,
 				5AD309BF05D14F851DF51C493C12787A /* GMSError.swift in Sources */,
+				34517EA325FAAD86006C9BD9 /* GMSDeviceInterface.swift in Sources */,
 				5DC30FE026E06D56AEA64E6CA5061816 /* GMSTransactionResponse.swift in Sources */,
+				34517EC125FAB444006C9BD9 /* GMSRequestHelper.swift in Sources */,
 				E350764533B9C07AFB28C25B8E1F4EFC /* GMSWrapper.swift in Sources */,
 				3BE9BD8A2AB5AFD4417571E577F55F05 /* Heartland-iOS-SDK-dummy.m in Sources */,
 				53DECF3F893C997685C27DA4E30F1684 /* HpaEnums.m in Sources */,
 				8BF273399DC584EA3F25E8439F8CE601 /* HpaFileUpload.m in Sources */,
 				F05CD43623CE06B175BC3269E6D69D73 /* HpaPaxSafDeleteResponse.m in Sources */,
 				C469FB33569DE0FC870EBC504A5817D5 /* HpaPaxSafReportResponse.m in Sources */,
+				34517EE925FAB7A6006C9BD9 /* GMSCreditAuthBuilder.swift in Sources */,
 				C220C27B44C01F0C1BE31E6E3D727EFB /* HpaPaxSafUploadResponse.m in Sources */,
 				8FA57249CC840AE163DFCE2FF118DBF7 /* HpsAdditionalTxnFields.m in Sources */,
 				3E4F0BEC557C8821288622AB24C9278F /* HpsAddress.m in Sources */,
@@ -2354,15 +2436,19 @@
 				C459981CD11FEDAD7290FB91C2F12C4E /* HpsBasePayrollResponse.m in Sources */,
 				CA7B7AB296208F44B9F72BC09B23FFD6 /* HpsBaseTableServiceResponse.m in Sources */,
 				2380EB13ED75CA53824D34C12A88C234 /* HpsBinaryDataScanner.m in Sources */,
+				34517EFD25FAB7BF006C9BD9 /* GMSCreditReturnBuilder.swift in Sources */,
 				1DDDFF8B2BCCA52ACECC014C702972F7 /* HpsBumpStatusCollection.m in Sources */,
 				ACBC31322647AD827E9594B5EC038A2A /* HpsC2xBaseBuilder.swift in Sources */,
 				07318D602D2653FF4ECBBF8B69F0237F /* HpsC2xBatchCloseBuilder.swift in Sources */,
 				20867ADF269E3F12FF9F9CBE76271CF9 /* HpsC2xCreditAdjustBuilder.swift in Sources */,
 				A8E192D3F28AD63F268A19BC318AB803 /* HpsC2xCreditAuthBuilder.swift in Sources */,
+				34517F9325FAE8AD006C9BD9 /* HpsWiseCubeBaseBuilder.swift in Sources */,
 				BB6998162D2F229D337E6CD2DE691421 /* HpsC2xCreditCaptureBuilder.swift in Sources */,
+				34517EAD25FAADAD006C9BD9 /* GMSBaseBuilder.swift in Sources */,
 				2F5AE30970E2E3ACB309EA455851FD59 /* HpsC2xCreditReturnBuilder.swift in Sources */,
 				D320A0F8F88BE6454502A0BCA729F7C3 /* HpsC2xCreditSaleBuilder.swift in Sources */,
 				7F6B5B4CAF7F520D560756EC0826DBF6 /* HpsC2xCreditVoidBuilder.swift in Sources */,
+				34517F6125FAE860006C9BD9 /* HpsWiseCubeCreditReturnBuilder.swift in Sources */,
 				10DD48225AA9571C4A3EFBB89E6EEFEB /* HpsC2xDevice.swift in Sources */,
 				18E3B89814345BAAC3EEF847D83654E0 /* HpsC2xDeviceDelegate.swift in Sources */,
 				5CAE398640601E7E18F17D0804CD3A91 /* HpsC2xEnums.swift in Sources */,
@@ -2372,10 +2458,12 @@
 				B3CE1C55FAFA8179284B8F3EA7D3805E /* HpsCardEntryViewController.m in Sources */,
 				E4B96805DF2888D9801BAE960CC2EA4B /* HpsCardHolderData.m in Sources */,
 				AEC250FE50D35AA81008C2F7E94DA9E3 /* HpsCardInfoViewController.m in Sources */,
+				34517E9825FAAD0A006C9BD9 /* GMSTransactionDelegate.swift in Sources */,
 				71607AACC7D43347F6AFF6634A18C400 /* HpsClientInfo.m in Sources */,
 				4B0C100B6A474DFDBAC95147F40881D6 /* HpsCommon.m in Sources */,
 				433DEF2C18F995E512CEABDB7180A23D /* HpsConfiguration.m in Sources */,
 				1C120BDD497F758786FF704387502F00 /* HpsConfiguredServices.m in Sources */,
+				34517F8925FAE89E006C9BD9 /* HpsWiseCubeBatchCloseBuilder.swift in Sources */,
 				479E3347F3B9B28093EE61E71C3B05EE /* HpsConnectionConfig.m in Sources */,
 				1F7CEBC0A64807C60F3381F4A5398C0C /* HpsCreditCard.m in Sources */,
 				C6A4138DDAF1622A01E9063F2E191E42 /* HpsDeviceMessage.m in Sources */,
@@ -2393,6 +2481,7 @@
 				0C248F16E0E39C075ABFBC10BD1169F0 /* HpsHpaBaseResponse.m in Sources */,
 				772F75339D48248082B87920C7A3A38B /* HpsHpaBatchResponse.m in Sources */,
 				DA2A7FE15B48B3EF988D2864957B5C11 /* HpsHpaCreditAuthBuilder.m in Sources */,
+				34517F7F25FAE88B006C9BD9 /* HpsWiseCubeCreditAdjustBuilder.swift in Sources */,
 				BC2E7648AA4DC8C5415D9A402C613D94 /* HpsHpaCreditCaptureBuilder.m in Sources */,
 				CF4717D0E5787652A496C502A72A2446 /* HpsHpaCreditRefundBuilder.m in Sources */,
 				BA41289DB20B4DAD68182C88115B0AA4 /* HpsHpaCreditSaleBuilder.m in Sources */,
@@ -2401,11 +2490,13 @@
 				0914D9CBDF0DFD0AB2D0184D1621A098 /* HpsHpaDebitRefundBuilder.m in Sources */,
 				CA16B534B60201587579A277A18977F8 /* HpsHpaDebitSaleBuilder.m in Sources */,
 				60110348B11614D43048E56505657D27 /* HpsHpaDevice.m in Sources */,
+				34517F0725FAB7CC006C9BD9 /* GMSCreditSaleBuilder.swift in Sources */,
 				0832E3F32061D06D08F3E8DD6B8D131F /* HpsHpaDeviceResponse.m in Sources */,
 				F72330D683D57818B9BC7F6DF2C07F38 /* HpsHpaDiagnosticBuilder.m in Sources */,
 				36D19C948DD0478E9CFB9B73638072D0 /* HpsHpaDiagnosticResponse.m in Sources */,
 				42DADB08869D669F36D3901F1D8EE321 /* HpsHpaDownloadBuilder.m in Sources */,
 				3A364B66160F3613568FB08F8788BA79 /* HpsHpaEBTBalanceBuilder.m in Sources */,
+				34517F6B25FAE86F006C9BD9 /* HpsWiseCubeCreditCaptureBuilder.swift in Sources */,
 				CDC4D3B93F85779A3A1195A9123F6B83 /* HpsHpaEBTRefundBuilder.m in Sources */,
 				14BB9104D5BA695204F1AA6B5DC46F32 /* HpsHpaEBTSaleBuilder.m in Sources */,
 				B12D4ADF77540E4330C4FA0095F5EA17 /* HpsHpaEodBuilder.m in Sources */,
@@ -2419,6 +2510,7 @@
 				75530E2643711FC589AED9C7560FBB2F /* HpsHpaLineItemBuilder.m in Sources */,
 				221F97CEF0C6F31516B35BD813DF4530 /* HpsHpaParser.m in Sources */,
 				FA18858534B374577AAA4C2BFDC1F4DD /* HpsHpaRequest.m in Sources */,
+				34517F4525FAE837006C9BD9 /* HpsWiseCubeCreditVoidBuilder.swift in Sources */,
 				AB0E25A1129836C4B31C4E252A2344C9 /* HpsHpaResponse.m in Sources */,
 				2BD820D33EF9672BB2709BA751A266DB /* HpsHpaSafBuilder.m in Sources */,
 				B67F60F4066DB8FC2B02A97C52E60D10 /* HpsHpaSafResponse.m in Sources */,
@@ -2434,17 +2526,21 @@
 				9ED34124014E7ACCC98CBDEA4FE8CAD6 /* HpsPaxAccountRequest.m in Sources */,
 				293A7074C3049AAF973FD3E300542884 /* HpsPaxAccountResponse.m in Sources */,
 				E75BB40D76F5D10736D1E039CAA8157D /* HpsPaxAmountRequest.m in Sources */,
+				34517F1125FAB7D9006C9BD9 /* GMSCreditVoidBuilder.swift in Sources */,
 				A0AD3E8E256C356539C4A79626D03123 /* HpsPaxAmountResponse.m in Sources */,
 				8985569921F50EC0244ACDF9305BF327 /* HpsPaxAvsRequest.m in Sources */,
 				4252E2E1DC17A1F8327592693BD50BDC /* HpsPaxAvsResponse.m in Sources */,
 				7845A3FA8A81FE2892FB57E8AE5BAACC /* HpsPaxBaseResponse.m in Sources */,
+				34517F1B25FAC940006C9BD9 /* HpsWiseCubeDevice.swift in Sources */,
 				6F9A995AAD6D4A7B144280F03E961A07 /* HpsPaxBatchCloseResponse.m in Sources */,
 				62DAD632199BF814F87F7B45643C1652 /* HpsPaxCashierSubGroup.m in Sources */,
 				8F83EA4CCB7196F95C0B5360416D5E94 /* HpsPaxCheckResponse.m in Sources */,
+				34517EF325FAB7B0006C9BD9 /* GMSCreditCaptureBuilder.swift in Sources */,
 				4FDB17A6F681AB8DCD2285AA5D997E0E /* HpsPaxCommercialRequest.m in Sources */,
 				4CB979B54CE6B7FF41473D9050087B79 /* HpsPaxCommercialResponse.m in Sources */,
 				9F5DEC6A6BFB64CF6ABC2DC1C56FA4DA /* HpsPaxCreditAdjustBuilder.m in Sources */,
 				A0A0DA96A096325FE3287C2ABC4B816F /* HpsPaxCreditAuthBuilder.m in Sources */,
+				34517E8625FAACD0006C9BD9 /* GMSDeviceDelegate.swift in Sources */,
 				940A25A62D4C3C85AD4172C08DA32735 /* HpsPaxCreditCaptureBuilder.m in Sources */,
 				3322425BEE0E6845490C6F66160DA657 /* HpsPaxCreditResponse.m in Sources */,
 				73DA5EF77E1F17BAE6CE45B57E90238F /* HpsPaxCreditReturnBuilder.m in Sources */,
@@ -2462,18 +2558,22 @@
 				CD02740BD59B5199DE0EEC4CB8726F62 /* HpsPaxGiftAddValueBuilder.m in Sources */,
 				3FD42EC5936C0DF826E1D481D15B6D1A /* HpsPaxGiftBalanceBuilder.m in Sources */,
 				41CF0F674FC672B8567A4BCD4B80CD35 /* HpsPaxGiftResponse.m in Sources */,
+				34517EB725FAB078006C9BD9 /* GMSDevice.swift in Sources */,
 				1A8C2DFDCEDB7BF4010A0C88B1EA92B3 /* HpsPaxGiftSaleBuilder.m in Sources */,
+				34517F7525FAE87C006C9BD9 /* HpsWiseCubeCreditAuthBuilder.swift in Sources */,
 				B7353B888F619837AA52311730879BD9 /* HpsPaxGiftVoidBuilder.m in Sources */,
 				D7B49A35CFF0CB90262D7AEB87776FBF /* HpsPaxHostResponse.m in Sources */,
 				B2B481FEBE799BF9A3BF42EA750151E1 /* HpsPaxHttpInterface.m in Sources */,
 				375BA3B73F03CAA2DEB24FD9A26B76C4 /* HpsPaxInitializeResponse.m in Sources */,
 				1E69EA319582D9B847943A7B305A83CB /* HpsPaxLocalDetailReportBuilder.m in Sources */,
+				34517ED525FAB789006C9BD9 /* GMSBatchCloseBuilder.swift in Sources */,
 				09D4201D22DB15DC39603B9FDBAC73D3 /* HpsPaxLocalDetailResponse.m in Sources */,
 				9FE0CDDFF083CFB4890BA093E1415C7B /* HpsPaxMessageIDs.m in Sources */,
 				64280ACA31344C63484C25A905E4184F /* HpsPaxTcpInterface.m in Sources */,
 				3A21040E932CC83464EFDDF522289820 /* HpsPaxTraceRequest.m in Sources */,
 				8A79914C021A40E4D17C891856085759 /* HpsPaxTraceResponse.m in Sources */,
 				8ABBA1A99FA7961332D5651B36DBEA4D /* HpsPayGroup.m in Sources */,
+				34517EDF25FAB795006C9BD9 /* GMSCreditAdjustBuilder.swift in Sources */,
 				8B5FAD254B5DBB4362A86A5ECA84EE55 /* HpsPayItem.m in Sources */,
 				8ADDDF8A827C37B6DFDB26E5894F13FC /* HpsPayrollCollectionItem.m in Sources */,
 				6F7B58BC3533F1A80075CC12810F6D49 /* HpsPayrollConfig.m in Sources */,
@@ -2494,6 +2594,7 @@
 				BB64D326989DE39B1E8EAF57DD4F0E2A /* HpsTableServiceConnector.m in Sources */,
 				0C073AD2409CF993C3F3AA9DE03436E0 /* HpsTableServiceResponse.m in Sources */,
 				1D085B1A392F57712F83EEA04DA58338 /* HpsTerminalEnums.m in Sources */,
+				34517ECB25FAB44F006C9BD9 /* GMSResponseHelper.swift in Sources */,
 				DFA1025A64CDECF573CB95E9CCF2104D /* HpsTerminalInfo.swift in Sources */,
 				9819A2DF8DA8F0C27DDBBD1DD56734BD /* HpsTerminalResponse.m in Sources */,
 				CED4EB251FE035248623F61CACE6A65E /* HpsTerminalUtilities.m in Sources */,
@@ -2507,6 +2608,7 @@
 				E475D452FFF0F1E65CECC4A5173E9244 /* HpsTransactionSummary.m in Sources */,
 				241B395A53296F3A9921DD8C6BD7CF42 /* HpsTransactionType.swift in Sources */,
 				FE30061184251C71133E2705AEC515D6 /* HpsWorkLocation.m in Sources */,
+				34517F5725FAE852006C9BD9 /* HpsWiseCubeCreditSaleBuilder.swift in Sources */,
 				4E70D65BD7CBB7A184C8C88BAD9DA39B /* NSData+SM_EncryptionHelper.m in Sources */,
 				6D56AADDBE9F49DBE8CE1D6DA9D68571 /* NSInputStream+Hps.m in Sources */,
 				2C8B4113D6BC9D4170E2744EFDDFA005 /* NSMutableDictionary+ShiftAssignments.m in Sources */,
@@ -3074,8 +3176,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -3244,8 +3345,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

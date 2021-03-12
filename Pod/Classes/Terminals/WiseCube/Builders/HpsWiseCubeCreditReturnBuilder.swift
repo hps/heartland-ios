@@ -1,7 +1,7 @@
 import Foundation
 
 @objcMembers
-public class HpsC2xCreditReturnBuilder : HpsC2xBaseBuilder, GMSCreditReturnBuilder {
+public class HpsWiseCubeCreditReturnBuilder : HpsWiseCubeBaseBuilder, GMSCreditReturnBuilder {
     public var amount: NSDecimalNumber?
     public var referenceNumber: String?
     public var transactionId: String?

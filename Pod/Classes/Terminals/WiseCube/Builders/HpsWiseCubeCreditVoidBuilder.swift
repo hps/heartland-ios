@@ -1,21 +1,20 @@
 import Foundation
 
 @objcMembers
-public class HpsC2xCreditReturnBuilder : HpsC2xBaseBuilder, GMSCreditReturnBuilder {
-    public var amount: NSDecimalNumber?
+public class HpsWiseCubeCreditVoidBuilder : HpsWiseCubeBaseBuilder, GMSCreditVoidBuilder {
     public var referenceNumber: String?
     public var transactionId: String?
     
     public required init() {
         super.init()
-        self.transactionType = .creditReturn
+        self.transactionType = .creditVoid
     }
     
     public override func buildRequest() -> Transaction? {
-        return GMSRequestHelper.buildCreditReturnRequest(builder: self)
+        return GMSRequestHelper.buildCreditVoidRequest(builder: self)
     }
 
     public override func mapResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
-        return GMSResponseHelper.mapCreditReturnResponse(data, result, response)
+        return GMSResponseHelper.mapCreditVoidResponse(data, result, response)
     }
 }

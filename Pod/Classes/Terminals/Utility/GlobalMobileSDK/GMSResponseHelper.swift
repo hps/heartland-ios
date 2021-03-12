@@ -1,0 +1,159 @@
+import Foundation
+
+class GMSResponseHelper {
+    public static func mapBatchCloseResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
+        let resp = response as? BatchCloseResponse
+        var deviceResponseCode = result.rawValue
+
+        if let respText = resp?.gatewayResponseText {
+            deviceResponseCode = respText
+        }
+
+        data.responseText = resp?.gatewayResponseText
+        data.deviceResponseCode = deviceResponseCode
+
+        return data
+    }
+    
+    public static func mapCreditAdjustResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
+        let resp = response as? TipAdjustResponse
+        var deviceResponseCode = result.rawValue
+
+        if let respText = resp?.gatewayResponseText {
+            deviceResponseCode = respText
+        }
+
+        data.approvalCode = resp?.authCode
+        data.responseText = resp?.gatewayResponseText
+        data.deviceResponseCode = deviceResponseCode
+
+        return data
+    }
+    
+    public static func mapCreditAuthResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
+        let resp = response as? AuthResponse
+        var deviceResponseCode = result.rawValue
+
+        if let respText = resp?.gatewayResponseText {
+            deviceResponseCode = respText
+        }
+
+        data.entryMethod = HpsC2xEnums.cardDataSourceTypeToString(resp?.cardDataSourceType)
+        data.approvalCode = resp?.authCode
+        data.maskedCardNumber = resp?.maskedPan
+        data.responseText = resp?.gatewayResponseText
+        data.deviceResponseCode = deviceResponseCode
+        data.terminalRefNumber = resp?.posReferenceNumber
+        data.transactionType = HpsC2xEnums.transactionTypeToString(resp?.transactionType)
+        data.applicationId = resp?.aid
+        data.applicationName = resp?.applicationLabel
+        data.cardholderName = resp?.cardholderName
+        data.applicationCrytptogram = resp?.applicationCryptogram
+        data.terminalVerficationResult = resp?.tvr
+
+        if let decimalValue = resp?.tip {
+            data.tipAmount = NSNumber(nonretainedObject: decimalValue)
+        }
+
+        if let decimalValue = resp?.total {
+            data.transactionAmount = NSNumber(nonretainedObject: decimalValue)
+        }
+
+        return data
+    }
+    
+    public static func mapCreditCaptureResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
+        let resp = response as? CaptureResponse
+        var deviceResponseCode = result.rawValue
+
+        if let respText = resp?.gatewayResponseText {
+            deviceResponseCode = respText
+        }
+
+        data.responseText = resp?.gatewayResponseText
+        data.deviceResponseCode = deviceResponseCode
+
+        return data
+    }
+    
+    public static func mapCreditReturnResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
+        let resp = response as? ReturnResponse
+        var deviceResponseCode = result.rawValue
+
+        if let respText = resp?.gatewayResponseText {
+            deviceResponseCode = respText
+        }
+
+        data.entryMethod = HpsC2xEnums.cardDataSourceTypeToString(resp?.cardDataSourceType)
+        data.approvalCode = resp?.authCode
+        data.maskedCardNumber = resp?.maskedPan
+        data.responseText = resp?.gatewayResponseText
+        data.deviceResponseCode = deviceResponseCode
+        data.terminalRefNumber = resp?.posReferenceNumber
+//        data.transactionType = HpsC2xEnums.transactionTypeToString(resp?.transactionType)
+        data.applicationId = resp?.aid
+        data.applicationName = resp?.applicationLabel
+        data.cardholderName = resp?.cardholderName
+        data.applicationCrytptogram = resp?.applicationCryptogram
+        data.terminalVerficationResult = resp?.tvr
+
+        if let decimalValue = resp?.tip {
+            data.tipAmount = NSNumber(nonretainedObject: decimalValue)
+        }
+
+        if let decimalValue = resp?.total {
+            data.transactionAmount = NSNumber(nonretainedObject: decimalValue)
+        }
+        
+        return data
+    }
+    
+    public static func mapCreditSaleResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
+        let resp = response as? SaleResponse
+        var deviceResponseCode = result.rawValue
+
+        if let respText = resp?.gatewayResponseText {
+            deviceResponseCode = respText
+        }
+
+        data.entryMethod = HpsC2xEnums.cardDataSourceTypeToString(resp?.cardDataSourceType)
+        data.approvalCode = resp?.authCode
+        data.maskedCardNumber = resp?.maskedPan
+        data.responseText = resp?.gatewayResponseText
+        data.deviceResponseCode = deviceResponseCode
+        data.terminalRefNumber = resp?.posReferenceNumber
+//        data.transactionType = HpsC2xEnums.transactionTypeToString(resp?.transactionType)
+        data.applicationId = resp?.aid
+        data.applicationName = resp?.applicationLabel
+        data.cardholderName = resp?.cardholderName
+        data.applicationCrytptogram = resp?.applicationCryptogram
+        data.terminalVerficationResult = resp?.tvr
+
+        if let decimalValue = resp?.tip {
+            data.tipAmount = NSNumber(nonretainedObject: decimalValue)
+        }
+
+        if let decimalValue = resp?.total {
+            data.transactionAmount = NSNumber(nonretainedObject: decimalValue)
+        }
+        
+        return data
+    }
+    
+    public static func mapCreditVoidResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
+        let resp = response as? VoidResponse
+        var deviceResponseCode = result.rawValue
+
+        if let respText = resp?.gatewayResponseText {
+            deviceResponseCode = respText
+        }
+
+        data.approvalCode = resp?.authCode
+        data.responseText = resp?.gatewayResponseText
+        data.deviceResponseCode = deviceResponseCode
+        data.terminalRefNumber = resp?.posReferenceNumber
+//        data.transactionType = HpsC2xEnums.transactionTypeToString(resp?.transactionType)
+
+        return data
+    }
+}

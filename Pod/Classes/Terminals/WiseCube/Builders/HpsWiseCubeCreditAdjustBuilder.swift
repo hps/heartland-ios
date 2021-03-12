@@ -1,26 +1,25 @@
 import Foundation
 
 @objcMembers
-public class HpsC2xCreditSaleBuilder : HpsC2xBaseBuilder, GMSCreditSaleBuilder {
+public class HpsWiseCubeCreditAdjustBuilder : HpsWiseCubeBaseBuilder, GMSCreditAdjustBuilder {
     public var amount: NSDecimalNumber?
     public var referenceNumber: String?
     public var details: HpsTransactionDetails?
     public var gratuity: NSDecimalNumber?
     public var transactionId: String?
     public var cardHolderName: String?
-    public var creditCard: HpsCreditCard?
     public var address: HpsAddress?
-    
+
     public required init() {
         super.init()
-        self.transactionType = .creditSale
+        self.transactionType = .creditAdjust
     }
     
     public override func buildRequest() -> Transaction? {
-        return GMSRequestHelper.buildCreditSaleRequest(builder: self)
+        return GMSRequestHelper.buildCreditAdjustRequest(builder: self)
     }
 
     public override func mapResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
-        return GMSResponseHelper.mapCreditSaleResponse(data, result, response)
+        return GMSResponseHelper.mapCreditAdjustResponse(data, result, response)
     }
 }

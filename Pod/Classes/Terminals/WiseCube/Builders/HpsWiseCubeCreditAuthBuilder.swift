@@ -1,7 +1,7 @@
 import Foundation
 
 @objcMembers
-public class HpsC2xCreditSaleBuilder : HpsC2xBaseBuilder, GMSCreditSaleBuilder {
+public class HpsWiseCubeCreditAuthBuilder : HpsWiseCubeBaseBuilder, GMSCreditAuthBuilder {
     public var amount: NSDecimalNumber?
     public var referenceNumber: String?
     public var details: HpsTransactionDetails?
@@ -13,14 +13,14 @@ public class HpsC2xCreditSaleBuilder : HpsC2xBaseBuilder, GMSCreditSaleBuilder {
     
     public required init() {
         super.init()
-        self.transactionType = .creditSale
+        self.transactionType = .creditAuth
     }
     
     public override func buildRequest() -> Transaction? {
-        return GMSRequestHelper.buildCreditSaleRequest(builder: self)
+        return GMSRequestHelper.buildCreditAuthRequest(builder: self)
     }
 
     public override func mapResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
-        return GMSResponseHelper.mapCreditSaleResponse(data, result, response)
+        return GMSResponseHelper.mapCreditAuthResponse(data, result, response)
     }
 }

@@ -1,7 +1,7 @@
 import Foundation
 
 @objcMembers
-public class HpsC2xBatchCloseBuilder : HpsC2xBaseBuilder, GMSBatchCloseBuilder {
+public class HpsWiseCubeBatchCloseBuilder : HpsWiseCubeBaseBuilder, GMSBatchCloseBuilder {
     public required init() {
         super.init()
         self.transactionType = .batchClose

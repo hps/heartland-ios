@@ -12,7 +12,7 @@ public class GMSConfiguration: NSObject {
         self.config = config
     }
 
-    public func asPorticoConfig() -> PorticoConfig {
+    public func asPorticoConfig(terminalType: TerminalType) -> PorticoConfig {
         var config = PorticoConfig()
         if let c = self.config {
             config.username = c.username
@@ -29,7 +29,7 @@ public class GMSConfiguration: NSObject {
         config.merchantAddress = ""
         config.acknowledgement = ""
         config.signatureAgreement = ""
-        config.terminalType = .bbpos_c2x
+        config.terminalType = terminalType
         return config
     }
     

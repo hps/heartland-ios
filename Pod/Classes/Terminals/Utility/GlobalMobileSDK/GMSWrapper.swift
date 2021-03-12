@@ -10,18 +10,19 @@ public class GMSWrapper: NSObject {
     private var delegate: GMSClientAppDelegate?
     private var selectedTerminal: HpsTerminalInfo?
     private var aids: [AID]?
-    private var entryModes: [EntryMode] = [.contact, .manual]
+    private var entryModes: [EntryMode]
     private var transactionType: HpsTransactionType
-    private var builder: HpsC2xBaseBuilder?
+    private var builder: GMSBaseBuilder?
 
     // MARK: Init
-    public init(_ gatewayConfig: GMSConfiguration?, delegate: GMSClientAppDelegate?) {
+    public init(_ gatewayConfig: GMSConfiguration?, delegate: GMSClientAppDelegate?, entryModes: [EntryMode], terminalType: TerminalType) {
         self.gatewayConfig = gatewayConfig
         self.delegate = delegate
         self.transactionType = .unknown
+        self.entryModes = entryModes
 
         if let config = gatewayConfig {
-            try! GMSManager.shared.configure(gatewayConfig: config.asPorticoConfig())
+            try! GMSManager.shared.configure(gatewayConfig: config.asPorticoConfig(terminalType: terminalType))
         }
     }
 
@@ -43,7 +44,7 @@ public class GMSWrapper: NSObject {
         GMSManager.shared.disconnect()
     }
     
-    public func startTransaction(_ builder: HpsC2xBaseBuilder, withTransactionType transactionType: HpsTransactionType) {
+    public func startTransaction(_ builder: GMSBaseBuilder, withTransactionType transactionType: HpsTransactionType) {
         self.transactionType = transactionType
         self.builder = builder
         switch transactionType {
