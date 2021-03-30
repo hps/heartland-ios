@@ -17,9 +17,9 @@
 - (HpsPaxDevice*) setupDevice
 {
 	HpsConnectionConfig *config = [[HpsConnectionConfig alloc] init];
-	config.ipAddress = @"10.12.220.172";
+	config.ipAddress = @"192.168.1.12";
 	config.port = @"10009";
-	config.connectionMode = HpsConnectionModes_HTTP;
+	config.connectionMode = HpsConnectionModes_TCP_IP;
 	HpsPaxDevice * device = [[HpsPaxDevice alloc] initWithConfig:config];
 	return device;
 }
@@ -41,6 +41,7 @@
 	builder.amount = [NSNumber numberWithDouble:10.0];
 	builder.referenceNumber = 1;
 	builder.giftCard = card;
+    builder.allowDuplicates = YES;
 
 	[builder execute:^(HpsPaxGiftResponse *payload, NSError *error) {
 		XCTAssertNil(error);

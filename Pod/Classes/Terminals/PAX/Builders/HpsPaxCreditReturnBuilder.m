@@ -28,7 +28,10 @@
     HpsPaxAccountRequest *account = [[HpsPaxAccountRequest alloc] init];
     if (self.creditCard != nil) {
         account.accountNumber = self.creditCard.cardNumber;
-        account.expd = [NSString stringWithFormat:@"%d%d", self.creditCard.expMonth, self.creditCard.expYear];
+        if (self.creditCard.expMonth < 10)
+            account.expd = [NSString stringWithFormat:@"0%d%d", self.creditCard.expMonth, self.creditCard.expYear];
+        else
+            account.expd = [NSString stringWithFormat:@"%d%d", self.creditCard.expMonth, self.creditCard.expYear];
        // account.cvvCode = self.creditCard.cvv;
     }
     
@@ -39,6 +42,9 @@
     
     HpsPaxTraceRequest *traceRequest = [[HpsPaxTraceRequest alloc] init];
     traceRequest.referenceNumber = [NSString stringWithFormat:@"%d", self.referenceNumber];
+    if (self.clientTransactionId != nil)
+    traceRequest.clientTransactionId = self.clientTransactionId;
+    
     if (self.details != nil) {
         traceRequest.invoiceNumber = self.details.invoiceNumber;
     }

@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/shane.logsdon/Code/ios/heartland-ios-sdk/Example/Build/Products/Debug-iphonesimulator/Heartland-iOS-SDK/Heartland_iOS_SDK.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/shane.logsdon/Code/ios/heartland-ios-sdk/Example/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Heartland-iOS-SDK.build/unextended-module.modulemap",
+    }]
+  }]
+}

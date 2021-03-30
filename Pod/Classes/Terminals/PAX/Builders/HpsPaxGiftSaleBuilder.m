@@ -31,6 +31,9 @@
     if (self.giftCard != nil) {
         account.accountNumber = self.giftCard.value;
     }
+    if (self.allowDuplicates) {
+        account.dupOverrideFlag = @"1";
+    }
     [subgroups addObject:account];
     
     HpsPaxTraceRequest *traceRequest = [[HpsPaxTraceRequest alloc] init];

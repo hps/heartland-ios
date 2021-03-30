@@ -2,4 +2,85 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Pod/Classes/Terminals/HPA/Builders/Credit/HpsHpaCreditSaleBuilder.m"
+            timestampString = "588498175.005761"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "-execute:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tests/Hps_Hpa_Credit_Test.m"
+            timestampString = "588663567.96742"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
+            landmarkName = "-test_Lost_Transaction_Recovery"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__53-[Hps_Hpa_Credit_Test test_Lost_Transaction_Recovery]_block_invoke_2"
+                  moduleName = "Heartland-iOS-SDK_Tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anuragsharma/Documents/HR_UserStory/Heartland-iOS-SDK/Example/Tests/Hps_Hpa_Credit_Test.m"
+                  timestampString = "588663569.008108"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "219"
+                  endingLineNumber = "219"
+                  offsetFromSymbolStart = "41">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__53-[Hps_Hpa_Credit_Test test_Lost_Transaction_Recovery]_block_invoke_3"
+                  moduleName = "Heartland-iOS-SDK_Tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anuragsharma/Documents/HR_UserStory/Heartland-iOS-SDK/Example/Tests/Hps_Hpa_Credit_Test.m"
+                  timestampString = "588663569.016107"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "220"
+                  endingLineNumber = "220"
+                  offsetFromSymbolStart = "93">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.141"
+                  moduleName = "Heartland-iOS-SDK_Tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anuragsharma/Documents/HR_UserStory/Heartland-iOS-SDK/Example/Tests/Hps_Hpa_Credit_Test.m"
+                  timestampString = "588663569.01941"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "219"
+                  endingLineNumber = "219"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

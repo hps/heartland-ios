@@ -1,5 +1,6 @@
 #import "HpsTerminalResponse.h"
 #import "HpsHpaSharedParams.h"
+#import <Heartland_iOS_SDK/Heartland_iOS_SDK-Swift.h>
 
 @implementation HpsTerminalResponse
 
@@ -11,12 +12,14 @@
 	NSMutableDictionary *paramDictionary = [HpsHpaSharedParams getInstance].params;
 	self.terminalSerialNumber = paramDictionary[@"TERMINAL INFORMATION"][@"SERIAL NUMBER"];
 	if (response.ResponseId) {
-		self.transactionId =  response.ResponseId.intValue;
+		self.transactionId =  response.ResponseId;
 	}
 	else{
-		self.transactionId =  response.TransactionId.intValue;
+		self.transactionId =  response.TransactionId;
 
 	}
+    self.lastResponseTransactionId = [HpsHpaSharedParams getInstance].lastResponse.ResponseId;
+    
 }
 
 @end

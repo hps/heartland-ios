@@ -1,13 +1,22 @@
 PODS:
-  - Heartland-iOS-SDK (1.1.6):
+  - BBPOS (1.0.3)
+  - GlobalPaymentsApi (1.0.2)
+  - Heartland-iOS-SDK (1.1.10):
+    - VitalSDK
     - XMLDictionary
+  - VitalSDK (1.0.4):
+    - BBPOS
+    - GlobalPaymentsApi
   - XMLDictionary (1.4.1)
 
 DEPENDENCIES:
   - Heartland-iOS-SDK (from `../`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
+    - BBPOS
+    - GlobalPaymentsApi
+    - VitalSDK
     - XMLDictionary
 
 EXTERNAL SOURCES:
@@ -15,9 +24,12 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Heartland-iOS-SDK: 53735564146113771b087a966972e9ce942e1f25
+  BBPOS: 5feb3e6af48a02d0accc695f1639c0f77f1ea366
+  GlobalPaymentsApi: a5c7d90f3d9a8d3406394769c1a67fff28a2382c
+  Heartland-iOS-SDK: 196c3ff98e67ec00f43fb5ab83a5c749a4d0eb33
+  VitalSDK: af15560ee84426406aa03c828385784439bef4d8
   XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
 
-PODFILE CHECKSUM: a2d4770e303e82c0989fd39f53fa31499ac49ee9
+PODFILE CHECKSUM: 749bdb42e7856575acb5efb1495002f39403a84e
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.10.1

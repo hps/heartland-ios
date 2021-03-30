@@ -1,2 +1,8 @@
+<<<<<<< HEAD
 Example/Heartland-iOS-SDK.xcodeproj/xcuserdata/*
 Example/Pods/Pods.xcodeproj/xcuserdata/*
+=======
+.DS_Store
+*.xcuserdatad
+Example/Build/
+>>>>>>> 5536be6ec40c2225c8a8d618b79a32ee6d46d14d

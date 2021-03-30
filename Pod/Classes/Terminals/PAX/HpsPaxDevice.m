@@ -3,6 +3,7 @@
 #import "HpsTerminalUtilities.h"
 #import "HpsTerminalEnums.h"
 #import "HpsPaxTcpInterface.h"
+#import "HpsPaxLocalDetailResponse.h"
 
 @implementation HpsPaxDevice
 
@@ -221,6 +222,161 @@
 	}];
 }
 
+- (void) setSafMode:(SafMode)safMode withResponseBlock:(void(^)(HpsPaxDeviceResponse*, NSError*))responseBlock{
+   
+    NSString *strSafMode = [NSString stringWithFormat:@"%ld",(long)safMode];
+    NSMutableArray *commands = [[NSMutableArray alloc] init];
+    [commands addObject:strSafMode];
+    NSString* fs_code = [HpsTerminalEnums controlCodeString:HpsControlCodes_FS];
+    for (int i = 0; i < 10 ; i++) {
+        [commands addObject:fs_code];
+        [commands addObject:@""];        
+    }
+    id<IHPSDeviceMessage> request = [HpsTerminalUtilities buildRequest:A54_SET_SAF_PARAMETERS withElements:commands];
+    
+    [self.interface send:request andResponseBlock:^(NSData *data, NSError *error) {
+        if (error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                responseBlock(nil, error);
+            });
+        }else{
+            //done
+            NSString *dataview = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+            NSLog(@"data returned: %@", dataview);
+            HpsPaxDeviceResponse *response;
+            @try {
+                //parse data
+                response = [[HpsPaxDeviceResponse alloc] initWithMessageID:A55_RSP_SET_SAF_PARAMETERS andBuffer:data];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    responseBlock(response, nil);
+                });
+            } @catch (NSException *exception) {
+                NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
+                NSError *error = [NSError errorWithDomain:self->errorDomain
+                                                     code:CocoaError
+                                                 userInfo:userInfo];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    responseBlock(nil, error);
+                });
+            }
+        }
+    }];
+}
+
+- (void) safUpload:(SafIndicator)safIndicator withResponseBlock:(void(^)(HpaPaxSafUploadResponse*, NSError*))responseBlock{
+    
+    NSString *strSafIndicator = [NSString stringWithFormat:@"%ld",(long)safIndicator];
+    NSMutableArray *commands = [[NSMutableArray alloc] init];
+    [commands addObject:strSafIndicator];
+   
+    id<IHPSDeviceMessage> request = [HpsTerminalUtilities buildRequest:B08_SAF_UPLOAD withElements:commands];
+    [self.interface send:request andResponseBlock:^(NSData *data, NSError *error) {
+        if (error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                responseBlock(nil, error);
+            });
+        }else{
+            //done
+            NSString *dataview = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+            NSLog(@"data returned: %@", dataview);
+            HpaPaxSafUploadResponse *response;
+            @try {
+                //parse data
+                response = [[HpaPaxSafUploadResponse alloc] initWithBuffer:data];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    responseBlock(response, nil);
+                });
+            } @catch (NSException *exception) {
+                NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
+                NSError *error = [NSError errorWithDomain:self->errorDomain
+                                                     code:CocoaError
+                                                 userInfo:userInfo];
+
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    responseBlock(nil, error);
+                });
+            }
+        }
+    }];
+}
+
+- (void) safDelete:(SafIndicator)safIndicator withResponseBlock:(void(^)(HpaPaxSafDeleteResponse*, NSError*))responseBlock{
+    
+    NSString *strSafIndicator = [NSString stringWithFormat:@"%ld",(long)safIndicator];
+    NSMutableArray *commands = [[NSMutableArray alloc] init];
+    [commands addObject:strSafIndicator];
+    
+    id<IHPSDeviceMessage> request = [HpsTerminalUtilities buildRequest:B10_DELETE_SAF_FILE withElements:commands];
+    [self.interface send:request andResponseBlock:^(NSData *data, NSError *error) {
+        if (error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                responseBlock(nil, error);
+            });
+        }else{
+            //done
+            NSString *dataview = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+            NSLog(@"data returned: %@", dataview);
+            HpaPaxSafDeleteResponse *response;
+            @try {
+                //parse data
+                response = [[HpaPaxSafDeleteResponse alloc] initWithBuffer:data];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    responseBlock(response, nil);
+                });
+            } @catch (NSException *exception) {
+                NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
+                NSError *error = [NSError errorWithDomain:self->errorDomain
+                                                     code:CocoaError
+                                                 userInfo:userInfo];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    responseBlock(nil, error);
+                });
+            }
+        }
+    }];
+}
+
+- (void) safReport:(SafIndicator)safIndicator withResponseBlock:(void(^)(HpaPaxSafReportResponse*, NSError*))responseBlock{
+    
+    NSString *strSafIndicator = [NSString stringWithFormat:@"%ld",(long)safIndicator];
+    NSMutableArray *commands = [[NSMutableArray alloc] init];
+    [commands addObject:strSafIndicator];
+    
+    id<IHPSDeviceMessage> request = [HpsTerminalUtilities buildRequest:R10_SAF_SUMMARY_REPORT withElements:commands];
+    [self.interface send:request andResponseBlock:^(NSData *data, NSError *error) {
+        if (error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                responseBlock(nil, error);
+            });
+        }else{
+            //done
+            NSString *dataview = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+            NSLog(@"data returned: %@", dataview);
+            HpaPaxSafReportResponse *response;
+            @try {
+                //parse data
+                response = [[HpaPaxSafReportResponse alloc] initWithBuffer:data];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    responseBlock(response, nil);
+                });
+            } @catch (NSException *exception) {
+                NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
+                NSError *error = [NSError errorWithDomain:self->errorDomain
+                                                     code:CocoaError
+                                                 userInfo:userInfo];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    responseBlock(nil, error);
+                });
+            }
+        }
+    }];
+}
+
+
+
 #pragma mark -
 #pragma mark Transactions
 
@@ -297,6 +453,28 @@ withResponseBlock:(void(^)(HpsPaxGiftResponse*, NSError*))responseBlock{
 	}];
 }
 
+- (void) doReport:(NSString*)edcType
+                    andSearchInput:(NSDictionary*)searchInputDict
+                    andSubGroups:(NSArray*)subGroups
+               withResponseBlock:(void(^)(HpsPaxLocalDetailResponse*, NSError*))responseBlock
+{
+    [self doReportTransaction:(NSString *)R02_LOCAL_DETAIL_REPORT andEdcType:edcType andSearchInput:searchInputDict andSubGroups:subGroups withResponseBlock:^(NSData *data, NSError *error){
+        if (error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                responseBlock(nil, error);
+            });
+        }else{
+            //done
+            dispatch_async(dispatch_get_main_queue(), ^{
+                HpsPaxLocalDetailResponse *response = [[HpsPaxLocalDetailResponse alloc]initWithBuffer:data];
+                [self printRecipt:response];
+                responseBlock(response, error);
+            });
+        }
+        
+    }];
+}
+
 #pragma mark -
 #pragma mark Private Methods
 
@@ -338,6 +516,63 @@ withResponseBlock:(void(^)(HpsPaxGiftResponse*, NSError*))responseBlock{
 		}
 	}];
 }
+
+#pragma mark - Report
+#pragma mark Private Methods
+
+- (void) doReportTransaction:(NSString*)messageId
+            andEdcType:(NSString*)edcType
+            andSearchInput:(NSDictionary*)searchInputDict
+            andSubGroups:(NSArray*)subGroups
+           withResponseBlock:(void(^)(NSData*, NSError*))responseBlock{
+
+    NSString* fs_code = [HpsTerminalEnums controlCodeString:HpsControlCodes_FS];
+    //load commands
+    NSMutableArray *commands = [[NSMutableArray alloc] init];
+    [commands addObject:edcType];
+    [commands addObject:fs_code];
+    [commands addObject:[searchInputDict valueForKey:PAX_SEARCH_CRITERIA_toString[TRANSACTION_TYPE]]];
+    [commands addObject:fs_code];
+    [commands addObject:[searchInputDict valueForKey:PAX_SEARCH_CRITERIA_toString[CARD_TYPE]]];
+    [commands addObject:fs_code];
+    [commands addObject:[searchInputDict valueForKey:PAX_SEARCH_CRITERIA_toString[RECORD_NUMBER]]];
+    [commands addObject:fs_code];
+    [commands addObject:[searchInputDict valueForKey:PAX_SEARCH_CRITERIA_toString[TERMINAL_REFERENCE_NUMBER]]];
+    [commands addObject:fs_code];
+    [commands addObject:[searchInputDict valueForKey:PAX_SEARCH_CRITERIA_toString[AUTH_CODE]]];
+    [commands addObject:fs_code];
+    [commands addObject:[searchInputDict valueForKey:PAX_SEARCH_CRITERIA_toString[REFERENCE_NUMBER]]];
+    [commands addObject:fs_code];
+   
+    if (subGroups.count > 0) {
+        [commands addObject:[subGroups objectAtIndex:0]];
+        for (int i = 1; i < subGroups.count ; i++) {
+
+            [commands addObject:fs_code];
+            [commands addObject:[subGroups objectAtIndex:i]];
+        }
+    }else{
+        [commands addObject:fs_code];
+    }
+
+    //Run on device
+    id<IHPSDeviceMessage> request = [HpsTerminalUtilities buildRequest:messageId withElements:commands];
+    [self.interface send:request andResponseBlock:^(NSData *data, NSError *error) {
+        if (error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                responseBlock(nil, error);
+            });
+        }else{
+            //done
+            //NSString *dataview = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+            // NSLog(@"data returned device: %@", dataview);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                responseBlock(data, nil);
+            });
+        }
+    }];
+}
+
 
 -(id)getValueOfObject:(id)value{
 

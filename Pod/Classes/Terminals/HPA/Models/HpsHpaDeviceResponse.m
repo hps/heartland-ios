@@ -46,13 +46,14 @@
 		self.avsResultCode = self.recievedResponse.AVS;
 		self.avsResultText = self.avsResultText;
 		self.balanceAmount = [NSNumber numberWithInteger:self.recievedResponse.AvailableBalance.doubleValue /100];
-		self.cardHolderName = self.recievedResponse.CardHolderName;
+		self.cardholderName = self.recievedResponse.CardholderName;
 		self.cvvResponseCode = self.recievedResponse.CVV;
 		self.cvvResponseText = self.recievedResponse.CVVResultText;
 		self.entryMode = self.recievedResponse.CardAcquisition.intValue;
 		self.paymentType = self.recievedResponse.CardType;
 		self.terminalRefNumber = self.recievedResponse.ReferenceNumber;
-		}
+		self.storedResponse = [self.recievedResponse.StoredResponse intValue] == 1 ? YES : NO ;
+}
 
 	return self;
 }

@@ -19,7 +19,12 @@ NSString * const HPA_MSG_ID_toString[] = {
 	[ ADD_VALUE ] = @"AddValue",
 	[ TIP_ADJUST ] = @"TipAdjust",
 	[ GET_INFO_REPORT ] = @"GetAppInfoReport",
-	[ CAPTURE ] = @"CreditAuthComplete"
+    [ CAPTURE ] = @"CreditAuthComplete",
+    [ SEND_SAF ] = @"SendSAF",
+    [ GET_DIAGNOSTIC_REPORT ] = @"GetDiagnosticReport",
+    [ EXECUTE_EOD ] = @"EOD",
+    [ SEND_FILE] = @"SendFile",
+    [ NOTIFICATION] = @"Notification",
 };
 
 NSString * const HPA_DOWNLOAD_TIME_toString[] = {
@@ -47,6 +52,17 @@ NSString * const HPA_CARD_GROUP_toString[] = {
 	[ GIFT ] = @"Gift",
 	[ EBT ] = @"EBT",
 	[ ALL ] = @"All"
+};
+NSString * const HPA_SUMMARY_TYPE_toString[] = {
+    
+    [ APPROVED ] = @"APPROVED SAF SUMMARY",
+    [ PENDING ] = @"PENDING SAF SUMMARY",
+    [ DECLINED ] = @"DECLINED SAF SUMMARY",
+    [ OFFLINE_APPROVED ] = @"OFFLINE APPROVED SAF SUMMARY",
+    [ PARTIALLY_APPROVED ] = @"PARTIALLY APPROVED  SAF SUMMARY",
+    [ VOID_APPROVED ] = @"APPROVED SAF VOID SUMMARY",
+    [ VOID_PENDING ] = @"PENDING SAF VOID SUMMARY",
+    [ VOID_DECLINED ] = @"DECLINED SAF VOID SUMMARY"
 };
 
 @end

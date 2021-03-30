@@ -28,14 +28,15 @@
 			self.amountDue = [NSNumber numberWithDouble:self.amountResponse.amountDue];
 			self.tipAmount = [NSNumber numberWithDouble:self.amountResponse.tipAmount];
 			self.cashBackAmount = [NSNumber numberWithDouble:self.amountResponse.cashBackAmount];
+            self.merchantFee = [NSNumber numberWithDouble:self.amountResponse.merchantFee];
 		}
 
 		if (self.accountResponse != nil) {
 			self.maskedCardNumber = self.accountResponse.accountNumber;
-			self.entryMode = self.accountResponse.entryMode;
+			self.entryMode = (int)self.accountResponse.entryMode;
 			self.expirationDate = self.accountResponse.expireDate;
 			self.paymentType = self.accountResponse.cardType;
-			self.cardHolderName = self.accountResponse.cardHolder;
+            self.cardholderName = self.accountResponse.cardHolder;
 			self.cvvResponseCode = self.accountResponse.cvdApprovalCode;
 			self.cvvResponseText = self.accountResponse.cvdMessage;
 			self.cardPresent = self.accountResponse.cardPressent;
@@ -73,10 +74,26 @@
 			self.cardHolderVerificationMethod = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_CUSTOMER_VERIFICATION_METHOD];
 			self.terminalVerficationResult = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_TERMINAL_VERIFICATION_RESULTS];
 
-		}
+		}        
+        if (self.transactionType != nil) {
+            self.transactionType = [self mapTransactionType:self.transactionType];
+        }
 	} @catch (NSException *exception) {
 		NSLog(@"Error on mapResponse");
 	}
+}
+
+- (NSString*) mapTransactionType:(NSString *)txnType{
+    
+    switch([txnType integerValue]) {
+        case 01:
+            return PAX_TRANSACTION_TYPE_toString[SALE];
+        case 02:
+            return PAX_TRANSACTION_TYPE_toString[RETURN];
+        default:
+            return self.transactionType;
+            
+    }
 }
 
 @end

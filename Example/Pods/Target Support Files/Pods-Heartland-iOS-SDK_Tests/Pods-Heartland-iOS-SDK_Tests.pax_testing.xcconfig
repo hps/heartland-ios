@@ -1,9 +1,16 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Heartland-iOS-SDK" "${PODS_CONFIGURATION_BUILD_DIR}/XMLDictionary"
+CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
+EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
+EXCLUDED_ARCHS[sdk=iphonesimulator*] = arm64
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Heartland-iOS-SDK" "${PODS_CONFIGURATION_BUILD_DIR}/XMLDictionary" "${PODS_ROOT}/BBPOS" "${PODS_ROOT}/GlobalPaymentsApi" "${PODS_ROOT}/VitalSDK" "${PODS_XCFRAMEWORKS_BUILD_DIR}/GlobalMobileSDK" "${PODS_XCFRAMEWORKS_BUILD_DIR}/GlobalPaymentsApi"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Heartland-iOS-SDK/Heartland_iOS_SDK.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/XMLDictionary/XMLDictionary.framework/Headers" "${PODS_XCFRAMEWORKS_BUILD_DIR}/BBPOS/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Heartland-iOS-SDK/Heartland_iOS_SDK.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/XMLDictionary/XMLDictionary.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "Heartland_iOS_SDK" -framework "XMLDictionary"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_XCFRAMEWORKS_BUILD_DIR}/BBPOS"
+OTHER_LDFLAGS = $(inherited) -l"BBDevice-BT-3-11-1" -framework "GlobalMobileSDK" -framework "GlobalPaymentsApi" -framework "Heartland_iOS_SDK" -framework "UIKit" -framework "XMLDictionary"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
 PODS_ROOT = ${SRCROOT}/Pods
+PODS_XCFRAMEWORKS_BUILD_DIR = $(PODS_CONFIGURATION_BUILD_DIR)/XCFrameworkIntermediates
+USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES = YES

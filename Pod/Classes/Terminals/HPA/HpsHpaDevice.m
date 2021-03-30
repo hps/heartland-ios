@@ -253,41 +253,77 @@
 
 }
 
-- (void) batchClose:(void(^)(id <IBatchCloseResponse> , NSError*))responseBlock{
+- (void) setSAFMode:(BOOL)isSAF response:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock{
+    NSLog(@"SAF Mode : %d",isSAF);
+    NSString *strSetSAFMode = [NSString stringWithFormat:@"<SIP><Version>1.0</Version><ECRId>1004</ECRId><Request>SetParameter</Request><RequestId>%d</RequestId><FieldCount>1</FieldCount><Key>STORMD</Key><Value>%d</Value></SIP>",[self generateNumber],isSAF?1:0];
+    
+    id<IHPSDeviceMessage> request    = [HpsTerminalUtilities    BuildRequest:strSetSAFMode withFormat:format];
+    
+    [self.interface send:request andResponseBlock:^(NSData *data, NSError *error) {
+        if (error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                responseBlock(nil, error);
+            });
+        }else{
+            //done
+            NSString *dataview = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+            NSLog(@"response xml = \n  : %@", dataview);
+            HpsHpaDeviceResponse *response;
+            @try {
+                //parse data
+                response = [[HpsHpaDeviceResponse alloc]initWithHpaDeviceResponse:data withParameters:nil];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    responseBlock(response, nil);
+                });
+            } @catch (NSException *exception) {
+                NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
+                NSError *error = [NSError errorWithDomain:self->errorDomain
+                                                     code:CocoaError
+                                                 userInfo:userInfo];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    responseBlock(nil, error);
+                });
+            }
+        }
+    }];
+}
 
-	NSString *strBatchClose = [NSString stringWithFormat:@"<SIP><Version>1.0</Version><ECRId>1004</ECRId><Request>CloseBatch</Request></SIP><RequestId>%d</RequestId></SIP>",[self generateNumber]];
-
-	id<IHPSDeviceMessage> request	= [HpsTerminalUtilities	BuildRequest:strBatchClose withFormat:format];
-
-	[self.interface send:request andResponseBlock:^(NSData *data, NSError *error) {
-		if (error) {
-			dispatch_async(dispatch_get_main_queue(), ^{
-				responseBlock(nil, error);
-			});
-		}else{
-				//done
-				//NSString *dataview = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-				//NSLog(@"response xml = \n  : %@", dataview);
-			HpsHpaBatchResponse *response;
-			@try {
-					//parse data
-
-				response = [[HpsHpaBatchResponse alloc]initWithHpaBatchResponse:data withParameters:nil];
-				dispatch_async(dispatch_get_main_queue(), ^{
-					responseBlock(response, nil);
-				});
-			} @catch (NSException *exception) {
-				NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
-				NSError *error = [NSError errorWithDomain:self->errorDomain
-													 code:CocoaError
-												 userInfo:userInfo];
-
-				dispatch_async(dispatch_get_main_queue(), ^{
-					responseBlock(nil, error);
-				});
-			}
-		}
-	}];
+- (void) GetLastResponse:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock{
+    
+    NSString *strGetLastResponse = [NSString stringWithFormat:@"<SIP><Version>1.0</Version><ECRId>1004</ECRId><Request>GetLastResponse</Request><RequestId>%d</RequestId></SIP>",[self generateNumber]];
+    
+    id<IHPSDeviceMessage> request    = [HpsTerminalUtilities    BuildRequest:strGetLastResponse withFormat:format];
+  [self.interface send:request andResponseBlock:^(NSData *data, NSError *error) {
+        if (error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                responseBlock(nil, error);
+            });
+        }else{
+            //done
+            NSString *dataview = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+            NSLog(@"response xml = \n  : %@", dataview);
+            HpsHpaDeviceResponse *response;
+            @try {
+                //parse data
+                response = [[HpsHpaDeviceResponse alloc]initWithHpaDeviceResponse:data withParameters:nil];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    responseBlock(response, nil);
+                });
+            } @catch (NSException *exception) {
+                NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
+                NSError *error = [NSError errorWithDomain:self->errorDomain
+                                                     code:CocoaError
+                                                 userInfo:userInfo];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    responseBlock(nil, error);
+                });
+            }
+        }
+    }];
 }
 
 #pragma mark -
@@ -327,6 +363,121 @@
 			}
 		}
 	}];
+}
+#pragma mark -
+#pragma mark EOD
+-(void)processEODWithRequest:(HpsHpaRequest*)HpsHpaRequest withResponseBlock:(void(^)(HpsHpaEodResponse*, NSError*))responseBlock
+{
+    id<IHPSDeviceMessage> request    = [HpsTerminalUtilities    BuildRequest:HpsHpaRequest.XMLString withFormat:format];
+    
+    [self.interface send:request andResponseBlock:^(NSData *data, NSError *error) {
+        if (error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                responseBlock(nil, error);
+            });
+        }else{
+            //done
+            NSString *dataview = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+            NSLog(@"response xml = \n  : %@", dataview);
+            
+            HpsHpaEodResponse *response;
+            @try {
+                //parse SAF data
+                response = [[HpsHpaEodResponse alloc]initWithHpaEodResponse:data];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    responseBlock(response, nil);
+                });
+            } @catch (NSException *exception) {
+                NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
+                NSError *error = [NSError errorWithDomain:self->errorDomain
+                                                     code:CocoaError
+                                                 userInfo:userInfo];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    responseBlock(nil, error);
+                });
+            }
+        }
+    }];
+}
+#pragma mark -
+#pragma mark SAF
+
+-(void)processSAFWithRequest:(HpsHpaRequest*)HpsHpaRequest withResponseBlock:(void(^)(HpsHpaSafResponse*, NSError*))responseBlock
+{
+    id<IHPSDeviceMessage> request    = [HpsTerminalUtilities    BuildRequest:HpsHpaRequest.XMLString withFormat:format];
+    
+    [self.interface send:request andResponseBlock:^(NSData *data, NSError *error) {
+        if (error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                responseBlock(nil, error);
+            });
+        }else{
+            //done
+            NSString *dataview = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+            NSLog(@"response xml = \n  : %@", dataview);
+            HpsHpaSafResponse *response;
+            @try {
+                //parse SAF data
+                response = [[HpsHpaSafResponse alloc]initWithHpaSafResponse:data];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    responseBlock(response, nil);
+                });
+            } @catch (NSException *exception) {
+              NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
+                NSError *error = [NSError errorWithDomain:self->errorDomain
+                                                     code:CocoaError
+                                                 userInfo:userInfo];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    responseBlock(nil, error);
+                });
+            }
+        }
+    }];
+}
+  
+  #pragma mark -
+#pragma mark Get Diagnostic Report
+- (void) getDiagnosticReport:(HpsHpaRequest*)HpsHpaRequest withResponseBlock:(void(^)(HpsHpaDiagnosticResponse*, NSError*))responseBlock{
+    
+    id<IHPSDeviceMessage> request    = [HpsTerminalUtilities    BuildRequest:HpsHpaRequest.XMLString withFormat:format];
+    
+    [self.interface send:request andResponseBlock:^(NSData *data, NSError *error) {
+        if (error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                responseBlock(nil, error);
+            });
+        }else{
+            
+            //done
+            NSString *dataview = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+            NSLog(@"response xml = \n  : %@", dataview);
+            HpsHpaDiagnosticResponse *response;
+            @try {
+                //parse data
+                response = [[HpsHpaDiagnosticResponse alloc] initWithResponse:data];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    responseBlock(response, nil);
+                });
+                
+            } @catch (NSException *exception) {
+                NSLog(@"exception =%@",exception);
+                NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
+                NSError *error = [NSError errorWithDomain:self->errorDomain
+                                                     code:CocoaError
+                                                 userInfo:userInfo];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    responseBlock(nil, error);
+                });
+            }
+        }
+    }];
 }
 
 #pragma mark -

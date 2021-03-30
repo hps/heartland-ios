@@ -98,7 +98,7 @@
 	NSLog(@"Recipt = %@", recipt);
 
 	[self writeStringToFile:[NSString stringWithFormat:@"Host Reference Number: %@ \n",response.hostResponse.hostReferenceNumber]];
-	[self writeStringToFile:[NSString stringWithFormat:@"Transaction ID: %d \n",response.transactionId]];
+	[self writeStringToFile:[NSString stringWithFormat:@"Transaction ID: %@ \n",response.transactionId]];
 
 	[self writeStringToFile:[NSString stringWithFormat:@"Recipt : %@ \n\n",recipt]];
 

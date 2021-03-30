@@ -499,18 +499,24 @@
 		NSString *strCard = [[cardNumberText.text stringByReplacingOccurrencesOfString:@"-" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
 		if (strCard.length != 15 && strCard.length != 16 && strCard.length != 19) {
 			value = NO;
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid card number" message:@"Please enter a valid card number." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-			[alert show];
+            [self showAlert:@"Invalid card number" withMessage:@"Please enter a valid card number."];
 		}
 	}
 	if (apiKey == nil || [apiKey isEqualToString:@""]) {
 		value = NO;
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid ApiKey" message:@"Please assign a valid apiKey." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-		[alert show];
+        [self showAlert:@"Invalid ApiKey" withMessage:@"Please assign a valid apiKey."];
 	}
 
 	return value;
 
+}
+
+-(void) showAlert:(NSString*)title withMessage:(NSString*)message {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:okAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - Validate Card Types

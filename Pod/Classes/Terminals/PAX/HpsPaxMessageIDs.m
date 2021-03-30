@@ -225,6 +225,9 @@ NSString *const PAX_EXT_DATA_CARD_BIN = @"CARDBIN";
 NSString *const PAX_EXT_DATA_SIGNATURE_STATUS = @"SIGNSTATUS";
 NSString *const PAX_EXT_DATA_TERMINAL_VERIFICATION_RESULTS = @"TVR";
 
+NSString *const PAX_EXT_DATA_MERCHANT_ID = @"MM_ID";
+NSString *const PAX_EXT_DATA_MERCHANT_NAME = @"MM_NAME";
+
 //PAX_CHECK_SALE_TYPE
 NSString *const PAX_CHECK_SALE_TYPE_VERIFICATION = @"V";
 NSString *const PAX_CHECK_SALE_TYPE_CONVERSION = @"C";
@@ -245,5 +248,35 @@ NSString *const PAX_ID_TYPE_COURTESY_CARD = @"C";
 NSString *const PAX_ID_TYPE_PROPRIETARY_CARD = @"P";
 NSString *const PAX_ID_TYPE_MILITARY_BASE = @"B";
 NSString *const PAX_ID_TYPE_PASSPORT_NUMBER = @"A";
+
+//PAX_EDC_TYPE
+NSString *const PAX_EDC_TYPE_ALL = @"00";
+NSString *const PAX_EDC_TYPE_CREDIT = @"01";
+NSString *const PAX_EDC_TYPE_DEBIT = @"02";
+NSString *const PAX_EDC_TYPE_EBT = @"03";
+NSString *const PAX_EDC_TYPE_GIFT = @"04";
+NSString *const PAX_EDC_TYPE_LOYALTY= @"05";
+NSString *const PAX_EDC_TYPE_CASH = @"06";
+NSString *const PAX_EDC_TYPE_CHECK = @"07";
+
+
+NSString * const PAX_SEARCH_CRITERIA_toString[] = {
+    
+    [ TRANSACTION_TYPE ] = @"TransactionType",
+    [ CARD_TYPE ] = @"CardType",
+    [ RECORD_NUMBER ] = @"RecordNumber",
+    [ TERMINAL_REFERENCE_NUMBER ] = @"TerminalReferenceNumber",
+    [ AUTH_CODE ] = @"AuthCode",
+    [ REFERENCE_NUMBER ] = @"ReferenceNumber",
+    [ MERCHANT_ID ] = @"MerchantId",
+    [ MERCHANT_NAME ] = @"MerchantName"
+};
+
+NSString * const PAX_TRANSACTION_TYPE_toString[] = {
+    
+    [ SALE ] = @"Sale",
+    [ RETURN ] = @"Return",
+    
+};
 
 @end

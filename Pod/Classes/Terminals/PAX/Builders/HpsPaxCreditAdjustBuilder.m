@@ -33,6 +33,8 @@
     if (self.transactionNumber != 0) {
         traceRequest.transactionNumber = [NSString stringWithFormat:@"%ld", (long)self.transactionNumber];
     }
+    if (self.clientTransactionId != nil)
+        traceRequest.clientTransactionId = self.clientTransactionId;
     [subgroups addObject:traceRequest];
 
     HpsPaxAvsRequest *avsRequest = [[HpsPaxAvsRequest alloc] init];

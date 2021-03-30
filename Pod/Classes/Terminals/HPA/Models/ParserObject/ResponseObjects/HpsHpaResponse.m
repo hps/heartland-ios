@@ -42,15 +42,23 @@ static int IsFieldEnable;
 	}
 }
 
+-(void)setLastResponse:(HpsLastResponse *)LastResponse{
+    if (LastResponse) {
+        [[HpsHpaSharedParams getInstance]setLastResponseData:LastResponse];
+    }
+}
+
 -(void)setRecord:(Record *)Record
 {
 	if (Record.TableCategory) {
 			//		NSLog(@"TableCategory = %@",Record.TableCategory);
 			//		NSLog(@"Fields = %@", Record.Fields);
 		[[HpsHpaSharedParams getInstance]addParaMeter:Record.TableCategory withValues:Record.Fields];
+        [[HpsHpaSharedParams getInstance]addParamInArray:Record.TableCategory withValues:Record.FieldsArray];
 	}else {
 			//NSLog(@"Extra Fields = %@", Record.Fields);
 		[[HpsHpaSharedParams getInstance]addParaMeter:Record.TableCategory withValues:Record.Fields];
+        [[HpsHpaSharedParams getInstance]addParamInArray:Record.TableCategory withValues:Record.FieldsArray];
 	}
 }
 

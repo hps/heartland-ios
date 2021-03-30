@@ -1,0 +1,11 @@
+framework module Heartland_iOS_SDK {
+  umbrella header "Heartland-iOS-SDK-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module Heartland_iOS_SDK.Swift {
+    header "Heartland_iOS_SDK-Swift.h"
+    requires objc
+}
