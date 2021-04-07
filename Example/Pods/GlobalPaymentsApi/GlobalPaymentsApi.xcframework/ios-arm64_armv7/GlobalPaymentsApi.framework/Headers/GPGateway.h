@@ -4,24 +4,6 @@
 #import <Foundation/Foundation.h>
 #import <GlobalPaymentsApi/GPGatewayResponse.h>
 
-typedef void (^CompletionBlock)(NSData*, NSURLResponse*, NSError*);
-
-@protocol GPURLSessionDataTaskProtocol <NSObject>
-@property (nonatomic, copy) CompletionBlock nextCompletionHandler;
-- (void)resume;
-@end
-
-@protocol GPURLSessionProtocol <NSObject>
-- (id<GPURLSessionDataTaskProtocol>)dataTaskWithRequest:(NSMutableURLRequest*)request
-                                      completionHandler:(void(^)(NSData*, NSURLResponse*, NSError*))responseBlock;
-@end
-
-@interface NSURLSessionDataTask (RequiredExtension) <GPURLSessionDataTaskProtocol>
-@end
-
-@interface NSURLSession (RequiredExtension) <GPURLSessionProtocol>
-@end
-
 /**
  Base gateway class to handle basic HTTP requests. This acts as an HTTP client for the underlying gateway service.
  */
@@ -40,7 +22,7 @@ typedef void (^CompletionBlock)(NSData*, NSURLResponse*, NSError*);
 @property (nonatomic, readwrite) NSString* contentType;
 
 /** URL Session */
-@property (nonatomic, strong) id<GPURLSessionProtocol> session;
+@property (nonatomic, strong) NSURLSession* session;
 
 /**
  Creates a new gateway instance with the defined content type.
@@ -56,7 +38,7 @@ typedef void (^CompletionBlock)(NSData*, NSURLResponse*, NSError*);
  @param session The new session instance for use by the gateway
  @return an updated gateway
  */
-- (id)withURLSession:(id<GPURLSessionProtocol>)session;
+- (id)withURLSession:(NSURLSession*)session;
 
 /**
  Sends an HTTP request to the underlying gateway service

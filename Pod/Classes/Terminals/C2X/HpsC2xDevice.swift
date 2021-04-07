@@ -1,4 +1,5 @@
 import Foundation
+import GlobalMobileSDK
 
 @objcMembers
 public class HpsC2xDevice : GMSDevice, IC2xDeviceInterface {
