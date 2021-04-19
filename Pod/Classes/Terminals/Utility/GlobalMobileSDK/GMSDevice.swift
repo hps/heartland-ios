@@ -7,6 +7,7 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
     public var deviceDelegate: GMSDeviceDelegate?
     public var transactionDelegate: GMSTransactionDelegate?
     public var peripherals: NSMutableArray?
+    public var targetTerminalId: UUID?
     
     public required override init() {
         super.init()
@@ -30,7 +31,7 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
             wrapper.searchDevices()
         }
     }
-
+    
     public func stopScan() {
         if let wrapper = self.gmsWrapper {
             wrapper.cancelSearch()
@@ -69,12 +70,17 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
     }
 
     public func searchComplete() {
+        targetTerminalId = nil
         self.deviceDelegate?.onBluetoothDeviceList(self.peripherals ?? [])
     }
 
     public func deviceFound(_ device: NSObject) {
         if let peripherals = self.peripherals {
             peripherals.add(device)
+        }
+        
+        if let terminal = device as? HpsTerminalInfo, targetTerminalId == terminal.identifier {
+            stopScan()
         }
     }
 
