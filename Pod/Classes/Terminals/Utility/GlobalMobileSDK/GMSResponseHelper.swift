@@ -52,11 +52,13 @@ class GMSResponseHelper {
         data.terminalVerficationResult = resp?.tvr
 
         if let decimalValue = resp?.tip {
-            data.tipAmount = NSNumber(nonretainedObject: decimalValue)
+            let doubleValue = NSDecimalNumber(decimal: decimalValue).doubleValue
+            data.tipAmount = NSNumber(value: doubleValue)
         }
-
+        
         if let decimalValue = resp?.total {
-            data.transactionAmount = NSNumber(nonretainedObject: decimalValue)
+            let doubleValue = NSDecimalNumber(decimal: decimalValue).doubleValue
+            data.transactionAmount = NSNumber(value: doubleValue)
         }
 
         return data
@@ -90,19 +92,21 @@ class GMSResponseHelper {
         data.responseText = resp?.gatewayResponseText
         data.deviceResponseCode = deviceResponseCode
         data.terminalRefNumber = resp?.posReferenceNumber
-//        data.transactionType = HpsC2xEnums.transactionTypeToString(resp?.transactionType)
+        data.transactionType = HpsC2xEnums.transactionTypeToString(.Return)
         data.applicationId = resp?.aid
         data.applicationName = resp?.applicationLabel
         data.cardholderName = resp?.cardholderName
         data.applicationCrytptogram = resp?.applicationCryptogram
         data.terminalVerficationResult = resp?.tvr
-
+        
         if let decimalValue = resp?.tip {
-            data.tipAmount = NSNumber(nonretainedObject: decimalValue)
+            let doubleValue = NSDecimalNumber(decimal: decimalValue).doubleValue
+            data.tipAmount = NSNumber(value: doubleValue)
         }
-
+        
         if let decimalValue = resp?.total {
-            data.transactionAmount = NSNumber(nonretainedObject: decimalValue)
+            let doubleValue = NSDecimalNumber(decimal: decimalValue).doubleValue
+            data.transactionAmount = NSNumber(value: doubleValue)
         }
         
         return data
@@ -122,19 +126,21 @@ class GMSResponseHelper {
         data.responseText = resp?.gatewayResponseText
         data.deviceResponseCode = deviceResponseCode
         data.terminalRefNumber = resp?.posReferenceNumber
-//        data.transactionType = HpsC2xEnums.transactionTypeToString(resp?.transactionType)
+        data.transactionType = HpsC2xEnums.transactionTypeToString(.Sale)
         data.applicationId = resp?.aid
         data.applicationName = resp?.applicationLabel
         data.cardholderName = resp?.cardholderName
         data.applicationCrytptogram = resp?.applicationCryptogram
         data.terminalVerficationResult = resp?.tvr
-
+        
         if let decimalValue = resp?.tip {
-            data.tipAmount = NSNumber(nonretainedObject: decimalValue)
+            let doubleValue = NSDecimalNumber(decimal: decimalValue).doubleValue
+            data.tipAmount = NSNumber(value: doubleValue)
         }
-
+        
         if let decimalValue = resp?.total {
-            data.transactionAmount = NSNumber(nonretainedObject: decimalValue)
+            let doubleValue = NSDecimalNumber(decimal: decimalValue).doubleValue
+            data.transactionAmount = NSNumber(value: doubleValue)
         }
         
         return data
@@ -152,7 +158,7 @@ class GMSResponseHelper {
         data.responseText = resp?.gatewayResponseText
         data.deviceResponseCode = deviceResponseCode
         data.terminalRefNumber = resp?.posReferenceNumber
-//        data.transactionType = HpsC2xEnums.transactionTypeToString(resp?.transactionType)
+        data.transactionType = HpsC2xEnums.transactionTypeToString(.Void)
 
         return data
     }

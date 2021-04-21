@@ -171,8 +171,9 @@ extension GMSWrapper: TransactionDelegate {
 
         data.transactionId = response?.gatewayTransactionId
         
-        if let approvedAmount = response?.approvedAmount {
-            data.approvedAmount = NSNumber(nonretainedObject: approvedAmount);
+        if let decimalValue = response?.approvedAmount {
+            let doubleValue = NSDecimalNumber(decimal: decimalValue).doubleValue
+            data.approvedAmount = NSNumber(value: doubleValue)
         }
 
         if let b = self.builder {
