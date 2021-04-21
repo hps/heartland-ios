@@ -83,7 +83,7 @@
     HpsC2xCreditSaleBuilder *builder = [[HpsC2xCreditSaleBuilder alloc] init];
     builder.device = self.device;
     builder.amount = [[NSDecimalNumber alloc] initWithDouble:11.00];
-    builder.gratuity = [[NSDecimalNumber alloc] initWithDouble:0.0];
+    builder.gratuity = [[NSDecimalNumber alloc] initWithDouble:1.0];
     builder.creditCard = [self getCC];
     self.device.transactionDelegate = self;
     [builder execute];
@@ -91,6 +91,10 @@
         if(error) XCTFail(@"Request Timed out");
         XCTAssertNotNil(self.response);
         XCTAssertEqualObjects(@"APPROVAL", self.response.deviceResponseCode);
+        NSLog(@"approved amount: %@", self.response.approvedAmount);
+        NSLog(@"gratuity amount: %@", self.response.tipAmount);
+        XCTAssertNotNil(self.response.approvedAmount);
+        XCTAssertTrue(self.response.approvedAmount > 0);
     }];
     XCTAssert(YES, @"Device Connected");
 }
