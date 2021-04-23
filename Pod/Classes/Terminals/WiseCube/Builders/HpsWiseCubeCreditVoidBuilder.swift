@@ -5,9 +5,8 @@ public class HpsWiseCubeCreditVoidBuilder : HpsWiseCubeBaseBuilder, GMSCreditVoi
     public var referenceNumber: String?
     public var transactionId: String?
     
-    public required init() {
-        super.init()
-        self.transactionType = .creditVoid
+    public init(device: HpsWiseCubeDevice) {
+        super.init(transactionType: .creditVoid, device: device)
     }
     
     public override func buildRequest() -> Transaction? {

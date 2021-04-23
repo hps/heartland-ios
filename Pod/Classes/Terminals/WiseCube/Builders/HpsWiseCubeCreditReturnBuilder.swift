@@ -6,9 +6,8 @@ public class HpsWiseCubeCreditReturnBuilder : HpsWiseCubeBaseBuilder, GMSCreditR
     public var referenceNumber: String?
     public var transactionId: String?
     
-    public required init() {
-        super.init()
-        self.transactionType = .creditReturn
+    public init(device: HpsWiseCubeDevice) {
+        super.init(transactionType: .creditReturn, device: device)
     }
     
     public override func buildRequest() -> Transaction? {

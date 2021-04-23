@@ -10,9 +10,8 @@ public class HpsWiseCubeCreditAdjustBuilder : HpsWiseCubeBaseBuilder, GMSCreditA
     public var cardHolderName: String?
     public var address: HpsAddress?
 
-    public required init() {
-        super.init()
-        self.transactionType = .creditAdjust
+    public init(device: HpsWiseCubeDevice) {
+        super.init(transactionType: .creditAdjust, device: device)
     }
     
     public override func buildRequest() -> Transaction? {

@@ -11,9 +11,8 @@ public class HpsWiseCubeCreditAuthBuilder : HpsWiseCubeBaseBuilder, GMSCreditAut
     public var creditCard: HpsCreditCard?
     public var address: HpsAddress?
     
-    public required init() {
-        super.init()
-        self.transactionType = .creditAuth
+    public init(device: HpsWiseCubeDevice) {
+        super.init(transactionType: .creditAuth, device: device)
     }
     
     public override func buildRequest() -> Transaction? {

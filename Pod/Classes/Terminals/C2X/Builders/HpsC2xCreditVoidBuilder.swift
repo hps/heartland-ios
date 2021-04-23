@@ -5,9 +5,8 @@ public class HpsC2xCreditVoidBuilder : HpsC2xBaseBuilder, GMSCreditVoidBuilder {
     public var referenceNumber: String?
     public var transactionId: String?
     
-    public required init() {
-        super.init()
-        self.transactionType = .creditVoid
+    public init(device: HpsC2xDevice) {
+        super.init(transactionType: .creditVoid, device: device)
     }
     
     public override func buildRequest() -> Transaction? {

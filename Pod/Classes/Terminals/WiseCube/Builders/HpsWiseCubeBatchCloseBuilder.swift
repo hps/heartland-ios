@@ -2,9 +2,8 @@ import Foundation
 
 @objcMembers
 public class HpsWiseCubeBatchCloseBuilder : HpsWiseCubeBaseBuilder, GMSBatchCloseBuilder {
-    public required init() {
-        super.init()
-        self.transactionType = .batchClose
+    public init(device: HpsWiseCubeDevice) {
+        super.init(transactionType: .batchClose, device: device)
     }
     
     public override func buildRequest() -> Transaction? {
