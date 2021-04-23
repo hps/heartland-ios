@@ -7,9 +7,8 @@ public class HpsWiseCubeCreditCaptureBuilder : HpsWiseCubeBaseBuilder, GMSCredit
     public var gratuity: NSDecimalNumber?
     public var transactionId: String?
     
-    public required init() {
-        super.init()
-        self.transactionType = .creditCapture
+    public init(device: HpsWiseCubeDevice) {
+        super.init(transactionType: .creditCapture, device: device)
     }
     
     public override func buildRequest() -> Transaction? {

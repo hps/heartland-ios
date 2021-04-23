@@ -11,9 +11,8 @@ public class HpsC2xCreditSaleBuilder : HpsC2xBaseBuilder, GMSCreditSaleBuilder {
     public var creditCard: HpsCreditCard?
     public var address: HpsAddress?
     
-    public required init() {
-        super.init()
-        self.transactionType = .creditSale
+    public init(device: HpsC2xDevice) {
+        super.init(transactionType: .creditSale, device: device)
     }
     
     public override func buildRequest() -> Transaction? {

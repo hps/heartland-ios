@@ -80,8 +80,7 @@
     [self.device initialize];
     self.device.deviceDelegate = self;
     transactionExpectation = [self expectationWithDescription:@"test_C2X_Credit_Sale_Manual"];
-    HpsC2xCreditSaleBuilder *builder = [[HpsC2xCreditSaleBuilder alloc] init];
-    builder.device = self.device;
+    HpsC2xCreditSaleBuilder *builder = [[HpsC2xCreditSaleBuilder alloc] initWithDevice:self.device];
     builder.amount = [[NSDecimalNumber alloc] initWithDouble:11.00];
     builder.gratuity = [[NSDecimalNumber alloc] initWithDouble:1.0];
     builder.creditCard = [self getCC];
@@ -108,8 +107,7 @@
     [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
         if(error) XCTFail(@"Request Timed out");
         transactionExpectation = [self expectationWithDescription:@"test_C2X_Credit_Sale"];
-        HpsC2xCreditSaleBuilder *builder = [[HpsC2xCreditSaleBuilder alloc] init];
-        builder.device = self.device;
+        HpsC2xCreditSaleBuilder *builder = [[HpsC2xCreditSaleBuilder alloc] initWithDevice:self.device];
         builder.amount = [[NSDecimalNumber alloc]initWithDouble:12.00];
         builder.gratuity = [[NSDecimalNumber alloc]initWithDouble:0.0];
         self.device.transactionDelegate = self;
@@ -129,8 +127,7 @@
     [self.device initialize];
     self.device.deviceDelegate = self;
     transactionExpectation = [self expectationWithDescription:@"test_C2X_CreditSale"];
-    HpsC2xCreditAuthBuilder *builder = [[HpsC2xCreditAuthBuilder alloc] init];
-    builder.device = self.device;
+    HpsC2xCreditAuthBuilder *builder = [[HpsC2xCreditAuthBuilder alloc] initWithDevice:self.device];
     builder.amount = [[NSDecimalNumber alloc]initWithDouble:11.00];
     builder.gratuity = [[NSDecimalNumber alloc]initWithDouble:0.0];
     builder.creditCard = [self getCC];
@@ -150,7 +147,7 @@
     [self.device initialize];
     self.device.deviceDelegate = self;
     transactionExpectation = [self expectationWithDescription:@"test_C2X_Credit_Auth_Manual"];
-    HpsC2xCreditAuthBuilder *builder = [HpsC2xCreditAuthBuilder initWithDevice:self.device];
+    HpsC2xCreditAuthBuilder *builder = [[HpsC2xCreditAuthBuilder alloc] initWithDevice:self.device];
     builder.amount = [[NSDecimalNumber alloc] initWithDouble:11.00];
     builder.gratuity = [[NSDecimalNumber alloc] initWithDouble:0.0];
     builder.creditCard = [self getCC];
@@ -161,7 +158,7 @@
         XCTAssertNotNil(self.response);
         XCTAssertEqualObjects(@"APPROVAL", self.response.deviceResponseCode);
         transactionExpectation = [self expectationWithDescription:@"test_C2X_Credit_Capture"];
-        HpsC2xCreditCaptureBuilder *builder = [HpsC2xCreditCaptureBuilder initWithDevice:self.device];
+        HpsC2xCreditCaptureBuilder *builder = [[HpsC2xCreditCaptureBuilder alloc] initWithDevice:self.device];
         builder.amount = [[NSDecimalNumber alloc]initWithDouble:11.00];
         builder.transactionId = self.response.transactionId;
         builder.referenceNumber = self.response.terminalRefNumber;
@@ -209,7 +206,7 @@
     [self.device initialize];
     self.device.deviceDelegate = self;
     transactionExpectation = [self expectationWithDescription:@"test_C2X_Credit_Sale_Manual"];
-    HpsC2xCreditSaleBuilder *builder = [HpsC2xCreditSaleBuilder initWithDevice:self.device];
+    HpsC2xCreditSaleBuilder *builder = [[HpsC2xCreditSaleBuilder alloc] initWithDevice:self.device];
     builder.amount = [[NSDecimalNumber alloc] initWithDouble:11.00];
     builder.gratuity = [[NSDecimalNumber alloc] initWithDouble:0.0];
     builder.creditCard = [self getCC];
@@ -220,7 +217,7 @@
         XCTAssertNotNil(self.response);
         XCTAssertEqualObjects(@"APPROVAL", self.response.deviceResponseCode);
         transactionExpectation = [self expectationWithDescription:@"test_C2X_Credit_Refund"];
-        HpsC2xCreditReturnBuilder *builder = [HpsC2xCreditReturnBuilder initWithDevice:self.device];
+        HpsC2xCreditReturnBuilder *builder = [[HpsC2xCreditReturnBuilder alloc] initWithDevice:self.device];
         builder.amount = [[NSDecimalNumber alloc]initWithDouble:1.00];
         builder.transactionId = self.response.transactionId;
         builder.referenceNumber = self.response.terminalRefNumber;
@@ -242,7 +239,7 @@
     [self.device initialize];
     self.device.deviceDelegate = self;
     transactionExpectation = [self expectationWithDescription:@"test_C2X_Credit_Auth_Manual"];
-    HpsC2xCreditAuthBuilder *builder = [HpsC2xCreditAuthBuilder initWithDevice:self.device];
+    HpsC2xCreditAuthBuilder *builder = [[HpsC2xCreditAuthBuilder alloc] initWithDevice:self.device];
     builder.amount = [[NSDecimalNumber alloc] initWithDouble:11.00];
     builder.gratuity = [[NSDecimalNumber alloc] initWithDouble:0.0];
     builder.creditCard = [self getCC];
@@ -253,7 +250,7 @@
         XCTAssertNotNil(self.response);
         XCTAssertEqualObjects(@"APPROVAL", self.response.deviceResponseCode);
         transactionExpectation = [self expectationWithDescription:@"test_C2X_Credit_Void"];
-        HpsC2xCreditVoidBuilder *builder = [HpsC2xCreditVoidBuilder initWithDevice:self.device];
+        HpsC2xCreditVoidBuilder *builder = [[HpsC2xCreditVoidBuilder alloc] initWithDevice:self.device];
         builder.transactionId = self.response.transactionId;
         builder.referenceNumber = self.response.terminalRefNumber;
         self.device.transactionDelegate = self;
@@ -274,7 +271,7 @@
     [self.device initialize];
     self.device.deviceDelegate = self;
     transactionExpectation = [self expectationWithDescription:@"test_C2X_Credit_Sale_Manual"];
-    HpsC2xCreditSaleBuilder *builder = [HpsC2xCreditSaleBuilder initWithDevice:self.device];
+    HpsC2xCreditSaleBuilder *builder = [[HpsC2xCreditSaleBuilder alloc] initWithDevice:self.device];
     builder.amount = [[NSDecimalNumber alloc] initWithDouble:10.00];
     builder.gratuity = [[NSDecimalNumber alloc] initWithDouble:0.0];
     builder.creditCard = [self getCC];
@@ -285,8 +282,7 @@
         XCTAssertNotNil(self.response);
         XCTAssertEqualObjects(@"APPROVAL", self.response.deviceResponseCode);
         transactionExpectation = [self expectationWithDescription:@"test_C2X_Credit_Adjust"];
-        HpsC2xCreditAdjustBuilder *builder = [[HpsC2xCreditAdjustBuilder alloc] init];
-        builder.device = self.device;
+        HpsC2xCreditAdjustBuilder *builder = [[HpsC2xCreditAdjustBuilder alloc] initWithDevice:self.device];
         builder.amount = [[NSDecimalNumber alloc]initWithDouble: 11.00];
         builder.gratuity = [[NSDecimalNumber alloc]initWithDouble: 1.00];
         builder.transactionId = self.response.transactionId;
@@ -310,8 +306,7 @@
     [self.device initialize];
     self.device.deviceDelegate = self;
     transactionExpectation = [self expectationWithDescription:@"test_C2X_Batch_Close"];
-    HpsC2xBatchCloseBuilder *builder = [[HpsC2xBatchCloseBuilder alloc] init];
-    builder.device = self.device;
+    HpsC2xBatchCloseBuilder *builder = [[HpsC2xBatchCloseBuilder alloc] initWithDevice:self.device];
     self.device.transactionDelegate = self;
     [builder execute];
     [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
