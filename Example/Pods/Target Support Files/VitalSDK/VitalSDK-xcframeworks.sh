@@ -149,5 +149,5 @@ install_xcframework() {
   echo "Copied $source to $destination"
 }
 
-install_xcframework "${PODS_ROOT}/VitalSDK/GlobalMobileSDK.xcframework" "GlobalMobileSDK" "framework" "ios-x86_64-simulator" "ios-arm64"
+install_xcframework "${PODS_ROOT}/VitalSDK/GlobalMobileSDK.xcframework" "GlobalMobileSDK" "framework" "ios-arm64" "ios-x86_64-simulator"
 

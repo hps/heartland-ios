@@ -18,6 +18,7 @@
 				A543BAAE029D214CAEBF8EF6235C873E /* PBXTargetDependency */,
 			);
 			name = VitalSDK;
+			productName = VitalSDK;
 		};
 		14FF852C7788D6F4135616C400496AB0 /* BBPOS */ = {
 			isa = PBXAggregateTarget;
@@ -28,6 +29,7 @@
 			dependencies = (
 			);
 			name = BBPOS;
+			productName = BBPOS;
 		};
 		7B4413BA6BD59E726C99DEAC08EF1125 /* GlobalPaymentsApi */ = {
 			isa = PBXAggregateTarget;
@@ -38,6 +40,7 @@
 			dependencies = (
 			);
 			name = GlobalPaymentsApi;
+			productName = GlobalPaymentsApi;
 		};
 /* End PBXAggregateTarget section */
 
@@ -558,7 +561,7 @@
 		036CBF857A54157309FDAF8208DE843F /* HpsGatewayData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsGatewayData.h; sourceTree = "<group>"; };
 		044CE31511D5045D4429E26D2395316A /* XMLDictionary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XMLDictionary.debug.xcconfig; sourceTree = "<group>"; };
 		04698B84E8BC873C8AE38B6C53A37043 /* HpsPaxGiftBalanceBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxGiftBalanceBuilder.m; sourceTree = "<group>"; };
-		046FF8C9F2C2015141232D43B402D804 /* LICENSE.md */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.md; sourceTree = "<group>"; };
+		046FF8C9F2C2015141232D43B402D804 /* LICENSE.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		05EC6D81350FAA06F68B9646EC414C71 /* XMLDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XMLDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		06AB2AAE3488CC4C86685E11E5FB06AD /* HpsRestGateway.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsRestGateway.m; sourceTree = "<group>"; };
 		071250A4577F4044912352451B612F8F /* HpsPaxLocalDetailResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxLocalDetailResponse.m; sourceTree = "<group>"; };
@@ -591,7 +594,7 @@
 		16540897D7CB104075DA211CAD433A19 /* HpsPaxDebitReturnBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxDebitReturnBuilder.h; sourceTree = "<group>"; };
 		16A0A4245CED7A005CA2E0CAEA379388 /* Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig"; sourceTree = "<group>"; };
 		1797CD8CF948204FC1BCD194AB6A19C1 /* HpsTableServiceResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsTableServiceResponse.m; sourceTree = "<group>"; };
-		17EF20E439A9C8C01326CF64D41D3574 /* Heartland_iOS_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Heartland_iOS_SDK.framework; path = "Heartland-iOS-SDK.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		17EF20E439A9C8C01326CF64D41D3574 /* Heartland_iOS_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Heartland_iOS_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18211B7B0EBF89DD4AAC8A0B215E554A /* Pods-Heartland-iOS-SDK_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Heartland-iOS-SDK_Example-frameworks.sh"; sourceTree = "<group>"; };
 		189FAD09C5EF4E9536413A1346B5A9AC /* icon_amex.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_amex.png; path = Pod/Assets/icon_amex.png; sourceTree = "<group>"; };
 		1A1FF3C94818A2A82071DDF2D93AAEFF /* HpsHpaHeartBeatResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsHpaHeartBeatResponse.m; sourceTree = "<group>"; };
@@ -601,7 +604,7 @@
 		1B51C167C036109D92BB6E1CD34BC66F /* HpsCardEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsCardEntry.h; sourceTree = "<group>"; };
 		1B76FC6D76AAFADAA3FD513B1C219627 /* HpsPaxCheckResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxCheckResponse.m; sourceTree = "<group>"; };
 		1BF7DFC48990AC78ACE96FF45068FFDA /* GMSError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GMSError.swift; sourceTree = "<group>"; };
-		1C0145BEC8AF694DEF45A92DD7EEA01B /* GlobalMobileSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = GlobalMobileSDK.xcframework; sourceTree = "<group>"; };
+		1C0145BEC8AF694DEF45A92DD7EEA01B /* GlobalMobileSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = GlobalMobileSDK.xcframework; sourceTree = "<group>"; };
 		1D0E3CC27BA836A7A573B443A52176D0 /* HpsJsonDoc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsJsonDoc.h; sourceTree = "<group>"; };
 		1DF69CEA3C6B0AD51D81BB4B2C666C05 /* HpsHpaCreditSaleBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsHpaCreditSaleBuilder.m; sourceTree = "<group>"; };
 		1E48B20AD5EF9990AB9875654F9D2414 /* HpsPaxAvsResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxAvsResponse.h; sourceTree = "<group>"; };
@@ -646,7 +649,7 @@
 		2D4E1DAE944D2F32939525D11ECB1277 /* HpsPaxExtDataSubGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxExtDataSubGroup.m; sourceTree = "<group>"; };
 		2E1962CF1D9334A0E7BEC18C7EF19706 /* HpsPaxAmountResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxAmountResponse.h; sourceTree = "<group>"; };
 		2E310546F7F98FB21FAB9B5039493146 /* HpaEnums.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpaEnums.h; sourceTree = "<group>"; };
-		2E4F8F3D43D84113A058531959EDDCD3 /* Heartland-iOS-SDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "Heartland-iOS-SDK.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2E4F8F3D43D84113A058531959EDDCD3 /* Heartland-iOS-SDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = "Heartland-iOS-SDK.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2EFF7104B33AD08EEFD8690495C4BB50 /* HpsWiseCubeCreditAdjustBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HpsWiseCubeCreditAdjustBuilder.swift; sourceTree = "<group>"; };
 		2F107C30A3B3A232A4A75B3C8AAE2056 /* HpsHpaBaseResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHpaBaseResponse.h; sourceTree = "<group>"; };
 		2F3817F7DBD9CDB15917184D43C84FEB /* HpsPaxCreditVerifyBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxCreditVerifyBuilder.m; sourceTree = "<group>"; };
@@ -656,7 +659,7 @@
 		321A776EC38B79C4FC64C9A6BE47D7DB /* HpsCardData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsCardData.m; sourceTree = "<group>"; };
 		3287FC6A35D0C985266BABAD1BA41F2F /* HpsC2xDeviceDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HpsC2xDeviceDelegate.swift; sourceTree = "<group>"; };
 		32B86C6812EE69854CB0ED6498EE2D03 /* HpsPaxCommercialResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxCommercialResponse.m; sourceTree = "<group>"; };
-		33A566FEB9CFABFB942DB6C5F79E7320 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		33A566FEB9CFABFB942DB6C5F79E7320 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		33C742FA879A5A7F8AC35619A834C6C3 /* HpsServiceConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsServiceConfig.h; sourceTree = "<group>"; };
 		3740F2A10D609BF0F578B74D151F2073 /* CardSummary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CardSummary.m; sourceTree = "<group>"; };
 		3746B2017548D014832A92D054EE7E2E /* HpsPaxBaseResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxBaseResponse.h; sourceTree = "<group>"; };
@@ -673,7 +676,7 @@
 		3FCF40524B074E4CD1F526C80F29EC32 /* XMLDictionary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "XMLDictionary-dummy.m"; sourceTree = "<group>"; };
 		409E86924700D804F5C50074D8D344B6 /* HpsHpaSendFileBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHpaSendFileBuilder.h; sourceTree = "<group>"; };
 		4183FBEC38A49ABCB4D5AF95984A9729 /* HpsPaxGiftActivateBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxGiftActivateBuilder.h; sourceTree = "<group>"; };
-		427F9BB12A3C9D9E3ECCB0E4E6370424 /* Pods_Heartland_iOS_SDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Heartland_iOS_SDK_Tests.framework; path = "Pods-Heartland-iOS-SDK_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		427F9BB12A3C9D9E3ECCB0E4E6370424 /* Pods_Heartland_iOS_SDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartland_iOS_SDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42CE64762D3DA74933DE6546F593463D /* Pods-Heartland-iOS-SDK_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Heartland-iOS-SDK_Tests-dummy.m"; sourceTree = "<group>"; };
 		42FDAC6B2C565DE73F057EBC3E6CAEE6 /* HpsHpaEBTRefundBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHpaEBTRefundBuilder.h; sourceTree = "<group>"; };
 		434EA1DCC21B2773D5E90E24FD22E877 /* HpsPaxTcpInterface.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxTcpInterface.m; sourceTree = "<group>"; };
@@ -794,8 +797,8 @@
 		8779FC9CF7024845810313EBC607C4B0 /* HpsHpaParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHpaParser.h; sourceTree = "<group>"; };
 		879A7AAD26112884F437D9D33B030661 /* Pods-Heartland-iOS-SDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Heartland-iOS-SDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		87A0372D9D3A6836C12B9E71870039C0 /* HpsPaxDevice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxDevice.h; sourceTree = "<group>"; };
-		88E061C7193F298D1870D99CFCE39CAF /* Heartland-iOS-SDK.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Heartland-iOS-SDK.bundle"; path = "Heartland-iOS-SDK-Heartland-iOS-SDK.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B2D4B0CFB6BDBE0DFC2C0605DCD5BBD /* Pods_Heartland_iOS_SDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Heartland_iOS_SDK_Example.framework; path = "Pods-Heartland-iOS-SDK_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		88E061C7193F298D1870D99CFCE39CAF /* Heartland-iOS-SDK.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Heartland-iOS-SDK.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B2D4B0CFB6BDBE0DFC2C0605DCD5BBD /* Pods_Heartland_iOS_SDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartland_iOS_SDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B4180B8776268634651028E0B8D4FE7 /* HpsPaxCreditAuthBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxCreditAuthBuilder.h; sourceTree = "<group>"; };
 		8C534B01C41DA97E1BF7D61848EF8541 /* HpsTerminalInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HpsTerminalInfo.swift; sourceTree = "<group>"; };
 		8C5F63B53014594943BC60076EC376F9 /* HpsHpaSharedParams.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsHpaSharedParams.m; sourceTree = "<group>"; };
@@ -814,7 +817,7 @@
 		9C48CA9DECF3F6E0A9875717DBA6AC7F /* HpsLoginResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsLoginResponse.m; sourceTree = "<group>"; };
 		9CA8FBF3F09A6C33162E222AEA26353B /* heartlandlogo.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = heartlandlogo.png; path = Pod/Assets/heartlandlogo.png; sourceTree = "<group>"; };
 		9D641A150EBF27D12F392C76005E5138 /* HpsCardEntry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsCardEntry.m; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E4465AE3715B9578DCF0D1EEDD9C4BD /* HpsHpaGiftAddValueBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHpaGiftAddValueBuilder.h; sourceTree = "<group>"; };
 		9E5B8D6F2A70CD90C2E5A2CCC9BE9793 /* HpsBasePayrollResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsBasePayrollResponse.h; sourceTree = "<group>"; };
 		9E68F45A30DC4D8A21AB2FE5C1E5A733 /* HpsHpaGiftBalanceBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHpaGiftBalanceBuilder.h; sourceTree = "<group>"; };
@@ -888,7 +891,7 @@
 		C85881D7084A5762E670EE77CA5F26D3 /* HpsPaxBatchCloseResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxBatchCloseResponse.h; sourceTree = "<group>"; };
 		C862C94E9E187C5755D721442D96EE98 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		C9B4BF39FDD5348BD965C6B9001EF17A /* HpsHpaEodResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHpaEodResponse.h; sourceTree = "<group>"; };
-		C9D10D63EBB783DD714A6E9228B6EF00 /* XMLDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = XMLDictionary.framework; path = XMLDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9D10D63EBB783DD714A6E9228B6EF00 /* XMLDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XMLDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB8B10DAF1EE9AC0D743FE8D55513EDC /* icon_card_empty.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_card_empty.png; path = Pod/Assets/icon_card_empty.png; sourceTree = "<group>"; };
 		CBB78AFAFF08561137B42D07244A94CA /* HpsServerAssignmentResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsServerAssignmentResponse.m; sourceTree = "<group>"; };
 		CBC8E0CA2EFA33B915DF7662C3CDA645 /* HpsHpaEBTRefundBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsHpaEBTRefundBuilder.m; sourceTree = "<group>"; };
@@ -951,9 +954,9 @@
 		E8B853DD2FDFE9A66C0759F64CDEED5F /* HpsPaxAmountResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxAmountResponse.m; sourceTree = "<group>"; };
 		E8B893A927F8D9AE3216788DD67E20A7 /* HpsTokenData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsTokenData.m; sourceTree = "<group>"; };
 		E9440F159FA02C4C0815152A6E0AD454 /* HpsHpaSafBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHpaSafBuilder.h; sourceTree = "<group>"; };
-		EB431A45060C6DCADCBC60091C7D647B /* GlobalPaymentsApi.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = GlobalPaymentsApi.xcframework; sourceTree = "<group>"; };
+		EB431A45060C6DCADCBC60091C7D647B /* GlobalPaymentsApi.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = GlobalPaymentsApi.xcframework; sourceTree = "<group>"; };
 		EC9231A34B0470ACC486932A9958B3BE /* HpsLaborField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsLaborField.m; sourceTree = "<group>"; };
-		ED0F95BAE18CEABF9F9F66875D31C898 /* BBPOS.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = BBPOS.xcframework; sourceTree = "<group>"; };
+		ED0F95BAE18CEABF9F9F66875D31C898 /* BBPOS.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = BBPOS.xcframework; sourceTree = "<group>"; };
 		EDC3B2E4A86066D93DEBF2D173391368 /* HpsPaxMessageIDs.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxMessageIDs.m; sourceTree = "<group>"; };
 		EDC8FA793DB64071B09C414BCAD20B86 /* HpsAdditionalTxnFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsAdditionalTxnFields.h; sourceTree = "<group>"; };
 		EE31B189B2ABF6102A3BE6B6D512BB57 /* Heartland-iOS-SDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Heartland-iOS-SDK-dummy.m"; sourceTree = "<group>"; };
@@ -1050,7 +1053,6 @@
 				8C7AE66C6844EEF5464D707EFB0BD716 /* EBT */,
 				961534D6547B42B965988F52C5C1BDE2 /* Gift */,
 			);
-			name = Builders;
 			path = Builders;
 			sourceTree = "<group>";
 		};
@@ -1079,7 +1081,6 @@
 				BE8D32725AF3E07B6A19F8C40CA6A38C /* HpsPaxTcpInterface.h */,
 				434EA1DCC21B2773D5E90E24FD22E877 /* HpsPaxTcpInterface.m */,
 			);
-			name = Interfaces;
 			path = Interfaces;
 			sourceTree = "<group>";
 		};
@@ -1091,7 +1092,6 @@
 				E12A166CDE2B677FDFB29AEA8FB6F7B4 /* HpsHpaDebitSaleBuilder.h */,
 				C7DE6B12CE76C453F4B0A2578AFBFCB2 /* HpsHpaDebitSaleBuilder.m */,
 			);
-			name = Debit;
 			path = Debit;
 			sourceTree = "<group>";
 		};
@@ -1151,7 +1151,6 @@
 				932DEDB9993AA962457E5C44AEE7D9C9 /* HpsPaxTraceResponse.h */,
 				ABDDC247076C4AAFCD6F60D2224A031D /* HpsPaxTraceResponse.m */,
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -1201,7 +1200,6 @@
 				92D266EF54FA7E8D71B3CC4281A1F181 /* Frameworks */,
 				CA6F85CFB3E0D08A6D29F51E94321AFC /* Support Files */,
 			);
-			name = GlobalPaymentsApi;
 			path = GlobalPaymentsApi;
 			sourceTree = "<group>";
 		};
@@ -1211,7 +1209,6 @@
 				4806920B1C1A613310A2C11A8EAD7F70 /* HpsHpaTcpInterface.h */,
 				6935B4BA3E045D0AF5042F11A0754F92 /* HpsHpaTcpInterface.m */,
 			);
-			name = Interfaces;
 			path = Interfaces;
 			sourceTree = "<group>";
 		};
@@ -1261,7 +1258,6 @@
 				015AB65CF04864E0D3D5DAAFD8FA8288 /* GMSDeviceInterface.swift */,
 				395DD653D3B37C3FD7E15C45AA6DABEA /* GMSTransactionDelegate.swift */,
 			);
-			name = Protocols;
 			path = Protocols;
 			sourceTree = "<group>";
 		};
@@ -1346,7 +1342,6 @@
 				BAFB85D835047C81A6DF109C95DDC5EF /* TransactionSummaryRecord.h */,
 				F185B08D88F0CC890308B2401CB8DFB8 /* TransactionSummaryRecord.m */,
 			);
-			name = ResponseObjects;
 			path = ResponseObjects;
 			sourceTree = "<group>";
 		};
@@ -1404,7 +1399,6 @@
 				E9440F159FA02C4C0815152A6E0AD454 /* HpsHpaSafBuilder.h */,
 				4D48F37AFD2B90E68C680F1E7B9CAECA /* HpsHpaSafBuilder.m */,
 			);
-			name = Credit;
 			path = Credit;
 			sourceTree = "<group>";
 		};
@@ -1427,7 +1421,6 @@
 				0FEBAC426071CE276253D650836AEFA5 /* Interfaces */,
 				1CDF1EBE08BC0BD835A6C0A4572EABDD /* Models */,
 			);
-			name = PAX;
 			path = PAX;
 			sourceTree = "<group>";
 		};
@@ -1515,7 +1508,6 @@
 				08C0514B444CA4A6794FC248338AA7C3 /* HpsWiseCubeCreditSaleBuilder.swift */,
 				D05D33DE0DD067BCEC099119188358C2 /* HpsWiseCubeCreditVoidBuilder.swift */,
 			);
-			name = Builders;
 			path = Builders;
 			sourceTree = "<group>";
 		};
@@ -1529,7 +1521,6 @@
 				B6A32EF5A8850ADDBFCE2E33CE828D34 /* HpsHpaEBTSaleBuilder.h */,
 				B6A39F4CF2647B5058A3A2FA5753BDE0 /* HpsHpaEBTSaleBuilder.m */,
 			);
-			name = EBT;
 			path = EBT;
 			sourceTree = "<group>";
 		};
@@ -1559,7 +1550,6 @@
 				4CED521055235FF0890FCA58F9C9A3F8 /* HpsWiseCubeDevice.swift */,
 				8A5FDA6926230DA75B36E28A8918893F /* Builders */,
 			);
-			name = WiseCube;
 			path = WiseCube;
 			sourceTree = "<group>";
 		};
@@ -1575,7 +1565,6 @@
 				474E1E1F2993B3110CBC76791CB4499B /* HpsHpaGiftVoidBuilder.h */,
 				9031341C98FCFC81597F372EC594286B /* HpsHpaGiftVoidBuilder.m */,
 			);
-			name = Gift;
 			path = Gift;
 			sourceTree = "<group>";
 		};
@@ -1585,7 +1574,6 @@
 				306AEEE4E8634D484FE45AD5C3AEEBAC /* Frameworks */,
 				DD5B068E01CDEBF5C4E87D3DA71022E2 /* Support Files */,
 			);
-			name = BBPOS;
 			path = BBPOS;
 			sourceTree = "<group>";
 		};
@@ -1595,7 +1583,6 @@
 				0C091050EAA7A25BA2C5BE28AC8FC380 /* Frameworks */,
 				599E4C00F5328F257A7D16DBD0DEB4E9 /* Support Files */,
 			);
-			name = VitalSDK;
 			path = VitalSDK;
 			sourceTree = "<group>";
 		};
@@ -1606,7 +1593,6 @@
 				A52FBD1777EE7F37FAA22E18FA76F993 /* XMLDictionary.m */,
 				CCCA2253A22558A38CCEABD815165E49 /* Support Files */,
 			);
-			name = XMLDictionary;
 			path = XMLDictionary;
 			sourceTree = "<group>";
 		};
@@ -1616,7 +1602,6 @@
 				3287FC6A35D0C985266BABAD1BA41F2F /* HpsC2xDeviceDelegate.swift */,
 				02FF6ECD6F6D6C408F3E6863E2D0A2F7 /* HpsC2xTransactionDelegate.swift */,
 			);
-			name = Delegates;
 			path = Delegates;
 			sourceTree = "<group>";
 		};
@@ -1639,7 +1624,6 @@
 				F7305C08B8D14F08B39888E91688695A /* RequestObjects */,
 				4EDB17C203251A4E0D094FA9FB6122AA /* ResponseObjects */,
 			);
-			name = ParserObject;
 			path = ParserObject;
 			sourceTree = "<group>";
 		};
@@ -1656,7 +1640,6 @@
 				CD9B8CE242CBC66CC9F73B2D3BF2BF87 /* NSObject+ObjectMap.m */,
 				D2A36B7B30F6F87D5CBD6C713D27C1AB /* GlobalMobileSDK */,
 			);
-			name = Utility;
 			path = Utility;
 			sourceTree = "<group>";
 		};
@@ -1743,7 +1726,6 @@
 				28CFA050D946902BCEBB4EF6496E3034 /* HpsTransactionType.swift */,
 				35DBC705ABCE82AA70C26BE092D3C55F /* Protocols */,
 			);
-			name = GlobalMobileSDK;
 			path = GlobalMobileSDK;
 			sourceTree = "<group>";
 		};
@@ -1762,7 +1744,6 @@
 				3E2B2E761C751E3A4C706C5E3FD92FAB /* HpsHpaInitializeResponse.m */,
 				B2673A46DB9A5BED0BE07A4A0903A893 /* ParserObject */,
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -1788,7 +1769,6 @@
 				2B50F9ADC9720925F1E1F84E6166C84B /* Interfaces */,
 				D5BFDC105224FF7DB922BE915F75FFAB /* Models */,
 			);
-			name = HPA;
 			path = HPA;
 			sourceTree = "<group>";
 		};
@@ -1804,7 +1784,6 @@
 				65D316CB6E62297A4BAE73CF9B4E13B9 /* HpsC2xCreditSaleBuilder.swift */,
 				2824CCA3D687EF71F4D126A6E57E995C /* HpsC2xCreditVoidBuilder.swift */,
 			);
-			name = Builders;
 			path = Builders;
 			sourceTree = "<group>";
 		};
@@ -1857,7 +1836,6 @@
 				E75D36DDAF7F2AF73DEC63F405F8DA83 /* Builders */,
 				ACC7F64BA37B9050CB55163A08A8ACB9 /* Delegates */,
 			);
-			name = C2X;
 			path = C2X;
 			sourceTree = "<group>";
 		};
@@ -1895,7 +1873,6 @@
 				2C2F6A163F82AFAF59EB5C17EF7C4697 /* HpsPaxLocalDetailReportBuilder.h */,
 				ABD9DF7F973FEBBE86BA30036BED323D /* HpsPaxLocalDetailReportBuilder.m */,
 			);
-			name = Builders;
 			path = Builders;
 			sourceTree = "<group>";
 		};
@@ -1905,7 +1882,6 @@
 				B22DBB4E6B61D3E6446C0424B2EF12A0 /* HpsHpaRequest.h */,
 				DC741370B857F73CB51CF2A561146D3D /* HpsHpaRequest.m */,
 			);
-			name = RequestObjects;
 			path = RequestObjects;
 			sourceTree = "<group>";
 		};
@@ -1929,7 +1905,6 @@
 				513C574BC6548F203C09C110889C84ED /* NSMutableDictionary+ShiftAssignments.h */,
 				6EC13FBFCA136280E0CB7E266647DF2A /* NSMutableDictionary+ShiftAssignments.m */,
 			);
-			name = TableService;
 			path = TableService;
 			sourceTree = "<group>";
 		};
@@ -2733,27 +2708,111 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0217F0D32E2BED6223A976B6A5728BD8 /* Debug */ = {
+		01392250B8EF7A9D744F8E90564E93AB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E397DA0A2AEBC33CCA3B7CDB137A50BE /* Heartland-iOS-SDK.debug.xcconfig */;
+			baseConfigurationReference = B0B295834613BF9077C0BB347FFF7D37 /* Heartland-iOS-SDK.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Heartland-iOS-SDK";
+				ENABLE_BITCODE = NO;
 				IBSC_MODULE = Heartland_iOS_SDK;
 				INFOPLIST_FILE = "Target Support Files/Heartland-iOS-SDK/ResourceBundle-Heartland-iOS-SDK-Heartland-iOS-SDK-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "Heartland-iOS-SDK";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Debug;
+			name = Release;
 		};
-		118D6FC2851EF8BA783EE2236790C16E /* Debug */ = {
+		1B2A12083249DD25657ED93186889CE3 /* Pax_Testing */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 879A7AAD26112884F437D9D33B030661 /* Pods-Heartland-iOS-SDK_Tests.debug.xcconfig */;
+			baseConfigurationReference = B0B295834613BF9077C0BB347FFF7D37 /* Heartland-iOS-SDK.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Heartland-iOS-SDK";
+				ENABLE_BITCODE = NO;
+				IBSC_MODULE = Heartland_iOS_SDK;
+				INFOPLIST_FILE = "Target Support Files/Heartland-iOS-SDK/ResourceBundle-Heartland-iOS-SDK-Heartland-iOS-SDK-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = "Heartland-iOS-SDK";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Pax_Testing;
+		};
+		2FD6C3C321D698B92FDCA69F71229B78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14E2AC3411CFA69DDCD48AE354791A6C /* XMLDictionary.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/XMLDictionary/XMLDictionary-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/XMLDictionary/XMLDictionary-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/XMLDictionary/XMLDictionary.modulemap";
+				PRODUCT_MODULE_NAME = XMLDictionary;
+				PRODUCT_NAME = XMLDictionary;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		31FB774547BE0EC41CA4EF9FDEB15DF5 /* Pax_Testing */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD0AC3CB1CF8B52EEE6BEF0D946A9077 /* VitalSDK.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Pax_Testing;
+		};
+		38726750A1CB06CA899954DF067B625C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45E21CF67651042CF4F419CBD3B18CDD /* BBPOS.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3B98F416738EC51036C19790AD5A596D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D003AEB432EE12720172BD6A25FE61AC /* Pods-Heartland-iOS-SDK_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2764,7 +2823,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests.modulemap";
@@ -2776,42 +2835,17 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
-		};
-		17BD8584D9FF337BE3E59B8785C10C0B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA93DA44AC1F65DB958755F662F0DA87 /* VitalSDK.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		235785693E6229360CF5E69319C175A4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45E21CF67651042CF4F419CBD3B18CDD /* BBPOS.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
 			name = Release;
 		};
-		23A427D8D0421EE489558DDD35C60CE3 /* Debug */ = {
+		4F71C67BC23FA495ADC95FC03BD34185 /* Pax_Testing */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E397DA0A2AEBC33CCA3B7CDB137A50BE /* Heartland-iOS-SDK.debug.xcconfig */;
+			baseConfigurationReference = 14E2AC3411CFA69DDCD48AE354791A6C /* XMLDictionary.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2820,29 +2854,31 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/XMLDictionary/XMLDictionary-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/XMLDictionary/XMLDictionary-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK.modulemap";
-				PRODUCT_MODULE_NAME = Heartland_iOS_SDK;
-				PRODUCT_NAME = Heartland_iOS_SDK;
+				MODULEMAP_FILE = "Target Support Files/XMLDictionary/XMLDictionary.modulemap";
+				PRODUCT_MODULE_NAME = XMLDictionary;
+				PRODUCT_NAME = XMLDictionary;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Pax_Testing;
 		};
-		244EC340E7075A777C66166E6D1474AB /* Pax_Testing */ = {
+		5402D4693BFADB07244CE5511D1D2FD8 /* Pax_Testing */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8FBBE02770BB21F602A93C7F24C02028 /* Pods-Heartland-iOS-SDK_Example.pax_testing.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2853,7 +2889,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example.modulemap";
@@ -2871,7 +2907,389 @@
 			};
 			name = Pax_Testing;
 		};
-		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
+		7111511DD546AE3578C946BEA3C961B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E397DA0A2AEBC33CCA3B7CDB137A50BE /* Heartland-iOS-SDK.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Heartland-iOS-SDK";
+				ENABLE_BITCODE = NO;
+				IBSC_MODULE = Heartland_iOS_SDK;
+				INFOPLIST_FILE = "Target Support Files/Heartland-iOS-SDK/ResourceBundle-Heartland-iOS-SDK-Heartland-iOS-SDK-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = "Heartland-iOS-SDK";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		722709E377402DE7B35A125EF1E2F4D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5F3754B810319D0FB6F36E6AED86A7D /* GlobalPaymentsApi.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7705203BDDFE193C4596793F6109FD52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 044CE31511D5045D4429E26D2395316A /* XMLDictionary.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/XMLDictionary/XMLDictionary-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/XMLDictionary/XMLDictionary-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/XMLDictionary/XMLDictionary.modulemap";
+				PRODUCT_MODULE_NAME = XMLDictionary;
+				PRODUCT_NAME = XMLDictionary;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7840E8887773DA90F4CAADFDD6C628A0 /* Pax_Testing */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 562A0466493515F84A922CF6064958A6 /* GlobalPaymentsApi.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Pax_Testing;
+		};
+		7BDC57B360F85C09028381381512A25E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E397DA0A2AEBC33CCA3B7CDB137A50BE /* Heartland-iOS-SDK.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK.modulemap";
+				PRODUCT_MODULE_NAME = Heartland_iOS_SDK;
+				PRODUCT_NAME = Heartland_iOS_SDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7C41BEB5529D01D196F9672924D4F8EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AB0BF20FF4A07BB07FC5F97D7E3ACE6 /* Pods-Heartland-iOS-SDK_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		804FCC979D0D9F26EBB1380771F3F3A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 562A0466493515F84A922CF6064958A6 /* GlobalPaymentsApi.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		810669EE507D21AB527CF4930A616082 /* Pax_Testing */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_PAX_TESTING=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Pax_Testing;
+		};
+		903A0004D3E6651EFD5D2E16214D101B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		9ABB96453588630C6C766E0093336654 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 879A7AAD26112884F437D9D33B030661 /* Pods-Heartland-iOS-SDK_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9BE3CDB8723349C236D6E36734F09E8C /* Pax_Testing */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16A0A4245CED7A005CA2E0CAEA379388 /* Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Pax_Testing;
+		};
+		AA9AEB68D4AAEDBDED3CF58771619A80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0B295834613BF9077C0BB347FFF7D37 /* Heartland-iOS-SDK.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK.modulemap";
+				PRODUCT_MODULE_NAME = Heartland_iOS_SDK;
+				PRODUCT_NAME = Heartland_iOS_SDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B4EFE046ACF8F37157F6E322C7FCFC28 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -2924,7 +3342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2937,97 +3355,12 @@
 			};
 			name = Debug;
 		};
-		264EBB1C39BE2B50E07E5F29BC2EA5F9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14E2AC3411CFA69DDCD48AE354791A6C /* XMLDictionary.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/XMLDictionary/XMLDictionary-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/XMLDictionary/XMLDictionary-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/XMLDictionary/XMLDictionary.modulemap";
-				PRODUCT_MODULE_NAME = XMLDictionary;
-				PRODUCT_NAME = XMLDictionary;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		2B043BCF165E32CF48B94A27BCBCF55D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 044CE31511D5045D4429E26D2395316A /* XMLDictionary.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/XMLDictionary/XMLDictionary-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/XMLDictionary/XMLDictionary-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/XMLDictionary/XMLDictionary.modulemap";
-				PRODUCT_MODULE_NAME = XMLDictionary;
-				PRODUCT_NAME = XMLDictionary;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		2D9AF5D2B0C8BB5BA7290307E9EF35F7 /* Pax_Testing */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD0AC3CB1CF8B52EEE6BEF0D946A9077 /* VitalSDK.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Pax_Testing;
-		};
-		3103A416EA8D9498C84D583B2E329006 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD0AC3CB1CF8B52EEE6BEF0D946A9077 /* VitalSDK.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		39CC770787E8E68DADAD1A9005BE2E46 /* Release */ = {
+		B521C146507EA4A30DCF37E6BC04328F /* Pax_Testing */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B0B295834613BF9077C0BB347FFF7D37 /* Heartland-iOS-SDK.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -3039,226 +3372,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK.modulemap";
-				PRODUCT_MODULE_NAME = Heartland_iOS_SDK;
-				PRODUCT_NAME = Heartland_iOS_SDK;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		3BBF47A01457CC7C5C141F6A50277C7A /* Pax_Testing */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14E2AC3411CFA69DDCD48AE354791A6C /* XMLDictionary.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/XMLDictionary/XMLDictionary-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/XMLDictionary/XMLDictionary-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/XMLDictionary/XMLDictionary.modulemap";
-				PRODUCT_MODULE_NAME = XMLDictionary;
-				PRODUCT_NAME = XMLDictionary;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Pax_Testing;
-		};
-		4CF486A23FA79735D9F00DB98B93F56B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 562A0466493515F84A922CF6064958A6 /* GlobalPaymentsApi.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		5E5730A29A22666EF10294FA596E8C7D /* Pax_Testing */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 16A0A4245CED7A005CA2E0CAEA379388 /* Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Pax_Testing;
-		};
-		7248E65FBA7F3E9F3019D4E78D5F89B1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AB0BF20FF4A07BB07FC5F97D7E3ACE6 /* Pods-Heartland-iOS-SDK_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		791C45C347F342E95423EA97EE6379F1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B0B295834613BF9077C0BB347FFF7D37 /* Heartland-iOS-SDK.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Heartland-iOS-SDK";
-				IBSC_MODULE = Heartland_iOS_SDK;
-				INFOPLIST_FILE = "Target Support Files/Heartland-iOS-SDK/ResourceBundle-Heartland-iOS-SDK-Heartland-iOS-SDK-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = "Heartland-iOS-SDK";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		7DDE656DC93B4F116293E0C84051D37E /* Pax_Testing */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_PAX_TESTING=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Pax_Testing;
-		};
-		9047358AD880903A4B6EBC7114707B89 /* Pax_Testing */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B0B295834613BF9077C0BB347FFF7D37 /* Heartland-iOS-SDK.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK.modulemap";
 				PRODUCT_MODULE_NAME = Heartland_iOS_SDK;
@@ -3274,57 +3388,28 @@
 			};
 			name = Pax_Testing;
 		};
-		93108D9547AC8F5CB2EDE63FE8387A98 /* Release */ = {
+		B537526EEFF34323DD5CC2C89C91FA71 /* Pax_Testing */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D003AEB432EE12720172BD6A25FE61AC /* Pods-Heartland-iOS-SDK_Tests.release.xcconfig */;
+			baseConfigurationReference = 45E21CF67651042CF4F419CBD3B18CDD /* BBPOS.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		9AE829907B24E8E57BB3F1065FE82500 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 227E18B898668ECFF939D3753957EA9F /* BBPOS.debug.xcconfig */;
-			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
-			name = Debug;
+			name = Pax_Testing;
 		};
-		B5BDBD6D580F6939D1091122BCE8A60D /* Debug */ = {
+		C3AF0612979246CB64FB8CDA6AAF3F06 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F5CE4E81B2D0C083581BA14A7BE599FC /* Pods-Heartland-iOS-SDK_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -3335,7 +3420,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example.modulemap";
@@ -3352,86 +3437,11 @@
 			};
 			name = Debug;
 		};
-		C459104435DB87FF89FA571AA6F46010 /* Pax_Testing */ = {
+		C3E4EB16440DCE6777622989E7DEB99E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 562A0466493515F84A922CF6064958A6 /* GlobalPaymentsApi.release.xcconfig */;
+			baseConfigurationReference = 227E18B898668ECFF939D3753957EA9F /* BBPOS.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Pax_Testing;
-		};
-		CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		D1A8CE47C04D190BA75512AB338FE3D3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E5F3754B810319D0FB6F36E6AED86A7D /* GlobalPaymentsApi.debug.xcconfig */;
-			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -3441,36 +3451,36 @@
 			};
 			name = Debug;
 		};
-		FEF8187F8ACAEE80FFC14AD397DF1541 /* Pax_Testing */ = {
+		D23863238E650A1FFA6A41A53E8096F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B0B295834613BF9077C0BB347FFF7D37 /* Heartland-iOS-SDK.release.xcconfig */;
+			baseConfigurationReference = BA93DA44AC1F65DB958755F662F0DA87 /* VitalSDK.debug.xcconfig */;
 			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Heartland-iOS-SDK";
-				IBSC_MODULE = Heartland_iOS_SDK;
-				INFOPLIST_FILE = "Target Support Files/Heartland-iOS-SDK/ResourceBundle-Heartland-iOS-SDK-Heartland-iOS-SDK-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = "Heartland-iOS-SDK";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Pax_Testing;
-		};
-		FF14F879C40F2B530F2B1E654A93B57B /* Pax_Testing */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45E21CF67651042CF4F419CBD3B18CDD /* BBPOS.release.xcconfig */;
-			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EAA0BB4990670931723CBF9726D1FCA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD0AC3CB1CF8B52EEE6BEF0D946A9077 /* VitalSDK.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = Pax_Testing;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -3478,9 +3488,9 @@
 		0E721EBC65DB53C18B7636F2AA3ED73D /* Build configuration list for PBXAggregateTarget "BBPOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9AE829907B24E8E57BB3F1065FE82500 /* Debug */,
-				FF14F879C40F2B530F2B1E654A93B57B /* Pax_Testing */,
-				235785693E6229360CF5E69319C175A4 /* Release */,
+				C3E4EB16440DCE6777622989E7DEB99E /* Debug */,
+				B537526EEFF34323DD5CC2C89C91FA71 /* Pax_Testing */,
+				38726750A1CB06CA899954DF067B625C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3488,9 +3498,9 @@
 		1EEAD47709FC27DA8AEF7FC1CF24761D /* Build configuration list for PBXAggregateTarget "VitalSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				17BD8584D9FF337BE3E59B8785C10C0B /* Debug */,
-				2D9AF5D2B0C8BB5BA7290307E9EF35F7 /* Pax_Testing */,
-				3103A416EA8D9498C84D583B2E329006 /* Release */,
+				D23863238E650A1FFA6A41A53E8096F7 /* Debug */,
+				31FB774547BE0EC41CA4EF9FDEB15DF5 /* Pax_Testing */,
+				EAA0BB4990670931723CBF9726D1FCA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3498,9 +3508,9 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */,
-				7DDE656DC93B4F116293E0C84051D37E /* Pax_Testing */,
-				CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */,
+				B4EFE046ACF8F37157F6E322C7FCFC28 /* Debug */,
+				810669EE507D21AB527CF4930A616082 /* Pax_Testing */,
+				903A0004D3E6651EFD5D2E16214D101B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3508,9 +3518,9 @@
 		796509282C83A36D03A8FC98AC829E5C /* Build configuration list for PBXNativeTarget "Heartland-iOS-SDK-Heartland-iOS-SDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0217F0D32E2BED6223A976B6A5728BD8 /* Debug */,
-				FEF8187F8ACAEE80FFC14AD397DF1541 /* Pax_Testing */,
-				791C45C347F342E95423EA97EE6379F1 /* Release */,
+				7111511DD546AE3578C946BEA3C961B8 /* Debug */,
+				1B2A12083249DD25657ED93186889CE3 /* Pax_Testing */,
+				01392250B8EF7A9D744F8E90564E93AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3518,9 +3528,9 @@
 		8C7731D1D78EE93476FDA9FC911A14F8 /* Build configuration list for PBXNativeTarget "Pods-Heartland-iOS-SDK_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				118D6FC2851EF8BA783EE2236790C16E /* Debug */,
-				5E5730A29A22666EF10294FA596E8C7D /* Pax_Testing */,
-				93108D9547AC8F5CB2EDE63FE8387A98 /* Release */,
+				9ABB96453588630C6C766E0093336654 /* Debug */,
+				9BE3CDB8723349C236D6E36734F09E8C /* Pax_Testing */,
+				3B98F416738EC51036C19790AD5A596D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3528,9 +3538,9 @@
 		8E16D1E993A9BA000B3D9802920101DD /* Build configuration list for PBXAggregateTarget "GlobalPaymentsApi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D1A8CE47C04D190BA75512AB338FE3D3 /* Debug */,
-				C459104435DB87FF89FA571AA6F46010 /* Pax_Testing */,
-				4CF486A23FA79735D9F00DB98B93F56B /* Release */,
+				722709E377402DE7B35A125EF1E2F4D0 /* Debug */,
+				7840E8887773DA90F4CAADFDD6C628A0 /* Pax_Testing */,
+				804FCC979D0D9F26EBB1380771F3F3A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3538,9 +3548,9 @@
 		A0D11E5A8C27486D09852B7260FA050E /* Build configuration list for PBXNativeTarget "XMLDictionary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2B043BCF165E32CF48B94A27BCBCF55D /* Debug */,
-				3BBF47A01457CC7C5C141F6A50277C7A /* Pax_Testing */,
-				264EBB1C39BE2B50E07E5F29BC2EA5F9 /* Release */,
+				7705203BDDFE193C4596793F6109FD52 /* Debug */,
+				4F71C67BC23FA495ADC95FC03BD34185 /* Pax_Testing */,
+				2FD6C3C321D698B92FDCA69F71229B78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3548,9 +3558,9 @@
 		DC25F43D7350594B2575383FC89BD7BF /* Build configuration list for PBXNativeTarget "Pods-Heartland-iOS-SDK_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B5BDBD6D580F6939D1091122BCE8A60D /* Debug */,
-				244EC340E7075A777C66166E6D1474AB /* Pax_Testing */,
-				7248E65FBA7F3E9F3019D4E78D5F89B1 /* Release */,
+				C3AF0612979246CB64FB8CDA6AAF3F06 /* Debug */,
+				5402D4693BFADB07244CE5511D1D2FD8 /* Pax_Testing */,
+				7C41BEB5529D01D196F9672924D4F8EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3558,9 +3568,9 @@
 		E510D3A4B96BA7D79B2E0A943C6F99A3 /* Build configuration list for PBXNativeTarget "Heartland-iOS-SDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				23A427D8D0421EE489558DDD35C60CE3 /* Debug */,
-				9047358AD880903A4B6EBC7114707B89 /* Pax_Testing */,
-				39CC770787E8E68DADAD1A9005BE2E46 /* Release */,
+				7BDC57B360F85C09028381381512A25E /* Debug */,
+				B521C146507EA4A30DCF37E6BC04328F /* Pax_Testing */,
+				AA9AEB68D4AAEDBDED3CF58771619A80 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
