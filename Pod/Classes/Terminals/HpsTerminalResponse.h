@@ -22,6 +22,7 @@
 @property (nonatomic,strong) NSString *terminalRefNumber;
 @property (nonatomic,strong) HpsTokenData *tokenData;
 @property (nonatomic,strong) NSString *signatureStatus;
+@property (nonatomic,readonly) BOOL isApproval;
 #pragma mark - TRANSACTIONAL
 @property (nonatomic,strong) NSString *transactionType;
 @property (nonatomic,strong) NSString *entryMethod;

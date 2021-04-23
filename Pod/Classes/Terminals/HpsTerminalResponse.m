@@ -4,6 +4,10 @@
 
 @implementation HpsTerminalResponse
 
+- (BOOL)isApproval {
+    return [self.deviceResponseCode isEqualToString:@"APPROVAL"];
+}
+
 - (void) mapResponse:(id <HpaResposeInterface>) response
 {
 	self.version = response.Version;
