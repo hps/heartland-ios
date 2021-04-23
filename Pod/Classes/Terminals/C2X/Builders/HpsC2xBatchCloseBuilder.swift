@@ -2,9 +2,8 @@ import Foundation
 
 @objcMembers
 public class HpsC2xBatchCloseBuilder : HpsC2xBaseBuilder, GMSBatchCloseBuilder {
-    public required init() {
-        super.init()
-        self.transactionType = .batchClose
+    public init(device: HpsC2xDevice) {
+        super.init(transactionType: .batchClose, device: device)
     }
     
     public override func buildRequest() -> Transaction? {

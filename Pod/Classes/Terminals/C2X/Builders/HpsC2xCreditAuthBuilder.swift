@@ -11,9 +11,8 @@ public class HpsC2xCreditAuthBuilder : HpsC2xBaseBuilder, GMSCreditAuthBuilder {
     public var creditCard: HpsCreditCard?
     public var address: HpsAddress?
     
-    public required init() {
-        super.init()
-        self.transactionType = .creditAuth
+    public init(device: HpsC2xDevice) {
+        super.init(transactionType: .creditAuth, device: device)
     }
     
     public override func buildRequest() -> Transaction? {

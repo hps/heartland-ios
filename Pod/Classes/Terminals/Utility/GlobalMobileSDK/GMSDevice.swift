@@ -2,27 +2,23 @@ import Foundation
 
 @objcMembers
 public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
-    public var config: HpsConnectionConfig?
     public var gmsWrapper: GMSWrapper?
     public var deviceDelegate: GMSDeviceDelegate?
     public var transactionDelegate: GMSTransactionDelegate?
-    public var peripherals: NSMutableArray?
+    public var peripherals = NSMutableArray()
     public var targetTerminalId: UUID?
     
-    public required override init() {
+    internal init(config: HpsConnectionConfig, entryModes: [EntryMode], terminalType: TerminalType) {
         super.init()
-        self.peripherals = NSMutableArray()
-    }
-    
-    public static func initWithConfig(_ config: HpsConnectionConfig) -> Self {
-        let result = self.init()
-        result.config = config
-        return result
+        self.gmsWrapper = .init(
+            .fromHpsConnectionConfig(config),
+            delegate: self,
+            entryModes: entryModes,
+            terminalType: terminalType
+        )
     }
     
     public func initialize() {
-        guard let config = self.config else { return }
-        self.gmsWrapper = GMSWrapper(GMSConfiguration.fromHpsConnectionConfig(config), delegate: self, entryModes: [], terminalType: .none)
         self.scan()
     }
     
@@ -71,13 +67,11 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
 
     public func searchComplete() {
         targetTerminalId = nil
-        self.deviceDelegate?.onBluetoothDeviceList(self.peripherals ?? [])
+        self.deviceDelegate?.onBluetoothDeviceList(self.peripherals)
     }
 
     public func deviceFound(_ device: NSObject) {
-        if let peripherals = self.peripherals {
-            peripherals.add(device)
-        }
+        peripherals.add(device)
         
         if let terminal = device as? HpsTerminalInfo, targetTerminalId == terminal.identifier {
             stopScan()

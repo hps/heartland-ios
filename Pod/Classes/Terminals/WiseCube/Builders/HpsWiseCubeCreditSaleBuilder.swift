@@ -11,9 +11,8 @@ public class HpsWiseCubeCreditSaleBuilder : HpsWiseCubeBaseBuilder, GMSCreditSal
     public var creditCard: HpsCreditCard?
     public var address: HpsAddress?
     
-    public required init() {
-        super.init()
-        self.transactionType = .creditSale
+    public init(device: HpsWiseCubeDevice) {
+        super.init(transactionType: .creditSale, device: device)
     }
     
     public override func buildRequest() -> Transaction? {
