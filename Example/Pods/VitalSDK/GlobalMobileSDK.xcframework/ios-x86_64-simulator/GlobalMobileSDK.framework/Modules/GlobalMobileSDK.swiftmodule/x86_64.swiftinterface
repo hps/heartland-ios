@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name GlobalMobileSDK
 import AVFoundation
 import GlobalMobileSDK_Private.BBPOS
@@ -728,6 +728,7 @@ public struct PorticoConfig : GlobalMobileSDK.GatewayConfig, Swift.Equatable {
   public var merchantNumber: Swift.String
   public var signatureAgreement: Swift.String
   public var acknowledgement: Swift.String
+  public var refundPolicy: Swift.String
   public var uniqueDeviceId: Swift.String?
   public var secretApiKey: Swift.String?
   public var siteTrace: Swift.String?
@@ -742,10 +743,10 @@ public struct PorticoConfig : GlobalMobileSDK.GatewayConfig, Swift.Equatable {
   public var environment: GlobalMobileSDK.GatewayEnvironment
   public var supportedTerminals: GlobalMobileSDK.PorticoConfig.Terminals
   public var terminalType: GlobalMobileSDK.TerminalType
-  public init?(username: Swift.String, password: Swift.String, siteId: Swift.String, deviceId: Swift.String, licenseId: Swift.String, developerId: Swift.String, versionNumber: Swift.String, merchantName: Swift.String, merchantAddress: Swift.String, merchantNumber: Swift.String, signatureAgreement: Swift.String, aknowledgement: Swift.String, environment: GlobalMobileSDK.GatewayEnvironment)
-  public init(_ secretApiKey: Swift.String, merchantName: Swift.String, merchantAddress: Swift.String, merchantNumber: Swift.String, signatureAgreement: Swift.String, acknowledgement: Swift.String, environment: GlobalMobileSDK.GatewayEnvironment)
-  public init(from decoder: Swift.Decoder) throws
+  public init?(username: Swift.String, password: Swift.String, siteId: Swift.String, deviceId: Swift.String, licenseId: Swift.String, developerId: Swift.String, versionNumber: Swift.String, merchantName: Swift.String, merchantAddress: Swift.String, merchantNumber: Swift.String, signatureAgreement: Swift.String, acknowledgement: Swift.String, refundPolicy: Swift.String, environment: GlobalMobileSDK.GatewayEnvironment)
+  public init(_ secretApiKey: Swift.String, merchantName: Swift.String, merchantAddress: Swift.String, merchantNumber: Swift.String, signatureAgreement: Swift.String, acknowledgement: Swift.String, refundPolicy: Swift.String, environment: GlobalMobileSDK.GatewayEnvironment)
   public static func == (a: GlobalMobileSDK.PorticoConfig, b: GlobalMobileSDK.PorticoConfig) -> Swift.Bool
+  public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
 public struct TransITConfig : GlobalMobileSDK.GatewayConfig, Swift.Equatable {
@@ -1024,8 +1025,8 @@ public struct PropayConfig : GlobalMobileSDK.GatewayConfig, Swift.Equatable {
   public var supportedTerminals: GlobalMobileSDK.PropayConfig.Terminals
   public init?(username: Swift.String, password: Swift.String, pin: Swift.String, developerId: Swift.String, timeout: Swift.Int32, isDebug: Swift.Bool, environment: GlobalMobileSDK.GatewayEnvironment)
   public init?(pinToken: Swift.String?, sessionToken: Swift.String, environment: GlobalMobileSDK.GatewayEnvironment, isDebug: Swift.Bool, timeOut: Swift.Int32)
-  public init(from decoder: Swift.Decoder) throws
   public static func == (a: GlobalMobileSDK.PropayConfig, b: GlobalMobileSDK.PropayConfig) -> Swift.Bool
+  public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
 public struct Address : Swift.Codable, Swift.Equatable {
@@ -1262,6 +1263,7 @@ public protocol GatewayConfig : Swift.Decodable, Swift.Encodable {
   var merchantNumber: Swift.String { get }
   var signatureAgreement: Swift.String { get }
   var acknowledgement: Swift.String { get }
+  var refundPolicy: Swift.String { get }
   var environment: GlobalMobileSDK.GatewayEnvironment { get set }
   var supportedTerminals: Self.Terminals { get }
   var currencyCode: GlobalMobileSDK.CurrencyCode { get set }
@@ -1287,6 +1289,9 @@ extension GatewayConfig {
     get
   }
   public var acknowledgement: Swift.String {
+    get
+  }
+  public var refundPolicy: Swift.String {
     get
   }
   public var supportSaf: Swift.Bool {

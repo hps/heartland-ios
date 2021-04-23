@@ -13,7 +13,7 @@
     "tag": "1.1.10"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "11.0"
   },
   "requires_arc": true,
   "source_files": "Pod/Classes/**/*",
