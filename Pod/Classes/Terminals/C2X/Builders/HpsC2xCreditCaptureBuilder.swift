@@ -7,9 +7,8 @@ public class HpsC2xCreditCaptureBuilder : HpsC2xBaseBuilder, GMSCreditCaptureBui
     public var gratuity: NSDecimalNumber?
     public var transactionId: String?
     
-    public required init() {
-        super.init()
-        self.transactionType = .creditCapture
+    public init(device: HpsC2xDevice) {
+        super.init(transactionType: .creditCapture, device: device)
     }
     
     public override func buildRequest() -> Transaction? {

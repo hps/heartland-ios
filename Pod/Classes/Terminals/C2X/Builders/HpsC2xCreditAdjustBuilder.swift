@@ -10,9 +10,8 @@ public class HpsC2xCreditAdjustBuilder : HpsC2xBaseBuilder, GMSCreditAdjustBuild
     public var cardHolderName: String?
     public var address: HpsAddress?
 
-    public required init() {
-        super.init()
-        self.transactionType = .creditAdjust
+    public init(device: HpsC2xDevice) {
+        super.init(transactionType: .creditAdjust, device: device)
     }
     
     public override func buildRequest() -> Transaction? {
