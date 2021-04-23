@@ -3,7 +3,7 @@ import Foundation
 @objcMembers
 public class GMSBaseBuilder : NSObject {
     public let transactionType: HpsTransactionType
-    public let device: GMSDeviceInterface
+    public unowned let device: GMSDeviceInterface
     
     internal init(transactionType: HpsTransactionType, device: GMSDeviceInterface) {
         self.transactionType = transactionType
