@@ -19,10 +19,6 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
         )
     }
     
-    public func initialize() {
-        self.scan()
-    }
-    
     public func scan() {
         if let wrapper = self.gmsWrapper {
             isScanning = true
