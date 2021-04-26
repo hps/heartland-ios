@@ -4,10 +4,17 @@ import Foundation
 public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
     public var gmsWrapper: GMSWrapper?
     public var deviceDelegate: GMSDeviceDelegate?
+    public weak var deviceScanObserver: GMSDeviceScanObserver?
     public var transactionDelegate: GMSTransactionDelegate?
     public var peripherals = NSMutableArray()
     public var targetTerminalId: UUID?
-    public private(set) var isScanning = false
+    public private(set) var isScanning = false {
+        didSet {
+            if oldValue != isScanning {
+                deviceScanObserver?.deviceDidUpdateScanState(to: isScanning)
+            }
+        }
+    }
     
     internal init(config: HpsConnectionConfig, entryModes: [EntryMode], terminalType: TerminalType) {
         super.init()

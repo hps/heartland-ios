@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Heartland_iOS_SDK/HpsConnectionConfig.h>
+#import "HRGMS+Notifications.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

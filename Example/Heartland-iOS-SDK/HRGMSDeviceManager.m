@@ -8,9 +8,8 @@
 
 #import "HRGMSDeviceManager.h"
 #import <Heartland_iOS_SDK/Heartland_iOS_SDK-Swift.h>
-#import "HRGMS+Notifications.h"
 
-@interface HRGMSDeviceManager ()<GMSDeviceDelegate>
+@interface HRGMSDeviceManager () <GMSDeviceDelegate, GMSDeviceScanObserver>
 
 @property (strong, nonatomic, nullable) GMSDevice *device;
 
@@ -34,6 +33,7 @@
 - (void)addDeviceWithConfig:(HpsConnectionConfig *)config {
     HpsWiseCubeDevice *device = [[HpsWiseCubeDevice alloc] initWithConfig:config];
     device.deviceDelegate = self;
+    device.deviceScanObserver = self;
     _device = device;
 }
 
@@ -59,6 +59,11 @@
 
 - (void)onError:(NSError * _Nonnull)deviceError {
     //
+}
+
+- (void)deviceDidUpdateScanStateTo:(BOOL)isScanning {
+    [NSNotificationCenter.defaultCenter postNotificationName:AppNotificationGMSDeviceScanStateDidUpdate
+                                                      object:[NSNumber numberWithBool:_device.isScanning]];
 }
 
 @end

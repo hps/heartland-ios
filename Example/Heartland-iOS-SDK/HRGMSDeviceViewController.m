@@ -22,7 +22,17 @@
     [super viewDidLoad];
     [self configureGMSDeviceManager];
     [self addScanControls];
-    [self updateScanControlsForScanState];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [NSNotificationCenter.defaultCenter addObserver:self
+                                           selector:@selector(didReceiveScanStateNotification:)
+                                               name:AppNotificationGMSDeviceScanStateDidUpdate
+                                             object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [NSNotificationCenter.defaultCenter removeObserver:self];
 }
 
 - (HpsConnectionConfig *)config {
@@ -56,18 +66,23 @@
     ]];
     
     _scanButton = scanButton;
+    
+    [self updateScanControlsForScanning:NO];
 }
 
-- (void)updateScanControlsForScanState {
-    BOOL isScanning = HRGMSDeviceManager.sharedInstance.deviceIsScanning;
+- (void)didReceiveScanStateNotification:(NSNotification *)notification {
+    [self updateScanControlsForScanning:[notification.object boolValue]];
+}
+
+- (void)updateScanControlsForScanning:(BOOL)isScanning {
     [_scanButton setTitle:isScanning ? @"Stop Scan" : @"Scan" forState:UIControlStateNormal];
 }
 
 - (void)scanTapped {
     if (HRGMSDeviceManager.sharedInstance.deviceIsScanning) {
-        [HRGMSDeviceManager.sharedInstance startScan];
-    } else {
         [HRGMSDeviceManager.sharedInstance stopScan];
+    } else {
+        [HRGMSDeviceManager.sharedInstance startScan];
     }
 }
 
