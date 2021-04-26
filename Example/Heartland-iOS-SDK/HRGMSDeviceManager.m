@@ -8,6 +8,7 @@
 
 #import "HRGMSDeviceManager.h"
 #import <Heartland_iOS_SDK/Heartland_iOS_SDK-Swift.h>
+#import "HRGMS+Notifications.h"
 
 @interface HRGMSDeviceManager ()<GMSDeviceDelegate>
 
@@ -26,13 +27,17 @@
     return _sharedInstance;
 }
 
+- (BOOL)deviceIsScanning {
+    return _device.isScanning;
+}
+
 - (void)addDeviceWithConfig:(HpsConnectionConfig *)config {
     HpsWiseCubeDevice *device = [[HpsWiseCubeDevice alloc] initWithConfig:config];
     device.deviceDelegate = self;
     _device = device;
 }
 
-- (void)scanForDevices {
+- (void)startScan {
     [_device scan];
 }
 

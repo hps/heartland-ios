@@ -15,8 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)sharedInstance;
 
+@property (nonatomic, readonly) BOOL deviceIsScanning;
+
 - (void)addDeviceWithConfig:(HpsConnectionConfig *)config;
-- (void)scanForDevices;
+- (void)startScan;
 - (void)stopScan;
 
 @end
