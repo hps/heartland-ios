@@ -10,6 +10,8 @@
 #import <Heartland_iOS_SDK/HpsConnectionConfig.h>
 #import "HRGMS+Notifications.h"
 
+@class HpsTerminalInfo;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HRGMSDeviceManager : NSObject
@@ -21,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addDeviceWithConfig:(HpsConnectionConfig *)config;
 - (void)startScan;
 - (void)stopScan;
+- (void)connectToTerminal:(HpsTerminalInfo *)terminal;
+- (void)disconnect;
 
 @end
 

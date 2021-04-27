@@ -45,16 +45,26 @@
     [_device stopScan];
 }
 
+- (void)connectToTerminal:(HpsTerminalInfo *)terminal {
+    [_device connectDevice:terminal];
+}
+
+- (void)disconnect {
+    [_device.gmsWrapper disconnect];
+}
+
 - (void)onBluetoothDeviceList:(NSMutableArray * _Nonnull)peripherals {
-    //
+    [NSNotificationCenter.defaultCenter postNotificationName:AppNotificationGMSDeviceFound object:peripherals];
 }
 
 - (void)onConnected {
-    //
+    [NSNotificationCenter.defaultCenter postNotificationName:AppNotificationGMSDeviceConnectionDidUpdate
+                                                      object:[NSNumber numberWithBool:YES]];
 }
 
 - (void)onDisconnected {
-    //
+    [NSNotificationCenter.defaultCenter postNotificationName:AppNotificationGMSDeviceConnectionDidUpdate
+                                                      object:[NSNumber numberWithBool:NO]];
 }
 
 - (void)onError:(NSError * _Nonnull)deviceError {
