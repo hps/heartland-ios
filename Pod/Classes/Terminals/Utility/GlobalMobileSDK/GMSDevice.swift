@@ -6,8 +6,8 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
     public var deviceDelegate: GMSDeviceDelegate?
     public weak var deviceScanObserver: GMSDeviceScanObserver?
     public var transactionDelegate: GMSTransactionDelegate?
-    public var peripherals = NSMutableArray()
     public var targetTerminalId: UUID?
+    public private(set) var terminalsById = [UUID: HpsTerminalInfo]()
     public private(set) var isScanning = false {
         didSet {
             if oldValue != isScanning {
@@ -24,6 +24,10 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
             entryModes: entryModes,
             terminalType: terminalType
         )
+    }
+    
+    public var peripherals: NSMutableArray {
+        NSMutableArray(array: Array(terminalsById.values))
     }
     
     public func scan() {
@@ -77,9 +81,13 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
     }
 
     public func deviceFound(_ device: NSObject) {
-        peripherals.add(device)
+        guard let terminal = device as? HpsTerminalInfo else {
+            return
+        }
         
-        if let terminal = device as? HpsTerminalInfo, targetTerminalId == terminal.identifier {
+        terminalsById[terminal.identifier] = terminal
+        
+        if targetTerminalId == terminal.identifier {
             stopScan()
         }
     }
