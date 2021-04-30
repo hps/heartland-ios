@@ -68,7 +68,8 @@
 }
 
 - (void)onError:(NSError * _Nonnull)deviceError {
-    //
+    [NSNotificationCenter.defaultCenter postNotificationName:AppNotificationGMSDeviceError
+                                                      object:deviceError];
 }
 
 - (void)deviceDidUpdateScanStateTo:(BOOL)isScanning {

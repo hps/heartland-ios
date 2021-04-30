@@ -9,3 +9,4 @@
 #define AppNotificationGMSDeviceScanStateDidUpdate      @"AppNotificationGMSDeviceScanStateDidUpdate"
 #define AppNotificationGMSDeviceFound                   @"AppNotificationGMSDeviceFound"
 #define AppNotificationGMSDeviceConnectionDidUpdate     @"AppNotificationGMSDeviceConnectionDidUpdate"
+#define AppNotificationGMSDeviceError                   @"AppNotificationGMSDeviceError"

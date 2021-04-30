@@ -14,7 +14,6 @@
 
 @property (strong, nonatomic) NSArray<HpsTerminalInfo *> *terminals;
 @property (strong, nonatomic, nullable) HpsTerminalInfo *selectedTerminal;
-@property (strong, nonatomic, nullable) HpsTerminalInfo *terminalPendingConnect;
 @property (nonatomic) BOOL terminalIsConnected;
 @property (weak, nonatomic) UIButton *scanButton;
 @property (weak, nonatomic) UITableView *tableView;
@@ -53,6 +52,11 @@
     [NSNotificationCenter.defaultCenter addObserver:self
                                            selector:@selector(didReceiveDeviceConnectionNotification:)
                                                name:AppNotificationGMSDeviceConnectionDidUpdate
+                                             object:nil];
+    
+    [NSNotificationCenter.defaultCenter addObserver:self
+                                           selector:@selector(didReceiveDeviceErrorNotification:)
+                                               name:AppNotificationGMSDeviceError
                                              object:nil];
 }
 
@@ -119,9 +123,7 @@
 - (void)setTerminalIsConnected:(BOOL)terminalIsConnected {
     _terminalIsConnected = terminalIsConnected;
     
-    if (_terminalPendingConnect && !_terminalIsConnected) {
-        [self setSelectedTerminal:_terminalPendingConnect];
-    } else if (_selectedTerminal) {
+    if (_selectedTerminal) {
         NSIndexPath *path;
         
         for (int i = 0; i < _terminals.count; i++) {
@@ -149,6 +151,11 @@
     [self setTerminals:notification.object];
 }
 
+- (void)didReceiveDeviceErrorNotification:(NSNotification *)notification {
+    NSError *error = notification.object;
+    [self presentAlertWithMessage:error.localizedDescription];
+}
+
 - (void)didReceiveDeviceConnectionNotification:(NSNotification *)notification {
     [self setTerminalIsConnected:[notification.object boolValue]];
 }
@@ -164,8 +171,8 @@
     
     [NSLayoutConstraint activateConstraints:@[
         [tableView.topAnchor constraintEqualToAnchor:_scanButton.bottomAnchor constant:16],
-        [tableView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:16],
-        [tableView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-16],
+        [tableView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
+        [tableView.widthAnchor constraintEqualToConstant:400],
         [tableView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:-16]
     ]];
     
@@ -205,23 +212,29 @@
     if (_selectedTerminal) {
         if ([terminal.identifier isEqual:_selectedTerminal.identifier]) {
             terminal = nil;
+        } else if (_terminalIsConnected) {
+            [self presentAlertWithMessage:@"must disconnect from terminal before connecting to another"];
+            return;
         }
-        
-        _terminalPendingConnect = terminal;
-        
-        [HRGMSDeviceManager.sharedInstance disconnect];
-    } else {
-        [self setSelectedTerminal:_terminals[indexPath.row]];
     }
+    
+    [self setSelectedTerminal:terminal];
 }
 
 - (void)setSelectedTerminal:(HpsTerminalInfo *)selectedTerminal {
-    _terminalPendingConnect = nil;
     _selectedTerminal = selectedTerminal;
     
     if (_selectedTerminal) {
         [HRGMSDeviceManager.sharedInstance connectToTerminal:_selectedTerminal];
+    } else {
+        [HRGMSDeviceManager.sharedInstance disconnect];
     }
+}
+
+- (void)presentAlertWithMessage:(NSString *)message {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDefault handler:nil]];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end
