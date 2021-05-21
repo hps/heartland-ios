@@ -9,7 +9,7 @@ public class HpsWiseCubeCreditReversalBuilder : HpsWiseCubeBaseBuilder, GMSCredi
     public var transactionId: String?
     
     public init(device: HpsWiseCubeDevice) {
-        super.init(transactionType: .creditReturn, device: device)
+        super.init(transactionType: .creditReversal, device: device)
     }
     
     public override func buildRequest() -> Transaction? {

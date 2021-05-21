@@ -9,7 +9,7 @@ public class HpsC2xCreditReversalBuilder : HpsC2xBaseBuilder, GMSCreditReversalB
     public var transactionId: String?
     
     public init(device: HpsC2xDevice) {
-        super.init(transactionType: .creditReturn, device: device)
+        super.init(transactionType: .creditReversal, device: device)
     }
     
     public override func buildRequest() -> Transaction? {
