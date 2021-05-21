@@ -170,6 +170,7 @@ extension GMSWrapper: TransactionDelegate {
         var data = HpsTerminalResponse()
 
         data.transactionId = response?.gatewayTransactionId
+        data.clientTransactionId = response?.transactionId.uuidString
         
         if let decimalValue = response?.approvedAmount {
             let doubleValue = NSDecimalNumber(decimal: decimalValue).doubleValue
