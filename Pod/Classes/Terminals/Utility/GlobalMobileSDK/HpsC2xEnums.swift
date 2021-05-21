@@ -65,4 +65,18 @@ public class HpsC2xEnums: NSObject {
             return .unknown
         }
     }
+    public static func reversalReasonCodeToReversalReason(_ reversalReasonCode: ReversalReasonCode) -> ReversalReason {
+        switch (reversalReasonCode) {
+        case .CUSTOMERCANCELLATION:
+            return .voidedByCustomer
+        case .TERMINALERROR:
+            return .deviceUnavailable
+        case .TIMEOUT:
+            return .deviceTimeOut
+        case .PARTIALREVERSAL:
+            return .partialReversal
+        default:
+            return .undefined
+        }
+    }
 }

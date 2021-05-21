@@ -114,6 +114,23 @@ class GMSResponseHelper {
         return data
     }
     
+    public static func mapCreditReversalResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
+        let resp = response as? ReversalResponse
+        var deviceResponseCode = result.rawValue
+
+        if let respText = resp?.gatewayResponseText {
+            deviceResponseCode = respText
+        }
+
+        data.approvalCode = resp?.authCode
+        data.responseText = resp?.gatewayResponseText
+        data.deviceResponseCode = deviceResponseCode
+        data.terminalRefNumber = resp?.posReferenceNumber
+        data.transactionType = HpsC2xEnums.transactionTypeToString(.Reversal)
+        
+        return data
+    }
+    
     public static func mapCreditSaleResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
         let resp = response as? SaleResponse
         var deviceResponseCode = result.rawValue

@@ -99,6 +99,29 @@ class GMSRequestHelper {
                                                      operatingUserId: nil)
     }
     
+    public static func buildCreditReversalRequest(builder: GMSCreditReversalBuilder) -> Transaction? {
+        let total: Decimal? = builder.amount as Decimal?
+        let posReferenceNumber: String? = builder.referenceNumber
+        let transactionId: String? = builder.transactionId
+        let reversalReason: ReversalReason = HpsC2xEnums.reversalReasonCodeToReversalReason(builder.reason)
+
+        if let clientTransactionId = builder.clientTransactionId {
+            return ReversalTransaction.reversal(clientTransactionId: clientTransactionId,
+                                                gatewayTransactionId: transactionId,
+                                                reversalReason: reversalReason,
+                                                posReferenceNumber: posReferenceNumber,
+                                                amount: total ?? 0,
+                                                tlv: nil)
+        }
+
+        return ReversalTransaction.reversal(clientTransactionId: UUID(),
+                                            gatewayTransactionId: transactionId,
+                                            reversalReason: reversalReason,
+                                            posReferenceNumber: posReferenceNumber,
+                                            amount: total ?? 0,
+                                            tlv: nil)
+    }
+    
     public static func buildCreditSaleRequest(builder: GMSCreditSaleBuilder) -> Transaction? {
         let total: Decimal? = builder.amount as Decimal?
         let tax: Decimal? = nil

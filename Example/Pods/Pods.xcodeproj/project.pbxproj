@@ -122,6 +122,10 @@
 		345B12B4F221101013362718D5A37051 /* HpsLastResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3224C6C5090A0AE841482387824882A /* HpsLastResponse.m */; };
 		347EC2BD0A4F19576A36FD84ACCF55D9 /* HpsBinaryDataScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = EE72A7AD9A84E734D997FC8BF34CE668 /* HpsBinaryDataScanner.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34A6DC9216D6342E8E0533F2AC148136 /* HpsC2xCreditVoidBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2824CCA3D687EF71F4D126A6E57E995C /* HpsC2xCreditVoidBuilder.swift */; };
+		34AD4C4F265810CF0068F1A7 /* HpsC2xCreditReversalBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD4C4E265810CF0068F1A7 /* HpsC2xCreditReversalBuilder.swift */; };
+		34AD4C51265813230068F1A7 /* GMSCreditReversalBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD4C50265813230068F1A7 /* GMSCreditReversalBuilder.swift */; };
+		34AD4C53265820250068F1A7 /* HpsWiseCubeCreditReversalBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD4C52265820250068F1A7 /* HpsWiseCubeCreditReversalBuilder.swift */; };
+		34B81DC62658455F000C044C /* ReversalReasonCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B81DC52658455F000C044C /* ReversalReasonCode.swift */; };
 		34D38AD936D8412DA571C79AE715918E /* Pods-Heartland-iOS-SDK_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 00456968C3A11B9FDF14BEC9CCD14FF5 /* Pods-Heartland-iOS-SDK_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		35641EDFC4131B1BA5337B80BC0DC170 /* HpsGatewayData.m in Sources */ = {isa = PBXBuildFile; fileRef = D8935776FF8BC20DD17C18A2096297FD /* HpsGatewayData.m */; };
 		357B51E214C0FC7B97172BCBBBFC688A /* HpsWiseCubeCreditAuthBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD1BEA35763268270A6A911F30BEEF6 /* HpsWiseCubeCreditAuthBuilder.swift */; };
@@ -661,6 +665,10 @@
 		32B86C6812EE69854CB0ED6498EE2D03 /* HpsPaxCommercialResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxCommercialResponse.m; sourceTree = "<group>"; };
 		33A566FEB9CFABFB942DB6C5F79E7320 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		33C742FA879A5A7F8AC35619A834C6C3 /* HpsServiceConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsServiceConfig.h; sourceTree = "<group>"; };
+		34AD4C4E265810CF0068F1A7 /* HpsC2xCreditReversalBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsC2xCreditReversalBuilder.swift; sourceTree = "<group>"; };
+		34AD4C50265813230068F1A7 /* GMSCreditReversalBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSCreditReversalBuilder.swift; sourceTree = "<group>"; };
+		34AD4C52265820250068F1A7 /* HpsWiseCubeCreditReversalBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsWiseCubeCreditReversalBuilder.swift; sourceTree = "<group>"; };
+		34B81DC52658455F000C044C /* ReversalReasonCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversalReasonCode.swift; sourceTree = "<group>"; };
 		3740F2A10D609BF0F578B74D151F2073 /* CardSummary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CardSummary.m; sourceTree = "<group>"; };
 		3746B2017548D014832A92D054EE7E2E /* HpsPaxBaseResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxBaseResponse.h; sourceTree = "<group>"; };
 		378F3C8D692EA68F9DF7289C9B68A9FA /* HpsWiseCubeCreditCaptureBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HpsWiseCubeCreditCaptureBuilder.swift; sourceTree = "<group>"; };
@@ -1252,6 +1260,7 @@
 				62A5A011B6307CEA9EE4050902625599 /* GMSCreditAuthBuilder.swift */,
 				B47C91F50DC7B209F3B87C02F1F2880E /* GMSCreditCaptureBuilder.swift */,
 				25D967876274CE8080035755CEB267EC /* GMSCreditReturnBuilder.swift */,
+				34AD4C50265813230068F1A7 /* GMSCreditReversalBuilder.swift */,
 				959695A076A73CBD150B3487C02C9349 /* GMSCreditSaleBuilder.swift */,
 				14CCA1FD94D3D0D233C56E4FB43FAEE1 /* GMSCreditVoidBuilder.swift */,
 				036432671675F9A8E26E380EF05447CD /* GMSDeviceDelegate.swift */,
@@ -1507,6 +1516,7 @@
 				7F54B8B9577378F4E8CD0347C025FADE /* HpsWiseCubeCreditReturnBuilder.swift */,
 				08C0514B444CA4A6794FC248338AA7C3 /* HpsWiseCubeCreditSaleBuilder.swift */,
 				D05D33DE0DD067BCEC099119188358C2 /* HpsWiseCubeCreditVoidBuilder.swift */,
+				34AD4C52265820250068F1A7 /* HpsWiseCubeCreditReversalBuilder.swift */,
 			);
 			path = Builders;
 			sourceTree = "<group>";
@@ -1725,6 +1735,7 @@
 				CF5F2EB93FE4094C3312BF2D78A180A1 /* HpsTransactionStatus.swift */,
 				28CFA050D946902BCEBB4EF6496E3034 /* HpsTransactionType.swift */,
 				35DBC705ABCE82AA70C26BE092D3C55F /* Protocols */,
+				34B81DC52658455F000C044C /* ReversalReasonCode.swift */,
 			);
 			path = GlobalMobileSDK;
 			sourceTree = "<group>";
@@ -1781,6 +1792,7 @@
 				483E5E38895E769DA05310BC9B9F8874 /* HpsC2xCreditAuthBuilder.swift */,
 				50023BC35C10CE829E78365EB1CB43D6 /* HpsC2xCreditCaptureBuilder.swift */,
 				15EE70E32792D65C9D7AC7208945DA5F /* HpsC2xCreditReturnBuilder.swift */,
+				34AD4C4E265810CF0068F1A7 /* HpsC2xCreditReversalBuilder.swift */,
 				65D316CB6E62297A4BAE73CF9B4E13B9 /* HpsC2xCreditSaleBuilder.swift */,
 				2824CCA3D687EF71F4D126A6E57E995C /* HpsC2xCreditVoidBuilder.swift */,
 			);
@@ -2404,6 +2416,7 @@
 				AD0DFEB947294595FBD036E90919CF59 /* GMSBaseBuilder.swift in Sources */,
 				F02E88D0836A09E52E00C06E4415AC55 /* GMSBatchCloseBuilder.swift in Sources */,
 				BC082F9E97E932344A433740FA7A27DE /* GMSClientAppDelegate.swift in Sources */,
+				34AD4C51265813230068F1A7 /* GMSCreditReversalBuilder.swift in Sources */,
 				87D448F6044F3846333C4C1B0F48F22C /* GMSConfiguration.swift in Sources */,
 				D9D84E3DF3C119028994A4BDD8224D23 /* GMSCreditAdjustBuilder.swift in Sources */,
 				AB08193774F0AA2BC16EAA7A6AC8FDF1 /* GMSCreditAuthBuilder.swift in Sources */,
@@ -2488,6 +2501,7 @@
 				83D66F1C86D245039FDCC67B360381BA /* HpsHpaEBTSaleBuilder.m in Sources */,
 				AAF6DD4D00402EC98BE77F628C9A9478 /* HpsHpaEodBuilder.m in Sources */,
 				53A9B86A053E775492F6081934DD1721 /* HpsHpaEodResponse.m in Sources */,
+				34B81DC62658455F000C044C /* ReversalReasonCode.swift in Sources */,
 				88EEC1C28B59E604EB163EDA047BA4CD /* HpsHpaGiftAddValueBuilder.m in Sources */,
 				9455679C873A6F392332A89079E9DEB4 /* HpsHpaGiftBalanceBuilder.m in Sources */,
 				2F491186233A8DADF8F3047EE1356560 /* HpsHpaGiftSaleBuilder.m in Sources */,
@@ -2561,9 +2575,11 @@
 				FE6C69E17D320E6E5D55FDBFD1CB6515 /* HpsPayRollRequest.m in Sources */,
 				1B6B83463CE340E4390A4CE740E18EC1 /* HpsPayrollService.m in Sources */,
 				67153AF82055258A80093D1743CB1932 /* HpsPosRequest.m in Sources */,
+				34AD4C4F265810CF0068F1A7 /* HpsC2xCreditReversalBuilder.swift in Sources */,
 				394694967D3CCF0EE02C05223B1B6C34 /* HpsRestGateway.m in Sources */,
 				199137C9F13905100A05A66174C7284E /* HpsServerAssignmentResponse.m in Sources */,
 				E435422D86227C8D14AD212CEDE0A738 /* HpsServerListResponse.m in Sources */,
+				34AD4C53265820250068F1A7 /* HpsWiseCubeCreditReversalBuilder.swift in Sources */,
 				3D6FD13E563C0AB749545AFAF3040781 /* HpsServiceConfig.m in Sources */,
 				70883AD561490C06F7E5C20A8BF69C22 /* HpsServiceContainer.m in Sources */,
 				B463242B56ED0C6706ACFE0E3D029AA7 /* HpsServicesConfig.m in Sources */,
