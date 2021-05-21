@@ -94,8 +94,16 @@
 
 - (void)onStatusUpdate:(HpsTransactionStatus)transactionStatus {
 }
-
+- (void)onConfirmAmount:(NSDecimal)amount {
+    
+}
+- (void)onConfirmApplication:(NSArray<AID *> *)applications {
+    
+}
 - (void)onTransactionComplete:(nonnull HpsTerminalResponse *)response {
+}
+- (void)onTransactionCancelled {
+    
 }
 
 @end

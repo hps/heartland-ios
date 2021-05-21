@@ -499,6 +499,9 @@
                break;
        }
 }
+- (void)onConfirmApplication:(NSArray<AID *> *)applications {
+    [self.device confirmApplication:[applications objectAtIndex:0]];
+}
 - (void)onTransactionComplete:(HpsTerminalResponse *)response
 {
     NSLog(@"Transaction completed");
@@ -506,6 +509,9 @@
     self.response = response;
     [transactionExpectation fulfill];
     transactionExpectation = nil;
+}
+- (void)onTransactionCancelled {
+    
 }
 - (void)onError:(NSError *)emvError
 {

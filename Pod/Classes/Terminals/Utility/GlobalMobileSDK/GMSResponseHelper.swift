@@ -39,6 +39,7 @@ class GMSResponseHelper {
         }
 
         data.entryMethod = HpsC2xEnums.cardDataSourceTypeToString(resp?.cardDataSourceType)
+        data.entryMode = Int32(HpsC2xEnums.cardDataSourceTypeToEntryMode(resp?.cardDataSourceType).rawValue)
         data.approvalCode = resp?.authCode
         data.maskedCardNumber = resp?.maskedPan
         data.responseText = resp?.gatewayResponseText
@@ -87,6 +88,7 @@ class GMSResponseHelper {
         }
 
         data.entryMethod = HpsC2xEnums.cardDataSourceTypeToString(resp?.cardDataSourceType)
+        data.entryMode = Int32(HpsC2xEnums.cardDataSourceTypeToEntryMode(resp?.cardDataSourceType).rawValue)
         data.approvalCode = resp?.authCode
         data.maskedCardNumber = resp?.maskedPan
         data.responseText = resp?.gatewayResponseText
@@ -121,6 +123,7 @@ class GMSResponseHelper {
         }
 
         data.entryMethod = HpsC2xEnums.cardDataSourceTypeToString(resp?.cardDataSourceType)
+        data.entryMode = Int32(HpsC2xEnums.cardDataSourceTypeToEntryMode(resp?.cardDataSourceType).rawValue)
         data.approvalCode = resp?.authCode
         data.maskedCardNumber = resp?.maskedPan
         data.responseText = resp?.gatewayResponseText
