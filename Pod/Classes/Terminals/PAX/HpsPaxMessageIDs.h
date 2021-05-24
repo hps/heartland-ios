@@ -270,7 +270,8 @@ typedef NS_ENUM(NSInteger, HpsPaxEntryModes) {
     HpsPaxEntryModes_Contactless,
     HpsPaxEntryModes_Scanner,
     HpsPaxEntryModes_Chip,
-    HpsPaxEntryModes_ChipFallBackSwipe
+    HpsPaxEntryModes_ChipFallBackSwipe,
+    HpsPaxEntryModes_Unknown
 };
 typedef NS_ENUM(NSInteger, ApplicationCrytogramType) {
 	TC,

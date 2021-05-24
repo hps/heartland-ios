@@ -83,12 +83,6 @@ typedef NS_ENUM(NSInteger, RecurringType) {
     VARIABLE
 };
 
-typedef NS_ENUM(NSInteger, ReversalReasonCode) {
-    ReversalReasonCodeCUSTOMERCANCELLATION,
-    ReversalReasonCodeTERMINALERROR,
-    ReversalReasonCodeTIMEOUT
-};
-
 typedef NS_ENUM(NSInteger, CurrencyType) {
 
     CURRENCY,

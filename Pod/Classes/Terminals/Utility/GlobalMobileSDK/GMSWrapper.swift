@@ -68,6 +68,10 @@ public class GMSWrapper: NSObject {
             if let transaction = builder.buildRequest() as? ReturnTransaction {
                 GMSManager.shared.start(transaction: transaction, entryModes: self.entryModes, delegate: self)
             }
+        case .creditReversal:
+            if let transaction = builder.buildRequest() as? ReversalTransaction {
+                GMSManager.shared.start(transaction: transaction, entryModes: self.entryModes, delegate: self)
+            }
         case .creditSale:
             if let transaction = builder.buildRequest() as? SaleTransaction {
                 GMSManager.shared.start(transaction: transaction, entryModes: self.entryModes, delegate: self)
@@ -170,6 +174,7 @@ extension GMSWrapper: TransactionDelegate {
         var data = HpsTerminalResponse()
 
         data.transactionId = response?.gatewayTransactionId
+        data.clientTransactionIdUUID = response?.transactionId
         
         if let decimalValue = response?.approvedAmount {
             let doubleValue = NSDecimalNumber(decimal: decimalValue).doubleValue

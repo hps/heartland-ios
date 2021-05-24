@@ -7,6 +7,7 @@ public enum HpsTransactionType: UInt {
         creditAuth,
         creditCapture,
         creditReturn,
+        creditReversal,
         creditSale,
         creditVoid,
         unknown

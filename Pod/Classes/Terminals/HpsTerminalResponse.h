@@ -66,6 +66,8 @@
 @property (nonatomic) BOOL storedResponse;
 @property (nonatomic,readwrite) NSString *lastResponseTransactionId;
 
+@property (nonatomic,strong) NSUUID *clientTransactionIdUUID;
+
 - (void) mapResponse:(id <HpaResposeInterface>) response;
 // @todo
 //+(HpsTerminalResponse*)terminalResponseFromVitalSDK:(TransactionResponse*)transactionResponse;

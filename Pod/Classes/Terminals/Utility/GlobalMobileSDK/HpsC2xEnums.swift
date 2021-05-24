@@ -47,4 +47,36 @@ public class HpsC2xEnums: NSObject {
             return "unknown"
         }
     }
+    public static func cardDataSourceTypeToEntryMode(_ cardDataSourceType: GlobalMobileSDK.EntryMode?) -> HpsPaxEntryModes {
+        switch (cardDataSourceType) {
+        case .chipFallback:
+            return .chipFallBackSwipe
+        case .contact:
+            return .chip
+        case .contactless:
+            return .contactless
+        case .manual:
+            return .manual
+        case .msr:
+            return .swipe
+        case .quickChip:
+            return .chip
+        default:
+            return .unknown
+        }
+    }
+    public static func reversalReasonCodeToReversalReason(_ reversalReasonCode: ReversalReasonCode) -> ReversalReason {
+        switch (reversalReasonCode) {
+        case .CUSTOMERCANCELLATION:
+            return .voidedByCustomer
+        case .TERMINALERROR:
+            return .deviceUnavailable
+        case .TIMEOUT:
+            return .deviceTimeOut
+        case .PARTIALREVERSAL:
+            return .partialReversal
+        default:
+            return .undefined
+        }
+    }
 }
