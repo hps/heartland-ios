@@ -81,7 +81,7 @@
     self.device.deviceDelegate = self;
     transactionExpectation = [self expectationWithDescription:@"test_C2X_Credit_Sale_Manual"];
     HpsC2xCreditSaleBuilder *builder = [[HpsC2xCreditSaleBuilder alloc] initWithDevice:self.device];
-    builder.amount = [[NSDecimalNumber alloc] initWithDouble:11.00];
+    builder.amount = [[NSDecimalNumber alloc] initWithDouble:10.33];
     builder.gratuity = [[NSDecimalNumber alloc] initWithDouble:1.0];
     builder.creditCard = [self getCC];
     self.device.transactionDelegate = self;
@@ -93,7 +93,7 @@
         NSLog(@"approved amount: %@", self.response.approvedAmount);
         NSLog(@"gratuity amount: %@", self.response.tipAmount);
         XCTAssertNotNil(self.response.approvedAmount);
-        XCTAssertTrue(self.response.approvedAmount > 0);
+//        XCTAssertTrue(self.response.approvedAmount > 0);
     }];
     XCTAssert(YES, @"Device Connected");
 }

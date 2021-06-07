@@ -35,6 +35,10 @@ public class GMSWrapper: NSObject {
         GMSManager.shared.cancelSearch()
     }
 
+    public func cancelTransaction() {
+        GMSManager.shared.cancelTransaction()
+    }
+
     public func connectDevice(_ device: HpsTerminalInfo) {
         GMSManager.shared.connect(terminalInfo: device.gmsTerminalInfo, delegate: self)
     }
