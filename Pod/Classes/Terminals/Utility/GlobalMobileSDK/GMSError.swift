@@ -100,6 +100,10 @@ extension NSError {
             reason = "gatewayFailure"
             message = msg
             errorCode = errCode
+        case .hostTimeout:
+            reason = "hostTimeout"
+        case .hostNotReachable:
+            reason = "hostNotReachable"
         @unknown default:
             reason = "unknown"
         }

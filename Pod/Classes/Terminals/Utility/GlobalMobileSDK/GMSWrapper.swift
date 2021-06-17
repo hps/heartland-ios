@@ -13,6 +13,7 @@ public class GMSWrapper: NSObject {
     private var entryModes: [EntryMode]
     private var transactionType: HpsTransactionType
     private var builder: GMSBaseBuilder?
+    private var currentState: TransactionState = .unknown
 
     // MARK: Init
     public init(_ gatewayConfig: GMSConfiguration?, delegate: GMSClientAppDelegate, entryModes: [EntryMode], terminalType: TerminalType) {
@@ -155,6 +156,7 @@ extension GMSWrapper: TransactionDelegate {
 
     // MARK: TransactionDelegate
     public func onState(state: TransactionState) {
+        currentState = state
         delegate.onStatus(HpsTransactionStatus.fromTransactionState(state))
     }
 
@@ -187,6 +189,10 @@ extension GMSWrapper: TransactionDelegate {
 
         if let b = self.builder {
             data = b.mapResponse(data, result, response)
+        }
+
+        if result == .success && currentState == .reversalInProgress {
+            data.deviceResponseCode = "reversed"
         }
 
         delegate.onTransactionComplete(result.rawValue, response: data)
