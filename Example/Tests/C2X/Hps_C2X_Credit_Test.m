@@ -81,19 +81,73 @@
     self.device.deviceDelegate = self;
     transactionExpectation = [self expectationWithDescription:@"test_C2X_Credit_Sale_Manual"];
     HpsC2xCreditSaleBuilder *builder = [[HpsC2xCreditSaleBuilder alloc] initWithDevice:self.device];
-    builder.amount = [[NSDecimalNumber alloc] initWithDouble:11.00];
+    builder.amount = [[NSDecimalNumber alloc] initWithDouble:10.33];
     builder.gratuity = [[NSDecimalNumber alloc] initWithDouble:1.0];
     builder.creditCard = [self getCC];
     self.device.transactionDelegate = self;
     [builder execute];
-    [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
+    [self waitForExpectationsWithTimeout:1800.0 handler:^(NSError *error) {
         if(error) XCTFail(@"Request Timed out");
         XCTAssertNotNil(self.response);
+        XCTAssertNotNil(self.response.clientTransactionIdUUID);
+        NSLog(@"approved amount: %@", self.response.clientTransactionIdUUID);
         XCTAssertEqualObjects(@"APPROVAL", self.response.deviceResponseCode);
         NSLog(@"approved amount: %@", self.response.approvedAmount);
         NSLog(@"gratuity amount: %@", self.response.tipAmount);
         XCTAssertNotNil(self.response.approvedAmount);
         XCTAssertTrue(self.response.approvedAmount > 0);
+    }];
+    XCTAssert(YES, @"Device Connected");
+}
+
+-(void)test_Credit_Sale_Manual_Partial_Approval
+{
+    [self deviceSetUp];
+    [self.device scan];
+    self.device.deviceDelegate = self;
+    transactionExpectation = [self expectationWithDescription:@"test_C2X_Credit_Sale_Manual"];
+    HpsC2xCreditSaleBuilder *builder = [[HpsC2xCreditSaleBuilder alloc] initWithDevice:self.device];
+    builder.amount = [[NSDecimalNumber alloc] initWithDouble:4.28];
+    builder.gratuity = [[NSDecimalNumber alloc] initWithDouble:1.28];
+    builder.creditCard = [self getCC];
+    self.device.transactionDelegate = self;
+    [builder execute];
+    [self waitForExpectationsWithTimeout:1800.0 handler:^(NSError *error) {
+        if(error) XCTFail(@"Request Timed out");
+        XCTAssertNotNil(self.response);
+        XCTAssertNotNil(self.response.clientTransactionIdUUID);
+        NSLog(@"approved amount: %@", self.response.clientTransactionIdUUID);
+        XCTAssertEqualObjects(@"PARTIAL APPROVAL", self.response.deviceResponseCode);
+        NSLog(@"approved amount: %@", self.response.approvedAmount);
+        NSLog(@"gratuity amount: %@", self.response.tipAmount);
+        XCTAssertNotNil(self.response.approvedAmount);
+        XCTAssertTrue(self.response.approvedAmount > 0);
+    }];
+    XCTAssert(YES, @"Device Connected");
+}
+
+-(void)test_Credit_Sale_Manual_No_Reply
+{
+    [self deviceSetUp];
+    [self.device scan];
+    self.device.deviceDelegate = self;
+    transactionExpectation = [self expectationWithDescription:@"test_C2X_Credit_Sale_Manual"];
+    HpsC2xCreditSaleBuilder *builder = [[HpsC2xCreditSaleBuilder alloc] initWithDevice:self.device];
+    builder.amount = [[NSDecimalNumber alloc] initWithDouble:10.33];
+    builder.gratuity = [[NSDecimalNumber alloc] initWithDouble:1.0];
+    builder.creditCard = [self getCC];
+    self.device.transactionDelegate = self;
+    [builder execute];
+    [self waitForExpectationsWithTimeout:1800.0 handler:^(NSError *error) {
+//        if(error) XCTFail(@"Request Timed out");
+        XCTAssertNotNil(self.response);
+        XCTAssertNotNil(self.response.clientTransactionIdUUID);
+        NSLog(@"approved amount: %@", self.response.clientTransactionIdUUID);
+//        XCTAssertEqualObjects(@"APPROVAL", self.response.deviceResponseCode);
+//        NSLog(@"approved amount: %@", self.response.approvedAmount);
+//        NSLog(@"gratuity amount: %@", self.response.tipAmount);
+//        XCTAssertNotNil(self.response.approvedAmount);
+//        XCTAssertTrue(self.response.approvedAmount > 0);
     }];
     XCTAssert(YES, @"Device Connected");
 }
@@ -511,7 +565,7 @@
     transactionExpectation = nil;
 }
 - (void)onTransactionCancelled {
-    
+    NSLog(@"Transaction cancelled");
 }
 - (void)onError:(NSError *)emvError
 {

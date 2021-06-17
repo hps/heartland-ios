@@ -63,6 +63,11 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
             wrapper.selectAID(aid: application)
         }
     }
+    public func cancelTransaction() {
+        if let wrapper = self.gmsWrapper {
+            wrapper.cancelTransaction()
+        }
+    }
 
     // mark: GMSClientAppDelegate
 
