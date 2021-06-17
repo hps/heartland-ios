@@ -7,11 +7,16 @@
 //
 
 #import "HRGMSDeviceManager.h"
-#import <Heartland_iOS_SDK/Heartland_iOS_SDK-Swift.h>
+#import "HRGMSTransactionService.h"
 
-@interface HRGMSDeviceManager () <GMSDeviceDelegate, GMSDeviceScanObserver>
+@interface HRGMSDeviceManager ()
+<
+GMSDeviceDelegate,
+GMSDeviceScanObserver
+>
 
 @property (strong, nonatomic, nullable) GMSDevice *device;
+@property (strong, nonatomic) HRGMSTransactionService *transactionService;
 
 @end
 
@@ -34,6 +39,7 @@
     HpsWiseCubeDevice *device = [[HpsWiseCubeDevice alloc] initWithConfig:config];
     device.deviceDelegate = self;
     device.deviceScanObserver = self;
+    _transactionService = [[HRGMSTransactionService alloc] initWithDevice:device];
     _device = device;
 }
 
@@ -53,6 +59,12 @@
     [_device.gmsWrapper disconnect];
 }
 
+- (void)doSampleCreditSale {
+    [_transactionService doSampleCreditSale];
+}
+
+// MARK: GMSDeviceDelegate
+
 - (void)onBluetoothDeviceList:(NSMutableArray * _Nonnull)peripherals {
     [NSNotificationCenter.defaultCenter postNotificationName:AppNotificationGMSDeviceFound object:peripherals];
 }
@@ -71,6 +83,8 @@
     [NSNotificationCenter.defaultCenter postNotificationName:AppNotificationGMSDeviceError
                                                       object:deviceError];
 }
+
+// MARK: GMSDeviceScanObserver
 
 - (void)deviceDidUpdateScanStateTo:(BOOL)isScanning {
     [NSNotificationCenter.defaultCenter postNotificationName:AppNotificationGMSDeviceScanStateDidUpdate

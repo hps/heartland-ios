@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)stopScan;
 - (void)connectToTerminal:(HpsTerminalInfo *)terminal;
 - (void)disconnect;
+- (void)doSampleCreditSale;
 
 @end
 

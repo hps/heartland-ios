@@ -9,6 +9,7 @@
 #import "HRGMSDeviceViewController.h"
 #import "HRGMSDeviceManager.h"
 #import <Heartland_iOS_SDK/Heartland_iOS_SDK-Swift.h>
+#import "HRGMSTransactionViewController.h"
 
 @interface HRGMSDeviceViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -16,7 +17,9 @@
 @property (strong, nonatomic, nullable) HpsTerminalInfo *selectedTerminal;
 @property (nonatomic) BOOL terminalIsConnected;
 @property (weak, nonatomic) UIButton *scanButton;
+@property (weak, nonatomic) UIButton *transactionButton;
 @property (weak, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) HRGMSTransactionViewController *transactionController;
 
 @end
 
@@ -35,6 +38,7 @@
     [super viewDidLoad];
     [self configureGMSDeviceManager];
     [self addScanControls];
+    [self configureTransactionButton];
     [self addTerminalsTableView];
 }
 
@@ -97,6 +101,27 @@
     _scanButton = scanButton;
     
     [self updateScanControlsForScanning:NO];
+}
+
+- (void)configureTransactionButton {
+    UIButton *transactionButton = UIButton.new;
+    [transactionButton addTarget:self
+                          action:@selector(transactionTapped)
+                forControlEvents:UIControlEventTouchUpInside];
+    transactionButton.backgroundColor = UIColor.systemRedColor;
+    [transactionButton setTitle:@"Do Transaction" forState:UIControlStateNormal];
+    transactionButton.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.view addSubview:transactionButton];
+    
+    [NSLayoutConstraint activateConstraints:@[
+        [transactionButton.topAnchor constraintEqualToAnchor:_scanButton.bottomAnchor constant:11],
+        [transactionButton.centerXAnchor constraintEqualToAnchor:_scanButton.centerXAnchor],
+        [transactionButton.heightAnchor constraintEqualToConstant:52],
+        [transactionButton.widthAnchor constraintEqualToConstant:180]
+    ]];
+    
+    _transactionButton = transactionButton;
 }
 
 - (void)didReceiveScanStateNotification:(NSNotification *)notification {
@@ -170,7 +195,7 @@
     [self.view addSubview:tableView];
     
     [NSLayoutConstraint activateConstraints:@[
-        [tableView.topAnchor constraintEqualToAnchor:_scanButton.bottomAnchor constant:16],
+        [tableView.topAnchor constraintEqualToAnchor:_transactionButton.bottomAnchor constant:16],
         [tableView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
         [tableView.widthAnchor constraintEqualToConstant:400],
         [tableView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:-16]
@@ -231,10 +256,20 @@
     }
 }
 
+- (void)transactionTapped {
+    [self presentTransactionController];
+}
+
 - (void)presentAlertWithMessage:(NSString *)message {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDefault handler:nil]];
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)presentTransactionController {
+    HRGMSTransactionViewController *controller = HRGMSTransactionViewController.new;
+    controller.modalPresentationStyle = UIModalPresentationCustom;
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 @end

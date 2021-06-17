@@ -47,6 +47,10 @@
 		E2B1C1EB24190C820040D5C7 /* Hps_Hpa_EBT_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B1C1EA24190C820040D5C7 /* Hps_Hpa_EBT_Test.m */; };
 		EF6EA442263775200039FA6B /* HRGMSDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6EA441263775200039FA6B /* HRGMSDeviceViewController.m */; };
 		EF6EA447263776030039FA6B /* HRGMSDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6EA446263776030039FA6B /* HRGMSDeviceManager.m */; };
+		EF80F8BF267BF3F50097FF73 /* HRGMSTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF80F8BE267BF3F50097FF73 /* HRGMSTransactionViewController.m */; };
+		EF80F8CB267BF4730097FF73 /* HRGMSTransactionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF80F8CA267BF4730097FF73 /* HRGMSTransactionViewModel.m */; };
+		EFDB8B46267C0A62004DFCDA /* HRGMSTransactionService.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDB8B45267C0A62004DFCDA /* HRGMSTransactionService.m */; };
+		EFDB8B4B267C176D004DFCDA /* HRGMSSerializationService.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDB8B4A267C176D004DFCDA /* HRGMSSerializationService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +123,14 @@
 		EF6EA445263776030039FA6B /* HRGMSDeviceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSDeviceManager.h; sourceTree = "<group>"; };
 		EF6EA446263776030039FA6B /* HRGMSDeviceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSDeviceManager.m; sourceTree = "<group>"; };
 		EF6EA44A26377ABA0039FA6B /* HRGMS+Notifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HRGMS+Notifications.h"; sourceTree = "<group>"; };
+		EF80F8BD267BF3F50097FF73 /* HRGMSTransactionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSTransactionViewController.h; sourceTree = "<group>"; };
+		EF80F8BE267BF3F50097FF73 /* HRGMSTransactionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionViewController.m; sourceTree = "<group>"; };
+		EF80F8C9267BF4730097FF73 /* HRGMSTransactionViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSTransactionViewModel.h; sourceTree = "<group>"; };
+		EF80F8CA267BF4730097FF73 /* HRGMSTransactionViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionViewModel.m; sourceTree = "<group>"; };
+		EFDB8B44267C0A62004DFCDA /* HRGMSTransactionService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSTransactionService.h; sourceTree = "<group>"; };
+		EFDB8B45267C0A62004DFCDA /* HRGMSTransactionService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionService.m; sourceTree = "<group>"; };
+		EFDB8B49267C176D004DFCDA /* HRGMSSerializationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSSerializationService.h; sourceTree = "<group>"; };
+		EFDB8B4A267C176D004DFCDA /* HRGMSSerializationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSSerializationService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,8 +211,16 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				EF6EA440263775200039FA6B /* HRGMSDeviceViewController.h */,
 				EF6EA441263775200039FA6B /* HRGMSDeviceViewController.m */,
+				EFDB8B49267C176D004DFCDA /* HRGMSSerializationService.h */,
+				EFDB8B4A267C176D004DFCDA /* HRGMSSerializationService.m */,
+				EF80F8C9267BF4730097FF73 /* HRGMSTransactionViewModel.h */,
+				EF80F8CA267BF4730097FF73 /* HRGMSTransactionViewModel.m */,
+				EF80F8BD267BF3F50097FF73 /* HRGMSTransactionViewController.h */,
+				EF80F8BE267BF3F50097FF73 /* HRGMSTransactionViewController.m */,
 				EF6EA445263776030039FA6B /* HRGMSDeviceManager.h */,
 				EF6EA446263776030039FA6B /* HRGMSDeviceManager.m */,
+				EFDB8B44267C0A62004DFCDA /* HRGMSTransactionService.h */,
+				EFDB8B45267C0A62004DFCDA /* HRGMSTransactionService.m */,
 				EF6EA44A26377ABA0039FA6B /* HRGMS+Notifications.h */,
 				6003F5A5195388D20070C39A /* HpsViewController.h */,
 				6003F5A6195388D20070C39A /* HpsViewController.m */,
@@ -511,7 +531,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* HpsAppDelegate.m in Sources */,
+				EF80F8CB267BF4730097FF73 /* HRGMSTransactionViewModel.m in Sources */,
 				6003F5A7195388D20070C39A /* HpsViewController.m in Sources */,
+				EF80F8BF267BF3F50097FF73 /* HRGMSTransactionViewController.m in Sources */,
+				EFDB8B4B267C176D004DFCDA /* HRGMSSerializationService.m in Sources */,
+				EFDB8B46267C0A62004DFCDA /* HRGMSTransactionService.m in Sources */,
 				EF6EA447263776030039FA6B /* HRGMSDeviceManager.m in Sources */,
 				EF6EA442263775200039FA6B /* HRGMSDeviceViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,

@@ -10,3 +10,6 @@
 #define AppNotificationGMSDeviceFound                   @"AppNotificationGMSDeviceFound"
 #define AppNotificationGMSDeviceConnectionDidUpdate     @"AppNotificationGMSDeviceConnectionDidUpdate"
 #define AppNotificationGMSDeviceError                   @"AppNotificationGMSDeviceError"
+#define AppNotificationGMSTransactionError              @"AppNotificationGMSTransactionError"
+#define AppNotificationGMSTransactionStatus             @"AppNotificationGMSTransactionStatus"
+#define AppNotificationGMSTransactionResponse           @"AppNotificationGMSTransactionResponse"
