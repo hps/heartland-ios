@@ -130,6 +130,6 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
     }
 
     public func onError(_ error: NSError) {
-        self.transactionDelegate?.onError(error)
+        self.transactionDelegate?.onTransactionError(error)
     }
 }

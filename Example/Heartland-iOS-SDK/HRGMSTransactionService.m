@@ -80,7 +80,7 @@
     [_device confirmApplication:applications[0]];
 }
 
-- (void)onError:(NSError * _Nonnull)error {
+- (void)onTransactionError:(NSError * _Nonnull)error {
     [NSNotificationCenter.defaultCenter postNotificationName:AppNotificationGMSTransactionError
                                                       object:error];
 }
