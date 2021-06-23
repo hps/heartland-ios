@@ -103,7 +103,7 @@
     [NSNotificationCenter.defaultCenter postNotificationName:AppNotificationGMSTransactionResponse
                                                       object:response];
     
-    if ([response.deviceResponseCode isEqualToString:@"hostTimeout"]) {
+    if (response.gmsResponseIsTimeout) {
         NSUUID *clientTransactionId = response.clientTransactionIdUUID;
         
         if (!clientTransactionId) {

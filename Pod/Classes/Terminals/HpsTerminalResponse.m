@@ -8,6 +8,10 @@
     return [self.deviceResponseCode isEqualToString:@"APPROVAL"];
 }
 
+- (BOOL)gmsResponseIsTimeout {
+    return [self.deviceResponseCode isEqualToString:@"hostTimeout"];
+}
+
 - (void) mapResponse:(id <HpaResposeInterface>) response
 {
 	self.version = response.Version;
