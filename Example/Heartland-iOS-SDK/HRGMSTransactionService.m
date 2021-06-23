@@ -13,21 +13,19 @@
 
 @interface HRGMSTransactionService ()
 
+// instance
+
 @property (weak, nonatomic) GMSDevice *device;
 @property (nonatomic) NSTimeInterval transactionStartTimestamp;
+
+// computed
+
+@property (strong, nonatomic, readonly) HpsWiseCubeCreditSaleBuilder *sampleCreditSaleBuilder;
+@property (strong, nonatomic, readonly) HpsWiseCubeCreditReversalBuilder *sampleCreditReversalBuilder;
 
 @end
 
 @implementation HRGMSTransactionService
-
-- (instancetype)initWithDevice:(GMSDevice *)device {
-    self = [super init];
-    if (self) {
-        device.transactionDelegate = self;
-        _device = device;
-    }
-    return self;
-}
 
 - (HpsWiseCubeCreditSaleBuilder *)sampleCreditSaleBuilder {
     HpsWiseCubeCreditSaleBuilder *builder =
@@ -38,9 +36,38 @@
     return builder;
 }
 
+- (HpsWiseCubeCreditReversalBuilder *)sampleCreditReversalBuilder {
+    HpsWiseCubeCreditReversalBuilder *builder =
+    [[HpsWiseCubeCreditReversalBuilder alloc] initWithDevice:
+     (HpsWiseCubeDevice *)_device];
+    builder.amount = [[NSDecimalNumber alloc] initWithInteger:12];
+    builder.reason = ReversalReasonCodeTIMEOUT;
+    return builder;
+}
+
+- (instancetype)initWithDevice:(GMSDevice *)device {
+    self = [super init];
+    if (self) {
+        device.transactionDelegate = self;
+        _device = device;
+    }
+    return self;
+}
+
+- (void)doSampleCreditReversalWithClientTransactionId:(NSUUID * _Nonnull)clientTransactionId {
+    HpsWiseCubeCreditReversalBuilder *builder = self.sampleCreditReversalBuilder;
+    builder.clientTransactionId = clientTransactionId;
+    [builder execute];
+    [self gmsTransactionServiceDidStartTransaction];
+}
+
 - (void)doSampleCreditSale {
-    _transactionStartTimestamp = NSDate.new.timeIntervalSince1970;
     [self.sampleCreditSaleBuilder execute];
+    [self gmsTransactionServiceDidStartTransaction];
+}
+
+- (void)gmsTransactionServiceDidStartTransaction {
+    _transactionStartTimestamp = NSDate.new.timeIntervalSince1970;
 }
 
 // MARK: GMSTransactionDelegate
@@ -75,6 +102,17 @@
     
     [NSNotificationCenter.defaultCenter postNotificationName:AppNotificationGMSTransactionResponse
                                                       object:response];
+    
+    if ([response.deviceResponseCode isEqualToString:@"hostTimeout"]) {
+        NSUUID *clientTransactionId = response.clientTransactionIdUUID;
+        
+        if (!clientTransactionId) {
+            NSLog(@"no client transaction id...");
+            return;
+        };
+        
+        [self doSampleCreditReversalWithClientTransactionId:clientTransactionId];
+    }
 }
 
 @end

@@ -77,6 +77,7 @@
     config.siteID = @"142914";
     config.deviceID = @"6399854";
     config.licenseID = @"142827";
+    config.timeout = 10;
     return config;
 }
 
