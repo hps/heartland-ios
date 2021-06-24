@@ -28,14 +28,14 @@ public class GMSBaseBuilder : NSObject {
 
 @objcMembers
 public class GMSBuilderModel: NSObject {
-    let transactionType: HpsTransactionType
-    let amount: NSDecimalNumber?
-    let gratuity: NSDecimalNumber?
-    let referenceNumber: String?
-    let transactionId: String?
-    let creditCard: HpsCreditCard?
-    let clientTransactionId: UUID?
-    let reason: ReversalReasonCode?
+    public let transactionType: HpsTransactionType
+    public let amount: NSDecimalNumber?
+    public let gratuity: NSDecimalNumber?
+    public let referenceNumber: String?
+    public let transactionId: String?
+    public let creditCard: HpsCreditCard?
+    public let clientTransactionId: UUID?
+    public let reason: ReversalReasonCode?
     
     init(
         transactionType: HpsTransactionType,
