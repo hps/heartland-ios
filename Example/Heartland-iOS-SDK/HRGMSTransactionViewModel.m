@@ -45,7 +45,7 @@
     [HRGMSDeviceManager.sharedInstance doTransactionWithModel:
      [GMSBuilderModel creditSaleModelWithAmount:[[NSDecimalNumber alloc] initWithUnsignedInt:12]
                                        gratuity:NSDecimalNumber.zero
-                                     creditCard:nil]];
+                                referenceNumber:nil]];
 }
 
 - (void)observeGMSTransactionNotifications {

@@ -33,7 +33,7 @@
                                 model:
      [GMSBuilderModel creditSaleModelWithAmount:[[NSDecimalNumber alloc] initWithInteger:12]
                                        gratuity:[[NSDecimalNumber alloc] initWithInteger:0]
-                                     creditCard:nil]];
+                                referenceNumber:nil]];
 }
 
 - (HpsWiseCubeCreditReversalBuilder *)sampleCreditReversalBuilder {

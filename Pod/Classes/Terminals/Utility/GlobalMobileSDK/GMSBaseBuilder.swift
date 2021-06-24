@@ -62,6 +62,7 @@ public class GMSBuilderModel: NSObject {
     public static func creditAuthModel(
         amount: NSDecimalNumber,
         gratuity: NSDecimalNumber?,
+        referenceNumber: String?,
         creditCard: HpsCreditCard?
     ) -> GMSBuilderModel {
         .init(
@@ -88,13 +89,12 @@ public class GMSBuilderModel: NSObject {
     public static func creditSaleModel(
         amount: NSDecimalNumber,
         gratuity: NSDecimalNumber?,
-        creditCard: HpsCreditCard?
+        referenceNumber: String?
     ) -> GMSBuilderModel {
         .init(
             transactionType: .creditSale,
             amount: amount,
-            gratuity: gratuity,
-            creditCard: creditCard
+            gratuity: gratuity
         )
     }
 }
