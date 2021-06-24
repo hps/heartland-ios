@@ -28,21 +28,21 @@
 @implementation HRGMSTransactionService
 
 - (HpsWiseCubeCreditSaleBuilder *)sampleCreditSaleBuilder {
-    HpsWiseCubeCreditSaleBuilder *builder =
-    [[HpsWiseCubeCreditSaleBuilder alloc] initWithDevice:
-     (HpsWiseCubeDevice *)_device];
-    builder.amount = [[NSDecimalNumber alloc] initWithInteger:12];
-    builder.gratuity = [[NSDecimalNumber alloc] initWithInteger:0];
-    return builder;
+    return (HpsWiseCubeCreditSaleBuilder *)
+    [GMSBaseBuilder builderWithDevice:_device
+                                model:
+     [GMSBuilderModel creditSaleModelWithAmount:[[NSDecimalNumber alloc] initWithInteger:12]
+                                       gratuity:[[NSDecimalNumber alloc] initWithInteger:0]
+                                     creditCard:nil]];
 }
 
 - (HpsWiseCubeCreditReversalBuilder *)sampleCreditReversalBuilder {
-    HpsWiseCubeCreditReversalBuilder *builder =
-    [[HpsWiseCubeCreditReversalBuilder alloc] initWithDevice:
-     (HpsWiseCubeDevice *)_device];
-    builder.amount = [[NSDecimalNumber alloc] initWithInteger:12];
-    builder.reason = ReversalReasonCodeTIMEOUT;
-    return builder;
+    return (HpsWiseCubeCreditReversalBuilder *)
+    [GMSBaseBuilder builderWithDevice:_device
+                                model:
+     [GMSBuilderModel creditReversalModelWithAmount:[[NSDecimalNumber alloc] initWithInteger:12]
+                                clientTransactionId:nil
+                                             reason:ReversalReasonCodeTIMEOUT]];
 }
 
 - (instancetype)initWithDevice:(GMSDevice *)device {
@@ -64,6 +64,11 @@
 - (void)doSampleCreditSale {
     [self.sampleCreditSaleBuilder execute];
     [self gmsTransactionServiceDidStartTransaction];
+}
+
+- (void)doTransactionWithModel:(GMSBuilderModel *)model {
+    [[GMSBaseBuilder builderWithDevice:_device
+                                 model:model] execute];
 }
 
 - (void)gmsTransactionServiceDidStartTransaction {

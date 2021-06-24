@@ -42,7 +42,10 @@
 - (void)gmsSaleSelected {
     [_view gmsTransactionViewResetResponseViews];
     
-    [HRGMSDeviceManager.sharedInstance doSampleCreditSale];
+    [HRGMSDeviceManager.sharedInstance doTransactionWithModel:
+     [GMSBuilderModel creditSaleModelWithAmount:[[NSDecimalNumber alloc] initWithUnsignedInt:12]
+                                       gratuity:NSDecimalNumber.zero
+                                     creditCard:nil]];
 }
 
 - (void)observeGMSTransactionNotifications {

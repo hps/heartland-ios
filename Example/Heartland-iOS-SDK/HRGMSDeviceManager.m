@@ -59,8 +59,8 @@ GMSDeviceScanObserver
     [_device.gmsWrapper disconnect];
 }
 
-- (void)doSampleCreditSale {
-    [_transactionService doSampleCreditSale];
+- (void)doTransactionWithModel:(GMSBuilderModel *)model {
+    [_transactionService doTransactionWithModel:model];
 }
 
 // MARK: GMSDeviceDelegate

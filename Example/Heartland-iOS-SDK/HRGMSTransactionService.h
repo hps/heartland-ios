@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithDevice:(GMSDevice *)device;
 
 - (void)doSampleCreditSale;
+- (void)doTransactionWithModel:(GMSBuilderModel *)model;
 
 @end
 

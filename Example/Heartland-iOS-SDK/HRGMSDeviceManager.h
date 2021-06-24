@@ -10,6 +10,7 @@
 #import <Heartland_iOS_SDK/HpsConnectionConfig.h>
 #import "HRGMS+Notifications.h"
 
+@class GMSBuilderModel;
 @class HpsTerminalInfo;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -25,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)stopScan;
 - (void)connectToTerminal:(HpsTerminalInfo *)terminal;
 - (void)disconnect;
-- (void)doSampleCreditSale;
+- (void)doTransactionWithModel:(GMSBuilderModel *)model;
 
 @end
 
