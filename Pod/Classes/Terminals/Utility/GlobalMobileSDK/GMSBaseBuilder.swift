@@ -57,6 +57,12 @@ public class GMSBuilderModel: NSObject {
         self.reason = reasonPointer.flatMap { ReversalReasonCode(rawValue: $0.intValue) }
     }
     
+    public var reasonPointer: NSNumber? {
+        reason.flatMap {
+            NSNumber(value: $0.rawValue)
+        }
+    }
+    
     // MARK: Wrappers
     
     public static func creditAuthModel(
