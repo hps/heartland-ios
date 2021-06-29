@@ -30,6 +30,10 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
         NSMutableArray(array: Array(terminalsById.values))
     }
     
+    public var terminals: [HpsTerminalInfo] {
+        peripherals as? [HpsTerminalInfo] ?? []
+    }
+    
     public func scan() {
         if let wrapper = self.gmsWrapper {
             isScanning = true
