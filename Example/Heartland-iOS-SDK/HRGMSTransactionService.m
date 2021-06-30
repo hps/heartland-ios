@@ -69,6 +69,7 @@
 - (void)doTransactionWithModel:(GMSBuilderModel *)model {
     [[GMSBaseBuilder builderWithDevice:_device
                                  model:model] execute];
+    [self gmsTransactionServiceDidStartTransaction];
 }
 
 - (void)gmsTransactionServiceDidStartTransaction {

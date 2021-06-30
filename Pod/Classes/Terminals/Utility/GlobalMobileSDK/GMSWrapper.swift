@@ -182,9 +182,8 @@ extension GMSWrapper: TransactionDelegate {
         data.transactionId = response?.gatewayTransactionId
         data.clientTransactionIdUUID = response?.transactionId
         
-        if let decimalValue = response?.approvedAmount {
-            let doubleValue = NSDecimalNumber(decimal: decimalValue).doubleValue
-            data.approvedAmount = NSNumber(value: doubleValue)
+        if let uintValue = response?.approvedAmount {
+            data.approvedAmount = GMSResponseHelper.uintToDecimal(uintValue)
         }
 
         if let b = self.builder {

@@ -43,7 +43,7 @@
     [_view gmsTransactionViewResetResponseViews];
     
     [HRGMSDeviceManager.sharedInstance doTransactionWithModel:
-     [GMSBuilderModel creditSaleModelWithAmount:[[NSDecimalNumber alloc] initWithUnsignedInt:12]
+     [GMSBuilderModel creditSaleModelWithAmount:[NSDecimalNumber decimalNumberWithString:@"4.28"]
                                        gratuity:NSDecimalNumber.zero
                                 referenceNumber:nil]];
 }
@@ -158,6 +158,8 @@
             return @".error";
         case HpsTransactionStatusUnknown:
             return @".unknown";
+        case HpsTransactionStatusTerminalDeclined:
+            return @".terminalDeclined";
     }
 }
 

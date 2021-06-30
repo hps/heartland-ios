@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Heartland-iOS-SDK"
-  s.version          = "1.1.10"
+  s.version          = "2.0.0-beta1"
   s.summary          = "Secure Tokenized Payments by Heartland Payment Systems."
 
 # This description is used to generate tags and improve search results.
@@ -38,6 +38,6 @@ Pod::Spec.new do |s|
 
   s.frameworks = 'UIKit'
   s.dependency 'XMLDictionary'
-  s.dependency 'VitalSDK', '1.2.2-beta2'
+  s.dependency 'VitalSDK', '1.2.2-beta3'
   s.swift_version = '5.0'
 end

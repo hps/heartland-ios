@@ -25,7 +25,9 @@ public class GMSTransactionResponse: NSObject {
         self.transactionId = authResponse.transactionId
         self.gatewayTransactionId = authResponse.gatewayTransactionId
         self.gatewayResponseText = authResponse.gatewayResponseText
-        self.approvedAmount = authResponse.approvedAmount
+        if let approvedAmount = authResponse.approvedAmount {
+            self.approvedAmount = Decimal(approvedAmount)
+        }
         self.transactionDescription = authResponse.transactionDescription
         self.transactionType = .creditAuth
     }
@@ -35,7 +37,9 @@ public class GMSTransactionResponse: NSObject {
         self.transactionId = saleResponse.transactionId
         self.gatewayTransactionId = saleResponse.gatewayTransactionId
         self.gatewayResponseText = saleResponse.gatewayResponseText
-        self.approvedAmount = saleResponse.approvedAmount
+        if let approvedAmount = saleResponse.approvedAmount {
+            self.approvedAmount = Decimal(approvedAmount)
+        }
         self.transactionDescription = saleResponse.transactionDescription
         self.transactionType = .creditSale
     }

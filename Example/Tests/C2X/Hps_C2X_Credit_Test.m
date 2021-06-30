@@ -117,9 +117,11 @@
         XCTAssertNotNil(self.response);
         XCTAssertNotNil(self.response.clientTransactionIdUUID);
         NSLog(@"approved amount: %@", self.response.clientTransactionIdUUID);
-        XCTAssertEqualObjects(@"PARTIAL APPROVAL", self.response.deviceResponseCode);
-        NSLog(@"approved amount: %@", self.response.approvedAmount);
-        NSLog(@"gratuity amount: %@", self.response.tipAmount);
+        XCTAssertEqualObjects(@"APPROVAL", self.response.deviceResponseCode);
+        XCTAssertEqualObjects(@"4.28", self.response.approvedAmount.stringValue);
+        XCTAssertEqualObjects(@"1.28", self.response.tipAmount.stringValue);
+        NSLog(@"approved amount: %@", self.response.approvedAmount.stringValue);
+        NSLog(@"gratuity amount: %@", self.response.tipAmount.stringValue);
         XCTAssertNotNil(self.response.approvedAmount);
         XCTAssertTrue(self.response.approvedAmount > 0);
     }];
@@ -403,7 +405,7 @@
 
 - (void)onStatusUpdate:(HpsTransactionStatus)transactionStatus
 {
-    NSLog(@"Status: %lu", (unsigned long)transactionStatus);
+        NSLog(@"Status: %lu", (unsigned long)transactionStatus);
 
     switch (transactionStatus)
        {

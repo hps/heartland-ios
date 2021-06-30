@@ -50,7 +50,7 @@
     
     [device doDebit:PAX_TXN_TYPE_SALE_REDEEM andSubGroups:subgroups withResponseBlock:^(HpsPaxDebitResponse *response, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            response.transactionAmount =  [NSNumber numberWithDouble:[self.amount doubleValue]];
+            response.transactionAmount = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:[self.amount doubleValue]] decimalValue]];
             responseBlock(response, error);
         });
     }];

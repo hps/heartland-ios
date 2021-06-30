@@ -24,11 +24,11 @@
 			self.approvalCode = self. hostResponse.hostResponseCode;
 		}
 		if (self.amountResponse != nil){
-			self.transactionAmount = [NSNumber numberWithDouble:self.amountResponse.approvedAmount];
-			self.amountDue = [NSNumber numberWithDouble:self.amountResponse.amountDue];
-			self.tipAmount = [NSNumber numberWithDouble:self.amountResponse.tipAmount];
-			self.cashBackAmount = [NSNumber numberWithDouble:self.amountResponse.cashBackAmount];
-            self.merchantFee = [NSNumber numberWithDouble:self.amountResponse.merchantFee];
+            self.transactionAmount = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:self.amountResponse.approvedAmount] decimalValue]];
+            self.amountDue = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:self.amountResponse.amountDue] decimalValue]];
+            self.tipAmount = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:self.amountResponse.tipAmount] decimalValue]];
+            self.cashBackAmount = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:self.amountResponse.cashBackAmount] decimalValue]];
+            self.merchantFee = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:self.amountResponse.merchantFee] decimalValue]];
 		}
 
 		if (self.accountResponse != nil) {
