@@ -20,32 +20,9 @@
 @property (nonatomic) NSTimeInterval transactionStartTimestamp;
 @property (strong, nonatomic) NSDecimalNumber *transactionTargetAmount;
 
-// computed
-
-@property (strong, nonatomic, readonly) HpsWiseCubeCreditSaleBuilder *sampleCreditSaleBuilder;
-@property (strong, nonatomic, readonly) HpsWiseCubeCreditReversalBuilder *sampleCreditReversalBuilder;
-
 @end
 
 @implementation HRGMSTransactionService
-
-- (HpsWiseCubeCreditSaleBuilder *)sampleCreditSaleBuilder {
-    return (HpsWiseCubeCreditSaleBuilder *)
-    [GMSBaseBuilder builderWithDevice:_device
-                                model:
-     [GMSBuilderModel creditSaleModelWithAmount:[[NSDecimalNumber alloc] initWithInteger:12]
-                                       gratuity:[[NSDecimalNumber alloc] initWithInteger:0]
-                                referenceNumber:nil]];
-}
-
-- (HpsWiseCubeCreditReversalBuilder *)sampleCreditReversalBuilder {
-    return (HpsWiseCubeCreditReversalBuilder *)
-    [GMSBaseBuilder builderWithDevice:_device
-                                model:
-     [GMSBuilderModel creditReversalModelWithAmount:[[NSDecimalNumber alloc] initWithInteger:12]
-                                clientTransactionId:nil
-                                             reason:ReversalReasonCodeTIMEOUT]];
-}
 
 - (instancetype)initWithDevice:(GMSDevice *)device {
     self = [super init];
@@ -56,16 +33,17 @@
     return self;
 }
 
-- (void)doSampleCreditReversalWithClientTransactionId:(NSUUID * _Nonnull)clientTransactionId {
-    HpsWiseCubeCreditReversalBuilder *builder = self.sampleCreditReversalBuilder;
-    builder.clientTransactionId = clientTransactionId;
+- (void)doCreditReversalWithClientTransactionId:(NSUUID * _Nonnull)clientTransactionId {
+    HpsWiseCubeCreditReversalBuilder *builder =
+    (HpsWiseCubeCreditReversalBuilder *)
+    [GMSBaseBuilder builderWithDevice:_device
+                                model:
+     [GMSBuilderModel creditReversalModelWithAmount:_transactionTargetAmount
+                                clientTransactionId:clientTransactionId
+                                             reason:ReversalReasonCodeTIMEOUT]];
+    
     [builder execute];
-    [self gmsTransactionServiceDidStartTransactionForAmount:builder.amount];
-}
-
-- (void)doSampleCreditSale {
-    HpsWiseCubeCreditSaleBuilder *builder = self.sampleCreditSaleBuilder;
-    [builder execute];
+    
     [self gmsTransactionServiceDidStartTransactionForAmount:builder.amount];
 }
 
@@ -113,15 +91,9 @@
     [NSNotificationCenter.defaultCenter postNotificationName:AppNotificationGMSTransactionResponse
                                                       object:response];
     
-    if (response.gmsResponseIsTimeout) {
-        NSUUID *clientTransactionId = response.clientTransactionIdUUID;
-        
-        if (!clientTransactionId) {
-            NSLog(@"no client transaction id...");
-            return;
-        };
-        
-        [self doSampleCreditReversalWithClientTransactionId:clientTransactionId];
+    if (response.gmsResponseIsReversible) {
+        [self doCreditReversalWithClientTransactionId:
+         response.clientTransactionIdUUID];
     }
 }
 

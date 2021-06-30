@@ -8,8 +8,10 @@
     return [self.deviceResponseCode isEqualToString:@"APPROVAL"];
 }
 
-- (BOOL)gmsResponseIsTimeout {
-    return [self.deviceResponseCode isEqualToString:@"hostTimeout"];
+- (BOOL)gmsResponseIsReversible {
+    return ([self.deviceResponseCode isEqualToString:@"hostTimeout"]
+            && ![self.transactionType isEqualToString:@"Reversal"]
+            && self.clientTransactionIdUUID);
 }
 
 - (void) mapResponse:(id <HpaResposeInterface>) response
