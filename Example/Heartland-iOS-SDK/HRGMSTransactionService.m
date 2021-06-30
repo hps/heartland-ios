@@ -6,6 +6,7 @@
 //  Copyright © 2021 Shaunti Fondrisi. All rights reserved.
 //
 
+#import "HRGMSTransactionLogger.h"
 #import "HRGMSTransactionService.h"
 #import "HRGMS+Notifications.h"
 #import "HRGMSSerializationService.h"
@@ -17,6 +18,7 @@
 
 @property (weak, nonatomic) GMSDevice *device;
 @property (nonatomic) NSTimeInterval transactionStartTimestamp;
+@property (strong, nonatomic) NSDecimalNumber *transactionTargetAmount;
 
 // computed
 
@@ -58,22 +60,24 @@
     HpsWiseCubeCreditReversalBuilder *builder = self.sampleCreditReversalBuilder;
     builder.clientTransactionId = clientTransactionId;
     [builder execute];
-    [self gmsTransactionServiceDidStartTransaction];
+    [self gmsTransactionServiceDidStartTransactionForAmount:builder.amount];
 }
 
 - (void)doSampleCreditSale {
-    [self.sampleCreditSaleBuilder execute];
-    [self gmsTransactionServiceDidStartTransaction];
+    HpsWiseCubeCreditSaleBuilder *builder = self.sampleCreditSaleBuilder;
+    [builder execute];
+    [self gmsTransactionServiceDidStartTransactionForAmount:builder.amount];
 }
 
 - (void)doTransactionWithModel:(GMSBuilderModel *)model {
     [[GMSBaseBuilder builderWithDevice:_device
                                  model:model] execute];
-    [self gmsTransactionServiceDidStartTransaction];
+    [self gmsTransactionServiceDidStartTransactionForAmount:model.amount];
 }
 
-- (void)gmsTransactionServiceDidStartTransaction {
+- (void)gmsTransactionServiceDidStartTransactionForAmount:(NSDecimalNumber *)amount {
     _transactionStartTimestamp = NSDate.new.timeIntervalSince1970;
+    _transactionTargetAmount = amount;
 }
 
 // MARK: GMSTransactionDelegate
@@ -102,9 +106,9 @@
 }
 
 - (void)onTransactionComplete:(HpsTerminalResponse * _Nonnull)response {
-    NSLog(@"response received in %d seconds - %@",
-          (int)(NSDate.new.timeIntervalSince1970 - _transactionStartTimestamp),
-          [HRGMSSerializationService jsonFromGMSObject:response]);
+    [HRGMSTransactionLogger logTransactionCompleteWithResponse:response
+                                                startTimestamp:_transactionStartTimestamp
+                                                  targetAmount:_transactionTargetAmount];
     
     [NSNotificationCenter.defaultCenter postNotificationName:AppNotificationGMSTransactionResponse
                                                       object:response];

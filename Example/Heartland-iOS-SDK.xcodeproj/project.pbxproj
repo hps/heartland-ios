@@ -49,6 +49,7 @@
 		EF6EA447263776030039FA6B /* HRGMSDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6EA446263776030039FA6B /* HRGMSDeviceManager.m */; };
 		EF80F8BF267BF3F50097FF73 /* HRGMSTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF80F8BE267BF3F50097FF73 /* HRGMSTransactionViewController.m */; };
 		EF80F8CB267BF4730097FF73 /* HRGMSTransactionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF80F8CA267BF4730097FF73 /* HRGMSTransactionViewModel.m */; };
+		EFA712B3268CE7000041EC21 /* HRGMSTransactionLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA712B2268CE7000041EC21 /* HRGMSTransactionLogger.m */; };
 		EFDB8B46267C0A62004DFCDA /* HRGMSTransactionService.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDB8B45267C0A62004DFCDA /* HRGMSTransactionService.m */; };
 		EFDB8B4B267C176D004DFCDA /* HRGMSSerializationService.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDB8B4A267C176D004DFCDA /* HRGMSSerializationService.m */; };
 /* End PBXBuildFile section */
@@ -127,6 +128,8 @@
 		EF80F8BE267BF3F50097FF73 /* HRGMSTransactionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionViewController.m; sourceTree = "<group>"; };
 		EF80F8C9267BF4730097FF73 /* HRGMSTransactionViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSTransactionViewModel.h; sourceTree = "<group>"; };
 		EF80F8CA267BF4730097FF73 /* HRGMSTransactionViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionViewModel.m; sourceTree = "<group>"; };
+		EFA712B1268CE7000041EC21 /* HRGMSTransactionLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSTransactionLogger.h; sourceTree = "<group>"; };
+		EFA712B2268CE7000041EC21 /* HRGMSTransactionLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionLogger.m; sourceTree = "<group>"; };
 		EFDB8B44267C0A62004DFCDA /* HRGMSTransactionService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSTransactionService.h; sourceTree = "<group>"; };
 		EFDB8B45267C0A62004DFCDA /* HRGMSTransactionService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionService.m; sourceTree = "<group>"; };
 		EFDB8B49267C176D004DFCDA /* HRGMSSerializationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSSerializationService.h; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 				EF6EA441263775200039FA6B /* HRGMSDeviceViewController.m */,
 				EFDB8B49267C176D004DFCDA /* HRGMSSerializationService.h */,
 				EFDB8B4A267C176D004DFCDA /* HRGMSSerializationService.m */,
+				EFA712B1268CE7000041EC21 /* HRGMSTransactionLogger.h */,
+				EFA712B2268CE7000041EC21 /* HRGMSTransactionLogger.m */,
 				EFDB8B44267C0A62004DFCDA /* HRGMSTransactionService.h */,
 				EFDB8B45267C0A62004DFCDA /* HRGMSTransactionService.m */,
 				EF80F8C9267BF4730097FF73 /* HRGMSTransactionViewModel.h */,
@@ -532,6 +537,7 @@
 			files = (
 				6003F59E195388D20070C39A /* HpsAppDelegate.m in Sources */,
 				EF80F8CB267BF4730097FF73 /* HRGMSTransactionViewModel.m in Sources */,
+				EFA712B3268CE7000041EC21 /* HRGMSTransactionLogger.m in Sources */,
 				6003F5A7195388D20070C39A /* HpsViewController.m in Sources */,
 				EF80F8BF267BF3F50097FF73 /* HRGMSTransactionViewController.m in Sources */,
 				EFDB8B4B267C176D004DFCDA /* HRGMSSerializationService.m in Sources */,
