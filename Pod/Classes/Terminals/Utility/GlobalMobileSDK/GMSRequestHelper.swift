@@ -14,13 +14,21 @@ class GMSRequestHelper {
         let transactionId: String? = builder.transactionId as String?
 
         return TipAdjustTransaction.tipAdjust(gatewayTransactionId: transactionId ?? "",
-                                              total: total,
-                                              tip: tip,
+                                              total: decimalToUint(total),
+                                              tip: decimalToUint(tip),
                                               invoiceNumber: invoiceNumber,
                                               posReferenceNumber: posReferenceNumber,
                                               operatingUserId: operatingUserId)
     }
     
+    static func decimalToUint(_ decimalValue: Decimal?) -> UInt? {
+        guard var value = decimalValue else { return nil }
+        value = value * 100;
+        var rounded = Decimal()
+        NSDecimalRound(&rounded, &value, 0, .down)
+        return UInt((rounded as NSDecimalNumber).intValue)
+    }
+
     public static func buildCreditAuthRequest(builder: GMSCreditAuthBuilder) -> Transaction? {
         let total: Decimal? = builder.amount as Decimal?
         let tax: Decimal? = nil
@@ -44,10 +52,10 @@ class GMSRequestHelper {
         }
 
         if cardData != nil {
-            return AuthTransaction.auth(total: total,
-                                        tax: tax,
-                                        tip: tip,
-                                        surcharge: surcharge,
+            return AuthTransaction.auth(total: decimalToUint(total),
+                                        tax: decimalToUint(tax),
+                                        tip: decimalToUint(tip),
+                                        surcharge: decimalToUint(surcharge),
                                         taxCategory: taxCategory,
                                         posReferenceNumber: posReferenceNumber,
                                         invoiceNumber: invoiceNumber,
@@ -55,10 +63,10 @@ class GMSRequestHelper {
                                         cardData: cardData!,
                                         requestMultiUseToken: requestMultiUseToken ?? false)
         } else {
-            return AuthTransaction.auth(total: total,
-                                        tax: tax,
-                                        tip: tip,
-                                        surcharge: surcharge,
+            return AuthTransaction.auth(total: decimalToUint(total),
+                                        tax: decimalToUint(tax),
+                                        tip: decimalToUint(tip),
+                                        surcharge: decimalToUint(surcharge),
                                         taxCategory: taxCategory,
                                         posReferenceNumber: posReferenceNumber,
                                         invoiceNumber: invoiceNumber,
@@ -75,9 +83,9 @@ class GMSRequestHelper {
         let transactionId: String? = builder.transactionId as String?
 
         return CaptureTransaction.capture(gatewayTransactionId: transactionId ?? "",
-                                          total: total,
+                                          total: decimalToUint(total),
                                           tax: nil,
-                                          tip: tip,
+                                          tip: decimalToUint(tip),
                                           taxCategory: nil,
                                           invoiceNumber: nil,
                                           posReferenceNumber: posReferenceNumber,
@@ -89,7 +97,7 @@ class GMSRequestHelper {
         let posReferenceNumber: String? = builder.referenceNumber
         let transactionId: String? = builder.transactionId
 
-        return ReturnTransaction.returnWithReference(total: total,
+        return ReturnTransaction.returnWithReference(total: decimalToUint(total),
                                                      tax: nil,
                                                      tip: nil,
                                                      taxCategory: nil,
@@ -110,7 +118,7 @@ class GMSRequestHelper {
                                                 gatewayTransactionId: transactionId,
                                                 reversalReason: reversalReason,
                                                 posReferenceNumber: posReferenceNumber,
-                                                amount: total ?? 0,
+                                                amount: decimalToUint(total) ?? 0,
                                                 tlv: nil)
         }
 
@@ -118,7 +126,7 @@ class GMSRequestHelper {
                                             gatewayTransactionId: transactionId,
                                             reversalReason: reversalReason,
                                             posReferenceNumber: posReferenceNumber,
-                                            amount: total ?? 0,
+                                            amount: decimalToUint(total) ?? 0,
                                             tlv: nil)
     }
     
@@ -145,10 +153,10 @@ class GMSRequestHelper {
         }
 
         if cardData != nil {
-            return SaleTransaction.sale(total: total,
-                                        tax: tax,
-                                        tip: tip,
-                                        surcharge: surcharge,
+            return SaleTransaction.sale(total: decimalToUint(total),
+                                        tax: decimalToUint(tax),
+                                        tip: decimalToUint(tip),
+                                        surcharge: decimalToUint(surcharge),
                                         taxCategory: taxCategory,
                                         posReferenceNumber: posReferenceNumber,
                                         invoiceNumber: invoiceNumber,
@@ -156,10 +164,10 @@ class GMSRequestHelper {
                                         cardData: cardData!,
                                         requestMultiUseToken: requestMultiUseToken ?? false)
         } else {
-            return SaleTransaction.sale(total: total,
-                                        tax: tax,
-                                        tip: tip,
-                                        surcharge: surcharge,
+            return SaleTransaction.sale(total: decimalToUint(total),
+                                        tax: decimalToUint(tax),
+                                        tip: decimalToUint(tip),
+                                        surcharge: decimalToUint(surcharge),
                                         taxCategory: taxCategory,
                                         posReferenceNumber: posReferenceNumber,
                                         invoiceNumber: invoiceNumber,

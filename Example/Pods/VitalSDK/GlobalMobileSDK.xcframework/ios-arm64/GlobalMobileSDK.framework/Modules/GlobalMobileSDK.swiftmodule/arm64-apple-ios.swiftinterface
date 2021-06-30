@@ -26,7 +26,7 @@ public struct BatchCloseResponse : GlobalMobileSDK.TransactionResponse {
   public var posReferenceId: Swift.String?
   public var operatingUserId: Swift.String?
   public var isApproved: Swift.Bool
-  public var approvedAmount: Foundation.Decimal?
+  public var approvedAmount: Swift.UInt?
   public var transactionDescription: Swift.String
   public var transactionError: GlobalMobileSDK.GMSError?
   public init(from decoder: Swift.Decoder) throws
@@ -132,10 +132,10 @@ extension GMSManager : GlobalMobileSDK.TransactionDelegate {
   public func onError(error: GlobalMobileSDK.TransactionError)
 }
 public struct AuthTransaction {
-  public var total: Foundation.Decimal?
-  public var tip: Foundation.Decimal?
-  public let tax: Foundation.Decimal?
-  public let surcharge: Foundation.Decimal?
+  public var total: Swift.UInt?
+  public var tip: Swift.UInt?
+  public let tax: Swift.UInt?
+  public let surcharge: Swift.UInt?
   public let clientTransactionId: Foundation.UUID
   public var taxCategory: GlobalMobileSDK.TaxCategory? {
     get
@@ -149,9 +149,9 @@ public struct AuthTransaction {
   public var requestMultiUseToken: Swift.Bool
   public var cardholderAddress: GlobalMobileSDK.Address?
   public var customerReceiptEmail: Swift.String?
-  public static func auth(total: Foundation.Decimal?, tax: Foundation.Decimal?, tip: Foundation.Decimal?, surcharge: Foundation.Decimal?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, requestMultiUseToken: Swift.Bool) -> GlobalMobileSDK.AuthTransaction
-  public static func auth(total: Foundation.Decimal?, tax: Foundation.Decimal?, tip: Foundation.Decimal?, surcharge: Foundation.Decimal?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.ManualCardData, requestMultiUseToken: Swift.Bool) -> GlobalMobileSDK.AuthTransaction
-  public static func auth(total: Foundation.Decimal?, tax: Foundation.Decimal?, tip: Foundation.Decimal?, surcharge: Foundation.Decimal?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.TokenizedCardData) -> GlobalMobileSDK.AuthTransaction
+  public static func auth(total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, requestMultiUseToken: Swift.Bool) -> GlobalMobileSDK.AuthTransaction
+  public static func auth(total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.ManualCardData, requestMultiUseToken: Swift.Bool) -> GlobalMobileSDK.AuthTransaction
+  public static func auth(total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.TokenizedCardData) -> GlobalMobileSDK.AuthTransaction
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
@@ -267,10 +267,10 @@ public enum TenderType : Swift.String {
 public struct SaleResponse {
   public var transactionResult: GlobalMobileSDK.TransactionResult?
   public let transactionId: Foundation.UUID
-  public var approvedAmount: Foundation.Decimal?
-  public var total: Foundation.Decimal?
-  public var tax: Foundation.Decimal?
-  public var tip: Foundation.Decimal?
+  public var approvedAmount: Swift.UInt?
+  public var total: Swift.UInt?
+  public var tax: Swift.UInt?
+  public var tip: Swift.UInt?
   public let gatewayTransactionId: Swift.String?
   public var posReferenceNumber: Swift.String?
   public var forcedAuthCode: Swift.String?
@@ -385,10 +385,10 @@ public enum GatewayError : Swift.Error {
 public struct VerifyResponse {
   public var transactionResult: GlobalMobileSDK.TransactionResult?
   public let transactionId: Foundation.UUID
-  public var approvedAmount: Foundation.Decimal?
-  public var total: Foundation.Decimal?
-  public var tax: Foundation.Decimal?
-  public var tip: Foundation.Decimal?
+  public var approvedAmount: Swift.UInt?
+  public var total: Swift.UInt?
+  public var tax: Swift.UInt?
+  public var tip: Swift.UInt?
   public let gatewayTransactionId: Swift.String?
   public var posReferenceNumber: Swift.String?
   public var forcedAuthCode: Swift.String?
@@ -408,7 +408,7 @@ public struct VerifyResponse {
   public var isApproved: Swift.Bool
   public var cpcInd: Swift.String?
   public var referenceNumber: Swift.String?
-  public var availableBalance: Foundation.Decimal?
+  public var availableBalance: Swift.UInt?
   public var recurringDataCode: Swift.String?
   public var hostRspDateTime: Swift.String?
   public var tokenizedCard: GlobalMobileSDK.TokenizedCardData?
@@ -552,10 +552,10 @@ public struct TerminalConfig : Swift.Codable, Swift.Equatable {
   public func encode(to encoder: Swift.Encoder) throws
 }
 public struct SaleTransaction {
-  public var total: Foundation.Decimal?
-  public var tip: Foundation.Decimal?
-  public let tax: Foundation.Decimal?
-  public let surcharge: Foundation.Decimal?
+  public var total: Swift.UInt?
+  public var tip: Swift.UInt?
+  public let tax: Swift.UInt?
+  public let surcharge: Swift.UInt?
   public let clientTransactionId: Foundation.UUID
   public let taxCategory: GlobalMobileSDK.TaxCategory?
   public var posReferenceNumber: Swift.String?
@@ -566,9 +566,9 @@ public struct SaleTransaction {
   }
   public var requestMultiUseToken: Swift.Bool
   public var cardholderAddress: GlobalMobileSDK.Address?
-  public static func sale(total: Foundation.Decimal?, tax: Foundation.Decimal?, tip: Foundation.Decimal?, surcharge: Foundation.Decimal?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, requestMultiUseToken: Swift.Bool) -> GlobalMobileSDK.SaleTransaction
-  public static func sale(total: Foundation.Decimal?, tax: Foundation.Decimal?, tip: Foundation.Decimal?, surcharge: Foundation.Decimal?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.ManualCardData, requestMultiUseToken: Swift.Bool) -> GlobalMobileSDK.SaleTransaction
-  public static func sale(total: Foundation.Decimal?, tax: Foundation.Decimal?, tip: Foundation.Decimal?, surcharge: Foundation.Decimal?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.TokenizedCardData) -> GlobalMobileSDK.SaleTransaction
+  public static func sale(total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, requestMultiUseToken: Swift.Bool) -> GlobalMobileSDK.SaleTransaction
+  public static func sale(total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.ManualCardData, requestMultiUseToken: Swift.Bool) -> GlobalMobileSDK.SaleTransaction
+  public static func sale(total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.TokenizedCardData) -> GlobalMobileSDK.SaleTransaction
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
@@ -608,8 +608,8 @@ extension AnyCardData {
   }
 }
 public struct VerifyTransaction {
-  public var total: Foundation.Decimal?
-  public var tip: Foundation.Decimal?
+  public var total: Swift.UInt?
+  public var tip: Swift.UInt?
   public let clientTransactionId: Foundation.UUID
   public var posReferenceNumber: Swift.String?
   public var operatingUserId: Swift.String?
@@ -625,15 +625,15 @@ public struct VerifyTransaction {
   public func encode(to encoder: Swift.Encoder) throws
 }
 public struct TipAdjustTransaction {
-  public var total: Foundation.Decimal?
-  public var tip: Foundation.Decimal?
+  public var total: Swift.UInt?
+  public var tip: Swift.UInt?
   public var invoiceNumber: Swift.String?
   public var posReferenceNumber: Swift.String?
   public var operatingUserId: Swift.String?
   public var gatewayTransactionId: Swift.String?
   public let clientTransactionId: Foundation.UUID
   public var signatureData: Foundation.Data?
-  public static func tipAdjust(gatewayTransactionId: Swift.String, total: Foundation.Decimal?, tip: Foundation.Decimal?, invoiceNumber: Swift.String?, posReferenceNumber: Swift.String?, operatingUserId: Swift.String?) -> GlobalMobileSDK.TipAdjustTransaction
+  public static func tipAdjust(gatewayTransactionId: Swift.String, total: Swift.UInt?, tip: Swift.UInt?, invoiceNumber: Swift.String?, posReferenceNumber: Swift.String?, operatingUserId: Swift.String?) -> GlobalMobileSDK.TipAdjustTransaction
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
@@ -642,9 +642,9 @@ public struct ListSaFResponse {
 }
 public struct ReturnResponse {
   public var transactionResult: GlobalMobileSDK.TransactionResult?
-  public var total: Foundation.Decimal?
-  public var tax: Foundation.Decimal?
-  public var tip: Foundation.Decimal?
+  public var total: Swift.UInt?
+  public var tax: Swift.UInt?
+  public var tip: Swift.UInt?
   public let transactionId: Foundation.UUID
   public let gatewayTransactionId: Swift.String?
   public var posReferenceNumber: Swift.String?
@@ -657,8 +657,8 @@ public struct ReturnResponse {
   public var cvvResponseMessage: Swift.String?
   public var avsResponseCode: Swift.String?
   public var avsResponseMessage: Swift.String?
-  public var approvedAmount: Foundation.Decimal?
-  public var tipAmount: Foundation.Decimal?
+  public var approvedAmount: Swift.UInt?
+  public var tipAmount: Swift.UInt?
   public var cardholderName: Swift.String?
   public var cardDataSourceType: GlobalMobileSDK.EntryMode?
   public var cardType: GlobalMobileSDK.CardType?
@@ -687,7 +687,7 @@ public struct ReturnResponse {
   public func encode(to encoder: Swift.Encoder) throws
 }
 public enum TransactionState : Swift.Equatable {
-  case waitingForConfiguration, configuringTerminal(completed: Swift.Int, total: Swift.Int), configurationFailedTryAgain, ready, started, waitingForCard, insertCard, removeCard, cardRemoved, pleaseWait, pleaseSeePhone, useMagstripe, tryAgain, swipeErrorReSwipe, noEmvApps, applicationExpired, cardReadError, processing, processingDoNotRemoveCard, presentCard, presentCardAgain, insertSwipeOrTryAnotherCard, insertOrSwipeCard, multipleCardDetected, contactlessCardStillInField, transactionTerminated, waitingForTerminal, cardDetected, cardBlocked, notAuthorized, notAcceptedRemoveCard, fallbackToMSR, fallbackToChip, waitingForAmountConfirmation, waitingForAidSelection, waitingForPostalCode, waitingForSafApproval, cardHolderBypassedPIN, processingSaf(completed: Swift.Int, total: Swift.Int), requestingOnlineProcessing, reversal, reversalInProgress, complete, cancel, cancelling, cancelled, error, unknown
+  case waitingForConfiguration, configuringTerminal(completed: Swift.Int, total: Swift.Int), configurationFailedTryAgain, ready, started, waitingForCard, insertCard, removeCard, cardRemoved, pleaseWait, pleaseSeePhone, useMagstripe, tryAgain, swipeErrorReSwipe, noEmvApps, applicationExpired, cardReadError, processing, processingDoNotRemoveCard, presentCard, presentCardAgain, insertSwipeOrTryAnotherCard, insertOrSwipeCard, multipleCardDetected, contactlessCardStillInField, transactionTerminated, waitingForTerminal, terminalDeclined, cardDetected, cardBlocked, notAuthorized, notAcceptedRemoveCard, fallbackToMSR, fallbackToChip, waitingForAmountConfirmation, waitingForAidSelection, waitingForPostalCode, waitingForSafApproval, cardHolderBypassedPIN, processingSaf(completed: Swift.Int, total: Swift.Int), requestingOnlineProcessing, reversal, reversalInProgress, complete, cancel, cancelling, cancelled, error, unknown
   public static func == (a: GlobalMobileSDK.TransactionState, b: GlobalMobileSDK.TransactionState) -> Swift.Bool
 }
 public protocol TransactionResponse : Swift.Decodable, Swift.Encodable {
@@ -695,7 +695,7 @@ public protocol TransactionResponse : Swift.Decodable, Swift.Encodable {
   var transactionId: Foundation.UUID { get }
   var gatewayTransactionId: Swift.String? { get }
   var gatewayResponseText: Swift.String? { get }
-  var approvedAmount: Foundation.Decimal? { get set }
+  var approvedAmount: Swift.UInt? { get set }
   var transactionDescription: Swift.String { get }
   var transactionError: GlobalMobileSDK.GMSError? { get set }
 }
@@ -774,8 +774,8 @@ public struct TransITConfig : GlobalMobileSDK.GatewayConfig, Swift.Equatable {
 }
 public struct VoidTransaction {
   public var operatingUserId: Swift.String?
-  public var total: Foundation.Decimal?
-  public var tip: Foundation.Decimal?
+  public var total: Swift.UInt?
+  public var tip: Swift.UInt?
   public let clientTransactionId: Foundation.UUID
   public var invoiceNumber: Swift.String?
   public let reversalReason: GlobalMobileSDK.ReversalReason
@@ -795,9 +795,9 @@ public struct VoidTransaction {
 }
 public struct AuthResponse {
   public var transactionResult: GlobalMobileSDK.TransactionResult?
-  public var total: Foundation.Decimal?
-  public var tax: Foundation.Decimal?
-  public var tip: Foundation.Decimal?
+  public var total: Swift.UInt?
+  public var tax: Swift.UInt?
+  public var tip: Swift.UInt?
   public var taxCategory: GlobalMobileSDK.TaxCategory?
   public var posReferenceNumber: Swift.String?
   public var invoiceNumber: Swift.String?
@@ -829,8 +829,8 @@ public struct AuthResponse {
   public var unpredictableNumber: Swift.String?
   public var transactionSequenceCounter: Swift.String?
   public var transactionHistoryId: Swift.String?
-  public var approvedAmount: Foundation.Decimal?
-  public var tipAmount: Foundation.Decimal?
+  public var approvedAmount: Swift.UInt?
+  public var tipAmount: Swift.UInt?
   public var isPartialApproval: Swift.Bool
   public var isApproved: Swift.Bool
   public var avsResult: Swift.String?
@@ -870,12 +870,12 @@ public struct ReversalTransaction {
     get
   }
   public let clientTransactionId: Foundation.UUID
-  public var total: Foundation.Decimal?
-  public var tip: Foundation.Decimal?
+  public var total: Swift.UInt?
+  public var tip: Swift.UInt?
   public var gatewayTransactionId: Swift.String?
   public var reversalReason: GlobalMobileSDK.ReversalReason
   public var cardholderAddress: GlobalMobileSDK.Address?
-  public static func reversal(clientTransactionId: Foundation.UUID, gatewayTransactionId: Swift.String?, reversalReason: GlobalMobileSDK.ReversalReason, posReferenceNumber: Swift.String?, amount: Foundation.Decimal, tlv: Swift.String?) -> GlobalMobileSDK.ReversalTransaction
+  public static func reversal(clientTransactionId: Foundation.UUID, gatewayTransactionId: Swift.String?, reversalReason: GlobalMobileSDK.ReversalReason, posReferenceNumber: Swift.String?, amount: Swift.UInt, tlv: Swift.String?) -> GlobalMobileSDK.ReversalTransaction
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
@@ -912,8 +912,8 @@ public enum TerminalType : Swift.String, Swift.Codable, Swift.Equatable, Swift.C
   }
 }
 public struct ProcessSaFResponse {
-  public var total: Foundation.Decimal?
-  public var tax: Foundation.Decimal?
+  public var total: Swift.UInt?
+  public var tax: Swift.UInt?
   public var cardDataSourceType: GlobalMobileSDK.EntryMode?
   public var cardType: GlobalMobileSDK.CardType?
   public var maskedPan: Swift.String?
@@ -926,7 +926,7 @@ public struct ProcessSaFResponse {
   public var transactionResult: GlobalMobileSDK.TransactionResult?
   public var gatewayTransactionId: Swift.String?
   public var gatewayResponseText: Swift.String?
-  public var approvedAmount: Foundation.Decimal?
+  public var approvedAmount: Swift.UInt?
   public var cardholderName: Swift.String?
   public var manualSignature: Swift.Bool?
   public var invoiceNumber: Swift.String?
@@ -951,8 +951,8 @@ public struct TipAdjustResponse {
   public var avsResponseCode: Swift.String?
   public var posReferenceId: Swift.String?
   public var invoiceNumber: Swift.String?
-  public var approvedAmount: Foundation.Decimal?
-  public var tipAmount: Foundation.Decimal?
+  public var approvedAmount: Swift.UInt?
+  public var tipAmount: Swift.UInt?
   public var isPartialApproval: Swift.Bool
   public var isApproved: Swift.Bool
   public var transactionDescription: Swift.String
@@ -961,10 +961,10 @@ public struct TipAdjustResponse {
   public func encode(to encoder: Swift.Encoder) throws
 }
 public struct ReturnTransaction {
-  public var total: Foundation.Decimal?
-  public var tip: Foundation.Decimal?
+  public var total: Swift.UInt?
+  public var tip: Swift.UInt?
   public let clientTransactionId: Foundation.UUID
-  public var tax: Foundation.Decimal? {
+  public var tax: Swift.UInt? {
     get
   }
   public var posReferenceNumber: Swift.String?
@@ -976,25 +976,25 @@ public struct ReturnTransaction {
   public let taxCategory: GlobalMobileSDK.TaxCategory?
   public var gatewayTransactionId: Swift.String?
   public var cardholderAddress: GlobalMobileSDK.Address?
-  public static func returnWithReference(total: Foundation.Decimal?, tax: Foundation.Decimal?, tip: Foundation.Decimal?, taxCategory: GlobalMobileSDK.TaxCategory?, gatewayTransactionId: Swift.String, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?) -> GlobalMobileSDK.ReturnTransaction
-  public static func returnWithManualCard(total: Foundation.Decimal?, tax: Foundation.Decimal?, tip: Foundation.Decimal?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.ManualCardData) -> GlobalMobileSDK.ReturnTransaction
-  public static func returnWithCard(total: Foundation.Decimal?, tax: Foundation.Decimal?, tip: Foundation.Decimal?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?) -> GlobalMobileSDK.ReturnTransaction
+  public static func returnWithReference(total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, gatewayTransactionId: Swift.String, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?) -> GlobalMobileSDK.ReturnTransaction
+  public static func returnWithManualCard(total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.ManualCardData) -> GlobalMobileSDK.ReturnTransaction
+  public static func returnWithCard(total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?) -> GlobalMobileSDK.ReturnTransaction
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
 public struct CaptureTransaction {
   public var gatewayTransactionId: Swift.String?
   public let clientTransactionId: Foundation.UUID
-  public var total: Foundation.Decimal?
-  public var tax: Foundation.Decimal?
-  public var tip: Foundation.Decimal?
+  public var total: Swift.UInt?
+  public var tax: Swift.UInt?
+  public var tip: Swift.UInt?
   public let taxCategory: GlobalMobileSDK.TaxCategory?
   public var operatingUserId: Swift.String?
   public var posReferenceNumber: Swift.String?
   public var invoiceNumber: Swift.String?
   public var signatureData: Foundation.Data?
   public var customerReceiptEmail: Swift.String?
-  public static func capture(gatewayTransactionId: Swift.String, total: Foundation.Decimal?, tax: Foundation.Decimal?, tip: Foundation.Decimal?, taxCategory: GlobalMobileSDK.TaxCategory?, invoiceNumber: Swift.String?, posReferenceNumber: Swift.String?, operatingUserId: Swift.String?) -> GlobalMobileSDK.CaptureTransaction
+  public static func capture(gatewayTransactionId: Swift.String, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, invoiceNumber: Swift.String?, posReferenceNumber: Swift.String?, operatingUserId: Swift.String?) -> GlobalMobileSDK.CaptureTransaction
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
@@ -1112,15 +1112,15 @@ public struct CaptureResponse {
   public var transactionResult: GlobalMobileSDK.TransactionResult?
   public let transactionId: Foundation.UUID
   public let gatewayTransactionId: Swift.String?
-  public var total: Foundation.Decimal?
-  public var tax: Foundation.Decimal?
-  public var tipAmount: Foundation.Decimal?
+  public var total: Swift.UInt?
+  public var tax: Swift.UInt?
+  public var tipAmount: Swift.UInt?
   public var taxCategory: GlobalMobileSDK.TaxCategory?
   public var gatewayResponseText: Swift.String?
   public var posReferenceNumber: Swift.String?
   public var transactionHistoryId: Swift.String?
   public var invoiceNumber: Swift.String?
-  public var approvedAmount: Foundation.Decimal?
+  public var approvedAmount: Swift.UInt?
   public var isPartialApproval: Swift.Bool
   public var isApproved: Swift.Bool
   public var signatureData: Foundation.Data?
@@ -1140,8 +1140,8 @@ public struct VoidResponse {
   public var avsResponseCode: Swift.String?
   public var posReferenceNumber: Swift.String?
   public var invoiceNumber: Swift.String?
-  public var approvedAmount: Foundation.Decimal?
-  public var tipAmount: Foundation.Decimal?
+  public var approvedAmount: Swift.UInt?
+  public var tipAmount: Swift.UInt?
   public var isPartialApproval: Swift.Bool
   public var isApproved: Swift.Bool
   public var transactionDescription: Swift.String
@@ -1173,8 +1173,8 @@ public struct ReversalResponse {
   public var cvvResponseCode: Swift.String?
   public var avsResponseCode: Swift.String?
   public var posReferenceNumber: Swift.String?
-  public var approvedAmount: Foundation.Decimal?
-  public var tipAmount: Foundation.Decimal?
+  public var approvedAmount: Swift.UInt?
+  public var tipAmount: Swift.UInt?
   public var isPartialApproval: Swift.Bool
   public var isApproved: Swift.Bool
   public var transactionDescription: Swift.String
@@ -1190,8 +1190,8 @@ public struct TokenizationTransaction {
     get
   }
   public let clientTransactionId: Foundation.UUID
-  public var total: Foundation.Decimal?
-  public var tip: Foundation.Decimal?
+  public var total: Swift.UInt?
+  public var tip: Swift.UInt?
   public var cardholderAddress: GlobalMobileSDK.Address?
   public static func tokenize(posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?) -> GlobalMobileSDK.TokenizationTransaction
   public static func tokenize(posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.ManualCardData) -> GlobalMobileSDK.TokenizationTransaction
@@ -1244,7 +1244,7 @@ public struct TokenizationResponse : GlobalMobileSDK.TransactionResponse {
   public var invoiceNumber: Swift.String?
   public var transactionResult: GlobalMobileSDK.TransactionResult?
   public var gatewayResponseText: Swift.String?
-  public var approvedAmount: Foundation.Decimal?
+  public var approvedAmount: Swift.UInt?
   public var transactionDescription: Swift.String
   public var transactionError: GlobalMobileSDK.GMSError?
   public init(from decoder: Swift.Decoder) throws

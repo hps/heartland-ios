@@ -30,6 +30,11 @@ class GMSResponseHelper {
         return data
     }
     
+    public static func uintToDecimal(_ uintValue: UInt?) -> NSDecimalNumber {
+        let decimalValue = Decimal(uintValue ?? 0)
+        return NSDecimalNumber(decimal: decimalValue / 100)
+    }
+
     public static func mapCreditAuthResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
         let resp = response as? AuthResponse
         var deviceResponseCode = result.rawValue
@@ -52,14 +57,12 @@ class GMSResponseHelper {
         data.applicationCrytptogram = resp?.applicationCryptogram
         data.terminalVerficationResult = resp?.tvr
 
-        if let decimalValue = resp?.tip {
-            let doubleValue = NSDecimalNumber(decimal: decimalValue).doubleValue
-            data.tipAmount = NSNumber(value: doubleValue)
+        if let uintValue = resp?.tip {
+            data.tipAmount = uintToDecimal(uintValue)
         }
         
-        if let decimalValue = resp?.total {
-            let doubleValue = NSDecimalNumber(decimal: decimalValue).doubleValue
-            data.transactionAmount = NSNumber(value: doubleValue)
+        if let uintValue = resp?.total {
+            data.transactionAmount = uintToDecimal(uintValue)
         }
 
         return data
@@ -101,14 +104,12 @@ class GMSResponseHelper {
         data.applicationCrytptogram = resp?.applicationCryptogram
         data.terminalVerficationResult = resp?.tvr
         
-        if let decimalValue = resp?.tip {
-            let doubleValue = NSDecimalNumber(decimal: decimalValue).doubleValue
-            data.tipAmount = NSNumber(value: doubleValue)
+        if let uintValue = resp?.tip {
+            data.tipAmount = uintToDecimal(uintValue)
         }
         
-        if let decimalValue = resp?.total {
-            let doubleValue = NSDecimalNumber(decimal: decimalValue).doubleValue
-            data.transactionAmount = NSNumber(value: doubleValue)
+        if let uintValue = resp?.total {
+            data.transactionAmount = uintToDecimal(uintValue)
         }
         
         return data
@@ -153,14 +154,12 @@ class GMSResponseHelper {
         data.applicationCrytptogram = resp?.applicationCryptogram
         data.terminalVerficationResult = resp?.tvr
         
-        if let decimalValue = resp?.tip {
-            let doubleValue = NSDecimalNumber(decimal: decimalValue).doubleValue
-            data.tipAmount = NSNumber(value: doubleValue)
+        if let uintValue = resp?.tip {
+            data.tipAmount = uintToDecimal(uintValue)
         }
         
-        if let decimalValue = resp?.total {
-            let doubleValue = NSDecimalNumber(decimal: decimalValue).doubleValue
-            data.transactionAmount = NSNumber(value: doubleValue)
+        if let uintValue = resp?.total {
+            data.transactionAmount = uintToDecimal(uintValue)
         }
         
         return data
