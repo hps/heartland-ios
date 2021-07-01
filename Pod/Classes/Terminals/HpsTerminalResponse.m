@@ -5,13 +5,24 @@
 @implementation HpsTerminalResponse
 
 - (BOOL)isApproval {
-    return [self.deviceResponseCode isEqualToString:@"APPROVAL"];
+    return ([self.deviceResponseCode isEqualToString:@"APPROVAL"]
+            || (self.gmsResponseIsReversal
+                && self.gmsResponseOriginalTransactionInvalid));
+}
+
+- (BOOL)gmsResponseIsReversal {
+    return [self.transactionType isEqualToString:@"Reversal"];
 }
 
 - (BOOL)gmsResponseIsReversible {
     return ([self.deviceResponseCode isEqualToString:@"hostTimeout"]
-            && ![self.transactionType isEqualToString:@"Reversal"]
+            && !self.gmsResponseIsReversal
             && self.clientTransactionIdUUID);
+}
+
+- (BOOL)gmsResponseOriginalTransactionInvalid {
+    return [self.deviceResponseCode containsString:
+            @"Transaction rejected because the referenced original transaction is invalid"];
 }
 
 - (void) mapResponse:(id <HpaResposeInterface>) response
