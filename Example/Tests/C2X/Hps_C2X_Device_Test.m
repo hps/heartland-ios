@@ -23,8 +23,7 @@
     config.siteID = @"142914";
     config.deviceID = @"6399854";
     config.licenseID = @"142827";
-    self.device = [[HpsC2xDevice alloc] init];
-    self.device.config = config;
+    self.device = [[HpsC2xDevice alloc] initWithConfig:config];
 }
 
 - (HpsCreditCard*) getCC
@@ -95,8 +94,16 @@
 
 - (void)onStatusUpdate:(HpsTransactionStatus)transactionStatus {
 }
-
+- (void)onConfirmAmount:(NSDecimal)amount {
+    
+}
+- (void)onConfirmApplication:(NSArray<AID *> *)applications {
+    
+}
 - (void)onTransactionComplete:(nonnull HpsTerminalResponse *)response {
+}
+- (void)onTransactionCancelled {
+    
 }
 
 @end

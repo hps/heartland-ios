@@ -50,7 +50,8 @@ public enum HpsTransactionStatus: UInt {
         cancelling,
         cancelled,
         error,
-        unknown
+        unknown,
+        terminalDeclined
 }
 
 extension HpsTransactionStatus {
@@ -104,6 +105,7 @@ extension HpsTransactionStatus {
         case .cancelled: return .cancelled
         case .error: return .error
         case .unknown: return .unknown
+        case .terminalDeclined: return .terminalDeclined
         @unknown default: return .unknown
         }
     }

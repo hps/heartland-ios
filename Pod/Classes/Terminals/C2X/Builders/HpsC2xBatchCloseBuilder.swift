@@ -1,27 +1,16 @@
 import Foundation
 
 @objcMembers
-public class HpsC2xBatchCloseBuilder : HpsC2xBaseBuilder {
-    public required init() {
-        super.init()
-        self.transactionType = .batchClose
+public class HpsC2xBatchCloseBuilder : HpsC2xBaseBuilder, GMSBatchCloseBuilder {
+    public init(device: HpsC2xDevice) {
+        super.init(transactionType: .batchClose, device: device)
     }
     
     public override func buildRequest() -> Transaction? {
-        return BatchCloseTransaction.batchClose(operatingUserId: nil)
+        return GMSRequestHelper.buildBatchCloseRequest(builder: self)
     }
     
     public override func mapResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
-        let resp = response as? BatchCloseResponse
-        var deviceResponseCode = result.rawValue
-
-        if let respText = resp?.gatewayResponseText {
-            deviceResponseCode = respText
-        }
-
-        data.responseText = resp?.gatewayResponseText
-        data.deviceResponseCode = deviceResponseCode
-
-        return data
+        return GMSResponseHelper.mapBatchCloseResponse(data, result, response)
     }
 }

@@ -18,8 +18,15 @@
 		self.entryMethod = self.recievedResponse.CardAcquisition;
 			//expiration date is missing for print
 		self.approvalCode = self.recievedResponse.ApprovalCode;
-		self.transactionAmount = [NSNumber numberWithFloat:self.recievedResponse.AuthorizedAmount.doubleValue / 100];
-		self.amountDue = [NSNumber numberWithInteger:self.recievedResponse.BalanceDueAmount.doubleValue /100];
+
+        NSDecimal transactionAmount = [[NSDecimalNumber decimalNumberWithString:self.recievedResponse.AuthorizedAmount] decimalValue];
+        NSDecimal adjustedTransactionAmount;
+        NSDecimalMultiplyByPowerOf10(&adjustedTransactionAmount, &transactionAmount, -2, NSRoundDown);
+        self.transactionAmount = [NSDecimalNumber decimalNumberWithDecimal:adjustedTransactionAmount];
+        NSDecimal balanceDueAmount = [[NSDecimalNumber decimalNumberWithString:self.recievedResponse.BalanceDueAmount] decimalValue];
+        NSDecimal adjustedBalanceDueAmount;
+        NSDecimalMultiplyByPowerOf10(&adjustedBalanceDueAmount, &balanceDueAmount, -2, NSRoundDown);
+        self.amountDue = [NSDecimalNumber decimalNumberWithDecimal:adjustedBalanceDueAmount];
 		self.cardHolderVerificationMethod = self.recievedResponse.EMV_TSI;
 		self.signatureStatus = self.recievedResponse.SignatureLine;
 		self.responseText = self.recievedResponse.ResponseText;
@@ -45,7 +52,10 @@
 		self.terminalVerficationResult = self.recievedResponse.EMV_TVR;
 		self.avsResultCode = self.recievedResponse.AVS;
 		self.avsResultText = self.avsResultText;
-		self.balanceAmount = [NSNumber numberWithInteger:self.recievedResponse.AvailableBalance.doubleValue /100];
+        NSDecimal balanceAmount = [[NSDecimalNumber decimalNumberWithString:self.recievedResponse.AvailableBalance] decimalValue];
+        NSDecimal adjustedBalanceAmount;
+        NSDecimalMultiplyByPowerOf10(&adjustedBalanceAmount, &balanceAmount, -2, NSRoundDown);
+        self.balanceAmount = [NSDecimalNumber decimalNumberWithDecimal:adjustedBalanceAmount];
 		self.cardholderName = self.recievedResponse.CardholderName;
 		self.cvvResponseCode = self.recievedResponse.CVV;
 		self.cvvResponseText = self.recievedResponse.CVVResultText;

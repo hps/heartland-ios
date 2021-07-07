@@ -40,9 +40,12 @@
         }
         
         if (self.amountResponse != nil) {
-            self.transactionAmount = [NSNumber numberWithDouble:[self.transactionAmount doubleValue]/100];
-            self.approvedAmount = [NSNumber numberWithDouble:self.amountResponse.approvedAmount];
-            self.amountDue = [NSNumber numberWithDouble:self.amountResponse.amountDue];
+            NSDecimal transactionAmount = [self.transactionAmount decimalValue];
+            NSDecimal adjustedTransactionAmount;
+            NSDecimalMultiplyByPowerOf10(&adjustedTransactionAmount, &transactionAmount, -2, NSRoundDown);
+            self.transactionAmount = [NSDecimalNumber decimalNumberWithDecimal:adjustedTransactionAmount];
+            self.approvedAmount = [NSDecimalNumber decimalNumberWithString:[[NSNumber numberWithDouble:self.amountResponse.approvedAmount] stringValue]];
+            self.amountDue = [NSDecimalNumber decimalNumberWithString:[[NSNumber numberWithDouble:self.amountResponse.amountDue] stringValue]];
         }
         
     } @catch (NSException *exception) {
