@@ -571,8 +571,9 @@ typedef SWIFT_ENUM(NSUInteger, TransactionStatus, open) {
   TransactionStatusOfflineDecline = 3,
   TransactionStatusCancelled = 4,
   TransactionStatusHostTimeout = 5,
-  TransactionStatusUnableToGoOnlineOfflineApproved = 6,
-  TransactionStatusUnableToGoOnlineOfflineDeclined = 7,
+  TransactionStatusGatewayTimeOut = 6,
+  TransactionStatusUnableToGoOnlineOfflineApproved = 7,
+  TransactionStatusUnableToGoOnlineOfflineDeclined = 8,
 };
 
 #if __has_attribute(external_source_symbol)
