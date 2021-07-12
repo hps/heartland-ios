@@ -56,7 +56,7 @@
 			self.taxExeptId = self.commercialResponse.taxExeptId;
 			}
 		if (self.extDataResponse != nil) {
-			self.transactionId = [[self.extDataResponse.collection objectForKey:PAX_EXT_DATA_HOST_REFERENCE_NUMBER] intValue];
+			self.transactionId = [[self.extDataResponse.collection objectForKey:PAX_EXT_DATA_HOST_REFERENCE_NUMBER] stringValue];
 
 			NSString *token = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_TOKEN];
 			self.tokenData = [[HpsTokenData alloc] init];

@@ -451,7 +451,7 @@ extension CardData {
   }
 }
 @objc public enum TransactionStatus : Swift.UInt, Swift.Codable {
-  case onlineDecline, onlineApproved, offlineApproved, offlineDecline, cancelled, hostTimeout, unableToGoOnlineOfflineApproved, unableToGoOnlineOfflineDeclined
+  case onlineDecline, onlineApproved, offlineApproved, offlineDecline, cancelled, hostTimeout, gatewayTimeOut, unableToGoOnlineOfflineApproved, unableToGoOnlineOfflineDeclined
   public typealias RawValue = Swift.UInt
   public init?(rawValue: Swift.UInt)
   public var rawValue: Swift.UInt {

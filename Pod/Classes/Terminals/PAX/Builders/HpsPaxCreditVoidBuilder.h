@@ -17,7 +17,7 @@
 }
 
 @property (nonatomic, readwrite) NSInteger referenceNumber;
-@property (nonatomic, readwrite) NSInteger transactionId;
+@property (nonatomic, strong) NSString *transactionId;
 @property (nonatomic, readwrite) NSInteger transactionNumber;
 @property (nonatomic, strong) NSString *clientTransactionId;
 

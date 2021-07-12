@@ -9,6 +9,7 @@ public class HpsC2xDevice : GMSDevice, IC2xDeviceInterface {
             entryModes: [
                 .contact,
                 .chipFallback,
+                .contactless,
                 .msr,
                 .manual
             ],

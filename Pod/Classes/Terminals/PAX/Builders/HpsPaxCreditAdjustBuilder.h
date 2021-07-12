@@ -19,7 +19,7 @@
 @property (nonatomic, readwrite) NSInteger referenceNumber;
 @property (nonatomic, strong) NSNumber *amount;
 @property (nonatomic, strong) NSNumber *gratuity;
-@property (nonatomic, readwrite) NSInteger transactionId;
+@property (nonatomic, strong) NSString *transactionId;
 @property (nonatomic, readwrite) NSInteger transactionNumber;
 @property (nonatomic, strong) NSString *clientTransactionId;
 

@@ -155,7 +155,7 @@
     builder.referenceNumber = 1;
     builder.amount = [NSNumber numberWithDouble:11.0];
     
-    builder.transactionId = 1234567;
+    builder.transactionId = @"1234567";
     
     //Too many payment methods, one or the other
     builder.token = @"sdfsdfsdfsdf";
@@ -326,7 +326,7 @@
     builder.referenceNumber = 1;
     builder.amount = [NSNumber numberWithDouble:11.0];
     
-    builder.transactionId = 1234567;
+    builder.transactionId = @"1234567";
     
     @try {
         [builder execute:^(HpsPaxCreditResponse *payload, NSError *error) {

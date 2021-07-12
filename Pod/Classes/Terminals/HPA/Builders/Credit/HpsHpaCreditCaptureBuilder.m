@@ -27,7 +27,7 @@
 	self.totalAmount = [NSNumber numberWithFloat:(self.amount.doubleValue * 100)] ;
 	[self validate];
 
-	HpsHpaRequest *request_authComplete = [ [HpsHpaRequest alloc]initWithCreditAuthCompleteWithVersion:self.version.stringValue withEcrId:self.ecrId withRequest:HPA_MSG_ID_toString[CAPTURE] withTransactionId:self.transactionId.stringValue withTotalAmount:self.totalAmount.stringValue withTipAmount:self.gratuity.stringValue];
+	HpsHpaRequest *request_authComplete = [ [HpsHpaRequest alloc]initWithCreditAuthCompleteWithVersion:self.version.stringValue withEcrId:self.ecrId withRequest:HPA_MSG_ID_toString[CAPTURE] withTransactionId:self.transactionId withTotalAmount:self.totalAmount.stringValue withTipAmount:self.gratuity.stringValue];
 	
 	request_authComplete.RequestId = self.referenceNumber;
 
