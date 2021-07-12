@@ -17,7 +17,7 @@
 }
 
 @property (nonatomic, readwrite) int referenceNumber;
-@property (nonatomic, readwrite) int transactionId;
+@property (nonatomic, strong) NSString *transactionId;
 @property (nonatomic, strong) NSString *clientTransactionId;
 
 - (void) execute:(void(^)(HpsPaxCreditResponse*, NSError*))responseBlock;

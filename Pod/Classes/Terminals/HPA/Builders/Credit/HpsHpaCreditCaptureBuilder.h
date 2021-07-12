@@ -8,7 +8,7 @@
 
 @property (nonatomic, strong) NSNumber *amount;
 @property (nonatomic, strong) NSNumber *gratuity;
-@property (nonatomic, readwrite) NSNumber *transactionId;
+@property (nonatomic, strong) NSString *transactionId;
 @property (nonatomic, readwrite) int referenceNumber;
 
 - (void) execute:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
