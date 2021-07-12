@@ -39,8 +39,8 @@
     [subgroups addObject:[[HpsPaxEcomSubGroup alloc] init]];
     
     HpsPaxExtDataSubGroup *extData = [[HpsPaxExtDataSubGroup alloc] init];
-    if (self.transactionId != 0) {
-        [extData.collection setObject:[NSString stringWithFormat:@"%d", self.transactionId] forKey:PAX_EXT_DATA_HOST_REFERENCE_NUMBER];
+    if (self.transactionId != nil && [self.transactionId length] > 0) {
+        [extData.collection setObject:self.transactionId forKey:PAX_EXT_DATA_HOST_REFERENCE_NUMBER];
     }
     [subgroups addObject:extData];
     

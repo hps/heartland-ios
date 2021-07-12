@@ -68,8 +68,8 @@
     if (self.token != nil && self.token.length > 0) {
         [extData.collection setObject:self.token forKey:PAX_EXT_DATA_TOKEN];
     }
-    if (self.transactionId > 0) {
-        [extData.collection setObject:[NSNumber numberWithInteger:self.transactionId] forKey:PAX_EXT_DATA_HOST_REFERENCE_NUMBER];
+    if (self.transactionId != nil && [self.transactionId length] > 0) {
+        [extData.collection setObject:self.transactionId forKey:PAX_EXT_DATA_HOST_REFERENCE_NUMBER];
     }
     [subgroups addObject:extData];
     

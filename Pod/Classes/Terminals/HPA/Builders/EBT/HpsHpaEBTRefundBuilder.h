@@ -1,15 +1,16 @@
 #import <Foundation/Foundation.h>
 #import "HpsHpaDevice.h"
 
-@interface HpsHpaGiftVoidBuilder : NSObject
+@interface HpsHpaEBTRefundBuilder : NSObject
 {
-	HpsHpaDevice *device;
+    HpsHpaDevice *device;
 }
-
-@property (nonatomic, strong) NSString *transactionId;
 @property (nonatomic, readwrite) int referenceNumber;
+@property (nonatomic, strong) NSString *transactionId;
+@property (nonatomic, strong) NSNumber *amount;
 
 - (void) execute:(void(^)(id<IHPSDeviceResponse>, NSError*))responseBlock;
 - (id)initWithDevice: (HpsHpaDevice*)HpaDevice;
-
 @end
+
+

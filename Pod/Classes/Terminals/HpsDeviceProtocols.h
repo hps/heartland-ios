@@ -19,6 +19,9 @@
 @property (nonatomic,strong) NSString *deviceResponseMessage;
 @optional
 -(NSString*)toString;
+@property (nonatomic) BOOL storedResponse;
+@property (nonatomic,strong) NSString *transactionId;
+@property (nonatomic,strong) NSString *lastResponseTransactionId;
 
 @end
 

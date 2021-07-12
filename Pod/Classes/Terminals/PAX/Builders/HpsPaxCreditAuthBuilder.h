@@ -28,7 +28,7 @@
 @property (nonatomic, strong) HpsTransactionDetails *details;
 @property (nonatomic, readwrite) BOOL allowDuplicates;
 @property (nonatomic, strong) NSNumber *gratuity;
-@property (nonatomic, readwrite) int transactionId;
+@property (nonatomic, strong) NSString *transactionId;
 @property (nonatomic, strong) NSString *authCode;
 
 - (void) execute:(void(^)(HpsPaxCreditResponse*, NSError*))responseBlock;

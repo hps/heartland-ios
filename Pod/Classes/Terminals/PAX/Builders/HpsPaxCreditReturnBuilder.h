@@ -23,7 +23,7 @@
 @property (nonatomic, strong) NSNumber *amount;
 @property (nonatomic, strong) HpsCreditCard *creditCard;
 @property (nonatomic, strong) NSString *token;
-@property (nonatomic, readwrite) int transactionId;
+@property (nonatomic, strong) NSString *transactionId;
 @property (nonatomic, strong) HpsAddress *address;
 @property (nonatomic, strong) HpsTransactionDetails *details;
 @property (nonatomic, readwrite) BOOL allowDuplicates;

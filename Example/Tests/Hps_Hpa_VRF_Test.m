@@ -176,33 +176,53 @@
 
 - (void) test_Case03
 {
-	[self writeStringToFile:@"TEST CASE #3 - Approved Sale with Offline PIN \n"];
-
-	XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit fail MultiplePayments"];
-
-	HpsHpaDevice *device = [self setupDevice];
-
-	HpsHpaCreditSaleBuilder *builder = [[HpsHpaCreditSaleBuilder alloc] initWithDevice:device];
-	builder.amount = [NSNumber numberWithDouble:25];
-	builder.referenceNumber = [device generateNumber];
-
-	[builder execute:^(id <IHPSDeviceResponse> payload, NSError *error){
-		XCTAssertNil(error);
-		XCTAssertNotNil(payload);
-
-		XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
-		NSLog(@"Response = %@",payload.toString);
-		NSLog(@"Host Reference Number = %d",((HpsTerminalResponse *)payload).transactionId);
-
-		[self printRecipt:(HpsHpaDeviceResponse *)payload];
-		[expectation fulfill];
-
-	}];
-
-	[self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
-
-		if(error) XCTFail(@"Request Timed out");
-	}];
+    [self writeStringToFile:@" TEST CASE #3 - Mag Stripe Online Void\n"];
+    
+    XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit void "];
+    
+    HpsHpaDevice *device = [self setupDevice];
+    
+    HpsHpaCreditSaleBuilder *builder = [[HpsHpaCreditSaleBuilder alloc] initWithDevice:device];
+    builder.amount = [NSNumber numberWithDouble:8];
+    builder.referenceNumber = [device generateNumber];
+    
+    [builder execute:^(id <IHPSDeviceResponse> payload, NSError *error){
+        XCTAssertNil(error);
+        XCTAssertNotNil(payload);
+        XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
+        
+        HpsHpaCreditVoidBuilder *voidbuilder = [[HpsHpaCreditVoidBuilder alloc]initWithDevice:device];
+        voidbuilder.transactionId = ((HpsHpaDeviceResponse *)payload).transactionId;
+        voidbuilder.referenceNumber = [device generateNumber];
+        NSLog(@"#### transactionID = %@",((HpsHpaDeviceResponse *)payload).transactionId);
+        
+        [self waitAndReset:device completion:^(BOOL success) {
+            if (success) {
+                @try {
+                    [voidbuilder execute:^(id<IHPSDeviceResponse>payload, NSError *error) {
+                        XCTAssertNil(error);
+                        XCTAssertNotNil(payload);
+                        XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
+                        NSLog(@"Response = %@",payload.toString);
+                        NSLog(@"Host Reference Number = %@",((HpsTerminalResponse *)payload).transactionId);
+                        //[self writeStringToFile:[NSString stringWithFormat:@"Transaction ID: %d \n",((HpsTerminalResponse *)payload).transactionId]];
+                        [self printRecipt:(HpsHpaDeviceResponse *)payload];
+                        
+                        [expectation fulfill];
+                    }];
+                } @catch (NSException *exception) {
+                    XCTFail(@"Credit_Void_Failed: %@",exception.description);
+                }
+            }else {
+                XCTFail(@"Credit_Void_Failed");
+            }
+        }];
+    }];
+    
+    [self waitForExpectationsWithTimeout:120.0 handler:^(NSError *error) {
+        
+        if(error) XCTFail(@"Request Timed out");
+    }];
 }
 
 /*

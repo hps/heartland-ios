@@ -233,7 +233,7 @@
 		XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
 		
 		HpsHpaCreditVoidBuilder *voidbuilder = [[HpsHpaCreditVoidBuilder alloc]initWithDevice:device];
-		voidbuilder.transactionId = [NSNumber numberWithInt:((HpsHpaDeviceResponse *)payload).transactionId];
+		voidbuilder.transactionId = ((HpsHpaDeviceResponse *)payload).transactionId;
 		voidbuilder.referenceNumber = [device generateNumber];
 
 		[self waitAndReset:device completion:^(BOOL success) {
@@ -299,7 +299,7 @@
 		XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
 
 		HpsHpaCreditCaptureBuilder *caputureBuilder = [[HpsHpaCreditCaptureBuilder alloc]initWithDevice:device];
-		caputureBuilder.transactionId = [NSNumber numberWithInteger:((HpsHpaDeviceResponse *)payload).transactionId];
+		caputureBuilder.transactionId = ((HpsHpaDeviceResponse *)payload).transactionId;
 		caputureBuilder.referenceNumber = [device generateNumber];
 
 		[self waitAndReset:device completion:^(BOOL success) {
