@@ -79,6 +79,17 @@ public class GMSBuilderModel: NSObject {
         )
     }
     
+    public static func creditReturnModel(
+        amount: NSDecimalNumber,
+        referenceNumber: String?
+    ) -> GMSBuilderModel {
+        .init(
+            transactionType: .creditReturn,
+            amount: amount,
+            referenceNumber: referenceNumber
+        )
+    }
+    
     public static func creditReversalModel(
         amount: NSDecimalNumber,
         clientTransactionId: UUID?,
