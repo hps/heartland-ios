@@ -128,6 +128,8 @@ extension GMSBaseBuilder {
                 switch model.transactionType {
                 case .creditAuth:
                     return HpsC2xCreditAuthBuilder(device: $0)
+                case .creditReturn:
+                    return HpsC2xCreditReturnBuilder(device: $0)
                 case .creditReversal:
                     return HpsC2xCreditReversalBuilder(device: $0)
                 case .creditSale:
@@ -139,6 +141,8 @@ extension GMSBaseBuilder {
                 switch model.transactionType {
                 case .creditAuth:
                     return HpsWiseCubeCreditAuthBuilder(device: $0)
+                case .creditReturn:
+                    return HpsWiseCubeCreditReturnBuilder(device: $0)
                 case .creditReversal:
                     return HpsWiseCubeCreditReversalBuilder(device: $0)
                 case .creditSale:
@@ -153,6 +157,10 @@ extension GMSBaseBuilder {
             builderAuth.amount = model.amount
             builderAuth.gratuity = model.gratuity
             builderAuth.creditCard = model.creditCard
+        case let builderReturn as GMSCreditReturnBuilder:
+            builderReturn.amount = model.amount
+            builderReturn.referenceNumber = model.referenceNumber
+            builderReturn.transactionId = model.transactionId
         case let builderReversal as GMSCreditReversalBuilder:
             builderReversal.amount = model.amount
             builderReversal.clientTransactionId = model.clientTransactionId
