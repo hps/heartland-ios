@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) id<HRGMSTransactionView> view;
 
+- (void)gmsReturnSelected;
 - (void)gmsSaleSelected;
 
 @end

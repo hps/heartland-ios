@@ -39,6 +39,15 @@
      [self textFromResponseBody:response]];
 }
 
+- (void)gmsReturnSelected {
+    [_view gmsTransactionViewResetResponseViews];
+    
+    NSDecimalNumber *amount = [NSDecimalNumber decimalNumberWithString:@"4.28"];
+    NSString *referenceNumber = [NSString stringWithFormat:@"%ld", (NSInteger)NSDate.new.timeIntervalSince1970];
+    GMSBuilderModel *returnModel = [GMSBuilderModel creditReturnModelWithAmount:amount referenceNumber:referenceNumber];
+    [HRGMSDeviceManager.sharedInstance doTransactionWithModel:returnModel];
+}
+
 - (void)gmsSaleSelected {
     [_view gmsTransactionViewResetResponseViews];
     

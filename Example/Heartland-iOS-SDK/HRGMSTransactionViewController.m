@@ -69,6 +69,7 @@
 @property (strong, nonatomic) HRGMSTransactionViewModel *viewModel;
 @property (weak, nonatomic) UILabel *responseBodyLabel;
 @property (weak, nonatomic) UILabel *responseDescriptionLabel;
+@property (weak, nonatomic) UIButton *returnButton;
 @property (weak, nonatomic) UIButton *saleButton;
 @property (weak, nonatomic) UILabel *statusLabel;
 
@@ -109,6 +110,13 @@
     _responseDescriptionLabel = responseLabel;
 }
 
+- (void)addReturnButton {
+    UIButton *returnButton = [UIButton buttonWithTitle:@"Credit Return"];
+    [returnButton addTarget:self action:@selector(creditReturnTapped) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:returnButton];
+    _returnButton = returnButton;
+}
+
 - (void)addSaleButton {
     UIButton *saleButton = [UIButton buttonWithTitle:@"Credit Sale"];
     [saleButton addTarget:self action:@selector(creditSaleTapped) forControlEvents:UIControlEventTouchUpInside];
@@ -126,6 +134,7 @@
     [self addResponseBodyLabel];
     [self addResponseDescriptionLabel];
     [self addStatusLabel];
+    [self addReturnButton];
     [self addSaleButton];
     
     [NSLayoutConstraint activateConstraints:@[
@@ -135,13 +144,19 @@
         [_responseDescriptionLabel.centerXAnchor constraintEqualToAnchor:_statusLabel.centerXAnchor],
         [_saleButton.topAnchor constraintEqualToAnchor:_responseDescriptionLabel.bottomAnchor constant:16],
         [_saleButton.centerXAnchor constraintEqualToAnchor:_responseDescriptionLabel.centerXAnchor],
-        [_responseBodyLabel.topAnchor constraintEqualToAnchor:_saleButton.bottomAnchor constant:16],
+        [_returnButton.topAnchor constraintEqualToAnchor:_saleButton.bottomAnchor constant:16],
+        [_returnButton.centerXAnchor constraintEqualToAnchor:_saleButton.centerXAnchor],
+        [_responseBodyLabel.topAnchor constraintEqualToAnchor:_returnButton.bottomAnchor constant:16],
         [_responseBodyLabel.centerXAnchor constraintEqualToAnchor:_saleButton.centerXAnchor],
         [_responseBodyLabel.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:-16],
     ]];
 }
 
 // MARK: Actions
+
+- (void)creditReturnTapped {
+    [_viewModel gmsReturnSelected];
+}
 
 - (void)creditSaleTapped {
     [_viewModel gmsSaleSelected];
