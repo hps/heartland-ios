@@ -28,7 +28,7 @@
 - (void)didReceiveGMSTransactionResponseNotification:(NSNotification *)notification {
     HpsTerminalResponse *response = notification.object;
     
-    if (response && response.isApproval) {
+    if (response && response.gmsResponseIsApproval) {
         [_view gmsTransactionViewDisplayResponseSuccess];
     } else {
         [_view gmsTransactionViewDisplayResponseError:

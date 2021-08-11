@@ -4,10 +4,19 @@
 
 @implementation HpsTerminalResponse
 
-- (BOOL)isApproval {
-    return ([self.deviceResponseCode isEqualToString:@"APPROVAL"]
+- (BOOL)gmsResponseIsApproval {
+    NSString *approvalCode = self.gmsResponseIsFromGateway ? @"Success" : @"APPROVAL";
+    return ([self.deviceResponseCode isEqualToString:approvalCode]
             || (self.gmsResponseIsReversal
                 && self.gmsResponseOriginalTransactionInvalid));
+}
+
+- (BOOL)gmsResponseIsFromGateway {
+    return self.gmsResponseIsReturn;
+}
+
+- (BOOL)gmsResponseIsReturn {
+    return [self.transactionType isEqualToString:@"Return"];
 }
 
 - (BOOL)gmsResponseIsReversal {
