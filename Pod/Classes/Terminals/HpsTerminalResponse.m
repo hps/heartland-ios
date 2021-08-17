@@ -11,10 +11,10 @@
 	NSMutableDictionary *paramDictionary = [HpsHpaSharedParams getInstance].params;
 	self.terminalSerialNumber = paramDictionary[@"TERMINAL INFORMATION"][@"SERIAL NUMBER"];
 	if (response.ResponseId) {
-		self.transactionId =  response.ResponseId.intValue;
+		self.transactionId =  response.ResponseId;
 	}
 	else{
-		self.transactionId =  response.TransactionId.intValue;
+		self.transactionId =  response.TransactionId;
 
 	}
 }

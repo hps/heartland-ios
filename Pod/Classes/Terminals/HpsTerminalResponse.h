@@ -18,7 +18,7 @@
 
 @property (nonatomic,strong) NSString *deviceResponseMessage;
 @property (nonatomic,strong) NSString *responseText;
-@property (nonatomic,readwrite) int transactionId;
+@property (nonatomic,strong) NSString *transactionId;
 @property (nonatomic,strong) NSString *terminalRefNumber;
 @property (nonatomic,strong) HpsTokenData *tokenData;
 @property (nonatomic,strong) NSString *signatureStatus;
