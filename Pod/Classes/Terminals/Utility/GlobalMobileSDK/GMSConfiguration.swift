@@ -23,8 +23,13 @@ public class GMSConfiguration: NSObject {
             config.developerId = c.developerID
             config.versionNumber = c.versionNumber
             config.environment = c.isProduction ? .production : .certification
+
             if let timeout = c.timeout {
                 config.timeout = Int32(timeout.pointee)
+            }
+
+            if let terminalOnlineProcessTimeout = c.terminalOnlineProcessTimeout {
+                config.terminalOnlineProcessTimeout = UInt(terminalOnlineProcessTimeout.pointee)
             }
         }
         config.merchantName = ""
