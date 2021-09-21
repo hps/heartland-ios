@@ -39,8 +39,10 @@ class GMSResponseHelper {
         let resp = response as? AuthResponse
         var deviceResponseCode = result.rawValue
 
-        if let respText = resp?.gatewayResponseText {
-            deviceResponseCode = respText
+        if result != .postAuthChipDecline {
+            if let respText = resp?.gatewayResponseText {
+                deviceResponseCode = respText
+            }
         }
 
         data.entryMethod = HpsC2xEnums.cardDataSourceTypeToString(resp?.cardDataSourceType)
@@ -86,8 +88,10 @@ class GMSResponseHelper {
         let resp = response as? ReturnResponse
         var deviceResponseCode = result.rawValue
 
-        if let respText = resp?.gatewayResponseText {
-            deviceResponseCode = respText
+        if result != .postAuthChipDecline {
+            if let respText = resp?.gatewayResponseText {
+                deviceResponseCode = respText
+            }
         }
 
         data.entryMethod = HpsC2xEnums.cardDataSourceTypeToString(resp?.cardDataSourceType)
@@ -119,8 +123,10 @@ class GMSResponseHelper {
         let resp = response as? ReversalResponse
         var deviceResponseCode = result.rawValue
 
-        if let respText = resp?.gatewayResponseText {
-            deviceResponseCode = respText
+        if result != .postAuthChipDecline {
+            if let respText = resp?.gatewayResponseText {
+                deviceResponseCode = respText
+            }
         }
 
         data.approvalCode = resp?.authCode
@@ -136,8 +142,10 @@ class GMSResponseHelper {
         let resp = response as? SaleResponse
         var deviceResponseCode = result.rawValue
 
-        if let respText = resp?.gatewayResponseText {
-            deviceResponseCode = respText
+        if result != .postAuthChipDecline {
+            if let respText = resp?.gatewayResponseText {
+                deviceResponseCode = respText
+            }
         }
 
         data.entryMethod = HpsC2xEnums.cardDataSourceTypeToString(resp?.cardDataSourceType)

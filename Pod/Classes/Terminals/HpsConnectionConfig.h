@@ -10,6 +10,7 @@
 @property (nonatomic) NSInteger stopBits;
 @property (nonatomic) NSInteger dataBits;
 @property (nonatomic) NSInteger timeout;
+@property (nonatomic) NSInteger terminalOnlineProcessTimeout;
 
 @property (nonatomic, strong) NSString *versionNumber;
 @property (nonatomic, strong) NSString *developerID;

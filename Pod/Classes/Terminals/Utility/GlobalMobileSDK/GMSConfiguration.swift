@@ -26,6 +26,10 @@ public class GMSConfiguration: NSObject {
             if c.timeout > 0 {
                 config.timeout = Int32(c.timeout)
             }
+
+            if c.terminalOnlineProcessTimeout > 0 {
+                config.terminalOnlineProcessTimeout = UInt(c.terminalOnlineProcessTimeout)
+            }
         }
         config.merchantName = ""
         config.merchantNumber = ""
