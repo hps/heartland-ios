@@ -55,7 +55,12 @@
 			self.taxExeptId = self.commercialResponse.taxExeptId;
 			}
 		if (self.extDataResponse != nil) {
-			self.transactionId = [[self.extDataResponse.collection objectForKey:PAX_EXT_DATA_HOST_REFERENCE_NUMBER] stringValue];
+            id transactionIdObject = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_HOST_REFERENCE_NUMBER];
+            if ([transactionIdObject respondsToSelector:@selector(stringValue)]) {
+                self.transactionId = [transactionIdObject stringValue];
+            } else if ([transactionIdObject isKindOfClass:[NSString class]]) {
+                self.transactionId = transactionIdObject;
+                        }
 			self.clientTransactionId = [self.extDataResponse.collection objectForKey:@"ECRRefNum"];
 
 			NSString *token = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_TOKEN];
