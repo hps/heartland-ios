@@ -66,6 +66,7 @@
 @property (nonatomic,readwrite) NSString *lastResponseTransactionId;
 
 @property (nonatomic,strong) NSUUID *clientTransactionIdUUID;
+@property (nonatomic,strong) NSString *cardType;
 
 - (void) mapResponse:(id <HpaResposeInterface>) response;
 // @todo
