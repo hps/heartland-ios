@@ -18,7 +18,7 @@
 
 @property (nonatomic,strong) NSString *deviceResponseMessage;
 @property (nonatomic,strong) NSString *responseText;
-@property (nonatomic,readwrite) NSString *transactionId;
+@property (nonatomic,strong) NSString *transactionId;
 @property (nonatomic,strong) NSString *terminalRefNumber;
 @property (nonatomic,strong) HpsTokenData *tokenData;
 @property (nonatomic,strong) NSString *signatureStatus;
@@ -68,6 +68,7 @@
 @property (nonatomic,readwrite) NSString *lastResponseTransactionId;
 
 @property (nonatomic,strong) NSUUID *clientTransactionIdUUID;
+@property (nonatomic,strong) NSString *transactionStatusInformation;
 
 - (void) mapResponse:(id <HpaResposeInterface>) response;
 // @todo

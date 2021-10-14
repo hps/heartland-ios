@@ -15,6 +15,7 @@
 @property (nonatomic,strong) NSString *cvdApprovalCode;
 @property (nonatomic,strong) NSString *cvdMessage;
 @property (nonatomic) BOOL cardPressent;
+@property (nonatomic,strong) NSString *debitAccountType;
 
 - (id)initWithBinaryReader: (HpsBinaryDataScanner*)br;
 
