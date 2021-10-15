@@ -25,6 +25,7 @@
 @property (nonatomic, readwrite) BOOL allowDuplicates;
 @property (nonatomic, readwrite) BOOL tipRequest;
 @property (nonatomic, strong) NSString *clientTransactionId;
+@property (nonatomic, strong) NSString *ecrTransId;
 
 - (void) execute:(void(^)(HpsPaxDebitResponse*, NSError*))responseBlock;
 - (id)initWithDevice: (HpsPaxDevice*)paxDevice;

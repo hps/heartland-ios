@@ -7,6 +7,7 @@
     if (self != nil)
     {
         device = paxDevice;
+        _ecrTransId = [HpsPaxCreditSaleBuilder newECRTransactionId];
     }
     return self;   
 }
@@ -56,8 +57,6 @@
     [subgroups addObject:account];
     
     HpsPaxTraceRequest *traceRequest = [[HpsPaxTraceRequest alloc] init];
-    
-    _ecrTransId = [HpsPaxCreditSaleBuilder newECRTransactionId];
     traceRequest.ecrTransId = _ecrTransId;
     
     traceRequest.referenceNumber = [NSString stringWithFormat:@"%d", self.referenceNumber];
