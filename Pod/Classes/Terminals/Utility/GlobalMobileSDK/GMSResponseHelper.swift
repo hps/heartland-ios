@@ -58,6 +58,7 @@ class GMSResponseHelper {
         data.cardholderName = resp?.cardholderName
         data.applicationCrytptogram = resp?.applicationCryptogram
         data.terminalVerficationResult = resp?.tvr
+        data.cardType = HpsC2xEnums.cardTypeToString(resp?.cardType)
 
         if let uintValue = resp?.tip {
             data.tipAmount = uintToDecimal(uintValue)
@@ -107,6 +108,7 @@ class GMSResponseHelper {
         data.cardholderName = resp?.cardholderName
         data.applicationCrytptogram = resp?.applicationCryptogram
         data.terminalVerficationResult = resp?.tvr
+        data.cardType = HpsC2xEnums.cardTypeToString(resp?.cardType)
         
         if let uintValue = resp?.tip {
             data.tipAmount = uintToDecimal(uintValue)
@@ -161,6 +163,7 @@ class GMSResponseHelper {
         data.cardholderName = resp?.cardholderName
         data.applicationCrytptogram = resp?.applicationCryptogram
         data.terminalVerficationResult = resp?.tvr
+        data.cardType = HpsC2xEnums.cardTypeToString(resp?.cardType)
         
         if let uintValue = resp?.tip {
             data.tipAmount = uintToDecimal(uintValue)
