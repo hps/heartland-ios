@@ -24,9 +24,13 @@
 }
 
 - (BOOL)gmsResponseIsReversible {
-    return ([self.deviceResponseCode isEqualToString:@"hostTimeout"]
+    return (self.gmsResponseIsTimeout
             && !self.gmsResponseIsReversal
             && self.clientTransactionIdUUID);
+}
+
+- (BOOL)gmsResponseIsTimeout {
+    return [self.deviceResponseCode isEqualToString:@"hostTimeout"];
 }
 
 - (BOOL)gmsResponseOriginalTransactionInvalid {
