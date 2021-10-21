@@ -202,7 +202,11 @@ extension GMSWrapper: TransactionDelegate {
     }
 
     public func onError(error: TransactionError) {
-        delegate.onError(NSError.init(fromTransactionError: error));
+        if error.isStartError {
+            onTransactionStartFailed(withError: error)
+        } else {
+            delegate.onError(.init(fromTransactionError: error));
+        }
     }
 }
 
@@ -212,5 +216,34 @@ private extension GlobalMobileSDK.TransactionError {
         case .cardNotRemoved: return true
         default: return false
         }
+    }
+}
+
+private extension HpsTransactionType {
+    var asGMSTransactionType: GlobalMobileSDK.TransactionType? {
+        switch self {
+        case .batchClose:       return .BatchClose
+        case .creditAdjust:     return .TipAdjust
+        case .creditAuth:       return .Auth
+        case .creditCapture:    return .Capture
+        case .creditReturn:     return .Return
+        case .creditReversal:   return .Reversal
+        case .creditSale:       return .Sale
+        case .creditVoid:       return .Void
+        case .unknown:          return nil
+        }
+    }
+}
+
+private extension GMSWrapper {
+    func onTransactionStartFailed(withError gmsError: GlobalMobileSDK.TransactionError) {
+        let response = HpsTerminalResponse()
+        let error = NSError(fromTransactionError: gmsError)
+        let reason = error.userInfo["reason"] as? String
+        response.deviceResponseCode = reason
+        let gmsTransactionType = builder?.transactionType.asGMSTransactionType
+        let transactionType = gmsTransactionType.flatMap(HpsC2xEnums.transactionTypeToString)
+        response.transactionType = transactionType
+        delegate.onTransactionComplete("", response: response)
     }
 }
