@@ -205,3 +205,12 @@ extension GMSWrapper: TransactionDelegate {
         delegate.onError(NSError.init(fromTransactionError: error));
     }
 }
+
+private extension GlobalMobileSDK.TransactionError {
+    var isStartError: Bool {
+        switch self {
+        case .cardNotRemoved: return true
+        default: return false
+        }
+    }
+}
