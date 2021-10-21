@@ -210,6 +210,18 @@ extension GMSWrapper: TransactionDelegate {
     }
 }
 
+/*
+ Utilities added as a temp work around for inconsistent GlobalMobileSDK behavior.
+ 
+ Transaction-failing errors are usually returned within response objects passed into
+ onTransactionComplete. However, if a card is inserted before a transaction
+ starts, for some reason the error (which also ends the transaction attempt) is passed
+ through onError instead.
+ 
+ Should probably have all process-failing errors return in 1 place, but until then we
+ have this...
+ */
+
 private extension GlobalMobileSDK.TransactionError {
     var isStartError: Bool {
         switch self {
