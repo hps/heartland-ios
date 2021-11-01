@@ -44,7 +44,7 @@ class GMSRequestHelper {
         if let cd = builder.creditCard {
             cardData = ManualCardData.cardData(cardholderName: builder.cardHolderName ?? "",
                                                cardNumber: cd.cardNumber,
-                                               expirationDate: "\(cd.expMonth)\(cd.expYear)",
+                                               expirationDate: "\(cd.expMonth < 10 ? "0" : "")\(cd.expMonth)\(cd.expYear)",
                                                cvv: cd.cvv,
                                                cardPresent: true,
                                                readerPresent: false,
@@ -145,7 +145,7 @@ class GMSRequestHelper {
         if let cd = builder.creditCard {
             cardData = ManualCardData.cardData(cardholderName: builder.cardHolderName ?? "",
                                                cardNumber: cd.cardNumber,
-                                               expirationDate: "\(cd.expMonth)\(cd.expYear)",
+                                               expirationDate: "\(cd.expMonth < 10 ? "0" : "")\(cd.expMonth)\(cd.expYear)",
                                                cvv: cd.cvv,
                                                cardPresent: true,
                                                readerPresent: false,
