@@ -23,6 +23,7 @@
 @property (nonatomic,strong) HpsTokenData *tokenData;
 @property (nonatomic,strong) NSString *signatureStatus;
 @property (nonatomic,readonly) BOOL gmsResponseIsApproval;
+@property (nonatomic,readonly) BOOL gmsResponseIsPartialApproval;
 @property (nonatomic,readonly) BOOL gmsResponseIsReversible;
 @property (nonatomic,readonly) BOOL gmsResponseIsTimeout;
 #pragma mark - TRANSACTIONAL
