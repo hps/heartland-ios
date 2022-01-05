@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3456ADAD25CB03F1000484E8 /* Hps_C2X_Device_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 3456ADAC25CB03F1000484E8 /* Hps_C2X_Device_Test.m */; };
 		3456ADB325CB0442000484E8 /* Hps_C2X_Credit_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 3456ADB225CB0442000484E8 /* Hps_C2X_Credit_Test.m */; };
+		345F6DE92783D981002DC1CC /* HpsJsonDocTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DE82783D981002DC1CC /* HpsJsonDocTests.m */; };
+		345F6DEB2783FDAA002DC1CC /* Hps_UPA_Admin_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DEA2783FDAA002DC1CC /* Hps_UPA_Admin_Test.m */; };
+		34783E4D2784B5BD009174DD /* Hps_UPA_Credit_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 34783E4C2784B5BD009174DD /* Hps_UPA_Credit_Test.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -63,6 +66,9 @@
 		2D472C6C84F02E1033D8F882 /* Pods_Heartland_iOS_SDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartland_iOS_SDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3456ADAC25CB03F1000484E8 /* Hps_C2X_Device_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_C2X_Device_Test.m; sourceTree = "<group>"; };
 		3456ADB225CB0442000484E8 /* Hps_C2X_Credit_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_C2X_Credit_Test.m; sourceTree = "<group>"; };
+		345F6DE82783D981002DC1CC /* HpsJsonDocTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsJsonDocTests.m; sourceTree = "<group>"; };
+		345F6DEA2783FDAA002DC1CC /* Hps_UPA_Admin_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_UPA_Admin_Test.m; sourceTree = "<group>"; };
+		34783E4C2784B5BD009174DD /* Hps_UPA_Credit_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_UPA_Credit_Test.m; sourceTree = "<group>"; };
 		3FA9B09A5740798478B9281B /* Heartland-iOS-SDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "Heartland-iOS-SDK.podspec"; path = "../Heartland-iOS-SDK.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6003F58A195388D20070C39A /* Heartland-iOS-SDK_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Heartland-iOS-SDK_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -149,6 +155,16 @@
 			path = C2X;
 			sourceTree = "<group>";
 		};
+		345F6DE72783D956002DC1CC /* UPA */ = {
+			isa = PBXGroup;
+			children = (
+				345F6DE82783D981002DC1CC /* HpsJsonDocTests.m */,
+				345F6DEA2783FDAA002DC1CC /* Hps_UPA_Admin_Test.m */,
+				34783E4C2784B5BD009174DD /* Hps_UPA_Credit_Test.m */,
+			);
+			name = UPA;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +235,7 @@
 				DBF1B0A32080B395007A775E /* FreshTxt */,
 				DBDA366F1FAB429300CF5146 /* Hpa */,
 				DBDA366D1FAB425E00CF5146 /* Pax */,
+				345F6DE72783D956002DC1CC /* UPA */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
 			);
 			path = Tests;
@@ -512,7 +529,9 @@
 				DBE8B01A20ECA30B006F8B97 /* HpsPayRollTests.m in Sources */,
 				E2576C2D243C78D1002E4CA4 /* Hps_Pax_Report_test.m in Sources */,
 				840256431DEE1BB90078B6A2 /* Hps_Pax_Debit_Tests.m in Sources */,
+				34783E4D2784B5BD009174DD /* Hps_UPA_Credit_Test.m in Sources */,
 				E2A3363B2455C6950041AD64 /* Hps_Pax_Batch_Tests.m in Sources */,
+				345F6DE92783D981002DC1CC /* HpsJsonDocTests.m in Sources */,
 				E2B1C1EB24190C820040D5C7 /* Hps_Hpa_EBT_Test.m in Sources */,
 				E2B1C1BC2403DFF20040D5C7 /* Hps_Hpa_EOD_Test.m in Sources */,
 				DBDA36711FAB430900CF5146 /* Hps_Hpa_Admin_Test.m in Sources */,
@@ -529,6 +548,7 @@
 				DB30662B2188794A00F6E101 /* Hps_Hpa_Report_Test.m in Sources */,
 				DBF1B0A52080B3C7007A775E /* HpsTableServicesTest.m in Sources */,
 				3456ADB325CB0442000484E8 /* Hps_C2X_Credit_Test.m in Sources */,
+				345F6DEB2783FDAA002DC1CC /* Hps_UPA_Admin_Test.m in Sources */,
 				DB3DC11C2004F7EA0037521A /* Hps_Hpa_VRF_Test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -145,6 +145,17 @@ return [trimmedString dataUsingEncoding:NSUTF8StringEncoding];
 		[buffer appendData:[message dataUsingEncoding:NSASCIIStringEncoding]];
 }
 		break;
+        
+        case UPA: {
+            [buffer appendBytes:(char []){ HpsControlCodes_STX } length:1];
+            [buffer appendBytes:(char []){ HpsControlCodes_LF } length:1];
+            [buffer appendData:[message dataUsingEncoding:NSASCIIStringEncoding]];
+            [buffer appendBytes:(char []){ HpsControlCodes_LF } length:1];
+            [buffer appendBytes:(char []){ HpsControlCodes_ETX } length:1];
+            [buffer appendBytes:(char []){ HpsControlCodes_LF } length:1];
+            
+            break;
+        }
 		default:
 
 		break;

@@ -46,6 +46,8 @@ NSString *const PAX_DEVICE_VERSION = @"1.35";
             break;
         case HpsControlCodes_PTGS:
             isControlCode = YES;
+        case HpsControlCodes_LF:
+            isControlCode = YES;
             break;
         default:
             break;
@@ -102,6 +104,8 @@ NSString *const PAX_DEVICE_VERSION = @"1.35";
 		case HpsControlCodes_PTGS:
 			ASCIIValue = @"PTGS";
 			break;
+        case HpsControlCodes_LF:
+            ASCIIValue = @"LF";
 		default:
 			break;
 	}
