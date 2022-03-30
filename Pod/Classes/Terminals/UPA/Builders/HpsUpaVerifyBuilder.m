@@ -30,6 +30,10 @@
     request.data.data.params.clerkId = self.clerkId;
     request.data.data.params.tokenRequest = self.requestMultiUseToken ? @"1" : @"0";
     request.data.data.params.tokenValue = self.token;
+    request.data.data.params.cardBrandTransId = self.cardBrandTransactionId;
+    if ((self.requestMultiUseToken || self.cardBrandTransactionId != nil) && self.storedCardInitiator != HpsStoredCardInitiator_None) {
+        request.data.data.params.cardOnFileIndicator = HpsStoredCardInitiator_toString[self.storedCardInitiator];
+    }
     
     [device processTransactionWithRequest:request withResponseBlock:^(id<IHPSDeviceResponse> response, NSError * error) {
         if (error != nil) {

@@ -40,6 +40,9 @@
     if (isDeletePreAuth) {
         request.data.data.transaction.referenceNumber = self.issuerRefNumber;
     }
+    else if (self.transactionId != nil) {
+        request.data.data.transaction.referenceNumber = self.transactionId;
+    }
     else if (self.terminalRefNumber != nil) {
         request.data.data.transaction.tranNo = [[@"" stringByPaddingToLength:4 - [self.terminalRefNumber length] withString:@"0" startingAtIndex:0] stringByAppendingString:self.terminalRefNumber];
     }

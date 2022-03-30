@@ -132,6 +132,10 @@
 		32BDAA0B00C0A0AECD167767AEF41931 /* HpsHpaRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DC741370B857F73CB51CF2A561146D3D /* HpsHpaRequest.m */; };
 		337E90E37461B9D8DE57E56A9BEC88DB /* HpsServiceContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 517DBD2F23676FE809404CC422D4E719 /* HpsServiceContainer.m */; };
 		33A1F072E7797D0B12CA507A47639CD9 /* HpsHpaResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A92AEA5B86B31482119E6DB713D157 /* HpsHpaResponse.m */; };
+		3401486527EB980B0074A93F /* JsonDoc.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F6DE32783C982002DC1CC /* JsonDoc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3401486627EB981A0074A93F /* HpsUpaResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F6DDB27837AB9002DC1CC /* HpsUpaResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3401486827EBB1A20074A93F /* HpsEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = 3401486727EBB1A20074A93F /* HpsEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3401486A27EBB2490074A93F /* HpsEnums.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401486927EBB2490074A93F /* HpsEnums.m */; };
 		3407511590A7CDF12FBCC04FB44509EA /* HpsPaxGiftBalanceBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 860EDEFFBBEFE3686A9725CC0D9404A0 /* HpsPaxGiftBalanceBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		345F6DD027837364002DC1CC /* HpsUpaTcpInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F6DCE278371BB002DC1CC /* HpsUpaTcpInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		345F6DD22783736D002DC1CC /* HpsUpaTcpInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DCF27837222002DC1CC /* HpsUpaTcpInterface.m */; };
@@ -139,11 +143,9 @@
 		345F6DD627837416002DC1CC /* HpsUpaDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DD527837416002DC1CC /* HpsUpaDevice.m */; };
 		345F6DD8278374ED002DC1CC /* UpaEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F6DD7278374ED002DC1CC /* UpaEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		345F6DDA27837530002DC1CC /* UpaEnums.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DD927837530002DC1CC /* UpaEnums.m */; };
-		345F6DDC27837AB9002DC1CC /* HpsUpaResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F6DDB27837AB9002DC1CC /* HpsUpaResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		345F6DDE27837BA1002DC1CC /* HpaUpaResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DDD27837BA1002DC1CC /* HpaUpaResponse.m */; };
 		345F6DE02783840E002DC1CC /* HpsUpaRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F6DDF2783840E002DC1CC /* HpsUpaRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		345F6DE227838462002DC1CC /* HpsUpaRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DE127838462002DC1CC /* HpsUpaRequest.m */; };
-		345F6DE42783C982002DC1CC /* JsonDoc.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F6DE32783C982002DC1CC /* JsonDoc.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		345F6DE62783CBF7002DC1CC /* JsonDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DE52783CBF7002DC1CC /* JsonDoc.m */; };
 		345F6DED2783FF32002DC1CC /* HpsUpaData.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F6DEC2783FF32002DC1CC /* HpsUpaData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		345F6DEF2783FF51002DC1CC /* HpsUpaData.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DEE2783FF51002DC1CC /* HpsUpaData.m */; };
@@ -693,6 +695,8 @@
 		32B86C6812EE69854CB0ED6498EE2D03 /* HpsPaxCommercialResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxCommercialResponse.m; sourceTree = "<group>"; };
 		33A566FEB9CFABFB942DB6C5F79E7320 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		33C742FA879A5A7F8AC35619A834C6C3 /* HpsServiceConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsServiceConfig.h; sourceTree = "<group>"; };
+		3401486727EBB1A20074A93F /* HpsEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsEnums.h; sourceTree = "<group>"; };
+		3401486927EBB2490074A93F /* HpsEnums.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsEnums.m; sourceTree = "<group>"; };
 		345F6DCE278371BB002DC1CC /* HpsUpaTcpInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsUpaTcpInterface.h; sourceTree = "<group>"; };
 		345F6DCF27837222002DC1CC /* HpsUpaTcpInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsUpaTcpInterface.m; sourceTree = "<group>"; };
 		345F6DD3278373B1002DC1CC /* HpsUpaDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsUpaDevice.h; sourceTree = "<group>"; };
@@ -1381,13 +1385,13 @@
 				345F6DF627849528002DC1CC /* HpsUpaReturnBuilder.h */,
 				345F6E0727849529002DC1CC /* HpsUpaReturnBuilder.m */,
 				34783E5A278501FF009174DD /* HpsUpaReversalBuilder.h */,
+				34783E5C27850249009174DD /* HpsUpaReversalBuilder.m */,
 				345F6E0127849528002DC1CC /* HpsUpaSaleBuilder.h */,
 				345F6DFD27849528002DC1CC /* HpsUpaSaleBuilder.m */,
 				345F6E0C27849529002DC1CC /* HpsUpaVerifyBuilder.h */,
 				345F6E0227849528002DC1CC /* HpsUpaVerifyBuilder.m */,
 				345F6DF927849528002DC1CC /* HpsUpaVoidBuilder.h */,
 				345F6DF827849528002DC1CC /* HpsUpaVoidBuilder.m */,
-				34783E5C27850249009174DD /* HpsUpaReversalBuilder.m */,
 			);
 			path = Builders;
 			sourceTree = "<group>";
@@ -1519,6 +1523,8 @@
 				AF75C4548176B887545DDAC88139627B /* GlobalMobileSDK */,
 				345F6DE32783C982002DC1CC /* JsonDoc.h */,
 				345F6DE52783CBF7002DC1CC /* JsonDoc.m */,
+				3401486727EBB1A20074A93F /* HpsEnums.h */,
+				3401486927EBB2490074A93F /* HpsEnums.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -2103,6 +2109,7 @@
 				34783E5B278501FF009174DD /* HpsUpaReversalBuilder.h in Headers */,
 				E34D047B0A60D7908D002DEFE4BADBD7 /* BatchSummary.h in Headers */,
 				345F6DED2783FF32002DC1CC /* HpsUpaData.h in Headers */,
+				3401486827EBB1A20074A93F /* HpsEnums.h in Headers */,
 				B97FC4C992F411D910A653907A80FC98 /* CardSummary.h in Headers */,
 				8974C243D00FE420906DFF8B73BBCAA4 /* CardSummaryRecord.h in Headers */,
 				B1792F06D33D8712CA21D314A16AE011 /* Field.h in Headers */,
@@ -2122,7 +2129,6 @@
 				66EF7FFF8C0988BA714EFE4C6AF16750 /* HpsBumpStatusCollection.h in Headers */,
 				D481657933036C35CE67E1067C0C2583 /* HpsCardData.h in Headers */,
 				BC37834E3811B67AF8C515AF4CD990B3 /* HpsCardEntry.h in Headers */,
-				345F6DDC27837AB9002DC1CC /* HpsUpaResponse.h in Headers */,
 				1420A2CB809635738CBC309D25136D13 /* HpsCardEntryViewController.h in Headers */,
 				F475B99EB930FE1B90D2F14D99887F94 /* HpsCardHolderData.h in Headers */,
 				BC452D591CE5D79E650F0A36C62DB6C9 /* HpsCardInfoViewController.h in Headers */,
@@ -2153,7 +2159,6 @@
 				648D12CD51F07AB4EA36E10A26037801 /* HpsHpaCreditRefundBuilder.h in Headers */,
 				66B1169319619FE2E180465876A452C6 /* HpsHpaCreditSaleBuilder.h in Headers */,
 				F6EB84F908E5AA0AF5E51EAD2FBFB77C /* HpsHpaCreditVerifyBuilder.h in Headers */,
-				345F6DE42783C982002DC1CC /* JsonDoc.h in Headers */,
 				D1EDA708BC26C8390FCE48B486D2AD31 /* HpsHpaCreditVoidBuilder.h in Headers */,
 				F9EBD0F44ABDE5B3B6FBF65EA0EF0919 /* HpsHpaDebitRefundBuilder.h in Headers */,
 				03C4FD0D8737C69BCF4F3EC04F89C4D3 /* HpsHpaDebitSaleBuilder.h in Headers */,
@@ -2249,6 +2254,7 @@
 				8EAE274415DD25D75E7C051BDFCC32EC /* HpsPayRollRequest.h in Headers */,
 				4ED808E23B20573A4B9AA0AF913F5E96 /* HpsPayrollService.h in Headers */,
 				4E03431703019391C4222CB85953A717 /* HpsPosRequest.h in Headers */,
+				3401486527EB980B0074A93F /* JsonDoc.h in Headers */,
 				8C0AF2D2E932584B31041C533054293C /* HpsRestGateway.h in Headers */,
 				69410C215EA3F9408C508967A2C564A7 /* HpsServerAssignmentResponse.h in Headers */,
 				6F0F33825283C6DD1DEA8564468D65DA /* HpsServerListResponse.h in Headers */,
@@ -2260,6 +2266,7 @@
 				2770C4F6A1A09D9D88E41CB75BE87634 /* HpsTableServiceConfiguration.h in Headers */,
 				EB00BE7C29081C55DD82A86A5458500D /* HpsTableServiceConnector.h in Headers */,
 				751856ADDA86D7BC40F98987BD769103 /* HpsTableServiceResponse.h in Headers */,
+				3401486627EB981A0074A93F /* HpsUpaResponse.h in Headers */,
 				1BA3E10129556F5B6FAC80B46F71F508 /* HpsTerminalEnums.h in Headers */,
 				345F6E2727849529002DC1CC /* HpsUpaAdjustBuilder.h in Headers */,
 				6AD96A2D7A729D34AD0D5EA86D42F3C5 /* HpsTerminalResponse.h in Headers */,
@@ -2746,6 +2753,7 @@
 				DCFB3F6CF46F0D019AC1E19E2AF89B83 /* HpsPayGroup.m in Sources */,
 				92C5C96D01DEC89DEA5B768CE3776A29 /* HpsPayItem.m in Sources */,
 				DDAEE27CF01D8E47F683ED0D79D79D5A /* HpsPayrollCollectionItem.m in Sources */,
+				3401486A27EBB2490074A93F /* HpsEnums.m in Sources */,
 				EF24154E0DF5A18A97292C3202E897F6 /* HpsPayrollConfig.m in Sources */,
 				9B52AB3E64EBF7AEA15C28EEA17BF052 /* HpsPayrollEncoder.m in Sources */,
 				816F10D4AADC0DCFABD124B6A15C31F5 /* HpsPayrollEntity.m in Sources */,

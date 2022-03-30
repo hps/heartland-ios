@@ -4,7 +4,7 @@
 #import "HpsterminalUtilities.h"
 #import "NSObject+ObjectMap.h"
 #import "NSInputStream+Hps.h"
-#define BUF_SIZE 1024
+#define BUF_SIZE 8192
 
 #pragma mark - Private properties and methods
 

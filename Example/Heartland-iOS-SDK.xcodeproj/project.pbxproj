@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3401486427EB801B0074A93F /* Hps_UPA_VRF_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401486327EB801B0074A93F /* Hps_UPA_VRF_Test.m */; };
 		3456ADAD25CB03F1000484E8 /* Hps_C2X_Device_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 3456ADAC25CB03F1000484E8 /* Hps_C2X_Device_Test.m */; };
 		3456ADB325CB0442000484E8 /* Hps_C2X_Credit_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 3456ADB225CB0442000484E8 /* Hps_C2X_Credit_Test.m */; };
 		345F6DE92783D981002DC1CC /* HpsJsonDocTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DE82783D981002DC1CC /* HpsJsonDocTests.m */; };
@@ -64,6 +65,7 @@
 		08D636DD28A9667ED2741E32 /* Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig"; path = "Pods/Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig"; sourceTree = "<group>"; };
 		253ABA11EC670E90EACA486A /* Pods-Heartland-iOS-SDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartland-iOS-SDK_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		2D472C6C84F02E1033D8F882 /* Pods_Heartland_iOS_SDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartland_iOS_SDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3401486327EB801B0074A93F /* Hps_UPA_VRF_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_UPA_VRF_Test.m; sourceTree = "<group>"; };
 		3456ADAC25CB03F1000484E8 /* Hps_C2X_Device_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_C2X_Device_Test.m; sourceTree = "<group>"; };
 		3456ADB225CB0442000484E8 /* Hps_C2X_Credit_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_C2X_Credit_Test.m; sourceTree = "<group>"; };
 		345F6DE82783D981002DC1CC /* HpsJsonDocTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsJsonDocTests.m; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				345F6DE82783D981002DC1CC /* HpsJsonDocTests.m */,
 				345F6DEA2783FDAA002DC1CC /* Hps_UPA_Admin_Test.m */,
 				34783E4C2784B5BD009174DD /* Hps_UPA_Credit_Test.m */,
+				3401486327EB801B0074A93F /* Hps_UPA_VRF_Test.m */,
 			);
 			name = UPA;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				84FFB2C91D63534D00D56BF9 /* Hps_Pax_Connection_Tests.m in Sources */,
 				84FFB2CA1D63535000D56BF9 /* Hps_Pax_Admin_Tests.m in Sources */,
 				DB8A59C11F4BDF7000B98B73 /* Hps_Pax_VRF_Test.m in Sources */,
+				3401486427EB801B0074A93F /* Hps_UPA_VRF_Test.m in Sources */,
 				848DD45C1D75FBE500D3F658 /* Hps_Pax_Gift_Tests.m in Sources */,
 				DBDA367E1FB01C2000CF5146 /* Hps_Hpa_Credit_Test.m in Sources */,
 				3456ADAD25CB03F1000484E8 /* Hps_C2X_Device_Test.m in Sources */,

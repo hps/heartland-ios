@@ -24,6 +24,8 @@ static int IsFieldEnable;
 -(id)initWithJSONDoc:(JsonDoc*)response
 {
     self = [self init];
+    self.transactionType = (NSString*)[response getValue:@"response"];
+
     JsonDoc* cmdData = [response get:@"data"];
     
     if ([cmdData has:@"EcrId"]) {
@@ -79,6 +81,7 @@ static int IsFieldEnable;
         self.authorizedAmount = (NSString*)[host getValue:@"authorizedAmount"];
         self.partialApproval = (NSString*)[host getValue:@"partialApproval"];
         self.batchId = (NSString*)[host getValue:@"batchId"];
+        self.cardBrandTransactionId = (NSString*)[host getValue:@"cardBrandTransId"];
 
         if ([host has:@"cashbackAmount"]) {
             self.cashBackAmount = [NSDecimalNumber decimalNumberWithString:(NSString*)[host getValue:@"cashbackAmount"]];
@@ -121,12 +124,34 @@ static int IsFieldEnable;
     if ([data has:@"payment"]) {
         JsonDoc* payment = [data get:@"payment"];
         self.cardType = (NSString*)[payment getValue:@"cardType"];
+        self.paymentType = (NSString*)[payment getValue:@"paymentType"];
         self.entryMethod = (NSString*)[payment getValue:@"cardAcquisition"];
         self.maskedCardNumber = (NSString*)[payment getValue:@"maskedPan"];
         self.signatureLine = (NSString*)[payment getValue:@"signatureLine"];
         self.pinVerified = (NSString*)[payment getValue:@"PinVerified"];
         self.storeAndForward = (NSString*)[payment getValue:@"storeAndForward"];
         self.invoiceNbr = (NSString*)[payment getValue:@"invoiceNbr"];
+        self.cardholderName = (NSString*)[payment getValue:@"cardHolderName"];
+    }
+    
+    if ([data has:@"emv"]) {
+        JsonDoc* emv = [data get:@"emv"];
+        self.applicationName = (NSString*)[emv getValue:@"50"]; // convert from hex
+        self.applicationId = (NSString*)[emv getValue:@"9F06"];
+        self.applicationPrefferedName = (NSString*)[emv getValue:@"9F12"]; // convert from hex
+        self.applicationCrytptogram = (NSString*)[emv getValue:@"9F26"];
+        
+        NSString* cryptotype = (NSString*)[emv getValue:@"9F27"];
+        if ([cryptotype isEqualToString:@"0"]) {
+            self.applicationCryptogramType = AAC;
+            self.applicationCryptogramTypeS = [HpsTerminalEnums applicationCryptogramTypeToString:self.applicationCryptogramType];
+        } else if ([cryptotype isEqualToString:@"40"]) {
+            self.applicationCryptogramType = TC;
+            self.applicationCryptogramTypeS = [HpsTerminalEnums applicationCryptogramTypeToString:self.applicationCryptogramType];
+        } else if ([cryptotype isEqualToString:@"80"]) {
+            self.applicationCryptogramType = ARQC;
+            self.applicationCryptogramTypeS = [HpsTerminalEnums applicationCryptogramTypeToString:self.applicationCryptogramType];
+        }
     }
     
     return self;

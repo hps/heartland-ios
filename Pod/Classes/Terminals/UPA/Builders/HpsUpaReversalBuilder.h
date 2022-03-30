@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSDecimalNumber *authorizedAmount;
 @property (nonatomic, strong) NSString *ecrId;
 @property (nonatomic, strong) NSString *terminalRefNumber;
+@property (nonatomic, strong) NSString *transactionId;
 
 - (void) execute:(void(^)(HpsUpaResponse*, NSError*))responseBlock;
 - (id)initWithDevice: (HpsUpaDevice*)upaDevice;

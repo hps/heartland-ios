@@ -17,7 +17,7 @@
 - (HpsUpaDevice*) setupDevice
 {
     HpsConnectionConfig *config = [[HpsConnectionConfig alloc] init];
-    config.ipAddress = @"192.168.86.46";
+    config.ipAddress = @"10.130.159.67";
     config.port = @"8081";
     config.connectionMode = HpsConnectionModes_TCP_IP;
     HpsUpaDevice * device = [[HpsUpaDevice alloc] initWithConfig:config];
@@ -32,7 +32,7 @@
     HpsUpaDevice *device = [self setupDevice];
     HpsUpaSaleBuilder* builder = [[HpsUpaSaleBuilder alloc] initWithDevice:device];
     builder.ecrId = @"3";
-    builder.amount = [[NSDecimalNumber alloc] initWithDouble:10.00];
+    builder.amount = [[NSDecimalNumber alloc] initWithDouble:10.33];
     builder.gratuity = [[NSDecimalNumber alloc] initWithDouble:0];
 
     [builder execute:^(HpsUpaResponse * response, NSError * error) {

@@ -31,7 +31,11 @@
     request.data.data = [[HpsUpaData alloc] init];
     
     request.data.data.transaction = [[HpsUpaTransaction alloc] init];
-    request.data.data.transaction.tranNo = self.terminalRefNumber;
+    if (self.transactionId != nil) {
+        request.data.data.transaction.referenceNumber = self.transactionId;
+    } else if (self.terminalRefNumber != nil) {
+        request.data.data.transaction.tranNo = self.terminalRefNumber;
+    }
     request.data.data.transaction.authorizedAmount = self.authorizedAmount != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[self.authorizedAmount doubleValue]]] : nil;
     
     [device processTransactionWithRequest:request withResponseBlock:^(id<IHPSDeviceResponse> response, NSError * error) {

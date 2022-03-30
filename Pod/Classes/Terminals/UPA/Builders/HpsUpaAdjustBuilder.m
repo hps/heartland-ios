@@ -36,7 +36,11 @@
     request.data.data.transaction = [[HpsUpaTransaction alloc] init];
     
     request.data.data.transaction.tipAmount =  self.gratuity != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[self.gratuity doubleValue]]] : nil;
-    request.data.data.transaction.tranNo = self.terminalRefNumber;
+    if (self.transactionId != nil) {
+        request.data.data.transaction.referenceNumber = self.transactionId;
+    } else if (self.terminalRefNumber != nil) {
+        request.data.data.transaction.tranNo = self.terminalRefNumber;
+    }
     
     if (self.details != nil) {
         request.data.data.transaction.invoiceNbr = self.details.invoiceNumber;

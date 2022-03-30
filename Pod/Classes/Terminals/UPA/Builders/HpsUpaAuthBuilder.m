@@ -36,7 +36,11 @@
     request.data.data.transaction = [[HpsUpaTransaction alloc] init];
     
     request.data.data.transaction.amount = self.amount != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[self.amount doubleValue]]] : nil;
-    request.data.data.transaction.referenceNumber = self.issuerRefNumber;
+    if (self.issuerRefNumber != nil) {
+        request.data.data.transaction.referenceNumber = self.issuerRefNumber;
+    } else if (self.transactionId != nil) {
+        request.data.data.transaction.referenceNumber = self.transactionId;
+    }
     
     [device processTransactionWithRequest:request withResponseBlock:^(id<IHPSDeviceResponse> response, NSError * error) {
         if (error != nil) {

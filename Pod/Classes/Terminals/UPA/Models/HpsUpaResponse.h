@@ -19,10 +19,6 @@
 @property (nonatomic,strong) NSString *trackNumber;
 @property (nonatomic,strong) NSString *trackData;
 @property (nonatomic,strong) NSString *maskedPAN;
-@property (nonatomic,strong) NSString *emvAID;
-@property (nonatomic,strong) NSString *emvApplicationName;
-@property (nonatomic,strong) NSString *emvCryptogram;
-@property (nonatomic,strong) NSString *emvCryptogramType;
 @property (nonatomic,strong) NSString *emvTSI;
 @property (nonatomic,strong) NSString *emvTVR;
 @property (nonatomic,strong) NSString *avs;
@@ -59,6 +55,7 @@
 @property (nonatomic,strong) NSString *requestId;
 
 @property (nonatomic,strong) NSString *cvvResultText;
+@property (nonatomic,strong) NSString *cardBrandTransactionId;
 
     //Batch
 @property (nonatomic,strong) NSString *deviceId;

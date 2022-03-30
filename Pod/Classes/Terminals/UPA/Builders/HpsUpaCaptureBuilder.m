@@ -34,6 +34,10 @@
     request.data.data.params.clerkId = self.clerkId;
     request.data.data.params.tokenRequest = self.requestMultiUseToken ? @"1" : @"0";
     request.data.data.params.tokenValue = self.token;
+    request.data.data.params.cardBrandTransId = self.cardBrandTransactionId;
+    if ((self.requestMultiUseToken || self.cardBrandTransactionId != nil) && self.storedCardInitiator != HpsStoredCardInitiator_None) {
+        request.data.data.params.cardOnFileIndicator = HpsStoredCardInitiator_toString[self.storedCardInitiator];
+    }
     
     request.data.data.transaction = [[HpsUpaTransaction alloc] init];
     
@@ -50,7 +54,11 @@
     request.data.data.transaction.amount = baseAmount != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[baseAmount doubleValue]]] : nil;
     request.data.data.transaction.tipAmount =  self.gratuity != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[self.gratuity doubleValue]]] : nil;
     request.data.data.transaction.taxAmount =  self.taxAmount != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[self.taxAmount doubleValue]]] : nil;
-    request.data.data.transaction.referenceNumber = self.issuerRefNumber;
+    if (self.issuerRefNumber != nil) {
+        request.data.data.transaction.referenceNumber = self.issuerRefNumber;
+    } else if (self.transactionId != nil) {
+        request.data.data.transaction.referenceNumber = self.transactionId;
+    }
     
     [device processTransactionWithRequest:request withResponseBlock:^(id<IHPSDeviceResponse> response, NSError * error) {
         if (error != nil) {

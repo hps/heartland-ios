@@ -143,7 +143,9 @@ NSString *const PAX_DEVICE_VERSION = @"1.35";
 			return @"TC";
 		case ARQC:
 			return @"ARQC";
-}
+        case AAC:
+            return @"AAC";
+    }
 	[NSException raise:NSInvalidArgumentException format:@"The given crypto type, %ld, is not known.", (long)cryptoType];
 	return nil; // Keep the compiler happy - does not understand above line never returns!
 }

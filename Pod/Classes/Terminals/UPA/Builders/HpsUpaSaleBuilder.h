@@ -4,6 +4,7 @@
 #import "HpsTransactionDetails.h"
 #import "HpsUpaResponse.h"
 #import "HpsUpaDevice.h"
+#import "HpsEnums.h"
 
 @interface HpsUpaSaleBuilder : NSObject
 {
@@ -19,6 +20,8 @@
 @property (nonatomic, strong) NSString *ecrId;
 @property (nonatomic, strong) NSString *clerkId;
 @property (nonatomic, strong) NSDecimalNumber *taxAmount;
+@property (nonatomic, readwrite) HpsStoredCardInitiator storedCardInitiator;
+@property (nonatomic, strong) NSString *cardBrandTransactionId;
 
 - (void) execute:(void(^)(HpsUpaResponse*, NSError*))responseBlock;
 - (id)initWithDevice: (HpsUpaDevice*)upaDevice;
