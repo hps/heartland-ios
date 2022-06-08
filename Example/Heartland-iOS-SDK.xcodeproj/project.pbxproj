@@ -13,8 +13,6 @@
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
-		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
-		6003F59E195388D20070C39A /* HpsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* HpsAppDelegate.m */; };
 		6003F5A7195388D20070C39A /* HpsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* HpsViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
@@ -31,6 +29,25 @@
 		84FFB2CC1D63537400D56BF9 /* Hps_Pax_Credit_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFB2CB1D63537400D56BF9 /* Hps_Pax_Credit_Tests.m */; };
 		8706DB3B29562C8A195DB4FD /* Pods_Heartland_iOS_SDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D472C6C84F02E1033D8F882 /* Pods_Heartland_iOS_SDK_Example.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		C55A70A2285148FE00617135 /* TransactionResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A709F285148FB00617135 /* TransactionResponseViewController.swift */; };
+		C55A70A3285148FE00617135 /* TransactionTypeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A70A0285148FC00617135 /* TransactionTypeSelectionViewController.swift */; };
+		C55A70A4285148FE00617135 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A70A1285148FE00617135 /* TransactionViewController.swift */; };
+		C55A70A62851499A00617135 /* SafListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A70A52851499A00617135 /* SafListViewController.swift */; };
+		C55A70A8285149AD00617135 /* BaseTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A70A7285149AD00617135 /* BaseTransactionViewController.swift */; };
+		C55A70AA28514B7F00617135 /* GatewayConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A70A928514B7F00617135 /* GatewayConfigViewController.swift */; };
+		C55A70AC28514B8A00617135 /* TerminalTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A70AB28514B8A00617135 /* TerminalTypeViewController.swift */; };
+		C55A70AE28514B9300617135 /* GatewayConfigInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A70AD28514B9300617135 /* GatewayConfigInfoViewController.swift */; };
+		C55A70B028514BA800617135 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A70AF28514BA800617135 /* BaseViewController.swift */; };
+		C55A70B228514BC600617135 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A70B128514BC600617135 /* WelcomeViewController.swift */; };
+		C55A70B428514BEE00617135 /* TestAppExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A70B328514BEE00617135 /* TestAppExtensions.swift */; };
+		C55A70B628514BFA00617135 /* ScreenSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A70B528514BFA00617135 /* ScreenSequence.swift */; };
+		C55A70B828514C0600617135 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A70B728514C0600617135 /* AppDelegate.swift */; };
+		C55A70BA28514C3E00617135 /* HpsSaFListTableViewCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A70B928514C3D00617135 /* HpsSaFListTableViewCellViewController.swift */; };
+		C55A70BC28514C4700617135 /* TerminalSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A70BB28514C4700617135 /* TerminalSettingsViewController.swift */; };
+		C55A70BE28514D1C00617135 /* OTAHelperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A70BD28514D1C00617135 /* OTAHelperViewController.swift */; };
+		C55A70C028514D2600617135 /* OTAVersionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A70BF28514D2600617135 /* OTAVersionsListViewController.swift */; };
+		C55A70C228514D3100617135 /* TerminalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A70C128514D3000617135 /* TerminalType.swift */; };
+		C55A70C428514DA400617135 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A70C328514DA400617135 /* Utility.swift */; };
 		D50E0E0B693E4B509A8E491C /* Pods_Heartland_iOS_SDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EC82F001209D3ECA5AEE8C /* Pods_Heartland_iOS_SDK_Tests.framework */; };
 		DB30662B2188794A00F6E101 /* Hps_Hpa_Report_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DB30662A2188794A00F6E101 /* Hps_Hpa_Report_Test.m */; };
 		DB3DC11C2004F7EA0037521A /* Hps_Hpa_VRF_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DC11B2004F7EA0037521A /* Hps_Hpa_VRF_Test.m */; };
@@ -70,10 +87,7 @@
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6003F595195388D20070C39A /* Heartland-iOS-SDK-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Heartland-iOS-SDK-Info.plist"; sourceTree = "<group>"; };
 		6003F597195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6003F599195388D20070C39A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6003F59B195388D20070C39A /* Heartland-iOS-SDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Heartland-iOS-SDK-Prefix.pch"; sourceTree = "<group>"; };
-		6003F59C195388D20070C39A /* HpsAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsAppDelegate.h; sourceTree = "<group>"; };
-		6003F59D195388D20070C39A /* HpsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsAppDelegate.m; sourceTree = "<group>"; };
 		6003F5A5195388D20070C39A /* HpsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsViewController.h; sourceTree = "<group>"; };
 		6003F5A6195388D20070C39A /* HpsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -97,6 +111,26 @@
 		90EC82F001209D3ECA5AEE8C /* Pods_Heartland_iOS_SDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartland_iOS_SDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A863AAB90A2F8CE2547765 /* Pods-Heartland-iOS-SDK_Example.pax_testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartland-iOS-SDK_Example.pax_testing.xcconfig"; path = "Pods/Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example.pax_testing.xcconfig"; sourceTree = "<group>"; };
 		B3271F7E0C265B59AE8894E1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		C55A709E285148F800617135 /* Heartland-iOS-SDK_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Heartland-iOS-SDK_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		C55A709F285148FB00617135 /* TransactionResponseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionResponseViewController.swift; sourceTree = "<group>"; };
+		C55A70A0285148FC00617135 /* TransactionTypeSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionTypeSelectionViewController.swift; sourceTree = "<group>"; };
+		C55A70A1285148FE00617135 /* TransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
+		C55A70A52851499A00617135 /* SafListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafListViewController.swift; sourceTree = "<group>"; };
+		C55A70A7285149AD00617135 /* BaseTransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransactionViewController.swift; sourceTree = "<group>"; };
+		C55A70A928514B7F00617135 /* GatewayConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatewayConfigViewController.swift; sourceTree = "<group>"; };
+		C55A70AB28514B8A00617135 /* TerminalTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalTypeViewController.swift; sourceTree = "<group>"; };
+		C55A70AD28514B9300617135 /* GatewayConfigInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatewayConfigInfoViewController.swift; sourceTree = "<group>"; };
+		C55A70AF28514BA800617135 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C55A70B128514BC600617135 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		C55A70B328514BEE00617135 /* TestAppExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAppExtensions.swift; sourceTree = "<group>"; };
+		C55A70B528514BFA00617135 /* ScreenSequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenSequence.swift; sourceTree = "<group>"; };
+		C55A70B728514C0600617135 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C55A70B928514C3D00617135 /* HpsSaFListTableViewCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HpsSaFListTableViewCellViewController.swift; sourceTree = "<group>"; };
+		C55A70BB28514C4700617135 /* TerminalSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalSettingsViewController.swift; sourceTree = "<group>"; };
+		C55A70BD28514D1C00617135 /* OTAHelperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTAHelperViewController.swift; sourceTree = "<group>"; };
+		C55A70BF28514D2600617135 /* OTAVersionsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTAVersionsListViewController.swift; sourceTree = "<group>"; };
+		C55A70C128514D3000617135 /* TerminalType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalType.swift; sourceTree = "<group>"; };
+		C55A70C328514DA400617135 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		D51EA908AC81E7B7EB89E8D5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		DB30662A2188794A00F6E101 /* Hps_Hpa_Report_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_Report_Test.m; sourceTree = "<group>"; };
 		DB3DC11B2004F7EA0037521A /* Hps_Hpa_VRF_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_VRF_Test.m; sourceTree = "<group>"; };
@@ -187,8 +221,9 @@
 		6003F593195388D20070C39A /* Example for Heartland-iOS-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				6003F59C195388D20070C39A /* HpsAppDelegate.h */,
-				6003F59D195388D20070C39A /* HpsAppDelegate.m */,
+				C55A709D2851483600617135 /* Transaction */,
+				C55A709C2851483400617135 /* OTA */,
+				C55A709B2851483000617135 /* View */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* HpsViewController.h */,
 				6003F5A6195388D20070C39A /* HpsViewController.m */,
@@ -205,7 +240,6 @@
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F595195388D20070C39A /* Heartland-iOS-SDK-Info.plist */,
 				6003F596195388D20070C39A /* InfoPlist.strings */,
-				6003F599195388D20070C39A /* main.m */,
 				6003F59B195388D20070C39A /* Heartland-iOS-SDK-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -242,6 +276,47 @@
 				D51EA908AC81E7B7EB89E8D5 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		C55A709B2851483000617135 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C55A70BB28514C4700617135 /* TerminalSettingsViewController.swift */,
+				C55A70B928514C3D00617135 /* HpsSaFListTableViewCellViewController.swift */,
+				C55A70B728514C0600617135 /* AppDelegate.swift */,
+				C55A70B128514BC600617135 /* WelcomeViewController.swift */,
+				C55A70BD28514D1C00617135 /* OTAHelperViewController.swift */,
+				C55A70BF28514D2600617135 /* OTAVersionsListViewController.swift */,
+				C55A70B328514BEE00617135 /* TestAppExtensions.swift */,
+				C55A70C128514D3000617135 /* TerminalType.swift */,
+				C55A70B528514BFA00617135 /* ScreenSequence.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C55A709C2851483400617135 /* OTA */ = {
+			isa = PBXGroup;
+			children = (
+				C55A70AB28514B8A00617135 /* TerminalTypeViewController.swift */,
+				C55A70AD28514B9300617135 /* GatewayConfigInfoViewController.swift */,
+				C55A70AF28514BA800617135 /* BaseViewController.swift */,
+				C55A70A928514B7F00617135 /* GatewayConfigViewController.swift */,
+			);
+			name = OTA;
+			sourceTree = "<group>";
+		};
+		C55A709D2851483600617135 /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				C55A70C328514DA400617135 /* Utility.swift */,
+				C55A70A7285149AD00617135 /* BaseTransactionViewController.swift */,
+				C55A70A52851499A00617135 /* SafListViewController.swift */,
+				C55A709F285148FB00617135 /* TransactionResponseViewController.swift */,
+				C55A70A0285148FC00617135 /* TransactionTypeSelectionViewController.swift */,
+				C55A70A1285148FE00617135 /* TransactionViewController.swift */,
+				C55A709E285148F800617135 /* Heartland-iOS-SDK_Example-Bridging-Header.h */,
+			);
+			name = Transaction;
 			sourceTree = "<group>";
 		};
 		DBDA366D1FAB425E00CF5146 /* Pax */ = {
@@ -359,6 +434,7 @@
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
 						DevelopmentTeam = 264BX5RC4N;
+						LastSwiftMigration = 1340;
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -498,9 +574,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F59E195388D20070C39A /* HpsAppDelegate.m in Sources */,
+				C55A70A3285148FE00617135 /* TransactionTypeSelectionViewController.swift in Sources */,
+				C55A70BE28514D1C00617135 /* OTAHelperViewController.swift in Sources */,
+				C55A70B228514BC600617135 /* WelcomeViewController.swift in Sources */,
+				C55A70C228514D3100617135 /* TerminalType.swift in Sources */,
+				C55A70A4285148FE00617135 /* TransactionViewController.swift in Sources */,
+				C55A70B428514BEE00617135 /* TestAppExtensions.swift in Sources */,
+				C55A70AE28514B9300617135 /* GatewayConfigInfoViewController.swift in Sources */,
+				C55A70AC28514B8A00617135 /* TerminalTypeViewController.swift in Sources */,
+				C55A70B628514BFA00617135 /* ScreenSequence.swift in Sources */,
+				C55A70C028514D2600617135 /* OTAVersionsListViewController.swift in Sources */,
+				C55A70B828514C0600617135 /* AppDelegate.swift in Sources */,
+				C55A70B028514BA800617135 /* BaseViewController.swift in Sources */,
+				C55A70BA28514C3E00617135 /* HpsSaFListTableViewCellViewController.swift in Sources */,
 				6003F5A7195388D20070C39A /* HpsViewController.m in Sources */,
-				6003F59A195388D20070C39A /* main.m in Sources */,
+				C55A70C428514DA400617135 /* Utility.swift in Sources */,
+				C55A70A2285148FE00617135 /* TransactionResponseViewController.swift in Sources */,
+				C55A70A62851499A00617135 /* SafListViewController.swift in Sources */,
+				C55A70AA28514B7F00617135 /* GatewayConfigViewController.swift in Sources */,
+				C55A70A8285149AD00617135 /* BaseTransactionViewController.swift in Sources */,
+				C55A70BC28514C4700617135 /* TerminalSettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,16 +747,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Heartland-iOS-SDK/Heartland-iOS-SDK-Prefix.pch";
 				INFOPLIST_FILE = "Heartland-iOS-SDK/Heartland-iOS-SDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.heartlandpaymentsystems.iOS-SDK-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Heartland-iOS-SDK/Heartland-iOS-SDK_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -674,16 +772,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Heartland-iOS-SDK/Heartland-iOS-SDK-Prefix.pch";
 				INFOPLIST_FILE = "Heartland-iOS-SDK/Heartland-iOS-SDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.heartlandpaymentsystems.iOS-SDK-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Heartland-iOS-SDK/Heartland-iOS-SDK_Example-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -692,6 +794,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 61BF46B1C380625FF377FAA8 /* Pods-Heartland-iOS-SDK_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -716,6 +819,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 253ABA11EC670E90EACA486A /* Pods-Heartland-iOS-SDK_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -785,16 +889,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Heartland-iOS-SDK/Heartland-iOS-SDK-Prefix.pch";
 				INFOPLIST_FILE = "Heartland-iOS-SDK/Heartland-iOS-SDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.heartlandpaymentsystems.iOS-SDK-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Heartland-iOS-SDK/Heartland-iOS-SDK_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Pax_Testing;
@@ -803,6 +912,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 08D636DD28A9667ED2741E32 /* Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
