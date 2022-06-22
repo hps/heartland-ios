@@ -4,11 +4,11 @@ import GlobalMobileSDK
 @objc
 public class HpsTerminalInfo: NSObject {
     internal var gmsTerminalInfo: GMSTerminalInfo
-    public var name: String = ""
-    public var descriptionText: String = ""
-    public var connected: Bool = false
-    public var terminalType: String = ""
-    public var identifier: UUID = UUID()
+    @objc public var name: String = ""
+    @objc public var descriptionText: String = ""
+    @objc public var connected: Bool = false
+    @objc public var terminalType: String = ""
+    @objc public var identifier: UUID = UUID()
     
     required init(name: String, description: String, connected: Bool, terminalType: String, identifier: UUID) {
         let type: TerminalType = TerminalType(rawValue: terminalType) ?? .none

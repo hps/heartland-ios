@@ -48,6 +48,8 @@
 		C55A70C028514D2600617135 /* OTAVersionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A70BF28514D2600617135 /* OTAVersionsListViewController.swift */; };
 		C55A70C228514D3100617135 /* TerminalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A70C128514D3000617135 /* TerminalType.swift */; };
 		C55A70C428514DA400617135 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A70C328514DA400617135 /* Utility.swift */; };
+		C5853743286390DD007960A7 /* HpsMainNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5853742286390DD007960A7 /* HpsMainNavigationViewController.m */; };
+		C5853746286390F2007960A7 /* HpsConnectDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5853744286390F2007960A7 /* HpsConnectDeviceViewController.m */; };
 		D50E0E0B693E4B509A8E491C /* Pods_Heartland_iOS_SDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EC82F001209D3ECA5AEE8C /* Pods_Heartland_iOS_SDK_Tests.framework */; };
 		DB30662B2188794A00F6E101 /* Hps_Hpa_Report_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DB30662A2188794A00F6E101 /* Hps_Hpa_Report_Test.m */; };
 		DB3DC11C2004F7EA0037521A /* Hps_Hpa_VRF_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DC11B2004F7EA0037521A /* Hps_Hpa_VRF_Test.m */; };
@@ -131,6 +133,10 @@
 		C55A70BF28514D2600617135 /* OTAVersionsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTAVersionsListViewController.swift; sourceTree = "<group>"; };
 		C55A70C128514D3000617135 /* TerminalType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalType.swift; sourceTree = "<group>"; };
 		C55A70C328514DA400617135 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		C5853741286390DC007960A7 /* HpsMainNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HpsMainNavigationViewController.h; sourceTree = "<group>"; };
+		C5853742286390DD007960A7 /* HpsMainNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpsMainNavigationViewController.m; sourceTree = "<group>"; };
+		C5853744286390F2007960A7 /* HpsConnectDeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpsConnectDeviceViewController.m; sourceTree = "<group>"; };
+		C5853745286390F2007960A7 /* HpsConnectDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HpsConnectDeviceViewController.h; sourceTree = "<group>"; };
 		D51EA908AC81E7B7EB89E8D5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		DB30662A2188794A00F6E101 /* Hps_Hpa_Report_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_Report_Test.m; sourceTree = "<group>"; };
 		DB3DC11B2004F7EA0037521A /* Hps_Hpa_VRF_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_VRF_Test.m; sourceTree = "<group>"; };
@@ -221,6 +227,11 @@
 		6003F593195388D20070C39A /* Example for Heartland-iOS-SDK */ = {
 			isa = PBXGroup;
 			children = (
+				C5853741286390DC007960A7 /* HpsMainNavigationViewController.h */,
+				C5853742286390DD007960A7 /* HpsMainNavigationViewController.m */,
+				C5853745286390F2007960A7 /* HpsConnectDeviceViewController.h */,
+				C5853744286390F2007960A7 /* HpsConnectDeviceViewController.m */,
+				C5853740286390C2007960A7 /* HPSDEMO */,
 				C55A709D2851483600617135 /* Transaction */,
 				C55A709C2851483400617135 /* OTA */,
 				C55A709B2851483000617135 /* View */,
@@ -317,6 +328,13 @@
 				C55A709E285148F800617135 /* Heartland-iOS-SDK_Example-Bridging-Header.h */,
 			);
 			name = Transaction;
+			sourceTree = "<group>";
+		};
+		C5853740286390C2007960A7 /* HPSDEMO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = HPSDEMO;
 			sourceTree = "<group>";
 		};
 		DBDA366D1FAB425E00CF5146 /* Pax */ = {
@@ -584,9 +602,11 @@
 				C55A70AC28514B8A00617135 /* TerminalTypeViewController.swift in Sources */,
 				C55A70B628514BFA00617135 /* ScreenSequence.swift in Sources */,
 				C55A70C028514D2600617135 /* OTAVersionsListViewController.swift in Sources */,
+				C5853743286390DD007960A7 /* HpsMainNavigationViewController.m in Sources */,
 				C55A70B828514C0600617135 /* AppDelegate.swift in Sources */,
 				C55A70B028514BA800617135 /* BaseViewController.swift in Sources */,
 				C55A70BA28514C3E00617135 /* HpsSaFListTableViewCellViewController.swift in Sources */,
+				C5853746286390F2007960A7 /* HpsConnectDeviceViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* HpsViewController.m in Sources */,
 				C55A70C428514DA400617135 /* Utility.swift in Sources */,
 				C55A70A2285148FE00617135 /* TransactionResponseViewController.swift in Sources */,
