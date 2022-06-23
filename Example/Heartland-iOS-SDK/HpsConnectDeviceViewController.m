@@ -5,19 +5,16 @@
 //  Created by Chibwe, Martin on 4/25/22.
 //  Copyright © 2022 Shaunti Fondrisi. All rights reserved.
 //
-//#import "SVProgressHUD.h"
+
 #import "HpsConnectDeviceViewController.h"
 #import <Heartland_iOS_SDK/Heartland_iOS_SDK-Swift.h>
 #import <Heartland_iOS_SDK/Heartland-iOS-SDK-umbrella.h>
 #import <Heartland_iOS_SDK/Heartland_iOS_SDK-Swift.h>
 #import "Heartland_iOS_SDK-Swift.h"
 #import "HpsHpaDevice.h"
-//#import "HpsListDevicesViewController.h"
-#import <CoreBluetooth/CoreBluetooth.h>
-//#import "HpsDetailsViewController.h"
-@interface HpsConnectDeviceViewController ()<HpsC2xDeviceDelegate,GMSTransactionDelegate,GMSClientAppDelegate, UITextFieldDelegate, CBPeripheralDelegate,CBCentralManagerDelegate>
 
-//@property (nonatomic) Hps *detailVC;
+@interface HpsConnectDeviceViewController ()<HpsC2xDeviceDelegate,GMSTransactionDelegate,GMSClientAppDelegate, UITextFieldDelegate>
+
 @property HpsC2xDevice *device;
 @property HpsTerminalInfo *deviceList;
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;
@@ -26,8 +23,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *deviceNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *deviceTerminaltype;
 @property (weak, nonatomic) IBOutlet UILabel *deviceIdentififerLabel;
-@property CBCentralManager *cbDeviceManager;
-@property CBPeripheral *cbPeripheral;
+@property (weak, nonatomic) IBOutlet UILabel *clientTransactionIdLabel;
+
 @property HpsTerminalResponse *response;
 
 @property (nonatomic, strong) NSMutableArray *devicesFound;
@@ -41,46 +38,11 @@
     self.device.transactionDelegate = self;
     self.amountTextField.delegate = self;
     self.tipAdjustment.delegate = self;
-    self.cbDeviceManager = [[CBCentralManager alloc] initWithDelegate: self queue:nil options:nil];
 
-}
-/**
- CBManagerStateUnknown = 0,
- CBManagerStateResetting,
- CBManagerStateUnsupported,
- CBManagerStateUnauthorized,
- CBManagerStatePoweredOff,
- CBManagerStatePoweredOn
- */
--(void) beginDeviceSearech {
-    switch ([self.cbDeviceManager state]) {
-        case 0:
-            NSLog(@"Bluetooth device unknown");
-            break;
-        case 1:
-            NSLog(@"Bluetooth device resetting ");
-            break;
-        case 2:
-            NSLog(@"Bluetooth device unsuported");
-            break;
-        case 3:
-            NSLog(@"Bluetooth device unauthorized");
-            break;
-        case 4:
-            NSLog(@"Bluetooth device powered off");
-            break;
-        case 5:
-            NSLog(@"Bluetooth device powered on");
-            break;
-            
-            
-        default:
-            break;
-    }
+
 }
 
 -(void)checkHpaInit {
-//    HpsHpaDevice *device = [self setupDevice];
     self.device = [self setupDevice];
     [self.device initialize];
     self.device.deviceDelegate = self;
@@ -101,28 +63,23 @@
     config.versionNumber = @"3409";
     NSInteger timeout = 120;
     config.timeout = &(timeout);
-//    config.ipAddress
     HpsC2xDevice * device = [[HpsC2xDevice alloc] initWithConfig:config];
     
     return device;
 }
 
 - (IBAction)scanButtonTapped:(id)sender {
-
     [self checkHpaInit];
 }
 - (IBAction)rescanButtonTapped:(id)sender {
 
 }
 -(IBAction)creditSaleButton:(id)sender {
-
+    self.device.transactionDelegate = self;
     Float32 amount = [self.amountTextField.text floatValue];
-
-    HpsC2xCreditAuthBuilder *builder = [[HpsC2xCreditAuthBuilder alloc] initWithDevice:self.device];
-    builder.amount = [[NSDecimalNumber alloc] initWithDouble: 13];
-    
+    HpsC2xCreditSaleBuilder *builder = [[HpsC2xCreditSaleBuilder alloc] initWithDevice:self.device];
+    builder.amount = [[NSDecimalNumber alloc] initWithDouble: amount];
     [builder execute];
-
 }
 
 -(IBAction)voidSaleButton:(id)sender {
@@ -156,100 +113,49 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
-    
-}
-
-//- (void) cen
 
 
 - (void)onBluetoothDeviceList:(NSMutableArray * _Nonnull)peripherals {
-    
 
-    
-//    HpsTerminalInfo *device;
     if (peripherals == nil || [peripherals count] == 0) {
-        NSLog(@"Peripherals is Empty ");
-        NSLog(@"Peripherals is Empty ");
         return;
     }
-    
-    NSLog(@"Number of Devices %lu",  (unsigned long)[peripherals count]);
-    NSLog(@"Number of Devices %lu",  (unsigned long)[peripherals count]);
     self.devicesFound = [[NSMutableArray alloc] init];
     
     for (int i = 0; i < peripherals.count; i++) {
         self.deviceList = [peripherals objectAtIndex:i];
-        NSLog(@"Device name : %@", self.deviceList.name);
-        NSLog(@"Device : %@c", self.deviceList.identifier);
-        NSLog(@"Device connected: %i", self.deviceList.connected);
-        NSLog(@"Device desc : %@", self.deviceList.descriptionText);
-        NSLog(@"Device terminaType : %@", self.deviceList.terminalType);
         self.deviceNameLabel.text = self.deviceList.name;
         self.deviceTerminaltype.text = self.deviceList.terminalType;
         self.deviceIdentififerLabel.text = [self.deviceList.identifier UUIDString];
         [self.device stopScan];
         [self.device connectDevice: self.deviceList ];
-        [self.devicesFound addObject:self.deviceList];
-        
-
     }
-    
-    
 }
 
 - (void)onConnected {
-//    [self.device connectDevice: self.deviceList];
-    NSLog(@"onConnected");
-    NSLog(@"onConnected");
-    NSLog(@"onConnected");
 
 }
-//6
+
 - (void)onDisconnected {
-    NSLog(@"onDisconnected");
-    NSLog(@"onDisconnected");
-    NSLog(@"onDisconnected");
+
 }
 
 - (void)onError:(NSError * _Nonnull)deviceError {
-    NSLog(@"onError %@",deviceError.userInfo);
-    NSLog(@"onError %@",deviceError.userInfo);
-
 }
-
-
 
 - (void)onConfirmAmount:(NSDecimal)amount {
     
     [self.device confirmAmount:amount];
-    NSLog(@"onConfirmAmount");
-    NSLog(@"onConfirmAmount");
-    Float32 useramount = [self.amountTextField.text floatValue];
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Confirm Amount" message:[NSString stringWithFormat:@"%f", useramount] preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                   handler:^(UIAlertAction * action) {}];
-    [alert addAction:defaultAction];
-
-    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)onConfirmApplication:(NSArray<AID *> * _Nonnull)applications {
     
     [self.device confirmApplication:[applications objectAtIndex:0]];
-    NSLog(@"onConfirmApplicaiton");
-    NSLog(@"onConfirmApplicaiton");
-    
-    
+
 }
 
-
 - (void)onTransactionCancelled {
-    NSLog(@"onTransactionCancelled");
-    NSLog(@"onTransactionCancelled");
-    NSLog(@"onTransactionCancelled");
+
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"TransactionCancelled" message:@"Transaction Cancelled" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                    handler:^(UIAlertAction * action) {}];
@@ -269,17 +175,17 @@
 
 
 - (void)deviceFound:(NSObject * _Nonnull)device {
-    NSLog(@"deviceFound %@", device);
+
 }
 
 
 - (void)onStatus:(enum HpsTransactionStatus)status {
-    NSLog(@"onStatus %lu", (unsigned long)status);
+
 }
 
 
 - (void)onTransactionComplete:(NSString * _Nonnull)result response:(HpsTerminalResponse * _Nonnull)response {
-    NSLog(@"on Transaction Complete ");
+
 }
 
 
@@ -289,7 +195,7 @@
 
 
 - (void)requestAmountConfirmation:(NSDecimal)amount {
-    NSLog(@"amout ");
+
 }
 
 
@@ -309,220 +215,171 @@
 
 
 - (void)onTransactionComplete:(HpsTerminalResponse * _Nonnull)response {
-    NSLog(@"onTransactionComplete");
-    NSLog(@"onTransactionComplete");
-    NSLog(@"onTransactionComplete");
-    NSLog(@"TransactionId %@", response.transactionId);
-    NSLog(@"TransactionId %@", response.transactionId);
-    NSLog(@"TransactionId %@", response.transactionId);
-    NSLog(@"Transaction response %@", response.status);
-    NSLog(@"Transaction response %@", response.command);
 
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Transaction" message:@"Transaction Complete" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {}];
-    [alert addAction:defaultAction];
-    //         [alert show];
-    [self presentViewController:alert animated:YES completion:nil];
-    
-    
 }
 
 - (void)onStatusUpdate:(enum HpsTransactionStatus)transactionStatus {
-
-    NSLog(@"onStatusUpdate %lu", (unsigned long)transactionStatus);
-
     NSString *status = nil;
-    NSMutableArray *resultStatus = [[NSMutableArray alloc] init];
+    
+//    NSMutableArray *resultStatus = [[NSMutableArray alloc] init];
     switch (transactionStatus) {
         case 0:
-            status = @"Status Waiting For Configuration";
+            status = @"waiting For Configuration";
             break;
         case 1:
-            status = @"Status Configuring Terminal";
+            status = @"Configuring Terminal";
             break;
         case 2:
-            status = @"Status Configuration Failed TryAgain";
+            status = @"Configuration Failed Try Again";
             break;
         case 3:
-            status = @"Status Ready";
+            status = @"Ready";
             break;
         case 4:
-            status = @"Status Started";
+            status = @"Started";
             break;
         case 5:
-            status = @"Status Waiting ForCard";
+            status = @"Waiting ForCard";
             break;
         case 6:
-            status = @"Status Insert Card";
+            status = @"Insert Card";
             break;
         case 7:
-            status = @"Status Remove Card";
+            status = @"Remove Card";
             break;
         case 8:
-            status = @"StatusCardRemoved";
+            status = @"Status Card Removed";
             break;
         case 9:
-            status = @"StatusPleaseWait";
+            status = @"Please Wait";
             break;
         case 10:
-            status = @"StatusPleaseSeePhone";
+            status = @"Please See Phone";
             break;
         case 11:
-            status = @"StatusUseMagstripe";
+            status = @"Status Use Magstripe";
             break;
         case 12:
-            status = @"StatusTryAgain";
+            status = @"Try Again";
             break;
         case 13:
-            status = @"Status Waiting For Configuration";
+            status = @"Swipe Error ReSwipe";
             break;
         case 14:
-            status = @"Status Waiting For Configuration";
+            status = @"no Emv Apps";
             break;
         case 15:
-            status = @"Status Waiting For Configuration";
+            status = @"Application Expired";
             break;
         case 16:
-            status = @"Status Waiting For Configuration";
+            status = @"Card Read Error";
             break;
         case 17:
-            status = @"Status Waiting For Configuration";
+            status = @"processing";
             break;
         case 18:
-            status = @"Status Waiting For Configuration";
+            status = @"processing Do Not RemoveCard";
             break;
         case 19:
-            status = @"Status Waiting For Configuration";
+            status = @"present Card";
             break;
         case 20:
-            status = @"Status Waiting For Configuration";
+            status = @"present Card Again";
             break;
         case 21:
-            status = @"Status Waiting For Configuration";
+            status = @"insert Swipe Or Try Another Card";
             break;
         case 22:
-            status = @"Status Waiting For Configuration";
+            status = @"insert Or Swipe Card";
             break;
         case 23:
-            status = @"Status Waiting For Configuration";
+            status = @"multiple Card Detected";
             break;
         case 24:
-            status = @"Status Waiting For Configuration";
+            status = @"contactless Card Still In Field";
             break;
         case 25:
-            status = @"Transaction Terminated ";
+            status = @"transaction Terminated";
             break;
         case 26:
-            status = @"Status Waiting For Configuration";
+            status = @"waiting For Terminal";
             break;
         case 27:
-            status = @"Status Waiting For Configuration";
+            status = @"card Detected";
             break;
         case 28:
-            status = @"Status Waiting For Configuration";
+            status = @"card Blocked";
             break;
         case 29:
-            status = @"Status Waiting For Configuration";
+            status = @"not Authorized";
             break;
         case 30:
-            status = @"Status Waiting For Configuration";
+            status = @"not Accepted RemoveCard";
+            break;
+        case 31:
+            status = @"fallback To MSR";
+            break;
+        case 32:
+            status = @"fallback To Chip";
+            break;
+        case 33:
+            status = @"waiting For Amount Confirmation";
+            break;
+        case 34:
+            status = @"waiting For Aid Selection";
+            break;
+        case 35:
+            status = @"waiting For PostalCode";
+            break;
+        case 36:
+            status = @"waiting For Saf Approval";
+            break;
+        case 37:
+            status = @"card Holder Bypassed PIN";
+            break;
+        case 38:
+            status = @"processing Saf";
+            break;
+        case 39:
+            status = @"requesting Online Processing";
             break;
         case 40:
-            status = @"Status Waiting For Configuration";
+            status = @"reversal";
             break;
         case 41:
-            status = @"Status Waiting For Configuration";
+            status = @"reversal In Progress";
             break;
         case 42:
-            status = @"Status Transaction Complete";
+            status = @"complete";
             break;
         case 43:
-            status = @"Status Waiting For Configuration";
+            status = @"cancel";
             break;
         case 44:
-            status = @"Status Waiting For Configuration";
+            status = @"cancelling";
             break;
         case 45:
-            status = @"Status Waiting For Configuration";
+            status = @"cancelled";
             break;
         case 46:
-            status = @"Status Error";
+            status = @"error";
             break;
         case 47:
-            status = @"Status Unknown";
+            status = @"unknown";
             break;
         case 48:
-            status = @"Status Terminal Declined ";
+            status = @"terminalDeclined";
             break;
-            
         default:
             break;
     }
-    [resultStatus addObject:status];
-    NSLog(@"Result Status Obj %@", resultStatus);
 
-    
-    
-}
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Status" message: status preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                       handler:^(UIAlertAction * action) {}];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
 
-
-- (void)centralManagerDidUpdateState:(nonnull CBCentralManager *)central {
-    NSLog(@"centralManagerDidUpdateState %@ ", central);
-    switch ([central state]) {
-        case 0:
-            NSLog(@"Bluetooth device unknown");
-            break;
-        case 1:
-            NSLog(@"Bluetooth device resetting ");
-            break;
-        case 2:
-            NSLog(@"Bluetooth device unsuported");
-            break;
-        case 3:
-            NSLog(@"Bluetooth device unauthorized");
-            break;
-        case 4:
-            NSLog(@"Bluetooth device powered off");
-            break;
-        case 5:
-            NSLog(@"Bluetooth device powered on");
-            break;
-            
-            
-        default:
-            break;
-    }
 }
-- (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral{
-    
-}
-- (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(nullable NSError *)error
-{
-    
-}
-- (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(nullable NSError *)error
-{
-    
-}
-- (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary<NSString *, id> *)advertisementData RSSI:(NSNumber *)RSSI
-{
-    NSLog(@"didDiscoverPeripheral");
-}
-
-- (void)cancelPeripheralConnection:(CBPeripheral *)peripheral {
-    
-}
-- (void)connectPeripheral:(CBPeripheral *)peripheral options:(nullable NSDictionary<NSString *, id> *)options {
-    
-}
-- (void)stopScan {
-    
-}
-- (void)scanForPeripheralsWithServices:(nullable NSArray<CBUUID *> *)serviceUUIDs options:(nullable NSDictionary<NSString *, id> *)options
-{
-    
-}
-
 
 @end

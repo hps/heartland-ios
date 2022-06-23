@@ -180,8 +180,6 @@ extension GMSWrapper: TransactionDelegate {
         var data = HpsTerminalResponse()
 
         data.transactionId = response?.gatewayTransactionId
-        data.clientTransactionIdUUID = UUID(uuidString: response!.transactionId) ?? UUID(uuidString: "")
-        
         if let uintValue = response?.approvedAmount {
             data.approvedAmount = GMSResponseHelper.uintToDecimal(uintValue)
         }

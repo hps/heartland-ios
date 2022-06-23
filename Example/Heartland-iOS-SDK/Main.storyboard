@@ -1885,23 +1885,30 @@
                                     <constraint firstAttribute="width" constant="350" id="JG4-MY-Wdw"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Error: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDh-Bl-i2H">
-                                <rect key="frame" x="25" y="436" width="47" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Error: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMN-PT-51M">
-                                <rect key="frame" x="131" y="436" width="47" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="3hy-qm-aLi">
+                                <rect key="frame" x="12" y="208" width="358" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ClientTransactionID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDh-Bl-i2H">
+                                        <rect key="frame" x="0.0" y="0.0" width="174" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMN-PT-51M">
+                                        <rect key="frame" x="198" y="0.0" width="160" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="V6p-ED-lKV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3hy-qm-aLi" secondAttribute="trailing" constant="5" id="26p-oq-OQF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MxG-0I-nNA" secondAttribute="trailing" constant="63" id="5fh-SK-OkR"/>
                             <constraint firstItem="YeJ-E8-Shh" firstAttribute="centerX" secondItem="QQn-Gg-E0R" secondAttribute="centerX" id="DiM-zr-fwj"/>
                             <constraint firstItem="ZuP-vI-VnT" firstAttribute="centerX" secondItem="rXx-M0-Ow9" secondAttribute="centerX" id="GTf-zY-6TA"/>
@@ -1915,22 +1922,23 @@
                             <constraint firstItem="YeJ-E8-Shh" firstAttribute="centerX" secondItem="rXx-M0-Ow9" secondAttribute="centerX" id="ora-e9-VAs"/>
                             <constraint firstItem="MxG-0I-nNA" firstAttribute="leading" secondItem="QQn-Gg-E0R" secondAttribute="leadingMargin" constant="63" id="qd3-Sx-RGi"/>
                             <constraint firstItem="hXs-ua-E6G" firstAttribute="top" secondItem="jIm-Na-5wA" secondAttribute="bottom" constant="10" id="wNo-ZT-5Rb"/>
+                            <constraint firstItem="3hy-qm-aLi" firstAttribute="leading" secondItem="QQn-Gg-E0R" secondAttribute="leading" constant="12" id="zhj-gd-TPs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="CONNECT" id="NPD-UW-sSl"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="amountTextField" destination="0tF-kd-Geq" id="zkj-ib-z84"/>
+                        <outlet property="clientTransactionIdLabel" destination="KMN-PT-51M" id="cey-GG-kxP"/>
                         <outlet property="deviceIdentififerLabel" destination="bzE-XM-Yfe" id="Bg9-BU-ohj"/>
                         <outlet property="deviceNameLabel" destination="ILk-Fx-ZJI" id="C6C-Q5-0eA"/>
                         <outlet property="deviceTerminaltype" destination="4L9-ma-Tlx" id="1N3-nG-GVn"/>
-                        <outlet property="errorLabel" destination="KMN-PT-51M" id="OFa-yI-3cB"/>
                         <outlet property="tipAdjustment" destination="Zfp-u5-tTX" id="uD1-mv-jKC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nGF-xs-Xzd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1412" y="-451"/>
+            <point key="canvasLocation" x="1412" y="-451.12443778110946"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="73V-sn-RcK">
