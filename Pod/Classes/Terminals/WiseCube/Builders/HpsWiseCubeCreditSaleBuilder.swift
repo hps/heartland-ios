@@ -2,6 +2,7 @@ import Foundation
 
 @objcMembers
 public class HpsWiseCubeCreditSaleBuilder : HpsWiseCubeBaseBuilder, GMSCreditSaleBuilder {
+    public var clientTxnID: String?
     public var amount: NSDecimalNumber?
     public var referenceNumber: String?
     public var details: HpsTransactionDetails?

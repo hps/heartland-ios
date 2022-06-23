@@ -10,4 +10,5 @@ public protocol GMSCreditSaleBuilder {
     var cardHolderName: String? { get set }
     var creditCard: HpsCreditCard? { get set }
     var address: HpsAddress? { get set }
+    var clientTxnID:String? { get set}
 }

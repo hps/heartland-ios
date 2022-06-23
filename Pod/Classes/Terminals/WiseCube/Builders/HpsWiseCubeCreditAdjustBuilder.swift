@@ -2,6 +2,7 @@ import Foundation
 import GlobalMobileSDK
 @objcMembers
 public class HpsWiseCubeCreditAdjustBuilder : HpsWiseCubeBaseBuilder, GMSCreditAdjustBuilder {
+    public var clientTxnID: String?
     public var amount: NSDecimalNumber?
     public var referenceNumber: String?
     public var details: HpsTransactionDetails?

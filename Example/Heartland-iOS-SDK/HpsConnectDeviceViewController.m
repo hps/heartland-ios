@@ -54,10 +54,10 @@
 //    config.ipAddress = @"10.12.220.130";
 //    config.port = @"12345";
 //    config.connectionMode = HpsConnectionModes_TCP_IP;
-    config.username = @"703674685";
-    config.password = @"$Test1234";
-    config.siteID = @"372880";
-    config.deviceID = @"90915912";
+    config.username = @"";
+    config.password = @"";
+    config.siteID = @"";
+    config.deviceID = @"";
     config.licenseID = @"372711";
     config.developerID = @"002914";
     config.versionNumber = @"3409";
@@ -79,6 +79,8 @@
     Float32 amount = [self.amountTextField.text floatValue];
     HpsC2xCreditSaleBuilder *builder = [[HpsC2xCreditSaleBuilder alloc] initWithDevice:self.device];
     builder.amount = [[NSDecimalNumber alloc] initWithDouble: amount];
+    //uncomment to use clientId
+//    builder.clientTxnID = @"123";
     [builder execute];
 }
 

@@ -141,6 +141,7 @@ class GMSRequestHelper {
         let operatingUserId: String? = nil
         let requestMultiUseToken: Bool? = nil
         var cardData: ManualCardData? = nil
+        var clientTxnID: String? = builder.clientTxnID
 
         if let cd = builder.creditCard {
             cardData = ManualCardData.cardData(cardholderName: builder.cardHolderName ?? "",
@@ -153,7 +154,7 @@ class GMSRequestHelper {
         }
 
         if cardData != nil {
-            return SaleTransaction.sale(clientTransactionId: "", total: decimalToUint(total),
+            return SaleTransaction.sale(clientTransactionId: clientTxnID, total: decimalToUint(total),
                                         tax: decimalToUint(tax),
                                         tip: decimalToUint(tip),
                                         surcharge: decimalToUint(surcharge),
@@ -164,7 +165,7 @@ class GMSRequestHelper {
                                         cardData: cardData!,
                                         requestMultiUseToken: requestMultiUseToken ?? false)
         } else {
-            return SaleTransaction.sale(clientTransactionId: "", total: decimalToUint(total),
+            return SaleTransaction.sale(clientTransactionId:clientTxnID, total: decimalToUint(total),
                                         tax: decimalToUint(tax),
                                         tip: decimalToUint(tip),
                                         surcharge: decimalToUint(surcharge),
@@ -179,8 +180,8 @@ class GMSRequestHelper {
     public static func buildCreditVoidRequest(builder: GMSCreditVoidBuilder) -> Transaction? {
         let posReferenceNumber: String? = builder.referenceNumber
         let transactionId: String? = builder.transactionId
-
-        return VoidTransaction.void(clientTransactionId: "", gatewayTransactionId: transactionId ?? "",
+        let clientTxnID:String? = builder.clientTxnID
+        return VoidTransaction.void(clientTransactionId: clientTxnID, gatewayTransactionId: transactionId ?? "",
                                     reversalReason: ReversalReason.undefined,
                                     posReferenceNumber: posReferenceNumber,
                                     invoiceNumber: nil,

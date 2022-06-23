@@ -9,7 +9,8 @@ public class HpsC2xCreditAdjustBuilder : HpsC2xBaseBuilder, GMSCreditAdjustBuild
     public var transactionId: String?
     public var cardHolderName: String?
     public var address: HpsAddress?
-
+    public var clientTxnID: String?
+    
     public init(device: HpsC2xDevice) {
         super.init(transactionType: .creditAdjust, device: device)
     }
