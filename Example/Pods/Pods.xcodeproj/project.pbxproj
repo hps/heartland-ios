@@ -18,6 +18,7 @@
 				8F5A78DE9A96F4BDC7E5BF07EDDF8664 /* PBXTargetDependency */,
 			);
 			name = VitalSDK;
+			productName = VitalSDK;
 		};
 		14FF852C7788D6F4135616C400496AB0 /* BBPOS */ = {
 			isa = PBXAggregateTarget;
@@ -28,6 +29,7 @@
 			dependencies = (
 			);
 			name = BBPOS;
+			productName = BBPOS;
 		};
 		7B4413BA6BD59E726C99DEAC08EF1125 /* GlobalPaymentsApi */ = {
 			isa = PBXAggregateTarget;
@@ -38,6 +40,7 @@
 			dependencies = (
 			);
 			name = GlobalPaymentsApi;
+			productName = GlobalPaymentsApi;
 		};
 /* End PBXAggregateTarget section */
 
@@ -129,8 +132,46 @@
 		32BDAA0B00C0A0AECD167767AEF41931 /* HpsHpaRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DC741370B857F73CB51CF2A561146D3D /* HpsHpaRequest.m */; };
 		337E90E37461B9D8DE57E56A9BEC88DB /* HpsServiceContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 517DBD2F23676FE809404CC422D4E719 /* HpsServiceContainer.m */; };
 		33A1F072E7797D0B12CA507A47639CD9 /* HpsHpaResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A92AEA5B86B31482119E6DB713D157 /* HpsHpaResponse.m */; };
+		3401486527EB980B0074A93F /* JsonDoc.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F6DE32783C982002DC1CC /* JsonDoc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3401486627EB981A0074A93F /* HpsUpaResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F6DDB27837AB9002DC1CC /* HpsUpaResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3401486827EBB1A20074A93F /* HpsEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = 3401486727EBB1A20074A93F /* HpsEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3401486A27EBB2490074A93F /* HpsEnums.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401486927EBB2490074A93F /* HpsEnums.m */; };
 		3407511590A7CDF12FBCC04FB44509EA /* HpsPaxGiftBalanceBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 860EDEFFBBEFE3686A9725CC0D9404A0 /* HpsPaxGiftBalanceBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		345F6DD027837364002DC1CC /* HpsUpaTcpInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F6DCE278371BB002DC1CC /* HpsUpaTcpInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		345F6DD22783736D002DC1CC /* HpsUpaTcpInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DCF27837222002DC1CC /* HpsUpaTcpInterface.m */; };
+		345F6DD4278373B5002DC1CC /* HpsUpaDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F6DD3278373B1002DC1CC /* HpsUpaDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		345F6DD627837416002DC1CC /* HpsUpaDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DD527837416002DC1CC /* HpsUpaDevice.m */; };
+		345F6DD8278374ED002DC1CC /* UpaEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F6DD7278374ED002DC1CC /* UpaEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		345F6DDA27837530002DC1CC /* UpaEnums.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DD927837530002DC1CC /* UpaEnums.m */; };
+		345F6DDE27837BA1002DC1CC /* HpaUpaResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DDD27837BA1002DC1CC /* HpaUpaResponse.m */; };
+		345F6DE02783840E002DC1CC /* HpsUpaRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F6DDF2783840E002DC1CC /* HpsUpaRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		345F6DE227838462002DC1CC /* HpsUpaRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DE127838462002DC1CC /* HpsUpaRequest.m */; };
+		345F6DE62783CBF7002DC1CC /* JsonDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DE52783CBF7002DC1CC /* JsonDoc.m */; };
+		345F6DED2783FF32002DC1CC /* HpsUpaData.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F6DEC2783FF32002DC1CC /* HpsUpaData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		345F6DEF2783FF51002DC1CC /* HpsUpaData.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DEE2783FF51002DC1CC /* HpsUpaData.m */; };
+		345F6E1427849529002DC1CC /* HpsUpaReturnBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F6DF627849528002DC1CC /* HpsUpaReturnBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		345F6E1627849529002DC1CC /* HpsUpaVoidBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DF827849528002DC1CC /* HpsUpaVoidBuilder.m */; };
+		345F6E1727849529002DC1CC /* HpsUpaVoidBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F6DF927849528002DC1CC /* HpsUpaVoidBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		345F6E1A27849529002DC1CC /* HpsUpaAuthBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F6DFC27849528002DC1CC /* HpsUpaAuthBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		345F6E1B27849529002DC1CC /* HpsUpaSaleBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DFD27849528002DC1CC /* HpsUpaSaleBuilder.m */; };
+		345F6E1D27849529002DC1CC /* HpsUpaAdjustBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DFF27849528002DC1CC /* HpsUpaAdjustBuilder.m */; };
+		345F6E1E27849529002DC1CC /* HpsUpaCaptureBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F6E0027849528002DC1CC /* HpsUpaCaptureBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		345F6E1F27849529002DC1CC /* HpsUpaSaleBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F6E0127849528002DC1CC /* HpsUpaSaleBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		345F6E2027849529002DC1CC /* HpsUpaVerifyBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6E0227849528002DC1CC /* HpsUpaVerifyBuilder.m */; };
+		345F6E2427849529002DC1CC /* HpsUpaAuthBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6E0627849529002DC1CC /* HpsUpaAuthBuilder.m */; };
+		345F6E2527849529002DC1CC /* HpsUpaReturnBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6E0727849529002DC1CC /* HpsUpaReturnBuilder.m */; };
+		345F6E2727849529002DC1CC /* HpsUpaAdjustBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F6E0927849529002DC1CC /* HpsUpaAdjustBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		345F6E2827849529002DC1CC /* HpsUpaCaptureBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6E0A27849529002DC1CC /* HpsUpaCaptureBuilder.m */; };
+		345F6E2A27849529002DC1CC /* HpsUpaVerifyBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F6E0C27849529002DC1CC /* HpsUpaVerifyBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34702ED47D4FE7C6F902ED01EEF571D2 /* HpsPaxLocalDetailResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A72705AA00F98DF5AB67DCF07F206FC /* HpsPaxLocalDetailResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34783E4F2784B782009174DD /* HpsUpaParams.h in Headers */ = {isa = PBXBuildFile; fileRef = 34783E4E2784B782009174DD /* HpsUpaParams.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34783E512784B7A0009174DD /* HpsUpaTransaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 34783E502784B7A0009174DD /* HpsUpaTransaction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34783E532784B838009174DD /* HpsUpaParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 34783E522784B838009174DD /* HpsUpaParams.m */; };
+		34783E552784B853009174DD /* HpsUpaTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 34783E542784B853009174DD /* HpsUpaTransaction.m */; };
+		34783E572784B8A6009174DD /* HpsUpaCommandData.h in Headers */ = {isa = PBXBuildFile; fileRef = 34783E562784B8A6009174DD /* HpsUpaCommandData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34783E592784B8BF009174DD /* HpsUpaCommandData.m in Sources */ = {isa = PBXBuildFile; fileRef = 34783E582784B8BF009174DD /* HpsUpaCommandData.m */; };
+		34783E5B278501FF009174DD /* HpsUpaReversalBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 34783E5A278501FF009174DD /* HpsUpaReversalBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34783E5D27850249009174DD /* HpsUpaReversalBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 34783E5C27850249009174DD /* HpsUpaReversalBuilder.m */; };
 		34D38AD936D8412DA571C79AE715918E /* Pods-Heartland-iOS-SDK_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 00456968C3A11B9FDF14BEC9CCD14FF5 /* Pods-Heartland-iOS-SDK_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3550E648B0F71534EC7FED6A96A72BB1 /* HpsPayrollRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D3539E18949275F0494A4AD44CA876C /* HpsPayrollRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		35598B6CF9AA2F802F71C3D6F6320B36 /* HpsPaxInitializeResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = DA0F8F9481CA802FBD3BF6EFAE6EE93A /* HpsPaxInitializeResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -561,7 +602,7 @@
 		036CBF857A54157309FDAF8208DE843F /* HpsGatewayData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsGatewayData.h; sourceTree = "<group>"; };
 		044CE31511D5045D4429E26D2395316A /* XMLDictionary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XMLDictionary.debug.xcconfig; sourceTree = "<group>"; };
 		04698B84E8BC873C8AE38B6C53A37043 /* HpsPaxGiftBalanceBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxGiftBalanceBuilder.m; sourceTree = "<group>"; };
-		046FF8C9F2C2015141232D43B402D804 /* LICENSE.md */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.md; sourceTree = "<group>"; };
+		046FF8C9F2C2015141232D43B402D804 /* LICENSE.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		05EC6D81350FAA06F68B9646EC414C71 /* XMLDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XMLDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		06AB2AAE3488CC4C86685E11E5FB06AD /* HpsRestGateway.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsRestGateway.m; sourceTree = "<group>"; };
 		071250A4577F4044912352451B612F8F /* HpsPaxLocalDetailResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxLocalDetailResponse.m; sourceTree = "<group>"; };
@@ -590,7 +631,7 @@
 		16A0A4245CED7A005CA2E0CAEA379388 /* Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig"; sourceTree = "<group>"; };
 		1797CD8CF948204FC1BCD194AB6A19C1 /* HpsTableServiceResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsTableServiceResponse.m; sourceTree = "<group>"; };
 		17D3C9E00662251D4BB8CD35C28778A1 /* GMSClientAppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GMSClientAppDelegate.swift; sourceTree = "<group>"; };
-		17EF20E439A9C8C01326CF64D41D3574 /* Heartland_iOS_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Heartland_iOS_SDK.framework; path = "Heartland-iOS-SDK.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		17EF20E439A9C8C01326CF64D41D3574 /* Heartland_iOS_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Heartland_iOS_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18211B7B0EBF89DD4AAC8A0B215E554A /* Pods-Heartland-iOS-SDK_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Heartland-iOS-SDK_Example-frameworks.sh"; sourceTree = "<group>"; };
 		189FAD09C5EF4E9536413A1346B5A9AC /* icon_amex.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_amex.png; path = Pod/Assets/icon_amex.png; sourceTree = "<group>"; };
 		1A1FF3C94818A2A82071DDF2D93AAEFF /* HpsHpaHeartBeatResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsHpaHeartBeatResponse.m; sourceTree = "<group>"; };
@@ -599,7 +640,7 @@
 		1B51C167C036109D92BB6E1CD34BC66F /* HpsCardEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsCardEntry.h; sourceTree = "<group>"; };
 		1B76FC6D76AAFADAA3FD513B1C219627 /* HpsPaxCheckResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxCheckResponse.m; sourceTree = "<group>"; };
 		1B7D39EDC6B864592F2F0BCA86FB817F /* HpsC2xCreditReturnBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HpsC2xCreditReturnBuilder.swift; sourceTree = "<group>"; };
-		1C0145BEC8AF694DEF45A92DD7EEA01B /* GlobalMobileSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = GlobalMobileSDK.xcframework; sourceTree = "<group>"; };
+		1C0145BEC8AF694DEF45A92DD7EEA01B /* GlobalMobileSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = GlobalMobileSDK.xcframework; sourceTree = "<group>"; };
 		1D0E3CC27BA836A7A573B443A52176D0 /* HpsJsonDoc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsJsonDoc.h; sourceTree = "<group>"; };
 		1DF69CEA3C6B0AD51D81BB4B2C666C05 /* HpsHpaCreditSaleBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsHpaCreditSaleBuilder.m; sourceTree = "<group>"; };
 		1E48B20AD5EF9990AB9875654F9D2414 /* HpsPaxAvsResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxAvsResponse.h; sourceTree = "<group>"; };
@@ -644,7 +685,7 @@
 		2D4E1DAE944D2F32939525D11ECB1277 /* HpsPaxExtDataSubGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxExtDataSubGroup.m; sourceTree = "<group>"; };
 		2E1962CF1D9334A0E7BEC18C7EF19706 /* HpsPaxAmountResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxAmountResponse.h; sourceTree = "<group>"; };
 		2E310546F7F98FB21FAB9B5039493146 /* HpaEnums.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpaEnums.h; sourceTree = "<group>"; };
-		2E4F8F3D43D84113A058531959EDDCD3 /* Heartland-iOS-SDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "Heartland-iOS-SDK.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2E4F8F3D43D84113A058531959EDDCD3 /* Heartland-iOS-SDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = "Heartland-iOS-SDK.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2F107C30A3B3A232A4A75B3C8AAE2056 /* HpsHpaBaseResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHpaBaseResponse.h; sourceTree = "<group>"; };
 		2F3817F7DBD9CDB15917184D43C84FEB /* HpsPaxCreditVerifyBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxCreditVerifyBuilder.m; sourceTree = "<group>"; };
 		2F6E5780A2AEFFA1E564F1093ED223CE /* NSInputStream+Hps.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSInputStream+Hps.m"; sourceTree = "<group>"; };
@@ -652,8 +693,46 @@
 		32000F76B2B81082C59CC768194728E6 /* HpsTableServiceResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsTableServiceResponse.h; sourceTree = "<group>"; };
 		321A776EC38B79C4FC64C9A6BE47D7DB /* HpsCardData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsCardData.m; sourceTree = "<group>"; };
 		32B86C6812EE69854CB0ED6498EE2D03 /* HpsPaxCommercialResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxCommercialResponse.m; sourceTree = "<group>"; };
-		33A566FEB9CFABFB942DB6C5F79E7320 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		33A566FEB9CFABFB942DB6C5F79E7320 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		33C742FA879A5A7F8AC35619A834C6C3 /* HpsServiceConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsServiceConfig.h; sourceTree = "<group>"; };
+		3401486727EBB1A20074A93F /* HpsEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsEnums.h; sourceTree = "<group>"; };
+		3401486927EBB2490074A93F /* HpsEnums.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsEnums.m; sourceTree = "<group>"; };
+		345F6DCE278371BB002DC1CC /* HpsUpaTcpInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsUpaTcpInterface.h; sourceTree = "<group>"; };
+		345F6DCF27837222002DC1CC /* HpsUpaTcpInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsUpaTcpInterface.m; sourceTree = "<group>"; };
+		345F6DD3278373B1002DC1CC /* HpsUpaDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsUpaDevice.h; sourceTree = "<group>"; };
+		345F6DD527837416002DC1CC /* HpsUpaDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsUpaDevice.m; sourceTree = "<group>"; };
+		345F6DD7278374ED002DC1CC /* UpaEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpaEnums.h; sourceTree = "<group>"; };
+		345F6DD927837530002DC1CC /* UpaEnums.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpaEnums.m; sourceTree = "<group>"; };
+		345F6DDB27837AB9002DC1CC /* HpsUpaResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsUpaResponse.h; sourceTree = "<group>"; };
+		345F6DDD27837BA1002DC1CC /* HpaUpaResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpaUpaResponse.m; sourceTree = "<group>"; };
+		345F6DDF2783840E002DC1CC /* HpsUpaRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsUpaRequest.h; sourceTree = "<group>"; };
+		345F6DE127838462002DC1CC /* HpsUpaRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsUpaRequest.m; sourceTree = "<group>"; };
+		345F6DE32783C982002DC1CC /* JsonDoc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JsonDoc.h; sourceTree = "<group>"; };
+		345F6DE52783CBF7002DC1CC /* JsonDoc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JsonDoc.m; sourceTree = "<group>"; };
+		345F6DEC2783FF32002DC1CC /* HpsUpaData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsUpaData.h; sourceTree = "<group>"; };
+		345F6DEE2783FF51002DC1CC /* HpsUpaData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsUpaData.m; sourceTree = "<group>"; };
+		345F6DF627849528002DC1CC /* HpsUpaReturnBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HpsUpaReturnBuilder.h; sourceTree = "<group>"; };
+		345F6DF827849528002DC1CC /* HpsUpaVoidBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpsUpaVoidBuilder.m; sourceTree = "<group>"; };
+		345F6DF927849528002DC1CC /* HpsUpaVoidBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HpsUpaVoidBuilder.h; sourceTree = "<group>"; };
+		345F6DFC27849528002DC1CC /* HpsUpaAuthBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HpsUpaAuthBuilder.h; sourceTree = "<group>"; };
+		345F6DFD27849528002DC1CC /* HpsUpaSaleBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpsUpaSaleBuilder.m; sourceTree = "<group>"; };
+		345F6DFF27849528002DC1CC /* HpsUpaAdjustBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpsUpaAdjustBuilder.m; sourceTree = "<group>"; };
+		345F6E0027849528002DC1CC /* HpsUpaCaptureBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HpsUpaCaptureBuilder.h; sourceTree = "<group>"; };
+		345F6E0127849528002DC1CC /* HpsUpaSaleBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HpsUpaSaleBuilder.h; sourceTree = "<group>"; };
+		345F6E0227849528002DC1CC /* HpsUpaVerifyBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpsUpaVerifyBuilder.m; sourceTree = "<group>"; };
+		345F6E0627849529002DC1CC /* HpsUpaAuthBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpsUpaAuthBuilder.m; sourceTree = "<group>"; };
+		345F6E0727849529002DC1CC /* HpsUpaReturnBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpsUpaReturnBuilder.m; sourceTree = "<group>"; };
+		345F6E0927849529002DC1CC /* HpsUpaAdjustBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HpsUpaAdjustBuilder.h; sourceTree = "<group>"; };
+		345F6E0A27849529002DC1CC /* HpsUpaCaptureBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpsUpaCaptureBuilder.m; sourceTree = "<group>"; };
+		345F6E0C27849529002DC1CC /* HpsUpaVerifyBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HpsUpaVerifyBuilder.h; sourceTree = "<group>"; };
+		34783E4E2784B782009174DD /* HpsUpaParams.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsUpaParams.h; sourceTree = "<group>"; };
+		34783E502784B7A0009174DD /* HpsUpaTransaction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsUpaTransaction.h; sourceTree = "<group>"; };
+		34783E522784B838009174DD /* HpsUpaParams.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsUpaParams.m; sourceTree = "<group>"; };
+		34783E542784B853009174DD /* HpsUpaTransaction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsUpaTransaction.m; sourceTree = "<group>"; };
+		34783E562784B8A6009174DD /* HpsUpaCommandData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsUpaCommandData.h; sourceTree = "<group>"; };
+		34783E582784B8BF009174DD /* HpsUpaCommandData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsUpaCommandData.m; sourceTree = "<group>"; };
+		34783E5A278501FF009174DD /* HpsUpaReversalBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsUpaReversalBuilder.h; sourceTree = "<group>"; };
+		34783E5C27850249009174DD /* HpsUpaReversalBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsUpaReversalBuilder.m; sourceTree = "<group>"; };
 		35E0F8A16471FE3B5CEC750FBCF61CA0 /* HpsC2xCreditAuthBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HpsC2xCreditAuthBuilder.swift; sourceTree = "<group>"; };
 		3740F2A10D609BF0F578B74D151F2073 /* CardSummary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CardSummary.m; sourceTree = "<group>"; };
 		3746B2017548D014832A92D054EE7E2E /* HpsPaxBaseResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxBaseResponse.h; sourceTree = "<group>"; };
@@ -675,7 +754,7 @@
 		409E86924700D804F5C50074D8D344B6 /* HpsHpaSendFileBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHpaSendFileBuilder.h; sourceTree = "<group>"; };
 		415434B06B40854527CE3E01C53C0CBF /* HpsWiseCubeBaseBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HpsWiseCubeBaseBuilder.swift; sourceTree = "<group>"; };
 		4183FBEC38A49ABCB4D5AF95984A9729 /* HpsPaxGiftActivateBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxGiftActivateBuilder.h; sourceTree = "<group>"; };
-		427F9BB12A3C9D9E3ECCB0E4E6370424 /* Pods_Heartland_iOS_SDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Heartland_iOS_SDK_Tests.framework; path = "Pods-Heartland-iOS-SDK_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		427F9BB12A3C9D9E3ECCB0E4E6370424 /* Pods_Heartland_iOS_SDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartland_iOS_SDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42CE64762D3DA74933DE6546F593463D /* Pods-Heartland-iOS-SDK_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Heartland-iOS-SDK_Tests-dummy.m"; sourceTree = "<group>"; };
 		42FDAC6B2C565DE73F057EBC3E6CAEE6 /* HpsHpaEBTRefundBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHpaEBTRefundBuilder.h; sourceTree = "<group>"; };
 		434EA1DCC21B2773D5E90E24FD22E877 /* HpsPaxTcpInterface.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxTcpInterface.m; sourceTree = "<group>"; };
@@ -803,8 +882,8 @@
 		8779FC9CF7024845810313EBC607C4B0 /* HpsHpaParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHpaParser.h; sourceTree = "<group>"; };
 		879A7AAD26112884F437D9D33B030661 /* Pods-Heartland-iOS-SDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Heartland-iOS-SDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		87A0372D9D3A6836C12B9E71870039C0 /* HpsPaxDevice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxDevice.h; sourceTree = "<group>"; };
-		88E061C7193F298D1870D99CFCE39CAF /* Heartland-iOS-SDK.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Heartland-iOS-SDK.bundle"; path = "Heartland-iOS-SDK-Heartland-iOS-SDK.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B2D4B0CFB6BDBE0DFC2C0605DCD5BBD /* Pods_Heartland_iOS_SDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Heartland_iOS_SDK_Example.framework; path = "Pods-Heartland-iOS-SDK_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		88E061C7193F298D1870D99CFCE39CAF /* Heartland-iOS-SDK.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Heartland-iOS-SDK.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B2D4B0CFB6BDBE0DFC2C0605DCD5BBD /* Pods_Heartland_iOS_SDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartland_iOS_SDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B4180B8776268634651028E0B8D4FE7 /* HpsPaxCreditAuthBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxCreditAuthBuilder.h; sourceTree = "<group>"; };
 		8C5F63B53014594943BC60076EC376F9 /* HpsHpaSharedParams.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsHpaSharedParams.m; sourceTree = "<group>"; };
 		8DDB4B1F9112AA04018ACB88B1126D75 /* HpsCardEntryViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = HpsCardEntryViewController.xib; path = Pod/Assets/HpsCardEntryViewController.xib; sourceTree = "<group>"; };
@@ -825,7 +904,7 @@
 		9CA8FBF3F09A6C33162E222AEA26353B /* heartlandlogo.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = heartlandlogo.png; path = Pod/Assets/heartlandlogo.png; sourceTree = "<group>"; };
 		9D0FC39463D6411D7FAD9DDDD3F98B26 /* HpsTerminalEnums.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsTerminalEnums.m; sourceTree = "<group>"; };
 		9D641A150EBF27D12F392C76005E5138 /* HpsCardEntry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsCardEntry.m; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E4465AE3715B9578DCF0D1EEDD9C4BD /* HpsHpaGiftAddValueBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHpaGiftAddValueBuilder.h; sourceTree = "<group>"; };
 		9E5B8D6F2A70CD90C2E5A2CCC9BE9793 /* HpsBasePayrollResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsBasePayrollResponse.h; sourceTree = "<group>"; };
 		9E68F45A30DC4D8A21AB2FE5C1E5A733 /* HpsHpaGiftBalanceBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHpaGiftBalanceBuilder.h; sourceTree = "<group>"; };
@@ -902,7 +981,7 @@
 		C85881D7084A5762E670EE77CA5F26D3 /* HpsPaxBatchCloseResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxBatchCloseResponse.h; sourceTree = "<group>"; };
 		C862C94E9E187C5755D721442D96EE98 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		C9B4BF39FDD5348BD965C6B9001EF17A /* HpsHpaEodResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHpaEodResponse.h; sourceTree = "<group>"; };
-		C9D10D63EBB783DD714A6E9228B6EF00 /* XMLDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = XMLDictionary.framework; path = XMLDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9D10D63EBB783DD714A6E9228B6EF00 /* XMLDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XMLDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB8B10DAF1EE9AC0D743FE8D55513EDC /* icon_card_empty.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_card_empty.png; path = Pod/Assets/icon_card_empty.png; sourceTree = "<group>"; };
 		CBB78AFAFF08561137B42D07244A94CA /* HpsServerAssignmentResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsServerAssignmentResponse.m; sourceTree = "<group>"; };
 		CBC8E0CA2EFA33B915DF7662C3CDA645 /* HpsHpaEBTRefundBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsHpaEBTRefundBuilder.m; sourceTree = "<group>"; };
@@ -962,9 +1041,9 @@
 		E8B853DD2FDFE9A66C0759F64CDEED5F /* HpsPaxAmountResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxAmountResponse.m; sourceTree = "<group>"; };
 		E8B893A927F8D9AE3216788DD67E20A7 /* HpsTokenData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsTokenData.m; sourceTree = "<group>"; };
 		E9440F159FA02C4C0815152A6E0AD454 /* HpsHpaSafBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHpaSafBuilder.h; sourceTree = "<group>"; };
-		EB431A45060C6DCADCBC60091C7D647B /* GlobalPaymentsApi.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = GlobalPaymentsApi.xcframework; sourceTree = "<group>"; };
+		EB431A45060C6DCADCBC60091C7D647B /* GlobalPaymentsApi.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = GlobalPaymentsApi.xcframework; sourceTree = "<group>"; };
 		EC9231A34B0470ACC486932A9958B3BE /* HpsLaborField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsLaborField.m; sourceTree = "<group>"; };
-		ED0F95BAE18CEABF9F9F66875D31C898 /* BBPOS.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = BBPOS.xcframework; sourceTree = "<group>"; };
+		ED0F95BAE18CEABF9F9F66875D31C898 /* BBPOS.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = BBPOS.xcframework; sourceTree = "<group>"; };
 		EDC3B2E4A86066D93DEBF2D173391368 /* HpsPaxMessageIDs.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxMessageIDs.m; sourceTree = "<group>"; };
 		EDC8FA793DB64071B09C414BCAD20B86 /* HpsAdditionalTxnFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsAdditionalTxnFields.h; sourceTree = "<group>"; };
 		EE31B189B2ABF6102A3BE6B6D512BB57 /* Heartland-iOS-SDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Heartland-iOS-SDK-dummy.m"; sourceTree = "<group>"; };
@@ -1058,7 +1137,6 @@
 				8C7AE66C6844EEF5464D707EFB0BD716 /* EBT */,
 				961534D6547B42B965988F52C5C1BDE2 /* Gift */,
 			);
-			name = Builders;
 			path = Builders;
 			sourceTree = "<group>";
 		};
@@ -1087,7 +1165,6 @@
 				BE8D32725AF3E07B6A19F8C40CA6A38C /* HpsPaxTcpInterface.h */,
 				434EA1DCC21B2773D5E90E24FD22E877 /* HpsPaxTcpInterface.m */,
 			);
-			name = Interfaces;
 			path = Interfaces;
 			sourceTree = "<group>";
 		};
@@ -1099,7 +1176,6 @@
 				E12A166CDE2B677FDFB29AEA8FB6F7B4 /* HpsHpaDebitSaleBuilder.h */,
 				C7DE6B12CE76C453F4B0A2578AFBFCB2 /* HpsHpaDebitSaleBuilder.m */,
 			);
-			name = Debit;
 			path = Debit;
 			sourceTree = "<group>";
 		};
@@ -1159,7 +1235,6 @@
 				932DEDB9993AA962457E5C44AEE7D9C9 /* HpsPaxTraceResponse.h */,
 				ABDDC247076C4AAFCD6F60D2224A031D /* HpsPaxTraceResponse.m */,
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -1209,7 +1284,6 @@
 				92D266EF54FA7E8D71B3CC4281A1F181 /* Frameworks */,
 				CA6F85CFB3E0D08A6D29F51E94321AFC /* Support Files */,
 			);
-			name = GlobalPaymentsApi;
 			path = GlobalPaymentsApi;
 			sourceTree = "<group>";
 		};
@@ -1226,7 +1300,6 @@
 				694F217CCAD1921B2933ABAD56FFAEC3 /* HpsC2xCreditSaleBuilder.swift */,
 				731C047CC89F1A93C338DE852BD8D260 /* HpsC2xCreditVoidBuilder.swift */,
 			);
-			name = Builders;
 			path = Builders;
 			sourceTree = "<group>";
 		};
@@ -1236,7 +1309,6 @@
 				4806920B1C1A613310A2C11A8EAD7F70 /* HpsHpaTcpInterface.h */,
 				6935B4BA3E045D0AF5042F11A0754F92 /* HpsHpaTcpInterface.m */,
 			);
-			name = Interfaces;
 			path = Interfaces;
 			sourceTree = "<group>";
 		};
@@ -1284,8 +1356,72 @@
 				00BC92C0838ED736B231B1AF689CC24A /* HpsWiseCubeCreditSaleBuilder.swift */,
 				38824B803D0FBFEAAF4904C9038D2E70 /* HpsWiseCubeCreditVoidBuilder.swift */,
 			);
-			name = Builders;
 			path = Builders;
+			sourceTree = "<group>";
+		};
+		345F6DCA27836F00002DC1CC /* UPA */ = {
+			isa = PBXGroup;
+			children = (
+				345F6DCB27837164002DC1CC /* Builders */,
+				345F6DCC27837170002DC1CC /* Interfaces */,
+				345F6DCD2783717C002DC1CC /* Models */,
+				345F6DD3278373B1002DC1CC /* HpsUpaDevice.h */,
+				345F6DD527837416002DC1CC /* HpsUpaDevice.m */,
+				345F6DD7278374ED002DC1CC /* UpaEnums.h */,
+				345F6DD927837530002DC1CC /* UpaEnums.m */,
+			);
+			path = UPA;
+			sourceTree = "<group>";
+		};
+		345F6DCB27837164002DC1CC /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				345F6E0927849529002DC1CC /* HpsUpaAdjustBuilder.h */,
+				345F6DFF27849528002DC1CC /* HpsUpaAdjustBuilder.m */,
+				345F6DFC27849528002DC1CC /* HpsUpaAuthBuilder.h */,
+				345F6E0627849529002DC1CC /* HpsUpaAuthBuilder.m */,
+				345F6E0027849528002DC1CC /* HpsUpaCaptureBuilder.h */,
+				345F6E0A27849529002DC1CC /* HpsUpaCaptureBuilder.m */,
+				345F6DF627849528002DC1CC /* HpsUpaReturnBuilder.h */,
+				345F6E0727849529002DC1CC /* HpsUpaReturnBuilder.m */,
+				34783E5A278501FF009174DD /* HpsUpaReversalBuilder.h */,
+				34783E5C27850249009174DD /* HpsUpaReversalBuilder.m */,
+				345F6E0127849528002DC1CC /* HpsUpaSaleBuilder.h */,
+				345F6DFD27849528002DC1CC /* HpsUpaSaleBuilder.m */,
+				345F6E0C27849529002DC1CC /* HpsUpaVerifyBuilder.h */,
+				345F6E0227849528002DC1CC /* HpsUpaVerifyBuilder.m */,
+				345F6DF927849528002DC1CC /* HpsUpaVoidBuilder.h */,
+				345F6DF827849528002DC1CC /* HpsUpaVoidBuilder.m */,
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
+		345F6DCC27837170002DC1CC /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				345F6DCE278371BB002DC1CC /* HpsUpaTcpInterface.h */,
+				345F6DCF27837222002DC1CC /* HpsUpaTcpInterface.m */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		345F6DCD2783717C002DC1CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				345F6DDB27837AB9002DC1CC /* HpsUpaResponse.h */,
+				345F6DDD27837BA1002DC1CC /* HpaUpaResponse.m */,
+				345F6DDF2783840E002DC1CC /* HpsUpaRequest.h */,
+				345F6DE127838462002DC1CC /* HpsUpaRequest.m */,
+				345F6DEC2783FF32002DC1CC /* HpsUpaData.h */,
+				345F6DEE2783FF51002DC1CC /* HpsUpaData.m */,
+				34783E4E2784B782009174DD /* HpsUpaParams.h */,
+				34783E522784B838009174DD /* HpsUpaParams.m */,
+				34783E502784B7A0009174DD /* HpsUpaTransaction.h */,
+				34783E542784B853009174DD /* HpsUpaTransaction.m */,
+				34783E562784B8A6009174DD /* HpsUpaCommandData.h */,
+				34783E582784B8BF009174DD /* HpsUpaCommandData.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		45D972B3128BD7A264BA7E4FCCCC5CF7 /* ViewControllers */ = {
@@ -1316,6 +1452,7 @@
 				6BBE865531D4BB2DA117A243234DDD1E /* C2X */,
 				E696B7C17B22A7421C62C19B07B23BB8 /* HPA */,
 				7ABE1C04C177F47AAF506F8B57A8B627 /* PAX */,
+				345F6DCA27836F00002DC1CC /* UPA */,
 				555E18C21FCF41054B437617A6B74C8A /* Utility */,
 				84C4C613FB013A293528EE7104AF8DD8 /* WiseCube */,
 			);
@@ -1369,7 +1506,6 @@
 				BAFB85D835047C81A6DF109C95DDC5EF /* TransactionSummaryRecord.h */,
 				F185B08D88F0CC890308B2401CB8DFB8 /* TransactionSummaryRecord.m */,
 			);
-			name = ResponseObjects;
 			path = ResponseObjects;
 			sourceTree = "<group>";
 		};
@@ -1385,8 +1521,11 @@
 				9F2A3C6A6C41D15B00EEB6A764532376 /* NSObject+ObjectMap.h */,
 				6D915B1052D8988D35FF16962848E428 /* NSObject+ObjectMap.m */,
 				AF75C4548176B887545DDAC88139627B /* GlobalMobileSDK */,
+				345F6DE32783C982002DC1CC /* JsonDoc.h */,
+				345F6DE52783CBF7002DC1CC /* JsonDoc.m */,
+				3401486727EBB1A20074A93F /* HpsEnums.h */,
+				3401486927EBB2490074A93F /* HpsEnums.m */,
 			);
-			name = Utility;
 			path = Utility;
 			sourceTree = "<group>";
 		};
@@ -1433,7 +1572,6 @@
 				25C7BA69764EFEE0357289FF9A3A5E78 /* Builders */,
 				75694EC04B1CB1A3C7645BF93502CB10 /* Delegates */,
 			);
-			name = C2X;
 			path = C2X;
 			sourceTree = "<group>";
 		};
@@ -1455,7 +1593,6 @@
 				E9440F159FA02C4C0815152A6E0AD454 /* HpsHpaSafBuilder.h */,
 				4D48F37AFD2B90E68C680F1E7B9CAECA /* HpsHpaSafBuilder.m */,
 			);
-			name = Credit;
 			path = Credit;
 			sourceTree = "<group>";
 		};
@@ -1473,7 +1610,6 @@
 				927C81B86D6ABAD32FA2D30178478ED0 /* HpsC2xDeviceDelegate.swift */,
 				7FBA7A8D55EC4242CF232B08B2D82A55 /* HpsC2xTransactionDelegate.swift */,
 			);
-			name = Delegates;
 			path = Delegates;
 			sourceTree = "<group>";
 		};
@@ -1488,7 +1624,6 @@
 				0FEBAC426071CE276253D650836AEFA5 /* Interfaces */,
 				1CDF1EBE08BC0BD835A6C0A4572EABDD /* Models */,
 			);
-			name = PAX;
 			path = PAX;
 			sourceTree = "<group>";
 		};
@@ -1570,7 +1705,6 @@
 				11EE36805A123607BD5185F7F580F045 /* HpsWiseCubeDevice.swift */,
 				325077C6B3DF928A7E5C746EF5319540 /* Builders */,
 			);
-			name = WiseCube;
 			path = WiseCube;
 			sourceTree = "<group>";
 		};
@@ -1584,7 +1718,6 @@
 				B6A32EF5A8850ADDBFCE2E33CE828D34 /* HpsHpaEBTSaleBuilder.h */,
 				B6A39F4CF2647B5058A3A2FA5753BDE0 /* HpsHpaEBTSaleBuilder.m */,
 			);
-			name = EBT;
 			path = EBT;
 			sourceTree = "<group>";
 		};
@@ -1620,7 +1753,6 @@
 				474E1E1F2993B3110CBC76791CB4499B /* HpsHpaGiftVoidBuilder.h */,
 				9031341C98FCFC81597F372EC594286B /* HpsHpaGiftVoidBuilder.m */,
 			);
-			name = Gift;
 			path = Gift;
 			sourceTree = "<group>";
 		};
@@ -1630,7 +1762,6 @@
 				306AEEE4E8634D484FE45AD5C3AEEBAC /* Frameworks */,
 				DD5B068E01CDEBF5C4E87D3DA71022E2 /* Support Files */,
 			);
-			name = BBPOS;
 			path = BBPOS;
 			sourceTree = "<group>";
 		};
@@ -1640,7 +1771,6 @@
 				0C091050EAA7A25BA2C5BE28AC8FC380 /* Frameworks */,
 				599E4C00F5328F257A7D16DBD0DEB4E9 /* Support Files */,
 			);
-			name = VitalSDK;
 			path = VitalSDK;
 			sourceTree = "<group>";
 		};
@@ -1651,7 +1781,6 @@
 				A52FBD1777EE7F37FAA22E18FA76F993 /* XMLDictionary.m */,
 				CCCA2253A22558A38CCEABD815165E49 /* Support Files */,
 			);
-			name = XMLDictionary;
 			path = XMLDictionary;
 			sourceTree = "<group>";
 		};
@@ -1673,7 +1802,6 @@
 				23CCDFF0C2A2A8A978A5CB828934DC0D /* ReversalReasonCode.swift */,
 				DDE68C251CDD6208A4295E38AB60A084 /* Protocols */,
 			);
-			name = GlobalMobileSDK;
 			path = GlobalMobileSDK;
 			sourceTree = "<group>";
 		};
@@ -1696,7 +1824,6 @@
 				F7305C08B8D14F08B39888E91688695A /* RequestObjects */,
 				4EDB17C203251A4E0D094FA9FB6122AA /* ResponseObjects */,
 			);
-			name = ParserObject;
 			path = ParserObject;
 			sourceTree = "<group>";
 		};
@@ -1781,7 +1908,6 @@
 				3E2B2E761C751E3A4C706C5E3FD92FAB /* HpsHpaInitializeResponse.m */,
 				B2673A46DB9A5BED0BE07A4A0903A893 /* ParserObject */,
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -1812,7 +1938,6 @@
 				756B2E90D270AC1E1F616B4CBDFAE866 /* GMSDeviceInterface.swift */,
 				60DCEABC48A174E4771D9DCD5EE86948 /* GMSTransactionDelegate.swift */,
 			);
-			name = Protocols;
 			path = Protocols;
 			sourceTree = "<group>";
 		};
@@ -1827,7 +1952,6 @@
 				2B50F9ADC9720925F1E1F84E6166C84B /* Interfaces */,
 				D5BFDC105224FF7DB922BE915F75FFAB /* Models */,
 			);
-			name = HPA;
 			path = HPA;
 			sourceTree = "<group>";
 		};
@@ -1907,7 +2031,6 @@
 				2C2F6A163F82AFAF59EB5C17EF7C4697 /* HpsPaxLocalDetailReportBuilder.h */,
 				ABD9DF7F973FEBBE86BA30036BED323D /* HpsPaxLocalDetailReportBuilder.m */,
 			);
-			name = Builders;
 			path = Builders;
 			sourceTree = "<group>";
 		};
@@ -1917,7 +2040,6 @@
 				B22DBB4E6B61D3E6446C0424B2EF12A0 /* HpsHpaRequest.h */,
 				DC741370B857F73CB51CF2A561146D3D /* HpsHpaRequest.m */,
 			);
-			name = RequestObjects;
 			path = RequestObjects;
 			sourceTree = "<group>";
 		};
@@ -1941,7 +2063,6 @@
 				513C574BC6548F203C09C110889C84ED /* NSMutableDictionary+ShiftAssignments.h */,
 				6EC13FBFCA136280E0CB7E266647DF2A /* NSMutableDictionary+ShiftAssignments.m */,
 			);
-			name = TableService;
 			path = TableService;
 			sourceTree = "<group>";
 		};
@@ -1985,7 +2106,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34783E5B278501FF009174DD /* HpsUpaReversalBuilder.h in Headers */,
 				E34D047B0A60D7908D002DEFE4BADBD7 /* BatchSummary.h in Headers */,
+				345F6DED2783FF32002DC1CC /* HpsUpaData.h in Headers */,
+				3401486827EBB1A20074A93F /* HpsEnums.h in Headers */,
 				B97FC4C992F411D910A653907A80FC98 /* CardSummary.h in Headers */,
 				8974C243D00FE420906DFF8B73BBCAA4 /* CardSummaryRecord.h in Headers */,
 				B1792F06D33D8712CA21D314A16AE011 /* Field.h in Headers */,
@@ -2010,6 +2134,7 @@
 				BC452D591CE5D79E650F0A36C62DB6C9 /* HpsCardInfoViewController.h in Headers */,
 				8D8A6E9382D4D6AEE55D356A70837BE7 /* HpsClientInfo.h in Headers */,
 				84DECF2A1D2A9F4CD01E9A8677743BDB /* HpsCommon.h in Headers */,
+				345F6E2A27849529002DC1CC /* HpsUpaVerifyBuilder.h in Headers */,
 				491447431E525AA9982F95598CF1C178 /* HpsConfiguration.h in Headers */,
 				B9EF3B4F7E61B6B50984EBF4A77FD450 /* HpsConfiguredServices.h in Headers */,
 				9214256171E670CAAF65FB5D747F2BB8 /* HpsConnectionConfig.h in Headers */,
@@ -2029,6 +2154,7 @@
 				D9E2864CD3CBEA751975E2A527D07182 /* HpsHpaBaseResponse.h in Headers */,
 				76C6FAA7883F12F4A31901A144A47000 /* HpsHpaBatchResponse.h in Headers */,
 				F1E1C667B2290A4631D200B6C0B9FA9A /* HpsHpaCreditAuthBuilder.h in Headers */,
+				345F6E1427849529002DC1CC /* HpsUpaReturnBuilder.h in Headers */,
 				9C72171141663420F0256181DF46D0F9 /* HpsHpaCreditCaptureBuilder.h in Headers */,
 				648D12CD51F07AB4EA36E10A26037801 /* HpsHpaCreditRefundBuilder.h in Headers */,
 				66B1169319619FE2E180465876A452C6 /* HpsHpaCreditSaleBuilder.h in Headers */,
@@ -2052,6 +2178,7 @@
 				516D5E4900A47BFC615044846064E940 /* HpsHpaGiftVoidBuilder.h in Headers */,
 				2541F527712AA6DF3B140B51D927393D /* HpsHpaHeartBeatResponse.h in Headers */,
 				C861490F99C24593BF7214150A894842 /* HpsHpaInitializeResponse.h in Headers */,
+				345F6DD027837364002DC1CC /* HpsUpaTcpInterface.h in Headers */,
 				25728ABB4F908C019DD1569E5B2B6D83 /* HpsHpaLineItemBuilder.h in Headers */,
 				A6298ED2F317E2AA75D176DBB765124B /* HpsHpaParser.h in Headers */,
 				628D935CFD94F00C5B1D4A27B3C243D0 /* HpsHpaRequest.h in Headers */,
@@ -2060,6 +2187,7 @@
 				6CF619CFA7103431B8EFBA8A564E427C /* HpsHpaSafResponse.h in Headers */,
 				4D0188B9BE78B15222F932E3F25E3095 /* HpsHpaSendFileBuilder.h in Headers */,
 				20BC931EDCF5D0923E0E42D7E1A7CA29 /* HpsHpaSharedParams.h in Headers */,
+				345F6E1F27849529002DC1CC /* HpsUpaSaleBuilder.h in Headers */,
 				4015B457DF2E9130F980FE538F8239A4 /* HpsHpaStartCardBuilder.h in Headers */,
 				2E33EB21984D23E5ACFBCE684C6309F7 /* HpsHpaTcpInterface.h in Headers */,
 				A2E517D1973949AEF3C60D21506A51AC /* HpsJsonDoc.h in Headers */,
@@ -2079,9 +2207,11 @@
 				8F8F54DA1D343892BA2B8373F61D1803 /* HpsPaxCheckResponse.h in Headers */,
 				F660266A2BF329E2FE97EA7376533867 /* HpsPaxCommercialRequest.h in Headers */,
 				224F4EBA6CDE0535838644C2BDF5BA71 /* HpsPaxCommercialResponse.h in Headers */,
+				34783E4F2784B782009174DD /* HpsUpaParams.h in Headers */,
 				C2A2EC9072931035011D191BF95C9CAA /* HpsPaxCreditAdjustBuilder.h in Headers */,
 				040A8DC274372FB7FEF73AF4EBA2D3C4 /* HpsPaxCreditAuthBuilder.h in Headers */,
 				141AF0C2F7231D65740FFBD9CEE96E78 /* HpsPaxCreditCaptureBuilder.h in Headers */,
+				345F6DD8278374ED002DC1CC /* UpaEnums.h in Headers */,
 				2076ECC3AD3E9DF9223BDADCAA19B325 /* HpsPaxCreditResponse.h in Headers */,
 				1B5910FFF11D45994BB6361A16CD2B96 /* HpsPaxCreditReturnBuilder.h in Headers */,
 				FA11566807702EE055301DF7C43893ED /* HpsPaxCreditSaleBuilder.h in Headers */,
@@ -2089,20 +2219,25 @@
 				931AD843F6F56C1AD3A0C4406AD6E842 /* HpsPaxCreditVoidBuilder.h in Headers */,
 				59436866FDAF143549B114CE07535874 /* HpsPaxDebitResponse.h in Headers */,
 				5F58CD386C044DBE9F1D7A126C2035B5 /* HpsPaxDebitReturnBuilder.h in Headers */,
+				345F6E1A27849529002DC1CC /* HpsUpaAuthBuilder.h in Headers */,
 				0101F5F026081C4E28FFB69FFD4E5CC0 /* HpsPaxDebitSaleBuilder.h in Headers */,
+				34783E512784B7A0009174DD /* HpsUpaTransaction.h in Headers */,
 				45593E951E0EA3C546B96E8882FEC556 /* HpsPaxDevice.h in Headers */,
 				1436AA04BEDD22939628AAB22EBF1A8C /* HpsPaxDeviceResponse.h in Headers */,
 				2D308EB9F8CE305CE440A1FEFF8692A0 /* HpsPaxEcomSubGroup.h in Headers */,
 				F9B7470CFA665A8D4B13B85159CD9A68 /* HpsPaxExtDataSubGroup.h in Headers */,
 				7D65D9DB52EB7229472BCADBBBB634A4 /* HpsPaxGiftActivateBuilder.h in Headers */,
+				345F6E1727849529002DC1CC /* HpsUpaVoidBuilder.h in Headers */,
 				078E5688AF051C301A72B5B5887B4905 /* HpsPaxGiftAddValueBuilder.h in Headers */,
 				3407511590A7CDF12FBCC04FB44509EA /* HpsPaxGiftBalanceBuilder.h in Headers */,
 				EDDA642FC7C0543E5B2516249C4F3BE1 /* HpsPaxGiftResponse.h in Headers */,
 				B3B2A3E2D232762428C4CAA73F1F212E /* HpsPaxGiftSaleBuilder.h in Headers */,
 				B668D1584049E3A73CBD73F7739FF972 /* HpsPaxGiftVoidBuilder.h in Headers */,
 				DB55019C1B71CF690D12B912FE123CBF /* HpsPaxHostResponse.h in Headers */,
+				345F6DE02783840E002DC1CC /* HpsUpaRequest.h in Headers */,
 				74B1D07CC87CAEA6EB974789D4BE9FCC /* HpsPaxHttpInterface.h in Headers */,
 				35598B6CF9AA2F802F71C3D6F6320B36 /* HpsPaxInitializeResponse.h in Headers */,
+				34783E572784B8A6009174DD /* HpsUpaCommandData.h in Headers */,
 				919B73A94F8A2A6D3B6AD7C4FA687A89 /* HpsPaxLocalDetailReportBuilder.h in Headers */,
 				34702ED47D4FE7C6F902ED01EEF571D2 /* HpsPaxLocalDetailResponse.h in Headers */,
 				035F823A5B33B23A5A3A6414BEABEBD3 /* HpsPaxMessageIDs.h in Headers */,
@@ -2119,17 +2254,21 @@
 				8EAE274415DD25D75E7C051BDFCC32EC /* HpsPayRollRequest.h in Headers */,
 				4ED808E23B20573A4B9AA0AF913F5E96 /* HpsPayrollService.h in Headers */,
 				4E03431703019391C4222CB85953A717 /* HpsPosRequest.h in Headers */,
+				3401486527EB980B0074A93F /* JsonDoc.h in Headers */,
 				8C0AF2D2E932584B31041C533054293C /* HpsRestGateway.h in Headers */,
 				69410C215EA3F9408C508967A2C564A7 /* HpsServerAssignmentResponse.h in Headers */,
 				6F0F33825283C6DD1DEA8564468D65DA /* HpsServerListResponse.h in Headers */,
 				FB6EFAD3C6D53D8FF6021E47E5791069 /* HpsServiceConfig.h in Headers */,
 				ADDBF1B139C9005E7DF3A03C9DFA0464 /* HpsServiceContainer.h in Headers */,
 				01BC18BA40C06157C268BD30CF4DD5D7 /* HpsServicesConfig.h in Headers */,
+				345F6E1E27849529002DC1CC /* HpsUpaCaptureBuilder.h in Headers */,
 				2D784827BFE7F2C9AB345C3DEFBA5FAD /* HpsTableService.h in Headers */,
 				2770C4F6A1A09D9D88E41CB75BE87634 /* HpsTableServiceConfiguration.h in Headers */,
 				EB00BE7C29081C55DD82A86A5458500D /* HpsTableServiceConnector.h in Headers */,
 				751856ADDA86D7BC40F98987BD769103 /* HpsTableServiceResponse.h in Headers */,
+				3401486627EB981A0074A93F /* HpsUpaResponse.h in Headers */,
 				1BA3E10129556F5B6FAC80B46F71F508 /* HpsTerminalEnums.h in Headers */,
+				345F6E2727849529002DC1CC /* HpsUpaAdjustBuilder.h in Headers */,
 				6AD96A2D7A729D34AD0D5EA86D42F3C5 /* HpsTerminalResponse.h in Headers */,
 				D55A1E33A2B1547EC013C19CC68AFFD3 /* HpsTerminalUtilities.h in Headers */,
 				A15FD623C53E75C77D65E91C5C5A7A67 /* HpsTerminationReason.h in Headers */,
@@ -2142,6 +2281,7 @@
 				A8D386CEAB64FCA499BC34686BFC74BD /* HpsWorkLocation.h in Headers */,
 				7ABA5101E6D1702E720AA2CC8404FCFE /* NSData+SM_EncryptionHelper.h in Headers */,
 				67F8A2300E62AACEB1D73C020E1C83A3 /* NSInputStream+Hps.h in Headers */,
+				345F6DD4278373B5002DC1CC /* HpsUpaDevice.h in Headers */,
 				FABFE7667D61C0E368B370EFB11538DE /* NSMutableDictionary+ShiftAssignments.h in Headers */,
 				07CC380120B5FB579727678E87F6EF50 /* NSObject+ObjectMap.h in Headers */,
 				62802BB6582536B3D656351FA3535652 /* Record.h in Headers */,
@@ -2466,6 +2606,7 @@
 				2818C10CC472CB702161C5A75808B1EB /* GMSTransactionResponse.swift in Sources */,
 				527D40C8A93B8D9031CBFDEF578CB30B /* GMSWrapper.swift in Sources */,
 				310EB49FDF693A22E5258C1407C55CBC /* Heartland-iOS-SDK-dummy.m in Sources */,
+				345F6DDE27837BA1002DC1CC /* HpaUpaResponse.m in Sources */,
 				1F92474ED02A24089ACDF5DB5933FDD7 /* HpaEnums.m in Sources */,
 				0CA47154272FE250AB3CCB83C5625A61 /* HpaFileUpload.m in Sources */,
 				81628B22A019A449D9943F1BD8959F4B /* HpaPaxSafDeleteResponse.m in Sources */,
@@ -2524,6 +2665,7 @@
 				904EC7DA7BA3BA2F0484DB2D1462F8E7 /* HpsHpaCreditVoidBuilder.m in Sources */,
 				42DC2E0A81A7F95A8D53C5579EAF5D0D /* HpsHpaDebitRefundBuilder.m in Sources */,
 				1F43E08239E64D9B80C5FC17ED348676 /* HpsHpaDebitSaleBuilder.m in Sources */,
+				345F6E2527849529002DC1CC /* HpsUpaReturnBuilder.m in Sources */,
 				9373268E813ED4C8644B807731B95E51 /* HpsHpaDevice.m in Sources */,
 				FD04A73E9CAAB60C4E7E82603C7F756E /* HpsHpaDeviceResponse.m in Sources */,
 				94067C3FF5D41A8C5E277333DE9284EC /* HpsHpaDiagnosticBuilder.m in Sources */,
@@ -2532,7 +2674,9 @@
 				356F87FF0662685DE0CC6FC44F1C4860 /* HpsHpaEBTBalanceBuilder.m in Sources */,
 				A714BDEC0EB8CD6B18D16C14B3CAE155 /* HpsHpaEBTRefundBuilder.m in Sources */,
 				C2692EBB9E04B5AC6E7F17C82D3A17A5 /* HpsHpaEBTSaleBuilder.m in Sources */,
+				345F6E2427849529002DC1CC /* HpsUpaAuthBuilder.m in Sources */,
 				541E7FBAB49CAA36937C38E0164C9275 /* HpsHpaEodBuilder.m in Sources */,
+				34783E5D27850249009174DD /* HpsUpaReversalBuilder.m in Sources */,
 				9EB202C6408B491D0AC93250EB950673 /* HpsHpaEodResponse.m in Sources */,
 				2C9CE254CFDA26EE02D6769346756505 /* HpsHpaGiftAddValueBuilder.m in Sources */,
 				DC46A9965C6DC832DB2493810FA5873B /* HpsHpaGiftBalanceBuilder.m in Sources */,
@@ -2542,24 +2686,30 @@
 				221CDC2BF4260C16A7E9BCE005974CEF /* HpsHpaInitializeResponse.m in Sources */,
 				5B6613853D49C5B2FDDDD8CEEB6D9A1D /* HpsHpaLineItemBuilder.m in Sources */,
 				E4E52DF1312C3E935AED1BC8F42F3C59 /* HpsHpaParser.m in Sources */,
+				345F6E1627849529002DC1CC /* HpsUpaVoidBuilder.m in Sources */,
 				32BDAA0B00C0A0AECD167767AEF41931 /* HpsHpaRequest.m in Sources */,
+				34783E552784B853009174DD /* HpsUpaTransaction.m in Sources */,
 				33A1F072E7797D0B12CA507A47639CD9 /* HpsHpaResponse.m in Sources */,
 				DC503FF3F27EE9C14B6F2305AF9B62BB /* HpsHpaSafBuilder.m in Sources */,
 				9119E2AFF4FBD46AB5E32E3912470B25 /* HpsHpaSafResponse.m in Sources */,
 				08AB5893F73388CD17F1CE9ED9B89FE5 /* HpsHpaSendFileBuilder.m in Sources */,
 				C2E60929918E73927AE926943D37A9B8 /* HpsHpaSharedParams.m in Sources */,
+				345F6E2827849529002DC1CC /* HpsUpaCaptureBuilder.m in Sources */,
 				ACD05D2A49A0336BA5E31EE586778079 /* HpsHpaStartCardBuilder.m in Sources */,
 				749BAD8E585776C218B88DDD8505ACA9 /* HpsHpaTcpInterface.m in Sources */,
 				4D7EC9634AD07C009FF966051D3E398D /* HpsJsonDoc.m in Sources */,
 				EC58D5083ADBD693D9D50ED395ED3D61 /* HpsLaborField.m in Sources */,
 				6952B0D3451E3B54C31623023A751C5F /* HpsLaborFieldLookup.m in Sources */,
 				DF5104C79CD680B953F9560D28D7CA53 /* HpsLastResponse.m in Sources */,
+				345F6DEF2783FF51002DC1CC /* HpsUpaData.m in Sources */,
 				DB666C0FBDED836B4DE9FE743058C935 /* HpsLoginResponse.m in Sources */,
+				345F6E1B27849529002DC1CC /* HpsUpaSaleBuilder.m in Sources */,
 				9C5293D6E27282F192FC93C0EE7D0465 /* HpsPaxAccountRequest.m in Sources */,
 				65EB998CEC83299746AE89EFDB938553 /* HpsPaxAccountResponse.m in Sources */,
 				868C059958BBEDCD803CD417F7C59E98 /* HpsPaxAmountRequest.m in Sources */,
 				4F1DFBB15B4AAE75EE8CF300FF236F43 /* HpsPaxAmountResponse.m in Sources */,
 				041A91E3EDDA1E48A4A4CB04A5C40251 /* HpsPaxAvsRequest.m in Sources */,
+				345F6E2027849529002DC1CC /* HpsUpaVerifyBuilder.m in Sources */,
 				8801FA5D623E114511D96465EF582717 /* HpsPaxAvsResponse.m in Sources */,
 				C42072D0D093FF0F9E5D178EA695E97F /* HpsPaxBaseResponse.m in Sources */,
 				BBA127B9A0507F2C9379ACA719827C16 /* HpsPaxBatchCloseResponse.m in Sources */,
@@ -2572,6 +2722,7 @@
 				1E7A93B5CDF21B27C4C6EB057D21B803 /* HpsPaxCreditCaptureBuilder.m in Sources */,
 				E24E8C33207411C217170A4500674A70 /* HpsPaxCreditResponse.m in Sources */,
 				8D5FDBDC9EC8DC2BB88E42328C9D414F /* HpsPaxCreditReturnBuilder.m in Sources */,
+				345F6DE62783CBF7002DC1CC /* JsonDoc.m in Sources */,
 				857DB22E34CF07A536E75D26FD6BED3B /* HpsPaxCreditSaleBuilder.m in Sources */,
 				C0D4EB92AC8B2BF99609F0B2F162F2BB /* HpsPaxCreditVerifyBuilder.m in Sources */,
 				6EB18E77D756EF721FC5A5AD699CC021 /* HpsPaxCreditVoidBuilder.m in Sources */,
@@ -2579,6 +2730,7 @@
 				212C1121AE832F1C0CACAB84E9737151 /* HpsPaxDebitReturnBuilder.m in Sources */,
 				EF639E2C6F5B39FBB7AC5B6A77BC51EE /* HpsPaxDebitSaleBuilder.m in Sources */,
 				0FBCD201E4F98526AFE5041C1C57341D /* HpsPaxDevice.m in Sources */,
+				345F6E1D27849529002DC1CC /* HpsUpaAdjustBuilder.m in Sources */,
 				9977D71B914AFFBECD6DA9878242B42C /* HpsPaxDeviceResponse.m in Sources */,
 				766F37B98C437F570B188F6CC3D469B9 /* HpsPaxEcomSubGroup.m in Sources */,
 				92197AF734B2B01F2C367048897E0523 /* HpsPaxExtDataSubGroup.m in Sources */,
@@ -2588,6 +2740,7 @@
 				6C592591F5DD62D0F96A0E981DB56D42 /* HpsPaxGiftResponse.m in Sources */,
 				622D852E299F5230D39627A51DD6A10E /* HpsPaxGiftSaleBuilder.m in Sources */,
 				57E3E338D2993AEA4A04D225AE9B8954 /* HpsPaxGiftVoidBuilder.m in Sources */,
+				345F6DD627837416002DC1CC /* HpsUpaDevice.m in Sources */,
 				9534CFEE5CD22359C72EA28E9E08347E /* HpsPaxHostResponse.m in Sources */,
 				FAE76047FB2A4869169EB216F0101A69 /* HpsPaxHttpInterface.m in Sources */,
 				09D231FE68C7F8E51F37F5A934A702AC /* HpsPaxInitializeResponse.m in Sources */,
@@ -2600,6 +2753,7 @@
 				DCFB3F6CF46F0D019AC1E19E2AF89B83 /* HpsPayGroup.m in Sources */,
 				92C5C96D01DEC89DEA5B768CE3776A29 /* HpsPayItem.m in Sources */,
 				DDAEE27CF01D8E47F683ED0D79D79D5A /* HpsPayrollCollectionItem.m in Sources */,
+				3401486A27EBB2490074A93F /* HpsEnums.m in Sources */,
 				EF24154E0DF5A18A97292C3202E897F6 /* HpsPayrollConfig.m in Sources */,
 				9B52AB3E64EBF7AEA15C28EEA17BF052 /* HpsPayrollEncoder.m in Sources */,
 				816F10D4AADC0DCFABD124B6A15C31F5 /* HpsPayrollEntity.m in Sources */,
@@ -2607,6 +2761,7 @@
 				FEB82F7E5893B450B9ABBB5E59C5DABF /* HpsPayRollRequest.m in Sources */,
 				D6DE86DFFA144EBDE577F69361F87F82 /* HpsPayrollService.m in Sources */,
 				5D0E6CE48CA1084453E88A14ED48CF6D /* HpsPosRequest.m in Sources */,
+				34783E592784B8BF009174DD /* HpsUpaCommandData.m in Sources */,
 				E9DFA4DB28D0AB7C9B343F4D5C35B41B /* HpsRestGateway.m in Sources */,
 				87EE6905EC1C4659931F8D664B60BE63 /* HpsServerAssignmentResponse.m in Sources */,
 				BA49C1691D186B03DB356101E9584F48 /* HpsServerListResponse.m in Sources */,
@@ -2624,11 +2779,14 @@
 				666F200CAFD7979A64F9BCE14A327032 /* HpsTerminationReason.m in Sources */,
 				12437E2841789EDEDC4E67BAA15165E4 /* HpsTicket.m in Sources */,
 				E026B65BDB2B0FD1ECBF20895A6785B6 /* HpsTokenData.m in Sources */,
+				34783E532784B838009174DD /* HpsUpaParams.m in Sources */,
 				F59931E49C5FEF251288778711220A2C /* HpsTokenService.m in Sources */,
 				0CD8AB9D95B3B5F419EB07B4A8E0B259 /* HpsTransaction.m in Sources */,
 				7DDFEB7587B4DC552192756EECA378CF /* HpsTransactionDetails.m in Sources */,
+				345F6DDA27837530002DC1CC /* UpaEnums.m in Sources */,
 				F78C9FBCF7ED2777B2698A3520755F38 /* HpsTransactionStatus.swift in Sources */,
 				46A9FB852D669A521F75EC86006EF5F4 /* HpsTransactionSummary.m in Sources */,
+				345F6DD22783736D002DC1CC /* HpsUpaTcpInterface.m in Sources */,
 				7B7CF2A697B71E329A089130BC55FACB /* HpsTransactionType.swift in Sources */,
 				D3DD6270CC8FA1F3886909C440CABF11 /* HpsWiseCubeBaseBuilder.swift in Sources */,
 				8727990B811E25E916472CA13AB7753D /* HpsWiseCubeBatchCloseBuilder.swift in Sources */,
@@ -2647,6 +2805,7 @@
 				39CC6EAFAE8D514C3A005A7C6291CA67 /* NSObject+ObjectMap.m in Sources */,
 				737D39726157C0A3FAB2591600E82F69 /* Record.m in Sources */,
 				513D08D9747015E9D28B03FB1B935F8F /* ReversalReasonCode.swift in Sources */,
+				345F6DE227838462002DC1CC /* HpsUpaRequest.m in Sources */,
 				979BCAE317184E5518BA2306C30FAF34 /* Rfc2898DeriveBytes.m in Sources */,
 				855BDAB04CE4BE93893ABF71E00E0F18 /* SummaryResponse.m in Sources */,
 				07F34F506F6F7AD18D09E54920B08EBD /* TransactionSummaryRecord.m in Sources */,
@@ -3156,8 +3315,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -3234,8 +3392,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
