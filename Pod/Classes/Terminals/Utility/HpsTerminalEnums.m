@@ -20,33 +20,20 @@ NSString *const PAX_DEVICE_VERSION = @"1.35";
         case HpsControlCodes_US:
             isControlCode = YES;
             break;
-//        case HpsControlCodes_ACK:
-//            isControlCode = YES;
-//            break;
-//        case HpsControlCodes_NAK:
-//            isControlCode = YES;
-//            break;
-//        case HpsControlCodes_ENQ:
-//            isControlCode = YES;
-//            break;
-//        case HpsControlCodes_GS:
-//            isControlCode = YES;
-//            break;
-//        case HpsControlCodes_EOT:
-//            isControlCode = YES;
-//            break;
-//        case HpsControlCodes_RS:
-//            isControlCode = YES;
-//            break;
-//        case HpsControlCodes_COMMA:
-//            isControlCode = YES;
-//            break;
-//        case HpsControlCodes_COLON:
-//            isControlCode = YES;
-//            break;
-//        case HpsControlCodes_PTGS:
-//            isControlCode = YES;
-//            break;
+        case HpsControlCodes_RS:
+            isControlCode = YES;
+            break;
+        case HpsControlCodes_COMMA:
+            isControlCode = YES;
+            break;
+        case HpsControlCodes_COLON:
+            isControlCode = YES;
+            break;
+        case HpsControlCodes_PTGS:
+            isControlCode = YES;
+        case HpsControlCodes_LF:
+            isControlCode = YES;
+            break;
         default:
             break;
     }
@@ -74,33 +61,20 @@ NSString *const PAX_DEVICE_VERSION = @"1.35";
 		case HpsControlCodes_US:
 			ASCIIValue = @"US";
 			break;
-//        case HpsControlCodes_ACK:
-//            ASCIIValue = @"ACK";
-//            break;
-//        case HpsControlCodes_NAK:
-//            ASCIIValue = @"NAK";
-//            break;
-//        case HpsControlCodes_ENQ:
-//            ASCIIValue = @"ENQ";
-//            break;
-//        case HpsControlCodes_GS:
-//            ASCIIValue = @"GS";
-//            break;
-//        case HpsControlCodes_EOT:
-//            ASCIIValue = @"EOT";
-//            break;
-//        case HpsControlCodes_RS:
-//            ASCIIValue = @"RS";
-//            break;
-//        case HpsControlCodes_COMMA:
-//            ASCIIValue = @"COMMA";
-//            break;
-//        case HpsControlCodes_COLON:
-//            ASCIIValue = @"COLON";
-//            break;
-//        case HpsControlCodes_PTGS:
-//            ASCIIValue = @"PTGS";
-//            break;
+		case HpsControlCodes_RS:
+			ASCIIValue = @"RS";
+			break;
+		case HpsControlCodes_COMMA:
+			ASCIIValue = @"COMMA";
+			break;
+		case HpsControlCodes_COLON:
+			ASCIIValue = @"COLON";
+			break;
+		case HpsControlCodes_PTGS:
+			ASCIIValue = @"PTGS";
+			break;
+        case HpsControlCodes_LF:
+            ASCIIValue = @"LF";
 		default:
 			break;
 	}
@@ -138,7 +112,9 @@ NSString *const PAX_DEVICE_VERSION = @"1.35";
 			return @"TC";
 		case ARQC:
 			return @"ARQC";
-}
+        case AAC:
+            return @"AAC";
+    }
 	[NSException raise:NSInvalidArgumentException format:@"The given crypto type, %ld, is not known.", (long)cryptoType];
 	return nil; // Keep the compiler happy - does not understand above line never returns!
 }

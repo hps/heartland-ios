@@ -282,7 +282,8 @@ typedef NS_ENUM(NSInteger, HpsPaxEntryModes) {
 };
 typedef NS_ENUM(NSInteger, ApplicationCrytogramType) {
 	TC,
-	ARQC
+	ARQC,
+    AAC
 };
 
 
