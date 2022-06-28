@@ -35,11 +35,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.device.deviceDelegate = self;
-    self.device.transactionDelegate = self;
     self.amountTextField.delegate = self;
     self.tipAdjustment.delegate = self;
-
-
 }
 
 -(void)checkHpaInit {
@@ -75,7 +72,6 @@
 
 }
 -(IBAction)creditSaleButton:(id)sender {
-    self.device.transactionDelegate = self;
     Float32 amount = [self.amountTextField.text floatValue];
     HpsC2xCreditSaleBuilder *builder = [[HpsC2xCreditSaleBuilder alloc] initWithDevice:self.device];
     builder.amount = [[NSDecimalNumber alloc] initWithDouble: amount];
@@ -86,7 +82,6 @@
 
 -(IBAction)voidSaleButton:(id)sender {
     HpsC2xCreditSaleBuilder *builder = [[HpsC2xCreditSaleBuilder alloc] initWithDevice:self.device];
-    builder.transactionId = self.response.transactionId;
     [builder execute];
 }
 -(IBAction)enterCardManualEntry:(id)sender {
@@ -135,7 +130,7 @@
 }
 
 - (void)onConnected {
-
+    self.device.transactionDelegate = self;
 }
 
 - (void)onDisconnected {
@@ -375,7 +370,7 @@
         default:
             break;
     }
-
+    NSLog(@"onStatusUpdate: %@", status);
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Status" message: status preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                        handler:^(UIAlertAction * action) {}];
