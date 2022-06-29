@@ -2,6 +2,7 @@ import Foundation
 
 @objcMembers
 public class HpsWiseCubeCreditSaleBuilder : HpsWiseCubeBaseBuilder, GMSCreditSaleBuilder {
+    public var clientTxnID: String?
     public var amount: NSDecimalNumber?
     public var referenceNumber: String?
     public var details: HpsTransactionDetails?
@@ -10,11 +11,11 @@ public class HpsWiseCubeCreditSaleBuilder : HpsWiseCubeBaseBuilder, GMSCreditSal
     public var cardHolderName: String?
     public var creditCard: HpsCreditCard?
     public var address: HpsAddress?
-    
+
     public init(device: HpsWiseCubeDevice) {
         super.init(transactionType: .creditSale, device: device)
     }
-    
+
     public override func buildRequest() -> Transaction? {
         return GMSRequestHelper.buildCreditSaleRequest(builder: self)
     }

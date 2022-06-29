@@ -10,7 +10,7 @@ public class HpsC2xCreditSaleBuilder : HpsC2xBaseBuilder, GMSCreditSaleBuilder {
     public var cardHolderName: String?
     public var creditCard: HpsCreditCard?
     public var address: HpsAddress?
-    
+    public var clientTxnID: String?
     public init(device: HpsC2xDevice) {
         super.init(transactionType: .creditSale, device: device)
     }

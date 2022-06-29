@@ -9,4 +9,5 @@ public protocol GMSCreditAdjustBuilder {
     var transactionId: String? { get set }
     var cardHolderName: String? { get set }
     var address: HpsAddress? { get set }
+    var clientTxnID:String? {get set}
 }

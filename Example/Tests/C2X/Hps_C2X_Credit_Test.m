@@ -23,7 +23,7 @@
     config.siteID = @"142913";
     config.deviceID = @"6398417";
     config.licenseID = @"142826";
-    
+
     self.device = [[HpsC2xDevice alloc] initWithConfig:config];
 }
 - (HpsCreditCard*) getCC

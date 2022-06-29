@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/GlobalMobileSDK-Swift.h</key>
 		<data>
-		c5rsgsmTxm0JgPung8hHwvcKgcQ=
+		f9FjytiKiTvdcx9242Ed3RI6O4o=
 		</data>
 		<key>Headers/GlobalMobileSDK.h</key>
 		<data>
@@ -30,47 +30,43 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		FrCXu8gLx9afNjCQj/aWta8gPzM=
+		ddldTZbKWkZlytKbK/LnEbEmWpo=
 		</data>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		PNIX9kuC6/rQQ5q6g18MbqR/WO0=
+		kfeNyLw4547NJwbFjLcl03u1cic=
 		</data>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		ylawjI5jFONjO5cioSoM24BI4Xw=
+		Ww7pV/OCZRYotVjcPPg34ubYiHM=
 		</data>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Q9ZsjirFwssdC40ao+OUi1cF1aQ=
-		</data>
-		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64.swiftdoc</key>
-		<data>
-		PNIX9kuC6/rQQ5q6g18MbqR/WO0=
-		</data>
-		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64.swiftinterface</key>
-		<data>
-		ylawjI5jFONjO5cioSoM24BI4Xw=
-		</data>
-		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64.swiftmodule</key>
-		<data>
-		Q9ZsjirFwssdC40ao+OUi1cF1aQ=
+		R6K0enTWI+vccXJM2xjQ+RVjugo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		gRp4SBY2Cw5DnWwxL4FAHYxXxKU=
+		lVVqtnIsXpdQ+ARiskNFz0qu8nY=
+		</data>
+		<key>PrivateHeaders/BBDeviceCAPK.h</key>
+		<data>
+		MtJj/ekQFIxVgueqZ7DS8W+6v24=
 		</data>
 		<key>PrivateHeaders/BBDeviceController.h</key>
 		<data>
-		tpDo9+KnXXfQ10xeLbzZ+Ned0JA=
+		F9tW2xs5yGlrkuNvWW1uchPvxoM=
+		</data>
+		<key>PrivateHeaders/BBDeviceOTAController.h</key>
+		<data>
+		XnNGKFpRrgeaT31CMAWkrKwXrs4=
 		</data>
 		<key>PrivateHeaders/BBDeviceSPoCController.h</key>
 		<data>
-		uUd7Pp4pV8pRVfdrCohKXXVoiUA=
+		jaBuEIkP3IlDxdLgDonGwrwo8OY=
 		</data>
-		<key>PrivateHeaders/CAPK.h</key>
+		<key>PrivateHeaders/BBDeviceVASMerchantConfig.h</key>
 		<data>
-		KMljE3yWoqiPseO17mCTGbhhcOw=
+		49dfd4h8n2IBK1x1yhL6WFKuzAM=
 		</data>
 		<key>PrivateHeaders/EMVTagDescriptor.h</key>
 		<data>
@@ -108,10 +104,6 @@
 		<data>
 		a9Hd6mQqV8VUXT6BKXFMPL0t3mQ=
 		</data>
-		<key>PrivateHeaders/VASMerchantConfig.h</key>
-		<data>
-		lxc6BO7Ic9Fscm9Z9UO3bEh7SOA=
-		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -126,7 +118,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ar/ht1BYIB6kuHuJv+Gs2U9C6T/c97YHFHbyVVVZH9w=
+			KOxlW6qUj5ZBF04kgaTpi2BNRjeOWdvu44jPbYR/sH4=
 			</data>
 		</dict>
 		<key>Headers/GlobalMobileSDK.h</key>
@@ -161,70 +153,63 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rry7gT05bIGdHWxiwKovAhSGTXhe1j+8ZJgPd6b/XKo=
+			snN9nEaUqXCLrTVCaGpJ0uBDdSvW2Em+hfum3JocSj8=
 			</data>
 		</dict>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ylwqscYIbaQQJbBwghJf8pvPawI5EsDUlbyPB+eUCE0=
+			oOCAY/LRxfkW1D1RBE3P2p9iPEZu03X4BQg9odueIg8=
 			</data>
 		</dict>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sRsPIh5poSXQcMp4ICBrKcVq8pMiAI5upXiiLHLelFI=
-			</data>
-		</dict>
-		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			rry7gT05bIGdHWxiwKovAhSGTXhe1j+8ZJgPd6b/XKo=
-			</data>
-		</dict>
-		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			ylwqscYIbaQQJbBwghJf8pvPawI5EsDUlbyPB+eUCE0=
-			</data>
-		</dict>
-		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			sRsPIh5poSXQcMp4ICBrKcVq8pMiAI5upXiiLHLelFI=
+			KrKyTrq8GsfX5lk+7JuW8A8YoZLwR98INgFf6h9GfbM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NK7LcxPRz7Iy701w9d3fKksFeYMUdusr+jqL3umKv/4=
+			DdM6X7boeUgwhd+H/sn5X5cpJnxd3K9zNwGveJnPn+Y=
+			</data>
+		</dict>
+		<key>PrivateHeaders/BBDeviceCAPK.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			2mXaZaO1pgkALsnXyJw1tItlJTflJtAHJdOW1LGoxuI=
 			</data>
 		</dict>
 		<key>PrivateHeaders/BBDeviceController.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			e1gulpJGZYkIGPCMA0V73bqejJFVVIBbRbC88SDbtjM=
+			LOhYHm7R8pWBQZxV8PeUkyuN2LpFGhN9KxHkCDDaqeg=
+			</data>
+		</dict>
+		<key>PrivateHeaders/BBDeviceOTAController.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+JQoc0J6rsUxcYt3DuF0/eekdz6hyuyW0Bz29fH9eoY=
 			</data>
 		</dict>
 		<key>PrivateHeaders/BBDeviceSPoCController.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7GFD3NCbSKyVSsCl5SCzqGo2ZY3CeO4bQltHcTuEHeM=
+			KP4kY1hEPpm+ECwsKkpjVIol75FI9SczH/lG8FX5QPI=
 			</data>
 		</dict>
-		<key>PrivateHeaders/CAPK.h</key>
+		<key>PrivateHeaders/BBDeviceVASMerchantConfig.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			O91V+ggkFA5qZX7aM31cimEQj1CQ9ZPCpGjR819K0EY=
+			gRdgXaOZQARK0tM5QypoKruYMPT/NcUyD7iELJKocVM=
 			</data>
 		</dict>
 		<key>PrivateHeaders/EMVTagDescriptor.h</key>
@@ -288,13 +273,6 @@
 			<key>hash2</key>
 			<data>
 			6Tpsl/TgoXh5bP4ZvdJ9oJWR5mJR30V3VzaPl4rkJ0A=
-			</data>
-		</dict>
-		<key>PrivateHeaders/VASMerchantConfig.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			1b1io4tTO7vvV+XJW0HsLG29tYNJ88RNNZBmuhMKPBs=
 			</data>
 		</dict>
 	</dict>

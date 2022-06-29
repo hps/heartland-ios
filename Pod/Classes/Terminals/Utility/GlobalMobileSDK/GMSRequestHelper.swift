@@ -2,9 +2,9 @@ import Foundation
 
 class GMSRequestHelper {
     public static func buildBatchCloseRequest(builder: GMSBatchCloseBuilder) -> Transaction? {
-        return BatchCloseTransaction.batchClose(operatingUserId: nil)
+        return BatchCloseTransaction.batchClose(clientTransactionId: "", operatingUserId: nil)
     }
-    
+
     public static func buildCreditAdjustRequest(builder: GMSCreditAdjustBuilder) -> Transaction? {
         let total: Decimal? = builder.amount as Decimal?
         let tip: Decimal? = builder.gratuity as Decimal?
@@ -13,14 +13,14 @@ class GMSRequestHelper {
         let operatingUserId: String? = nil
         let transactionId: String? = builder.transactionId as String?
 
-        return TipAdjustTransaction.tipAdjust(gatewayTransactionId: transactionId ?? "",
+        return TipAdjustTransaction.tipAdjust(clientTransactionId: "", gatewayTransactionId: transactionId ?? "",
                                               total: decimalToUint(total),
                                               tip: decimalToUint(tip),
                                               invoiceNumber: invoiceNumber,
                                               posReferenceNumber: posReferenceNumber,
                                               operatingUserId: operatingUserId)
     }
-    
+
     static func decimalToUint(_ decimalValue: Decimal?) -> UInt? {
         guard var value = decimalValue else { return nil }
         value = value * 100;
@@ -52,7 +52,7 @@ class GMSRequestHelper {
         }
 
         if cardData != nil {
-            return AuthTransaction.auth(total: decimalToUint(total),
+            return AuthTransaction.auth(clientTransactionId: "", total: decimalToUint(total),
                                         tax: decimalToUint(tax),
                                         tip: decimalToUint(tip),
                                         surcharge: decimalToUint(surcharge),
@@ -63,7 +63,7 @@ class GMSRequestHelper {
                                         cardData: cardData!,
                                         requestMultiUseToken: requestMultiUseToken ?? false)
         } else {
-            return AuthTransaction.auth(total: decimalToUint(total),
+            return AuthTransaction.auth(clientTransactionId: "", total: decimalToUint(total),
                                         tax: decimalToUint(tax),
                                         tip: decimalToUint(tip),
                                         surcharge: decimalToUint(surcharge),
@@ -74,7 +74,7 @@ class GMSRequestHelper {
                                         requestMultiUseToken: requestMultiUseToken ?? false)
         }
     }
-    
+
     public static func buildCreditCaptureRequest(builder: GMSCreditCaptureBuilder) -> Transaction? {
         let total: Decimal? = builder.amount as Decimal?
         let tip: Decimal? = builder.gratuity as Decimal?
@@ -82,7 +82,7 @@ class GMSRequestHelper {
         let operatingUserId: String? = nil
         let transactionId: String? = builder.transactionId as String?
 
-        return CaptureTransaction.capture(gatewayTransactionId: transactionId ?? "",
+        return CaptureTransaction.capture(clientTransactionId: "", gatewayTransactionId: transactionId ?? "",
                                           total: decimalToUint(total),
                                           tax: nil,
                                           tip: decimalToUint(tip),
@@ -91,13 +91,13 @@ class GMSRequestHelper {
                                           posReferenceNumber: posReferenceNumber,
                                           operatingUserId: operatingUserId)
     }
-    
+
     public static func buildCreditReturnRequest(builder: GMSCreditReturnBuilder) -> Transaction? {
         let total: Decimal? = builder.amount as Decimal?
         let posReferenceNumber: String? = builder.referenceNumber
         let transactionId: String? = builder.transactionId
 
-        return ReturnTransaction.returnWithReference(total: decimalToUint(total),
+        return ReturnTransaction.returnWithReference(clientTransactionId: "", total: decimalToUint(total),
                                                      tax: nil,
                                                      tip: nil,
                                                      taxCategory: nil,
@@ -106,7 +106,7 @@ class GMSRequestHelper {
                                                      invoiceNumber: nil,
                                                      operatingUserId: nil)
     }
-    
+
     public static func buildCreditReversalRequest(builder: GMSCreditReversalBuilder) -> Transaction? {
         let total: Decimal? = builder.amount as Decimal?
         let posReferenceNumber: String? = builder.referenceNumber
@@ -114,7 +114,7 @@ class GMSRequestHelper {
         let reversalReason: ReversalReason = HpsC2xEnums.reversalReasonCodeToReversalReason(builder.reason)
 
         if let clientTransactionId = builder.clientTransactionId {
-            return ReversalTransaction.reversal(clientTransactionId: clientTransactionId,
+            return ReversalTransaction.reversal(clientTransactionId: "\(clientTransactionId)",
                                                 gatewayTransactionId: transactionId,
                                                 reversalReason: reversalReason,
                                                 posReferenceNumber: posReferenceNumber,
@@ -122,14 +122,14 @@ class GMSRequestHelper {
                                                 tlv: nil)
         }
 
-        return ReversalTransaction.reversal(clientTransactionId: UUID(),
+        return ReversalTransaction.reversal(clientTransactionId: "",
                                             gatewayTransactionId: transactionId,
                                             reversalReason: reversalReason,
                                             posReferenceNumber: posReferenceNumber,
                                             amount: decimalToUint(total) ?? 0,
                                             tlv: nil)
     }
-    
+
     public static func buildCreditSaleRequest(builder: GMSCreditSaleBuilder) -> Transaction? {
         let total: Decimal? = builder.amount as Decimal?
         let tax: Decimal? = nil
@@ -141,6 +141,7 @@ class GMSRequestHelper {
         let operatingUserId: String? = nil
         let requestMultiUseToken: Bool? = nil
         var cardData: ManualCardData? = nil
+        var clientTxnID: String? = builder.clientTxnID
 
         if let cd = builder.creditCard {
             cardData = ManualCardData.cardData(cardholderName: builder.cardHolderName ?? "",
@@ -153,7 +154,7 @@ class GMSRequestHelper {
         }
 
         if cardData != nil {
-            return SaleTransaction.sale(total: decimalToUint(total),
+            return SaleTransaction.sale(clientTransactionId: clientTxnID, total: decimalToUint(total),
                                         tax: decimalToUint(tax),
                                         tip: decimalToUint(tip),
                                         surcharge: decimalToUint(surcharge),
@@ -164,7 +165,7 @@ class GMSRequestHelper {
                                         cardData: cardData!,
                                         requestMultiUseToken: requestMultiUseToken ?? false)
         } else {
-            return SaleTransaction.sale(total: decimalToUint(total),
+            return SaleTransaction.sale(clientTransactionId:clientTxnID, total: decimalToUint(total),
                                         tax: decimalToUint(tax),
                                         tip: decimalToUint(tip),
                                         surcharge: decimalToUint(surcharge),
@@ -175,12 +176,12 @@ class GMSRequestHelper {
                                         requestMultiUseToken: requestMultiUseToken ?? false)
         }
     }
-    
+
     public static func buildCreditVoidRequest(builder: GMSCreditVoidBuilder) -> Transaction? {
         let posReferenceNumber: String? = builder.referenceNumber
         let transactionId: String? = builder.transactionId
-
-        return VoidTransaction.void(gatewayTransactionId: transactionId ?? "",
+        let clientTxnID:String? = builder.clientTxnID
+        return VoidTransaction.void(clientTransactionId: clientTxnID, gatewayTransactionId: transactionId ?? "",
                                     reversalReason: ReversalReason.undefined,
                                     posReferenceNumber: posReferenceNumber,
                                     invoiceNumber: nil,

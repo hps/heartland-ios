@@ -22,7 +22,7 @@ public class GMSTransactionResponse: NSObject {
     
     init(fromAuthResponse authResponse: AuthResponse) {
         self.transactionResult = authResponse.transactionResult
-        self.transactionId = authResponse.transactionId
+        self.transactionId = UUID(uuidString: authResponse.transactionId) ?? UUID(uuidString: "")!
         self.gatewayTransactionId = authResponse.gatewayTransactionId
         self.gatewayResponseText = authResponse.gatewayResponseText
         if let approvedAmount = authResponse.approvedAmount {
@@ -34,7 +34,7 @@ public class GMSTransactionResponse: NSObject {
     
     init(fromSaleResponse saleResponse: SaleResponse) {
         self.transactionResult = saleResponse.transactionResult
-        self.transactionId = saleResponse.transactionId
+        self.transactionId = UUID(uuidString: saleResponse.transactionId) ?? UUID(uuidString: "")!
         self.gatewayTransactionId = saleResponse.gatewayTransactionId
         self.gatewayResponseText = saleResponse.gatewayResponseText
         if let approvedAmount = saleResponse.approvedAmount {

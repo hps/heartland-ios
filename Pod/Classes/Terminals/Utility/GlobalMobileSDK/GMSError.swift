@@ -85,7 +85,7 @@ extension NSError {
         case .safTransactionFailed(let msg, let txnId):
             reason = "safTransactionFailed"
             message = msg
-            transactionId = txnId
+            transactionId = UUID(uuidString: txnId ?? "")
         case .terminalFailed(let msg, let errCode):
             reason = "terminalFailed"
             message = msg

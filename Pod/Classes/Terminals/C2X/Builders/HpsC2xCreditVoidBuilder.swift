@@ -2,6 +2,7 @@ import Foundation
 
 @objcMembers
 public class HpsC2xCreditVoidBuilder : HpsC2xBaseBuilder, GMSCreditVoidBuilder {
+    public var clientTxnID: String?
     public var referenceNumber: String?
     public var transactionId: String?
     
