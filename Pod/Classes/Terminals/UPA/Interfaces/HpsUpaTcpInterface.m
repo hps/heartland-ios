@@ -10,6 +10,10 @@
 @interface HpsUpaTcpInterface () <HpsTCPInterfaceDelegate>
 
 @property (strong, nonatomic) HpsTCPInterface *interface;
+@property (nonatomic) NSInteger sequenceIndex;
+@property (nonatomic) HpsUPAHandler handler;
+@property (strong, nonatomic) NSError *handlerError;
+@property (strong, nonatomic) NSString *handlerJSONString;
 
 @end
 
@@ -33,12 +37,26 @@
 - (void)disconnect {
 }
 
-- (void)send:(id<IHPSDeviceMessage>)message andResponseBlock:(void (^)(JsonDoc *, NSError *))responseBlock {    
+- (void)send:(id<IHPSDeviceMessage>)message andResponseBlock:(HpsUPAHandler)responseBlock {
+#warning param type conflict w IHPSDeviceCommInterface
+    [self setSequenceIndex:0];
+    [self setHandler:responseBlock];
+    NSData *data = [message getSendBuffer];
+    [_interface sendData:data onOpen:YES];
 }
 
 // MARK: - HpsTCPInterfaceDelegate
 
 - (void)tcpInterfaceDidCloseStreams {
+    [self setSequenceIndex:-1];
+    NSString *jsonString = [_handlerJSONString copy];
+    JsonDoc *json = jsonString ?
+    [JsonDoc parse:jsonString] : nil;
+    NSError *error = [_handlerError copy];
+    [self setHandlerJSONString:nil];
+    [self setHandlerError:nil];
+    _handler(json, error);
+    [self setHandler:nil];
 }
 
 - (void)tcpInterfaceDidOpenStream {
