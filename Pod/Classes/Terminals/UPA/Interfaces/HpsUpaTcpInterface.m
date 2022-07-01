@@ -80,6 +80,7 @@
 }
 
 - (void)tcpInterfaceDidReceiveStreamError:(NSError *)error {
+    [self setHandlerError:error];
 }
 
 - (void)tcpInterfaceDidWriteData {
