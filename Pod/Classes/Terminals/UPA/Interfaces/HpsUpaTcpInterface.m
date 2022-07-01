@@ -71,6 +71,7 @@
     if ([self rawIsPartialResponse:data]) return;
     [_interface resetInputBuffer];
     if ([self rawIsExpectedResponse:data]) {
+        #warning tbd - store response obj here
         [self executeNextMessage];
     } else {
         #warning tbd - create/inject error here
