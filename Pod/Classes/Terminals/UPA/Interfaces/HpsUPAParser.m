@@ -1,15 +1,15 @@
 //
-//  HpsUpaAPI.m
+//  HpsUPAParser.m
 //  Heartland-iOS-SDK
 //
 //  Created by Desimini, Wilson on 7/1/22.
 //
 
-#import "HpsUpaAPI.h"
+#import "HpsUPAParser.h"
 #import "HpsTerminalEnums.h"
 #import "HpsUpaRequest.h"
 
-@implementation HpsUpaAPI
+@implementation HpsUPAParser
 
 + (NSData *)dataFromUPARaw:(NSData *)data {
     NSString *rawString = [[NSString alloc] initWithData:data

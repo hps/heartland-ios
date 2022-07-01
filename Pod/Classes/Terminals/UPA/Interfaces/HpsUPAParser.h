@@ -1,5 +1,5 @@
 //
-//  HpsUpaAPI.h
+//  HpsUPAParser.h
 //  Heartland-iOS-SDK
 //
 //  Created by Desimini, Wilson on 7/1/22.
@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HpsUpaAPI : NSObject
+@interface HpsUPAParser : NSObject
 
 + (NSData *)dataFromUPARaw:(NSData *)data;
 + (NSDictionary *)jsonfromUPARaw:(NSData *)data;

@@ -1,7 +1,7 @@
 #import "HpsUpaTcpInterface.h"
 #import "HpsConnectionConfig.h"
 #import "HpsTCPInterface.h"
-#import "HpsUpaAPI.h"
+#import "HpsUPAParser.h"
 #import "HpsUPATCPEvent.h"
 #import "HpsTerminalUtilities.h"
 #import "HpsUpaRequest.h"
@@ -117,16 +117,16 @@
 }
 
 - (BOOL)rawIsExpectedResponse:(NSData *)data {
-    NSDictionary *json = [HpsUpaAPI jsonfromUPARaw:data];
+    NSDictionary *json = [HpsUPAParser jsonfromUPARaw:data];
     NSString *receivedObj = [json objectForKey:@"message"];
     if (receivedObj == nil) return NO;
-    UPA_MSG_TYPE received = [HpsUpaAPI messageTypeFromUPARaw:receivedObj];
+    UPA_MSG_TYPE received = [HpsUPAParser messageTypeFromUPARaw:receivedObj];
     return received == _events[0].messageType;
 }
 
 - (BOOL)rawIsPartialResponse:(NSData *)data {
-    return ([HpsUpaAPI dataFromUPARaw:data] != nil
-            && [HpsUpaAPI jsonfromUPARaw:data] == nil);
+    return ([HpsUPAParser dataFromUPARaw:data] != nil
+            && [HpsUPAParser jsonfromUPARaw:data] == nil);
 }
 
 @end
