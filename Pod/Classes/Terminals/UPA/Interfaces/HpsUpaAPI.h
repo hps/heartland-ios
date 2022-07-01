@@ -8,13 +8,15 @@
 #import <Foundation/Foundation.h>
 #import "UpaEnums.h"
 
+@protocol IHPSDeviceMessage;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HpsUpaAPI : NSObject
 
-+ (NSData * _Nullable)dataFromUPARaw:(NSData *)data;
-+ (NSDictionary * _Nullable)jsonfromUPARaw:(NSData *)data;
-+ (UPA_MSG_TYPE)upaMessageTypeFromUPARaw:(NSString *)message;
++ (NSData *)dataFromUPARaw:(NSData *)data;
++ (NSDictionary *)jsonfromUPARaw:(NSData *)data;
++ (UPA_MSG_TYPE)messageTypeFromUPARaw:(NSString *)message;
 
 @end
 

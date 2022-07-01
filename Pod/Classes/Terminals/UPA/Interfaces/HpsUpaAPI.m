@@ -7,6 +7,7 @@
 
 #import "HpsUpaAPI.h"
 #import "HpsTerminalEnums.h"
+#import "HpsUpaRequest.h"
 
 @implementation HpsUpaAPI
 
@@ -35,7 +36,7 @@
     return [NSJSONSerialization JSONObjectWithData:dataParsed options:0 error:nil];
 }
 
-+ (UPA_MSG_TYPE)upaMessageTypeFromUPARaw:(NSString *)message {
++ (UPA_MSG_TYPE)messageTypeFromUPARaw:(NSString *)message {
     NSDictionary *upaMessageTypesByRaw = @{
         @"ACK": @(UPA_MSG_TYPE_ACK),
         @"NAK": @(UPA_MSG_TYPE_NAK),

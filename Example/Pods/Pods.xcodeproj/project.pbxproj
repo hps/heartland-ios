@@ -451,6 +451,8 @@
 		EF8A6CFE286F4AA7001BBBE4 /* HpsTCPInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = EF8A6CFC286F4AA7001BBBE4 /* HpsTCPInterface.m */; };
 		EF8A6D01286F5479001BBBE4 /* HpsUpaAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = EF8A6CFF286F5479001BBBE4 /* HpsUpaAPI.h */; };
 		EF8A6D02286F5479001BBBE4 /* HpsUpaAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = EF8A6D00286F5479001BBBE4 /* HpsUpaAPI.m */; };
+		EF8A6D0D286F87A8001BBBE4 /* HpsUPATCPEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = EF8A6D0B286F87A8001BBBE4 /* HpsUPATCPEvent.h */; };
+		EF8A6D0E286F87A8001BBBE4 /* HpsUPATCPEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = EF8A6D0C286F87A8001BBBE4 /* HpsUPATCPEvent.m */; };
 		EFB5CD0BD4A01015B0C60C5C038CF09C /* GMSDeviceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B2E90D270AC1E1F616B4CBDFAE866 /* GMSDeviceInterface.swift */; };
 		EFDFA24F1DAB017A7AD4F5E984838012 /* HpsPaxGiftAddValueBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D0B1E6ADAFC529E3AB720C4F5BFD06 /* HpsPaxGiftAddValueBuilder.m */; };
 		F134D7409355B5173AAA7636D7B19F4A /* GMSBaseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFCD5B0C8725E848C7CF428A67601FC /* GMSBaseBuilder.swift */; };
@@ -1056,6 +1058,8 @@
 		EF8A6CFC286F4AA7001BBBE4 /* HpsTCPInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsTCPInterface.m; sourceTree = "<group>"; };
 		EF8A6CFF286F5479001BBBE4 /* HpsUpaAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsUpaAPI.h; sourceTree = "<group>"; };
 		EF8A6D00286F5479001BBBE4 /* HpsUpaAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsUpaAPI.m; sourceTree = "<group>"; };
+		EF8A6D0B286F87A8001BBBE4 /* HpsUPATCPEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsUPATCPEvent.h; sourceTree = "<group>"; };
+		EF8A6D0C286F87A8001BBBE4 /* HpsUPATCPEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsUPATCPEvent.m; sourceTree = "<group>"; };
 		F02F7B96B7E734545C6BC4EA25DB8154 /* HpsPayrollCollectionItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPayrollCollectionItem.h; sourceTree = "<group>"; };
 		F032DC68AA42E46D50007DD338F42732 /* HpsPayrollService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPayrollService.m; sourceTree = "<group>"; };
 		F10578762D02A73E8FB1B44924993E2A /* HpsCardHolderData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsCardHolderData.m; sourceTree = "<group>"; };
@@ -1413,6 +1417,8 @@
 				EF8A6CFC286F4AA7001BBBE4 /* HpsTCPInterface.m */,
 				EF8A6CFF286F5479001BBBE4 /* HpsUpaAPI.h */,
 				EF8A6D00286F5479001BBBE4 /* HpsUpaAPI.m */,
+				EF8A6D0B286F87A8001BBBE4 /* HpsUPATCPEvent.h */,
+				EF8A6D0C286F87A8001BBBE4 /* HpsUPATCPEvent.m */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -2238,6 +2244,7 @@
 				1436AA04BEDD22939628AAB22EBF1A8C /* HpsPaxDeviceResponse.h in Headers */,
 				2D308EB9F8CE305CE440A1FEFF8692A0 /* HpsPaxEcomSubGroup.h in Headers */,
 				F9B7470CFA665A8D4B13B85159CD9A68 /* HpsPaxExtDataSubGroup.h in Headers */,
+				EF8A6D0D286F87A8001BBBE4 /* HpsUPATCPEvent.h in Headers */,
 				7D65D9DB52EB7229472BCADBBBB634A4 /* HpsPaxGiftActivateBuilder.h in Headers */,
 				345F6E1727849529002DC1CC /* HpsUpaVoidBuilder.h in Headers */,
 				078E5688AF051C301A72B5B5887B4905 /* HpsPaxGiftAddValueBuilder.h in Headers */,
@@ -2719,6 +2726,7 @@
 				345F6DEF2783FF51002DC1CC /* HpsUpaData.m in Sources */,
 				DB666C0FBDED836B4DE9FE743058C935 /* HpsLoginResponse.m in Sources */,
 				345F6E1B27849529002DC1CC /* HpsUpaSaleBuilder.m in Sources */,
+				EF8A6D0E286F87A8001BBBE4 /* HpsUPATCPEvent.m in Sources */,
 				9C5293D6E27282F192FC93C0EE7D0465 /* HpsPaxAccountRequest.m in Sources */,
 				65EB998CEC83299746AE89EFDB938553 /* HpsPaxAccountResponse.m in Sources */,
 				868C059958BBEDCD803CD417F7C59E98 /* HpsPaxAmountRequest.m in Sources */,

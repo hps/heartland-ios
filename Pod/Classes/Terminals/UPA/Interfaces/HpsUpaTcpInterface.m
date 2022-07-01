@@ -1,6 +1,10 @@
 #import "HpsUpaTcpInterface.h"
 #import "HpsConnectionConfig.h"
 #import "HpsTCPInterface.h"
+#import "HpsUpaAPI.h"
+#import "HpsUPATCPEvent.h"
+#import "HpsTerminalUtilities.h"
+#import "HpsUpaRequest.h"
 #import "JsonDoc.h"
 
 #define BUF_SIZE 8192
@@ -10,7 +14,7 @@
 @interface HpsUpaTcpInterface () <HpsTCPInterfaceDelegate>
 
 @property (strong, nonatomic) HpsTCPInterface *interface;
-@property (nonatomic) NSInteger sequenceIndex;
+@property (strong, nonatomic) NSMutableArray<HpsUPATCPEvent *> *events;
 @property (nonatomic) HpsUPAHandler handler;
 @property (strong, nonatomic) NSError *handlerError;
 @property (strong, nonatomic) NSString *handlerJSONString;
@@ -22,6 +26,7 @@
 - (instancetype)initWithConfig:(HpsConnectionConfig *)config {
     self = [super init];
     if (self) {
+        _events = [NSMutableArray array];
         _interface = [[HpsTCPInterface alloc] init];
         _interface.config = config;
         _interface.delegate = self;
@@ -39,7 +44,7 @@
 
 - (void)send:(id<IHPSDeviceMessage>)message andResponseBlock:(HpsUPAHandler)responseBlock {
 #warning param type conflict w IHPSDeviceCommInterface
-    [self setSequenceIndex:0];
+    [self addEventsWithMessage:message];
     [self setHandler:responseBlock];
     NSData *data = [message getSendBuffer];
     [_interface sendData:data onOpen:YES];
@@ -48,7 +53,7 @@
 // MARK: - HpsTCPInterfaceDelegate
 
 - (void)tcpInterfaceDidCloseStreams {
-    [self setSequenceIndex:-1];
+    [_events removeAllObjects];
     NSString *jsonString = [_handlerJSONString copy];
     JsonDoc *json = jsonString ?
     [JsonDoc parse:jsonString] : nil;
@@ -63,12 +68,65 @@
 }
 
 - (void)tcpInterfaceDidReadData:(NSData *)data {
+    if ([self rawIsPartialResponse:data]) return;
+    [_interface resetInputBuffer];
+    if ([self rawIsExpectedResponse:data]) {
+        [self executeNextMessage];
+    } else {
+        #warning tbd - create/inject error here
+        [_interface closeConnection];
+    }
 }
 
 - (void)tcpInterfaceDidReceiveStreamError:(NSError *)error {
 }
 
 - (void)tcpInterfaceDidWriteData {
+    [_interface resetOutputBuffer];
+    [self executeNextMessage];
+}
+
+// MARK: - Utilities
+
+- (id<IHPSDeviceMessage>)ackSend {
+    HpsUpaRequest *request = [[HpsUpaRequest alloc] init];
+    [request setMessage:@"ACK"];
+    NSString *json = [request JSONString];
+    return [HpsTerminalUtilities BuildRequest:json withFormat:UPA];
+}
+
+- (void)addEventsWithMessage:(id<IHPSDeviceMessage>)message {
+    [_events addObjectsFromArray:@[
+        [[HpsUPATCPEvent alloc] initWithMessageType:UPA_MSG_TYPE_MSG
+                                           sendBody:message],
+        [[HpsUPATCPEvent alloc] initWithMessageType:UPA_MSG_TYPE_ACK],
+        [[HpsUPATCPEvent alloc] initWithMessageType:UPA_MSG_TYPE_MSG],
+        [[HpsUPATCPEvent alloc] initWithMessageType:UPA_MSG_TYPE_ACK
+                                           sendBody:[self ackSend]]
+    ]];
+}
+
+- (void)executeNextMessage {
+    [_events removeObjectAtIndex:0];
+    HpsUPATCPEvent *nextEvent = [_events firstObject];
+    if (nextEvent == nil) {
+        [_interface closeConnection];
+    } else if (nextEvent.sendBody) {
+        [_interface sendData:[nextEvent.sendBody getSendBuffer]];
+    }
+}
+
+- (BOOL)rawIsExpectedResponse:(NSData *)data {
+    NSDictionary *json = [HpsUpaAPI jsonfromUPARaw:data];
+    NSString *receivedObj = [json objectForKey:@"message"];
+    if (receivedObj == nil) return NO;
+    UPA_MSG_TYPE received = [HpsUpaAPI messageTypeFromUPARaw:receivedObj];
+    return received == _events[0].messageType;
+}
+
+- (BOOL)rawIsPartialResponse:(NSData *)data {
+    return ([HpsUpaAPI dataFromUPARaw:data] != nil
+            && [HpsUpaAPI jsonfromUPARaw:data] == nil);
 }
 
 @end
