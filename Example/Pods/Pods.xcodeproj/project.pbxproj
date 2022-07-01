@@ -449,8 +449,8 @@
 		EF7DB5B8438CE613FC40A6734BF783B5 /* HpsAdditionalTxnFields.m in Sources */ = {isa = PBXBuildFile; fileRef = E140E53F3E37D7B1C9F1AECB37430EA2 /* HpsAdditionalTxnFields.m */; };
 		EF8A6CFD286F4AA7001BBBE4 /* HpsTCPInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = EF8A6CFB286F4AA7001BBBE4 /* HpsTCPInterface.h */; };
 		EF8A6CFE286F4AA7001BBBE4 /* HpsTCPInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = EF8A6CFC286F4AA7001BBBE4 /* HpsTCPInterface.m */; };
-		EF8A6D01286F5479001BBBE4 /* HpaUPAParser.h in Headers */ = {isa = PBXBuildFile; fileRef = EF8A6CFF286F5479001BBBE4 /* HpaUPAParser.h */; };
-		EF8A6D02286F5479001BBBE4 /* HpaUPAParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EF8A6D00286F5479001BBBE4 /* HpaUPAParser.m */; };
+		EF8A6D01286F5479001BBBE4 /* HpsUPAParser.h in Headers */ = {isa = PBXBuildFile; fileRef = EF8A6CFF286F5479001BBBE4 /* HpsUPAParser.h */; };
+		EF8A6D02286F5479001BBBE4 /* HpsUPAParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EF8A6D00286F5479001BBBE4 /* HpsUPAParser.m */; };
 		EFB5CD0BD4A01015B0C60C5C038CF09C /* GMSDeviceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B2E90D270AC1E1F616B4CBDFAE866 /* GMSDeviceInterface.swift */; };
 		EFDFA24F1DAB017A7AD4F5E984838012 /* HpsPaxGiftAddValueBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D0B1E6ADAFC529E3AB720C4F5BFD06 /* HpsPaxGiftAddValueBuilder.m */; };
 		F134D7409355B5173AAA7636D7B19F4A /* GMSBaseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFCD5B0C8725E848C7CF428A67601FC /* GMSBaseBuilder.swift */; };
@@ -1054,8 +1054,8 @@
 		EE5B1E1C8C74438276A3FA235998FFE4 /* HpsPaxHttpInterface.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxHttpInterface.m; sourceTree = "<group>"; };
 		EF8A6CFB286F4AA7001BBBE4 /* HpsTCPInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsTCPInterface.h; sourceTree = "<group>"; };
 		EF8A6CFC286F4AA7001BBBE4 /* HpsTCPInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsTCPInterface.m; sourceTree = "<group>"; };
-		EF8A6CFF286F5479001BBBE4 /* HpaUPAParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpaUPAParser.h; sourceTree = "<group>"; };
-		EF8A6D00286F5479001BBBE4 /* HpaUPAParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpaUPAParser.m; sourceTree = "<group>"; };
+		EF8A6CFF286F5479001BBBE4 /* HpsUPAParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsUPAParser.h; sourceTree = "<group>"; };
+		EF8A6D00286F5479001BBBE4 /* HpsUPAParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsUPAParser.m; sourceTree = "<group>"; };
 		F02F7B96B7E734545C6BC4EA25DB8154 /* HpsPayrollCollectionItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPayrollCollectionItem.h; sourceTree = "<group>"; };
 		F032DC68AA42E46D50007DD338F42732 /* HpsPayrollService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPayrollService.m; sourceTree = "<group>"; };
 		F10578762D02A73E8FB1B44924993E2A /* HpsCardHolderData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsCardHolderData.m; sourceTree = "<group>"; };
@@ -1411,8 +1411,8 @@
 				345F6DCF27837222002DC1CC /* HpsUpaTcpInterface.m */,
 				EF8A6CFB286F4AA7001BBBE4 /* HpsTCPInterface.h */,
 				EF8A6CFC286F4AA7001BBBE4 /* HpsTCPInterface.m */,
-				EF8A6CFF286F5479001BBBE4 /* HpaUPAParser.h */,
-				EF8A6D00286F5479001BBBE4 /* HpaUPAParser.m */,
+				EF8A6CFF286F5479001BBBE4 /* HpsUPAParser.h */,
+				EF8A6D00286F5479001BBBE4 /* HpsUPAParser.m */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -2286,7 +2286,7 @@
 				D55A1E33A2B1547EC013C19CC68AFFD3 /* HpsTerminalUtilities.h in Headers */,
 				A15FD623C53E75C77D65E91C5C5A7A67 /* HpsTerminationReason.h in Headers */,
 				A978CD556F328382CCF596964CCC6396 /* HpsTicket.h in Headers */,
-				EF8A6D01286F5479001BBBE4 /* HpaUPAParser.h in Headers */,
+				EF8A6D01286F5479001BBBE4 /* HpsUPAParser.h in Headers */,
 				3BEAD6E9D47F35BF3FAA8EEA0EBFD1E9 /* HpsTokenData.h in Headers */,
 				04E19CCA8F14F2474E97643388F26DB2 /* HpsTokenService.h in Headers */,
 				81BC9C427F72E4BF3B52B9CE2E40E69E /* HpsTransaction.h in Headers */,
@@ -2624,7 +2624,7 @@
 				1F92474ED02A24089ACDF5DB5933FDD7 /* HpaEnums.m in Sources */,
 				0CA47154272FE250AB3CCB83C5625A61 /* HpaFileUpload.m in Sources */,
 				81628B22A019A449D9943F1BD8959F4B /* HpaPaxSafDeleteResponse.m in Sources */,
-				EF8A6D02286F5479001BBBE4 /* HpaUPAParser.m in Sources */,
+				EF8A6D02286F5479001BBBE4 /* HpsUPAParser.m in Sources */,
 				64F86C911A9C41A62DD1DF2FA64BF37F /* HpaPaxSafReportResponse.m in Sources */,
 				BECA477865B6F64317FDBECBB323B8CF /* HpaPaxSafUploadResponse.m in Sources */,
 				EF7DB5B8438CE613FC40A6734BF783B5 /* HpsAdditionalTxnFields.m in Sources */,
