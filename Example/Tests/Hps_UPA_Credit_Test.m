@@ -40,7 +40,7 @@
     HpsUpaDevice *device = [self setupDevice];
     HpsUpaSaleBuilder* builder = [[HpsUpaSaleBuilder alloc] initWithDevice:device];
     builder.ecrId = @"3";
-    builder.amount = [[NSDecimalNumber alloc] initWithDouble:10.33];
+    builder.amount = [[NSDecimalNumber alloc] initWithDouble:5];
     builder.gratuity = [[NSDecimalNumber alloc] initWithDouble:0];
 
     [builder execute:^(HpsUpaResponse * response, NSError * error) {

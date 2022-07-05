@@ -149,7 +149,40 @@
                   Identifier = "Hps_Upa_Admin_Tests/test_UPA_Reboot">
                </Test>
                <Test
-                  Identifier = "Hps_Upa_Credit_Tests">
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Adjust_Reversal">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Auth_Capture">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Auth_Reversal">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Auth_Void">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Refund">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Refund_Reversal">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Refund_Void">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Sale_Adjust">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Sale_Refund">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Sale_Reversal">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Sale_Void">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Verify">
                </Test>
                <Test
                   Identifier = "Hps_Upa_VRF_Tests">
