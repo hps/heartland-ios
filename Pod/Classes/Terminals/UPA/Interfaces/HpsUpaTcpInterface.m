@@ -43,8 +43,16 @@
 - (void)disconnect {
 }
 
-- (void)send:(id<IHPSDeviceMessage>)message andResponseBlock:(HpsUPAHandler)responseBlock {
-#warning param type conflict w IHPSDeviceCommInterface
+- (void)send:(id<IHPSDeviceMessage>)message andResponseBlock:(void (^)(NSData *, NSError *))responseBlock {
+    /// don't use this - all the response handling code within 'HpsUpaDevice'
+    /// uses a conflicting block type, so we need to use the method below and
+    /// list this method solely to conform to IHPSDeviceCommInterface.
+    /// Need to rewrite this class to return a data object and populate this
+    /// method if looking to use this object via a protocol-oriented dependency.
+    responseBlock(nil, nil);
+}
+
+- (void)send:(id<IHPSDeviceMessage>)message andUPAResponseBlock:(HpsUPAHandler)responseBlock {
     [self addEventsWithMessage:message];
     [self setHandler:responseBlock];
     NSData *data = [message getSendBuffer];

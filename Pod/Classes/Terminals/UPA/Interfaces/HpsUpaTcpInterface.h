@@ -9,6 +9,6 @@ typedef void (^HpsUPAHandler)(JsonDoc *, NSError *);
 @interface HpsUpaTcpInterface : NSObject <IHPSDeviceCommInterface>
 
 - (instancetype)initWithConfig:(HpsConnectionConfig *)config;
-- (void)send:(id<IHPSDeviceMessage>)message andResponseBlock:(HpsUPAHandler)responseBlock;
+- (void)send:(id<IHPSDeviceMessage>)message andUPAResponseBlock:(HpsUPAHandler)responseBlock;
 
 @end
