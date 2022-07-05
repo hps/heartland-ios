@@ -75,7 +75,9 @@
         [self storeResponseFromRaw:data];
         [self executeNextMessage];
     } else {
-        [self errorOccurredInvalidMessage:data];
+        [self rawIsFailureResponse:data]
+        ? [self errorOccurredFailureResponse:data]
+        : [self errorOccurredInvalidMessage:data];
         [_interface closeConnection];
     }
 }
@@ -109,6 +111,18 @@
     ]];
 }
 
+- (void)errorOccurredFailureResponse:(NSData *)data {
+    NSString *domain = HpsCommon.sharedInstance.hpsErrorDomain;
+    NSDictionary *json = [HpsUPAParser jsonfromUPARaw:data];
+    NSString *messageObj = [json objectForKey:@"message"];
+    UPA_MSG_TYPE messageType = [HpsUPAParser messageTypeFromUPARaw:messageObj];
+    NSString *messageTypeDescription = [HpsUPAParser descriptionOfMessageType:messageType];
+    NSString *description = [NSString stringWithFormat:@"Failure message received from UPA device - %@", messageTypeDescription];
+    NSDictionary *userInfo = @{NSLocalizedDescriptionKey: description};
+    NSError *error = [NSError errorWithDomain:domain code:CocoaError userInfo:userInfo];
+    [self setHandlerError:error];
+}
+
 - (void)errorOccurredInvalidMessage:(NSData *)data {
     NSString *domain = HpsCommon.sharedInstance.hpsErrorDomain;
     NSString *description = @"Invalid message received from UPA device.";
@@ -139,6 +153,14 @@
     if (receivedObj == nil) return NO;
     UPA_MSG_TYPE received = [HpsUPAParser messageTypeFromUPARaw:receivedObj];
     return received == _events[0].messageType;
+}
+
+- (BOOL)rawIsFailureResponse:(NSData *)data {
+    NSDictionary *json = [HpsUPAParser jsonfromUPARaw:data];
+    NSString *receivedObj = [json objectForKey:@"message"];
+    if (receivedObj == nil) return NO;
+    UPA_MSG_TYPE received = [HpsUPAParser messageTypeFromUPARaw:receivedObj];
+    return received == UPA_MSG_TYPE_BUSY || received == UPA_MSG_TYPE_TIMEOUT;
 }
 
 - (BOOL)rawIsPartialResponse:(NSData *)data {
