@@ -52,7 +52,7 @@
         heardBack = YES;
         // assert error is cancel error
         XCTAssertNotNil(error);
-        NSString *description = @"Cancelled";
+        NSString *description = @"Force-closed";
         XCTAssertTrue([error.localizedDescription containsString:description]);
         [expectation fulfill];
     }];
