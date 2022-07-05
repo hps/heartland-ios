@@ -41,9 +41,7 @@
 }
 
 - (void)disconnect {
-}
-
-- (void)forceCloseStreams {
+    if (_handler == nil) return;
     [self errorOccurredForceClose];
     [_interface closeConnection];
 }
