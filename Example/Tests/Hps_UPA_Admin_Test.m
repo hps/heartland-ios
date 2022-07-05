@@ -43,6 +43,32 @@
     }];
 }
 
+- (void)test_UPA_CancelPending {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"cancelling a pending UPA request"];
+    // try to ping device
+    HpsUpaDevice *device = [self setupDevice];
+    __block BOOL heardBack = NO;
+    [device ping:^(id<IHPSDeviceResponse> response, NSError *error) {
+        heardBack = YES;
+        // assert error is cancel error
+        XCTAssertNotNil(error);
+        NSString *description = @"Cancelled";
+        XCTAssertTrue([error.localizedDescription containsString:description]);
+        [expectation fulfill];
+    }];
+    // wait a little while
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW,
+                                 (int64_t)(2.0 * NSEC_PER_SEC)),
+                   dispatch_get_main_queue(), ^{
+        // if haven't heard back, cancel pending
+        XCTAssertFalse(heardBack);
+        [device cancelPendingNetworkRequest];
+    });
+    // wait for expectation
+    [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
+        if(error) XCTFail(@"Request Timed out");
+    }];
+}
 
 - (void) test_UPA_Reset
 {

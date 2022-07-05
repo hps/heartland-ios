@@ -45,6 +45,13 @@
     }];
 }
 
+/// method to force close communication early
+/// should only be used during administrative
+/// commands like pings (and not transaction requests)
+- (void)cancelPendingNetworkRequest {
+    [_interface forceCloseStreams];
+}
+
 - (void) disableHostResponseBeep:(void(^)(id <IInitializeResponse>, NSError*))responseBlock
 {
 }

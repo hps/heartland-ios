@@ -22,6 +22,7 @@
 - (id) initWithConfig:(HpsConnectionConfig*)config;
     //Admin
 - (void) cancel:(void(^)(id<IHPSDeviceResponse> payload))responseBlock;
+- (void)cancelPendingNetworkRequest;
 - (void) closeLane:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
 - (void) disableHostResponseBeep:(void(^)(id <IInitializeResponse>, NSError*))responseBlock;
 - (void) initialize:(void(^)(id <IInitializeResponse>, NSError*))responseBlock;

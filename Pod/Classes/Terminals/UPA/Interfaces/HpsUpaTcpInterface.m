@@ -43,6 +43,11 @@
 - (void)disconnect {
 }
 
+- (void)forceCloseStreams {
+    [self errorOccurredForceClose];
+    [_interface closeConnection];
+}
+
 - (void)send:(id<IHPSDeviceMessage>)message andResponseBlock:(void (^)(NSData *, NSError *))responseBlock {
     /// don't use this - all the response handling code within 'HpsUpaDevice'
     /// uses a conflicting block type, so we need to use the method below and
@@ -125,6 +130,10 @@
     NSDictionary *userInfo = @{NSLocalizedDescriptionKey: description};
     NSError *error = [NSError errorWithDomain:domain code:CocoaError userInfo:userInfo];
     [self setHandlerError:error];
+}
+
+- (void)errorOccurredForceClose {
+    [self errorOccurred:@"Force-closed TCP sockets."];
 }
 
 - (void)errorOccurredFailureResponse:(NSData *)data {
