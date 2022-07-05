@@ -22,6 +22,9 @@
     return device;
 }
 
+- (void)tearDown {
+    sleep(1);
+}
 
 - (void) test_UPA_Ping
 {
