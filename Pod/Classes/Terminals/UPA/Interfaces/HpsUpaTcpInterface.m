@@ -111,24 +111,25 @@
     ]];
 }
 
-- (void)errorOccurredFailureResponse:(NSData *)data {
+- (void)errorOccurred:(NSString *)description {
     NSString *domain = HpsCommon.sharedInstance.hpsErrorDomain;
-    NSDictionary *json = [HpsUPAParser jsonfromUPARaw:data];
-    NSString *messageObj = [json objectForKey:@"message"];
-    UPA_MSG_TYPE messageType = [HpsUPAParser messageTypeFromUPARaw:messageObj];
-    NSString *messageTypeDescription = [HpsUPAParser descriptionOfMessageType:messageType];
-    NSString *description = [NSString stringWithFormat:@"Failure message received from UPA device - %@", messageTypeDescription];
+    description = [NSString stringWithFormat:@"UPA response error - %@", description];
     NSDictionary *userInfo = @{NSLocalizedDescriptionKey: description};
     NSError *error = [NSError errorWithDomain:domain code:CocoaError userInfo:userInfo];
     [self setHandlerError:error];
 }
 
+- (void)errorOccurredFailureResponse:(NSData *)data {
+    NSDictionary *json = [HpsUPAParser jsonfromUPARaw:data];
+    NSString *messageObj = [json objectForKey:@"message"];
+    UPA_MSG_TYPE messageType = [HpsUPAParser messageTypeFromUPARaw:messageObj];
+    NSString *messageTypeDescription = [HpsUPAParser descriptionOfMessageType:messageType];
+    NSString *description = [NSString stringWithFormat:@"Failure - %@", messageTypeDescription];
+    [self errorOccurred:description];
+}
+
 - (void)errorOccurredInvalidMessage:(NSData *)data {
-    NSString *domain = HpsCommon.sharedInstance.hpsErrorDomain;
-    NSString *description = @"Invalid message received from UPA device.";
-    NSDictionary *userInfo = @{NSLocalizedDescriptionKey: description};
-    NSError *error = [NSError errorWithDomain:domain code:CocoaError userInfo:userInfo];
-    [self setHandlerError:error];
+    [self errorOccurred:@"Invalid message."];
 }
 
 - (void)executeNextMessage {
