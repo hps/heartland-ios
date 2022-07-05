@@ -137,9 +137,6 @@
                   Identifier = "Hps_Pax_Z_Return">
                </Test>
                <Test
-                  Identifier = "Hps_Upa_Admin_Tests">
-               </Test>
-               <Test
                   Identifier = "Hps_Upa_Admin_Tests/test_UPA_AppInfo">
                </Test>
                <Test
@@ -153,9 +150,6 @@
                </Test>
                <Test
                   Identifier = "Hps_Upa_Admin_Tests/test_UPA_Reboot">
-               </Test>
-               <Test
-                  Identifier = "Hps_Upa_Admin_Tests/test_UPA_Reset">
                </Test>
                <Test
                   Identifier = "Hps_Upa_Credit_Tests">
