@@ -15,9 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HpsUPAParser : NSObject
 
 + (NSData *)dataFromUPARaw:(NSData *)data;
-+ (NSString *)descriptionOfMessageType:(UPA_MSG_TYPE)messageType;
 + (NSDictionary *)jsonfromUPARaw:(NSData *)data;
 + (NSString *)jsonStringFromUPARaw:(NSData *)data;
++ (NSString *)descriptionOfMessageType:(UPA_MSG_TYPE)messageType;
 + (UPA_MSG_TYPE)messageTypeFromUPARaw:(NSData *)data;
 
 @end

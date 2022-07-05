@@ -30,17 +30,6 @@
     return [rawString dataUsingEncoding:NSUTF8StringEncoding];
 }
 
-+ (NSString *)descriptionOfMessageType:(UPA_MSG_TYPE)messageType {
-    switch (messageType) {
-        case UPA_MSG_TYPE_BUSY:
-            return @"UPA device is busy.";
-        case UPA_MSG_TYPE_TIMEOUT:
-            return @"UPA device timed out.";
-        default:
-            return @"";
-    }
-}
-
 + (NSDictionary *)jsonfromUPARaw:(NSData *)data {
     NSData *dataParsed = [self dataFromUPARaw:data];
     if (dataParsed == nil) return nil;
@@ -52,6 +41,17 @@
     if (dataParsed == nil) return nil;
     return [[NSString alloc] initWithData:dataParsed
                                  encoding:NSUTF8StringEncoding];
+}
+
++ (NSString *)descriptionOfMessageType:(UPA_MSG_TYPE)messageType {
+    switch (messageType) {
+        case UPA_MSG_TYPE_BUSY:
+            return @"UPA device is busy.";
+        case UPA_MSG_TYPE_TIMEOUT:
+            return @"UPA device timed out.";
+        default:
+            return @"";
+    }
 }
 
 + (UPA_MSG_TYPE)messageTypeFromUPARaw:(NSData *)data {
