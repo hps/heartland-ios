@@ -54,7 +54,14 @@
                                  encoding:NSUTF8StringEncoding];
 }
 
-+ (UPA_MSG_TYPE)messageTypeFromUPARaw:(NSString *)message {
++ (UPA_MSG_TYPE)messageTypeFromUPARaw:(NSData *)data {
+    NSDictionary *json = [HpsUPAParser jsonfromUPARaw:data];
+    NSString *messageTypeObj = [json objectForKey:@"message"];
+    return [HpsUPAParser messageTypeFromUPAString:messageTypeObj];
+}
+
++ (UPA_MSG_TYPE)messageTypeFromUPAString:(NSString *)message {
+    if (message == nil) return UPA_MSG_TYPE_UNKNOWN;
     NSDictionary *upaMessageTypesByRaw = @{
         @"ACK": @(UPA_MSG_TYPE_ACK),
         @"NAK": @(UPA_MSG_TYPE_NAK),

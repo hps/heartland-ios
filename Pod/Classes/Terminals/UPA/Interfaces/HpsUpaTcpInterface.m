@@ -120,9 +120,7 @@
 }
 
 - (void)errorOccurredFailureResponse:(NSData *)data {
-    NSDictionary *json = [HpsUPAParser jsonfromUPARaw:data];
-    NSString *messageObj = [json objectForKey:@"message"];
-    UPA_MSG_TYPE messageType = [HpsUPAParser messageTypeFromUPARaw:messageObj];
+    UPA_MSG_TYPE messageType = [HpsUPAParser messageTypeFromUPARaw:data];
     NSString *messageTypeDescription = [HpsUPAParser descriptionOfMessageType:messageType];
     NSString *description = [NSString stringWithFormat:@"Failure - %@", messageTypeDescription];
     [self errorOccurred:description];
@@ -149,18 +147,12 @@
 }
 
 - (BOOL)rawIsExpectedResponse:(NSData *)data {
-    NSDictionary *json = [HpsUPAParser jsonfromUPARaw:data];
-    NSString *receivedObj = [json objectForKey:@"message"];
-    if (receivedObj == nil) return NO;
-    UPA_MSG_TYPE received = [HpsUPAParser messageTypeFromUPARaw:receivedObj];
+    UPA_MSG_TYPE received = [HpsUPAParser messageTypeFromUPARaw:data];
     return received == _events[0].messageType;
 }
 
 - (BOOL)rawIsFailureResponse:(NSData *)data {
-    NSDictionary *json = [HpsUPAParser jsonfromUPARaw:data];
-    NSString *receivedObj = [json objectForKey:@"message"];
-    if (receivedObj == nil) return NO;
-    UPA_MSG_TYPE received = [HpsUPAParser messageTypeFromUPARaw:receivedObj];
+    UPA_MSG_TYPE received = [HpsUPAParser messageTypeFromUPARaw:data];
     return received == UPA_MSG_TYPE_BUSY || received == UPA_MSG_TYPE_TIMEOUT;
 }
 
