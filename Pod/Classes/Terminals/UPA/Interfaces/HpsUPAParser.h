@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSData *)dataFromUPARaw:(NSData *)data;
 + (NSDictionary *)jsonfromUPARaw:(NSData *)data;
++ (NSString *)jsonStringFromUPARaw:(NSData *)data;
 + (UPA_MSG_TYPE)messageTypeFromUPARaw:(NSString *)message;
 
 @end

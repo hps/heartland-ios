@@ -72,7 +72,7 @@
     if ([self rawIsPartialResponse:data]) return;
     [_interface resetInputBuffer];
     if ([self rawIsExpectedResponse:data]) {
-        #warning tbd - store response obj here
+        [self storeResponseFromRaw:data];
         [self executeNextMessage];
     } else {
         [self errorOccurredInvalidMessage:data];
@@ -127,6 +127,12 @@
     }
 }
 
+- (BOOL)isExpectingFinalMessage {
+    HpsUPATCPEvent *expectedEvent = [_events firstObject];
+    BOOL isReceipt = expectedEvent.sendBody == nil;
+    return isReceipt && expectedEvent.messageType == UPA_MSG_TYPE_MSG;
+}
+
 - (BOOL)rawIsExpectedResponse:(NSData *)data {
     NSDictionary *json = [HpsUPAParser jsonfromUPARaw:data];
     NSString *receivedObj = [json objectForKey:@"message"];
@@ -138,6 +144,12 @@
 - (BOOL)rawIsPartialResponse:(NSData *)data {
     return ([HpsUPAParser dataFromUPARaw:data] != nil
             && [HpsUPAParser jsonfromUPARaw:data] == nil);
+}
+
+- (void)storeResponseFromRaw:(NSData *)data {
+    if (![self isExpectingFinalMessage]) return;
+    NSString *jsonString = [HpsUPAParser jsonStringFromUPARaw:data];
+    [self setHandlerJSONString:jsonString];
 }
 
 @end

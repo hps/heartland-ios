@@ -36,6 +36,13 @@
     return [NSJSONSerialization JSONObjectWithData:dataParsed options:0 error:nil];
 }
 
++ (NSString *)jsonStringFromUPARaw:(NSData *)data {
+    NSData *dataParsed = [self dataFromUPARaw:data];
+    if (dataParsed == nil) return nil;
+    return [[NSString alloc] initWithData:dataParsed
+                                 encoding:NSUTF8StringEncoding];
+}
+
 + (UPA_MSG_TYPE)messageTypeFromUPARaw:(NSString *)message {
     NSDictionary *upaMessageTypesByRaw = @{
         @"ACK": @(UPA_MSG_TYPE_ACK),
