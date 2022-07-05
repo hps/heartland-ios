@@ -152,9 +152,6 @@
                   Identifier = "Hps_Upa_Credit_Tests/test_UPA_Adjust_Reversal">
                </Test>
                <Test
-                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Auth_Capture">
-               </Test>
-               <Test
                   Identifier = "Hps_Upa_Credit_Tests/test_UPA_Auth_Reversal">
                </Test>
                <Test

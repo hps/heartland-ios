@@ -29,8 +29,9 @@
     return device;
 }
 
-- (void)tearDown {
-    sleep(1);
+- (void)setUp {
+    [self setContinueAfterFailure:NO];
+    sleep(10);
 }
 
 - (void) test_UPA_Sale
@@ -263,7 +264,7 @@
         XCTAssertEqualObjects(@"00", payload.responseCode);
         XCTAssertNotNil(payload);
         
-        sleep(1);
+        sleep(5);
      
         //Capture
         HpsUpaCaptureBuilder *cbuilder = [[HpsUpaCaptureBuilder alloc] initWithDevice:device];
