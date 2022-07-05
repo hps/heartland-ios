@@ -1,4 +1,5 @@
 #import "HpsUpaTcpInterface.h"
+#import "HpsCommon.h"
 #import "HpsConnectionConfig.h"
 #import "HpsTCPInterface.h"
 #import "HpsUPAParser.h"
@@ -74,7 +75,7 @@
         #warning tbd - store response obj here
         [self executeNextMessage];
     } else {
-        #warning tbd - create/inject error here
+        [self errorOccurredInvalidMessage:data];
         [_interface closeConnection];
     }
 }
@@ -106,6 +107,14 @@
         [[HpsUPATCPEvent alloc] initWithMessageType:UPA_MSG_TYPE_ACK
                                            sendBody:[self ackSend]]
     ]];
+}
+
+- (void)errorOccurredInvalidMessage:(NSData *)data {
+    NSString *domain = HpsCommon.sharedInstance.hpsErrorDomain;
+    NSString *description = @"Invalid message received from UPA device.";
+    NSDictionary *userInfo = @{NSLocalizedDescriptionKey: description};
+    NSError *error = [NSError errorWithDomain:domain code:CocoaError userInfo:userInfo];
+    [self setHandlerError:error];
 }
 
 - (void)executeNextMessage {
