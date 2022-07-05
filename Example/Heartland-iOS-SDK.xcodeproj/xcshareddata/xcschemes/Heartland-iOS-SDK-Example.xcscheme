@@ -137,9 +137,6 @@
                   Identifier = "Hps_Pax_Z_Return">
                </Test>
                <Test
-                  Identifier = "Hps_Upa_Admin_Tests/test_UPA_AppInfo">
-               </Test>
-               <Test
                   Identifier = "Hps_Upa_Admin_Tests/test_UPA_EOD">
                </Test>
                <Test
