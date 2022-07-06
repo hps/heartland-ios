@@ -12,11 +12,11 @@
 
 @interface HpsUpaEvent : NSObject
 
-@property (nonatomic) UPA_MSG_TYPE messageType;
-@property (strong, nonatomic) id<IHPSDeviceMessage> sendBody;
-
 - (instancetype)initWithMessageType:(UPA_MSG_TYPE)messageType;
 - (instancetype)initWithMessageType:(UPA_MSG_TYPE)messageType
                            sendBody:(id<IHPSDeviceMessage>)sendBody;
+
+- (UPA_MSG_TYPE)messageType;
+- (id<IHPSDeviceMessage>)sendBody;
 
 @end

@@ -7,6 +7,13 @@
 
 #import "HpsUpaEvent.h"
 
+@interface HpsUpaEvent ()
+
+@property (nonatomic) UPA_MSG_TYPE messageType;
+@property (strong, nonatomic) id<IHPSDeviceMessage> sendBody;
+
+@end
+
 @implementation HpsUpaEvent
 
 - (instancetype)initWithMessageType:(UPA_MSG_TYPE)messageType {

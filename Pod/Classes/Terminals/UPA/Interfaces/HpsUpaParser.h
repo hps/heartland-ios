@@ -8,8 +8,6 @@
 #import <Foundation/Foundation.h>
 #import "UpaEnums.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface HpsUpaParser : NSObject
 
 + (NSData *)dataFromUPARaw:(NSData *)data;
@@ -19,5 +17,3 @@ NS_ASSUME_NONNULL_BEGIN
 + (UPA_MSG_TYPE)messageTypeFromUPARaw:(NSData *)data;
 
 @end
-
-NS_ASSUME_NONNULL_END
