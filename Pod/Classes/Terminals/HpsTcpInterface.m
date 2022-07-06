@@ -1,16 +1,16 @@
 //
-//  HpsTCPInterface.m
+//  HpsTcpInterface.m
 //  Heartland-iOS-SDK
 //
 //  Created by Desimini, Wilson on 7/1/22.
 //
 
-#import "HpsTCPInterface.h"
+#import "HpsTcpInterface.h"
 #import "HpsConnectionConfig.h"
 
 #define BUF_SIZE 8192
 
-@interface HpsTCPInterface () <NSStreamDelegate>
+@interface HpsTcpInterface () <NSStreamDelegate>
 
 @property (strong, nonatomic) NSInputStream *inputStream;
 @property (strong, nonatomic) NSOutputStream *outputStream;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation HpsTCPInterface
+@implementation HpsTcpInterface
 
 // MARK: - Open / Close
 

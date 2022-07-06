@@ -1,15 +1,15 @@
 //
-//  HpsUPAParser.m
+//  HpsUpaParser.m
 //  Heartland-iOS-SDK
 //
 //  Created by Desimini, Wilson on 7/1/22.
 //
 
-#import "HpsUPAParser.h"
+#import "HpsUpaParser.h"
 #import "HpsTerminalEnums.h"
 #import "HpsUpaRequest.h"
 
-@implementation HpsUPAParser
+@implementation HpsUpaParser
 
 + (NSData *)dataFromUPARaw:(NSData *)data {
     NSString *rawString = [[NSString alloc] initWithData:data
@@ -55,9 +55,9 @@
 }
 
 + (UPA_MSG_TYPE)messageTypeFromUPARaw:(NSData *)data {
-    NSDictionary *json = [HpsUPAParser jsonfromUPARaw:data];
+    NSDictionary *json = [HpsUpaParser jsonfromUPARaw:data];
     NSString *messageTypeObj = [json objectForKey:@"message"];
-    return [HpsUPAParser messageTypeFromUPAString:messageTypeObj];
+    return [HpsUpaParser messageTypeFromUPAString:messageTypeObj];
 }
 
 + (UPA_MSG_TYPE)messageTypeFromUPAString:(NSString *)message {

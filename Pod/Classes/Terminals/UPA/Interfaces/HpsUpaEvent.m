@@ -1,13 +1,13 @@
 //
-//  HpsUPATCPEvent.m
+//  HpsUpaEvent.m
 //  Heartland-iOS-SDK
 //
 //  Created by Desimini, Wilson on 7/1/22.
 //
 
-#import "HpsUPATCPEvent.h"
+#import "HpsUpaEvent.h"
 
-@implementation HpsUPATCPEvent
+@implementation HpsUpaEvent
 
 - (instancetype)initWithMessageType:(UPA_MSG_TYPE)messageType {
     return [self initWithMessageType:messageType sendBody:nil];

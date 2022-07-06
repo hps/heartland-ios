@@ -1,5 +1,5 @@
 //
-//  HpsUPATCPEvent.h
+//  HpsUpaEvent.h
 //  Heartland-iOS-SDK
 //
 //  Created by Desimini, Wilson on 7/1/22.
@@ -10,7 +10,7 @@
 
 @protocol IHPSDeviceMessage;
 
-@interface HpsUPATCPEvent : NSObject
+@interface HpsUpaEvent : NSObject
 
 @property (nonatomic) UPA_MSG_TYPE messageType;
 @property (strong, nonatomic) id<IHPSDeviceMessage> sendBody;

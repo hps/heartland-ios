@@ -1,5 +1,5 @@
 //
-//  HpsTCPInterface.h
+//  HpsTcpInterface.h
 //  Heartland-iOS-SDK
 //
 //  Created by Desimini, Wilson on 7/1/22.
@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol HpsTCPInterfaceDelegate <NSObject>
+@protocol HpsTcpInterfaceDelegate <NSObject>
 
 - (void)tcpInterfaceDidCloseStreams;
 - (void)tcpInterfaceDidOpenStream;
@@ -19,9 +19,9 @@
 
 @class HpsConnectionConfig;
 
-@interface HpsTCPInterface : NSObject
+@interface HpsTcpInterface : NSObject
 
-@property (weak, nonatomic) id<HpsTCPInterfaceDelegate> delegate;
+@property (weak, nonatomic) id<HpsTcpInterfaceDelegate> delegate;
 @property (strong, nonatomic) HpsConnectionConfig *config;
 
 - (void)openConnection;

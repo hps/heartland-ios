@@ -1,5 +1,5 @@
 //
-//  HpsUPAParser.h
+//  HpsUpaParser.h
 //  Heartland-iOS-SDK
 //
 //  Created by Desimini, Wilson on 7/1/22.
@@ -8,11 +8,9 @@
 #import <Foundation/Foundation.h>
 #import "UpaEnums.h"
 
-@protocol IHPSDeviceMessage;
-
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HpsUPAParser : NSObject
+@interface HpsUpaParser : NSObject
 
 + (NSData *)dataFromUPARaw:(NSData *)data;
 + (NSDictionary *)jsonfromUPARaw:(NSData *)data;
