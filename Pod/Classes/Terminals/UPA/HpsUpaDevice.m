@@ -45,6 +45,13 @@
     }];
 }
 
+/// method to force close communication early
+/// should only be used during administrative
+/// commands like pings (and not transaction requests)
+- (void)cancelPendingNetworkRequest {
+    [_interface disconnect];
+}
+
 - (void) disableHostResponseBeep:(void(^)(id <IInitializeResponse>, NSError*))responseBlock
 {
 }
@@ -73,7 +80,7 @@
 
     id<IHPSDeviceMessage> data = [HpsTerminalUtilities BuildRequest:request.JSONString withFormat:format];
 
-    [self.interface send:data andResponseBlock:^(JsonDoc *data, NSError *error) {
+    [self.interface send:data andUPAResponseBlock:^(JsonDoc *data, NSError *error) {
         if (error) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 responseBlock(nil, error);
@@ -117,7 +124,7 @@
 
     id<IHPSDeviceMessage> data = [HpsTerminalUtilities BuildRequest:request.JSONString withFormat:format];
 
-    [self.interface send:data andResponseBlock:^(JsonDoc *data, NSError *error) {
+    [self.interface send:data andUPAResponseBlock:^(JsonDoc *data, NSError *error) {
         if (error) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 responseBlock(nil, error);
@@ -169,7 +176,7 @@
 
     id<IHPSDeviceMessage> data = [HpsTerminalUtilities BuildRequest:request.JSONString withFormat:format];
 
-    [self.interface send:data andResponseBlock:^(JsonDoc *data, NSError *error) {
+    [self.interface send:data andUPAResponseBlock:^(JsonDoc *data, NSError *error) {
         if (error) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 responseBlock(nil, error);
@@ -214,7 +221,7 @@
 
     id<IHPSDeviceMessage> data = [HpsTerminalUtilities BuildRequest:request.JSONString withFormat:format];
 
-    [self.interface send:data andResponseBlock:^(JsonDoc *data, NSError *error) {
+    [self.interface send:data andUPAResponseBlock:^(JsonDoc *data, NSError *error) {
         if (error) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 responseBlock(nil, error);
@@ -262,7 +269,7 @@
 {
     id<IHPSDeviceMessage> request = [HpsTerminalUtilities BuildRequest:[HpsUpaRequest JSONString] withFormat:format];
 
-    [self.interface send:request andResponseBlock:^(JsonDoc *data, NSError *error) {
+    [self.interface send:request andUPAResponseBlock:^(JsonDoc *data, NSError *error) {
         if (error) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 responseBlock(nil, error);
@@ -308,7 +315,7 @@
 
     id<IHPSDeviceMessage> data = [HpsTerminalUtilities BuildRequest:request.JSONString withFormat:format];
 
-    [self.interface send:data andResponseBlock:^(JsonDoc *data, NSError *error) {
+    [self.interface send:data andUPAResponseBlock:^(JsonDoc *data, NSError *error) {
         if (error) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 responseBlock(nil, error);
@@ -398,7 +405,7 @@
 
     id<IHPSDeviceMessage> data = [HpsTerminalUtilities BuildRequest:request.JSONString withFormat:format];
 
-    [self.interface send:data andResponseBlock:^(JsonDoc *data, NSError *error) {
+    [self.interface send:data andUPAResponseBlock:^(JsonDoc *data, NSError *error) {
         if (error) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 responseBlock(nil, error);

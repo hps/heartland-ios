@@ -10,13 +10,21 @@
 - (HpsUpaDevice*) setupDevice
 {
     HpsConnectionConfig *config = [[HpsConnectionConfig alloc] init];
-    config.ipAddress = @"192.168.86.48";
+    config.username = @"701420636";
+    config.password = @"$Test1234";
+    config.licenseID = @"145801";
+    config.siteID = @"145898";
+    config.deviceID = @"90916202";
+    config.ipAddress = @"192.168.0.27";
     config.port = @"8081";
     config.connectionMode = HpsConnectionModes_TCP_IP;
     HpsUpaDevice * device = [[HpsUpaDevice alloc] initWithConfig:config];
     return device;
 }
 
+- (void)tearDown {
+    sleep(1);
+}
 
 - (void) test_UPA_Ping
 {
@@ -35,6 +43,32 @@
     }];
 }
 
+- (void)test_UPA_CancelPending {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"cancelling a pending UPA request"];
+    // try to ping device
+    HpsUpaDevice *device = [self setupDevice];
+    __block BOOL heardBack = NO;
+    [device ping:^(id<IHPSDeviceResponse> response, NSError *error) {
+        heardBack = YES;
+        // assert error is cancel error
+        XCTAssertNotNil(error);
+        NSString *description = @"Force-closed";
+        XCTAssertTrue([error.localizedDescription containsString:description]);
+        [expectation fulfill];
+    }];
+    // wait a little while
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW,
+                                 (int64_t)(2.0 * NSEC_PER_SEC)),
+                   dispatch_get_main_queue(), ^{
+        // if haven't heard back, cancel pending
+        XCTAssertFalse(heardBack);
+        [device cancelPendingNetworkRequest];
+    });
+    // wait for expectation
+    [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
+        if(error) XCTFail(@"Request Timed out");
+    }];
+}
 
 - (void) test_UPA_Reset
 {

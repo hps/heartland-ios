@@ -17,13 +17,22 @@
 - (HpsUpaDevice*) setupDevice
 {
     HpsConnectionConfig *config = [[HpsConnectionConfig alloc] init];
-    config.ipAddress = @"10.130.159.67";
+    config.username = @"701420636";
+    config.password = @"$Test1234";
+    config.licenseID = @"145801";
+    config.siteID = @"145898";
+    config.deviceID = @"90916202";
+    config.ipAddress = @"192.168.0.27";
     config.port = @"8081";
     config.connectionMode = HpsConnectionModes_TCP_IP;
     HpsUpaDevice * device = [[HpsUpaDevice alloc] initWithConfig:config];
     return device;
 }
 
+- (void)setUp {
+    [self setContinueAfterFailure:NO];
+    sleep(10);
+}
 
 - (void) test_UPA_Sale
 {
@@ -32,7 +41,7 @@
     HpsUpaDevice *device = [self setupDevice];
     HpsUpaSaleBuilder* builder = [[HpsUpaSaleBuilder alloc] initWithDevice:device];
     builder.ecrId = @"3";
-    builder.amount = [[NSDecimalNumber alloc] initWithDouble:10.33];
+    builder.amount = [[NSDecimalNumber alloc] initWithDouble:5];
     builder.gratuity = [[NSDecimalNumber alloc] initWithDouble:0];
 
     [builder execute:^(HpsUpaResponse * response, NSError * error) {
@@ -255,7 +264,7 @@
         XCTAssertEqualObjects(@"00", payload.responseCode);
         XCTAssertNotNil(payload);
         
-        sleep(1);
+        sleep(5);
      
         //Capture
         HpsUpaCaptureBuilder *cbuilder = [[HpsUpaCaptureBuilder alloc] initWithDevice:device];

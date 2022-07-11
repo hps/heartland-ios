@@ -1,519 +1,184 @@
 #import "HpsUpaTcpInterface.h"
-#import "HpsUpaDevice.h"
 #import "HpsCommon.h"
-#import "HpsterminalUtilities.h"
-#import "NSObject+ObjectMap.h"
-#import "NSInputStream+Hps.h"
+#import "HpsConnectionConfig.h"
+#import "HpsTcpInterface.h"
+#import "HpsUpaParser.h"
+#import "HpsUpaEvent.h"
+#import "HpsTerminalUtilities.h"
+#import "HpsUpaRequest.h"
+#import "JsonDoc.h"
+
 #define BUF_SIZE 8192
 
 #pragma mark - Private properties and methods
 
-@interface HpsUpaTcpInterface () {
-    NSString *errorDomain;
-    NSString *filepath;
-    int fileNumber;
-    BOOL isHalfResponse;
-}
+@interface HpsUpaTcpInterface () <HpsTcpInterfaceDelegate>
 
-- (BOOL)openConnection;
-- (void)closeConnection;
-- (BOOL)isConnected;
-- (void)finishOpeningConnection;
-- (void)readFromStreamToInputBuffer;
-- (void)parseIncomingData;
-- (void)writeOutputBufferToStream;
-- (void)notifyConnectionBlock:(UpaConnectionBlock)block;
+@property (strong, nonatomic) HpsTcpInterface *interface;
+@property (strong, nonatomic) NSMutableArray<HpsUpaEvent *> *events;
+@property (nonatomic) HpsUPAHandler handler;
+@property (strong, nonatomic) NSError *handlerError;
+@property (strong, nonatomic) NSString *handlerJSONString;
 
 @end
 
-
 @implementation HpsUpaTcpInterface
 
-@synthesize messageReceivedBlock;
-@synthesize connectionOpenedBlock, connectionFailedBlock, connectionClosedBlock;
-@synthesize sendResponseBlock;
-
-#pragma mark - Initializer
-
-- (instancetype) initWithConfig:(HpsConnectionConfig*)config
-{
-    if((self = [super init]))
-        {
-        _config = config;
-        errorDomain = [HpsCommon sharedInstance].hpsErrorDomain;
-        }
+- (instancetype)initWithConfig:(HpsConnectionConfig *)config {
+    self = [super init];
+    if (self) {
+        _events = [NSMutableArray array];
+        _interface = [[HpsTcpInterface alloc] init];
+        _interface.config = config;
+        _interface.delegate = self;
+    }
     return self;
 }
 
-#pragma mark - IHPSDeviceCommInterface Required Methods
+// MARK: - IHPSDeviceCommInterface
 
 - (void)connect {
-    if (![self isConnected]) {
-        if (![self openConnection]) {
-            [self notifyConnectionBlock:connectionFailedBlock];
-        }
-    }
 }
 
 - (void)disconnect {
-    [self closeConnection];
+    if (_handler == nil) return;
+    [self errorOccurredForceClose];
+    [_interface closeConnection];
 }
 
-
--(void) send:(id<IHPSDeviceMessage>)message andResponseBlock:(void(^)(JsonDoc*, NSError*))responseBlock
-{
-    [self openConnection];
-
-    NSLog(@"request_toString = %@",message.toString);
-
-    self.sendResponseBlock = responseBlock;
-    [self addCallBackBlocks];
-    [self connectionOpenBlock:message];
-
+- (void)send:(id<IHPSDeviceMessage>)message andResponseBlock:(void (^)(NSData *, NSError *))responseBlock {
+    /// don't use this - all the response handling code within 'HpsUpaDevice'
+    /// uses a conflicting block type, so we need to use the method below and
+    /// list this method solely to conform to IHPSDeviceCommInterface.
+    /// Need to rewrite this class to return a data object and populate this
+    /// method if looking to use this object via a protocol-oriented dependency.
+    responseBlock(nil, nil);
 }
 
-#pragma mark CallBack Methods
-
--(void) connectionOpenBlock:(id<IHPSDeviceMessage>)message{
-        //Connection_open_block_start
-
-    __weak typeof(self) weakSelf = self;
-    __weak typeof(outputBuffer) weakOutputBuffer = outputBuffer;
-    self.connectionOpenedBlock = ^(HpsUpaTcpInterface* connection){
-
-        if([weakSelf isConnected]){
-
-            NSData *data = [message getSendBuffer];
-            [weakOutputBuffer appendBytes:data.bytes length:data.length];
-            [weakSelf writeOutputBufferToStream];
-        };
-            // Connection_open_block_end
-    };
-}
-
--(void) messagesRecivedBlock{
-        // Message_Recieve_block_start
-
-    __weak typeof(self) weakSelf = self;
-    __weak typeof(errorDomain) weakErrorDomain = errorDomain;
-
-    self.messageReceivedBlock = ^(JsonDoc* upaObject, NSString* error){
-
-        if (upaObject){
-
-            dispatch_async(dispatch_get_main_queue(), ^{
-                NSLog(@"Step 3 without Error");
-
-                weakSelf.sendResponseBlock(upaObject, nil);
-                [weakSelf closeConnection];
-
-            });
-
-        }
-        else{
-
-            dispatch_async(dispatch_get_main_queue(), ^{
-
-                NSDictionary *userInfo = @{NSLocalizedDescriptionKey:error};
-
-                NSError *error = [NSError errorWithDomain:weakErrorDomain
-                                                     code:CocoaError
-                                                 userInfo:userInfo];
-                NSLog(@"Step 3 with Error");
-
-                weakSelf.sendResponseBlock(nil, error);
-            });
-        }
-    };
-
-        // Message_Recieve_block_end
-}
-
--(void)connectionsClosedBlock{
-
-
-        // Connection_Close_block_start
-
-    self.connectionClosedBlock = ^(HpsUpaTcpInterface* connection){
-        NSLog(@"connection closed");
-    };
-        // Connection_Close_block_end
-
-}
-
--(void)connectionsFailedBlock
-{
-    __weak typeof(self) weakSelf = self;
-    __weak typeof(errorDomain) weakErrorDomain = errorDomain;
-        // Connection_Failed_Block_Start
-
-    weakSelf.connectionFailedBlock = ^(HpsUpaTcpInterface* connection){
-        dispatch_async(dispatch_get_main_queue(), ^{
-
-            NSDictionary *userInfo = @{NSLocalizedDescriptionKey:@"Connection Failed"};
-
-            NSError *error = [NSError errorWithDomain:weakErrorDomain
-                                                 code:CocoaError
-                                             userInfo:userInfo];
-
-            weakSelf.sendResponseBlock(nil, error);
-
-        });
-    };
-
-        // Connection_Failed_Block_end
-
-}
--(void) addCallBackBlocks
-{
-    [self connectionsClosedBlock];
-    [self connectionsFailedBlock];
-    [self messagesRecivedBlock];
-}
-
-#pragma mark - Private methods
-
-- (BOOL)openConnection {
-    isInputStreamOpen = NO;
-    isOutputStreamOpen = NO;
-
-    CFReadStreamRef readStream;
-    CFWriteStreamRef writeStream;
-
-    CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault,
-                                       (__bridge CFStringRef)self.config.ipAddress, self.config.port.intValue,
-                                       &readStream, &writeStream);
-
-    if (readStream == nil || writeStream == nil)
-        return NO;
-
-    CFReadStreamSetProperty(readStream, kCFStreamPropertyShouldCloseNativeSocket,
-                            kCFBooleanTrue);
-    CFWriteStreamSetProperty(writeStream, kCFStreamPropertyShouldCloseNativeSocket,
-                             kCFBooleanTrue);
-
-    inputStream = (__bridge_transfer NSInputStream*)readStream;
-    inputStream.delegate = self;
-    [inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-    [inputStream open];
-
-    outputStream = (__bridge_transfer NSOutputStream*)writeStream;
-    outputStream.delegate = self;
-    [outputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-    [outputStream open];
-
-    inputBuffer = [[NSMutableData alloc] init];
-    outputBuffer = [[NSMutableData alloc] init];
-
-    return YES;
-}
-
-- (void)closeConnection {
-
-    if (![self isConnected])
-        [self notifyConnectionBlock:connectionFailedBlock];
-    else
-        [self notifyConnectionBlock:connectionClosedBlock];
-
-    inputStream.delegate = nil;
-    [inputStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-    [inputStream close];
-    inputStream = nil;
-    isInputStreamOpen = NO;
-
-    outputStream.delegate = nil;
-    [outputStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-    [outputStream close];
-    outputStream = nil;
-    isOutputStreamOpen = NO;
-
-    inputBuffer = nil;
-    outputBuffer = nil;
-}
-
-- (BOOL)isConnected {
-    return (isInputStreamOpen && isOutputStreamOpen);
-}
-
-- (void)finishOpeningConnection {
-    if (isInputStreamOpen && isOutputStreamOpen) {
-        [self notifyConnectionBlock:connectionOpenedBlock];
-        [self writeOutputBufferToStream];
-    }
-}
-
-- (void)readFromStreamToInputBuffer {
-
-    @try {
-        [self getFullResponse:^(NSMutableData *response,NSInteger msgLength) {
-            if (response){
-                [self parseIncomingData];
-            }
-        }];
-
-    } @catch (NSException *exception) {
-        [self closeConnection];
-        @throw exception;
-    }
-}
-
--(void)getFullResponse:(void(^)(NSMutableData *response,NSInteger msgLength))responseBlock{
-    @synchronized (self) {
-        NSMutableData *responseMutableData = [NSMutableData new];
-        NSInteger response_length = BUF_SIZE;
-        uint8_t buffer[response_length];
-
-        NSInteger bytesReadlength = 0;
-        NSInteger bytesReadlengthActual = 0;
-        if ([inputStream hasBytesAvailable]) {
-            fileNumber = fileNumber +1;
-
-            do {
-                memset(buffer, 0, sizeof(buffer));
-                bytesReadlengthActual = [inputStream read:buffer maxLength:sizeof(buffer)];
-                bytesReadlength += bytesReadlengthActual;
-
-                
-                [responseMutableData appendBytes:buffer length:bytesReadlengthActual];
-            } while([inputStream hasBytesAvailable]);
-        }
-
-        BOOL readyReceived = false;
-
-        if (bytesReadlength > 0) {
-            NSLog(@"Total length= %ld",(long)bytesReadlength);
-            
-            NSString* bufferString = [[NSString alloc] initWithBytesNoCopy:[responseMutableData mutableBytes]
-                                                                    length:[responseMutableData length]
-                                                                  encoding:NSASCIIStringEncoding
-                                                              freeWhenDone:NO];
-            NSString* separator = [NSString stringWithFormat:@"%c%c%c%c%c", (char) HpsControlCodes_LF, (char) HpsControlCodes_ETX, (char) HpsControlCodes_LF, (char) HpsControlCodes_STX, (char) HpsControlCodes_LF];
-
-            if ([bufferString containsString:separator]) {
-                NSArray<NSString*>* parts = [bufferString componentsSeparatedByString:separator];
-                bufferString = parts[1];
-            }
-            
-            NSCharacterSet *doNotWant = [NSCharacterSet characterSetWithCharactersInString:separator];
-            bufferString = [bufferString stringByTrimmingCharactersInSet:doNotWant];
-
-            NSLog(@"received= %@",bufferString);
-            
-            JsonDoc* doc = [JsonDoc parse:bufferString];
-            
-            NSString* message = (NSString*)[doc getValue:@"message"];
-            
-            switch ([self messageType:message]) {
-                case UPA_MSG_TYPE_UNKNOWN:
-                case UPA_MSG_TYPE_ACK:
-                case UPA_MSG_TYPE_NAK:
-                    break;
-                case UPA_MSG_TYPE_READY:
-                    readyReceived = true;
-                    break;
-                case UPA_MSG_TYPE_BUSY:
-                case UPA_MSG_TYPE_TIMEOUT:
-                    break;
-                case UPA_MSG_TYPE_MSG:
-                case UPA_MSG_TYPE_DATA:
-                    messageReceived = doc;
-                    if ([self isNonReadyResponse:doc]) {
-                        readyReceived = true;
-                    }
-                    [self sendAckMessageToDevice];
-                    break;
-            }
-        }
-
-        if (readyReceived == true) {
-            responseBlock(responseMutableData,bytesReadlength);
-        }
-    }
-}
-
--(BOOL) isNonReadyResponse:(JsonDoc*)doc {
-    JsonDoc* data = [doc get:@"data"];
-    if (data == nil) {
-        return false;
-    }
-    JsonDoc* cmdResult = [data get:@"cmdResult"];
-    return [(NSString*)[data getValue:@"response"] isEqualToString:UPA_MSG_ID_toString[UPA_MSG_ID_REBOOT]]
-        || [(NSString*)[data getValue:@"response"] isEqualToString:@"Ping"]
-        || (cmdResult != nil && [(NSString*)[cmdResult getValue:@"result"] isEqualToString:@"Failed"]);
-}
-
--(void) sendAckMessageToDevice {
-    HpsUpaRequest* request = [[HpsUpaRequest alloc] init];
-    request.message = @"ACK";
-    
-    NSString* json = request.JSONString;
-    
-    NSLog(@"sent= %@",json);
-
-    id<IHPSDeviceMessage> message = [HpsTerminalUtilities BuildRequest:json withFormat:UPA];
-
-    __weak typeof(outputBuffer) weakOutputBuffer = outputBuffer;
-    __weak typeof(self) weakSelf = self;
+- (void)send:(id<IHPSDeviceMessage>)message andUPAResponseBlock:(HpsUPAHandler)responseBlock {
+    [self addEventsWithMessage:message];
+    [self setHandler:responseBlock];
     NSData *data = [message getSendBuffer];
-    [weakOutputBuffer appendBytes:data.bytes length:data.length];
-    [weakSelf writeOutputBufferToStream];
+    [_interface sendData:data onOpen:YES];
 }
 
-- (UPA_MSG_TYPE) messageType:(NSString*)message {
-    if ([message isEqualToString:@"ACK"]) {
-        return UPA_MSG_TYPE_ACK;
-    }
-    if ([message isEqualToString:@"NAK"]) {
-        return UPA_MSG_TYPE_NAK;
-    }
-    if ([message isEqualToString:@"READY"]) {
-        return UPA_MSG_TYPE_READY;
-    }
-    if ([message isEqualToString:@"BUSY"]) {
-        return UPA_MSG_TYPE_BUSY;
-    }
-    if ([message isEqualToString:@"TO"]) {
-        return UPA_MSG_TYPE_TIMEOUT;
-    }
-    if ([message isEqualToString:@"MSG"]) {
-        return UPA_MSG_TYPE_MSG;
-    }
-    if ([message isEqualToString:@"DATA"]) {
-        return UPA_MSG_TYPE_DATA;
-    }
-    return UPA_MSG_TYPE_UNKNOWN;
+// MARK: - HpsTcpInterfaceDelegate
+
+- (void)tcpInterfaceDidCloseStreams {
+    [_events removeAllObjects];
+    NSString *jsonString = [_handlerJSONString copy];
+    JsonDoc *json = jsonString ? [JsonDoc parse:jsonString] : nil;
+    NSError *error = [_handlerError copy];
+    [self setHandlerJSONString:nil];
+    [self setHandlerError:nil];
+    _handler(json, error);
+    [self setHandler:nil];
 }
 
-
-
-- (void)parseIncomingData {
-
-    @try {
-        if (messageReceived != nil) {
-            NSLog(@"\n\n **** No MultiMessage ...\n\n");
-                //NSLog(@"TCP response FINAL = %@",[[NSString alloc]initWithData:inputBuffer encoding:NSASCIIStringEncoding] );
-
-            if (messageReceivedBlock != nil) {
-                messageReceivedBlock(messageReceived,nil);
-            }
-
-            [inputBuffer replaceBytesInRange:NSMakeRange(0,inputBuffer.length)
-                                   withBytes:NULL
-                                      length:0];
-        }
-
-    } @catch (NSException *exception) {
-        @throw exception;
-    }
-
+- (void)tcpInterfaceDidOpenStream {
 }
 
-- (void)writeOutputBufferToStream {
-    if (![self isConnected])
-        return;
-
-    if ([outputBuffer length] == 0)
-        return;
-
-    if (![outputStream hasSpaceAvailable])
-        return;
-
-    NSInteger bytesWritten = [outputStream write:[outputBuffer bytes]
-                                       maxLength:[outputBuffer length]];
-
-    if (bytesWritten == -1)  {
-        [self disconnect];
-        return;
+- (void)tcpInterfaceDidReadData:(NSData *)data {
+    if ([self rawIsPartialResponse:data]) return;
+    [_interface resetInputBuffer];
+    if ([self rawIsExpectedResponse:data]) {
+        [self storeResponseFromRaw:data];
+        [self executeNextMessage];
+    } else {
+        [self rawIsFailureResponse:data]
+        ? [self errorOccurredFailureResponse:data]
+        : [self errorOccurredInvalidMessage:data];
+        [_interface closeConnection];
     }
-
-    [outputBuffer replaceBytesInRange:NSMakeRange(0, bytesWritten)
-                            withBytes:NULL
-                               length:0];
 }
 
-- (void)notifyConnectionBlock:(UpaConnectionBlock)block {
-    if (block != nil)
-        block(self);
+- (void)tcpInterfaceDidReceiveStreamError:(NSError *)error {
+    [self setHandlerError:error];
 }
 
-#pragma mark - NSStreamDelegate methods
+- (void)tcpInterfaceDidWriteData {
+    [_interface resetOutputBuffer];
+    [self executeNextMessage];
+}
 
-- (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)streamEvent {
+// MARK: - Utilities
 
-    if (stream == inputStream) {
-        switch (streamEvent) {
+- (id<IHPSDeviceMessage>)ackSend {
+    HpsUpaRequest *request = [[HpsUpaRequest alloc] init];
+    [request setMessage:@"ACK"];
+    NSString *json = [request JSONString];
+    return [HpsTerminalUtilities BuildRequest:json withFormat:UPA];
+}
 
-            case NSStreamEventOpenCompleted:
-                isInputStreamOpen = YES;
-                [self finishOpeningConnection];
-                break;
+- (void)addEventsWithMessage:(id<IHPSDeviceMessage>)message {
+    [_events addObjectsFromArray:@[
+        [[HpsUpaEvent alloc] initWithMessageType:UPA_MSG_TYPE_MSG
+                                        sendBody:message],
+        [[HpsUpaEvent alloc] initWithMessageType:UPA_MSG_TYPE_ACK],
+        [[HpsUpaEvent alloc] initWithMessageType:UPA_MSG_TYPE_MSG],
+        [[HpsUpaEvent alloc] initWithMessageType:UPA_MSG_TYPE_ACK
+                                        sendBody:[self ackSend]]
+    ]];
+}
 
-            case NSStreamEventHasBytesAvailable:
-                @try {
-                    [self readFromStreamToInputBuffer];
+- (void)errorOccurred:(NSString *)description {
+    NSString *domain = HpsCommon.sharedInstance.hpsErrorDomain;
+    description = [NSString stringWithFormat:@"UPA response error - %@", description];
+    NSDictionary *userInfo = @{NSLocalizedDescriptionKey: description};
+    NSError *error = [NSError errorWithDomain:domain code:CocoaError userInfo:userInfo];
+    [self setHandlerError:error];
+}
 
-                } @catch (NSException *exception) {
-                        //NSLog(@"stream = %@",exception);
-                    NSDictionary *userInfo = @{NSLocalizedDescriptionKey:exception.description};
+- (void)errorOccurredForceClose {
+    [self errorOccurred:@"Force-closed TCP sockets."];
+}
 
-                    NSError *error = [NSError errorWithDomain:errorDomain
-                                                         code:CocoaError
-                                                     userInfo:userInfo];
+- (void)errorOccurredFailureResponse:(NSData *)data {
+    UPA_MSG_TYPE messageType = [HpsUpaParser messageTypeFromUPARaw:data];
+    NSString *messageTypeDescription = [HpsUpaParser descriptionOfMessageType:messageType];
+    NSString *description = [NSString stringWithFormat:@"Failure - %@", messageTypeDescription];
+    [self errorOccurred:description];
+}
 
-                    self.sendResponseBlock(nil, error);
-                }
-                break;
+- (void)errorOccurredInvalidMessage:(NSData *)data {
+    [self errorOccurred:@"Invalid message."];
+}
 
-            case NSStreamEventHasSpaceAvailable:
-                NSLog(@"#### SPACE AVAILABLE");
-                break;
-
-            case NSStreamEventErrorOccurred:
-
-                [self closeConnection];
-
-                break;
-            case NSStreamEventEndEncountered:
-                NSLog(@"#### End of Stream has been reached so now closing connection");
-
-                if (messageReceivedBlock != nil)
-                    messageReceivedBlock(messageReceived,nil);
-                    //self.sendResponseBlock([server_message dataUsingEncoding:NSUTF8StringEncoding], nil);
-
-                    //[self closeConnection];x
-                break;
-            default:
-                NSLog(@"Unknown Event Generated = %lu", (unsigned long)streamEvent);
-                break;
-        }
+- (void)executeNextMessage {
+    [_events removeObjectAtIndex:0];
+    HpsUpaEvent *nextEvent = [_events firstObject];
+    if (nextEvent == nil) {
+        [_interface closeConnection];
+    } else if (nextEvent.sendBody) {
+        [_interface sendData:[nextEvent.sendBody getSendBuffer]];
     }
+}
 
-    if (stream == outputStream) {
-        switch (streamEvent) {
+- (BOOL)isExpectingFinalMessage {
+    HpsUpaEvent *expectedEvent = [_events firstObject];
+    BOOL isReceipt = expectedEvent.sendBody == nil;
+    return isReceipt && expectedEvent.messageType == UPA_MSG_TYPE_MSG;
+}
 
-            case NSStreamEventOpenCompleted:
-                isOutputStreamOpen = YES;
-                [self finishOpeningConnection];
-                break;
+- (BOOL)rawIsExpectedResponse:(NSData *)data {
+    UPA_MSG_TYPE received = [HpsUpaParser messageTypeFromUPARaw:data];
+    return received == _events[0].messageType;
+}
 
-            case NSStreamEventHasBytesAvailable:
-                break;
+- (BOOL)rawIsFailureResponse:(NSData *)data {
+    UPA_MSG_TYPE received = [HpsUpaParser messageTypeFromUPARaw:data];
+    return received == UPA_MSG_TYPE_BUSY || received == UPA_MSG_TYPE_TIMEOUT;
+}
 
-            case NSStreamEventHasSpaceAvailable:
-                [self writeOutputBufferToStream];
-                break;
+- (BOOL)rawIsPartialResponse:(NSData *)data {
+    return ([HpsUpaParser dataFromUPARaw:data] != nil
+            && [HpsUpaParser jsonfromUPARaw:data] == nil);
+}
 
-            case NSStreamEventErrorOccurred:
-                messageReceivedBlock(nil,@" Error Occured -> OutputStream");
-                break;
-            case NSStreamEventEndEncountered:
-                [self closeConnection];
-                break;
-            default:
-                NSLog(@"Unknown Event Generated = %lu", (unsigned long)streamEvent);
-                break;
-        }
-    }
+- (void)storeResponseFromRaw:(NSData *)data {
+    if (![self isExpectingFinalMessage]) return;
+    NSString *jsonString = [HpsUpaParser jsonStringFromUPARaw:data];
+    [self setHandlerJSONString:jsonString];
 }
 
 @end
