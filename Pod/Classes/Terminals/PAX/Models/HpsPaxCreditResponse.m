@@ -14,7 +14,8 @@
 
 - (HpsBinaryDataScanner*) parseResponse{
     HpsBinaryDataScanner *reader = [super parseResponse];
-    if ([self.deviceResponseCode isEqualToString:@"000000"] || [self.deviceResponseCode isEqualToString:@"100011"]) {
+    //HR-9874 code 100011 is 'Duplicated transaction' and 103000 is 'Host rejected duplicated transaction' we need to parse response for both of them
+    if ([self.deviceResponseCode isEqualToString:@"000000"] || [self.deviceResponseCode isEqualToString:@"100011"]  || [self.deviceResponseCode isEqualToString:@"103000"]) {
         
         self.hostResponse = [[HpsPaxHostResponse alloc] initWithBinaryReader:reader];
         self.transactionType = [reader readStringUntilDelimiter:HpsControlCodes_FS];
