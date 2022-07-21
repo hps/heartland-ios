@@ -91,9 +91,6 @@
     if (self.tipRequest){
         [extData.collection setObject:@"1" forKey:PAX_EXT_DATA_TIP_REQUEST];
     }
-
-    [extData.collection setObject:@"1" forKey: @"ADDLRSPDATAREQUEST"];
-
     [subgroups addObject:extData];
     
     [device doCredit:PAX_TXN_TYPE_SALE_REDEEM andSubGroups:subgroups withResponseBlock:^(HpsPaxCreditResponse *response, NSError *error) {
