@@ -36,7 +36,7 @@ static int IsFieldEnable;
     }
     
     if ([cmdData has:@"response"]) {
-        self.transactionType = (NSString*)[cmdData get:@"response"];
+        self.transactionType = (NSString*)[cmdData getValue:@"response"];
     }
     
     if ([cmdData has:@"cmdResult"]) {
