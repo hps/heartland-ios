@@ -24,7 +24,6 @@ static int IsFieldEnable;
 -(id)initWithJSONDoc:(JsonDoc*)response
 {
     self = [self init];
-    self.transactionType = (NSString*)[response getValue:@"response"];
 
     JsonDoc* cmdData = [response get:@"data"];
     
@@ -36,6 +35,9 @@ static int IsFieldEnable;
         self.requestId = (NSString*)[cmdData getValue:@"requestId"];
     }
     
+    if ([cmdData has:@"response"]) {
+        self.transactionType = (NSString*)[cmdData get:@"response"];
+    }
     
     if ([cmdData has:@"cmdResult"]) {
         JsonDoc* cmdResult = [cmdData get:@"cmdResult"];
