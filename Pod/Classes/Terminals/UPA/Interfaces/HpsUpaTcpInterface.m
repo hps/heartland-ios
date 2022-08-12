@@ -66,8 +66,8 @@
 
 - (void)tcpInterfaceDidCloseStreams {
     [_events removeAllObjects];
-    BOOL forceClosed = _handlerJSONString == nil && _handlerError == nil;
-    if (forceClosed) [self errorOccurredForceClose];
+    BOOL closedEarly = _handlerJSONString == nil && _handlerError == nil;
+    if (closedEarly) [self errorOccurredUnexpectedClose];
     NSString *jsonString = [_handlerJSONString copy];
     JsonDoc *json = jsonString ? [JsonDoc parse:jsonString] : nil;
     NSError *error = [_handlerError copy];
@@ -133,6 +133,10 @@
 
 - (void)errorOccurredForceClose {
     [self errorOccurred:@"Force-closed TCP sockets."];
+}
+
+- (void)errorOccurredUnexpectedClose {
+    [self errorOccurred:@"TCP sockets closed unexpectedly."];
 }
 
 - (void)errorOccurredFailureResponse:(NSData *)data {
