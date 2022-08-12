@@ -66,6 +66,8 @@
 
 - (void)tcpInterfaceDidCloseStreams {
     [_events removeAllObjects];
+    BOOL forceClosed = _handlerJSONString == nil && _handlerError == nil;
+    if (forceClosed) [self errorOccurredForceClose];
     NSString *jsonString = [_handlerJSONString copy];
     JsonDoc *json = jsonString ? [JsonDoc parse:jsonString] : nil;
     NSError *error = [_handlerError copy];
