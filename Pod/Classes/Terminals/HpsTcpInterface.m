@@ -122,7 +122,7 @@
         _readByteIndex += len;
         [_delegate tcpInterfaceDidReadData:_inputBuffer];
     } else {
-        [self closeConnection];
+        [self readErrorOfStream:stream];
     }
 }
 
@@ -140,7 +140,7 @@
     NSUInteger len = MIN(dataLen - _writeByteIndex, BUF_SIZE);
     len = [stream write:bytes maxLength:len];
     if (len == -1) {
-        [self closeConnection];
+        [self readErrorOfStream:stream];
     } else if (len < dataLen) {
         _writeByteIndex += len;
     } else {
