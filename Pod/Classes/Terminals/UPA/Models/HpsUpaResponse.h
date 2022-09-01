@@ -93,7 +93,7 @@
 
 - (BOOL)isSuccess;
 - (BOOL)isDuplicateTransactionError;
-- (BOOL)isHostTimeoutError;
+- (BOOL)isHostCommunicationError;
 - (NSError *)responseError;
 
 @end

@@ -217,8 +217,7 @@ static int IsFieldEnable;
 
 /// if a response indicates that the UPA terminal
 /// did not receive a response from the host
-- (BOOL)isHostTimeoutError {
-#warning tbd - responseCode for this?
+- (BOOL)isHostCommunicationError {
     return [self.deviceResponseCode isEqualToString:@"HOST002"];
 }
 
