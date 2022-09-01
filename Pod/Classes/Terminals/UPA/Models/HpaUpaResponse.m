@@ -191,23 +191,38 @@ static int IsFieldEnable;
     }
 }
 
-/// if response received from a UPA terminal
-/// is a duplicate transaction error
+// MARK: General
+
+/// if a response failed
+- (BOOL)isSuccess {
+    return [self.status isEqualToString:@"Success"];
+}
+
+/// combines device response code & message
+- (NSString *)responseDescription {
+    NSMutableArray *parts = [NSMutableArray new];
+    if (self.deviceResponseCode) [parts addObject:self.deviceResponseCode];
+    if (self.deviceResponseMessage) [parts addObject:self.deviceResponseMessage];
+    return ![parts count] ? nil : [parts componentsJoinedByString:@" - "];
+}
+
+// MARK: Error
+
+/// if a response indicates the host
+/// flagged a transaction as a duplicate
 - (BOOL)isDuplicateTransactionError {
-#warning TBD - isDuplicateTransactionError
-    return NO;
+    return ([self.deviceResponseCode isEqualToString:@"HOST001"]
+            && [self.responseCode isEqualToString:@"2"]);
 }
 
 /// failed UPA terminal response formatted
 /// as an error object
 - (NSError *_Nullable)responseError {
-    NSString *code = self.deviceResponseCode;
-    if ([code length] == 0) { return nil; }
-    NSString *message = self.deviceResponseMessage;
-    if ([message length] == 0) { message = @"UPA TERMINAL ERROR"; }
+    if ([self isSuccess]) { return nil; }
     NSString *domain = @"com.mobilebytes.upa";
-    NSString *description = [NSString stringWithFormat:@"%@ - %@", code, message];
-    NSDictionary *userInfo = @{NSLocalizedDescriptionKey: description};
+    NSMutableDictionary *userInfo = [NSMutableDictionary new];
+    [userInfo setValue:[self responseDescription] forKey:NSLocalizedDescriptionKey];
+    [userInfo setValue:self.gatewayRspMsg forKey:NSLocalizedFailureReasonErrorKey];
     return [NSError errorWithDomain:domain code:1 userInfo:userInfo];
 }
 
