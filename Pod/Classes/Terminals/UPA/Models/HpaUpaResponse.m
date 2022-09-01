@@ -191,4 +191,24 @@ static int IsFieldEnable;
     }
 }
 
+/// if response received from a UPA terminal
+/// is a duplicate transaction error
+- (BOOL)isDuplicateTransactionError {
+#warning TBD - isDuplicateTransactionError
+    return NO;
+}
+
+/// failed UPA terminal response formatted
+/// as an error object
+- (NSError *_Nullable)responseError {
+    NSString *code = self.deviceResponseCode;
+    if ([code length] == 0) { return nil; }
+    NSString *message = self.deviceResponseMessage;
+    if ([message length] == 0) { message = @"UPA TERMINAL ERROR"; }
+    NSString *domain = @"com.mobilebytes.upa";
+    NSString *description = [NSString stringWithFormat:@"%@ - %@", code, message];
+    NSDictionary *userInfo = @{NSLocalizedDescriptionKey: description};
+    return [NSError errorWithDomain:domain code:1 userInfo:userInfo];
+}
+
 @end
