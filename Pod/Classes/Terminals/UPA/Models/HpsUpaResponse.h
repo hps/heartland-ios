@@ -91,6 +91,7 @@
 @property (nonatomic,strong) NSString *upaEmvSdkVersion;
 @property (nonatomic,strong) NSString *upaContactlessSdkVersion;
 
+- (BOOL)isSuccess;
 - (BOOL)isDuplicateTransactionError;
 - (NSError *)responseError;
 
