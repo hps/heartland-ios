@@ -215,6 +215,13 @@ static int IsFieldEnable;
             && [self.responseCode isEqualToString:@"2"]);
 }
 
+/// if a response indicates that the UPA terminal
+/// did not receive a response from the host
+- (BOOL)isHostTimeoutError {
+#warning tbd - responseCode for this?
+    return [self.deviceResponseCode isEqualToString:@"HOST002"];
+}
+
 /// failed UPA terminal response formatted
 /// as an error object
 - (NSError *_Nullable)responseError {
