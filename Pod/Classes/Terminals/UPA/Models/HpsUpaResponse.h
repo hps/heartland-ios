@@ -92,6 +92,7 @@
 @property (nonatomic,strong) NSString *upaContactlessSdkVersion;
 
 - (BOOL)isSuccess;
+- (NSString *)duplicateTransactionId;
 - (BOOL)isDuplicateTransactionError;
 - (BOOL)isHostCommunicationError;
 - (NSError *)responseError;

@@ -208,6 +208,25 @@ static int IsFieldEnable;
 
 // MARK: Error
 
+/// message should be in the format:
+///     "Transaction was rejected because it is a duplicate. Subject '200034100740'."
+- (NSString *)duplicateTransactionId {
+    if (![self isDuplicateTransactionError]) return nil;
+    // check gateway message exists
+    NSString *message = self.gatewayRspMsg;
+    if (![message length]) return nil;
+    // find last word of message (should be id in quotes)
+    NSArray *parts = [message componentsSeparatedByString:@" "];
+    NSString *transactionId = [parts lastObject];
+    if (!transactionId) return nil;
+    // strip down to a number value
+    transactionId = [[transactionId componentsSeparatedByCharactersInSet:
+                      [[NSCharacterSet decimalDigitCharacterSet] invertedSet]]
+                     componentsJoinedByString:@""];
+    // check number value left
+    return [transactionId integerValue] ? transactionId : nil;
+}
+
 /// if a response indicates the host
 /// flagged a transaction as a duplicate
 - (BOOL)isDuplicateTransactionError {
