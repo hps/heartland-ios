@@ -39,7 +39,7 @@
 }
 
 - (BOOL)gmsResponseIsTimeout {
-    return [self.deviceResponseCode isEqualToString:@"hostTimeout"];
+    return ( [self.deviceResponseCode isEqualToString:@"hostTimeout"] || [self.deviceResponseCode containsString:@"Transaction has timed out"]);
 }
 
 - (BOOL)gmsResponseOriginalTransactionInvalid {
