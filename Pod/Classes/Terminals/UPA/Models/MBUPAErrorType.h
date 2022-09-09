@@ -5,7 +5,7 @@
 //  Created by Desimini, Wilson on 9/9/22.
 //
 
-typedef enum : NSUInteger {
+typedef NS_ENUM(NSUInteger, MBUPAErrorType) {
     MBUPAErrorTypeNone = 0,
     MBUPAErrorTypeDeviceBusy,
     MBUPAErrorTypeDeviceTimeout,
@@ -13,4 +13,4 @@ typedef enum : NSUInteger {
     MBUPAErrorTypeConnectionUnexpectedClose,
     MBUPAErrorTypeCommunicationInvalidMessage,
     MBUPAErrorTypeUnknown,
-} MBUPAErrorType;
+};
