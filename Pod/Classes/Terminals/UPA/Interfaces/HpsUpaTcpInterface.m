@@ -7,6 +7,7 @@
 #import "HpsTerminalUtilities.h"
 #import "HpsUpaRequest.h"
 #import "JsonDoc.h"
+#import "MBUPAErrorType.h"
 
 #define BUF_SIZE 8192
 
@@ -42,7 +43,7 @@
 
 - (void)disconnect {
     if (_handler == nil) return;
-    [self errorOccurredForceClose];
+    [self errorOccurred:MBUPAErrorTypeConnectionForceClose];
     [_interface closeConnection];
 }
 
@@ -67,7 +68,7 @@
 - (void)tcpInterfaceDidCloseStreams {
     [_events removeAllObjects];
     BOOL closedEarly = _handlerJSONString == nil && _handlerError == nil;
-    if (closedEarly) [self errorOccurredUnexpectedClose];
+    if (closedEarly) [self errorOccurred:MBUPAErrorTypeConnectionUnexpectedClose];
     NSString *jsonString = [_handlerJSONString copy];
     JsonDoc *json = jsonString ? [JsonDoc parse:jsonString] : nil;
     NSError *error = [_handlerError copy];
@@ -87,9 +88,13 @@
         [self storeResponseFromRaw:data];
         [self executeNextMessage];
     } else {
-        [self rawIsFailureResponse:data]
-        ? [self errorOccurredFailureResponse:data]
-        : [self errorOccurredInvalidMessage:data];
+        if ([self rawIsBusyResponse:data]) {
+            [self errorOccurred:MBUPAErrorTypeDeviceBusy];
+        } else if ([self rawIsTimeoutResponse:data]) {
+            [self errorOccurred:MBUPAErrorTypeDeviceTimeout];
+        } else {
+            [self errorOccurred:MBUPAErrorTypeCommunicationInvalidMessage];
+        }
         [_interface closeConnection];
     }
 }
@@ -123,31 +128,13 @@
     ]];
 }
 
-- (void)errorOccurred:(NSString *)description {
+- (void)errorOccurred:(MBUPAErrorType)errorType {
     NSString *domain = HpsCommon.sharedInstance.hpsErrorDomain;
+    NSString *description = [HpsUpaParser descriptionOfMBUPAErrorType:errorType];
     description = [NSString stringWithFormat:@"UPA response error - %@", description];
     NSDictionary *userInfo = @{NSLocalizedDescriptionKey: description};
-    NSError *error = [NSError errorWithDomain:domain code:CocoaError userInfo:userInfo];
+    NSError *error = [NSError errorWithDomain:domain code:errorType userInfo:userInfo];
     [self setHandlerError:error];
-}
-
-- (void)errorOccurredForceClose {
-    [self errorOccurred:@"Force-closed TCP sockets."];
-}
-
-- (void)errorOccurredUnexpectedClose {
-    [self errorOccurred:@"TCP sockets closed unexpectedly."];
-}
-
-- (void)errorOccurredFailureResponse:(NSData *)data {
-    UPA_MSG_TYPE messageType = [HpsUpaParser messageTypeFromUPARaw:data];
-    NSString *messageTypeDescription = [HpsUpaParser descriptionOfMessageType:messageType];
-    NSString *description = [NSString stringWithFormat:@"Failure - %@", messageTypeDescription];
-    [self errorOccurred:description];
-}
-
-- (void)errorOccurredInvalidMessage:(NSData *)data {
-    [self errorOccurred:@"Invalid message."];
 }
 
 - (void)executeNextMessage {
@@ -171,9 +158,12 @@
     return received == _events[0].messageType;
 }
 
-- (BOOL)rawIsFailureResponse:(NSData *)data {
-    UPA_MSG_TYPE received = [HpsUpaParser messageTypeFromUPARaw:data];
-    return received == UPA_MSG_TYPE_BUSY || received == UPA_MSG_TYPE_TIMEOUT;
+- (BOOL)rawIsBusyResponse:(NSData *)data {
+    return [HpsUpaParser messageTypeFromUPARaw:data] == UPA_MSG_TYPE_BUSY;
+}
+
+- (BOOL)rawIsTimeoutResponse:(NSData *)data {
+    return [HpsUpaParser messageTypeFromUPARaw:data] == UPA_MSG_TYPE_TIMEOUT;
 }
 
 - (BOOL)rawIsPartialResponse:(NSData *)data {

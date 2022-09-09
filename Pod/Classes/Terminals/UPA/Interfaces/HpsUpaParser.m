@@ -43,14 +43,22 @@
                                  encoding:NSUTF8StringEncoding];
 }
 
-+ (NSString *)descriptionOfMessageType:(UPA_MSG_TYPE)messageType {
-    switch (messageType) {
-        case UPA_MSG_TYPE_BUSY:
++ (NSString *)descriptionOfMBUPAErrorType:(MBUPAErrorType)errorType {
+    switch (errorType) {
+        case MBUPAErrorTypeNone:
+            return nil;
+        case MBUPAErrorTypeDeviceBusy:
             return @"UPA device is busy.";
-        case UPA_MSG_TYPE_TIMEOUT:
+        case MBUPAErrorTypeDeviceTimeout:
             return @"UPA device timed out.";
+        case MBUPAErrorTypeConnectionForceClose:
+            return @"UPA device connection was forced closed";
+        case MBUPAErrorTypeConnectionUnexpectedClose:
+            return @"UPA device connection closed unexpectedly";
+        case MBUPAErrorTypeCommunicationInvalidMessage:
+            return @"Invalid message received from UPA device";
         default:
-            return @"";
+            return @"Unknown UPA Error";
     }
 }
 
