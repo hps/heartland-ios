@@ -124,7 +124,8 @@
         [[HpsUpaEvent alloc] initWithMessageType:UPA_MSG_TYPE_ACK],
         [[HpsUpaEvent alloc] initWithMessageType:UPA_MSG_TYPE_MSG],
         [[HpsUpaEvent alloc] initWithMessageType:UPA_MSG_TYPE_ACK
-                                        sendBody:[self ackSend]]
+                                        sendBody:[self ackSend]],
+        [[HpsUpaEvent alloc] initWithMessageType:UPA_MSG_TYPE_READY]
     ]];
 }
 
