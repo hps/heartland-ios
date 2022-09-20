@@ -17,6 +17,7 @@
 - (instancetype) get:(NSString*)key;
 - (NSObject*) getValue:(NSString*)key;
 - (BOOL) has:(NSString*)key;
+- (NSString *) getValueAsString:(NSString *)key;
 + (instancetype) parse:(NSString*)json;
 
 @end
