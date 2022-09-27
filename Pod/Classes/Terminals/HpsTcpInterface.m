@@ -60,6 +60,7 @@
     [self setOutputStream:nil];
     [self resetInputBuffer];
     [self resetOutputBuffer];
+    [_config.logger hpsInterfaceDidDisconnect];
     [_delegate tcpInterfaceDidCloseStreams];
 }
 
@@ -120,6 +121,7 @@
     if (len > 0) {
         [_inputBuffer appendBytes:(const void *)buf length:len];
         _readByteIndex += len;
+        [_config.logger hpsInterfaceDidReceiveData:[_inputBuffer copy]];
         [_delegate tcpInterfaceDidReadData:_inputBuffer];
     } else {
         [self readErrorOfStream:stream];
@@ -128,6 +130,7 @@
 
 - (void)readErrorOfStream:(NSStream *)stream {
     NSError *error = [stream streamError];
+    [_config.logger hpsInterfaceDidReceiveError:[error copy]];
     [_delegate tcpInterfaceDidReceiveStreamError:error];
     [self closeConnection];
 }
