@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "HpsInterfaceLogging.h"
 
 @interface HpsConnectionConfig : NSObject
 
@@ -20,5 +21,7 @@
 @property (nonatomic, strong) NSString *password;
 @property (nonatomic, strong) NSString *deviceID;
 @property (nonatomic) BOOL isProduction;
+
+@property (nonatomic, strong) id<HpsInterfaceLogging> logger;
 
 @end
