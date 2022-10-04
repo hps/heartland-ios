@@ -1,6 +1,6 @@
 #import "HpsTerminalResponse.h"
 #import "HpsHpaSharedParams.h"
-#import <Heartland_iOS_SDK/Heartland_iOS_SDK-Swift.h>
+#import "Heartland_iOS_SDK-Swift.h"
 
 @implementation HpsTerminalResponse
 
