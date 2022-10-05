@@ -453,6 +453,8 @@
 		EF8A6D02286F5479001BBBE4 /* HpsUpaParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EF8A6D00286F5479001BBBE4 /* HpsUpaParser.m */; };
 		EF8A6D0D286F87A8001BBBE4 /* HpsUpaEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = EF8A6D0B286F87A8001BBBE4 /* HpsUpaEvent.h */; };
 		EF8A6D0E286F87A8001BBBE4 /* HpsUpaEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = EF8A6D0C286F87A8001BBBE4 /* HpsUpaEvent.m */; };
+		EFABB59A28EE182B00AECD6E /* NSString+HexParser.h in Headers */ = {isa = PBXBuildFile; fileRef = EFABB59828EE182B00AECD6E /* NSString+HexParser.h */; };
+		EFABB59B28EE182B00AECD6E /* NSString+HexParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EFABB59928EE182B00AECD6E /* NSString+HexParser.m */; };
 		EFB5CD0BD4A01015B0C60C5C038CF09C /* GMSDeviceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B2E90D270AC1E1F616B4CBDFAE866 /* GMSDeviceInterface.swift */; };
 		EFD887F728CBA1D400105D14 /* MBUPAErrorType.h in Headers */ = {isa = PBXBuildFile; fileRef = EFD887F628CB9CB100105D14 /* MBUPAErrorType.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EFDFA24F1DAB017A7AD4F5E984838012 /* HpsPaxGiftAddValueBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D0B1E6ADAFC529E3AB720C4F5BFD06 /* HpsPaxGiftAddValueBuilder.m */; };
@@ -1062,6 +1064,8 @@
 		EF8A6D00286F5479001BBBE4 /* HpsUpaParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsUpaParser.m; sourceTree = "<group>"; };
 		EF8A6D0B286F87A8001BBBE4 /* HpsUpaEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsUpaEvent.h; sourceTree = "<group>"; };
 		EF8A6D0C286F87A8001BBBE4 /* HpsUpaEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsUpaEvent.m; sourceTree = "<group>"; };
+		EFABB59828EE182B00AECD6E /* NSString+HexParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+HexParser.h"; sourceTree = "<group>"; };
+		EFABB59928EE182B00AECD6E /* NSString+HexParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+HexParser.m"; sourceTree = "<group>"; };
 		EFD887F628CB9CB100105D14 /* MBUPAErrorType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBUPAErrorType.h; sourceTree = "<group>"; };
 		EFF08A0F28E377E90061022E /* HpsInterfaceLogging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsInterfaceLogging.h; sourceTree = "<group>"; };
 		F02F7B96B7E734545C6BC4EA25DB8154 /* HpsPayrollCollectionItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPayrollCollectionItem.h; sourceTree = "<group>"; };
@@ -1544,6 +1548,8 @@
 				65A559421FF3A708D8C9B3105A04DC92 /* HpsTerminalUtilities.m */,
 				9F2A3C6A6C41D15B00EEB6A764532376 /* NSObject+ObjectMap.h */,
 				6D915B1052D8988D35FF16962848E428 /* NSObject+ObjectMap.m */,
+				EFABB59828EE182B00AECD6E /* NSString+HexParser.h */,
+				EFABB59928EE182B00AECD6E /* NSString+HexParser.m */,
 				AF75C4548176B887545DDAC88139627B /* GlobalMobileSDK */,
 				345F6DE32783C982002DC1CC /* JsonDoc.h */,
 				345F6DE52783CBF7002DC1CC /* JsonDoc.m */,
@@ -2313,6 +2319,7 @@
 				345F6DD4278373B5002DC1CC /* HpsUpaDevice.h in Headers */,
 				FABFE7667D61C0E368B370EFB11538DE /* NSMutableDictionary+ShiftAssignments.h in Headers */,
 				07CC380120B5FB579727678E87F6EF50 /* NSObject+ObjectMap.h in Headers */,
+				EFABB59A28EE182B00AECD6E /* NSString+HexParser.h in Headers */,
 				62802BB6582536B3D656351FA3535652 /* Record.h in Headers */,
 				F79AB20C574B26CF75773B104E316767 /* Rfc2898DeriveBytes.h in Headers */,
 				735A8828721A62286BB79C45D58E48F8 /* SummaryResponse.h in Headers */,
@@ -2782,6 +2789,7 @@
 				B5BEF2B9AF0E5149D181865C2F4A25A5 /* HpsPaxTcpInterface.m in Sources */,
 				63A4160C1FB20B553546A527ABA9B009 /* HpsPaxTraceRequest.m in Sources */,
 				B6A7E946762607381FE9A23A88564A60 /* HpsPaxTraceResponse.m in Sources */,
+				EFABB59B28EE182B00AECD6E /* NSString+HexParser.m in Sources */,
 				DCFB3F6CF46F0D019AC1E19E2AF89B83 /* HpsPayGroup.m in Sources */,
 				92C5C96D01DEC89DEA5B768CE3776A29 /* HpsPayItem.m in Sources */,
 				DDAEE27CF01D8E47F683ED0D79D79D5A /* HpsPayrollCollectionItem.m in Sources */,
