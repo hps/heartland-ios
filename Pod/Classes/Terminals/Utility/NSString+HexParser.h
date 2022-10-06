@@ -10,5 +10,6 @@
 @interface NSString (HexParser)
 
 + (instancetype)stringWithHex:(NSString *)hex;
+- (instancetype)convertedFromHexadecimal;
 
 @end

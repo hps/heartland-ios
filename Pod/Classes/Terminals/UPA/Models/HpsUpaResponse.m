@@ -139,9 +139,9 @@ static int IsFieldEnable;
     
     if ([data has:@"emv"]) {
         JsonDoc* emv = [data get:@"emv"];
-        self.applicationName = (NSString*)[emv getValue:@"50"];
+        self.applicationName = [(NSString*)[emv getValue:@"50"] convertedFromHexadecimal];
         self.applicationId = (NSString*)[emv getValue:@"9F06"];
-        self.applicationPrefferedName = (NSString*)[emv getValue:@"9F12"];
+        self.applicationPrefferedName = [(NSString*)[emv getValue:@"9F12"] convertedFromHexadecimal];
         self.applicationCrytptogram = (NSString*)[emv getValue:@"9F26"];
         
         NSString* cryptotype = (NSString*)[emv getValue:@"9F27"];
@@ -155,8 +155,6 @@ static int IsFieldEnable;
             self.applicationCryptogramType = ARQC;
             self.applicationCryptogramTypeS = [HpsTerminalEnums applicationCryptogramTypeToString:self.applicationCryptogramType];
         }
-        
-        [self convertHexadecimals];
     }
     
     return self;
@@ -192,13 +190,6 @@ static int IsFieldEnable;
         [[HpsHpaSharedParams getInstance]addParaMeter:Record.TableCategory withValues:Record.Fields];
         [[HpsHpaSharedParams getInstance]addParamInArray:Record.TableCategory withValues:Record.FieldsArray];
     }
-}
-
-- (void)convertHexadecimals {
-    NSString *(^asText)(NSString *) =
-        ^(NSString *hex){ return hex ? [NSString stringWithHex:hex] : nil; };
-    [self setApplicationName:asText(self.applicationName)];
-    [self setApplicationPrefferedName:asText(self.applicationPrefferedName)];
 }
 
 // MARK: General

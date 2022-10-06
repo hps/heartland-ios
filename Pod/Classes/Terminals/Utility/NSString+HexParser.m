@@ -22,4 +22,8 @@
     return [NSString stringWithString:temp];
 }
 
+- (instancetype)convertedFromHexadecimal {
+    return [NSString stringWithHex:self];
+}
+
 @end
