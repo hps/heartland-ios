@@ -199,7 +199,6 @@ static int IsFieldEnable;
         ^(NSString *hex){ return hex ? [NSString stringWithHex:hex] : nil; };
     [self setApplicationName:asText(self.applicationName)];
     [self setApplicationPrefferedName:asText(self.applicationPrefferedName)];
-    [self setApplicationCrytptogram:asText(self.applicationCrytptogram)];
 }
 
 // MARK: General
