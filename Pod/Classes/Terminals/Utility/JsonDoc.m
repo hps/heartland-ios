@@ -44,7 +44,7 @@
     NSDictionary* finalizedDict = [self finalize];
     NSError *e = nil;
     NSData *data = [NSJSONSerialization dataWithJSONObject:finalizedDict options:kNilOptions error:&e];
-    
+
     NSString* str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     return [str stringByReplacingOccurrencesOfString:@"\\/" withString:@"/"];
 }
@@ -67,7 +67,7 @@
     if ([self has:key]) {
         return [[JsonDoc alloc] initWithDictionary:[_dict objectForKey:key]];
     }
-    
+
     return nil;
 }
 
@@ -79,6 +79,15 @@
 - (BOOL) has:(NSString*)key
 {
     return [_dict valueForKey:key] != nil;
+}
+
+- (NSString *) getValueAsString:(NSString *)key{
+    NSObject* value = [self getValue:key];
+    if (value == nil) {
+        return nil;
+    }
+
+    return [NSString stringWithFormat:@"%@", value];
 }
 
 + (instancetype) parse:(NSString*)json

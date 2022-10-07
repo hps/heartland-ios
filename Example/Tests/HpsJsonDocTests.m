@@ -46,4 +46,12 @@
     XCTAssertTrue([value isEqualToString:@"value3"]);
 }
 
+- (void) test_GetValueAsString
+{
+    JsonDoc* doc = [[JsonDoc alloc] initWithDictionary:@{@"number": 1234567890}];
+    XCTAssertTrue([doc has:@"number"]);
+    NSString* value = (NSString*)[doc getValueAsString:@"number"];
+    XCTAssertTrue([value isEqualToString:@"1234567890"]);
+}
+
 @end
