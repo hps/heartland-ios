@@ -25,7 +25,6 @@ static int IsFieldEnable;
 -(id)initWithJSONDoc:(JsonDoc*)response
 {
     self = [self init];
-    self.transactionType = [response getValueAsString:@"response"];
 
     JsonDoc* cmdData = [response get:@"data"];
 
@@ -37,6 +36,9 @@ static int IsFieldEnable;
         self.requestId = [cmdData getValueAsString:@"requestId"];
     }
 
+    if ([cmdData has:@"response"]) {
+        self.transactionType = [cmdData getValueAsString:@"response"];
+    }
 
     if ([cmdData has:@"cmdResult"]) {
         JsonDoc* cmdResult = [cmdData get:@"cmdResult"];
