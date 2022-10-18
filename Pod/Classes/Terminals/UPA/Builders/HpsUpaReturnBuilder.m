@@ -13,7 +13,7 @@
 
 - (void) execute:(void(^)(HpsUpaResponse*, NSError*))responseBlock{
     [self validate];
-    
+
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setMinimumFractionDigits:2];
     [formatter setMaximumFractionDigits:2];
@@ -29,32 +29,31 @@
         request.data.requestId = [NSString stringWithFormat:@"%d", [device generateNumber]];
     }
     request.data.data = [[HpsUpaData alloc] init];
-    
+
     request.data.data.params = [[HpsUpaParams alloc] init];
     request.data.data.params.clerkId = self.clerkId;
-    request.data.data.params.tokenRequest = self.requestMultiUseToken ? @"1" : @"0";
     request.data.data.params.tokenValue = self.token;
     request.data.data.params.cardBrandTransId = self.cardBrandTransactionId;
     if ((self.requestMultiUseToken || self.cardBrandTransactionId != nil) && self.storedCardInitiator != HpsStoredCardInitiator_None) {
         request.data.data.params.cardOnFileIndicator = HpsStoredCardInitiator_toString[self.storedCardInitiator];
     }
-    
+
     request.data.data.transaction = [[HpsUpaTransaction alloc] init];
     if (self.transactionId != nil) {
         request.data.data.transaction.referenceNumber = self.transactionId;
     }
     request.data.data.transaction.totalAmount = self.amount != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[self.amount doubleValue]]] : nil;
-    
+
     if (self.details != nil) {
         request.data.data.transaction.invoiceNbr = self.details.invoiceNumber;
     }
-    
+
     [device processTransactionWithRequest:request withResponseBlock:^(id<IHPSDeviceResponse> response, NSError * error) {
         if (error != nil) {
             responseBlock(nil, error);
             return;
         }
-        
+
         responseBlock((HpsUpaResponse*)response, nil);
     }];
 }
@@ -65,7 +64,7 @@
     if (self.amount == nil || self.amount <= 0) {
         @throw [NSException exceptionWithName:@"HpsUpaException" reason:@"Amount is required." userInfo:nil];
     }
-    
+
     //Too many payment types
     int i = 0;
     if (self.token != nil && self.token.length > 0) i++;
