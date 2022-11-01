@@ -36,10 +36,11 @@
 		DBF1DE8B1FB9AEF100D57C16 /* Hps_Hpa_Debit_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF1DE8A1FB9AEF100D57C16 /* Hps_Hpa_Debit_Test.m */; };
 		DBF1DE8D1FB9AF0900D57C16 /* Hps_Hpa_Gift_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF1DE8C1FB9AF0900D57C16 /* Hps_Hpa_Gift_Test.m */; };
 		DD12CF3A290C6B05007C2275 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD12CF34290C6B05007C2275 /* AppDelegate.swift */; };
-		DD12CF3D290C6B05007C2275 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD12CF37290C6B05007C2275 /* ViewController.swift */; };
+		DD12CF3D290C6B05007C2275 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD12CF37290C6B05007C2275 /* MainViewController.swift */; };
 		DD12CF40290C6C1E007C2275 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD12CF3E290C6B60007C2275 /* Main.storyboard */; };
 		DD12CF41290C6C21007C2275 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD12CF3F290C6B60007C2275 /* LaunchScreen.storyboard */; };
 		DD12CF43290C6CB3007C2275 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD12CF42290C6CB3007C2275 /* Assets.xcassets */; };
+		DD12CF4529117679007C2275 /* ConnectC2XViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD12CF4429117679007C2275 /* ConnectC2XViewController.swift */; };
 		E2576C2D243C78D1002E4CA4 /* Hps_Pax_Report_test.m in Sources */ = {isa = PBXBuildFile; fileRef = E2576C2C243C78D1002E4CA4 /* Hps_Pax_Report_test.m */; };
 		E2A3363B2455C6950041AD64 /* Hps_Pax_Batch_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A3363A2455C6950041AD64 /* Hps_Pax_Batch_Tests.m */; };
 		E2B1C1BC2403DFF20040D5C7 /* Hps_Hpa_EOD_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B1C1BB2403DFF20040D5C7 /* Hps_Hpa_EOD_Test.m */; };
@@ -101,10 +102,11 @@
 		DBF1DE8C1FB9AF0900D57C16 /* Hps_Hpa_Gift_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_Gift_Test.m; sourceTree = "<group>"; };
 		DD12CF31290C6B02007C2275 /* Heartland-iOS-SDK_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Heartland-iOS-SDK_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		DD12CF34290C6B05007C2275 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		DD12CF37290C6B05007C2275 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = SOURCE_ROOT; };
+		DD12CF37290C6B05007C2275 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = SOURCE_ROOT; };
 		DD12CF3E290C6B60007C2275 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DD12CF3F290C6B60007C2275 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD12CF42290C6CB3007C2275 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD12CF4429117679007C2275 /* ConnectC2XViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectC2XViewController.swift; sourceTree = "<group>"; };
 		E2576C2C243C78D1002E4CA4 /* Hps_Pax_Report_test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_Report_test.m; sourceTree = "<group>"; };
 		E2A3363A2455C6950041AD64 /* Hps_Pax_Batch_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_Batch_Tests.m; sourceTree = "<group>"; };
 		E2B1C1BB2403DFF20040D5C7 /* Hps_Hpa_EOD_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_EOD_Test.m; sourceTree = "<group>"; };
@@ -187,7 +189,8 @@
 				DD12CF3F290C6B60007C2275 /* LaunchScreen.storyboard */,
 				DD12CF3E290C6B60007C2275 /* Main.storyboard */,
 				DD12CF34290C6B05007C2275 /* AppDelegate.swift */,
-				DD12CF37290C6B05007C2275 /* ViewController.swift */,
+				DD12CF37290C6B05007C2275 /* MainViewController.swift */,
+				DD12CF4429117679007C2275 /* ConnectC2XViewController.swift */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for Heartland-iOS-SDK";
@@ -495,7 +498,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD12CF3A290C6B05007C2275 /* AppDelegate.swift in Sources */,
-				DD12CF3D290C6B05007C2275 /* ViewController.swift in Sources */,
+				DD12CF4529117679007C2275 /* ConnectC2XViewController.swift in Sources */,
+				DD12CF3D290C6B05007C2275 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

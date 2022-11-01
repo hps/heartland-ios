@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,7 +28,7 @@
         <!--Heartland Sample App-->
         <scene sceneID="ehh-Ma-qoO">
             <objects>
-                <tableViewController id="lCO-xZ-ktI" sceneMemberID="viewController">
+                <tableViewController id="lCO-xZ-ktI" customClass="MainViewController" customModule="Heartland_iOS_SDK_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="UxA-7K-8S4">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,6 +59,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="U8d-gP-Otm" kind="show" id="5rV-db-Dhy"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Dcn-fL-fls" detailTextLabel="fFQ-yf-vFO" rowHeight="70" style="IBUITableViewCellStyleSubtitle" id="5Cz-ng-2kM">
                                         <rect key="frame" x="0.0" y="120" width="390" height="70"/>
@@ -148,6 +152,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1z6-fL-FH3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-129.23076923076923" y="-63.270142180094787"/>
+        </scene>
+        <!--Connect to C2X Device-->
+        <scene sceneID="0yR-e1-qBm">
+            <objects>
+                <viewController id="U8d-gP-Otm" customClass="ConnectC2XViewController" customModule="Heartland_iOS_SDK_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fCl-sZ-Edr">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="pA6-tP-kni">
+                                <rect key="frame" x="33.666666666666657" y="379.66666666666669" width="322.66666666666674" height="84.666666666666686"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="94c-BF-pnA">
+                                        <rect key="frame" x="0.0" y="0.0" width="322.66666666666669" height="20.333333333333332"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connection Status:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMz-Ke-lvB">
+                                                <rect key="frame" x="0.0" y="0.0" width="156.33333333333334" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disconnected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ky-Qu-pBR">
+                                                <rect key="frame" x="166.33333333333331" y="0.0" width="156.33333333333331" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="6Ar-tB-Ktp">
+                                        <rect key="frame" x="67" y="50.333333333333314" width="189" height="34.333333333333343"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSy-N7-uEA">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Scan"/>
+                                                <connections>
+                                                    <action selector="scanButtonPressed" destination="U8d-gP-Otm" eventType="touchUpInside" id="cQe-f3-xW9"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmI-3D-bah">
+                                                <rect key="frame" x="109" y="0.0" width="80" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Rescan"/>
+                                                <connections>
+                                                    <action selector="rescanButtonPressed" destination="U8d-gP-Otm" eventType="touchUpInside" id="gig-UX-cIx"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jAj-k0-8zf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pA6-tP-kni" firstAttribute="centerY" secondItem="fCl-sZ-Edr" secondAttribute="centerY" id="9Wf-R8-W56"/>
+                            <constraint firstItem="pA6-tP-kni" firstAttribute="centerX" secondItem="fCl-sZ-Edr" secondAttribute="centerX" id="AtB-aP-o6y"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Connect to C2X Device" id="uZ3-LC-hyW"/>
+                    <connections>
+                        <outlet property="connectionLabel" destination="3ky-Qu-pBR" id="FHh-m8-M7S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cGb-N6-kjD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="973.84615384615381" y="-400.23696682464453"/>
         </scene>
     </scenes>
     <resources>
