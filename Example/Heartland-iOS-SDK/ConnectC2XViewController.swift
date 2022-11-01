@@ -20,7 +20,7 @@ class ConnectC2XViewController: UIViewController {
         config.versionNumber = "3409"
         
         let device = HpsC2xDevice(config: config)
-        
+        device.scan()
         
     }
     
