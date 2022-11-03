@@ -182,38 +182,38 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="6Ar-tB-Ktp">
-                                        <rect key="frame" x="67" y="50.333333333333314" width="189" height="34.333333333333343"/>
+                                        <rect key="frame" x="130.33333333333334" y="50.333333333333314" width="62" height="34.333333333333343"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSy-N7-uEA">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="34.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="62" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Scan"/>
                                                 <connections>
                                                     <action selector="scanButtonPressed" destination="U8d-gP-Otm" eventType="touchUpInside" id="cQe-f3-xW9"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmI-3D-bah">
-                                                <rect key="frame" x="109" y="0.0" width="80" height="34.333333333333336"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Rescan"/>
-                                                <connections>
-                                                    <action selector="rescanButtonPressed" destination="U8d-gP-Otm" eventType="touchUpInside" id="gig-UX-cIx"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="BGP-0i-buB">
+                                <rect key="frame" x="185" y="483" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jAj-k0-8zf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="pA6-tP-kni" firstAttribute="centerY" secondItem="fCl-sZ-Edr" secondAttribute="centerY" id="9Wf-R8-W56"/>
                             <constraint firstItem="pA6-tP-kni" firstAttribute="centerX" secondItem="fCl-sZ-Edr" secondAttribute="centerX" id="AtB-aP-o6y"/>
+                            <constraint firstItem="BGP-0i-buB" firstAttribute="leading" secondItem="jAj-k0-8zf" secondAttribute="leading" constant="185" id="GCq-d3-SUQ"/>
+                            <constraint firstItem="jAj-k0-8zf" firstAttribute="bottom" secondItem="BGP-0i-buB" secondAttribute="bottom" constant="307" id="KoW-We-XUN"/>
+                            <constraint firstItem="BGP-0i-buB" firstAttribute="centerX" secondItem="pA6-tP-kni" secondAttribute="centerX" id="iqW-M8-NZ0"/>
+                            <constraint firstItem="BGP-0i-buB" firstAttribute="top" secondItem="pA6-tP-kni" secondAttribute="bottom" constant="18.666666666666686" id="jFs-aV-O1W"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Connect to C2X Device" id="uZ3-LC-hyW"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="BGP-0i-buB" id="eke-XL-7p1"/>
                         <outlet property="connectionLabel" destination="3ky-Qu-pBR" id="FHh-m8-M7S"/>
                     </connections>
                 </viewController>
