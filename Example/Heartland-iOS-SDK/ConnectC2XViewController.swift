@@ -10,9 +10,11 @@ import CoreBluetooth
 class ConnectC2XViewController: UIViewController {
     
     private var device: HpsC2xDevice?
+    private let notificationCenter: NotificationCenter = NotificationCenter.default
     
     @IBOutlet var connectionLabel: UILabel!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var scanButton: UIStackView!
     
     @IBAction func scanButtonPressed() {
         let config = HpsConnectionConfig()
@@ -34,6 +36,10 @@ class ConnectC2XViewController: UIViewController {
 extension ConnectC2XViewController: HpsC2xDeviceDelegate {
     func onConnected() {
         self.connectionLabel.text = "Connected"
+        
+        let selectedDevice:[String: HpsC2xDevice?] = ["selectedDevice": self.device]
+        notificationCenter.post(name: Notification.Name(Constants.selectedDeviceNotification),
+                                object: nil, userInfo: selectedDevice)
     }
     
     func onDisconnected() {
@@ -59,9 +65,22 @@ extension ConnectC2XViewController: HpsC2xDeviceDelegate {
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
         alertController.addAction(cancelAction)
-        
+        if case .pad = UIDevice.current.userInterfaceIdiom {
+            alertController.popoverPresentationController?.sourceView = scanButton
+            alertController.popoverPresentationController?.sourceRect = scanButton.bounds
+            alertController.popoverPresentationController?.permittedArrowDirections = .down
+        }
         self.present(alertController, animated: true)
         
         self.activityIndicator.isHidden = true
+    }
+}
+
+// MARK: - IDIOM
+
+private extension ConnectC2XViewController {
+    enum UIUserInterfaceIdiom : Int {
+        case phone // iPhone and iPod touch style UI
+        case pad   // iPad style UI (also includes macOS Catalyst)
     }
 }

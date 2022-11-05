@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14BB79F32915E4D00043D0E5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BB79F22915E4D00043D0E5 /* Constants.swift */; };
+		14BB79F62915E9D60043D0E5 /* C2XTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BB79F52915E9D60043D0E5 /* C2XTransactionsViewController.swift */; };
 		3456ADAD25CB03F1000484E8 /* Hps_C2X_Device_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 3456ADAC25CB03F1000484E8 /* Hps_C2X_Device_Test.m */; };
 		3456ADB325CB0442000484E8 /* Hps_C2X_Credit_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 3456ADB225CB0442000484E8 /* Hps_C2X_Credit_Test.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -59,6 +61,8 @@
 
 /* Begin PBXFileReference section */
 		08D636DD28A9667ED2741E32 /* Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig"; path = "Pods/Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig"; sourceTree = "<group>"; };
+		14BB79F22915E4D00043D0E5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		14BB79F52915E9D60043D0E5 /* C2XTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C2XTransactionsViewController.swift; sourceTree = "<group>"; };
 		253ABA11EC670E90EACA486A /* Pods-Heartland-iOS-SDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartland-iOS-SDK_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		2D472C6C84F02E1033D8F882 /* Pods_Heartland_iOS_SDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartland_iOS_SDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3456ADAC25CB03F1000484E8 /* Hps_C2X_Device_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_C2X_Device_Test.m; sourceTree = "<group>"; };
@@ -101,7 +105,7 @@
 		DBF1DE8A1FB9AEF100D57C16 /* Hps_Hpa_Debit_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_Debit_Test.m; sourceTree = "<group>"; };
 		DBF1DE8C1FB9AF0900D57C16 /* Hps_Hpa_Gift_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_Gift_Test.m; sourceTree = "<group>"; };
 		DD12CF31290C6B02007C2275 /* Heartland-iOS-SDK_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Heartland-iOS-SDK_Example-Bridging-Header.h"; sourceTree = "<group>"; };
-		DD12CF34290C6B05007C2275 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		DD12CF34290C6B05007C2275 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Heartland-iOS-SDK/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		DD12CF37290C6B05007C2275 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = SOURCE_ROOT; };
 		DD12CF3E290C6B60007C2275 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DD12CF3F290C6B60007C2275 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -139,6 +143,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14BB79F42915E9850043D0E5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				14BB79F22915E4D00043D0E5 /* Constants.swift */,
+				DD12CF3F290C6B60007C2275 /* LaunchScreen.storyboard */,
+				DD12CF34290C6B05007C2275 /* AppDelegate.swift */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		3456ADAB25CB03C8000484E8 /* C2X */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,11 +200,11 @@
 		6003F593195388D20070C39A /* Example for Heartland-iOS-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				DD12CF3F290C6B60007C2275 /* LaunchScreen.storyboard */,
+				14BB79F42915E9850043D0E5 /* Resources */,
 				DD12CF3E290C6B60007C2275 /* Main.storyboard */,
-				DD12CF34290C6B05007C2275 /* AppDelegate.swift */,
 				DD12CF37290C6B05007C2275 /* MainViewController.swift */,
 				DD12CF4429117679007C2275 /* ConnectC2XViewController.swift */,
+				14BB79F52915E9D60043D0E5 /* C2XTransactionsViewController.swift */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for Heartland-iOS-SDK";
@@ -499,7 +513,9 @@
 			files = (
 				DD12CF3A290C6B05007C2275 /* AppDelegate.swift in Sources */,
 				DD12CF4529117679007C2275 /* ConnectC2XViewController.swift in Sources */,
+				14BB79F62915E9D60043D0E5 /* C2XTransactionsViewController.swift in Sources */,
 				DD12CF3D290C6B05007C2275 /* MainViewController.swift in Sources */,
+				14BB79F32915E4D00043D0E5 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
