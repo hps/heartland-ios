@@ -9,7 +9,7 @@ import CoreBluetooth
 
 class ConnectC2XViewController: UIViewController {
     
-    private var device: HpsC2xDevice?
+    var device: HpsC2xDevice?
     private let notificationCenter: NotificationCenter = NotificationCenter.default
     
     @IBOutlet var connectionLabel: UILabel!
@@ -17,14 +17,20 @@ class ConnectC2XViewController: UIViewController {
     @IBOutlet weak var scanButton: UIStackView!
     
     @IBAction func scanButtonPressed() {
+        
+        let timeout = 120
+        let timeoutPoint = UnsafeMutablePointer<Int>.allocate(capacity: 1)
+        timeoutPoint.initialize(to: timeout)
+        
         let config = HpsConnectionConfig()
-        config.username = ""
-        config.password = ""
-        config.siteID = ""
-        config.deviceID = ""
+        config.username = "703674685"
+        config.password = "$Test1234"
+        config.siteID = "372880";
+        config.deviceID = "90915912"
         config.licenseID = "372711"
         config.developerID = "002914"
         config.versionNumber = "3409"
+        config.timeout = timeoutPoint
         
         self.device = HpsC2xDevice(config: config)
         self.device?.deviceDelegate = self

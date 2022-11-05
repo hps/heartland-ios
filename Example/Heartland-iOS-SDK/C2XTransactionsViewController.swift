@@ -32,7 +32,11 @@ class C2XTransactionsViewController: UIViewController {
     let notificationCenter: NotificationCenter = NotificationCenter.default
     var devicesFound: NSMutableArray = []
     var deviceList: HpsTerminalInfo?
-    var device: HpsC2xDevice?
+    var device: HpsC2xDevice? {
+        didSet {
+            self.device?.transactionDelegate = self
+        }
+    }
     var isDeviceConnected: Bool = false
     var transactionId: String?
     var transactionAmount: NSDecimalNumber = 0.0
@@ -49,7 +53,6 @@ class C2XTransactionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        createDeviceConnection()
         configureActions()
     }
     
@@ -70,35 +73,6 @@ class C2XTransactionsViewController: UIViewController {
         containerView.addGestureRecognizer(tapGesture)
     }
     
-}
-
-// MARK: - Connections
-private extension C2XTransactionsViewController {
-    func createDeviceConnection() {
-        showProgress(true)
-        setText(LoadingStatus.CONNECTING.rawValue)
-        enableButtons(false)
-        
-        let timeout = 120
-        
-        let timeoutPoint = UnsafeMutablePointer<Int>.allocate(capacity: 1)
-        timeoutPoint.initialize(to: timeout)
-        
-        
-        let config = HpsConnectionConfig()
-        config.username = "703674685"
-        config.password = "$Test1234"
-        config.siteID = "372880";
-        config.deviceID = "90915912"
-        config.licenseID = "372711"
-        config.developerID = "002914"
-        config.versionNumber = "3409"
-        config.timeout = timeoutPoint
-        
-        device = HpsC2xDevice(config: config)
-        device?.deviceDelegate = self
-        device?.scan()
-    }
 }
 
 // MARK: - Actions
@@ -125,13 +99,18 @@ private extension C2XTransactionsViewController {
     }
     
     @objc func creditSaleButtonAction(_ sender: UIButton) {
+        guard let amountText = self.amountTextField.text, amountText.count > 0 else { showTextDialog(LoadingStatus.AMOUNT_SHOULD_BE_LARGER_THAN_ZERO.rawValue)
+            return
+        }
         if let device = self.device {
             showProgress(true)
             setText(LoadingStatus.WAIT.rawValue)
-            let amountString = NSDecimalNumber(string: self.amountTextField.text)
+            let amountNumber = NSDecimalNumber(string: amountText)
             let builder: HpsC2xCreditSaleBuilder = HpsC2xCreditSaleBuilder(device: device)
-            builder.amount = amountString
+            builder.amount = amountNumber
             builder.execute()
+        } else {
+            showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
         }
     }
     
@@ -151,6 +130,8 @@ private extension C2XTransactionsViewController {
             builder.amount = amountString
             builder.creditCard = card
             builder.execute()
+        } else {
+            showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
         }
     }
     
@@ -165,8 +146,10 @@ private extension C2XTransactionsViewController {
                 builder.amount = self.transactionAmount
                 builder.execute()
             } else {
-                showTextDialog("You Must have a valid Transaction ID for this action")
+                showTextDialog(LoadingStatus.NOT_TRANSACTION_ID.rawValue)
             }
+        } else {
+            showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
         }
     }
     
@@ -304,7 +287,7 @@ extension C2XTransactionsViewController: HpsC2xDeviceDelegate, GMSTransactionDel
     }
     
     func onConnected() {
-        setStatus("Device Connected")
+        setStatus(LoadingStatus.CONNECTED_DEVICE.rawValue)
         self.device?.transactionDelegate = self
         self.isDeviceConnected = true
         enableButtons(self.isDeviceConnected)
@@ -312,7 +295,7 @@ extension C2XTransactionsViewController: HpsC2xDeviceDelegate, GMSTransactionDel
     }
     
     func onDisconnected() {
-        setStatus("Device Not Connected")
+        setStatus(LoadingStatus.DEVICE_NOT_CONNECTED.rawValue)
         self.isDeviceConnected = false
         enableButtons(self.isDeviceConnected)
     }
@@ -422,6 +405,11 @@ private extension C2XTransactionsViewController {
         case ERROR = "ERROR"
         case TERMINATED = "TERMINATED"
         case APPROVAL = "APPROVAL"
+        case DEVICE_NOT_CONNECTED_ALERT = "You must have a connected device to proceed."
+        case NOT_TRANSACTION_ID = "You Must have a valid Transaction ID for this action."
+        case CONNECTED_DEVICE = "Device connected."
+        case DEVICE_NOT_CONNECTED = "Device not connected."
+        case AMOUNT_SHOULD_BE_LARGER_THAN_ZERO = "You must inform an amount to proceed."
     }
 }
 
