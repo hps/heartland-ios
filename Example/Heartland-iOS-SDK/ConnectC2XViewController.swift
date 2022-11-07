@@ -18,6 +18,7 @@ class ConnectC2XViewController: UIViewController {
     @IBOutlet weak var scanButtonReference: UIButton!
     
     @IBAction func scanButtonPressed() {
+        
         scanButtonReference.isEnabled = false
         let timeout = 120
         let timeoutPoint = UnsafeMutablePointer<Int>.allocate(capacity: 1)
@@ -73,7 +74,9 @@ extension ConnectC2XViewController: HpsC2xDeviceDelegate {
             }
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { [weak self] _ in
+            self?.scanButtonReference.isEnabled = true
+        }
         alertController.addAction(cancelAction)
         if case .pad = UIDevice.current.userInterfaceIdiom {
             alertController.popoverPresentationController?.sourceView = scanButtonStackView
