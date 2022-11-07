@@ -190,7 +190,8 @@
                     <connections>
                         <outlet property="activityIndicator" destination="BGP-0i-buB" id="eke-XL-7p1"/>
                         <outlet property="connectionLabel" destination="3ky-Qu-pBR" id="FHh-m8-M7S"/>
-                        <outlet property="scanButton" destination="pA6-tP-kni" id="9hd-Z0-H9T"/>
+                        <outlet property="scanButtonReference" destination="MSy-N7-uEA" id="bae-vs-5hv"/>
+                        <outlet property="scanButtonStackView" destination="pA6-tP-kni" id="9hd-Z0-H9T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cGb-N6-kjD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

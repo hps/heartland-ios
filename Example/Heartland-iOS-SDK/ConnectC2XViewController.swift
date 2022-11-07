@@ -14,10 +14,11 @@ class ConnectC2XViewController: UIViewController {
     
     @IBOutlet var connectionLabel: UILabel!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var scanButton: UIStackView!
+    @IBOutlet weak var scanButtonStackView: UIStackView!
+    @IBOutlet weak var scanButtonReference: UIButton!
     
     @IBAction func scanButtonPressed() {
-        
+        scanButtonReference.isEnabled = false
         let timeout = 120
         let timeoutPoint = UnsafeMutablePointer<Int>.allocate(capacity: 1)
         timeoutPoint.initialize(to: timeout)
@@ -42,6 +43,7 @@ class ConnectC2XViewController: UIViewController {
 extension ConnectC2XViewController: HpsC2xDeviceDelegate {
     func onConnected() {
         self.connectionLabel.text = "Connected"
+        scanButtonReference.isEnabled = true
         
         let selectedDevice:[String: HpsC2xDevice?] = ["selectedDevice": self.device]
         notificationCenter.post(name: Notification.Name(Constants.selectedDeviceNotification),
@@ -50,10 +52,12 @@ extension ConnectC2XViewController: HpsC2xDeviceDelegate {
     
     func onDisconnected() {
         self.connectionLabel.text = "Disconnected"
+        scanButtonReference.isEnabled = true
     }
     
     func onError(_ deviceError: NSError) {
         self.connectionLabel.text = "Error"
+        scanButtonReference.isEnabled = true
     }
     
     func onBluetoothDeviceList(_ peripherals: NSMutableArray) {
@@ -72,8 +76,8 @@ extension ConnectC2XViewController: HpsC2xDeviceDelegate {
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
         alertController.addAction(cancelAction)
         if case .pad = UIDevice.current.userInterfaceIdiom {
-            alertController.popoverPresentationController?.sourceView = scanButton
-            alertController.popoverPresentationController?.sourceRect = scanButton.bounds
+            alertController.popoverPresentationController?.sourceView = scanButtonStackView
+            alertController.popoverPresentationController?.sourceRect = scanButtonStackView.bounds
             alertController.popoverPresentationController?.permittedArrowDirections = .down
         }
         self.present(alertController, animated: true)
