@@ -25,11 +25,11 @@ class ConnectC2XViewController: UIViewController {
         timeoutPoint.initialize(to: timeout)
         
         let config = HpsConnectionConfig()
-        config.username = ""
-        config.password = ""
-        config.siteID = "";
-        config.deviceID = ""
-        config.licenseID = ""
+        config.username = "701389328"
+        config.password = "$Test1234"
+        config.siteID = "142914";
+        config.deviceID = "6399854"
+        config.licenseID = "142827"
         config.developerID = "002914"
         config.versionNumber = "3409"
         config.timeout = timeoutPoint
