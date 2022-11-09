@@ -27,7 +27,7 @@
 
 	self.cardGroup = @"Credit";
 
-	HpsHpaRequest *request_Void = [[HpsHpaRequest alloc]initWithVoidTransacationRequestwithVersion:(self.version.stringValue ? self.version.stringValue :@"1.0") withEcrId:( self.ecrId ? self.ecrId :@"1004") withRequest:HPA_MSG_ID_toString[CREDIT_VOID] withCardGroup:self.cardGroup withTransactionID:self.transactionId.stringValue];
+	HpsHpaRequest *request_Void = [[HpsHpaRequest alloc]initWithVoidTransacationRequestwithVersion:(self.version.stringValue ? self.version.stringValue :@"1.0") withEcrId:( self.ecrId ? self.ecrId :@"1004") withRequest:HPA_MSG_ID_toString[CREDIT_VOID] withCardGroup:self.cardGroup withTransactionID:self.transactionId];
 
 	request_Void.RequestId = self.referenceNumber;
 	

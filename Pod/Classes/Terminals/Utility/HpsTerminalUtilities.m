@@ -21,7 +21,7 @@
 
 		if ([thing isKindOfClass:[NSArray class]]) {
 			for (NSString *thisString in thing) {
-				[sb appendString:[HpsTerminalEnums controlCodeString:HpsControlCodes_FS]];
+				[sb appendString:[NSString stringWithFormat:@"%c",HpsControlCodes_FS]];
 				[sb appendString:thisString];
 			}
 		}else if ([HpsTerminalEnums isControlCode:(Byte)thing]){
@@ -145,6 +145,17 @@ return [trimmedString dataUsingEncoding:NSUTF8StringEncoding];
 		[buffer appendData:[message dataUsingEncoding:NSASCIIStringEncoding]];
 }
 		break;
+        
+        case UPA: {
+            [buffer appendBytes:(char []){ HpsControlCodes_STX } length:1];
+            [buffer appendBytes:(char []){ HpsControlCodes_LF } length:1];
+            [buffer appendData:[message dataUsingEncoding:NSASCIIStringEncoding]];
+            [buffer appendBytes:(char []){ HpsControlCodes_LF } length:1];
+            [buffer appendBytes:(char []){ HpsControlCodes_ETX } length:1];
+            [buffer appendBytes:(char []){ HpsControlCodes_LF } length:1];
+            
+            break;
+        }
 		default:
 
 		break;

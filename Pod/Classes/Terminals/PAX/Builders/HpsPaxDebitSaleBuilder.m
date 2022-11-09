@@ -7,8 +7,23 @@
     if (self != nil)
     {
         device = paxDevice;
+        _ecrTransId = [HpsPaxDebitSaleBuilder newECRTransactionId];
     }
     return self;
+}
+
+// 16 digit unique numeric id from current time interval
++ (NSString *)newECRTransactionId {
+    NSNumberFormatter *formatter = NSNumberFormatter.new;
+    formatter.usesSignificantDigits = YES;
+    formatter.minimumSignificantDigits = 16;
+    formatter.maximumSignificantDigits = 16;
+    
+    NSTimeInterval now = [NSDate.new timeIntervalSince1970];
+    NSString *nowNumString = [formatter stringFromNumber:@(now)];
+    NSString *result = [nowNumString stringByReplacingOccurrencesOfString:formatter.decimalSeparator withString:@""];
+    
+    return result;
 }
 
 - (void) execute:(void(^)(HpsPaxDebitResponse*, NSError*))responseBlock{
@@ -43,6 +58,9 @@
     [subgroups addObject:[[HpsPaxCashierSubGroup alloc] init]];
         
     HpsPaxExtDataSubGroup *extData = [[HpsPaxExtDataSubGroup alloc] init];
+    if (self.tipRequest){
+        [extData.collection setObject:@"1" forKey:PAX_EXT_DATA_TIP_REQUEST];
+    }
     [subgroups addObject:extData];
     
     [device doDebit:PAX_TXN_TYPE_SALE_REDEEM andSubGroups:subgroups withResponseBlock:^(HpsPaxDebitResponse *response, NSError *error) {

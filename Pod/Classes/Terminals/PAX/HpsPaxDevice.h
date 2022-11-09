@@ -60,4 +60,8 @@ withResponseBlock:(void(^)(HpsPaxLocalDetailResponse*, NSError*))responseBlock;
 - (void) safDelete:(SafIndicator)safIndicator withResponseBlock:(void(^)(HpaPaxSafDeleteResponse*, NSError*))responseBlock;
 - (void) safReport:(SafIndicator)safIndicator withResponseBlock:(void(^)(HpaPaxSafReportResponse*, NSError*))responseBlock;
 
+//misc
+
+- (void)interfaceCancelPendingTask;
+
 @end

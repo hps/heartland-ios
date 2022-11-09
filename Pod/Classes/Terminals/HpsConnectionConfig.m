@@ -3,4 +3,9 @@
 
 @implementation HpsConnectionConfig
 
+- (void)setLogger:(id<HpsInterfaceLogging>)logger {
+    _logger = logger;
+    [_logger willLogHPSInterfaceWithConfig:self];
+}
+
 @end

@@ -39,8 +39,10 @@ class GMSResponseHelper {
         let resp = response as? AuthResponse
         var deviceResponseCode = result.rawValue
 
-        if let respText = resp?.gatewayResponseText {
-            deviceResponseCode = respText
+        if result != .postAuthChipDecline {
+            if let respText = resp?.gatewayResponseText {
+                deviceResponseCode = respText
+            }
         }
 
         data.entryMethod = HpsC2xEnums.cardDataSourceTypeToString(resp?.cardDataSourceType)
@@ -56,6 +58,7 @@ class GMSResponseHelper {
         data.cardholderName = resp?.cardholderName
         data.applicationCrytptogram = resp?.applicationCryptogram
         data.terminalVerficationResult = resp?.tvr
+        data.cardType = HpsC2xEnums.cardTypeToString(resp?.cardType)
 
         if let uintValue = resp?.tip {
             data.tipAmount = uintToDecimal(uintValue)
@@ -86,8 +89,10 @@ class GMSResponseHelper {
         let resp = response as? ReturnResponse
         var deviceResponseCode = result.rawValue
 
-        if let respText = resp?.gatewayResponseText {
-            deviceResponseCode = respText
+        if result != .postAuthChipDecline {
+            if let respText = resp?.gatewayResponseText {
+                deviceResponseCode = respText
+            }
         }
 
         data.entryMethod = HpsC2xEnums.cardDataSourceTypeToString(resp?.cardDataSourceType)
@@ -103,6 +108,7 @@ class GMSResponseHelper {
         data.cardholderName = resp?.cardholderName
         data.applicationCrytptogram = resp?.applicationCryptogram
         data.terminalVerficationResult = resp?.tvr
+        data.cardType = HpsC2xEnums.cardTypeToString(resp?.cardType)
         
         if let uintValue = resp?.tip {
             data.tipAmount = uintToDecimal(uintValue)
@@ -119,8 +125,10 @@ class GMSResponseHelper {
         let resp = response as? ReversalResponse
         var deviceResponseCode = result.rawValue
 
-        if let respText = resp?.gatewayResponseText {
-            deviceResponseCode = respText
+        if result != .postAuthChipDecline {
+            if let respText = resp?.gatewayResponseText {
+                deviceResponseCode = respText
+            }
         }
 
         data.approvalCode = resp?.authCode
@@ -136,8 +144,10 @@ class GMSResponseHelper {
         let resp = response as? SaleResponse
         var deviceResponseCode = result.rawValue
 
-        if let respText = resp?.gatewayResponseText {
-            deviceResponseCode = respText
+        if result != .postAuthChipDecline {
+            if let respText = resp?.gatewayResponseText {
+                deviceResponseCode = respText
+            }
         }
 
         data.entryMethod = HpsC2xEnums.cardDataSourceTypeToString(resp?.cardDataSourceType)
@@ -153,6 +163,7 @@ class GMSResponseHelper {
         data.cardholderName = resp?.cardholderName
         data.applicationCrytptogram = resp?.applicationCryptogram
         data.terminalVerficationResult = resp?.tvr
+        data.cardType = HpsC2xEnums.cardTypeToString(resp?.cardType)
         
         if let uintValue = resp?.tip {
             data.tipAmount = uintToDecimal(uintValue)

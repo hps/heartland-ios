@@ -9,7 +9,8 @@ extern NSString * const HPA_SUMMARY_TYPE_toString[];
 typedef NS_ENUM(NSInteger, MessageFormat)
 {
 	HPA,
-	Visa2nd
+	Visa2nd,
+    UPA
 };
 
 typedef NS_ENUM(NSInteger, HPA_MSG_ID) {

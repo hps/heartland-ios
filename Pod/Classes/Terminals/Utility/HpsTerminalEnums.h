@@ -14,7 +14,8 @@ typedef NS_ENUM(Byte, HpsControlCodes) {
     HpsControlCodes_RS = 0x1E,
     HpsControlCodes_COMMA = 0x2C,
     HpsControlCodes_COLON = 0x3A,
-    HpsControlCodes_PTGS = 0x7C
+    HpsControlCodes_PTGS = 0x7C,
+    HpsControlCodes_LF = 0x0A
 };
 
 typedef NS_ENUM(NSInteger, HpsConnectionModes) {

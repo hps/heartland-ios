@@ -259,9 +259,9 @@
         XCTAssertEqualObjects(@"00", payload.deviceResponseCode);
         
         HpsHpaCreditVoidBuilder *voidbuilder = [[HpsHpaCreditVoidBuilder alloc]initWithDevice:device];
-        voidbuilder.transactionId = [NSNumber numberWithInt:((HpsHpaDeviceResponse *)payload).transactionId];
+        voidbuilder.transactionId = ((HpsHpaDeviceResponse *)payload).transactionId;
         voidbuilder.referenceNumber = [device generateNumber];
-        NSLog(@"#### transactionID = %@",[NSNumber numberWithInt:((HpsHpaDeviceResponse *)payload).transactionId]);
+        NSLog(@"#### transactionID = %@",((HpsHpaDeviceResponse *)payload).transactionId);
         
         [self waitAndReset:device completion:^(BOOL success) {
             if (success) {

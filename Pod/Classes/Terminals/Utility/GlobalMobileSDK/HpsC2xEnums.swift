@@ -79,4 +79,28 @@ public class HpsC2xEnums: NSObject {
             return .undefined
         }
     }
+    public static func cardTypeToString(_ cardType: CardType?) -> String {
+        switch (cardType) {
+        case .amex:
+            return "amex"
+        case .dinersClub:
+            return "diners"
+        case .discover:
+            return "discover"
+        case .jcb:
+            return "jcb"
+        case .maestro:
+            return "maestro"
+        case .masterCard:
+            return "mastercard"
+        case .tokenizedCard:
+            return "token"
+        case .unionPay:
+            return "unionpay"
+        case .visa:
+            return "visa"
+        default:
+            return "unknown"
+        }
+    }
 }

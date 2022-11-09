@@ -38,6 +38,6 @@ Pod::Spec.new do |s|
 
   s.frameworks = 'UIKit'
   s.dependency 'XMLDictionary'
-  s.dependency 'VitalSDK', '1.2.2'
+  s.dependency 'VitalSDK'
   s.swift_version = '5.0'
 end

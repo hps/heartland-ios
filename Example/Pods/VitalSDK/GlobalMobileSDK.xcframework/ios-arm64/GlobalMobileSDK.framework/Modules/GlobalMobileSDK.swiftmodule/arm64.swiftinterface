@@ -451,7 +451,7 @@ extension CardData {
   }
 }
 @objc public enum TransactionStatus : Swift.UInt, Swift.Codable {
-  case onlineDecline, onlineApproved, offlineApproved, offlineDecline, cancelled, hostTimeout, gatewayTimeOut, unableToGoOnlineOfflineApproved, unableToGoOnlineOfflineDeclined
+  case onlineDecline, onlineApproved, offlineApproved, offlineDecline, cancelled, hostTimeout, gatewayTimeOutNoReply, unableToGoOnlineOfflineApproved, unableToGoOnlineOfflineDeclined
   public typealias RawValue = Swift.UInt
   public init?(rawValue: Swift.UInt)
   public var rawValue: Swift.UInt {
@@ -747,6 +747,7 @@ public struct PorticoConfig : GlobalMobileSDK.GatewayConfig, Swift.Equatable {
   public var timeout: Swift.Int32?
   public var isDebug: Swift.Bool
   public var supportSaf: Swift.Bool
+  public var terminalOnlineProcessTimeout: Swift.UInt?
   public var currencyCode: GlobalMobileSDK.CurrencyCode
   public var countryCode: GlobalMobileSDK.CountryCode
   public var environment: GlobalMobileSDK.GatewayEnvironment

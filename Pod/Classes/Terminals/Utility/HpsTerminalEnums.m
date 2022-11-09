@@ -14,22 +14,7 @@ NSString *const PAX_DEVICE_VERSION = @"1.35";
         case HpsControlCodes_ETX:
             isControlCode = YES;
             break;
-        case HpsControlCodes_ACK:
-            isControlCode = YES;
-            break;
-        case HpsControlCodes_NAK:
-            isControlCode = YES;
-            break;
-        case HpsControlCodes_ENQ:
-            isControlCode = YES;
-            break;
         case HpsControlCodes_FS:
-            isControlCode = YES;
-            break;
-        case HpsControlCodes_GS:
-            isControlCode = YES;
-            break;            
-        case HpsControlCodes_EOT:
             isControlCode = YES;
             break;
         case HpsControlCodes_US:
@@ -46,6 +31,8 @@ NSString *const PAX_DEVICE_VERSION = @"1.35";
             break;
         case HpsControlCodes_PTGS:
             isControlCode = YES;
+        case HpsControlCodes_LF:
+            isControlCode = YES;
             break;
         default:
             break;
@@ -55,8 +42,7 @@ NSString *const PAX_DEVICE_VERSION = @"1.35";
     
 }
 + (NSString*) controlCodeString:(Byte)code{
-    NSData *code_d = [[NSData alloc] initWithBytes:(char []){ code } length:1];
-    return [[NSString alloc] initWithData:code_d encoding:NSUTF8StringEncoding];
+    return [NSString stringWithFormat:@"%c",code];
 }
 
 + (NSString *) controlCodeAsciValue:(Byte)code{
@@ -69,23 +55,8 @@ NSString *const PAX_DEVICE_VERSION = @"1.35";
 		case HpsControlCodes_ETX:
 			ASCIIValue = @"ETX";
 			break;
-		case HpsControlCodes_ACK:
-			ASCIIValue = @"ACK";
-			break;
-		case HpsControlCodes_NAK:
-			ASCIIValue = @"NAK";
-			break;
-		case HpsControlCodes_ENQ:
-			ASCIIValue = @"ENQ";
-			break;
 		case HpsControlCodes_FS:
 			ASCIIValue = @"FS";
-			break;
-		case HpsControlCodes_GS:
-			ASCIIValue = @"GS";
-			break;
-		case HpsControlCodes_EOT:
-			ASCIIValue = @"EOT";
 			break;
 		case HpsControlCodes_US:
 			ASCIIValue = @"US";
@@ -102,6 +73,8 @@ NSString *const PAX_DEVICE_VERSION = @"1.35";
 		case HpsControlCodes_PTGS:
 			ASCIIValue = @"PTGS";
 			break;
+        case HpsControlCodes_LF:
+            ASCIIValue = @"LF";
 		default:
 			break;
 	}
@@ -139,7 +112,9 @@ NSString *const PAX_DEVICE_VERSION = @"1.35";
 			return @"TC";
 		case ARQC:
 			return @"ARQC";
-}
+        case AAC:
+            return @"AAC";
+    }
 	[NSException raise:NSInvalidArgumentException format:@"The given crypto type, %ld, is not known.", (long)cryptoType];
 	return nil; // Keep the compiler happy - does not understand above line never returns!
 }

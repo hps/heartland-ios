@@ -4,8 +4,17 @@ import Foundation
 public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
     public var gmsWrapper: GMSWrapper?
     public var deviceDelegate: GMSDeviceDelegate?
+    public weak var deviceScanObserver: GMSDeviceScanObserver?
     public var transactionDelegate: GMSTransactionDelegate?
-    public var peripherals = NSMutableArray()
+    public var targetTerminalId: UUID?
+    public private(set) var terminalsById = [UUID: HpsTerminalInfo]()
+    public private(set) var isScanning = false {
+        didSet {
+            if oldValue != isScanning {
+                deviceScanObserver?.deviceDidUpdateScanState(to: isScanning)
+            }
+        }
+    }
     
     internal init(config: HpsConnectionConfig, entryModes: [EntryMode], terminalType: TerminalType) {
         super.init()
@@ -17,16 +26,21 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
         )
     }
     
-    public func initialize() {
-        self.scan()
+    public var peripherals: NSMutableArray {
+        NSMutableArray(array: Array(terminalsById.values))
+    }
+    
+    public var terminals: [HpsTerminalInfo] {
+        peripherals as? [HpsTerminalInfo] ?? []
     }
     
     public func scan() {
         if let wrapper = self.gmsWrapper {
+            isScanning = true
             wrapper.searchDevices()
         }
     }
-
+    
     public func stopScan() {
         if let wrapper = self.gmsWrapper {
             wrapper.cancelSearch()
@@ -70,11 +84,21 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
     }
 
     public func searchComplete() {
+        targetTerminalId = nil
+        isScanning = false
         self.deviceDelegate?.onBluetoothDeviceList(self.peripherals)
     }
 
     public func deviceFound(_ device: NSObject) {
-        peripherals.add(device)
+        guard let terminal = device as? HpsTerminalInfo else {
+            return
+        }
+        
+        terminalsById[terminal.identifier] = terminal
+        
+        if targetTerminalId == terminal.identifier {
+            stopScan()
+        }
     }
 
     public func onStatus(_ status: HpsTransactionStatus) {
@@ -110,6 +134,6 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
     }
 
     public func onError(_ error: NSError) {
-        self.transactionDelegate?.onError(error)
+        self.transactionDelegate?.onTransactionError(error)
     }
 }

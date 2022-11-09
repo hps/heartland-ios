@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3401486427EB801B0074A93F /* Hps_UPA_VRF_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401486327EB801B0074A93F /* Hps_UPA_VRF_Test.m */; };
 		3456ADAD25CB03F1000484E8 /* Hps_C2X_Device_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 3456ADAC25CB03F1000484E8 /* Hps_C2X_Device_Test.m */; };
 		3456ADB325CB0442000484E8 /* Hps_C2X_Credit_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 3456ADB225CB0442000484E8 /* Hps_C2X_Credit_Test.m */; };
+		345F6DE92783D981002DC1CC /* HpsJsonDocTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DE82783D981002DC1CC /* HpsJsonDocTests.m */; };
+		345F6DEB2783FDAA002DC1CC /* Hps_UPA_Admin_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DEA2783FDAA002DC1CC /* Hps_UPA_Admin_Test.m */; };
+		34783E4D2784B5BD009174DD /* Hps_UPA_Credit_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 34783E4C2784B5BD009174DD /* Hps_UPA_Credit_Test.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -45,6 +49,16 @@
 		E2A3363B2455C6950041AD64 /* Hps_Pax_Batch_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A3363A2455C6950041AD64 /* Hps_Pax_Batch_Tests.m */; };
 		E2B1C1BC2403DFF20040D5C7 /* Hps_Hpa_EOD_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B1C1BB2403DFF20040D5C7 /* Hps_Hpa_EOD_Test.m */; };
 		E2B1C1EB24190C820040D5C7 /* Hps_Hpa_EBT_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B1C1EA24190C820040D5C7 /* Hps_Hpa_EBT_Test.m */; };
+		EF6EA442263775200039FA6B /* HRGMSDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6EA441263775200039FA6B /* HRGMSDeviceViewController.m */; };
+		EF6EA447263776030039FA6B /* HRGMSDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6EA446263776030039FA6B /* HRGMSDeviceManager.m */; };
+		EF7F84EF2698CE1300CA7099 /* HRPAXTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7F84EE2698CE1300CA7099 /* HRPAXTransactionViewController.m */; };
+		EF7F84F42698D15900CA7099 /* HRPAXTransactionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7F84F32698D15900CA7099 /* HRPAXTransactionViewModel.m */; };
+		EF7F84F92698D3BA00CA7099 /* HRPAXTransactionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7F84F82698D3BA00CA7099 /* HRPAXTransactionManager.m */; };
+		EF80F8BF267BF3F50097FF73 /* HRGMSTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF80F8BE267BF3F50097FF73 /* HRGMSTransactionViewController.m */; };
+		EF80F8CB267BF4730097FF73 /* HRGMSTransactionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF80F8CA267BF4730097FF73 /* HRGMSTransactionViewModel.m */; };
+		EFA712B3268CE7000041EC21 /* HRGMSTransactionLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA712B2268CE7000041EC21 /* HRGMSTransactionLogger.m */; };
+		EFDB8B46267C0A62004DFCDA /* HRGMSTransactionService.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDB8B45267C0A62004DFCDA /* HRGMSTransactionService.m */; };
+		EFDB8B4B267C176D004DFCDA /* HRGMSSerializationService.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDB8B4A267C176D004DFCDA /* HRGMSSerializationService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +75,12 @@
 		08D636DD28A9667ED2741E32 /* Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig"; path = "Pods/Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig"; sourceTree = "<group>"; };
 		253ABA11EC670E90EACA486A /* Pods-Heartland-iOS-SDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartland-iOS-SDK_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		2D472C6C84F02E1033D8F882 /* Pods_Heartland_iOS_SDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartland_iOS_SDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3401486327EB801B0074A93F /* Hps_UPA_VRF_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_UPA_VRF_Test.m; sourceTree = "<group>"; };
 		3456ADAC25CB03F1000484E8 /* Hps_C2X_Device_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_C2X_Device_Test.m; sourceTree = "<group>"; };
 		3456ADB225CB0442000484E8 /* Hps_C2X_Credit_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_C2X_Credit_Test.m; sourceTree = "<group>"; };
+		345F6DE82783D981002DC1CC /* HpsJsonDocTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsJsonDocTests.m; sourceTree = "<group>"; };
+		345F6DEA2783FDAA002DC1CC /* Hps_UPA_Admin_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_UPA_Admin_Test.m; sourceTree = "<group>"; };
+		34783E4C2784B5BD009174DD /* Hps_UPA_Credit_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_UPA_Credit_Test.m; sourceTree = "<group>"; };
 		3FA9B09A5740798478B9281B /* Heartland-iOS-SDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "Heartland-iOS-SDK.podspec"; path = "../Heartland-iOS-SDK.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6003F58A195388D20070C39A /* Heartland-iOS-SDK_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Heartland-iOS-SDK_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -112,6 +130,32 @@
 		E2A3363A2455C6950041AD64 /* Hps_Pax_Batch_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_Batch_Tests.m; sourceTree = "<group>"; };
 		E2B1C1BB2403DFF20040D5C7 /* Hps_Hpa_EOD_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_EOD_Test.m; sourceTree = "<group>"; };
 		E2B1C1EA24190C820040D5C7 /* Hps_Hpa_EBT_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_EBT_Test.m; sourceTree = "<group>"; };
+		EF6EA440263775200039FA6B /* HRGMSDeviceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSDeviceViewController.h; sourceTree = "<group>"; };
+		EF6EA441263775200039FA6B /* HRGMSDeviceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSDeviceViewController.m; sourceTree = "<group>"; };
+		EF6EA445263776030039FA6B /* HRGMSDeviceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSDeviceManager.h; sourceTree = "<group>"; };
+		EF6EA446263776030039FA6B /* HRGMSDeviceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSDeviceManager.m; sourceTree = "<group>"; };
+		EF6EA44A26377ABA0039FA6B /* HRGMS+Notifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HRGMS+Notifications.h"; sourceTree = "<group>"; };
+		EF7F84E32698CCAF00CA7099 /* HRPAXTransactionModelInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRPAXTransactionModelInput.h; sourceTree = "<group>"; };
+		EF7F84E62698CCD100CA7099 /* HRPAXTransactionModelOutput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRPAXTransactionModelOutput.h; sourceTree = "<group>"; };
+		EF7F84E72698CCDF00CA7099 /* HRPAXTransactionViewModelInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRPAXTransactionViewModelInput.h; sourceTree = "<group>"; };
+		EF7F84E82698CCED00CA7099 /* HRPAXTransactionViewModelOutput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRPAXTransactionViewModelOutput.h; sourceTree = "<group>"; };
+		EF7F84E92698CCFC00CA7099 /* HRPAXTransactionViewInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRPAXTransactionViewInput.h; sourceTree = "<group>"; };
+		EF7F84ED2698CE1300CA7099 /* HRPAXTransactionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRPAXTransactionViewController.h; sourceTree = "<group>"; };
+		EF7F84EE2698CE1300CA7099 /* HRPAXTransactionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRPAXTransactionViewController.m; sourceTree = "<group>"; };
+		EF7F84F22698D15900CA7099 /* HRPAXTransactionViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRPAXTransactionViewModel.h; sourceTree = "<group>"; };
+		EF7F84F32698D15900CA7099 /* HRPAXTransactionViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRPAXTransactionViewModel.m; sourceTree = "<group>"; };
+		EF7F84F72698D3BA00CA7099 /* HRPAXTransactionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRPAXTransactionManager.h; sourceTree = "<group>"; };
+		EF7F84F82698D3BA00CA7099 /* HRPAXTransactionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRPAXTransactionManager.m; sourceTree = "<group>"; };
+		EF80F8BD267BF3F50097FF73 /* HRGMSTransactionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSTransactionViewController.h; sourceTree = "<group>"; };
+		EF80F8BE267BF3F50097FF73 /* HRGMSTransactionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionViewController.m; sourceTree = "<group>"; };
+		EF80F8C9267BF4730097FF73 /* HRGMSTransactionViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSTransactionViewModel.h; sourceTree = "<group>"; };
+		EF80F8CA267BF4730097FF73 /* HRGMSTransactionViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionViewModel.m; sourceTree = "<group>"; };
+		EFA712B1268CE7000041EC21 /* HRGMSTransactionLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSTransactionLogger.h; sourceTree = "<group>"; };
+		EFA712B2268CE7000041EC21 /* HRGMSTransactionLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionLogger.m; sourceTree = "<group>"; };
+		EFDB8B44267C0A62004DFCDA /* HRGMSTransactionService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSTransactionService.h; sourceTree = "<group>"; };
+		EFDB8B45267C0A62004DFCDA /* HRGMSTransactionService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionService.m; sourceTree = "<group>"; };
+		EFDB8B49267C176D004DFCDA /* HRGMSSerializationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSSerializationService.h; sourceTree = "<group>"; };
+		EFDB8B4A267C176D004DFCDA /* HRGMSSerializationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSSerializationService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +191,17 @@
 				3456ADB225CB0442000484E8 /* Hps_C2X_Credit_Test.m */,
 			);
 			path = C2X;
+			sourceTree = "<group>";
+		};
+		345F6DE72783D956002DC1CC /* UPA */ = {
+			isa = PBXGroup;
+			children = (
+				345F6DE82783D981002DC1CC /* HpsJsonDocTests.m */,
+				345F6DEA2783FDAA002DC1CC /* Hps_UPA_Admin_Test.m */,
+				34783E4C2784B5BD009174DD /* Hps_UPA_Credit_Test.m */,
+				3401486327EB801B0074A93F /* Hps_UPA_VRF_Test.m */,
+			);
+			name = UPA;
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
@@ -190,6 +245,8 @@
 				6003F59C195388D20070C39A /* HpsAppDelegate.h */,
 				6003F59D195388D20070C39A /* HpsAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				EF7F84E22698CC9900CA7099 /* PAX */,
+				EF7F84DD2698CA4200CA7099 /* GMS */,
 				6003F5A5195388D20070C39A /* HpsViewController.h */,
 				6003F5A6195388D20070C39A /* HpsViewController.m */,
 				84CD39E71C45A73E006FED91 /* heartlandlogo.png */,
@@ -219,6 +276,7 @@
 				DBF1B0A32080B395007A775E /* FreshTxt */,
 				DBDA366F1FAB429300CF5146 /* Hpa */,
 				DBDA366D1FAB425E00CF5146 /* Pax */,
+				345F6DE72783D956002DC1CC /* UPA */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
 			);
 			path = Tests;
@@ -303,6 +361,54 @@
 				08D636DD28A9667ED2741E32 /* Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		EF7F84DD2698CA4200CA7099 /* GMS */ = {
+			isa = PBXGroup;
+			children = (
+				EF6EA440263775200039FA6B /* HRGMSDeviceViewController.h */,
+				EF6EA441263775200039FA6B /* HRGMSDeviceViewController.m */,
+				EFDB8B49267C176D004DFCDA /* HRGMSSerializationService.h */,
+				EFDB8B4A267C176D004DFCDA /* HRGMSSerializationService.m */,
+				EFA712B1268CE7000041EC21 /* HRGMSTransactionLogger.h */,
+				EFA712B2268CE7000041EC21 /* HRGMSTransactionLogger.m */,
+				EFDB8B44267C0A62004DFCDA /* HRGMSTransactionService.h */,
+				EFDB8B45267C0A62004DFCDA /* HRGMSTransactionService.m */,
+				EF80F8C9267BF4730097FF73 /* HRGMSTransactionViewModel.h */,
+				EF80F8CA267BF4730097FF73 /* HRGMSTransactionViewModel.m */,
+				EF80F8BD267BF3F50097FF73 /* HRGMSTransactionViewController.h */,
+				EF80F8BE267BF3F50097FF73 /* HRGMSTransactionViewController.m */,
+				EF6EA445263776030039FA6B /* HRGMSDeviceManager.h */,
+				EF6EA446263776030039FA6B /* HRGMSDeviceManager.m */,
+				EF6EA44A26377ABA0039FA6B /* HRGMS+Notifications.h */,
+			);
+			name = GMS;
+			sourceTree = "<group>";
+		};
+		EF7F84E22698CC9900CA7099 /* PAX */ = {
+			isa = PBXGroup;
+			children = (
+				EF7F84EA2698CD0600CA7099 /* Contract */,
+				EF7F84F72698D3BA00CA7099 /* HRPAXTransactionManager.h */,
+				EF7F84F82698D3BA00CA7099 /* HRPAXTransactionManager.m */,
+				EF7F84ED2698CE1300CA7099 /* HRPAXTransactionViewController.h */,
+				EF7F84EE2698CE1300CA7099 /* HRPAXTransactionViewController.m */,
+				EF7F84F22698D15900CA7099 /* HRPAXTransactionViewModel.h */,
+				EF7F84F32698D15900CA7099 /* HRPAXTransactionViewModel.m */,
+			);
+			name = PAX;
+			sourceTree = "<group>";
+		};
+		EF7F84EA2698CD0600CA7099 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				EF7F84E32698CCAF00CA7099 /* HRPAXTransactionModelInput.h */,
+				EF7F84E62698CCD100CA7099 /* HRPAXTransactionModelOutput.h */,
+				EF7F84E72698CCDF00CA7099 /* HRPAXTransactionViewModelInput.h */,
+				EF7F84E82698CCED00CA7099 /* HRPAXTransactionViewModelOutput.h */,
+				EF7F84E92698CCFC00CA7099 /* HRPAXTransactionViewInput.h */,
+			);
+			name = Contract;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,7 +605,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* HpsAppDelegate.m in Sources */,
+				EF80F8CB267BF4730097FF73 /* HRGMSTransactionViewModel.m in Sources */,
+				EFA712B3268CE7000041EC21 /* HRGMSTransactionLogger.m in Sources */,
 				6003F5A7195388D20070C39A /* HpsViewController.m in Sources */,
+				EF80F8BF267BF3F50097FF73 /* HRGMSTransactionViewController.m in Sources */,
+				EFDB8B4B267C176D004DFCDA /* HRGMSSerializationService.m in Sources */,
+				EFDB8B46267C0A62004DFCDA /* HRGMSTransactionService.m in Sources */,
+				EF7F84F42698D15900CA7099 /* HRPAXTransactionViewModel.m in Sources */,
+				EF6EA447263776030039FA6B /* HRGMSDeviceManager.m in Sources */,
+				EF6EA442263775200039FA6B /* HRGMSDeviceViewController.m in Sources */,
+				EF7F84EF2698CE1300CA7099 /* HRPAXTransactionViewController.m in Sources */,
+				EF7F84F92698D3BA00CA7099 /* HRPAXTransactionManager.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,7 +628,9 @@
 				DBE8B01A20ECA30B006F8B97 /* HpsPayRollTests.m in Sources */,
 				E2576C2D243C78D1002E4CA4 /* Hps_Pax_Report_test.m in Sources */,
 				840256431DEE1BB90078B6A2 /* Hps_Pax_Debit_Tests.m in Sources */,
+				34783E4D2784B5BD009174DD /* Hps_UPA_Credit_Test.m in Sources */,
 				E2A3363B2455C6950041AD64 /* Hps_Pax_Batch_Tests.m in Sources */,
+				345F6DE92783D981002DC1CC /* HpsJsonDocTests.m in Sources */,
 				E2B1C1EB24190C820040D5C7 /* Hps_Hpa_EBT_Test.m in Sources */,
 				E2B1C1BC2403DFF20040D5C7 /* Hps_Hpa_EOD_Test.m in Sources */,
 				DBDA36711FAB430900CF5146 /* Hps_Hpa_Admin_Test.m in Sources */,
@@ -521,6 +639,7 @@
 				84FFB2C91D63534D00D56BF9 /* Hps_Pax_Connection_Tests.m in Sources */,
 				84FFB2CA1D63535000D56BF9 /* Hps_Pax_Admin_Tests.m in Sources */,
 				DB8A59C11F4BDF7000B98B73 /* Hps_Pax_VRF_Test.m in Sources */,
+				3401486427EB801B0074A93F /* Hps_UPA_VRF_Test.m in Sources */,
 				848DD45C1D75FBE500D3F658 /* Hps_Pax_Gift_Tests.m in Sources */,
 				DBDA367E1FB01C2000CF5146 /* Hps_Hpa_Credit_Test.m in Sources */,
 				3456ADAD25CB03F1000484E8 /* Hps_C2X_Device_Test.m in Sources */,
@@ -529,6 +648,7 @@
 				DB30662B2188794A00F6E101 /* Hps_Hpa_Report_Test.m in Sources */,
 				DBF1B0A52080B3C7007A775E /* HpsTableServicesTest.m in Sources */,
 				3456ADB325CB0442000484E8 /* Hps_C2X_Credit_Test.m in Sources */,
+				345F6DEB2783FDAA002DC1CC /* Hps_UPA_Admin_Test.m in Sources */,
 				DB3DC11C2004F7EA0037521A /* Hps_Hpa_VRF_Test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

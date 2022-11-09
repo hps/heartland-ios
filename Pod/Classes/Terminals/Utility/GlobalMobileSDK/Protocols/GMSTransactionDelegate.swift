@@ -7,5 +7,5 @@ public protocol GMSTransactionDelegate {
     func onConfirmApplication(_ applications: Array<AID>)
     func onTransactionComplete(_ response: HpsTerminalResponse)
     func onTransactionCancelled()
-    func onError(_ error: NSError)
+    func onTransactionError(_ error: NSError)
 }

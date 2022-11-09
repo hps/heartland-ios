@@ -26,7 +26,10 @@
     [subgroups addObject:account];
     
     HpsPaxTraceRequest *traceRequest = [[HpsPaxTraceRequest alloc] init];
-    traceRequest.referenceNumber = [NSString stringWithFormat:@"%d", self.referenceNumber];
+    traceRequest.referenceNumber = [NSString stringWithFormat:@"%ld", (long)self.referenceNumber];
+    if (self.transactionNumber != 0) {
+        traceRequest.transactionNumber = [NSString stringWithFormat:@"%ld", (long)self.transactionNumber];
+    }
     if (self.clientTransactionId != nil)
         traceRequest.clientTransactionId = self.clientTransactionId;
     [subgroups addObject:traceRequest];
@@ -40,8 +43,8 @@
     
     HpsPaxExtDataSubGroup *extData = [[HpsPaxExtDataSubGroup alloc] init];
     
-    if (self.transactionId != 0) {
-        [extData.collection setObject:[NSString stringWithFormat:@"%d", self.transactionId] forKey:PAX_EXT_DATA_HOST_REFERENCE_NUMBER.uppercaseString];
+    if (self.transactionId != nil && [self.transactionId length] > 0) {
+        [extData.collection setObject:self.transactionId forKey:PAX_EXT_DATA_HOST_REFERENCE_NUMBER.uppercaseString];
     }
     [subgroups addObject:extData];
     
@@ -54,8 +57,8 @@
 
 - (void) validate
 {
-    if (self.transactionId == 0) {
-        @throw [NSException exceptionWithName:@"HpsPaxException" reason:@"transactionId is required." userInfo:nil];
+    if (self.transactionId <= 0 && self.transactionNumber <= 0) {
+        @throw [NSException exceptionWithName:@"HpsPaxException" reason:@"transactionId or transactionNumber is required." userInfo:nil];
     }
     
 }

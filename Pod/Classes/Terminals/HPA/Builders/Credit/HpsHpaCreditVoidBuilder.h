@@ -6,7 +6,7 @@
 	HpsHpaDevice *device;
 }
 
-@property (nonatomic, readwrite) NSNumber *transactionId;
+@property (nonatomic, strong) NSString *transactionId;
 @property (nonatomic, readwrite) int referenceNumber;
 
 - (void) execute:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
