@@ -45,6 +45,9 @@
             case 10:
                 self.cardPressent = [value boolValue];
                 break;
+            case 12:
+                self.debitAccountType = value;
+                break;
             default:
                 break;
         }

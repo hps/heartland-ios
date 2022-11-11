@@ -202,6 +202,60 @@ extension GMSWrapper: TransactionDelegate {
     }
 
     public func onError(error: TransactionError) {
-        delegate.onError(NSError.init(fromTransactionError: error));
+        if error.isStartError {
+            onTransactionStartFailed(withError: error)
+        } else {
+            delegate.onError(.init(fromTransactionError: error));
+        }
+    }
+}
+
+/*
+ Utilities added as a temp work around for inconsistent GlobalMobileSDK behavior.
+ 
+ Transaction-failing errors are usually returned within response objects passed into
+ onTransactionComplete. However, if a card is inserted before a transaction
+ starts, for some reason the error (which also ends the transaction attempt) is passed
+ through onError instead.
+ 
+ Should probably have all process-failing errors return in 1 place, but until then we
+ have this...
+ */
+
+private extension GlobalMobileSDK.TransactionError {
+    var isStartError: Bool {
+        switch self {
+        case .cardNotRemoved: return true
+        default: return false
+        }
+    }
+}
+
+private extension HpsTransactionType {
+    var asGMSTransactionType: GlobalMobileSDK.TransactionType? {
+        switch self {
+        case .batchClose:       return .BatchClose
+        case .creditAdjust:     return .TipAdjust
+        case .creditAuth:       return .Auth
+        case .creditCapture:    return .Capture
+        case .creditReturn:     return .Return
+        case .creditReversal:   return .Reversal
+        case .creditSale:       return .Sale
+        case .creditVoid:       return .Void
+        case .unknown:          return nil
+        }
+    }
+}
+
+private extension GMSWrapper {
+    func onTransactionStartFailed(withError gmsError: GlobalMobileSDK.TransactionError) {
+        let response = HpsTerminalResponse()
+        let error = NSError(fromTransactionError: gmsError)
+        let reason = error.userInfo["reason"] as? String
+        response.deviceResponseCode = reason
+        let gmsTransactionType = builder?.transactionType.asGMSTransactionType
+        let transactionType = gmsTransactionType.flatMap(HpsC2xEnums.transactionTypeToString)
+        response.transactionType = transactionType
+        delegate.onTransactionComplete("", response: response)
     }
 }

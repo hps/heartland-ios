@@ -18,10 +18,16 @@
 
 @property (nonatomic,strong) NSString *deviceResponseMessage;
 @property (nonatomic,strong) NSString *responseText;
-@property (nonatomic,readwrite) NSString *transactionId;
+@property (nonatomic,strong) NSString *transactionId;
 @property (nonatomic,strong) NSString *terminalRefNumber;
 @property (nonatomic,strong) HpsTokenData *tokenData;
 @property (nonatomic,strong) NSString *signatureStatus;
+@property (nonatomic,readonly) BOOL gmsResponseIsApproval;
+@property (nonatomic,readonly) BOOL gmsResponseIsPartialApproval;
+@property (nonatomic,readonly) BOOL gmsResponseIsReversible;
+@property (nonatomic,readonly) BOOL gmsResponseIsTimeout;
+@property (nonatomic,readonly) BOOL gmsResponseIsDuplicate;
+@property (nonatomic,readonly) NSString *gmsResponseDuplicatedTransactionID;
 #pragma mark - TRANSACTIONAL
 @property (nonatomic,strong) NSString *transactionType;
 @property (nonatomic,strong) NSString *entryMethod;
@@ -66,6 +72,8 @@
 @property (nonatomic,readwrite) NSString *lastResponseTransactionId;
 
 @property (nonatomic,strong) NSUUID *clientTransactionIdUUID;
+@property (nonatomic,strong) NSString *transactionStatusInformation;
+@property (nonatomic,strong) NSString *cardType;
 
 - (void) mapResponse:(id <HpaResposeInterface>) response;
 // @todo

@@ -46,7 +46,7 @@
 
     //visa
     card.cardNumber = @"4716739001010119";
-    card.expMonth = 12;
+    card.expMonth = 9;
     card.expYear = 2022;
     card.cvv = @"1234";
     return card;
@@ -66,7 +66,7 @@
 {
     deviceConnectionExpectation = [self expectationWithDescription:@"test_C2X_Initialize"];
     [self deviceSetUp];
-    [self.device initialize];
+    [self.device scan];
     self.device.deviceDelegate = self;
     [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
         if(error) XCTFail(@"Request Timed out");
@@ -77,7 +77,7 @@
 -(void)test_Credit_Sale_Manual
 {
     [self deviceSetUp];
-    [self.device initialize];
+    [self.device scan];
     self.device.deviceDelegate = self;
     transactionExpectation = [self expectationWithDescription:@"test_C2X_Credit_Sale_Manual"];
     HpsC2xCreditSaleBuilder *builder = [[HpsC2xCreditSaleBuilder alloc] initWithDevice:self.device];
@@ -103,7 +103,7 @@
 -(void)test_Credit_Sale_Manual_Partial_Approval
 {
     [self deviceSetUp];
-    [self.device initialize];
+    [self.device scan];
     self.device.deviceDelegate = self;
     transactionExpectation = [self expectationWithDescription:@"test_C2X_Credit_Sale_Manual"];
     HpsC2xCreditSaleBuilder *builder = [[HpsC2xCreditSaleBuilder alloc] initWithDevice:self.device];
@@ -131,7 +131,7 @@
 -(void)test_Credit_Sale_Manual_No_Reply
 {
     [self deviceSetUp];
-    [self.device initialize];
+    [self.device scan];
     self.device.deviceDelegate = self;
     transactionExpectation = [self expectationWithDescription:@"test_C2X_Credit_Sale_Manual"];
     HpsC2xCreditSaleBuilder *builder = [[HpsC2xCreditSaleBuilder alloc] initWithDevice:self.device];
@@ -158,7 +158,7 @@
 {
     deviceConnectionExpectation = [self expectationWithDescription:@"test_C2X_DeviceConnected"];
     [self deviceSetUp];
-    [self.device initialize];
+    [self.device scan];
     self.device.deviceDelegate = self;
     [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
         if(error) XCTFail(@"Request Timed out");
@@ -180,7 +180,7 @@
 -(void)test_Credit_Auth
 {
     [self deviceSetUp];
-    [self.device initialize];
+    [self.device scan];
     self.device.deviceDelegate = self;
     transactionExpectation = [self expectationWithDescription:@"test_C2X_CreditSale"];
     HpsC2xCreditAuthBuilder *builder = [[HpsC2xCreditAuthBuilder alloc] initWithDevice:self.device];
@@ -200,7 +200,7 @@
 -(void)test_Credit_Capture
 {
     [self deviceSetUp];
-    [self.device initialize];
+    [self.device scan];
     self.device.deviceDelegate = self;
     transactionExpectation = [self expectationWithDescription:@"test_C2X_Credit_Auth_Manual"];
     HpsC2xCreditAuthBuilder *builder = [[HpsC2xCreditAuthBuilder alloc] initWithDevice:self.device];
@@ -259,7 +259,7 @@
 -(void)test_Credit_Refund_By_TransactionId
 {
     [self deviceSetUp];
-    [self.device initialize];
+    [self.device scan];
     self.device.deviceDelegate = self;
     transactionExpectation = [self expectationWithDescription:@"test_C2X_Credit_Sale_Manual"];
     HpsC2xCreditSaleBuilder *builder = [[HpsC2xCreditSaleBuilder alloc] initWithDevice:self.device];
@@ -292,7 +292,7 @@
 -(void)test_Credit_Void
 {
     [self deviceSetUp];
-    [self.device initialize];
+    [self.device scan];
     self.device.deviceDelegate = self;
     transactionExpectation = [self expectationWithDescription:@"test_C2X_Credit_Auth_Manual"];
     HpsC2xCreditAuthBuilder *builder = [[HpsC2xCreditAuthBuilder alloc] initWithDevice:self.device];
@@ -324,7 +324,7 @@
 -(void)test_Credit_Tip_Adjust
 {
     [self deviceSetUp];
-    [self.device initialize];
+    [self.device scan];
     self.device.deviceDelegate = self;
     transactionExpectation = [self expectationWithDescription:@"test_C2X_Credit_Sale_Manual"];
     HpsC2xCreditSaleBuilder *builder = [[HpsC2xCreditSaleBuilder alloc] initWithDevice:self.device];
@@ -359,7 +359,7 @@
 -(void)test_Batch_close
 {
     [self deviceSetUp];
-    [self.device initialize];
+    [self.device scan];
     self.device.deviceDelegate = self;
     transactionExpectation = [self expectationWithDescription:@"test_C2X_Batch_Close"];
     HpsC2xBatchCloseBuilder *builder = [[HpsC2xBatchCloseBuilder alloc] initWithDevice:self.device];

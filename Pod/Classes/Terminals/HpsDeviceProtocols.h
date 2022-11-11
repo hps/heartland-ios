@@ -21,8 +21,8 @@
 @optional
 -(NSString*)toString;
 @property (nonatomic) BOOL storedResponse;
-@property (nonatomic,readwrite) int transactionId;
-@property (nonatomic,readwrite) int lastResponseTransactionId;
+@property (nonatomic,strong) NSString *transactionId;
+@property (nonatomic,strong) NSString *lastResponseTransactionId;
 
 @end
 

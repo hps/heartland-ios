@@ -41,6 +41,15 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "6003F589195388D20070C39A"
+            BuildableName = "Heartland-iOS-SDK_Example.app"
+            BlueprintName = "Heartland-iOS-SDK_Example"
+            ReferencedContainer = "container:Heartland-iOS-SDK.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -52,6 +61,27 @@
                ReferencedContainer = "container:Heartland-iOS-SDK.xcodeproj">
             </BuildableReference>
             <SkippedTests>
+               <Test
+                  Identifier = "Heartland_GatewayTests">
+               </Test>
+               <Test
+                  Identifier = "Heartland_TokenizationTests">
+               </Test>
+               <Test
+                  Identifier = "HpsJsonDocTests">
+               </Test>
+               <Test
+                  Identifier = "HpsPayRollTests">
+               </Test>
+               <Test
+                  Identifier = "HpsTableServicesTest">
+               </Test>
+               <Test
+                  Identifier = "Hps_C2X_Device_Test">
+               </Test>
+               <Test
+                  Identifier = "Hps_C2x_Credit_Test">
+               </Test>
                <Test
                   Identifier = "Hps_Hpa_Admin_Test">
                </Test>
@@ -77,22 +107,104 @@
                   Identifier = "Hps_Hpa_VRF_Test">
                </Test>
                <Test
+                  Identifier = "Hps_Pax_Admin_Tests">
+               </Test>
+               <Test
                   Identifier = "Hps_Pax_BatchMessage_Tests">
+               </Test>
+               <Test
+                  Identifier = "Hps_Pax_Batch_Tests">
+               </Test>
+               <Test
+                  Identifier = "Hps_Pax_Connection_Tests">
+               </Test>
+               <Test
+                  Identifier = "Hps_Pax_Credit_Tests">
+               </Test>
+               <Test
+                  Identifier = "Hps_Pax_Debit_Tests">
+               </Test>
+               <Test
+                  Identifier = "Hps_Pax_Gift_Tests">
+               </Test>
+               <Test
+                  Identifier = "Hps_Pax_Report_test">
+               </Test>
+               <Test
+                  Identifier = "Hps_Pax_VRF_Test">
+               </Test>
+               <Test
+                  Identifier = "Hps_Pax_Z_Return">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Admin_Tests">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Admin_Tests/test_UPA_AppInfo">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Admin_Tests/test_UPA_CancelPending">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Admin_Tests/test_UPA_EOD">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Admin_Tests/test_UPA_LineItem">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Admin_Tests/test_UPA_LineItem_WithRight">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Admin_Tests/test_UPA_Ping">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Admin_Tests/test_UPA_Reboot">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Admin_Tests/test_UPA_Reset">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Adjust_Reversal">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Auth_Reversal">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Auth_Void">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Refund">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Refund_Reversal">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Refund_Void">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Sale_Adjust">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Sale_Refund">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Sale_Reversal">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Sale_Void">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_Credit_Tests/test_UPA_Verify">
+               </Test>
+               <Test
+                  Identifier = "Hps_Upa_VRF_Tests">
                </Test>
             </SkippedTests>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "Heartland-iOS-SDK_Example.app"
-            BlueprintName = "Heartland-iOS-SDK_Example"
-            ReferencedContainer = "container:Heartland-iOS-SDK.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -114,8 +226,6 @@
             ReferencedContainer = "container:Heartland-iOS-SDK.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

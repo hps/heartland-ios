@@ -29,6 +29,8 @@
 @property (nonatomic, readwrite) BOOL allowDuplicates;
 @property (nonatomic, strong) NSNumber *gratuity;
 @property (nonatomic, readwrite) BOOL signatureCapture;
+@property (nonatomic, readwrite) BOOL tipRequest;
+@property (nonatomic, strong) NSString *ecrTransId;
 @property (nonatomic, strong) NSString *clientTransactionId;
 
 - (void) execute:(void(^)(HpsPaxCreditResponse*, NSError*))responseBlock;

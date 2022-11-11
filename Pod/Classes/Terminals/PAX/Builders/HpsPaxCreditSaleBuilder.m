@@ -7,8 +7,23 @@
     if (self != nil)
     {
         device = paxDevice;
+        _ecrTransId = [HpsPaxCreditSaleBuilder newECRTransactionId];
     }
     return self;   
+}
+
+// 16 digit unique numeric id from current time interval
++ (NSString *)newECRTransactionId {
+    NSNumberFormatter *formatter = NSNumberFormatter.new;
+    formatter.usesSignificantDigits = YES;
+    formatter.minimumSignificantDigits = 16;
+    formatter.maximumSignificantDigits = 16;
+    
+    NSTimeInterval now = [NSDate.new timeIntervalSince1970];
+    NSString *nowNumString = [formatter stringFromNumber:@(now)];
+    NSString *result = [nowNumString stringByReplacingOccurrencesOfString:formatter.decimalSeparator withString:@""];
+    
+    return result;
 }
 
 - (void) execute:(void(^)(HpsPaxCreditResponse*, NSError*))responseBlock{
@@ -42,6 +57,8 @@
     [subgroups addObject:account];
     
     HpsPaxTraceRequest *traceRequest = [[HpsPaxTraceRequest alloc] init];
+    traceRequest.ecrTransId = _ecrTransId;
+    
     traceRequest.referenceNumber = [NSString stringWithFormat:@"%d", self.referenceNumber];
     if (self.clientTransactionId != nil)
         traceRequest.clientTransactionId = self.clientTransactionId;
@@ -70,6 +87,9 @@
     }
     if (self.signatureCapture){
         [extData.collection setObject:@"1" forKey:PAX_EXT_DATA_SIGNATURE_CAPTURE];
+    }
+    if (self.tipRequest){
+        [extData.collection setObject:@"1" forKey:PAX_EXT_DATA_TIP_REQUEST];
     }
     [subgroups addObject:extData];
     

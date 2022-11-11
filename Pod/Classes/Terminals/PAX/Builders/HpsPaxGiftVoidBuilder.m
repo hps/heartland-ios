@@ -26,6 +26,11 @@
     
     HpsPaxTraceRequest *traceRequest = [[HpsPaxTraceRequest alloc] init];
     traceRequest.referenceNumber = [NSString stringWithFormat:@"%d", self.referenceNumber];
+    
+    if (_transactionNumber) {
+        traceRequest.transactionNumber = @(_transactionNumber).stringValue;
+    }
+    
     [subgroups addObject:traceRequest];
     
     HpsPaxCashierSubGroup *cashierRequest = [[HpsPaxCashierSubGroup alloc]init];
@@ -33,8 +38,8 @@
     
     HpsPaxExtDataSubGroup *extData = [[HpsPaxExtDataSubGroup alloc] init];
     
-    if (self.transactionId != 0) {
-        [extData.collection setObject:[NSString stringWithFormat:@"%d", self.transactionId] forKey:PAX_EXT_DATA_HOST_REFERENCE_NUMBER.uppercaseString];
+    if (self.transactionId != nil && [self.transactionId length] > 0) {
+        [extData.collection setObject:self.transactionId forKey:PAX_EXT_DATA_HOST_REFERENCE_NUMBER.uppercaseString];
     }
     [subgroups addObject:extData];
     
@@ -53,8 +58,8 @@
         @throw [NSException exceptionWithName:@"HpsPaxException" reason:@"currencyType is required." userInfo:nil];
     }
     
-    if (self.transactionId <= 0) {
-        @throw [NSException exceptionWithName:@"HpsPaxException" reason:@"transactionId is required." userInfo:nil];
+    if (self.transactionId <= 0 && self.transactionNumber == 0) {
+        @throw [NSException exceptionWithName:@"HpsPaxException" reason:@"either transactionId or transactionNumber is required." userInfo:nil];
     }
     
 }

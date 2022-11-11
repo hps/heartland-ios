@@ -7,7 +7,7 @@
 }
 
 @property (nonatomic, readwrite) int referenceNumber;
-@property (nonatomic, readwrite) int transactionId;
+@property (nonatomic, strong) NSString *transactionId;
 @property (nonatomic, strong) NSNumber *amount;
 
 - (void) execute:(void(^)(id<IHPSDeviceResponse>, NSError*))responseBlock;

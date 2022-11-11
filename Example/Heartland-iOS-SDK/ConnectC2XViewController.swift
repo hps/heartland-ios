@@ -21,8 +21,6 @@ class ConnectC2XViewController: UIViewController {
         
         scanButtonReference.isEnabled = false
         let timeout = 120
-        let timeoutPoint = UnsafeMutablePointer<Int>.allocate(capacity: 1)
-        timeoutPoint.initialize(to: timeout)
         
         let config = HpsConnectionConfig()
         config.username = "701389328"
@@ -32,7 +30,7 @@ class ConnectC2XViewController: UIViewController {
         config.licenseID = "142827"
         config.developerID = "002914"
         config.versionNumber = "3409"
-        config.timeout = timeoutPoint
+        config.timeout = timeout
         
         self.device = HpsC2xDevice(config: config)
         self.device?.deviceDelegate = self

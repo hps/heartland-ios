@@ -239,6 +239,10 @@ extension C2XTransactionsViewController: HpsC2xDeviceDelegate, GMSTransactionDel
         showProgress(false)
     }
     
+    func onTransactionError(_ error: NSError) {
+        showProgress(false)
+    }
+    
     func onError(_ error: NSError) {
         self.device?.onError(error)
     }

@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14BB79F32915E4D00043D0E5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BB79F22915E4D00043D0E5 /* Constants.swift */; };
-		14BB79F62915E9D60043D0E5 /* C2XTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BB79F52915E9D60043D0E5 /* C2XTransactionsViewController.swift */; };
+		3401486427EB801B0074A93F /* Hps_UPA_VRF_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401486327EB801B0074A93F /* Hps_UPA_VRF_Test.m */; };
 		3456ADAD25CB03F1000484E8 /* Hps_C2X_Device_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 3456ADAC25CB03F1000484E8 /* Hps_C2X_Device_Test.m */; };
 		3456ADB325CB0442000484E8 /* Hps_C2X_Credit_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 3456ADB225CB0442000484E8 /* Hps_C2X_Credit_Test.m */; };
+		345F6DE92783D981002DC1CC /* HpsJsonDocTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DE82783D981002DC1CC /* HpsJsonDocTests.m */; };
+		345F6DEB2783FDAA002DC1CC /* Hps_UPA_Admin_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F6DEA2783FDAA002DC1CC /* Hps_UPA_Admin_Test.m */; };
+		34783E4D2784B5BD009174DD /* Hps_UPA_Credit_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 34783E4C2784B5BD009174DD /* Hps_UPA_Credit_Test.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
+		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -27,6 +30,7 @@
 		84FFB2CA1D63535000D56BF9 /* Hps_Pax_Admin_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFB2C71D6352E900D56BF9 /* Hps_Pax_Admin_Tests.m */; };
 		84FFB2CC1D63537400D56BF9 /* Hps_Pax_Credit_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFB2CB1D63537400D56BF9 /* Hps_Pax_Credit_Tests.m */; };
 		8706DB3B29562C8A195DB4FD /* Pods_Heartland_iOS_SDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D472C6C84F02E1033D8F882 /* Pods_Heartland_iOS_SDK_Example.framework */; };
+		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		D50E0E0B693E4B509A8E491C /* Pods_Heartland_iOS_SDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EC82F001209D3ECA5AEE8C /* Pods_Heartland_iOS_SDK_Tests.framework */; };
 		DB30662B2188794A00F6E101 /* Hps_Hpa_Report_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DB30662A2188794A00F6E101 /* Hps_Hpa_Report_Test.m */; };
 		DB3DC11C2004F7EA0037521A /* Hps_Hpa_VRF_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3DC11B2004F7EA0037521A /* Hps_Hpa_VRF_Test.m */; };
@@ -37,16 +41,26 @@
 		DBF1B0A52080B3C7007A775E /* HpsTableServicesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF1B0A42080B3C7007A775E /* HpsTableServicesTest.m */; };
 		DBF1DE8B1FB9AEF100D57C16 /* Hps_Hpa_Debit_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF1DE8A1FB9AEF100D57C16 /* Hps_Hpa_Debit_Test.m */; };
 		DBF1DE8D1FB9AF0900D57C16 /* Hps_Hpa_Gift_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF1DE8C1FB9AF0900D57C16 /* Hps_Hpa_Gift_Test.m */; };
-		DD12CF3A290C6B05007C2275 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD12CF34290C6B05007C2275 /* AppDelegate.swift */; };
-		DD12CF3D290C6B05007C2275 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD12CF37290C6B05007C2275 /* MainViewController.swift */; };
-		DD12CF40290C6C1E007C2275 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD12CF3E290C6B60007C2275 /* Main.storyboard */; };
-		DD12CF41290C6C21007C2275 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD12CF3F290C6B60007C2275 /* LaunchScreen.storyboard */; };
-		DD12CF43290C6CB3007C2275 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD12CF42290C6CB3007C2275 /* Assets.xcassets */; };
-		DD12CF4529117679007C2275 /* ConnectC2XViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD12CF4429117679007C2275 /* ConnectC2XViewController.swift */; };
+		DD96F5CF291E8E020058CB5C /* ConnectC2XViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F5C8291E8E020058CB5C /* ConnectC2XViewController.swift */; };
+		DD96F5D0291E8E030058CB5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F5C9291E8E020058CB5C /* AppDelegate.swift */; };
+		DD96F5D1291E8E030058CB5C /* C2XTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F5CB291E8E020058CB5C /* C2XTransactionsViewController.swift */; };
+		DD96F5D2291E8E030058CB5C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F5CC291E8E020058CB5C /* Constants.swift */; };
+		DD96F5D3291E8E030058CB5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD96F5CD291E8E020058CB5C /* Assets.xcassets */; };
+		DD96F5D4291E8E030058CB5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD96F5CE291E8E020058CB5C /* LaunchScreen.storyboard */; };
 		E2576C2D243C78D1002E4CA4 /* Hps_Pax_Report_test.m in Sources */ = {isa = PBXBuildFile; fileRef = E2576C2C243C78D1002E4CA4 /* Hps_Pax_Report_test.m */; };
 		E2A3363B2455C6950041AD64 /* Hps_Pax_Batch_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A3363A2455C6950041AD64 /* Hps_Pax_Batch_Tests.m */; };
 		E2B1C1BC2403DFF20040D5C7 /* Hps_Hpa_EOD_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B1C1BB2403DFF20040D5C7 /* Hps_Hpa_EOD_Test.m */; };
 		E2B1C1EB24190C820040D5C7 /* Hps_Hpa_EBT_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B1C1EA24190C820040D5C7 /* Hps_Hpa_EBT_Test.m */; };
+		EF6EA442263775200039FA6B /* HRGMSDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6EA441263775200039FA6B /* HRGMSDeviceViewController.m */; };
+		EF6EA447263776030039FA6B /* HRGMSDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6EA446263776030039FA6B /* HRGMSDeviceManager.m */; };
+		EF7F84EF2698CE1300CA7099 /* HRPAXTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7F84EE2698CE1300CA7099 /* HRPAXTransactionViewController.m */; };
+		EF7F84F42698D15900CA7099 /* HRPAXTransactionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7F84F32698D15900CA7099 /* HRPAXTransactionViewModel.m */; };
+		EF7F84F92698D3BA00CA7099 /* HRPAXTransactionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7F84F82698D3BA00CA7099 /* HRPAXTransactionManager.m */; };
+		EF80F8BF267BF3F50097FF73 /* HRGMSTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF80F8BE267BF3F50097FF73 /* HRGMSTransactionViewController.m */; };
+		EF80F8CB267BF4730097FF73 /* HRGMSTransactionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF80F8CA267BF4730097FF73 /* HRGMSTransactionViewModel.m */; };
+		EFA712B3268CE7000041EC21 /* HRGMSTransactionLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA712B2268CE7000041EC21 /* HRGMSTransactionLogger.m */; };
+		EFDB8B46267C0A62004DFCDA /* HRGMSTransactionService.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDB8B45267C0A62004DFCDA /* HRGMSTransactionService.m */; };
+		EFDB8B4B267C176D004DFCDA /* HRGMSSerializationService.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDB8B4A267C176D004DFCDA /* HRGMSSerializationService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,12 +75,14 @@
 
 /* Begin PBXFileReference section */
 		08D636DD28A9667ED2741E32 /* Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig"; path = "Pods/Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig"; sourceTree = "<group>"; };
-		14BB79F22915E4D00043D0E5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		14BB79F52915E9D60043D0E5 /* C2XTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C2XTransactionsViewController.swift; sourceTree = "<group>"; };
 		253ABA11EC670E90EACA486A /* Pods-Heartland-iOS-SDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartland-iOS-SDK_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		2D472C6C84F02E1033D8F882 /* Pods_Heartland_iOS_SDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartland_iOS_SDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3401486327EB801B0074A93F /* Hps_UPA_VRF_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_UPA_VRF_Test.m; sourceTree = "<group>"; };
 		3456ADAC25CB03F1000484E8 /* Hps_C2X_Device_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_C2X_Device_Test.m; sourceTree = "<group>"; };
 		3456ADB225CB0442000484E8 /* Hps_C2X_Credit_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_C2X_Credit_Test.m; sourceTree = "<group>"; };
+		345F6DE82783D981002DC1CC /* HpsJsonDocTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsJsonDocTests.m; sourceTree = "<group>"; };
+		345F6DEA2783FDAA002DC1CC /* Hps_UPA_Admin_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_UPA_Admin_Test.m; sourceTree = "<group>"; };
+		34783E4C2784B5BD009174DD /* Hps_UPA_Credit_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_UPA_Credit_Test.m; sourceTree = "<group>"; };
 		3FA9B09A5740798478B9281B /* Heartland-iOS-SDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "Heartland-iOS-SDK.podspec"; path = "../Heartland-iOS-SDK.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6003F58A195388D20070C39A /* Heartland-iOS-SDK_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Heartland-iOS-SDK_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -74,7 +90,9 @@
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6003F595195388D20070C39A /* Heartland-iOS-SDK-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Heartland-iOS-SDK-Info.plist"; sourceTree = "<group>"; };
 		6003F597195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6003F599195388D20070C39A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6003F59B195388D20070C39A /* Heartland-iOS-SDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Heartland-iOS-SDK-Prefix.pch"; sourceTree = "<group>"; };
+		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* Heartland-iOS-SDK_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Heartland-iOS-SDK_Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
@@ -90,13 +108,13 @@
 		84FFB2C41D63529800D56BF9 /* Hps_Pax_Connection_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_Connection_Tests.m; sourceTree = "<group>"; };
 		84FFB2C71D6352E900D56BF9 /* Hps_Pax_Admin_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_Admin_Tests.m; sourceTree = "<group>"; };
 		84FFB2CB1D63537400D56BF9 /* Hps_Pax_Credit_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_Credit_Tests.m; sourceTree = "<group>"; };
+		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		90EC82F001209D3ECA5AEE8C /* Pods_Heartland_iOS_SDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartland_iOS_SDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A863AAB90A2F8CE2547765 /* Pods-Heartland-iOS-SDK_Example.pax_testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartland-iOS-SDK_Example.pax_testing.xcconfig"; path = "Pods/Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example.pax_testing.xcconfig"; sourceTree = "<group>"; };
 		B3271F7E0C265B59AE8894E1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		D51EA908AC81E7B7EB89E8D5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		DB30662A2188794A00F6E101 /* Hps_Hpa_Report_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_Report_Test.m; sourceTree = "<group>"; };
 		DB3DC11B2004F7EA0037521A /* Hps_Hpa_VRF_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_VRF_Test.m; sourceTree = "<group>"; };
-		DB69ED071ECA0EFF0004FEF7 /* Heartland-iOS-SDK_Tests copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Heartland-iOS-SDK_Tests copy-Info.plist"; path = "/Users/anuragsharma/Documents/HeartlandProjectWork/EnterPrise/Heartland-iOS-SDK/Example/Heartland-iOS-SDK_Tests copy-Info.plist"; sourceTree = "<absolute>"; };
 		DB8A59C01F4BDF7000B98B73 /* Hps_Pax_VRF_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_VRF_Test.m; sourceTree = "<group>"; };
 		DBDA36701FAB430900CF5146 /* Hps_Hpa_Admin_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_Admin_Test.m; sourceTree = "<group>"; };
 		DBDA367D1FB01C2000CF5146 /* Hps_Hpa_Credit_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_Credit_Test.m; sourceTree = "<group>"; };
@@ -104,17 +122,44 @@
 		DBF1B0A42080B3C7007A775E /* HpsTableServicesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpsTableServicesTest.m; sourceTree = "<group>"; };
 		DBF1DE8A1FB9AEF100D57C16 /* Hps_Hpa_Debit_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_Debit_Test.m; sourceTree = "<group>"; };
 		DBF1DE8C1FB9AF0900D57C16 /* Hps_Hpa_Gift_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_Gift_Test.m; sourceTree = "<group>"; };
-		DD12CF31290C6B02007C2275 /* Heartland-iOS-SDK_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Heartland-iOS-SDK_Example-Bridging-Header.h"; sourceTree = "<group>"; };
-		DD12CF34290C6B05007C2275 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Heartland-iOS-SDK/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
-		DD12CF37290C6B05007C2275 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = SOURCE_ROOT; };
-		DD12CF3E290C6B60007C2275 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		DD12CF3F290C6B60007C2275 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DD12CF42290C6CB3007C2275 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DD12CF4429117679007C2275 /* ConnectC2XViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectC2XViewController.swift; sourceTree = "<group>"; };
+		DD96F5C7291E8DFF0058CB5C /* Heartland-iOS-SDK_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Heartland-iOS-SDK_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		DD96F5C8291E8E020058CB5C /* ConnectC2XViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectC2XViewController.swift; sourceTree = "<group>"; };
+		DD96F5C9291E8E020058CB5C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DD96F5CA291E8E020058CB5C /* Heartland-iOS-SDK_Example-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Heartland-iOS-SDK_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		DD96F5CB291E8E020058CB5C /* C2XTransactionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = C2XTransactionsViewController.swift; sourceTree = "<group>"; };
+		DD96F5CC291E8E020058CB5C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DD96F5CD291E8E020058CB5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD96F5CE291E8E020058CB5C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2576C2C243C78D1002E4CA4 /* Hps_Pax_Report_test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_Report_test.m; sourceTree = "<group>"; };
 		E2A3363A2455C6950041AD64 /* Hps_Pax_Batch_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_Batch_Tests.m; sourceTree = "<group>"; };
 		E2B1C1BB2403DFF20040D5C7 /* Hps_Hpa_EOD_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_EOD_Test.m; sourceTree = "<group>"; };
 		E2B1C1EA24190C820040D5C7 /* Hps_Hpa_EBT_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_EBT_Test.m; sourceTree = "<group>"; };
+		EF6EA440263775200039FA6B /* HRGMSDeviceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSDeviceViewController.h; sourceTree = "<group>"; };
+		EF6EA441263775200039FA6B /* HRGMSDeviceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSDeviceViewController.m; sourceTree = "<group>"; };
+		EF6EA445263776030039FA6B /* HRGMSDeviceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSDeviceManager.h; sourceTree = "<group>"; };
+		EF6EA446263776030039FA6B /* HRGMSDeviceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSDeviceManager.m; sourceTree = "<group>"; };
+		EF6EA44A26377ABA0039FA6B /* HRGMS+Notifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HRGMS+Notifications.h"; sourceTree = "<group>"; };
+		EF7F84E32698CCAF00CA7099 /* HRPAXTransactionModelInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRPAXTransactionModelInput.h; sourceTree = "<group>"; };
+		EF7F84E62698CCD100CA7099 /* HRPAXTransactionModelOutput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRPAXTransactionModelOutput.h; sourceTree = "<group>"; };
+		EF7F84E72698CCDF00CA7099 /* HRPAXTransactionViewModelInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRPAXTransactionViewModelInput.h; sourceTree = "<group>"; };
+		EF7F84E82698CCED00CA7099 /* HRPAXTransactionViewModelOutput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRPAXTransactionViewModelOutput.h; sourceTree = "<group>"; };
+		EF7F84E92698CCFC00CA7099 /* HRPAXTransactionViewInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRPAXTransactionViewInput.h; sourceTree = "<group>"; };
+		EF7F84ED2698CE1300CA7099 /* HRPAXTransactionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRPAXTransactionViewController.h; sourceTree = "<group>"; };
+		EF7F84EE2698CE1300CA7099 /* HRPAXTransactionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRPAXTransactionViewController.m; sourceTree = "<group>"; };
+		EF7F84F22698D15900CA7099 /* HRPAXTransactionViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRPAXTransactionViewModel.h; sourceTree = "<group>"; };
+		EF7F84F32698D15900CA7099 /* HRPAXTransactionViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRPAXTransactionViewModel.m; sourceTree = "<group>"; };
+		EF7F84F72698D3BA00CA7099 /* HRPAXTransactionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRPAXTransactionManager.h; sourceTree = "<group>"; };
+		EF7F84F82698D3BA00CA7099 /* HRPAXTransactionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRPAXTransactionManager.m; sourceTree = "<group>"; };
+		EF80F8BD267BF3F50097FF73 /* HRGMSTransactionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSTransactionViewController.h; sourceTree = "<group>"; };
+		EF80F8BE267BF3F50097FF73 /* HRGMSTransactionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionViewController.m; sourceTree = "<group>"; };
+		EF80F8C9267BF4730097FF73 /* HRGMSTransactionViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSTransactionViewModel.h; sourceTree = "<group>"; };
+		EF80F8CA267BF4730097FF73 /* HRGMSTransactionViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionViewModel.m; sourceTree = "<group>"; };
+		EFA712B1268CE7000041EC21 /* HRGMSTransactionLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSTransactionLogger.h; sourceTree = "<group>"; };
+		EFA712B2268CE7000041EC21 /* HRGMSTransactionLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionLogger.m; sourceTree = "<group>"; };
+		EFDB8B44267C0A62004DFCDA /* HRGMSTransactionService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSTransactionService.h; sourceTree = "<group>"; };
+		EFDB8B45267C0A62004DFCDA /* HRGMSTransactionService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionService.m; sourceTree = "<group>"; };
+		EFDB8B49267C176D004DFCDA /* HRGMSSerializationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSSerializationService.h; sourceTree = "<group>"; };
+		EFDB8B4A267C176D004DFCDA /* HRGMSSerializationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSSerializationService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,16 +188,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		14BB79F42915E9850043D0E5 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				14BB79F22915E4D00043D0E5 /* Constants.swift */,
-				DD12CF3F290C6B60007C2275 /* LaunchScreen.storyboard */,
-				DD12CF34290C6B05007C2275 /* AppDelegate.swift */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		3456ADAB25CB03C8000484E8 /* C2X */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +195,17 @@
 				3456ADB225CB0442000484E8 /* Hps_C2X_Credit_Test.m */,
 			);
 			path = C2X;
+			sourceTree = "<group>";
+		};
+		345F6DE72783D956002DC1CC /* UPA */ = {
+			isa = PBXGroup;
+			children = (
+				345F6DE82783D981002DC1CC /* HpsJsonDocTests.m */,
+				345F6DEA2783FDAA002DC1CC /* Hps_UPA_Admin_Test.m */,
+				34783E4C2784B5BD009174DD /* Hps_UPA_Credit_Test.m */,
+				3401486327EB801B0074A93F /* Hps_UPA_VRF_Test.m */,
+			);
+			name = UPA;
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
@@ -171,7 +217,6 @@
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
 				E706FDDAF26E6725313B27CA /* Pods */,
-				DB69ED071ECA0EFF0004FEF7 /* Heartland-iOS-SDK_Tests copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -200,12 +245,18 @@
 		6003F593195388D20070C39A /* Example for Heartland-iOS-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				14BB79F42915E9850043D0E5 /* Resources */,
-				DD12CF3E290C6B60007C2275 /* Main.storyboard */,
-				DD12CF37290C6B05007C2275 /* MainViewController.swift */,
-				DD12CF4429117679007C2275 /* ConnectC2XViewController.swift */,
-				14BB79F52915E9D60043D0E5 /* C2XTransactionsViewController.swift */,
+				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				EF7F84E22698CC9900CA7099 /* PAX */,
+				EF7F84DD2698CA4200CA7099 /* GMS */,
+				DD96F5C9291E8E020058CB5C /* AppDelegate.swift */,
+				DD96F5CD291E8E020058CB5C /* Assets.xcassets */,
+				DD96F5CB291E8E020058CB5C /* C2XTransactionsViewController.swift */,
+				DD96F5C8291E8E020058CB5C /* ConnectC2XViewController.swift */,
+				DD96F5CC291E8E020058CB5C /* Constants.swift */,
+				DD96F5CA291E8E020058CB5C /* Heartland-iOS-SDK_Example-Bridging-Header.h */,
+				DD96F5CE291E8E020058CB5C /* LaunchScreen.storyboard */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				DD96F5C7291E8DFF0058CB5C /* Heartland-iOS-SDK_Example-Bridging-Header.h */,
 			);
 			name = "Example for Heartland-iOS-SDK";
 			path = "Heartland-iOS-SDK";
@@ -214,11 +265,11 @@
 		6003F594195388D20070C39A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DD12CF42290C6CB3007C2275 /* Assets.xcassets */,
+				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F595195388D20070C39A /* Heartland-iOS-SDK-Info.plist */,
 				6003F596195388D20070C39A /* InfoPlist.strings */,
+				6003F599195388D20070C39A /* main.m */,
 				6003F59B195388D20070C39A /* Heartland-iOS-SDK-Prefix.pch */,
-				DD12CF31290C6B02007C2275 /* Heartland-iOS-SDK_Example-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -231,6 +282,7 @@
 				DBF1B0A32080B395007A775E /* FreshTxt */,
 				DBDA366F1FAB429300CF5146 /* Hpa */,
 				DBDA366D1FAB425E00CF5146 /* Pax */,
+				345F6DE72783D956002DC1CC /* UPA */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
 			);
 			path = Tests;
@@ -317,6 +369,54 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EF7F84DD2698CA4200CA7099 /* GMS */ = {
+			isa = PBXGroup;
+			children = (
+				EF6EA440263775200039FA6B /* HRGMSDeviceViewController.h */,
+				EF6EA441263775200039FA6B /* HRGMSDeviceViewController.m */,
+				EFDB8B49267C176D004DFCDA /* HRGMSSerializationService.h */,
+				EFDB8B4A267C176D004DFCDA /* HRGMSSerializationService.m */,
+				EFA712B1268CE7000041EC21 /* HRGMSTransactionLogger.h */,
+				EFA712B2268CE7000041EC21 /* HRGMSTransactionLogger.m */,
+				EFDB8B44267C0A62004DFCDA /* HRGMSTransactionService.h */,
+				EFDB8B45267C0A62004DFCDA /* HRGMSTransactionService.m */,
+				EF80F8C9267BF4730097FF73 /* HRGMSTransactionViewModel.h */,
+				EF80F8CA267BF4730097FF73 /* HRGMSTransactionViewModel.m */,
+				EF80F8BD267BF3F50097FF73 /* HRGMSTransactionViewController.h */,
+				EF80F8BE267BF3F50097FF73 /* HRGMSTransactionViewController.m */,
+				EF6EA445263776030039FA6B /* HRGMSDeviceManager.h */,
+				EF6EA446263776030039FA6B /* HRGMSDeviceManager.m */,
+				EF6EA44A26377ABA0039FA6B /* HRGMS+Notifications.h */,
+			);
+			name = GMS;
+			sourceTree = "<group>";
+		};
+		EF7F84E22698CC9900CA7099 /* PAX */ = {
+			isa = PBXGroup;
+			children = (
+				EF7F84EA2698CD0600CA7099 /* Contract */,
+				EF7F84F72698D3BA00CA7099 /* HRPAXTransactionManager.h */,
+				EF7F84F82698D3BA00CA7099 /* HRPAXTransactionManager.m */,
+				EF7F84ED2698CE1300CA7099 /* HRPAXTransactionViewController.h */,
+				EF7F84EE2698CE1300CA7099 /* HRPAXTransactionViewController.m */,
+				EF7F84F22698D15900CA7099 /* HRPAXTransactionViewModel.h */,
+				EF7F84F32698D15900CA7099 /* HRPAXTransactionViewModel.m */,
+			);
+			name = PAX;
+			sourceTree = "<group>";
+		};
+		EF7F84EA2698CD0600CA7099 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				EF7F84E32698CCAF00CA7099 /* HRPAXTransactionModelInput.h */,
+				EF7F84E62698CCD100CA7099 /* HRPAXTransactionModelOutput.h */,
+				EF7F84E72698CCDF00CA7099 /* HRPAXTransactionViewModelInput.h */,
+				EF7F84E82698CCED00CA7099 /* HRPAXTransactionViewModelOutput.h */,
+				EF7F84E92698CCFC00CA7099 /* HRPAXTransactionViewInput.h */,
+			);
+			name = Contract;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -371,7 +471,7 @@
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
 						DevelopmentTeam = 264BX5RC4N;
-						LastSwiftMigration = 1400;
+						LastSwiftMigration = 1410;
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -402,10 +502,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD12CF40290C6C1E007C2275 /* Main.storyboard in Resources */,
-				DD12CF41290C6C21007C2275 /* LaunchScreen.storyboard in Resources */,
-				DD12CF43290C6CB3007C2275 /* Assets.xcassets in Resources */,
+				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				DD96F5D4291E8E030058CB5C /* LaunchScreen.storyboard in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				DD96F5D3291E8E030058CB5C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,11 +612,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD12CF3A290C6B05007C2275 /* AppDelegate.swift in Sources */,
-				DD12CF4529117679007C2275 /* ConnectC2XViewController.swift in Sources */,
-				14BB79F62915E9D60043D0E5 /* C2XTransactionsViewController.swift in Sources */,
-				DD12CF3D290C6B05007C2275 /* MainViewController.swift in Sources */,
-				14BB79F32915E4D00043D0E5 /* Constants.swift in Sources */,
+				DD96F5D2291E8E030058CB5C /* Constants.swift in Sources */,
+				EF80F8CB267BF4730097FF73 /* HRGMSTransactionViewModel.m in Sources */,
+				EFA712B3268CE7000041EC21 /* HRGMSTransactionLogger.m in Sources */,
+				DD96F5D0291E8E030058CB5C /* AppDelegate.swift in Sources */,
+				EF80F8BF267BF3F50097FF73 /* HRGMSTransactionViewController.m in Sources */,
+				EFDB8B4B267C176D004DFCDA /* HRGMSSerializationService.m in Sources */,
+				EFDB8B46267C0A62004DFCDA /* HRGMSTransactionService.m in Sources */,
+				EF7F84F42698D15900CA7099 /* HRPAXTransactionViewModel.m in Sources */,
+				EF6EA447263776030039FA6B /* HRGMSDeviceManager.m in Sources */,
+				DD96F5CF291E8E020058CB5C /* ConnectC2XViewController.swift in Sources */,
+				DD96F5D1291E8E030058CB5C /* C2XTransactionsViewController.swift in Sources */,
+				EF6EA442263775200039FA6B /* HRGMSDeviceViewController.m in Sources */,
+				EF7F84EF2698CE1300CA7099 /* HRPAXTransactionViewController.m in Sources */,
+				EF7F84F92698D3BA00CA7099 /* HRPAXTransactionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,7 +637,9 @@
 				DBE8B01A20ECA30B006F8B97 /* HpsPayRollTests.m in Sources */,
 				E2576C2D243C78D1002E4CA4 /* Hps_Pax_Report_test.m in Sources */,
 				840256431DEE1BB90078B6A2 /* Hps_Pax_Debit_Tests.m in Sources */,
+				34783E4D2784B5BD009174DD /* Hps_UPA_Credit_Test.m in Sources */,
 				E2A3363B2455C6950041AD64 /* Hps_Pax_Batch_Tests.m in Sources */,
+				345F6DE92783D981002DC1CC /* HpsJsonDocTests.m in Sources */,
 				E2B1C1EB24190C820040D5C7 /* Hps_Hpa_EBT_Test.m in Sources */,
 				E2B1C1BC2403DFF20040D5C7 /* Hps_Hpa_EOD_Test.m in Sources */,
 				DBDA36711FAB430900CF5146 /* Hps_Hpa_Admin_Test.m in Sources */,
@@ -536,6 +648,7 @@
 				84FFB2C91D63534D00D56BF9 /* Hps_Pax_Connection_Tests.m in Sources */,
 				84FFB2CA1D63535000D56BF9 /* Hps_Pax_Admin_Tests.m in Sources */,
 				DB8A59C11F4BDF7000B98B73 /* Hps_Pax_VRF_Test.m in Sources */,
+				3401486427EB801B0074A93F /* Hps_UPA_VRF_Test.m in Sources */,
 				848DD45C1D75FBE500D3F658 /* Hps_Pax_Gift_Tests.m in Sources */,
 				DBDA367E1FB01C2000CF5146 /* Hps_Hpa_Credit_Test.m in Sources */,
 				3456ADAD25CB03F1000484E8 /* Hps_C2X_Device_Test.m in Sources */,
@@ -544,6 +657,7 @@
 				DB30662B2188794A00F6E101 /* Hps_Hpa_Report_Test.m in Sources */,
 				DBF1B0A52080B3C7007A775E /* HpsTableServicesTest.m in Sources */,
 				3456ADB325CB0442000484E8 /* Hps_C2X_Credit_Test.m in Sources */,
+				345F6DEB2783FDAA002DC1CC /* Hps_UPA_Admin_Test.m in Sources */,
 				DB3DC11C2004F7EA0037521A /* Hps_Hpa_VRF_Test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -599,7 +713,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -645,7 +759,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -668,12 +782,10 @@
 			baseConfigurationReference = 70FD3C3038658BD48AC9ADBB /* Pods-Heartland-iOS-SDK_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Heartland-iOS-SDK/Heartland-iOS-SDK-Prefix.pch";
 				INFOPLIST_FILE = "Heartland-iOS-SDK/Heartland-iOS-SDK-Info.plist";
@@ -695,12 +807,10 @@
 			baseConfigurationReference = 75EF1144CF33D3C27B73A4D1 /* Pods-Heartland-iOS-SDK_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Heartland-iOS-SDK/Heartland-iOS-SDK-Prefix.pch";
 				INFOPLIST_FILE = "Heartland-iOS-SDK/Heartland-iOS-SDK-Info.plist";
@@ -722,7 +832,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -747,7 +856,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -784,7 +892,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -814,12 +922,10 @@
 			baseConfigurationReference = 93A863AAB90A2F8CE2547765 /* Pods-Heartland-iOS-SDK_Example.pax_testing.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Heartland-iOS-SDK/Heartland-iOS-SDK-Prefix.pch";
 				INFOPLIST_FILE = "Heartland-iOS-SDK/Heartland-iOS-SDK-Info.plist";
@@ -842,7 +948,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

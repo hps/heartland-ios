@@ -50,7 +50,7 @@
 {
     deviceConnectionExpectation = [self expectationWithDescription:@"test_C2X_Initialize"];
     [self deviceSetUp];
-    [self.device initialize];
+    [self.device scan];
     self.device.deviceDelegate = self;
     [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
                if(error) XCTFail(@"Request Timed out");

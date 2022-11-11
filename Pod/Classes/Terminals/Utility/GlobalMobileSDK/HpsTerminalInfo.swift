@@ -1,7 +1,7 @@
 import Foundation
 import GlobalMobileSDK
 
-@objc
+@objcMembers
 public class HpsTerminalInfo: NSObject {
     internal var gmsTerminalInfo: GMSTerminalInfo
     public var name: String = ""
