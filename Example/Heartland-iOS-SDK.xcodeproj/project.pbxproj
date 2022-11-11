@@ -17,7 +17,6 @@
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
-		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -47,6 +46,7 @@
 		DD96F5D2291E8E030058CB5C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F5CC291E8E020058CB5C /* Constants.swift */; };
 		DD96F5D3291E8E030058CB5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD96F5CD291E8E020058CB5C /* Assets.xcassets */; };
 		DD96F5D4291E8E030058CB5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD96F5CE291E8E020058CB5C /* LaunchScreen.storyboard */; };
+		DD96F5D6291E92630058CB5C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96F5D5291E92630058CB5C /* MainViewController.swift */; };
 		E2576C2D243C78D1002E4CA4 /* Hps_Pax_Report_test.m in Sources */ = {isa = PBXBuildFile; fileRef = E2576C2C243C78D1002E4CA4 /* Hps_Pax_Report_test.m */; };
 		E2A3363B2455C6950041AD64 /* Hps_Pax_Batch_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A3363A2455C6950041AD64 /* Hps_Pax_Batch_Tests.m */; };
 		E2B1C1BC2403DFF20040D5C7 /* Hps_Hpa_EOD_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B1C1BB2403DFF20040D5C7 /* Hps_Hpa_EOD_Test.m */; };
@@ -90,9 +90,7 @@
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6003F595195388D20070C39A /* Heartland-iOS-SDK-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Heartland-iOS-SDK-Info.plist"; sourceTree = "<group>"; };
 		6003F597195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6003F599195388D20070C39A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6003F59B195388D20070C39A /* Heartland-iOS-SDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Heartland-iOS-SDK-Prefix.pch"; sourceTree = "<group>"; };
-		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* Heartland-iOS-SDK_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Heartland-iOS-SDK_Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
@@ -130,6 +128,7 @@
 		DD96F5CC291E8E020058CB5C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DD96F5CD291E8E020058CB5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD96F5CE291E8E020058CB5C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DD96F5D5291E92630058CB5C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = "Heartland-iOS-SDK/MainViewController.swift"; sourceTree = SOURCE_ROOT; };
 		E2576C2C243C78D1002E4CA4 /* Hps_Pax_Report_test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_Report_test.m; sourceTree = "<group>"; };
 		E2A3363A2455C6950041AD64 /* Hps_Pax_Batch_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_Batch_Tests.m; sourceTree = "<group>"; };
 		E2B1C1BB2403DFF20040D5C7 /* Hps_Hpa_EOD_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_EOD_Test.m; sourceTree = "<group>"; };
@@ -245,6 +244,7 @@
 		6003F593195388D20070C39A /* Example for Heartland-iOS-SDK */ = {
 			isa = PBXGroup;
 			children = (
+				DD96F5D5291E92630058CB5C /* MainViewController.swift */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				EF7F84E22698CC9900CA7099 /* PAX */,
 				EF7F84DD2698CA4200CA7099 /* GMS */,
@@ -265,10 +265,8 @@
 		6003F594195388D20070C39A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F595195388D20070C39A /* Heartland-iOS-SDK-Info.plist */,
 				6003F596195388D20070C39A /* InfoPlist.strings */,
-				6003F599195388D20070C39A /* main.m */,
 				6003F59B195388D20070C39A /* Heartland-iOS-SDK-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -503,7 +501,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
-				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				DD96F5D4291E8E030058CB5C /* LaunchScreen.storyboard in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				DD96F5D3291E8E030058CB5C /* Assets.xcassets in Resources */,
@@ -621,6 +618,7 @@
 				EFDB8B46267C0A62004DFCDA /* HRGMSTransactionService.m in Sources */,
 				EF7F84F42698D15900CA7099 /* HRPAXTransactionViewModel.m in Sources */,
 				EF6EA447263776030039FA6B /* HRGMSDeviceManager.m in Sources */,
+				DD96F5D6291E92630058CB5C /* MainViewController.swift in Sources */,
 				DD96F5CF291E8E020058CB5C /* ConnectC2XViewController.swift in Sources */,
 				DD96F5D1291E8E030058CB5C /* C2XTransactionsViewController.swift in Sources */,
 				EF6EA442263775200039FA6B /* HRGMSDeviceViewController.m in Sources */,
