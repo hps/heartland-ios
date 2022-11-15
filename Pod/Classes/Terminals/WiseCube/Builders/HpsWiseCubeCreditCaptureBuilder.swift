@@ -2,6 +2,7 @@ import Foundation
 
 @objcMembers
 public class HpsWiseCubeCreditCaptureBuilder : HpsWiseCubeBaseBuilder, GMSCreditCaptureBuilder {
+    public var clientTransactionId: String?
     public var amount: NSDecimalNumber?
     public var referenceNumber: String?
     public var gratuity: NSDecimalNumber?

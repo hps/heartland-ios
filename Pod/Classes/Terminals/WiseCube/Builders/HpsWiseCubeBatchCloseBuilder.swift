@@ -2,6 +2,8 @@ import Foundation
 
 @objcMembers
 public class HpsWiseCubeBatchCloseBuilder : HpsWiseCubeBaseBuilder, GMSBatchCloseBuilder {
+    public var clientTransactionId: String?
+    
     public init(device: HpsWiseCubeDevice) {
         super.init(transactionType: .batchClose, device: device)
     }

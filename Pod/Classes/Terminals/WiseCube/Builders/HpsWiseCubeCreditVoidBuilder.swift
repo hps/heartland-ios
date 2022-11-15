@@ -2,6 +2,7 @@ import Foundation
 
 @objcMembers
 public class HpsWiseCubeCreditVoidBuilder : HpsWiseCubeBaseBuilder, GMSCreditVoidBuilder {
+    public var clientTransactionId: String?
     public var referenceNumber: String?
     public var transactionId: String?
     

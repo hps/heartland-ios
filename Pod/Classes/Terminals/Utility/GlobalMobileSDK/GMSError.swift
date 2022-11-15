@@ -53,7 +53,7 @@ extension NSError {
         var reason = "unknown"
         var message: String?
         var errorCode: Int?
-        var transactionId: UUID?
+        var transactionId: String?
         switch (error) {
         case .gatewayNotConfigured:
             reason = "gatewayNotConfigured"
@@ -112,7 +112,7 @@ extension NSError {
             "reason": reason,
             "message": message ?? "",
             "errorCode": String(errorCode ?? -1),
-            "transactionId": transactionId?.uuidString ?? ""
+            "transactionId": transactionId ?? ""
         ])
     }
 }

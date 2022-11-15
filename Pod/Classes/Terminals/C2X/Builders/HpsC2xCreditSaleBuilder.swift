@@ -2,6 +2,7 @@ import Foundation
 
 @objcMembers
 public class HpsC2xCreditSaleBuilder : HpsC2xBaseBuilder, GMSCreditSaleBuilder {
+    public var clientTransactionId: String?
     public var amount: NSDecimalNumber?
     public var referenceNumber: String?
     public var details: HpsTransactionDetails?

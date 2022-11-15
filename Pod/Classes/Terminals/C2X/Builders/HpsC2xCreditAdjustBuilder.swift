@@ -2,6 +2,7 @@ import Foundation
 
 @objcMembers
 public class HpsC2xCreditAdjustBuilder : HpsC2xBaseBuilder, GMSCreditAdjustBuilder {
+    public var clientTransactionId: String?
     public var amount: NSDecimalNumber?
     public var referenceNumber: String?
     public var details: HpsTransactionDetails?

@@ -2,7 +2,7 @@
 //  BBDeviceSPoCController
 //
 //  Created by Alex Wong on 2018-03-30
-//  Copyright (c) 2018 BBPOS Limited. All rights reserved.
+//  Copyright © 2020 BBPOS Limited. All rights reserved.
 //  RESTRICTED DOCUMENT
 //
 
