@@ -89,8 +89,8 @@
     [self waitForExpectationsWithTimeout:1800.0 handler:^(NSError *error) {
         if(error) XCTFail(@"Request Timed out");
         XCTAssertNotNil(self.response);
-        XCTAssertNotNil(self.response.clientTransactionIdUUID);
-        NSLog(@"approved amount: %@", self.response.clientTransactionIdUUID);
+        XCTAssertNotNil(self.response.clientTransactionId);
+        NSLog(@"approved amount: %@", self.response.clientTransactionId);
         XCTAssertEqualObjects(@"APPROVAL", self.response.deviceResponseCode);
         NSLog(@"approved amount: %@", self.response.approvedAmount);
         NSLog(@"gratuity amount: %@", self.response.tipAmount);
@@ -115,8 +115,8 @@
     [self waitForExpectationsWithTimeout:1800.0 handler:^(NSError *error) {
         if(error) XCTFail(@"Request Timed out");
         XCTAssertNotNil(self.response);
-        XCTAssertNotNil(self.response.clientTransactionIdUUID);
-        NSLog(@"approved amount: %@", self.response.clientTransactionIdUUID);
+        XCTAssertNotNil(self.response.clientTransactionId);
+        NSLog(@"approved amount: %@", self.response.clientTransactionId);
         XCTAssertEqualObjects(@"APPROVAL", self.response.deviceResponseCode);
         XCTAssertEqualObjects(@"4.28", self.response.approvedAmount.stringValue);
         XCTAssertEqualObjects(@"1.28", self.response.tipAmount.stringValue);
@@ -143,8 +143,8 @@
     [self waitForExpectationsWithTimeout:1800.0 handler:^(NSError *error) {
 //        if(error) XCTFail(@"Request Timed out");
         XCTAssertNotNil(self.response);
-        XCTAssertNotNil(self.response.clientTransactionIdUUID);
-        NSLog(@"approved amount: %@", self.response.clientTransactionIdUUID);
+        XCTAssertNotNil(self.response.clientTransactionId);
+        NSLog(@"approved amount: %@", self.response.clientTransactionId);
 //        XCTAssertEqualObjects(@"APPROVAL", self.response.deviceResponseCode);
 //        NSLog(@"approved amount: %@", self.response.approvedAmount);
 //        NSLog(@"gratuity amount: %@", self.response.tipAmount);

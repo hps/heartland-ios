@@ -79,7 +79,7 @@
     [json setValue:response.terminalSerialNumber forKey:@"terminalSerialNumber"];
     [json setValue:[NSNumber numberWithBool:response.storedResponse] forKey:@"storedResponse"];
     [json setValue:response.lastResponseTransactionId forKey:@"lastResponseTransactionId"];
-    [json setValue:response.clientTransactionIdUUID.UUIDString forKey:@"clientTransactionIdUUID"];
+    [json setValue:response.clientTransactionId forKey:@"clientTransactionIdUUID"];
     [json setValue:response.cardType forKey:@"cardType"];
     return json;
 }
