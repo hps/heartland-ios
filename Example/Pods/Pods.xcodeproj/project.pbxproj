@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -82,6 +82,8 @@
 		1420A2CB809635738CBC309D25136D13 /* HpsCardEntryViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A62713B89DCF5DE484F329EF78D2482 /* HpsCardEntryViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1436AA04BEDD22939628AAB22EBF1A8C /* HpsPaxDeviceResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = ADBC368D2C1BBC1E253441036E271929 /* HpsPaxDeviceResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		147EF5B94F2CD552E94AF45969DB27E9 /* HpsPaxAccountRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F6E6DDAF32531044B61A761B677C158C /* HpsPaxAccountRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1491C5372923272600F6036B /* GlobalMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1491C5362923272600F6036B /* GlobalMobileSDK.framework */; platformFilter = ios; };
+		1491C5392923272E00F6036B /* GlobalPaymentsApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1491C5382923272E00F6036B /* GlobalPaymentsApi.framework */; platformFilter = ios; };
 		1653BC675CFFD6DBB5FE8B2B55EE83FB /* HpsGatewayService.m in Sources */ = {isa = PBXBuildFile; fileRef = 858CEA834D691F443DF880F0E1E7151C /* HpsGatewayService.m */; };
 		167E47E501A3D5297FC579E9A60E4E0C /* Pods-Heartland-iOS-SDK_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E4A85EA1D51FA4CAE3ACAEA76E60C068 /* Pods-Heartland-iOS-SDK_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1855EFF7E6FD49B0D2A0BBD38ED5A64A /* HpsHpaGiftAddValueBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E4465AE3715B9578DCF0D1EEDD9C4BD /* HpsHpaGiftAddValueBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -634,6 +636,8 @@
 		12AE9723FC1E97B678F6F2E2C54E59D2 /* Heartland-iOS-SDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Heartland-iOS-SDK-prefix.pch"; sourceTree = "<group>"; };
 		12EFD6767AB3392E88416B435A33FBCD /* HpsPosRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPosRequest.h; sourceTree = "<group>"; };
 		143E3A13F37BDA25A43ECBAA9F61C90D /* HpsHpaGiftAddValueBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsHpaGiftAddValueBuilder.m; sourceTree = "<group>"; };
+		1491C5362923272600F6036B /* GlobalMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GlobalMobileSDK.framework; sourceTree = "<group>"; };
+		1491C5382923272E00F6036B /* GlobalPaymentsApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GlobalPaymentsApi.framework; sourceTree = "<group>"; };
 		14D3D2C98423F1349755212B80ACB0E1 /* icon_cards.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_cards.png; path = Pod/Assets/icon_cards.png; sourceTree = "<group>"; };
 		14E2AC3411CFA69DDCD48AE354791A6C /* XMLDictionary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XMLDictionary.release.xcconfig; sourceTree = "<group>"; };
 		163A768220A548EB59C7FB0B9A20E078 /* HpsHpaCreditVoidBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsHpaCreditVoidBuilder.h; sourceTree = "<group>"; };
@@ -650,7 +654,6 @@
 		1B51C167C036109D92BB6E1CD34BC66F /* HpsCardEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsCardEntry.h; sourceTree = "<group>"; };
 		1B76FC6D76AAFADAA3FD513B1C219627 /* HpsPaxCheckResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsPaxCheckResponse.m; sourceTree = "<group>"; };
 		1B7D39EDC6B864592F2F0BCA86FB817F /* HpsC2xCreditReturnBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HpsC2xCreditReturnBuilder.swift; sourceTree = "<group>"; };
-		1C0145BEC8AF694DEF45A92DD7EEA01B /* GlobalMobileSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = GlobalMobileSDK.xcframework; sourceTree = "<group>"; };
 		1D0E3CC27BA836A7A573B443A52176D0 /* HpsJsonDoc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsJsonDoc.h; sourceTree = "<group>"; };
 		1DF69CEA3C6B0AD51D81BB4B2C666C05 /* HpsHpaCreditSaleBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HpsHpaCreditSaleBuilder.m; sourceTree = "<group>"; };
 		1E48B20AD5EF9990AB9875654F9D2414 /* HpsPaxAvsResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HpsPaxAvsResponse.h; sourceTree = "<group>"; };
@@ -1105,6 +1108,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1491C5372923272600F6036B /* GlobalMobileSDK.framework in Frameworks */,
+				1491C5392923272E00F6036B /* GlobalPaymentsApi.framework in Frameworks */,
 				D15D492A4E77ACB7D441CA77910794B3 /* Foundation.framework in Frameworks */,
 				8794ABCD2BD508FCF96CAD548832E841 /* UIKit.framework in Frameworks */,
 				ED4D08DC64236B2B0912051BB59AE42D /* XMLDictionary.framework in Frameworks */,
@@ -1163,7 +1168,8 @@
 		0C091050EAA7A25BA2C5BE28AC8FC380 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1C0145BEC8AF694DEF45A92DD7EEA01B /* GlobalMobileSDK.xcframework */,
+				1491C5382923272E00F6036B /* GlobalPaymentsApi.framework */,
+				1491C5362923272600F6036B /* GlobalMobileSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2962,7 +2968,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -3017,11 +3026,19 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VitalSDK",
+				);
 				GCC_PREFIX_HEADER = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK.modulemap";
 				PRODUCT_MODULE_NAME = Heartland_iOS_SDK;
 				PRODUCT_NAME = Heartland_iOS_SDK;
@@ -3044,7 +3061,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -3069,7 +3089,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -3103,7 +3127,11 @@
 				INFOPLIST_FILE = "Target Support Files/XMLDictionary/XMLDictionary-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/XMLDictionary/XMLDictionary.modulemap";
 				PRODUCT_MODULE_NAME = XMLDictionary;
 				PRODUCT_NAME = XMLDictionary;
@@ -3135,7 +3163,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example.modulemap";
 				OTHER_LDFLAGS = "";
@@ -3169,7 +3201,11 @@
 				INFOPLIST_FILE = "Target Support Files/XMLDictionary/XMLDictionary-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/XMLDictionary/XMLDictionary.modulemap";
 				PRODUCT_MODULE_NAME = XMLDictionary;
 				PRODUCT_NAME = XMLDictionary;
@@ -3200,7 +3236,11 @@
 				INFOPLIST_FILE = "Target Support Files/XMLDictionary/XMLDictionary-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/XMLDictionary/XMLDictionary.modulemap";
 				PRODUCT_MODULE_NAME = XMLDictionary;
 				PRODUCT_NAME = XMLDictionary;
@@ -3222,7 +3262,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3236,7 +3279,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3250,7 +3296,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -3275,7 +3324,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example.modulemap";
 				OTHER_LDFLAGS = "";
@@ -3300,7 +3353,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -3362,7 +3418,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -3377,7 +3434,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -3439,7 +3499,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -3463,7 +3524,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -3497,7 +3562,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Tests/Pods-Heartland-iOS-SDK_Tests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -3588,7 +3657,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -3613,7 +3685,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Heartland-iOS-SDK_Example/Pods-Heartland-iOS-SDK_Example.modulemap";
 				OTHER_LDFLAGS = "";
@@ -3637,7 +3713,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3657,11 +3736,19 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VitalSDK",
+				);
 				GCC_PREFIX_HEADER = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK.modulemap";
 				PRODUCT_MODULE_NAME = Heartland_iOS_SDK;
 				PRODUCT_NAME = Heartland_iOS_SDK;
@@ -3709,11 +3796,19 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VitalSDK",
+				);
 				GCC_PREFIX_HEADER = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/Heartland-iOS-SDK/Heartland-iOS-SDK.modulemap";
 				PRODUCT_MODULE_NAME = Heartland_iOS_SDK;
 				PRODUCT_NAME = Heartland_iOS_SDK;
