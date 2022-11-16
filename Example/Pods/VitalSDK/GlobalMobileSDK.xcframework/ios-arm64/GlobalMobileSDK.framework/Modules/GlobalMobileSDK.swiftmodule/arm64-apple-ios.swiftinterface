@@ -447,6 +447,8 @@ public struct VerifyResponse {
   public var tvr: Swift.String?
   public var transactionDescription: Swift.String
   public var transactionError: GlobalMobileSDK.GMSError?
+  public var emvIssuerRspCode: Swift.String?
+  public var emvIssuerResponse: Swift.String?
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
@@ -725,6 +727,8 @@ public struct ReturnResponse {
   public var avsResult: Swift.String?
   public var transactionDescription: Swift.String
   public var transactionError: GlobalMobileSDK.GMSError?
+  public var emvIssuerRspCode: Swift.String?
+  public var emvIssuerResponse: Swift.String?
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
@@ -887,6 +891,8 @@ public struct AuthResponse {
   }
   public var transactionDescription: Swift.String
   public var transactionError: GlobalMobileSDK.GMSError?
+  public var emvIssuerRspCode: Swift.String?
+  public var emvIssuerResponse: Swift.String?
   public let transactionId: Swift.String
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws

@@ -30,6 +30,7 @@
 @property (nonatomic,readonly) NSString *gmsResponseDuplicatedTransactionID;
 @property (nonatomic, strong) NSString *issuerRspCode;
 @property (nonatomic, strong) NSString *issuerRspMsg;
+@property (nonatomic, strong) NSString *authCode;
 #pragma mark - TRANSACTIONAL
 @property (nonatomic,strong) NSString *transactionType;
 @property (nonatomic,strong) NSString *entryMethod;

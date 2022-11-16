@@ -70,6 +70,7 @@
 	self.responseText = response.Response;
     self.issuerRspCode = response.GatewayRspCode;
     self.issuerRspMsg = response.GatewayRspMsg;
+    self.authCode = response.AuthCode;
 	NSMutableDictionary *paramDictionary = [HpsHpaSharedParams getInstance].params;
 	self.terminalSerialNumber = paramDictionary[@"TERMINAL INFORMATION"][@"SERIAL NUMBER"];
 	if (response.ResponseId) {

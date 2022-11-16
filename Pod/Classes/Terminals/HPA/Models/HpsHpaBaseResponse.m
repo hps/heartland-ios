@@ -57,6 +57,10 @@
     if (self.recievedResponse.GatewayRspMsg) {
         self.issuerRspMsg = [self NormalizeResponse:self.recievedResponse.GatewayRspMsg];
     }
+    
+    if (self.recievedResponse.AuthCode) {
+        self.authCode = [self NormalizeResponse:self.recievedResponse.AuthCode];
+    }
 }
 
 -(NSString *)NormalizeResponse:(NSString *)response

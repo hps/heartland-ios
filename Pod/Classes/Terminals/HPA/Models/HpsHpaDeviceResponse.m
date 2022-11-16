@@ -65,6 +65,7 @@
 		self.storedResponse = [self.recievedResponse.StoredResponse intValue] == 1 ? YES : NO ;
         self.issuerRspCode = self.recievedResponse.GatewayRspCode;
         self.issuerRspMsg = self.recievedResponse.GatewayRspMsg;
+        self.authCode = self.recievedResponse.AuthCode;
 }
 
 	return self;
