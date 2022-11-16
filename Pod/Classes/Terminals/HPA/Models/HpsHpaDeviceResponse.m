@@ -66,6 +66,7 @@
         self.issuerRspCode = self.recievedResponse.GatewayRspCode;
         self.issuerRspMsg = self.recievedResponse.GatewayRspMsg;
         self.authCode = self.recievedResponse.AuthCode;
+        self.authCodeData = self.recievedResponse.AuthCodeData;
 }
 
 	return self;

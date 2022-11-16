@@ -61,6 +61,10 @@
     if (self.recievedResponse.AuthCode) {
         self.authCode = [self NormalizeResponse:self.recievedResponse.AuthCode];
     }
+    
+    if (self.recievedResponse.AuthCodeData) {
+        self.authCodeData = [self NormalizeResponse:self.recievedResponse.AuthCodeData];
+    }
 }
 
 -(NSString *)NormalizeResponse:(NSString *)response
