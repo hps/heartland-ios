@@ -28,6 +28,8 @@
 @property (nonatomic,readonly) BOOL gmsResponseIsTimeout;
 @property (nonatomic,readonly) BOOL gmsResponseIsDuplicate;
 @property (nonatomic,readonly) NSString *gmsResponseDuplicatedTransactionID;
+@property (nonatomic, strong) NSString *issuerRspCode;
+@property (nonatomic, strong) NSString *issuerRspMsg;
 #pragma mark - TRANSACTIONAL
 @property (nonatomic,strong) NSString *transactionType;
 @property (nonatomic,strong) NSString *entryMethod;

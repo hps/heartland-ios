@@ -63,6 +63,8 @@
 		self.paymentType = self.recievedResponse.CardType;
 		self.terminalRefNumber = self.recievedResponse.ReferenceNumber;
 		self.storedResponse = [self.recievedResponse.StoredResponse intValue] == 1 ? YES : NO ;
+        self.issuerRspCode = self.recievedResponse.GatewayRspCode;
+        self.issuerRspMsg = self.recievedResponse.GatewayRspMsg;
 }
 
 	return self;

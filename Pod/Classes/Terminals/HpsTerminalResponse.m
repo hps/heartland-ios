@@ -68,6 +68,8 @@
 	self.version = response.Version;
 	self.status = response.MultipleMessage;
 	self.responseText = response.Response;
+    self.issuerRspCode = response.GatewayRspCode;
+    self.issuerRspMsg = response.GatewayRspMsg;
 	NSMutableDictionary *paramDictionary = [HpsHpaSharedParams getInstance].params;
 	self.terminalSerialNumber = paramDictionary[@"TERMINAL INFORMATION"][@"SERIAL NUMBER"];
 	if (response.ResponseId) {

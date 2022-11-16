@@ -49,6 +49,14 @@
 		{
 		self.deviceResponseCode = [self NormalizeResponse:self.recievedResponse.Result] ;
 		}
+    
+    if (self.recievedResponse.GatewayRspCode) {
+        self.issuerRspCode = [self NormalizeResponse:self.recievedResponse.GatewayRspCode];
+    }
+    
+    if (self.recievedResponse.GatewayRspMsg) {
+        self.issuerRspMsg = [self NormalizeResponse:self.recievedResponse.GatewayRspMsg];
+    }
 }
 
 -(NSString *)NormalizeResponse:(NSString *)response
