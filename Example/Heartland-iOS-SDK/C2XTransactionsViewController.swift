@@ -368,23 +368,42 @@ private extension C2XTransactionsViewController {
         switch status {
         case .APPROVED(let response):
             guard let responseCode = response.deviceResponseCode else { return }
-            let gatewayRspMsg = response.issuerRspMsg!
-            let gatewayRspCode = response.issuerRspCode!
-            print("RspCode: \(gatewayRspCode) - RspMsg: \(gatewayRspMsg)")
-            messageResult = "Response: \nStatus: \(responseCode)\n Amount: \(response.approvedAmount!)\n RspCode: \(gatewayRspCode)\n RspMsg: \(gatewayRspMsg)"
+            var issuerMSG: String = ""
+            var issuerCode: String = ""
+            if let responseIssuerMSG = response.issuerRspMsg {
+                issuerMSG = responseIssuerMSG
+            }
+            if let responseIssuerCode = response.issuerRspCode {
+                issuerCode = responseIssuerCode
+            }
+            print("RspCode: \(issuerCode) - RspMsg: \(issuerMSG)")
+            messageResult = "Response: \nStatus: \(responseCode)\n Amount: \(response.approvedAmount!)\n RspCode: \(issuerCode)\n RspMsg: \(issuerMSG)"
             isApproved = true
             break
         case .CANCELLED(let response):
-            let gatewayRspMsg = String(describing: response.issuerRspMsg)
-            let gatewayRspCode = String(describing: response.issuerRspCode)
             guard let deviceResponseMessage = response.deviceResponseMessage else { return }
-            messageResult = "Response: \nStatus: \(deviceResponseMessage)\n Amount: \(response.approvedAmount!)\n RspCode: \(gatewayRspCode)\n RspMsg: \(gatewayRspMsg)"
+            var issuerMSG: String = ""
+            var issuerCode: String = ""
+            if let responseIssuerMSG = response.issuerRspMsg {
+                issuerMSG = responseIssuerMSG
+            }
+            if let responseIssuerCode = response.issuerRspCode {
+                issuerCode = responseIssuerCode
+            }
+            messageResult = "Response: \nStatus: \(deviceResponseMessage)\n Amount: \(response.approvedAmount!)\n RspCode: \(issuerCode)\n RspMsg: \(issuerMSG)"
             isApproved = false
             break
         case .DECLINED(let response):
-            let gatewayRspMsg = String(describing: response.issuerRspMsg)
-            let gatewayRspCode = String(describing: response.issuerRspCode)
-            messageResult = "Response: \nStatus: \(response.deviceResponseCode!)\n Amount: \(response.approvedAmount!)\n RspCode: \(gatewayRspCode)\n RspMsg: \(gatewayRspMsg)"
+            guard let deviceResponseMessage = response.deviceResponseMessage else { return }
+            var issuerMSG: String = ""
+            var issuerCode: String = ""
+            if let responseIssuerMSG = response.issuerRspMsg {
+                issuerMSG = responseIssuerMSG
+            }
+            if let responseIssuerCode = response.issuerRspCode {
+                issuerCode = responseIssuerCode
+            }
+            messageResult = "Response: \nStatus: \(deviceResponseMessage)\n Amount: \(response.approvedAmount!)\n RspCode: \(issuerCode)\n RspMsg: \(issuerMSG)"
             isApproved = false
             break
         case .MESSAGE(let message):
