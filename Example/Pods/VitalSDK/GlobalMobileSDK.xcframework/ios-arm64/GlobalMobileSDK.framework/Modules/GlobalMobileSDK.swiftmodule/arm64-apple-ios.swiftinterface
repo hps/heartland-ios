@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
-// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name GlobalMobileSDK
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name GlobalMobileSDK
+// swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
 import GlobalMobileSDK_Private.BBPOS
 import CommonCrypto
@@ -18,6 +19,7 @@ import UIKit
 import GlobalMobileSDK_Private.Unimag
 import GlobalMobileSDK_Private.Utils
 import _Concurrency
+import _StringProcessing
 import os
 public struct BatchCloseResponse : GlobalMobileSDK.TransactionResponse {
   public var transactionResult: GlobalMobileSDK.TransactionResult?
@@ -305,6 +307,7 @@ public struct SaleResponse {
   public var cardType: GlobalMobileSDK.CardType?
   public var gatewayResponseText: Swift.String?
   public var authCode: Swift.String?
+  public var authCodeData: Swift.String?
   public var cvvResponseCode: Swift.String?
   public var cvvResponseMessage: Swift.String?
   public var avsResponseCode: Swift.String?
@@ -330,6 +333,8 @@ public struct SaleResponse {
   public var tokenizedCard: GlobalMobileSDK.TokenizedCardData?
   public var transactionDescription: Swift.String
   public var transactionError: GlobalMobileSDK.GMSError?
+  public var emvIssuerRspCode: Swift.String?
+  public var emvIssuerResponse: Swift.String?
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
@@ -423,6 +428,7 @@ public struct VerifyResponse {
   public var cardType: GlobalMobileSDK.CardType?
   public var gatewayResponseText: Swift.String?
   public var authCode: Swift.String?
+  public var authCodeData: Swift.String?
   public var cvvResponseCode: Swift.String?
   public var cvvResponseMessage: Swift.String?
   public var avsResponseCode: Swift.String?
@@ -443,6 +449,8 @@ public struct VerifyResponse {
   public var tvr: Swift.String?
   public var transactionDescription: Swift.String
   public var transactionError: GlobalMobileSDK.GMSError?
+  public var emvIssuerRspCode: Swift.String?
+  public var emvIssuerResponse: Swift.String?
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
@@ -691,6 +699,7 @@ public struct ReturnResponse {
   public var operatingUserId: Swift.String?
   public var gatewayResponseText: Swift.String?
   public var authCode: Swift.String?
+  public var authCodeData: Swift.String?
   public var cvvResponseCode: Swift.String?
   public var cvvResponseMessage: Swift.String?
   public var avsResponseCode: Swift.String?
@@ -721,6 +730,8 @@ public struct ReturnResponse {
   public var avsResult: Swift.String?
   public var transactionDescription: Swift.String
   public var transactionError: GlobalMobileSDK.GMSError?
+  public var emvIssuerRspCode: Swift.String?
+  public var emvIssuerResponse: Swift.String?
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
@@ -851,6 +862,7 @@ public struct AuthResponse {
   public let gatewayTransactionId: Swift.String?
   public var gatewayResponseText: Swift.String?
   public var authCode: Swift.String?
+  public var authCodeData: Swift.String?
   public var cvvResponseCode: Swift.String?
   public var cvvResponseMessage: Swift.String?
   public var avsResponseCode: Swift.String?
@@ -883,6 +895,8 @@ public struct AuthResponse {
   }
   public var transactionDescription: Swift.String
   public var transactionError: GlobalMobileSDK.GMSError?
+  public var emvIssuerRspCode: Swift.String?
+  public var emvIssuerResponse: Swift.String?
   public let transactionId: Swift.String
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
@@ -1008,6 +1022,7 @@ public struct TipAdjustResponse {
   public var isApproved: Swift.Bool
   public var transactionDescription: Swift.String
   public var transactionError: GlobalMobileSDK.GMSError?
+  public var authCodeData: Swift.String?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -1184,6 +1199,8 @@ public struct CaptureResponse {
   public var signatureData: Foundation.Data?
   public var transactionDescription: Swift.String
   public var transactionError: GlobalMobileSDK.GMSError?
+  public var authCode: Swift.String?
+  public var authCodeData: Swift.String?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -1204,6 +1221,7 @@ public struct VoidResponse {
   public var isApproved: Swift.Bool
   public var transactionDescription: Swift.String
   public var transactionError: GlobalMobileSDK.GMSError?
+  public var authCodeData: Swift.String?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -1237,6 +1255,7 @@ public struct ReversalResponse {
   public var isApproved: Swift.Bool
   public var transactionDescription: Swift.String
   public var transactionError: GlobalMobileSDK.GMSError?
+  public var authCodeData: Swift.String?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
