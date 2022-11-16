@@ -368,22 +368,22 @@ private extension C2XTransactionsViewController {
         switch status {
         case .APPROVED(let response):
             guard let responseCode = response.deviceResponseCode else { return }
-            let gatewayRspMsg = response.gatewayRspMsg!
-            let gatewayRspCode = response.gatewayRspCode!
+            let gatewayRspMsg = response.issuerRspMsg!
+            let gatewayRspCode = response.issuerRspCode!
             print("RspCode: \(gatewayRspCode) - RspMsg: \(gatewayRspMsg)")
             messageResult = "Response: \nStatus: \(responseCode)\n Amount: \(response.approvedAmount!)\n RspCode: \(gatewayRspCode)\n RspMsg: \(gatewayRspMsg)"
             isApproved = true
             break
         case .CANCELLED(let response):
-            let gatewayRspMsg = String(describing: response.gatewayRspMsg)
-            let gatewayRspCode = String(describing: response.gatewayRspCode)
+            let gatewayRspMsg = String(describing: response.issuerRspMsg)
+            let gatewayRspCode = String(describing: response.issuerRspCode)
             guard let deviceResponseMessage = response.deviceResponseMessage else { return }
             messageResult = "Response: \nStatus: \(deviceResponseMessage)\n Amount: \(response.approvedAmount!)\n RspCode: \(gatewayRspCode)\n RspMsg: \(gatewayRspMsg)"
             isApproved = false
             break
         case .DECLINED(let response):
-            let gatewayRspMsg = String(describing: response.gatewayRspMsg)
-            let gatewayRspCode = String(describing: response.gatewayRspCode)
+            let gatewayRspMsg = String(describing: response.issuerRspMsg)
+            let gatewayRspCode = String(describing: response.issuerRspCode)
             messageResult = "Response: \nStatus: \(response.deviceResponseCode!)\n Amount: \(response.approvedAmount!)\n RspCode: \(gatewayRspCode)\n RspMsg: \(gatewayRspMsg)"
             isApproved = false
             break
