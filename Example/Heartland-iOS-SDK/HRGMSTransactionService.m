@@ -93,7 +93,7 @@
     
     if (response.gmsResponseIsReversible) {
         [self doCreditReversalWithClientTransactionId:
-         response.clientTransactionIdUUID];
+         response.clientTransactionId];
     }
 }
 

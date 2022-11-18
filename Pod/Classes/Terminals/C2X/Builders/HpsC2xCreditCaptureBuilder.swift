@@ -2,6 +2,7 @@ import Foundation
 
 @objcMembers
 public class HpsC2xCreditCaptureBuilder : HpsC2xBaseBuilder, GMSCreditCaptureBuilder {
+    public var clientTransactionId: String?
     public var amount: NSDecimalNumber?
     public var referenceNumber: String?
     public var gratuity: NSDecimalNumber?

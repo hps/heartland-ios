@@ -5,6 +5,7 @@ public class HpsWiseCubeCreditReturnBuilder : HpsWiseCubeBaseBuilder, GMSCreditR
     public var amount: NSDecimalNumber?
     public var referenceNumber: String?
     public var transactionId: String?
+    public var clientTransactionId: String?
     
     public init(device: HpsWiseCubeDevice) {
         super.init(transactionType: .creditReturn, device: device)

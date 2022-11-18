@@ -4,14 +4,14 @@ import GlobalMobileSDK
 @objc
 public class GMSTransactionResponse: NSObject {
     var transactionResult: TransactionResult?
-    var transactionId: UUID
+    var transactionId: String
     var gatewayTransactionId: String?
     var gatewayResponseText: String?
     var approvedAmount: Decimal?
     var transactionDescription: String
     var transactionType: HpsTransactionType?
     
-    init(transactionResult: TransactionResult?, transactionId: UUID, gatewayTransactionId: String?, gatewayResponseText: String?, approvedAmount: Decimal?, transactionDescription: String) throws {
+    init(transactionResult: TransactionResult?, transactionId: String, gatewayTransactionId: String?, gatewayResponseText: String?, approvedAmount: Decimal?, transactionDescription: String) throws {
         self.transactionResult = transactionResult
         self.transactionId = transactionId
         self.gatewayTransactionId = gatewayTransactionId

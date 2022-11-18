@@ -34,7 +34,7 @@ public class GMSBuilderModel: NSObject {
     public let referenceNumber: String?
     public let transactionId: String?
     public let creditCard: HpsCreditCard?
-    public let clientTransactionId: UUID?
+    public let clientTransactionId: String?
     public let reason: ReversalReasonCode?
     
     init(
@@ -44,7 +44,7 @@ public class GMSBuilderModel: NSObject {
         referenceNumber: String? = nil,
         transactionId: String? = nil,
         creditCard: HpsCreditCard? = nil,
-        clientTransactionId: UUID? = nil,
+        clientTransactionId: String? = nil,
         reasonPointer: NSNumber? = nil
     ) {
         self.transactionType = transactionType
@@ -92,7 +92,7 @@ public class GMSBuilderModel: NSObject {
     
     public static func creditReversalModel(
         amount: NSDecimalNumber,
-        clientTransactionId: UUID?,
+        clientTransactionId: String?,
         reason: ReversalReasonCode
     ) -> GMSBuilderModel {
         .init(

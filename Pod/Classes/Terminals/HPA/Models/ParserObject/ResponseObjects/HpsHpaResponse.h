@@ -67,6 +67,8 @@
 	//Batch
 @property (readonly,retain) NSString *DeviceId;
 @property (readonly,retain) NSString *GatewayRspMsg;
+@property (readonly,retain) NSString *AuthCode;
+@property (readonly,retain) NSString *AuthCodeData;
 @property (readonly,retain) NSString *MerchantName;
 @property (readonly,retain) NSString *SiteId;
 @property (readonly,retain) NSString *BatchId;
@@ -155,6 +157,8 @@
 	//Batch
 @property (readonly,retain) NSString *DeviceId;
 @property (readonly,retain) NSString *GatewayRspMsg;
+@property (readonly,retain) NSString *AuthCode;
+@property (readonly,retain) NSString *AuthCodeData;
 @property (readonly,retain) NSString *MerchantName;
 @property (readonly,retain) NSString *SiteId;
 @property (readonly,retain) NSString *BatchId;

@@ -28,6 +28,10 @@
 @property (nonatomic,readonly) BOOL gmsResponseIsTimeout;
 @property (nonatomic,readonly) BOOL gmsResponseIsDuplicate;
 @property (nonatomic,readonly) NSString *gmsResponseDuplicatedTransactionID;
+@property (nonatomic, strong) NSString *issuerRspCode;
+@property (nonatomic, strong) NSString *issuerRspMsg;
+@property (nonatomic, strong) NSString *authCode;
+@property (nonatomic, strong) NSString *authCodeData;
 #pragma mark - TRANSACTIONAL
 @property (nonatomic,strong) NSString *transactionType;
 @property (nonatomic,strong) NSString *entryMethod;
@@ -71,7 +75,7 @@
 @property (nonatomic) BOOL storedResponse;
 @property (nonatomic,readwrite) NSString *lastResponseTransactionId;
 
-@property (nonatomic,strong) NSUUID *clientTransactionIdUUID;
+@property (nonatomic,strong) NSString *clientTransactionId;
 @property (nonatomic,strong) NSString *transactionStatusInformation;
 @property (nonatomic,strong) NSString *cardType;
 
