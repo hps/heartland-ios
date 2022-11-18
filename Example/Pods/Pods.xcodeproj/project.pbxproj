@@ -2448,6 +2448,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
+				TargetAttributes = {
+					A5FE764E95811F4B6B3A7BAB405E5926 = {
+						DevelopmentTeam = 264BX5RC4N;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2969,6 +2974,7 @@
 			baseConfigurationReference = E397DA0A2AEBC33CCA3B7CDB137A50BE /* Heartland-iOS-SDK.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Heartland-iOS-SDK";
+				DEVELOPMENT_TEAM = 264BX5RC4N;
 				IBSC_MODULE = Heartland_iOS_SDK;
 				INFOPLIST_FILE = "Target Support Files/Heartland-iOS-SDK/ResourceBundle-Heartland-iOS-SDK-Heartland-iOS-SDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -2985,6 +2991,7 @@
 			baseConfigurationReference = B0B295834613BF9077C0BB347FFF7D37 /* Heartland-iOS-SDK.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Heartland-iOS-SDK";
+				DEVELOPMENT_TEAM = 264BX5RC4N;
 				IBSC_MODULE = Heartland_iOS_SDK;
 				INFOPLIST_FILE = "Target Support Files/Heartland-iOS-SDK/ResourceBundle-Heartland-iOS-SDK-Heartland-iOS-SDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -3675,6 +3682,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Heartland-iOS-SDK";
+				DEVELOPMENT_TEAM = 264BX5RC4N;
 				IBSC_MODULE = Heartland_iOS_SDK;
 				INFOPLIST_FILE = "Target Support Files/Heartland-iOS-SDK/ResourceBundle-Heartland-iOS-SDK-Heartland-iOS-SDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
