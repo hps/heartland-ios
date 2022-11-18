@@ -26,6 +26,8 @@ extension NSError {
             reason = "terminalNotConfigured"
         case .bluetoothConnectionTimeout:
             reason = "bluetoothConnectionTimeout"
+        case .alreadyPairedWithAnotherDevice:
+            reason = "alreadyPairedWithAnotherDevice"
         @unknown default:
             reason = "unknown"
         }
@@ -104,6 +106,8 @@ extension NSError {
             reason = "hostTimeout"
         case .hostNotReachable:
             reason = "hostNotReachable"
+        case .trackReadFailed:
+            reason = "trackReadFailed"
         @unknown default:
             reason = "unknown"
         }

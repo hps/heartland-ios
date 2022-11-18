@@ -31,6 +31,6 @@ framework module GlobalMobileSDK_Private {
 
 
 module GlobalMobileSDK.Swift {
-    header "GlobalMobileSDK-Swift.h"
-    requires objc
+  header "GlobalMobileSDK-Swift.h"
+  requires objc
 }
