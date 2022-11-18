@@ -71,7 +71,7 @@
 @property (nonatomic) BOOL storedResponse;
 @property (nonatomic,readwrite) NSString *lastResponseTransactionId;
 
-@property (nonatomic,strong) NSUUID *clientTransactionIdUUID;
+@property (nonatomic,strong) NSString *clientTransactionId;
 @property (nonatomic,strong) NSString *transactionStatusInformation;
 @property (nonatomic,strong) NSString *cardType;
 

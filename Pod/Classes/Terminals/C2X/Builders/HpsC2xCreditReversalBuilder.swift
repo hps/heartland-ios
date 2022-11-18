@@ -3,7 +3,7 @@ import Foundation
 @objcMembers
 public class HpsC2xCreditReversalBuilder : HpsC2xBaseBuilder, GMSCreditReversalBuilder {
     public var amount: NSDecimalNumber?
-    public var clientTransactionId: UUID?
+    public var clientTransactionId: String?
     public var reason: ReversalReasonCode = .NOREASON
     public var referenceNumber: String?
     public var transactionId: String?

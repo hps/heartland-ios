@@ -26,6 +26,8 @@ extension NSError {
             reason = "terminalNotConfigured"
         case .bluetoothConnectionTimeout:
             reason = "bluetoothConnectionTimeout"
+        case .alreadyPairedWithAnotherDevice:
+            reason = "alreadyPairedWithAnotherDevice"
         @unknown default:
             reason = "unknown"
         }
@@ -53,7 +55,7 @@ extension NSError {
         var reason = "unknown"
         var message: String?
         var errorCode: Int?
-        var transactionId: UUID?
+        var transactionId: String?
         switch (error) {
         case .gatewayNotConfigured:
             reason = "gatewayNotConfigured"
@@ -104,6 +106,8 @@ extension NSError {
             reason = "hostTimeout"
         case .hostNotReachable:
             reason = "hostNotReachable"
+        case .trackReadFailed:
+            reason = "trackReadFailed"
         @unknown default:
             reason = "unknown"
         }
@@ -112,7 +116,7 @@ extension NSError {
             "reason": reason,
             "message": message ?? "",
             "errorCode": String(errorCode ?? -1),
-            "transactionId": transactionId?.uuidString ?? ""
+            "transactionId": transactionId ?? ""
         ])
     }
 }

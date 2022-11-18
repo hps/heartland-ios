@@ -10,4 +10,5 @@ public protocol GMSCreditAuthBuilder {
     var cardHolderName: String? { get set }
     var creditCard: HpsCreditCard? { get set }
     var address: HpsAddress? { get set }
+    var clientTransactionId: String? { get set }
 }

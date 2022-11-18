@@ -35,7 +35,7 @@
 - (BOOL)gmsResponseIsReversible {
     return (self.gmsResponseIsTimeout
             && !self.gmsResponseIsReversal
-            && self.clientTransactionIdUUID);
+            && self.clientTransactionId);
 }
 
 - (BOOL)gmsResponseIsTimeout {

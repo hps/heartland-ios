@@ -108,6 +108,10 @@ private extension C2XTransactionsViewController {
             let amountNumber = NSDecimalNumber(string: amountText)
             let builder: HpsC2xCreditSaleBuilder = HpsC2xCreditSaleBuilder(device: device)
             builder.amount = amountNumber
+            builder.clientTransactionId = UUID().uuidString
+            if let cTransactionId = builder.clientTransactionId {
+                NSLog("Client Transaction Id Generated In The Client - Request  %@", cTransactionId)
+            }
             builder.execute()
         } else {
             showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
@@ -213,6 +217,10 @@ extension C2XTransactionsViewController: HpsC2xDeviceDelegate, GMSTransactionDel
         
         if let responseTransactionId = response.transactionId {
             self.transactionId = responseTransactionId
+        }
+        
+        if let cTransactionId = response.clientTransactionId {
+            NSLog("Client Transaction Id Generated In The Client - Response %@", cTransactionId)
         }
         
         if let deviceResponseCode = response.deviceResponseCode {

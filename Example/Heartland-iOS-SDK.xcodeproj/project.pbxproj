@@ -546,7 +546,7 @@
 				"${BUILT_PRODUCTS_DIR}/Heartland-iOS-SDK/Heartland_iOS_SDK.framework",
 				"${BUILT_PRODUCTS_DIR}/XMLDictionary/XMLDictionary.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/GlobalPaymentsApi/GlobalPaymentsApi.framework/GlobalPaymentsApi",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/GlobalMobileSDK/GlobalMobileSDK.framework/GlobalMobileSDK",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VitalSDK/GlobalMobileSDK.framework/GlobalMobileSDK",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -570,7 +570,7 @@
 				"${BUILT_PRODUCTS_DIR}/Heartland-iOS-SDK/Heartland_iOS_SDK.framework",
 				"${BUILT_PRODUCTS_DIR}/XMLDictionary/XMLDictionary.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/GlobalPaymentsApi/GlobalPaymentsApi.framework/GlobalPaymentsApi",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/GlobalMobileSDK/GlobalMobileSDK.framework/GlobalMobileSDK",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VitalSDK/GlobalMobileSDK.framework/GlobalMobileSDK",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
