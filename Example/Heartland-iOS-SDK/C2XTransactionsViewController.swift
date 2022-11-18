@@ -108,7 +108,7 @@ private extension C2XTransactionsViewController {
             let amountNumber = NSDecimalNumber(string: amountText)
             let builder: HpsC2xCreditSaleBuilder = HpsC2xCreditSaleBuilder(device: device)
             builder.amount = amountNumber
-            builder.clientTransactionId = UUID().uuidString
+            builder.clientTransactionId = "123456789"
             if let cTransactionId = builder.clientTransactionId {
                 NSLog("Client Transaction Id Generated In The Client - Request  %@", cTransactionId)
             }
@@ -367,18 +367,45 @@ private extension C2XTransactionsViewController {
         var isApproved: Bool = false
         switch status {
         case .APPROVED(let response):
-            messageResult = "Response: \nStatus: \(response.deviceResponseCode!)\n Amount: \(response.approvedAmount!)\n"
+            guard let responseCode = response.deviceResponseCode else { return }
+            var issuerMSG: String = ""
+            var authCode: String = ""
+            if let responseIssuerMSG = response.issuerRspMsg {
+                issuerMSG = responseIssuerMSG
+            }
+            if let authCodeResponse = response.authCodeData {
+                authCode = authCodeResponse
+            }
+            print("Auth Resp.: \(authCode) - Issuer Auth Data: \(issuerMSG)")
+            messageResult = "Response: \nStatus: \(responseCode)\n Amount: \(response.approvedAmount!)\n Auth Resp.: \(authCode)\n Issuer Auth Data: \(issuerMSG)"
             isApproved = true
             break
         case .CANCELLED(let response):
-            guard let statusResponse = response.deviceResponseCode else { return }
             guard let deviceResponseMessage = response.deviceResponseMessage else { return }
-            messageResult = "Response: \nStatus: \(statusResponse)\n Message: \(deviceResponseMessage)\n"
+            var issuerMSG: String = ""
+            var authCode: String = ""
+            if let responseIssuerMSG = response.issuerRspMsg {
+                issuerMSG = responseIssuerMSG
+            }
+            if let authCodeResponse = response.authCodeData {
+                authCode = authCodeResponse
+            }
+            print("Auth Resp.: \(authCode) - Issuer Auth Data: \(issuerMSG)")
+            messageResult = "Response: \nStatus: \(deviceResponseMessage)\n Amount: \(response.approvedAmount!)\n Auth Resp.: \(authCode)\n Issuer Auth Data: \(issuerMSG)"
             isApproved = false
             break
         case .DECLINED(let response):
-            guard let declinedMessage = response.deviceResponseMessage else { return }
-            messageResult = "Response: \nStatus: \(response.deviceResponseCode!)\n Message: \(declinedMessage)\n"
+            guard let deviceResponseMessage = response.deviceResponseMessage else { return }
+            var issuerMSG: String = ""
+            var authCode: String = ""
+            if let responseIssuerMSG = response.issuerRspMsg {
+                issuerMSG = responseIssuerMSG
+            }
+            if let authCodeResponse = response.authCodeData {
+                authCode = authCodeResponse
+            }
+            print("Auth Resp.: \(authCode) - Issuer Auth Data: \(issuerMSG)")
+            messageResult = "Response: \nStatus: \(deviceResponseMessage)\n Amount: \(response.approvedAmount!)\n Auth Resp.: \(authCode)\n Issuer Auth Data: \(issuerMSG)"
             isApproved = false
             break
         case .MESSAGE(let message):

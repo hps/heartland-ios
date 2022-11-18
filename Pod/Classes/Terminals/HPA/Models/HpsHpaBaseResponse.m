@@ -49,6 +49,22 @@
 		{
 		self.deviceResponseCode = [self NormalizeResponse:self.recievedResponse.Result] ;
 		}
+    
+    if (self.recievedResponse.GatewayRspCode) {
+        self.issuerRspCode = [self NormalizeResponse:self.recievedResponse.GatewayRspCode];
+    }
+    
+    if (self.recievedResponse.GatewayRspMsg) {
+        self.issuerRspMsg = [self NormalizeResponse:self.recievedResponse.GatewayRspMsg];
+    }
+    
+    if (self.recievedResponse.AuthCode) {
+        self.authCode = [self NormalizeResponse:self.recievedResponse.AuthCode];
+    }
+    
+    if (self.recievedResponse.AuthCodeData) {
+        self.authCodeData = [self NormalizeResponse:self.recievedResponse.AuthCodeData];
+    }
 }
 
 -(NSString *)NormalizeResponse:(NSString *)response

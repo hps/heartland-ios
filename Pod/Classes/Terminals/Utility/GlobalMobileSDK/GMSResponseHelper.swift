@@ -26,7 +26,9 @@ class GMSResponseHelper {
         data.approvalCode = resp?.authCode
         data.responseText = resp?.gatewayResponseText
         data.deviceResponseCode = deviceResponseCode
-
+        data.authCode = resp?.authCode
+        data.authCodeData = resp?.authCodeData
+        
         return data
     }
     
@@ -59,7 +61,9 @@ class GMSResponseHelper {
         data.applicationCrytptogram = resp?.applicationCryptogram
         data.terminalVerficationResult = resp?.tvr
         data.cardType = HpsC2xEnums.cardTypeToString(resp?.cardType)
-
+        data.authCode = resp?.authCode
+        data.authCodeData = resp?.authCodeData
+        
         if let uintValue = resp?.tip {
             data.tipAmount = uintToDecimal(uintValue)
         }
@@ -81,6 +85,8 @@ class GMSResponseHelper {
 
         data.responseText = resp?.gatewayResponseText
         data.deviceResponseCode = deviceResponseCode
+        data.authCode = resp?.authCode
+        data.authCodeData = resp?.authCodeData
 
         return data
     }
@@ -109,6 +115,8 @@ class GMSResponseHelper {
         data.applicationCrytptogram = resp?.applicationCryptogram
         data.terminalVerficationResult = resp?.tvr
         data.cardType = HpsC2xEnums.cardTypeToString(resp?.cardType)
+        data.authCode = resp?.authCode
+        data.authCodeData = resp?.authCodeData
         
         if let uintValue = resp?.tip {
             data.tipAmount = uintToDecimal(uintValue)
@@ -136,6 +144,8 @@ class GMSResponseHelper {
         data.deviceResponseCode = deviceResponseCode
         data.terminalRefNumber = resp?.posReferenceNumber
         data.transactionType = HpsC2xEnums.transactionTypeToString(.Reversal)
+        data.authCode = resp?.authCode
+        data.authCodeData = resp?.authCodeData
         
         return data
     }
@@ -164,7 +174,10 @@ class GMSResponseHelper {
         data.applicationCrytptogram = resp?.applicationCryptogram
         data.terminalVerficationResult = resp?.tvr
         data.cardType = HpsC2xEnums.cardTypeToString(resp?.cardType)
-        
+        data.issuerRspCode = resp?.emvIssuerRspCode
+        data.issuerRspMsg = resp?.emvIssuerResponse
+        data.authCode = resp?.authCode
+        data.authCodeData = resp?.authCodeData
         if let uintValue = resp?.tip {
             data.tipAmount = uintToDecimal(uintValue)
         }
@@ -189,6 +202,8 @@ class GMSResponseHelper {
         data.deviceResponseCode = deviceResponseCode
         data.terminalRefNumber = resp?.posReferenceNumber
         data.transactionType = HpsC2xEnums.transactionTypeToString(.Void)
+        data.authCode = resp?.authCode
+        data.authCodeData = resp?.authCodeData
 
         return data
     }
