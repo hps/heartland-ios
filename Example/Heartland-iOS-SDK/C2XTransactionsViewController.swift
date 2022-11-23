@@ -123,17 +123,20 @@ private extension C2XTransactionsViewController {
             showProgress(true)
             setText(LoadingStatus.WAIT.rawValue)
             
+            let amountString = NSDecimalNumber(string: self.amountTextField.text)
+            
             let card: HpsCreditCard = HpsCreditCard()
             card.cardNumber = "374245001751006"
-            card.expMonth = 12
-            card.expYear = 2024
+            card.expMonth = "09"
+            card.expYear = "2024"
             card.cvv = "201"
             
-            let amountString = NSDecimalNumber(string: self.amountTextField.text)
-            let builder: HpsC2xCreditAuthBuilder = HpsC2xCreditAuthBuilder(device: device)
+            let builder: HpsC2xCreditSaleBuilder = HpsC2xCreditSaleBuilder(device: device)
             builder.amount = amountString
             builder.creditCard = card
+            builder.clientTransactionId = "123456789"
             builder.execute()
+            
         } else {
             showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
         }

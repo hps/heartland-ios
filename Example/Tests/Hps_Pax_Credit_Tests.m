@@ -32,8 +32,8 @@
 {
     HpsCreditCard *card = [[HpsCreditCard alloc] init];
     card.cardNumber = @"4005554444444460";
-    card.expMonth = 12;
-    card.expYear = 25;
+    card.expMonth = @"12";
+    card.expYear = @"25";
     card.cvv = @"123";
     return card;
 }
