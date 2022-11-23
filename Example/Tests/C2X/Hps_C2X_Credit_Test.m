@@ -46,8 +46,8 @@
 
     //visa
     card.cardNumber = @"4716739001010119";
-    card.expMonth = 9;
-    card.expYear = 2022;
+    card.expMonth = @"09";
+    card.expYear = @"22";
     card.cvv = @"1234";
     return card;
 }
