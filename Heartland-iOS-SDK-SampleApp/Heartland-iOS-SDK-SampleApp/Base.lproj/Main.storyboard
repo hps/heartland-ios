@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NAZ-sw-0Dp">
+    <device id="ipad10_5" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="jf0-Ci-yXp">
+            <objects>
+                <navigationController id="NAZ-sw-0Dp" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HYQ-V2-hRr">
+                        <rect key="frame" x="0.0" y="20" width="834" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lCO-xZ-ktI" kind="relationship" relationship="rootViewController" id="1qP-vM-dq1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="McC-UE-grn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-898" y="-63"/>
+        </scene>
+        <!--Heartland Sample App-->
+        <scene sceneID="ehh-Ma-qoO">
+            <objects>
+                <tableViewController id="lCO-xZ-ktI" customClass="MainViewController" customModule="Heartland_iOS_SDK_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="UxA-7K-8S4">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="C2X Options" id="7A5-sF-vBo">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="t6N-BG-HKP" detailTextLabel="Lkm-Jn-gC5" rowHeight="70" style="IBUITableViewCellStyleSubtitle" id="dOB-B3-mbY">
+                                        <rect key="frame" x="0.0" y="44.5" width="834" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dOB-B3-mbY" id="uRf-pi-Vmr">
+                                            <rect key="frame" x="0.0" y="0.0" width="804.5" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Connect to C2X Device" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t6N-BG-HKP">
+                                                    <rect key="frame" x="20" y="19" width="138.5" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="This option allows you to scan and connect to a C2X device and monitor the current connection status." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lkm-Jn-gC5">
+                                                    <rect key="frame" x="20" y="35.5" width="581.5" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="U8d-gP-Otm" kind="show" id="5rV-db-Dhy"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Dcn-fL-fls" detailTextLabel="fFQ-yf-vFO" rowHeight="70" style="IBUITableViewCellStyleSubtitle" id="5Cz-ng-2kM">
+                                        <rect key="frame" x="0.0" y="114.5" width="834" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Cz-ng-2kM" id="7oD-fY-L8n">
+                                            <rect key="frame" x="0.0" y="0.0" width="804.5" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="C2X Transactions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dcn-fL-fls">
+                                                    <rect key="frame" x="20" y="19" width="107" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Test various transaction types using a connected C2X device. Please make sure your C2X device is connected." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fFQ-yf-vFO">
+                                                    <rect key="frame" x="20" y="35.5" width="626.5" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="oPc-K8-8zg" kind="show" id="N6G-NO-eeT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Qif-lh-wDG" detailTextLabel="Lxi-pO-5Et" rowHeight="70" style="IBUITableViewCellStyleSubtitle" id="NN5-x3-yON">
+                                        <rect key="frame" x="0.0" y="184.5" width="834" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NN5-x3-yON" id="w2g-NM-TKH">
+                                            <rect key="frame" x="0.0" y="0.0" width="804.5" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="OTA Update" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qif-lh-wDG">
+                                                    <rect key="frame" x="20" y="19" width="72" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Check for and update firmware and kernel for the C2X device." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lxi-pO-5Et">
+                                                    <rect key="frame" x="20" y="35.5" width="349.5" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="lCO-xZ-ktI" id="312-Lp-Jvs"/>
+                            <outlet property="delegate" destination="lCO-xZ-ktI" id="onS-dm-L5u"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Heartland Sample App" id="nfk-IS-XEY"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1z6-fL-FH3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-129.23076923076923" y="-63.270142180094787"/>
+        </scene>
+        <!--Connect to C2X Device-->
+        <scene sceneID="0yR-e1-qBm">
+            <objects>
+                <viewController id="U8d-gP-Otm" customClass="ConnectC2XViewController" customModule="Heartland_iOS_SDK_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fCl-sZ-Edr">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="pA6-tP-kni">
+                                <rect key="frame" x="255.5" y="362.5" width="323" height="387"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="94c-BF-pnA">
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connection Status:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMz-Ke-lvB">
+                                                <rect key="frame" x="0.0" y="0.0" width="156.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disconnected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ky-Qu-pBR">
+                                                <rect key="frame" x="166.5" y="0.0" width="156.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="6Ar-tB-Ktp">
+                                        <rect key="frame" x="133.5" y="356" width="56.5" height="31"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSy-N7-uEA">
+                                                <rect key="frame" x="0.0" y="0.0" width="56.5" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Scan"/>
+                                                <connections>
+                                                    <action selector="scanButtonPressed" destination="U8d-gP-Otm" eventType="touchUpInside" id="cQe-f3-xW9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="BGP-0i-buB">
+                                <rect key="frame" x="185" y="768" width="464" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jAj-k0-8zf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pA6-tP-kni" firstAttribute="centerY" secondItem="fCl-sZ-Edr" secondAttribute="centerY" id="9Wf-R8-W56"/>
+                            <constraint firstItem="pA6-tP-kni" firstAttribute="centerX" secondItem="fCl-sZ-Edr" secondAttribute="centerX" id="AtB-aP-o6y"/>
+                            <constraint firstItem="BGP-0i-buB" firstAttribute="leading" secondItem="jAj-k0-8zf" secondAttribute="leading" constant="185" id="GCq-d3-SUQ"/>
+                            <constraint firstItem="jAj-k0-8zf" firstAttribute="bottom" secondItem="BGP-0i-buB" secondAttribute="bottom" constant="307" id="KoW-We-XUN"/>
+                            <constraint firstItem="BGP-0i-buB" firstAttribute="centerX" secondItem="pA6-tP-kni" secondAttribute="centerX" id="iqW-M8-NZ0"/>
+                            <constraint firstItem="BGP-0i-buB" firstAttribute="top" secondItem="pA6-tP-kni" secondAttribute="bottom" constant="18.666666666666686" id="jFs-aV-O1W"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Connect to C2X Device" id="uZ3-LC-hyW"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="BGP-0i-buB" id="eke-XL-7p1"/>
+                        <outlet property="connectionLabel" destination="3ky-Qu-pBR" id="FHh-m8-M7S"/>
+                        <outlet property="scanButtonReference" destination="MSy-N7-uEA" id="bae-vs-5hv"/>
+                        <outlet property="scanButtonStackView" destination="pA6-tP-kni" id="9hd-Z0-H9T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cGb-N6-kjD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="697" y="-88"/>
+        </scene>
+        <!--C2X Transactions-->
+        <scene sceneID="jYK-3K-MMe">
+            <objects>
+                <viewController storyboardIdentifier="C2XTransactionsViewController" title="C2X Transactions" id="oPc-K8-8zg" customClass="C2XTransactionsViewController" customModule="Heartland_iOS_SDK_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nXU-ap-B8C">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULf-7P-gXw">
+                                <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3ac-Wh-jCJ">
+                                        <rect key="frame" x="40" y="319" width="754" height="474"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device/Transaction Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfE-2l-VKd">
+                                                <rect key="frame" x="0.0" y="0.0" width="754" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EK-NM-7R6">
+                                                <rect key="frame" x="0.0" y="44" width="754" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transaction Amount:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0u8-Lg-Hie">
+                                                <rect key="frame" x="0.0" y="88" width="754" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.28" borderStyle="roundedRect" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2w6-hm-AFy">
+                                                <rect key="frame" x="0.0" y="132" width="754" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="continue" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gratuity Amount:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grr-po-J4p">
+                                                <rect key="frame" x="0.0" y="176" width="754" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UQe-sK-ij8">
+                                                <rect key="frame" x="0.0" y="220" width="754" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJi-YH-R8j">
+                                                <rect key="frame" x="0.0" y="264" width="754" height="34"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Credit Sale"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97T-ck-9WG">
+                                                <rect key="frame" x="0.0" y="308" width="754" height="34"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Manual Card"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Jh-3X-lwA">
+                                                <rect key="frame" x="0.0" y="352" width="754" height="34"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Tip Adjust"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTu-m4-l8g">
+                                                <rect key="frame" x="0.0" y="396" width="754" height="34"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Credit Return"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1g-HI-NVW">
+                                                <rect key="frame" x="0.0" y="440" width="754" height="34"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Credit Void"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUc-t3-J4H">
+                                        <rect key="frame" x="267" y="476" width="300" height="160"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Connecting to C2X Device" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="285-QT-lH5">
+                                                <rect key="frame" x="8" y="20" width="302" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="hI9-cB-C2P">
+                                                <rect key="frame" x="134" y="53" width="50" height="58"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                        <viewLayoutGuide key="safeArea" id="7U3-Dh-EQ1"/>
+                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="5Sl-rj-VjD"/>
+                                            <constraint firstAttribute="height" constant="160" id="HqU-O7-8qh"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="3ac-Wh-jCJ" secondAttribute="trailing" constant="40" id="29Q-fE-Jfk"/>
+                                    <constraint firstItem="3ac-Wh-jCJ" firstAttribute="centerY" secondItem="ULf-7P-gXw" secondAttribute="centerY" id="40M-uM-SYF"/>
+                                    <constraint firstItem="3ac-Wh-jCJ" firstAttribute="centerX" secondItem="ULf-7P-gXw" secondAttribute="centerX" id="4z9-JL-NP1"/>
+                                    <constraint firstItem="3ac-Wh-jCJ" firstAttribute="leading" secondItem="ULf-7P-gXw" secondAttribute="leading" constant="40" id="HIC-Eu-FCX"/>
+                                    <constraint firstItem="WUc-t3-J4H" firstAttribute="centerY" secondItem="ULf-7P-gXw" secondAttribute="centerY" id="YuQ-vy-Wpu"/>
+                                    <constraint firstItem="WUc-t3-J4H" firstAttribute="centerX" secondItem="ULf-7P-gXw" secondAttribute="centerX" id="mmF-nC-YMO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7QE-gC-qV5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ULf-7P-gXw" firstAttribute="trailing" secondItem="7QE-gC-qV5" secondAttribute="trailing" id="0rp-fd-QhC"/>
+                            <constraint firstItem="ULf-7P-gXw" firstAttribute="top" secondItem="nXU-ap-B8C" secondAttribute="top" id="FcS-G0-fsy"/>
+                            <constraint firstItem="ULf-7P-gXw" firstAttribute="leading" secondItem="7QE-gC-qV5" secondAttribute="leading" id="KuU-SM-Fcf"/>
+                            <constraint firstAttribute="bottom" secondItem="ULf-7P-gXw" secondAttribute="bottom" id="Rlk-bT-oj0"/>
+                            <constraint firstItem="ULf-7P-gXw" firstAttribute="centerY" secondItem="nXU-ap-B8C" secondAttribute="centerY" id="kuU-uI-Afo"/>
+                            <constraint firstItem="ULf-7P-gXw" firstAttribute="centerX" secondItem="nXU-ap-B8C" secondAttribute="centerX" id="qRn-iW-4Ob"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="C2X Transactions" id="5PR-y3-b4c">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="RNk-Bf-ECa"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="DialogView" destination="WUc-t3-J4H" id="hFK-1f-ED5"/>
+                        <outlet property="amountTextField" destination="2w6-hm-AFy" id="lNc-ch-1hJ"/>
+                        <outlet property="containerView" destination="ULf-7P-gXw" id="87Z-U5-61e"/>
+                        <outlet property="creditReturnButton" destination="uTu-m4-l8g" id="Nwg-hT-kxd"/>
+                        <outlet property="creditSaleButton" destination="VJi-YH-R8j" id="fiT-Rj-x4Z"/>
+                        <outlet property="creditVoidButton" destination="l1g-HI-NVW" id="Ten-ae-LUv"/>
+                        <outlet property="dialogSpinner" destination="hI9-cB-C2P" id="Bps-7s-MH4"/>
+                        <outlet property="dialogText" destination="285-QT-lH5" id="E37-oe-vDF"/>
+                        <outlet property="gratuityTextField" destination="UQe-sK-ij8" id="CwO-CW-4GT"/>
+                        <outlet property="labelStatus" destination="8EK-NM-7R6" id="deR-Ze-2dl"/>
+                        <outlet property="manualCardTransactionButton" destination="97T-ck-9WG" id="eOp-hB-2Rj"/>
+                        <outlet property="tipAdjustButton" destination="8Jh-3X-lwA" id="QWy-DZ-aJ2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EF1-q0-V6Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492.9906542056074" y="-88.768898488120954"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
