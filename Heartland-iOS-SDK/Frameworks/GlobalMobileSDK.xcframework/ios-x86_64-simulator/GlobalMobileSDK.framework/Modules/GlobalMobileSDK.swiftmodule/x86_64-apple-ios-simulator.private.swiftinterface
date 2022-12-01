@@ -731,7 +731,19 @@ public struct ReturnResponse {
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
-public struct DuplicateDataResponse {
+public class DuplicateDataResponse {
+  public var transactionId: Swift.String?
+  public var hostResponseDate: Swift.String?
+  public var clientTransactionId: Swift.String?
+  public var uniqueDeviceId: Swift.String?
+  public var globalTransactionId: Swift.String?
+  public var authorizationCode: Swift.String?
+  public var referenceNumber: Swift.String?
+  public var authorizedAmount: Swift.String?
+  public var cardType: Swift.String?
+  public var cardLast4: Swift.String?
+  public init(from duplicateData: GlobalPaymentsApi.GPDuplicateData)
+  @objc deinit
 }
 public enum TransactionState : Swift.Equatable {
   case waitingForConfiguration, configuringTerminal(completed: Swift.Int, total: Swift.Int), configurationFailedTryAgain, ready, started, waitingForCard, insertCard, removeCard, cardRemoved, pleaseWait, pleaseSeePhone, useMagstripe, tryAgain, swipeErrorReSwipe, noEmvApps, applicationExpired, cardReadError, processing, processingDoNotRemoveCard, presentCard, presentCardAgain, insertSwipeOrTryAnotherCard, insertOrSwipeCard, multipleCardDetected, contactlessCardStillInField, transactionTerminated, waitingForTerminal, terminalDeclined, cardDetected, cardBlocked, notAuthorized, notAcceptedRemoveCard, fallbackToMSR, fallbackToChip, waitingForAmountConfirmation, waitingForAidSelection, waitingForPostalCode, waitingForSafApproval, cardHolderBypassedPIN, processingSaf(completed: Swift.Int, total: Swift.Int), requestingOnlineProcessing, reversal, reversalInProgress, complete, cancel, cancelling, cancelled, error, unknown
