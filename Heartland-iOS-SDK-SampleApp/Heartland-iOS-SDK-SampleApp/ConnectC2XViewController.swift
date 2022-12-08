@@ -23,13 +23,13 @@ class ConnectC2XViewController: UIViewController {
         let timeout = 120
         
         let config = HpsConnectionConfig()
-        config.username = ""
-        config.password = ""
-        config.siteID = ""
-        config.deviceID = ""
-        config.licenseID = ""
-        config.developerID = ""
-        config.versionNumber = ""
+        config.username = "703674685"
+        config.password = "$Test1234"
+        config.siteID = "372880";
+        config.deviceID = "90915912"
+        config.licenseID = "372711"
+        config.developerID = "002914"
+        config.versionNumber = "3409"
         config.timeout = timeout
         
         self.device = HpsC2xDevice(config: config)

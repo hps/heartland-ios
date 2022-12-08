@@ -174,10 +174,10 @@ class GMSResponseHelper {
         data.applicationCrytptogram = resp?.applicationCryptogram
         data.terminalVerficationResult = resp?.tvr
         data.cardType = HpsC2xEnums.cardTypeToString(resp?.cardType)
-        //data.issuerRspCode = resp?.emvIssuerRspCode
-        //data.issuerRspMsg = resp?.emvIssuerResponse
+        data.issuerRspCode = resp?.emvIssuerRspCode
+        data.issuerRspMsg = resp?.emvIssuerResponse
         data.authCode = resp?.authCode
-        //data.authCodeData = resp?.authCodeData
+        data.authCodeData = resp?.authCodeData
         if let uintValue = resp?.tip {
             data.tipAmount = uintToDecimal(uintValue)
         }
