@@ -162,6 +162,7 @@ extension GlobalMobileSDK.GMSManager : GlobalMobileSDK.TerminalOTAManagerDelegat
   public func otaUpdateProgress(percentage: Swift.Float)
 }
 public struct AuthTransaction {
+  public var allowDuplicates: Swift.Bool?
   public var total: Swift.UInt?
   public var tip: Swift.UInt?
   public let tax: Swift.UInt?
@@ -336,6 +337,7 @@ public struct SaleResponse {
   public var tokenizedCard: GlobalMobileSDK.TokenizedCardData?
   public var transactionDescription: Swift.String
   public var transactionError: GlobalMobileSDK.GMSError?
+  public var duplicateData: GlobalMobileSDK.DuplicateDataResponse?
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public init(from decoder: Swift.Decoder) throws
@@ -452,6 +454,7 @@ public struct VerifyResponse {
   public var tvr: Swift.String?
   public var transactionDescription: Swift.String
   public var transactionError: GlobalMobileSDK.GMSError?
+  public var duplicateData: GlobalMobileSDK.DuplicateDataResponse?
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
@@ -587,6 +590,7 @@ public struct TerminalConfig : Swift.Codable, Swift.Equatable {
   required public init(from decoder: Swift.Decoder) throws
 }
 public struct SaleTransaction {
+  public var allowDuplicates: Swift.Bool?
   public var total: Swift.UInt?
   public var tip: Swift.UInt?
   public let tax: Swift.UInt?
@@ -733,11 +737,24 @@ public struct ReturnResponse {
   public var avsResult: Swift.String?
   public var transactionDescription: Swift.String
   public var transactionError: GlobalMobileSDK.GMSError?
+  public var duplicateData: GlobalMobileSDK.DuplicateDataResponse?
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+}
+public struct DuplicateDataResponse {
+  public var transactionId: Swift.String?
+  public var hostResponseDate: Swift.String?
+  public var clientTransactionId: Swift.String?
+  public var uniqueDeviceId: Swift.String?
+  public var globalTransactionId: Swift.String?
+  public var authorizationCode: Swift.String?
+  public var referenceNumber: Swift.String?
+  public var authorizedAmount: Swift.String?
+  public var cardType: Swift.String?
+  public var cardLast4: Swift.String?
 }
 public enum TransactionState : Swift.Equatable {
   case waitingForConfiguration, configuringTerminal(completed: Swift.Int, total: Swift.Int), configurationFailedTryAgain, ready, started, waitingForCard, insertCard, removeCard, cardRemoved, pleaseWait, pleaseSeePhone, useMagstripe, tryAgain, swipeErrorReSwipe, noEmvApps, applicationExpired, cardReadError, processing, processingDoNotRemoveCard, presentCard, presentCardAgain, insertSwipeOrTryAnotherCard, insertOrSwipeCard, multipleCardDetected, contactlessCardStillInField, transactionTerminated, waitingForTerminal, terminalDeclined, cardDetected, cardBlocked, notAuthorized, notAcceptedRemoveCard, fallbackToMSR, fallbackToChip, waitingForAmountConfirmation, waitingForAidSelection, waitingForPostalCode, waitingForSafApproval, cardHolderBypassedPIN, processingSaf(completed: Swift.Int, total: Swift.Int), requestingOnlineProcessing, reversal, reversalInProgress, complete, cancel, cancelling, cancelled, error, unknown
@@ -898,6 +915,7 @@ public struct AuthResponse {
   }
   public var transactionDescription: Swift.String
   public var transactionError: GlobalMobileSDK.GMSError?
+  public var duplicateData: GlobalMobileSDK.DuplicateDataResponse?
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
