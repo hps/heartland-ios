@@ -25,7 +25,7 @@ class ConnectC2XViewController: UIViewController {
         let config = HpsConnectionConfig()
         config.username = ""
         config.password = ""
-        config.siteID = ""
+        config.siteID = "";
         config.deviceID = ""
         config.licenseID = ""
         config.developerID = ""
