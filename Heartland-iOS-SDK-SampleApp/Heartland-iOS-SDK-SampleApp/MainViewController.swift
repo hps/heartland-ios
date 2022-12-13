@@ -41,6 +41,10 @@ extension MainViewController {
         if let transactionDestination = segue.destination as? C2XTransactionsViewController {
             transactionDestination.device = self.device
         }
+        
+        if let transactionDestination = segue.destination as? C2XFirmwareUpdateViewController {
+            transactionDestination.device = self.device
+        }
     }
 }
 

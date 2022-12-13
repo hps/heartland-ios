@@ -139,11 +139,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rqc-fq-Wde">
-                                <rect key="frame" x="338" y="228" width="159" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rqc-fq-Wde">
+                                <rect key="frame" x="300" y="220" width="234" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="A88-GK-x4P"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Check for Updates"/>
                                 <connections>
                                     <action selector="updateFimwareTappedButton:" destination="qeT-zM-mHj" eventType="touchUpInside" id="y24-j4-1Gx"/>
                                 </connections>
@@ -151,6 +153,11 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WeK-bK-2gw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WeK-bK-2gw" firstAttribute="trailing" secondItem="Rqc-fq-Wde" secondAttribute="trailing" constant="300" id="2Cz-oY-aO8"/>
+                            <constraint firstItem="Rqc-fq-Wde" firstAttribute="top" secondItem="WeK-bK-2gw" secondAttribute="top" constant="150" id="DCO-hG-olw"/>
+                            <constraint firstItem="Rqc-fq-Wde" firstAttribute="leading" secondItem="WeK-bK-2gw" secondAttribute="leading" constant="300" id="Xrz-tv-aBy"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="n35-ai-jb1"/>
                     <connections>
