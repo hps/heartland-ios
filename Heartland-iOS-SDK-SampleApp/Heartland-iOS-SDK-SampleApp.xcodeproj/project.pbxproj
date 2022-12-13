@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14A32FAF2949222800E160AD /* C2XFirmwareUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A32FAE2949222800E160AD /* C2XFirmwareUpdateViewController.swift */; };
 		DD6A4F512937C221008B8165 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD6A4F4F2937C221008B8165 /* Main.storyboard */; };
 		DD6A4F532937C223008B8165 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD6A4F522937C223008B8165 /* Assets.xcassets */; };
 		DD6A4F562937C223008B8165 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD6A4F542937C223008B8165 /* LaunchScreen.storyboard */; };
@@ -84,6 +85,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		14A32FAE2949222800E160AD /* C2XFirmwareUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C2XFirmwareUpdateViewController.swift; sourceTree = "<group>"; };
 		DD6A4F462937C221008B8165 /* Heartland-iOS-SDK-SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Heartland-iOS-SDK-SampleApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD6A4F502937C221008B8165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD6A4F522937C223008B8165 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				DD6A4F6F2937C3BF008B8165 /* MainViewController.swift */,
 				DD6A4F662937C29A008B8165 /* AppDelegate.swift */,
 				DD6A4F672937C29A008B8165 /* C2XTransactionsViewController.swift */,
+				14A32FAE2949222800E160AD /* C2XFirmwareUpdateViewController.swift */,
 				DD6A4F642937C299008B8165 /* ConnectC2XViewController.swift */,
 				DD6A4F652937C29A008B8165 /* Constants.swift */,
 				DD6A4F4F2937C221008B8165 /* Main.storyboard */,
@@ -362,6 +365,7 @@
 			files = (
 				DD6A4F6A2937C29B008B8165 /* AppDelegate.swift in Sources */,
 				DD6A4F682937C29B008B8165 /* ConnectC2XViewController.swift in Sources */,
+				14A32FAF2949222800E160AD /* C2XFirmwareUpdateViewController.swift in Sources */,
 				DD6A4F692937C29B008B8165 /* Constants.swift in Sources */,
 				DD6A4F6B2937C29B008B8165 /* C2XTransactionsViewController.swift in Sources */,
 				DD6A4F702937C3BF008B8165 /* MainViewController.swift in Sources */,

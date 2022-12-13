@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NAZ-sw-0Dp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NAZ-sw-0Dp">
     <device id="ipad10_5" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,7 +28,7 @@
         <!--Heartland Sample App-->
         <scene sceneID="ehh-Ma-qoO">
             <objects>
-                <tableViewController id="lCO-xZ-ktI" customClass="MainViewController" customModule="Heartland_iOS_SDK_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="lCO-xZ-ktI" customClass="MainViewController" customModule="Heartland_iOS_SDK_SampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="UxA-7K-8S4">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,10 +37,10 @@
                             <tableViewSection headerTitle="C2X Options" id="7A5-sF-vBo">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="t6N-BG-HKP" detailTextLabel="Lkm-Jn-gC5" rowHeight="70" style="IBUITableViewCellStyleSubtitle" id="dOB-B3-mbY">
-                                        <rect key="frame" x="0.0" y="44.5" width="834" height="70"/>
+                                        <rect key="frame" x="0.0" y="50" width="834" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dOB-B3-mbY" id="uRf-pi-Vmr">
-                                            <rect key="frame" x="0.0" y="0.0" width="804.5" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="803.5" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Connect to C2X Device" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t6N-BG-HKP">
@@ -64,10 +64,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Dcn-fL-fls" detailTextLabel="fFQ-yf-vFO" rowHeight="70" style="IBUITableViewCellStyleSubtitle" id="5Cz-ng-2kM">
-                                        <rect key="frame" x="0.0" y="114.5" width="834" height="70"/>
+                                        <rect key="frame" x="0.0" y="120" width="834" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Cz-ng-2kM" id="7oD-fY-L8n">
-                                            <rect key="frame" x="0.0" y="0.0" width="804.5" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="803.5" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="C2X Transactions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dcn-fL-fls">
@@ -91,10 +91,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Qif-lh-wDG" detailTextLabel="Lxi-pO-5Et" rowHeight="70" style="IBUITableViewCellStyleSubtitle" id="NN5-x3-yON">
-                                        <rect key="frame" x="0.0" y="184.5" width="834" height="70"/>
+                                        <rect key="frame" x="0.0" y="190" width="834" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NN5-x3-yON" id="w2g-NM-TKH">
-                                            <rect key="frame" x="0.0" y="0.0" width="804.5" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="803.5" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="OTA Update" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qif-lh-wDG">
@@ -113,6 +113,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="qeT-zM-mHj" kind="show" id="85X-YK-jDE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -128,10 +131,40 @@
             </objects>
             <point key="canvasLocation" x="-129.23076923076923" y="-63.270142180094787"/>
         </scene>
+        <!--Firmware Update View Controller-->
+        <scene sceneID="giZ-et-xcd">
+            <objects>
+                <viewController id="qeT-zM-mHj" customClass="C2XFirmwareUpdateViewController" customModule="Heartland_iOS_SDK_SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RYq-A7-tc1">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rqc-fq-Wde">
+                                <rect key="frame" x="338" y="228" width="159" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="updateFimwareTappedButton:" destination="qeT-zM-mHj" eventType="touchUpInside" id="y24-j4-1Gx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WeK-bK-2gw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="n35-ai-jb1"/>
+                    <connections>
+                        <outlet property="updateFirmwareButton" destination="Rqc-fq-Wde" id="0gN-fc-WvS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1MF-Vl-lYm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-129.49640287769785" y="673.92086330935251"/>
+        </scene>
         <!--Connect to C2X Device-->
         <scene sceneID="0yR-e1-qBm">
             <objects>
-                <viewController id="U8d-gP-Otm" customClass="ConnectC2XViewController" customModule="Heartland_iOS_SDK_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="U8d-gP-Otm" customClass="ConnectC2XViewController" customModule="Heartland_iOS_SDK_SampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fCl-sZ-Edr">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -157,10 +190,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="6Ar-tB-Ktp">
-                                        <rect key="frame" x="133.5" y="356" width="56.5" height="31"/>
+                                        <rect key="frame" x="130.5" y="352.5" width="62" height="34.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSy-N7-uEA">
-                                                <rect key="frame" x="0.0" y="0.0" width="56.5" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="62" height="34.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Scan"/>
                                                 <connections>
@@ -201,7 +234,7 @@
         <!--C2X Transactions-->
         <scene sceneID="jYK-3K-MMe">
             <objects>
-                <viewController storyboardIdentifier="C2XTransactionsViewController" title="C2X Transactions" id="oPc-K8-8zg" customClass="C2XTransactionsViewController" customModule="Heartland_iOS_SDK_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="C2XTransactionsViewController" title="C2X Transactions" id="oPc-K8-8zg" customClass="C2XTransactionsViewController" customModule="Heartland_iOS_SDK_SampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nXU-ap-B8C">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -210,64 +243,64 @@
                                 <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3ac-Wh-jCJ">
-                                        <rect key="frame" x="40" y="319" width="754" height="474"/>
+                                        <rect key="frame" x="40" y="316.5" width="754" height="479.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device/Transaction Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfE-2l-VKd">
-                                                <rect key="frame" x="0.0" y="0.0" width="754" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="754" height="34.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EK-NM-7R6">
-                                                <rect key="frame" x="0.0" y="44" width="754" height="34"/>
+                                                <rect key="frame" x="0.0" y="44.5" width="754" height="34.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transaction Amount:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0u8-Lg-Hie">
-                                                <rect key="frame" x="0.0" y="88" width="754" height="34"/>
+                                                <rect key="frame" x="0.0" y="89" width="754" height="34.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.28" borderStyle="roundedRect" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2w6-hm-AFy">
-                                                <rect key="frame" x="0.0" y="132" width="754" height="34"/>
+                                                <rect key="frame" x="0.0" y="133.5" width="754" height="34.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="continue" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gratuity Amount:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grr-po-J4p">
-                                                <rect key="frame" x="0.0" y="176" width="754" height="34"/>
+                                                <rect key="frame" x="0.0" y="178" width="754" height="34.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UQe-sK-ij8">
-                                                <rect key="frame" x="0.0" y="220" width="754" height="34"/>
+                                                <rect key="frame" x="0.0" y="222.5" width="754" height="34.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJi-YH-R8j">
-                                                <rect key="frame" x="0.0" y="264" width="754" height="34"/>
+                                                <rect key="frame" x="0.0" y="267" width="754" height="34.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="gray" title="Credit Sale"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97T-ck-9WG">
-                                                <rect key="frame" x="0.0" y="308" width="754" height="34"/>
+                                                <rect key="frame" x="0.0" y="311.5" width="754" height="34.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="gray" title="Manual Card"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Jh-3X-lwA">
-                                                <rect key="frame" x="0.0" y="352" width="754" height="34"/>
+                                                <rect key="frame" x="0.0" y="356" width="754" height="34.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="gray" title="Tip Adjust"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTu-m4-l8g">
-                                                <rect key="frame" x="0.0" y="396" width="754" height="34"/>
+                                                <rect key="frame" x="0.0" y="400.5" width="754" height="34.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="gray" title="Credit Return"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1g-HI-NVW">
-                                                <rect key="frame" x="0.0" y="440" width="754" height="34"/>
+                                                <rect key="frame" x="0.0" y="445" width="754" height="34.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="gray" title="Credit Void"/>
                                             </button>
