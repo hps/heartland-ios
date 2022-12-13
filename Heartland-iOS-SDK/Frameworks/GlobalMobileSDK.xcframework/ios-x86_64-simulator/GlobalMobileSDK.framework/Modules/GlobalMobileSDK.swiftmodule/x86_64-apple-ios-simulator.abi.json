@@ -966,6 +966,336 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "emvIssuerRspCode",
+            "printedName": "emvIssuerRspCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK18BatchCloseResponseV16emvIssuerRspCodeSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK18BatchCloseResponseV16emvIssuerRspCodeSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18BatchCloseResponseV16emvIssuerRspCodeSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK18BatchCloseResponseV16emvIssuerRspCodeSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18BatchCloseResponseV16emvIssuerRspCodeSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK18BatchCloseResponseV16emvIssuerRspCodeSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18BatchCloseResponseV16emvIssuerRspCodeSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK18BatchCloseResponseV16emvIssuerRspCodeSSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emvIssuerResponse",
+            "printedName": "emvIssuerResponse",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK18BatchCloseResponseV09emvIssuerF0SSSgvp",
+            "mangledName": "$s15GlobalMobileSDK18BatchCloseResponseV09emvIssuerF0SSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18BatchCloseResponseV09emvIssuerF0SSSgvg",
+                "mangledName": "$s15GlobalMobileSDK18BatchCloseResponseV09emvIssuerF0SSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18BatchCloseResponseV09emvIssuerF0SSSgvs",
+                "mangledName": "$s15GlobalMobileSDK18BatchCloseResponseV09emvIssuerF0SSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18BatchCloseResponseV09emvIssuerF0SSSgvM",
+                "mangledName": "$s15GlobalMobileSDK18BatchCloseResponseV09emvIssuerF0SSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "authCodeData",
+            "printedName": "authCodeData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK18BatchCloseResponseV12authCodeDataSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK18BatchCloseResponseV12authCodeDataSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18BatchCloseResponseV12authCodeDataSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK18BatchCloseResponseV12authCodeDataSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18BatchCloseResponseV12authCodeDataSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK18BatchCloseResponseV12authCodeDataSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18BatchCloseResponseV12authCodeDataSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK18BatchCloseResponseV12authCodeDataSSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
@@ -14583,6 +14913,116 @@
           },
           {
             "kind": "Var",
+            "name": "authCodeData",
+            "printedName": "authCodeData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK12SaleResponseV12authCodeDataSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK12SaleResponseV12authCodeDataSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12SaleResponseV12authCodeDataSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK12SaleResponseV12authCodeDataSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12SaleResponseV12authCodeDataSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK12SaleResponseV12authCodeDataSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12SaleResponseV12authCodeDataSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK12SaleResponseV12authCodeDataSSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "cvvResponseCode",
             "printedName": "cvvResponseCode",
             "children": [
@@ -17271,15 +17711,15 @@
                     "kind": "TypeNominal",
                     "name": "DuplicateDataResponse",
                     "printedName": "GlobalMobileSDK.DuplicateDataResponse",
-                    "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC"
+                    "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV"
                   }
                 ],
                 "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "s:15GlobalMobileSDK12SaleResponseV13duplicateDataAA09DuplicategE0CSgvp",
-            "mangledName": "$s15GlobalMobileSDK12SaleResponseV13duplicateDataAA09DuplicategE0CSgvp",
+            "usr": "s:15GlobalMobileSDK12SaleResponseV13duplicateDataAA09DuplicategE0VSgvp",
+            "mangledName": "$s15GlobalMobileSDK12SaleResponseV13duplicateDataAA09DuplicategE0VSgvp",
             "moduleName": "GlobalMobileSDK",
             "declAttributes": [
               "HasInitialValue",
@@ -17302,15 +17742,15 @@
                         "kind": "TypeNominal",
                         "name": "DuplicateDataResponse",
                         "printedName": "GlobalMobileSDK.DuplicateDataResponse",
-                        "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC"
+                        "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV"
                       }
                     ],
                     "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK12SaleResponseV13duplicateDataAA09DuplicategE0CSgvg",
-                "mangledName": "$s15GlobalMobileSDK12SaleResponseV13duplicateDataAA09DuplicategE0CSgvg",
+                "usr": "s:15GlobalMobileSDK12SaleResponseV13duplicateDataAA09DuplicategE0VSgvg",
+                "mangledName": "$s15GlobalMobileSDK12SaleResponseV13duplicateDataAA09DuplicategE0VSgvg",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "get"
@@ -17334,15 +17774,15 @@
                         "kind": "TypeNominal",
                         "name": "DuplicateDataResponse",
                         "printedName": "GlobalMobileSDK.DuplicateDataResponse",
-                        "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC"
+                        "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV"
                       }
                     ],
                     "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK12SaleResponseV13duplicateDataAA09DuplicategE0CSgvs",
-                "mangledName": "$s15GlobalMobileSDK12SaleResponseV13duplicateDataAA09DuplicategE0CSgvs",
+                "usr": "s:15GlobalMobileSDK12SaleResponseV13duplicateDataAA09DuplicategE0VSgvs",
+                "mangledName": "$s15GlobalMobileSDK12SaleResponseV13duplicateDataAA09DuplicategE0VSgvs",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "set"
@@ -17359,8 +17799,228 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK12SaleResponseV13duplicateDataAA09DuplicategE0CSgvM",
-                "mangledName": "$s15GlobalMobileSDK12SaleResponseV13duplicateDataAA09DuplicategE0CSgvM",
+                "usr": "s:15GlobalMobileSDK12SaleResponseV13duplicateDataAA09DuplicategE0VSgvM",
+                "mangledName": "$s15GlobalMobileSDK12SaleResponseV13duplicateDataAA09DuplicategE0VSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emvIssuerRspCode",
+            "printedName": "emvIssuerRspCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK12SaleResponseV16emvIssuerRspCodeSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK12SaleResponseV16emvIssuerRspCodeSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12SaleResponseV16emvIssuerRspCodeSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK12SaleResponseV16emvIssuerRspCodeSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12SaleResponseV16emvIssuerRspCodeSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK12SaleResponseV16emvIssuerRspCodeSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12SaleResponseV16emvIssuerRspCodeSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK12SaleResponseV16emvIssuerRspCodeSSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emvIssuerResponse",
+            "printedName": "emvIssuerResponse",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK12SaleResponseV09emvIssuerE0SSSgvp",
+            "mangledName": "$s15GlobalMobileSDK12SaleResponseV09emvIssuerE0SSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12SaleResponseV09emvIssuerE0SSSgvg",
+                "mangledName": "$s15GlobalMobileSDK12SaleResponseV09emvIssuerE0SSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12SaleResponseV09emvIssuerE0SSSgvs",
+                "mangledName": "$s15GlobalMobileSDK12SaleResponseV09emvIssuerE0SSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12SaleResponseV09emvIssuerE0SSSgvM",
+                "mangledName": "$s15GlobalMobileSDK12SaleResponseV09emvIssuerE0SSSgvM",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -23228,6 +23888,123 @@
           },
           {
             "kind": "Var",
+            "name": "emvIssuerRspCode",
+            "printedName": "emvIssuerRspCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@GlobalMobileSDK@objc(cs)HostTenderResponse(py)emvIssuerRspCode",
+            "mangledName": "$s15GlobalMobileSDK18HostTenderResponseC16emvIssuerRspCodeSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@GlobalMobileSDK@objc(cs)HostTenderResponse(im)emvIssuerRspCode",
+                "mangledName": "$s15GlobalMobileSDK18HostTenderResponseC16emvIssuerRspCodeSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@GlobalMobileSDK@objc(cs)HostTenderResponse(im)setEmvIssuerRspCode:",
+                "mangledName": "$s15GlobalMobileSDK18HostTenderResponseC16emvIssuerRspCodeSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18HostTenderResponseC16emvIssuerRspCodeSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK18HostTenderResponseC16emvIssuerRspCodeSSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "emvIssuerResponse",
             "printedName": "emvIssuerResponse",
             "children": [
@@ -27986,15 +28763,15 @@
                     "kind": "TypeNominal",
                     "name": "DuplicateDataResponse",
                     "printedName": "GlobalMobileSDK.DuplicateDataResponse",
-                    "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC"
+                    "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV"
                   }
                 ],
                 "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "s:15GlobalMobileSDK14VerifyResponseV13duplicateDataAA09DuplicategE0CSgvp",
-            "mangledName": "$s15GlobalMobileSDK14VerifyResponseV13duplicateDataAA09DuplicategE0CSgvp",
+            "usr": "s:15GlobalMobileSDK14VerifyResponseV13duplicateDataAA09DuplicategE0VSgvp",
+            "mangledName": "$s15GlobalMobileSDK14VerifyResponseV13duplicateDataAA09DuplicategE0VSgvp",
             "moduleName": "GlobalMobileSDK",
             "declAttributes": [
               "HasInitialValue",
@@ -28017,15 +28794,15 @@
                         "kind": "TypeNominal",
                         "name": "DuplicateDataResponse",
                         "printedName": "GlobalMobileSDK.DuplicateDataResponse",
-                        "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC"
+                        "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV"
                       }
                     ],
                     "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK14VerifyResponseV13duplicateDataAA09DuplicategE0CSgvg",
-                "mangledName": "$s15GlobalMobileSDK14VerifyResponseV13duplicateDataAA09DuplicategE0CSgvg",
+                "usr": "s:15GlobalMobileSDK14VerifyResponseV13duplicateDataAA09DuplicategE0VSgvg",
+                "mangledName": "$s15GlobalMobileSDK14VerifyResponseV13duplicateDataAA09DuplicategE0VSgvg",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "get"
@@ -28049,15 +28826,15 @@
                         "kind": "TypeNominal",
                         "name": "DuplicateDataResponse",
                         "printedName": "GlobalMobileSDK.DuplicateDataResponse",
-                        "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC"
+                        "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV"
                       }
                     ],
                     "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK14VerifyResponseV13duplicateDataAA09DuplicategE0CSgvs",
-                "mangledName": "$s15GlobalMobileSDK14VerifyResponseV13duplicateDataAA09DuplicategE0CSgvs",
+                "usr": "s:15GlobalMobileSDK14VerifyResponseV13duplicateDataAA09DuplicategE0VSgvs",
+                "mangledName": "$s15GlobalMobileSDK14VerifyResponseV13duplicateDataAA09DuplicategE0VSgvs",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "set"
@@ -28074,8 +28851,338 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK14VerifyResponseV13duplicateDataAA09DuplicategE0CSgvM",
-                "mangledName": "$s15GlobalMobileSDK14VerifyResponseV13duplicateDataAA09DuplicategE0CSgvM",
+                "usr": "s:15GlobalMobileSDK14VerifyResponseV13duplicateDataAA09DuplicategE0VSgvM",
+                "mangledName": "$s15GlobalMobileSDK14VerifyResponseV13duplicateDataAA09DuplicategE0VSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emvIssuerRspCode",
+            "printedName": "emvIssuerRspCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK14VerifyResponseV16emvIssuerRspCodeSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK14VerifyResponseV16emvIssuerRspCodeSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK14VerifyResponseV16emvIssuerRspCodeSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK14VerifyResponseV16emvIssuerRspCodeSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK14VerifyResponseV16emvIssuerRspCodeSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK14VerifyResponseV16emvIssuerRspCodeSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK14VerifyResponseV16emvIssuerRspCodeSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK14VerifyResponseV16emvIssuerRspCodeSSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emvIssuerResponse",
+            "printedName": "emvIssuerResponse",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK14VerifyResponseV09emvIssuerE0SSSgvp",
+            "mangledName": "$s15GlobalMobileSDK14VerifyResponseV09emvIssuerE0SSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK14VerifyResponseV09emvIssuerE0SSSgvg",
+                "mangledName": "$s15GlobalMobileSDK14VerifyResponseV09emvIssuerE0SSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK14VerifyResponseV09emvIssuerE0SSSgvs",
+                "mangledName": "$s15GlobalMobileSDK14VerifyResponseV09emvIssuerE0SSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK14VerifyResponseV09emvIssuerE0SSSgvM",
+                "mangledName": "$s15GlobalMobileSDK14VerifyResponseV09emvIssuerE0SSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "authCodeData",
+            "printedName": "authCodeData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK14VerifyResponseV12authCodeDataSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK14VerifyResponseV12authCodeDataSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK14VerifyResponseV12authCodeDataSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK14VerifyResponseV12authCodeDataSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK14VerifyResponseV12authCodeDataSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK14VerifyResponseV12authCodeDataSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK14VerifyResponseV12authCodeDataSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK14VerifyResponseV12authCodeDataSSSgvM",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -45974,15 +47081,15 @@
                     "kind": "TypeNominal",
                     "name": "DuplicateDataResponse",
                     "printedName": "GlobalMobileSDK.DuplicateDataResponse",
-                    "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC"
+                    "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV"
                   }
                 ],
                 "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "s:15GlobalMobileSDK14ReturnResponseV13duplicateDataAA09DuplicategE0CSgvp",
-            "mangledName": "$s15GlobalMobileSDK14ReturnResponseV13duplicateDataAA09DuplicategE0CSgvp",
+            "usr": "s:15GlobalMobileSDK14ReturnResponseV13duplicateDataAA09DuplicategE0VSgvp",
+            "mangledName": "$s15GlobalMobileSDK14ReturnResponseV13duplicateDataAA09DuplicategE0VSgvp",
             "moduleName": "GlobalMobileSDK",
             "declAttributes": [
               "HasInitialValue",
@@ -46005,15 +47112,15 @@
                         "kind": "TypeNominal",
                         "name": "DuplicateDataResponse",
                         "printedName": "GlobalMobileSDK.DuplicateDataResponse",
-                        "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC"
+                        "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV"
                       }
                     ],
                     "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK14ReturnResponseV13duplicateDataAA09DuplicategE0CSgvg",
-                "mangledName": "$s15GlobalMobileSDK14ReturnResponseV13duplicateDataAA09DuplicategE0CSgvg",
+                "usr": "s:15GlobalMobileSDK14ReturnResponseV13duplicateDataAA09DuplicategE0VSgvg",
+                "mangledName": "$s15GlobalMobileSDK14ReturnResponseV13duplicateDataAA09DuplicategE0VSgvg",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "get"
@@ -46037,15 +47144,15 @@
                         "kind": "TypeNominal",
                         "name": "DuplicateDataResponse",
                         "printedName": "GlobalMobileSDK.DuplicateDataResponse",
-                        "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC"
+                        "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV"
                       }
                     ],
                     "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK14ReturnResponseV13duplicateDataAA09DuplicategE0CSgvs",
-                "mangledName": "$s15GlobalMobileSDK14ReturnResponseV13duplicateDataAA09DuplicategE0CSgvs",
+                "usr": "s:15GlobalMobileSDK14ReturnResponseV13duplicateDataAA09DuplicategE0VSgvs",
+                "mangledName": "$s15GlobalMobileSDK14ReturnResponseV13duplicateDataAA09DuplicategE0VSgvs",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "set"
@@ -46062,8 +47169,338 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK14ReturnResponseV13duplicateDataAA09DuplicategE0CSgvM",
-                "mangledName": "$s15GlobalMobileSDK14ReturnResponseV13duplicateDataAA09DuplicategE0CSgvM",
+                "usr": "s:15GlobalMobileSDK14ReturnResponseV13duplicateDataAA09DuplicategE0VSgvM",
+                "mangledName": "$s15GlobalMobileSDK14ReturnResponseV13duplicateDataAA09DuplicategE0VSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emvIssuerRspCode",
+            "printedName": "emvIssuerRspCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK14ReturnResponseV16emvIssuerRspCodeSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK14ReturnResponseV16emvIssuerRspCodeSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK14ReturnResponseV16emvIssuerRspCodeSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK14ReturnResponseV16emvIssuerRspCodeSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK14ReturnResponseV16emvIssuerRspCodeSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK14ReturnResponseV16emvIssuerRspCodeSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK14ReturnResponseV16emvIssuerRspCodeSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK14ReturnResponseV16emvIssuerRspCodeSSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emvIssuerResponse",
+            "printedName": "emvIssuerResponse",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK14ReturnResponseV09emvIssuerE0SSSgvp",
+            "mangledName": "$s15GlobalMobileSDK14ReturnResponseV09emvIssuerE0SSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK14ReturnResponseV09emvIssuerE0SSSgvg",
+                "mangledName": "$s15GlobalMobileSDK14ReturnResponseV09emvIssuerE0SSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK14ReturnResponseV09emvIssuerE0SSSgvs",
+                "mangledName": "$s15GlobalMobileSDK14ReturnResponseV09emvIssuerE0SSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK14ReturnResponseV09emvIssuerE0SSSgvM",
+                "mangledName": "$s15GlobalMobileSDK14ReturnResponseV09emvIssuerE0SSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "authCodeData",
+            "printedName": "authCodeData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK14ReturnResponseV12authCodeDataSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK14ReturnResponseV12authCodeDataSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK14ReturnResponseV12authCodeDataSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK14ReturnResponseV12authCodeDataSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK14ReturnResponseV12authCodeDataSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK14ReturnResponseV12authCodeDataSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK14ReturnResponseV12authCodeDataSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK14ReturnResponseV12authCodeDataSSSgvM",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -46201,8 +47638,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC13transactionIdSSSgvp",
-            "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC13transactionIdSSSgvp",
+            "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV13transactionIdSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV13transactionIdSSSgvp",
             "moduleName": "GlobalMobileSDK",
             "declAttributes": [
               "HasInitialValue",
@@ -46232,8 +47669,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC13transactionIdSSSgvg",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC13transactionIdSSSgvg",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV13transactionIdSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV13transactionIdSSSgvg",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "get"
@@ -46264,8 +47701,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC13transactionIdSSSgvs",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC13transactionIdSSSgvs",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV13transactionIdSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV13transactionIdSSSgvs",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "set"
@@ -46282,8 +47719,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC13transactionIdSSSgvM",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC13transactionIdSSSgvM",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV13transactionIdSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV13transactionIdSSSgvM",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -46311,8 +47748,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC04hostF4DateSSSgvp",
-            "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC04hostF4DateSSSgvp",
+            "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV04hostF4DateSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV04hostF4DateSSSgvp",
             "moduleName": "GlobalMobileSDK",
             "declAttributes": [
               "HasInitialValue",
@@ -46342,8 +47779,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC04hostF4DateSSSgvg",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC04hostF4DateSSSgvg",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV04hostF4DateSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV04hostF4DateSSSgvg",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "get"
@@ -46374,8 +47811,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC04hostF4DateSSSgvs",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC04hostF4DateSSSgvs",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV04hostF4DateSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV04hostF4DateSSSgvs",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "set"
@@ -46392,8 +47829,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC04hostF4DateSSSgvM",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC04hostF4DateSSSgvM",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV04hostF4DateSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV04hostF4DateSSSgvM",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -46421,8 +47858,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC19clientTransactionIdSSSgvp",
-            "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC19clientTransactionIdSSSgvp",
+            "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV19clientTransactionIdSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV19clientTransactionIdSSSgvp",
             "moduleName": "GlobalMobileSDK",
             "declAttributes": [
               "HasInitialValue",
@@ -46452,8 +47889,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC19clientTransactionIdSSSgvg",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC19clientTransactionIdSSSgvg",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV19clientTransactionIdSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV19clientTransactionIdSSSgvg",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "get"
@@ -46484,8 +47921,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC19clientTransactionIdSSSgvs",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC19clientTransactionIdSSSgvs",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV19clientTransactionIdSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV19clientTransactionIdSSSgvs",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "set"
@@ -46502,8 +47939,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC19clientTransactionIdSSSgvM",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC19clientTransactionIdSSSgvM",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV19clientTransactionIdSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV19clientTransactionIdSSSgvM",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -46531,8 +47968,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC14uniqueDeviceIdSSSgvp",
-            "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC14uniqueDeviceIdSSSgvp",
+            "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV14uniqueDeviceIdSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV14uniqueDeviceIdSSSgvp",
             "moduleName": "GlobalMobileSDK",
             "declAttributes": [
               "HasInitialValue",
@@ -46562,8 +47999,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC14uniqueDeviceIdSSSgvg",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC14uniqueDeviceIdSSSgvg",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV14uniqueDeviceIdSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV14uniqueDeviceIdSSSgvg",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "get"
@@ -46594,8 +48031,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC14uniqueDeviceIdSSSgvs",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC14uniqueDeviceIdSSSgvs",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV14uniqueDeviceIdSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV14uniqueDeviceIdSSSgvs",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "set"
@@ -46612,8 +48049,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC14uniqueDeviceIdSSSgvM",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC14uniqueDeviceIdSSSgvM",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV14uniqueDeviceIdSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV14uniqueDeviceIdSSSgvM",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -46641,8 +48078,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC19globalTransactionIdSSSgvp",
-            "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC19globalTransactionIdSSSgvp",
+            "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV19globalTransactionIdSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV19globalTransactionIdSSSgvp",
             "moduleName": "GlobalMobileSDK",
             "declAttributes": [
               "HasInitialValue",
@@ -46672,8 +48109,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC19globalTransactionIdSSSgvg",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC19globalTransactionIdSSSgvg",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV19globalTransactionIdSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV19globalTransactionIdSSSgvg",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "get"
@@ -46704,8 +48141,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC19globalTransactionIdSSSgvs",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC19globalTransactionIdSSSgvs",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV19globalTransactionIdSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV19globalTransactionIdSSSgvs",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "set"
@@ -46722,8 +48159,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC19globalTransactionIdSSSgvM",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC19globalTransactionIdSSSgvM",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV19globalTransactionIdSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV19globalTransactionIdSSSgvM",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -46751,8 +48188,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC17authorizationCodeSSSgvp",
-            "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC17authorizationCodeSSSgvp",
+            "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV17authorizationCodeSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV17authorizationCodeSSSgvp",
             "moduleName": "GlobalMobileSDK",
             "declAttributes": [
               "HasInitialValue",
@@ -46782,8 +48219,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC17authorizationCodeSSSgvg",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC17authorizationCodeSSSgvg",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV17authorizationCodeSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV17authorizationCodeSSSgvg",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "get"
@@ -46814,8 +48251,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC17authorizationCodeSSSgvs",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC17authorizationCodeSSSgvs",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV17authorizationCodeSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV17authorizationCodeSSSgvs",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "set"
@@ -46832,8 +48269,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC17authorizationCodeSSSgvM",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC17authorizationCodeSSSgvM",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV17authorizationCodeSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV17authorizationCodeSSSgvM",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -46861,8 +48298,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC15referenceNumberSSSgvp",
-            "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC15referenceNumberSSSgvp",
+            "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV15referenceNumberSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV15referenceNumberSSSgvp",
             "moduleName": "GlobalMobileSDK",
             "declAttributes": [
               "HasInitialValue",
@@ -46892,8 +48329,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC15referenceNumberSSSgvg",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC15referenceNumberSSSgvg",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV15referenceNumberSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV15referenceNumberSSSgvg",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "get"
@@ -46924,8 +48361,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC15referenceNumberSSSgvs",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC15referenceNumberSSSgvs",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV15referenceNumberSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV15referenceNumberSSSgvs",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "set"
@@ -46942,8 +48379,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC15referenceNumberSSSgvM",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC15referenceNumberSSSgvM",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV15referenceNumberSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV15referenceNumberSSSgvM",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -46971,8 +48408,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC16authorizedAmountSSSgvp",
-            "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC16authorizedAmountSSSgvp",
+            "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV16authorizedAmountSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV16authorizedAmountSSSgvp",
             "moduleName": "GlobalMobileSDK",
             "declAttributes": [
               "HasInitialValue",
@@ -47002,8 +48439,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC16authorizedAmountSSSgvg",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC16authorizedAmountSSSgvg",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV16authorizedAmountSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV16authorizedAmountSSSgvg",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "get"
@@ -47034,8 +48471,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC16authorizedAmountSSSgvs",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC16authorizedAmountSSSgvs",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV16authorizedAmountSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV16authorizedAmountSSSgvs",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "set"
@@ -47052,8 +48489,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC16authorizedAmountSSSgvM",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC16authorizedAmountSSSgvM",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV16authorizedAmountSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV16authorizedAmountSSSgvM",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -47081,8 +48518,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC8cardTypeSSSgvp",
-            "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC8cardTypeSSSgvp",
+            "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV8cardTypeSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV8cardTypeSSSgvp",
             "moduleName": "GlobalMobileSDK",
             "declAttributes": [
               "HasInitialValue",
@@ -47112,8 +48549,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC8cardTypeSSSgvg",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC8cardTypeSSSgvg",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV8cardTypeSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV8cardTypeSSSgvg",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "get"
@@ -47144,8 +48581,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC8cardTypeSSSgvs",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC8cardTypeSSSgvs",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV8cardTypeSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV8cardTypeSSSgvs",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "set"
@@ -47162,8 +48599,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC8cardTypeSSSgvM",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC8cardTypeSSSgvM",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV8cardTypeSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV8cardTypeSSSgvM",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -47191,8 +48628,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC9cardLast4SSSgvp",
-            "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC9cardLast4SSSgvp",
+            "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV9cardLast4SSSgvp",
+            "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV9cardLast4SSSgvp",
             "moduleName": "GlobalMobileSDK",
             "declAttributes": [
               "HasInitialValue",
@@ -47222,8 +48659,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC9cardLast4SSSgvg",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC9cardLast4SSSgvg",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV9cardLast4SSSgvg",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV9cardLast4SSSgvg",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "get"
@@ -47254,8 +48691,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC9cardLast4SSSgvs",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC9cardLast4SSSgvs",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV9cardLast4SSSgvs",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV9cardLast4SSSgvs",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "set"
@@ -47272,45 +48709,18 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC9cardLast4SSSgvM",
-                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC9cardLast4SSSgvM",
+                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV9cardLast4SSSgvM",
+                "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV9cardLast4SSSgvM",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
               }
             ]
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(from:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "DuplicateDataResponse",
-                "printedName": "GlobalMobileSDK.DuplicateDataResponse",
-                "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "GPDuplicateData",
-                "printedName": "GlobalPaymentsApi.GPDuplicateData",
-                "usr": "c:objc(cs)GPDuplicateData"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC4fromACSo011GPDuplicateE0C_tcfc",
-            "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC4fromACSo011GPDuplicateE0C_tcfc",
-            "moduleName": "GlobalMobileSDK",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "init_kind": "Designated"
           }
         ],
-        "declKind": "Class",
-        "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC",
-        "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseC",
+        "declKind": "Struct",
+        "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV",
+        "mangledName": "$s15GlobalMobileSDK21DuplicateDataResponseV",
         "moduleName": "GlobalMobileSDK",
         "declAttributes": [
           "AccessControl"
@@ -60717,15 +62127,15 @@
                     "kind": "TypeNominal",
                     "name": "DuplicateDataResponse",
                     "printedName": "GlobalMobileSDK.DuplicateDataResponse",
-                    "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC"
+                    "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV"
                   }
                 ],
                 "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "s:15GlobalMobileSDK12AuthResponseV13duplicateDataAA09DuplicategE0CSgvp",
-            "mangledName": "$s15GlobalMobileSDK12AuthResponseV13duplicateDataAA09DuplicategE0CSgvp",
+            "usr": "s:15GlobalMobileSDK12AuthResponseV13duplicateDataAA09DuplicategE0VSgvp",
+            "mangledName": "$s15GlobalMobileSDK12AuthResponseV13duplicateDataAA09DuplicategE0VSgvp",
             "moduleName": "GlobalMobileSDK",
             "declAttributes": [
               "HasInitialValue",
@@ -60748,15 +62158,15 @@
                         "kind": "TypeNominal",
                         "name": "DuplicateDataResponse",
                         "printedName": "GlobalMobileSDK.DuplicateDataResponse",
-                        "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC"
+                        "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV"
                       }
                     ],
                     "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK12AuthResponseV13duplicateDataAA09DuplicategE0CSgvg",
-                "mangledName": "$s15GlobalMobileSDK12AuthResponseV13duplicateDataAA09DuplicategE0CSgvg",
+                "usr": "s:15GlobalMobileSDK12AuthResponseV13duplicateDataAA09DuplicategE0VSgvg",
+                "mangledName": "$s15GlobalMobileSDK12AuthResponseV13duplicateDataAA09DuplicategE0VSgvg",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "get"
@@ -60780,15 +62190,15 @@
                         "kind": "TypeNominal",
                         "name": "DuplicateDataResponse",
                         "printedName": "GlobalMobileSDK.DuplicateDataResponse",
-                        "usr": "s:15GlobalMobileSDK21DuplicateDataResponseC"
+                        "usr": "s:15GlobalMobileSDK21DuplicateDataResponseV"
                       }
                     ],
                     "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK12AuthResponseV13duplicateDataAA09DuplicategE0CSgvs",
-                "mangledName": "$s15GlobalMobileSDK12AuthResponseV13duplicateDataAA09DuplicategE0CSgvs",
+                "usr": "s:15GlobalMobileSDK12AuthResponseV13duplicateDataAA09DuplicategE0VSgvs",
+                "mangledName": "$s15GlobalMobileSDK12AuthResponseV13duplicateDataAA09DuplicategE0VSgvs",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "set"
@@ -60805,8 +62215,338 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15GlobalMobileSDK12AuthResponseV13duplicateDataAA09DuplicategE0CSgvM",
-                "mangledName": "$s15GlobalMobileSDK12AuthResponseV13duplicateDataAA09DuplicategE0CSgvM",
+                "usr": "s:15GlobalMobileSDK12AuthResponseV13duplicateDataAA09DuplicategE0VSgvM",
+                "mangledName": "$s15GlobalMobileSDK12AuthResponseV13duplicateDataAA09DuplicategE0VSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emvIssuerRspCode",
+            "printedName": "emvIssuerRspCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK12AuthResponseV16emvIssuerRspCodeSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK12AuthResponseV16emvIssuerRspCodeSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12AuthResponseV16emvIssuerRspCodeSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK12AuthResponseV16emvIssuerRspCodeSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12AuthResponseV16emvIssuerRspCodeSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK12AuthResponseV16emvIssuerRspCodeSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12AuthResponseV16emvIssuerRspCodeSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK12AuthResponseV16emvIssuerRspCodeSSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emvIssuerResponse",
+            "printedName": "emvIssuerResponse",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK12AuthResponseV09emvIssuerE0SSSgvp",
+            "mangledName": "$s15GlobalMobileSDK12AuthResponseV09emvIssuerE0SSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12AuthResponseV09emvIssuerE0SSSgvg",
+                "mangledName": "$s15GlobalMobileSDK12AuthResponseV09emvIssuerE0SSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12AuthResponseV09emvIssuerE0SSSgvs",
+                "mangledName": "$s15GlobalMobileSDK12AuthResponseV09emvIssuerE0SSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12AuthResponseV09emvIssuerE0SSSgvM",
+                "mangledName": "$s15GlobalMobileSDK12AuthResponseV09emvIssuerE0SSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "authCodeData",
+            "printedName": "authCodeData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK12AuthResponseV12authCodeDataSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK12AuthResponseV12authCodeDataSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12AuthResponseV12authCodeDataSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK12AuthResponseV12authCodeDataSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12AuthResponseV12authCodeDataSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK12AuthResponseV12authCodeDataSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12AuthResponseV12authCodeDataSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK12AuthResponseV12authCodeDataSSSgvM",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -67067,6 +68807,336 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "emvIssuerRspCode",
+            "printedName": "emvIssuerRspCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK18ProcessSaFResponseV16emvIssuerRspCodeSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK18ProcessSaFResponseV16emvIssuerRspCodeSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18ProcessSaFResponseV16emvIssuerRspCodeSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK18ProcessSaFResponseV16emvIssuerRspCodeSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18ProcessSaFResponseV16emvIssuerRspCodeSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK18ProcessSaFResponseV16emvIssuerRspCodeSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18ProcessSaFResponseV16emvIssuerRspCodeSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK18ProcessSaFResponseV16emvIssuerRspCodeSSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emvIssuerResponse",
+            "printedName": "emvIssuerResponse",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK18ProcessSaFResponseV17emvIssuerResponseSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK18ProcessSaFResponseV17emvIssuerResponseSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18ProcessSaFResponseV17emvIssuerResponseSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK18ProcessSaFResponseV17emvIssuerResponseSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18ProcessSaFResponseV17emvIssuerResponseSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK18ProcessSaFResponseV17emvIssuerResponseSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18ProcessSaFResponseV17emvIssuerResponseSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK18ProcessSaFResponseV17emvIssuerResponseSSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "authCodeData",
+            "printedName": "authCodeData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK18ProcessSaFResponseV12authCodeDataSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK18ProcessSaFResponseV12authCodeDataSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18ProcessSaFResponseV12authCodeDataSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK18ProcessSaFResponseV12authCodeDataSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18ProcessSaFResponseV12authCodeDataSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK18ProcessSaFResponseV12authCodeDataSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18ProcessSaFResponseV12authCodeDataSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK18ProcessSaFResponseV12authCodeDataSSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
@@ -68619,6 +70689,336 @@
                 "declKind": "Accessor",
                 "usr": "s:15GlobalMobileSDK17TipAdjustResponseV16transactionErrorAA8GMSErrorVSgvM",
                 "mangledName": "$s15GlobalMobileSDK17TipAdjustResponseV16transactionErrorAA8GMSErrorVSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emvIssuerRspCode",
+            "printedName": "emvIssuerRspCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK17TipAdjustResponseV16emvIssuerRspCodeSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK17TipAdjustResponseV16emvIssuerRspCodeSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK17TipAdjustResponseV16emvIssuerRspCodeSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK17TipAdjustResponseV16emvIssuerRspCodeSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK17TipAdjustResponseV16emvIssuerRspCodeSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK17TipAdjustResponseV16emvIssuerRspCodeSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK17TipAdjustResponseV16emvIssuerRspCodeSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK17TipAdjustResponseV16emvIssuerRspCodeSSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emvIssuerResponse",
+            "printedName": "emvIssuerResponse",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK17TipAdjustResponseV09emvIssuerF0SSSgvp",
+            "mangledName": "$s15GlobalMobileSDK17TipAdjustResponseV09emvIssuerF0SSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK17TipAdjustResponseV09emvIssuerF0SSSgvg",
+                "mangledName": "$s15GlobalMobileSDK17TipAdjustResponseV09emvIssuerF0SSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK17TipAdjustResponseV09emvIssuerF0SSSgvs",
+                "mangledName": "$s15GlobalMobileSDK17TipAdjustResponseV09emvIssuerF0SSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK17TipAdjustResponseV09emvIssuerF0SSSgvM",
+                "mangledName": "$s15GlobalMobileSDK17TipAdjustResponseV09emvIssuerF0SSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "authCodeData",
+            "printedName": "authCodeData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK17TipAdjustResponseV12authCodeDataSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK17TipAdjustResponseV12authCodeDataSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK17TipAdjustResponseV12authCodeDataSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK17TipAdjustResponseV12authCodeDataSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK17TipAdjustResponseV12authCodeDataSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK17TipAdjustResponseV12authCodeDataSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK17TipAdjustResponseV12authCodeDataSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK17TipAdjustResponseV12authCodeDataSSSgvM",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -80860,6 +83260,336 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "emvIssuerRspCode",
+            "printedName": "emvIssuerRspCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK15CaptureResponseV16emvIssuerRspCodeSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK15CaptureResponseV16emvIssuerRspCodeSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15CaptureResponseV16emvIssuerRspCodeSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK15CaptureResponseV16emvIssuerRspCodeSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15CaptureResponseV16emvIssuerRspCodeSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK15CaptureResponseV16emvIssuerRspCodeSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15CaptureResponseV16emvIssuerRspCodeSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK15CaptureResponseV16emvIssuerRspCodeSSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emvIssuerResponse",
+            "printedName": "emvIssuerResponse",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK15CaptureResponseV09emvIssuerE0SSSgvp",
+            "mangledName": "$s15GlobalMobileSDK15CaptureResponseV09emvIssuerE0SSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15CaptureResponseV09emvIssuerE0SSSgvg",
+                "mangledName": "$s15GlobalMobileSDK15CaptureResponseV09emvIssuerE0SSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15CaptureResponseV09emvIssuerE0SSSgvs",
+                "mangledName": "$s15GlobalMobileSDK15CaptureResponseV09emvIssuerE0SSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15CaptureResponseV09emvIssuerE0SSSgvM",
+                "mangledName": "$s15GlobalMobileSDK15CaptureResponseV09emvIssuerE0SSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "authCodeData",
+            "printedName": "authCodeData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK15CaptureResponseV12authCodeDataSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK15CaptureResponseV12authCodeDataSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15CaptureResponseV12authCodeDataSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK15CaptureResponseV12authCodeDataSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15CaptureResponseV12authCodeDataSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK15CaptureResponseV12authCodeDataSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15CaptureResponseV12authCodeDataSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK15CaptureResponseV12authCodeDataSSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
@@ -82522,6 +85252,336 @@
                 "declKind": "Accessor",
                 "usr": "s:15GlobalMobileSDK12VoidResponseV16transactionErrorAA8GMSErrorVSgvM",
                 "mangledName": "$s15GlobalMobileSDK12VoidResponseV16transactionErrorAA8GMSErrorVSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emvIssuerRspCode",
+            "printedName": "emvIssuerRspCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK12VoidResponseV16emvIssuerRspCodeSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK12VoidResponseV16emvIssuerRspCodeSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12VoidResponseV16emvIssuerRspCodeSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK12VoidResponseV16emvIssuerRspCodeSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12VoidResponseV16emvIssuerRspCodeSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK12VoidResponseV16emvIssuerRspCodeSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12VoidResponseV16emvIssuerRspCodeSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK12VoidResponseV16emvIssuerRspCodeSSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emvIssuerResponse",
+            "printedName": "emvIssuerResponse",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK12VoidResponseV09emvIssuerE0SSSgvp",
+            "mangledName": "$s15GlobalMobileSDK12VoidResponseV09emvIssuerE0SSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12VoidResponseV09emvIssuerE0SSSgvg",
+                "mangledName": "$s15GlobalMobileSDK12VoidResponseV09emvIssuerE0SSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12VoidResponseV09emvIssuerE0SSSgvs",
+                "mangledName": "$s15GlobalMobileSDK12VoidResponseV09emvIssuerE0SSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12VoidResponseV09emvIssuerE0SSSgvM",
+                "mangledName": "$s15GlobalMobileSDK12VoidResponseV09emvIssuerE0SSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "authCodeData",
+            "printedName": "authCodeData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK12VoidResponseV12authCodeDataSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK12VoidResponseV12authCodeDataSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12VoidResponseV12authCodeDataSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK12VoidResponseV12authCodeDataSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12VoidResponseV12authCodeDataSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK12VoidResponseV12authCodeDataSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK12VoidResponseV12authCodeDataSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK12VoidResponseV12authCodeDataSSSgvM",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -84422,6 +87482,336 @@
                 "declKind": "Accessor",
                 "usr": "s:15GlobalMobileSDK16ReversalResponseV16transactionErrorAA8GMSErrorVSgvM",
                 "mangledName": "$s15GlobalMobileSDK16ReversalResponseV16transactionErrorAA8GMSErrorVSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emvIssuerRspCode",
+            "printedName": "emvIssuerRspCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK16ReversalResponseV16emvIssuerRspCodeSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK16ReversalResponseV16emvIssuerRspCodeSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK16ReversalResponseV16emvIssuerRspCodeSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK16ReversalResponseV16emvIssuerRspCodeSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK16ReversalResponseV16emvIssuerRspCodeSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK16ReversalResponseV16emvIssuerRspCodeSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK16ReversalResponseV16emvIssuerRspCodeSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK16ReversalResponseV16emvIssuerRspCodeSSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emvIssuerResponse",
+            "printedName": "emvIssuerResponse",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK16ReversalResponseV09emvIssuerE0SSSgvp",
+            "mangledName": "$s15GlobalMobileSDK16ReversalResponseV09emvIssuerE0SSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK16ReversalResponseV09emvIssuerE0SSSgvg",
+                "mangledName": "$s15GlobalMobileSDK16ReversalResponseV09emvIssuerE0SSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK16ReversalResponseV09emvIssuerE0SSSgvs",
+                "mangledName": "$s15GlobalMobileSDK16ReversalResponseV09emvIssuerE0SSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK16ReversalResponseV09emvIssuerE0SSSgvM",
+                "mangledName": "$s15GlobalMobileSDK16ReversalResponseV09emvIssuerE0SSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "authCodeData",
+            "printedName": "authCodeData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK16ReversalResponseV12authCodeDataSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK16ReversalResponseV12authCodeDataSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK16ReversalResponseV12authCodeDataSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK16ReversalResponseV12authCodeDataSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK16ReversalResponseV12authCodeDataSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK16ReversalResponseV12authCodeDataSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK16ReversalResponseV12authCodeDataSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK16ReversalResponseV12authCodeDataSSSgvM",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -88724,6 +92114,336 @@
                 "declKind": "Accessor",
                 "usr": "s:15GlobalMobileSDK20TokenizationResponseV16transactionErrorAA8GMSErrorVSgvM",
                 "mangledName": "$s15GlobalMobileSDK20TokenizationResponseV16transactionErrorAA8GMSErrorVSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emvIssuerRspCode",
+            "printedName": "emvIssuerRspCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK20TokenizationResponseV16emvIssuerRspCodeSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK20TokenizationResponseV16emvIssuerRspCodeSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK20TokenizationResponseV16emvIssuerRspCodeSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK20TokenizationResponseV16emvIssuerRspCodeSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK20TokenizationResponseV16emvIssuerRspCodeSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK20TokenizationResponseV16emvIssuerRspCodeSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK20TokenizationResponseV16emvIssuerRspCodeSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK20TokenizationResponseV16emvIssuerRspCodeSSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emvIssuerResponse",
+            "printedName": "emvIssuerResponse",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK20TokenizationResponseV09emvIssuerE0SSSgvp",
+            "mangledName": "$s15GlobalMobileSDK20TokenizationResponseV09emvIssuerE0SSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK20TokenizationResponseV09emvIssuerE0SSSgvg",
+                "mangledName": "$s15GlobalMobileSDK20TokenizationResponseV09emvIssuerE0SSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK20TokenizationResponseV09emvIssuerE0SSSgvs",
+                "mangledName": "$s15GlobalMobileSDK20TokenizationResponseV09emvIssuerE0SSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK20TokenizationResponseV09emvIssuerE0SSSgvM",
+                "mangledName": "$s15GlobalMobileSDK20TokenizationResponseV09emvIssuerE0SSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "authCodeData",
+            "printedName": "authCodeData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK20TokenizationResponseV12authCodeDataSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK20TokenizationResponseV12authCodeDataSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK20TokenizationResponseV12authCodeDataSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK20TokenizationResponseV12authCodeDataSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK20TokenizationResponseV12authCodeDataSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK20TokenizationResponseV12authCodeDataSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK20TokenizationResponseV12authCodeDataSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK20TokenizationResponseV12authCodeDataSSSgvM",
                 "moduleName": "GlobalMobileSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -93245,13 +96965,6 @@
     {
       "filePath": "\/Users\/felix.khazin\/Dev\/posioslib\/GlobalMobileSDK\/GlobalMobileSDK\/GlobalMobileSDK\/Transaction\/ResponseDTOs\/SaleResponse.swift",
       "kind": "StringLiteral",
-      "offset": 1950,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/felix.khazin\/Dev\/posioslib\/GlobalMobileSDK\/GlobalMobileSDK\/GlobalMobileSDK\/Transaction\/ResponseDTOs\/SaleResponse.swift",
-      "kind": "StringLiteral",
       "offset": 1987,
       "length": 2,
       "value": "\"\""
@@ -93259,42 +96972,49 @@
     {
       "filePath": "\/Users\/felix.khazin\/Dev\/posioslib\/GlobalMobileSDK\/GlobalMobileSDK\/GlobalMobileSDK\/Transaction\/ResponseDTOs\/SaleResponse.swift",
       "kind": "StringLiteral",
-      "offset": 2023,
+      "offset": 2024,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/felix.khazin\/Dev\/posioslib\/GlobalMobileSDK\/GlobalMobileSDK\/GlobalMobileSDK\/Transaction\/ResponseDTOs\/SaleResponse.swift",
+      "kind": "StringLiteral",
+      "offset": 2060,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/felix.khazin\/Dev\/posioslib\/GlobalMobileSDK\/GlobalMobileSDK\/GlobalMobileSDK\/Transaction\/ResponseDTOs\/SaleResponse.swift",
       "kind": "BooleanLiteral",
-      "offset": 2058,
+      "offset": 2095,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/felix.khazin\/Dev\/posioslib\/GlobalMobileSDK\/GlobalMobileSDK\/GlobalMobileSDK\/Transaction\/ResponseDTOs\/SaleResponse.swift",
       "kind": "StringLiteral",
-      "offset": 2109,
+      "offset": 2146,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/felix.khazin\/Dev\/posioslib\/GlobalMobileSDK\/GlobalMobileSDK\/GlobalMobileSDK\/Transaction\/ResponseDTOs\/SaleResponse.swift",
       "kind": "StringLiteral",
-      "offset": 2155,
+      "offset": 2192,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/felix.khazin\/Dev\/posioslib\/GlobalMobileSDK\/GlobalMobileSDK\/GlobalMobileSDK\/Transaction\/ResponseDTOs\/SaleResponse.swift",
       "kind": "StringLiteral",
-      "offset": 2198,
+      "offset": 2235,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/felix.khazin\/Dev\/posioslib\/GlobalMobileSDK\/GlobalMobileSDK\/GlobalMobileSDK\/Transaction\/ResponseDTOs\/SaleResponse.swift",
       "kind": "StringLiteral",
-      "offset": 2241,
+      "offset": 2278,
       "length": 6,
       "value": "\"Sale\""
     },

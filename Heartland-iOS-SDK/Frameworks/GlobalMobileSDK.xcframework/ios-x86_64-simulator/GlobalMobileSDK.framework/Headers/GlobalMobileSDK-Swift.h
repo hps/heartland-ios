@@ -417,6 +417,7 @@ SWIFT_CLASS("_TtC15GlobalMobileSDK18HostTenderResponse")
 @property (nonatomic, copy) NSString * _Nullable emvIssuerAuthCode;
 @property (nonatomic, copy) NSString * _Nullable emvIssuerScripts;
 @property (nonatomic, copy) NSString * _Nullable emvIssuerAuthenticationData;
+@property (nonatomic, copy) NSString * _Nullable emvIssuerRspCode;
 @property (nonatomic, copy) NSString * _Nullable emvIssuerResponse;
 @property (nonatomic, copy) NSString * _Nullable gatewayAuthCode;
 @property (nonatomic, copy) NSString * _Nullable onlineProcessResult;
