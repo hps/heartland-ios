@@ -111,11 +111,6 @@ extension C2XFirmwareUpdateViewController: GMSDeviceFirmwareUpdateDelegate {
     func terminalOTAResult(resultType: TerminalOTAResult,
                            info: [String : AnyObject]?,
                            error: Error?) {
-        print("Result Type: \(resultType)")
-        if let error = error {
-            hideDialogView()
-            print("error: \(error.localizedDescription)")
-        }
         
         self.device?.setVersionDataFor(versionString: lastFirmwareVersion)
         print("terminalOTAResult: \(info)")
