@@ -147,21 +147,65 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Check for Updates"/>
                                 <connections>
-                                    <action selector="updateFimwareTappedButton:" destination="qeT-zM-mHj" eventType="touchUpInside" id="y24-j4-1Gx"/>
+                                    <action selector="checkForUpdatesButtonAction:" destination="qeT-zM-mHj" eventType="touchUpInside" id="T8W-Mf-rjP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="537-eJ-eZS">
+                                <rect key="frame" x="300" y="324" width="234" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="htJ-Rr-lnb"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Update Firmware"/>
+                                <connections>
+                                    <action selector="updateFirmwareButtonAction:" destination="qeT-zM-mHj" eventType="touchUpInside" id="7iq-Un-d4a"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZS4-wo-S5J">
+                                <rect key="frame" x="267" y="476" width="300" height="160"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9t-p8-bc2">
+                                        <rect key="frame" x="8" y="20" width="302" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="5kt-Nt-zsm">
+                                        <rect key="frame" x="134" y="53" width="50" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="S9e-Fj-96q"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="vEq-kQ-diD"/>
+                                    <constraint firstAttribute="width" constant="300" id="wcI-Zr-r59"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WeK-bK-2gw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="WeK-bK-2gw" firstAttribute="trailing" secondItem="Rqc-fq-Wde" secondAttribute="trailing" constant="300" id="2Cz-oY-aO8"/>
+                            <constraint firstItem="537-eJ-eZS" firstAttribute="top" secondItem="Rqc-fq-Wde" secondAttribute="bottom" constant="48" id="8qe-RR-iQT"/>
+                            <constraint firstItem="537-eJ-eZS" firstAttribute="leading" secondItem="WeK-bK-2gw" secondAttribute="leading" constant="300" id="CTZ-RI-ntP"/>
                             <constraint firstItem="Rqc-fq-Wde" firstAttribute="top" secondItem="WeK-bK-2gw" secondAttribute="top" constant="150" id="DCO-hG-olw"/>
                             <constraint firstItem="Rqc-fq-Wde" firstAttribute="leading" secondItem="WeK-bK-2gw" secondAttribute="leading" constant="300" id="Xrz-tv-aBy"/>
+                            <constraint firstItem="WeK-bK-2gw" firstAttribute="trailing" secondItem="537-eJ-eZS" secondAttribute="trailing" constant="300" id="tto-1N-Gq3"/>
+                            <constraint firstItem="ZS4-wo-S5J" firstAttribute="centerY" secondItem="RYq-A7-tc1" secondAttribute="centerY" id="uVg-ja-28V"/>
+                            <constraint firstItem="ZS4-wo-S5J" firstAttribute="centerX" secondItem="RYq-A7-tc1" secondAttribute="centerX" id="wxD-NT-xQE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="n35-ai-jb1"/>
                     <connections>
-                        <outlet property="updateFirmwareButton" destination="Rqc-fq-Wde" id="0gN-fc-WvS"/>
+                        <outlet property="DialogView" destination="ZS4-wo-S5J" id="hnB-af-J3I"/>
+                        <outlet property="dialogSpinner" destination="5kt-Nt-zsm" id="ZqL-qu-8Y0"/>
+                        <outlet property="dialogText" destination="E9t-p8-bc2" id="rlM-13-kMf"/>
+                        <outlet property="updateFirmwareButton" destination="537-eJ-eZS" id="x7w-7U-hwo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1MF-Vl-lYm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
