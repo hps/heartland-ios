@@ -48,21 +48,28 @@ class C2XFirmwareUpdateViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func checkForUpdatesButtonAction(_ sender: Any) {
-//        self.device?.requestUpdateVersionForC2X()
-//        self.device?.getAllVersionsForC2X() - lIST OF VERSIONS. NEED TO SORT BY HIGHER AND CHECK IF WE ALREADY HAVE THAT VERSION.
-        showDialogView()
-        self.showTextDialog("Please wait...")
-        self.device?.requestTerminalVersionData()
+        if let device = self.device {
+            disableCheckForUpdatesButton()
+            showDialogView()
+            self.setText(LoadingStatus.WAIT.rawValue)
+            device.requestTerminalVersionData()
+        } else {
+            showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
+        }
     }
     
     @IBAction func updateFirmwareButtonAction(_ sender: Any) {
-        showDialogView()
-//        self.device?.requestUpdateVersionForC2X()
-        self.device?.setVersionDataFor(versionString: lastFirmwareVersion)
+        if let device = self.device {
+            showDialogView()
+            device.setVersionDataFor(versionString: lastFirmwareVersion)
+            device.requestUpdateVersionForC2X()
+        } else {
+            showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
+        }
     }
     
     func compareVersions() {
-        disableUpdateFirmwareButton()
+        enableUpdateFirmwareButton()
         let versionCompare = currentFirmwareVerion.compare(lastFirmwareVersion, options: .numeric)
         if versionCompare == .orderedAscending {
             showNewVersionMessageUser()
@@ -71,6 +78,7 @@ class C2XFirmwareUpdateViewController: UIViewController {
             self.hideDialogView()
             showLastVersionInstalledAlready()
         }
+        enableCheckForUpdatesButton()
     }
     
     func enableUpdateFirmwareButton() {
@@ -80,6 +88,14 @@ class C2XFirmwareUpdateViewController: UIViewController {
     
     func disableUpdateFirmwareButton() {
         self.updateFirmwareButton.isEnabled = false
+    }
+    
+    func enableCheckForUpdatesButton() {
+        self.checkForUpdatesFirmwareButton.isEnabled = true
+    }
+    
+    func disableCheckForUpdatesButton() {
+        self.checkForUpdatesFirmwareButton.isEnabled = false
     }
 }
 
@@ -118,7 +134,7 @@ extension C2XFirmwareUpdateViewController: GMSDeviceFirmwareUpdateDelegate {
     
     func otaUpdateProgress(percentage: Float) {
         let str = String(format: "%.f%", percentage)
-        self.showTextDialog("Progress: \(str)%")
+        self.setText("\(LoadingStatus.WAIT.rawValue)\nProgress: \(str)%")
     }
     
     func onReturnSetTargetVersion(message: String) {
@@ -129,9 +145,11 @@ extension C2XFirmwareUpdateViewController: GMSDeviceFirmwareUpdateDelegate {
 
 // MARK: - Dialog
 extension C2XFirmwareUpdateViewController {
-    func showTextDialog(_ message: String) {
+    
+    func setText(_ text:String) {
         DispatchQueue.main.async {
-            self.dialogText.text = message
+            self.dialogText.text = text
+            self.dialogSpinner.startAnimating()
         }
     }
     
@@ -148,20 +166,22 @@ extension C2XFirmwareUpdateViewController {
     func showNewVersionMessageUser() {
         let message = "Your device firmware version is: \(currentFirmwareVerion).\nWe have a new firmware version availabe: \(lastFirmwareVersion).\nHit 'Update Firmware' to start the process."
         
-        let alert = UIAlertController(title: "New Version Available",
+        let alert = UIAlertController(title: LoadingStatus.NEW_VERSION_AVAILABLE.rawValue,
                                       message: message,
                                       preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: LoadingStatus.OK_BUTTON.rawValue,
+                                      style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
     func showLastVersionInstalledAlready() {
         let message = "You're already have the last version: \(lastFirmwareVersion)."
         
-        let alert = UIAlertController(title: "You're updated!",
+        let alert = UIAlertController(title: LoadingStatus.YOU_ARE_UPDATED.rawValue,
                                       message: message,
                                       preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: LoadingStatus.OK_BUTTON.rawValue,
+                                      style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 }
