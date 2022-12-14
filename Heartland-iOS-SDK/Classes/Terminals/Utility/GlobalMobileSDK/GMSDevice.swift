@@ -8,6 +8,8 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
     public var transactionDelegate: GMSTransactionDelegate?
     public var targetTerminalId: UUID?
     public private(set) var terminalsById = [UUID: HpsTerminalInfo]()
+    public var otaFirmwareUpdateDelegate: GMSDeviceFirmwareUpdateDelegate?
+    
     public private(set) var isScanning = false {
         didSet {
             if oldValue != isScanning {
@@ -135,5 +137,52 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
 
     public func onError(_ error: NSError) {
         self.transactionDelegate?.onTransactionError(error)
+    }
+}
+
+// MARK: Firmware Update
+extension GMSDevice {
+    public func getAllVersionsForC2X() {
+        gmsWrapper?.terminalOTADelegate = self
+        gmsWrapper?.requestAvailableOTAVersionsListFor(type: .firmware)
+    }
+    
+    public func requestUpdateVersionForC2X() {
+        gmsWrapper?.terminalOTADelegate = self
+        gmsWrapper?.requestToStartUpdateFor(type: .firmware)
+    }
+    
+    public func requestTerminalVersionData() {
+        gmsWrapper?.terminalOTADelegate = self
+        gmsWrapper?.requestTerminalVersionData()
+    }
+    
+    public func setVersionDataFor(versionString: String) {
+        gmsWrapper?.terminalOTADelegate = self
+        gmsWrapper?.setVersionDataFor(versionString: versionString)
+    }
+}
+
+extension GMSDevice: GMSClientTerminalOTAManagerDelegate {
+    public func terminalVersionDetails(info: [AnyHashable : Any]?) {
+        otaFirmwareUpdateDelegate?.onTerminalVersionDetails(info: info)
+    }
+    
+    public func terminalOTAResult(resultType: GlobalMobileSDK.TerminalOTAResult,
+                                  info: [String : AnyObject]?, error: Error?) {
+        otaFirmwareUpdateDelegate?.terminalOTAResult(resultType: resultType, info: info, error: error)
+    }
+    
+    public func listOfVersionsFor(type: GlobalMobileSDK.TerminalOTAUpdateType, results: [Any]?) {
+        otaFirmwareUpdateDelegate?.listOfVersionsFor(results: results)
+    }
+    
+    public func otaUpdateProgress(percentage: Float) {
+        otaFirmwareUpdateDelegate?.otaUpdateProgress(percentage: percentage)
+    }
+    
+    public func onReturnSetTargetVersion(resultType: GlobalMobileSDK.TerminalOTAResult,
+                                         type: GlobalMobileSDK.TerminalOTAUpdateType, message: String) {
+        otaFirmwareUpdateDelegate?.onReturnSetTargetVersion(message: message)
     }
 }

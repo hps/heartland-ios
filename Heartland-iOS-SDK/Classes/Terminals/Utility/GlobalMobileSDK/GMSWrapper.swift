@@ -2,6 +2,7 @@ import Foundation
 import GlobalMobileSDK
 import GlobalPaymentsApi
 
+
 @objcMembers
 public class GMSWrapper: NSObject {
 
@@ -14,6 +15,8 @@ public class GMSWrapper: NSObject {
     private var transactionType: HpsTransactionType
     private var builder: GMSBaseBuilder?
     private var currentState: TransactionState = .unknown
+    
+    var terminalOTADelegate: GMSClientTerminalOTAManagerDelegate?
 
     // MARK: Init
     public init(_ gatewayConfig: GMSConfiguration?, delegate: GMSClientAppDelegate, entryModes: [EntryMode], terminalType: TerminalType) {
@@ -257,5 +260,51 @@ private extension GMSWrapper {
         let transactionType = gmsTransactionType.flatMap(HpsC2xEnums.transactionTypeToString)
         response.transactionType = transactionType
         delegate.onTransactionComplete("", response: response)
+    }
+}
+
+// MARK: - Firmware Update
+extension GMSWrapper {
+    public func requestAvailableOTAVersionsListFor(type: TerminalOTAUpdateType) {
+        GMSManager.shared.requestAvailableOTAVersionsListFor(type: type, delegate: self)
+    }
+    
+    public func requestToStartUpdateFor(type: TerminalOTAUpdateType) {
+        GMSManager.shared.requestToStartUpdateFor(type: type, delegate: self)
+    }
+    
+    public func requestTerminalVersionData() {
+        GMSManager.shared.requestTerminalVersionData(delegate: self)
+    }
+    
+    public func setVersionDataFor(versionString: String) {
+        GMSManager.shared.setVersionDataFor(type: .firmware, versionString: versionString, delegate: self)
+    }
+}
+
+
+// MARK: - TerminalOTAManagerDelegate
+extension GMSWrapper: TerminalOTAManagerDelegate {
+    public func terminalVersionDetails(info: [AnyHashable : Any]?) {
+        terminalOTADelegate?.terminalVersionDetails(info: info)
+    }
+    
+    public func terminalOTAResult(resultType: GlobalMobileSDK.TerminalOTAResult,
+                                  info: [String : AnyObject]?, error: Error?) {
+        terminalOTADelegate?.terminalOTAResult(resultType: resultType, info: info, error: error)
+    }
+    
+    public func listOfVersionsFor(type: GlobalMobileSDK.TerminalOTAUpdateType, results: [Any]?) {
+        terminalOTADelegate?.listOfVersionsFor(type: type, results: results)
+    }
+    
+    public func otaUpdateProgress(percentage: Float) {
+        terminalOTADelegate?.otaUpdateProgress(percentage: percentage)
+    }
+    
+    public func onReturnSetTargetVersion(resultType: GlobalMobileSDK.TerminalOTAResult,
+                                         type: GlobalMobileSDK.TerminalOTAUpdateType,
+                                         message: String) {
+        terminalOTADelegate?.onReturnSetTargetVersion(resultType: resultType, type: type, message: message)
     }
 }
