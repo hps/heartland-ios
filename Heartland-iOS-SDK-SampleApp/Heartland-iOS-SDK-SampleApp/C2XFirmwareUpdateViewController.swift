@@ -12,6 +12,10 @@ import GlobalMobileSDK
 
 class C2XFirmwareUpdateViewController: UIViewController {
     
+    weak var timeout: Timer?
+    private var timoutCounter: Int = 60
+    private var isSuccess = false
+    
     var device: HpsC2xDevice? {
         didSet {
             self.device?.otaFirmwareUpdateDelegate = self
@@ -63,6 +67,7 @@ class C2XFirmwareUpdateViewController: UIViewController {
             showDialogView()
             device.setVersionDataFor(versionString: lastFirmwareVersion)
             device.requestUpdateVersionForC2X()
+            resetTimer()
         } else {
             showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
         }
@@ -99,10 +104,27 @@ class C2XFirmwareUpdateViewController: UIViewController {
     }
 }
 
+// MARK: - Timer Counting
+extension C2XFirmwareUpdateViewController {
+    func resetTimer() {
+        timeout?.invalidate()
+        timeout = .scheduledTimer(timeInterval: TimeInterval(timoutCounter),
+                                  target: self,
+                                  selector: #selector(handleIdleEvent(_:)),
+                                  userInfo: nil,
+                                  repeats: false)
+    }
+    
+    @objc func handleIdleEvent(_ timer: Timer) {
+        hideDialogView()
+        showTextDialog(LoadingStatus.TAKING_TOO_MUCH_TO_RESPOND.rawValue)
+    }
+}
+
 extension C2XFirmwareUpdateViewController: GMSDeviceFirmwareUpdateDelegate {
     func onTerminalVersionDetails(info: [AnyHashable : Any]?) {
         if let info = info, let firmwareVersion = info["firmwareVersion"],
-            let stringFirmwareVersion = firmwareVersion as? String {
+           let stringFirmwareVersion = firmwareVersion as? String {
             print("Info: \(stringFirmwareVersion)")
             self.currentFirmwareVerion = stringFirmwareVersion
         }
@@ -111,9 +133,15 @@ extension C2XFirmwareUpdateViewController: GMSDeviceFirmwareUpdateDelegate {
     func terminalOTAResult(resultType: TerminalOTAResult,
                            info: [String : AnyObject]?,
                            error: Error?) {
+        if resultType == GlobalMobileSDK.TerminalOTAResult.success {
+            self.isSuccess = true;
+            self.device?.setVersionDataFor(versionString: lastFirmwareVersion)
+        }
         
-        self.device?.setVersionDataFor(versionString: lastFirmwareVersion)
-        print("terminalOTAResult: \(info)")
+        if resultType == GlobalMobileSDK.TerminalOTAResult.setupError {
+            hideDialogView()
+            showTextDialog(LoadingStatus.SOMETHING_WENT_WRONG.rawValue)
+        }
     }
     
     func listOfVersionsFor(results: [Any]?) {
@@ -129,11 +157,17 @@ extension C2XFirmwareUpdateViewController: GMSDeviceFirmwareUpdateDelegate {
     
     func otaUpdateProgress(percentage: Float) {
         let str = String(format: "%.f%", percentage)
-        self.setText("\(LoadingStatus.WAIT.rawValue)\nProgress: \(str)%")
+        timoutCounter = percentage == 100 ? 180 : 60
+        self.setText("\(LoadingStatus.WAIT.rawValue) \(LoadingStatus.PROGRESS.rawValue) \(str)%")
+        self.resetTimer()
     }
     
     func onReturnSetTargetVersion(message: String) {
-        print("onReturnSetTargetVersion: \(message)")
+        if isSuccess {
+            timeout?.invalidate()
+            hideDialogView()
+            showTextDialog(LoadingStatus.SUCCESS_UPDATED.rawValue, true)
+        }
     }
     
 }
@@ -159,7 +193,9 @@ extension C2XFirmwareUpdateViewController {
     }
     
     func showNewVersionMessageUser() {
-        let message = "Your device firmware version is: \(currentFirmwareVerion).\nWe have a new firmware version availabe: \(lastFirmwareVersion).\nHit 'Update Firmware' to start the process."
+        let message = String(format: LoadingStatus.MESSAGE_FIRMWARE_ALREADY_UPDATED.rawValue,
+                             currentFirmwareVerion,
+                             lastFirmwareVersion)
         
         let alert = UIAlertController(title: LoadingStatus.NEW_VERSION_AVAILABLE.rawValue,
                                       message: message,
@@ -170,7 +206,8 @@ extension C2XFirmwareUpdateViewController {
     }
     
     func showLastVersionInstalledAlready() {
-        let message = "You're already have the last version: \(lastFirmwareVersion)."
+        let message = String(format: LoadingStatus.YOU_ALREADY_HAVE_LAST_UPDATED_VERSION.rawValue,
+                             lastFirmwareVersion)
         
         let alert = UIAlertController(title: LoadingStatus.YOU_ARE_UPDATED.rawValue,
                                       message: message,

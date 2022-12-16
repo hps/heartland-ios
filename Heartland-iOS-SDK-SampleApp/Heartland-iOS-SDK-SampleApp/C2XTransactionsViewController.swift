@@ -443,6 +443,13 @@ public enum LoadingStatus: String {
     case NEW_VERSION_AVAILABLE = "New Version Available"
     case YOU_ARE_UPDATED = "You're updated!"
     case OK_BUTTON = "Ok"
+    case PROGRESS = "\nProgress: "
+    case MESSAGE_FIRMWARE_ALREADY_UPDATED = "Your device firmware version is: %@.\nWe have a new firmware version availabe: %@.\nHit 'Update Firmware' to start the process."
+    case YOU_ALREADY_HAVE_LAST_UPDATED_VERSION = "You're already have the last version: %@."
+    case TAKING_TOO_MUCH_TO_RESPOND = "The server is taking too long to respond. Try again later."
+    case SUCCESS_UPDATED = "Updated! Please, wait a few seconds. Device will be restarted."
+    case YOUVE_GOT_IT_TITLE = "Yes!"
+    case SOMETHING_WENT_WRONG = "Something wen wrong. Please, try update it again."
 }
 
 extension UIViewController {
