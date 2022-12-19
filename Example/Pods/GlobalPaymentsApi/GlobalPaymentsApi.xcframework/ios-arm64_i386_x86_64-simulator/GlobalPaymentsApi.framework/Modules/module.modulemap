@@ -1,6 +1,0 @@
-framework module GlobalPaymentsApi {
-  umbrella header "GlobalPaymentsApi.h"
-
-  export *
-  module * { export * }
-}

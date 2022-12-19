@@ -1,0 +1,690 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DD6A4F512937C221008B8165 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD6A4F4F2937C221008B8165 /* Main.storyboard */; };
+		DD6A4F532937C223008B8165 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD6A4F522937C223008B8165 /* Assets.xcassets */; };
+		DD6A4F562937C223008B8165 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD6A4F542937C223008B8165 /* LaunchScreen.storyboard */; };
+		DD6A4F682937C29B008B8165 /* ConnectC2XViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6A4F642937C299008B8165 /* ConnectC2XViewController.swift */; };
+		DD6A4F692937C29B008B8165 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6A4F652937C29A008B8165 /* Constants.swift */; };
+		DD6A4F6A2937C29B008B8165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6A4F662937C29A008B8165 /* AppDelegate.swift */; };
+		DD6A4F6B2937C29B008B8165 /* C2XTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6A4F672937C29A008B8165 /* C2XTransactionsViewController.swift */; };
+		DD6A4F702937C3BF008B8165 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6A4F6F2937C3BF008B8165 /* MainViewController.swift */; };
+		DD6A4F722937C4EF008B8165 /* Heartland_iOS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD6A4F6D2937C2D0008B8165 /* Heartland_iOS_SDK.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		DD6A4F732937C4EF008B8165 /* Heartland_iOS_SDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DD6A4F6D2937C2D0008B8165 /* Heartland_iOS_SDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DD6A4F7D2937CD4D008B8165 /* GlobalMobileSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD6A4F7C2937CD4D008B8165 /* GlobalMobileSDK.xcframework */; };
+		DD6A4F7E2937CD4D008B8165 /* GlobalMobileSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DD6A4F7C2937CD4D008B8165 /* GlobalMobileSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DD6A4F802937CD52008B8165 /* BBPOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD6A4F7F2937CD52008B8165 /* BBPOS.xcframework */; };
+		DD6A4F812937CD52008B8165 /* BBPOS.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DD6A4F7F2937CD52008B8165 /* BBPOS.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DD6A4F832937CD55008B8165 /* GlobalPaymentsApi.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD6A4F822937CD55008B8165 /* GlobalPaymentsApi.xcframework */; };
+		DD6A4F842937CD55008B8165 /* GlobalPaymentsApi.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DD6A4F822937CD55008B8165 /* GlobalPaymentsApi.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DD713FAF2948DC7500514143 /* Hps_C2X_Credit_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713F902948DC7300514143 /* Hps_C2X_Credit_Test.m */; };
+		DD713FB02948DC7500514143 /* Hps_C2X_Device_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713F912948DC7300514143 /* Hps_C2X_Device_Test.m */; };
+		DD713FB12948DC7500514143 /* Hps_Pax_Admin_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713F922948DC7300514143 /* Hps_Pax_Admin_Tests.m */; };
+		DD713FB22948DC7500514143 /* Hps_Pax_Credit_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713F932948DC7300514143 /* Hps_Pax_Credit_Tests.m */; };
+		DD713FB32948DC7500514143 /* Heartland_GatewayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713F942948DC7300514143 /* Heartland_GatewayTests.m */; };
+		DD713FB42948DC7500514143 /* HpsTableServicesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713F952948DC7300514143 /* HpsTableServicesTest.m */; };
+		DD713FB52948DC7500514143 /* HpsPayRollTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713F962948DC7300514143 /* HpsPayRollTests.m */; };
+		DD713FB62948DC7500514143 /* Hps_Hpa_Gift_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713F972948DC7300514143 /* Hps_Hpa_Gift_Test.m */; };
+		DD713FB72948DC7500514143 /* Hps_Hpa_EBT_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713F982948DC7400514143 /* Hps_Hpa_EBT_Test.m */; };
+		DD713FB82948DC7500514143 /* HpsJsonDocTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713F992948DC7400514143 /* HpsJsonDocTests.m */; };
+		DD713FB92948DC7500514143 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DD713F9B2948DC7400514143 /* InfoPlist.strings */; };
+		DD713FBA2948DC7500514143 /* Hps_Pax_Debit_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713F9D2948DC7400514143 /* Hps_Pax_Debit_Tests.m */; };
+		DD713FBB2948DC7500514143 /* Hps_Hpa_EOD_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713F9E2948DC7400514143 /* Hps_Hpa_EOD_Test.m */; };
+		DD713FBC2948DC7500514143 /* Hps_UPA_VRF_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713F9F2948DC7400514143 /* Hps_UPA_VRF_Test.m */; };
+		DD713FBD2948DC7500514143 /* Hps_Pax_VRF_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713FA02948DC7400514143 /* Hps_Pax_VRF_Test.m */; };
+		DD713FBE2948DC7500514143 /* Hps_Hpa_VRF_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713FA12948DC7400514143 /* Hps_Hpa_VRF_Test.m */; };
+		DD713FBF2948DC7500514143 /* Hps_Hpa_Credit_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713FA32948DC7400514143 /* Hps_Hpa_Credit_Test.m */; };
+		DD713FC02948DC7500514143 /* Heartland_TokenizationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713FA42948DC7400514143 /* Heartland_TokenizationTests.m */; };
+		DD713FC12948DC7500514143 /* Hps_Pax_Gift_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713FA52948DC7400514143 /* Hps_Pax_Gift_Tests.m */; };
+		DD713FC22948DC7500514143 /* Hps_Pax_Connection_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713FA62948DC7400514143 /* Hps_Pax_Connection_Tests.m */; };
+		DD713FC32948DC7500514143 /* Hps_Hpa_Debit_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713FA72948DC7400514143 /* Hps_Hpa_Debit_Test.m */; };
+		DD713FC42948DC7500514143 /* Tests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD713FA82948DC7400514143 /* Tests-Info.plist */; };
+		DD713FC52948DC7500514143 /* Hps_Pax_Batch_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713FA92948DC7400514143 /* Hps_Pax_Batch_Tests.m */; };
+		DD713FC62948DC7500514143 /* Hps_UPA_Credit_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713FAA2948DC7400514143 /* Hps_UPA_Credit_Test.m */; };
+		DD713FC72948DC7500514143 /* Hps_Hpa_Admin_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713FAB2948DC7400514143 /* Hps_Hpa_Admin_Test.m */; };
+		DD713FC82948DC7500514143 /* Hps_Pax_Report_test.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713FAC2948DC7400514143 /* Hps_Pax_Report_test.m */; };
+		DD713FC92948DC7500514143 /* Hps_UPA_Admin_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713FAD2948DC7400514143 /* Hps_UPA_Admin_Test.m */; };
+		DD713FCA2948DC7500514143 /* Hps_Hpa_Report_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = DD713FAE2948DC7400514143 /* Hps_Hpa_Report_Test.m */; };
+		DD713FCB2948DCB500514143 /* BBPOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD6A4F7F2937CD52008B8165 /* BBPOS.xcframework */; };
+		DD713FCC2948DCB500514143 /* GlobalMobileSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD6A4F7C2937CD4D008B8165 /* GlobalMobileSDK.xcframework */; };
+		DD713FCD2948DCB500514143 /* GlobalPaymentsApi.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD6A4F822937CD55008B8165 /* GlobalPaymentsApi.xcframework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DD713F8A2948DC3400514143 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD6A4F3E2937C221008B8165 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD6A4F452937C221008B8165;
+			remoteInfo = "Heartland-iOS-SDK-SampleApp";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DD6A4F742937C4EF008B8165 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DD6A4F842937CD55008B8165 /* GlobalPaymentsApi.xcframework in Embed Frameworks */,
+				DD6A4F732937C4EF008B8165 /* Heartland_iOS_SDK.framework in Embed Frameworks */,
+				DD6A4F812937CD52008B8165 /* BBPOS.xcframework in Embed Frameworks */,
+				DD6A4F7E2937CD4D008B8165 /* GlobalMobileSDK.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DD6A4F462937C221008B8165 /* Heartland-iOS-SDK-SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Heartland-iOS-SDK-SampleApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD6A4F502937C221008B8165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DD6A4F522937C223008B8165 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD6A4F552937C223008B8165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DD6A4F572937C223008B8165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD6A4F632937C299008B8165 /* Heartland-iOS-SDK-SampleApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Heartland-iOS-SDK-SampleApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		DD6A4F642937C299008B8165 /* ConnectC2XViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectC2XViewController.swift; sourceTree = "<group>"; };
+		DD6A4F652937C29A008B8165 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DD6A4F662937C29A008B8165 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DD6A4F672937C29A008B8165 /* C2XTransactionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = C2XTransactionsViewController.swift; sourceTree = "<group>"; };
+		DD6A4F6D2937C2D0008B8165 /* Heartland_iOS_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Heartland_iOS_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD6A4F6F2937C3BF008B8165 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		DD6A4F7C2937CD4D008B8165 /* GlobalMobileSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GlobalMobileSDK.xcframework; path = "../Heartland-iOS-SDK/Frameworks/GlobalMobileSDK.xcframework"; sourceTree = "<group>"; };
+		DD6A4F7F2937CD52008B8165 /* BBPOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BBPOS.xcframework; path = "../Heartland-iOS-SDK/Frameworks/BBPOS.xcframework"; sourceTree = "<group>"; };
+		DD6A4F822937CD55008B8165 /* GlobalPaymentsApi.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GlobalPaymentsApi.xcframework; path = "../Heartland-iOS-SDK/Frameworks/GlobalPaymentsApi.xcframework"; sourceTree = "<group>"; };
+		DD713F862948DC3400514143 /* Heartland-iOS-SDK-SampleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Heartland-iOS-SDK-SampleAppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD713F902948DC7300514143 /* Hps_C2X_Credit_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_C2X_Credit_Test.m; sourceTree = "<group>"; };
+		DD713F912948DC7300514143 /* Hps_C2X_Device_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_C2X_Device_Test.m; sourceTree = "<group>"; };
+		DD713F922948DC7300514143 /* Hps_Pax_Admin_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_Admin_Tests.m; sourceTree = "<group>"; };
+		DD713F932948DC7300514143 /* Hps_Pax_Credit_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_Credit_Tests.m; sourceTree = "<group>"; };
+		DD713F942948DC7300514143 /* Heartland_GatewayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Heartland_GatewayTests.m; sourceTree = "<group>"; };
+		DD713F952948DC7300514143 /* HpsTableServicesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpsTableServicesTest.m; sourceTree = "<group>"; };
+		DD713F962948DC7300514143 /* HpsPayRollTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpsPayRollTests.m; sourceTree = "<group>"; };
+		DD713F972948DC7300514143 /* Hps_Hpa_Gift_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_Gift_Test.m; sourceTree = "<group>"; };
+		DD713F982948DC7400514143 /* Hps_Hpa_EBT_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_EBT_Test.m; sourceTree = "<group>"; };
+		DD713F992948DC7400514143 /* HpsJsonDocTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpsJsonDocTests.m; sourceTree = "<group>"; };
+		DD713F9C2948DC7400514143 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		DD713F9D2948DC7400514143 /* Hps_Pax_Debit_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_Debit_Tests.m; sourceTree = "<group>"; };
+		DD713F9E2948DC7400514143 /* Hps_Hpa_EOD_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_EOD_Test.m; sourceTree = "<group>"; };
+		DD713F9F2948DC7400514143 /* Hps_UPA_VRF_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_UPA_VRF_Test.m; sourceTree = "<group>"; };
+		DD713FA02948DC7400514143 /* Hps_Pax_VRF_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_VRF_Test.m; sourceTree = "<group>"; };
+		DD713FA12948DC7400514143 /* Hps_Hpa_VRF_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_VRF_Test.m; sourceTree = "<group>"; };
+		DD713FA22948DC7400514143 /* Tests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		DD713FA32948DC7400514143 /* Hps_Hpa_Credit_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_Credit_Test.m; sourceTree = "<group>"; };
+		DD713FA42948DC7400514143 /* Heartland_TokenizationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Heartland_TokenizationTests.m; sourceTree = "<group>"; };
+		DD713FA52948DC7400514143 /* Hps_Pax_Gift_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_Gift_Tests.m; sourceTree = "<group>"; };
+		DD713FA62948DC7400514143 /* Hps_Pax_Connection_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_Connection_Tests.m; sourceTree = "<group>"; };
+		DD713FA72948DC7400514143 /* Hps_Hpa_Debit_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_Debit_Test.m; sourceTree = "<group>"; };
+		DD713FA82948DC7400514143 /* Tests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
+		DD713FA92948DC7400514143 /* Hps_Pax_Batch_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_Batch_Tests.m; sourceTree = "<group>"; };
+		DD713FAA2948DC7400514143 /* Hps_UPA_Credit_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_UPA_Credit_Test.m; sourceTree = "<group>"; };
+		DD713FAB2948DC7400514143 /* Hps_Hpa_Admin_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_Admin_Test.m; sourceTree = "<group>"; };
+		DD713FAC2948DC7400514143 /* Hps_Pax_Report_test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_Report_test.m; sourceTree = "<group>"; };
+		DD713FAD2948DC7400514143 /* Hps_UPA_Admin_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_UPA_Admin_Test.m; sourceTree = "<group>"; };
+		DD713FAE2948DC7400514143 /* Hps_Hpa_Report_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_Report_Test.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD6A4F432937C221008B8165 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD6A4F832937CD55008B8165 /* GlobalPaymentsApi.xcframework in Frameworks */,
+				DD6A4F722937C4EF008B8165 /* Heartland_iOS_SDK.framework in Frameworks */,
+				DD6A4F802937CD52008B8165 /* BBPOS.xcframework in Frameworks */,
+				DD6A4F7D2937CD4D008B8165 /* GlobalMobileSDK.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD713F832948DC3400514143 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD713FCB2948DCB500514143 /* BBPOS.xcframework in Frameworks */,
+				DD713FCC2948DCB500514143 /* GlobalMobileSDK.xcframework in Frameworks */,
+				DD713FCD2948DCB500514143 /* GlobalPaymentsApi.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DD6A4F3D2937C221008B8165 = {
+			isa = PBXGroup;
+			children = (
+				DD6A4F482937C221008B8165 /* Heartland-iOS-SDK-SampleApp */,
+				DD713F872948DC3400514143 /* Heartland-iOS-SDK-SampleAppTests */,
+				DD6A4F472937C221008B8165 /* Products */,
+				DD6A4F6C2937C2D0008B8165 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DD6A4F472937C221008B8165 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DD6A4F462937C221008B8165 /* Heartland-iOS-SDK-SampleApp.app */,
+				DD713F862948DC3400514143 /* Heartland-iOS-SDK-SampleAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD6A4F482937C221008B8165 /* Heartland-iOS-SDK-SampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				DD6A4F6F2937C3BF008B8165 /* MainViewController.swift */,
+				DD6A4F662937C29A008B8165 /* AppDelegate.swift */,
+				DD6A4F672937C29A008B8165 /* C2XTransactionsViewController.swift */,
+				DD6A4F642937C299008B8165 /* ConnectC2XViewController.swift */,
+				DD6A4F652937C29A008B8165 /* Constants.swift */,
+				DD6A4F4F2937C221008B8165 /* Main.storyboard */,
+				DD6A4F522937C223008B8165 /* Assets.xcassets */,
+				DD6A4F542937C223008B8165 /* LaunchScreen.storyboard */,
+				DD6A4F572937C223008B8165 /* Info.plist */,
+				DD6A4F632937C299008B8165 /* Heartland-iOS-SDK-SampleApp-Bridging-Header.h */,
+			);
+			path = "Heartland-iOS-SDK-SampleApp";
+			sourceTree = "<group>";
+		};
+		DD6A4F6C2937C2D0008B8165 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD6A4F822937CD55008B8165 /* GlobalPaymentsApi.xcframework */,
+				DD6A4F7F2937CD52008B8165 /* BBPOS.xcframework */,
+				DD6A4F7C2937CD4D008B8165 /* GlobalMobileSDK.xcframework */,
+				DD6A4F6D2937C2D0008B8165 /* Heartland_iOS_SDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD713F872948DC3400514143 /* Heartland-iOS-SDK-SampleAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				DD713F8F2948DC7300514143 /* C2X */,
+				DD713F9A2948DC7400514143 /* en.lproj */,
+				DD713F942948DC7300514143 /* Heartland_GatewayTests.m */,
+				DD713FA42948DC7400514143 /* Heartland_TokenizationTests.m */,
+				DD713FAB2948DC7400514143 /* Hps_Hpa_Admin_Test.m */,
+				DD713FA32948DC7400514143 /* Hps_Hpa_Credit_Test.m */,
+				DD713FA72948DC7400514143 /* Hps_Hpa_Debit_Test.m */,
+				DD713F982948DC7400514143 /* Hps_Hpa_EBT_Test.m */,
+				DD713F9E2948DC7400514143 /* Hps_Hpa_EOD_Test.m */,
+				DD713F972948DC7300514143 /* Hps_Hpa_Gift_Test.m */,
+				DD713FAE2948DC7400514143 /* Hps_Hpa_Report_Test.m */,
+				DD713FA12948DC7400514143 /* Hps_Hpa_VRF_Test.m */,
+				DD713F922948DC7300514143 /* Hps_Pax_Admin_Tests.m */,
+				DD713FA92948DC7400514143 /* Hps_Pax_Batch_Tests.m */,
+				DD713FA62948DC7400514143 /* Hps_Pax_Connection_Tests.m */,
+				DD713F932948DC7300514143 /* Hps_Pax_Credit_Tests.m */,
+				DD713F9D2948DC7400514143 /* Hps_Pax_Debit_Tests.m */,
+				DD713FA52948DC7400514143 /* Hps_Pax_Gift_Tests.m */,
+				DD713FAC2948DC7400514143 /* Hps_Pax_Report_test.m */,
+				DD713FA02948DC7400514143 /* Hps_Pax_VRF_Test.m */,
+				DD713FAD2948DC7400514143 /* Hps_UPA_Admin_Test.m */,
+				DD713FAA2948DC7400514143 /* Hps_UPA_Credit_Test.m */,
+				DD713F9F2948DC7400514143 /* Hps_UPA_VRF_Test.m */,
+				DD713F992948DC7400514143 /* HpsJsonDocTests.m */,
+				DD713F962948DC7300514143 /* HpsPayRollTests.m */,
+				DD713F952948DC7300514143 /* HpsTableServicesTest.m */,
+				DD713FA82948DC7400514143 /* Tests-Info.plist */,
+				DD713FA22948DC7400514143 /* Tests-Prefix.pch */,
+			);
+			path = "Heartland-iOS-SDK-SampleAppTests";
+			sourceTree = "<group>";
+		};
+		DD713F8F2948DC7300514143 /* C2X */ = {
+			isa = PBXGroup;
+			children = (
+				DD713F902948DC7300514143 /* Hps_C2X_Credit_Test.m */,
+				DD713F912948DC7300514143 /* Hps_C2X_Device_Test.m */,
+			);
+			path = C2X;
+			sourceTree = "<group>";
+		};
+		DD713F9A2948DC7400514143 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				DD713F9B2948DC7400514143 /* InfoPlist.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DD6A4F452937C221008B8165 /* Heartland-iOS-SDK-SampleApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD6A4F5A2937C223008B8165 /* Build configuration list for PBXNativeTarget "Heartland-iOS-SDK-SampleApp" */;
+			buildPhases = (
+				DD6A4F422937C221008B8165 /* Sources */,
+				DD6A4F432937C221008B8165 /* Frameworks */,
+				DD6A4F442937C221008B8165 /* Resources */,
+				DD6A4F742937C4EF008B8165 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Heartland-iOS-SDK-SampleApp";
+			productName = "Heartland-iOS-SDK-SampleApp";
+			productReference = DD6A4F462937C221008B8165 /* Heartland-iOS-SDK-SampleApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DD713F852948DC3400514143 /* Heartland-iOS-SDK-SampleAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD713F8E2948DC3400514143 /* Build configuration list for PBXNativeTarget "Heartland-iOS-SDK-SampleAppTests" */;
+			buildPhases = (
+				DD713F822948DC3400514143 /* Sources */,
+				DD713F832948DC3400514143 /* Frameworks */,
+				DD713F842948DC3400514143 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD713F8B2948DC3400514143 /* PBXTargetDependency */,
+			);
+			name = "Heartland-iOS-SDK-SampleAppTests";
+			productName = "Heartland-iOS-SDK-SampleAppTests";
+			productReference = DD713F862948DC3400514143 /* Heartland-iOS-SDK-SampleAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DD6A4F3E2937C221008B8165 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					DD6A4F452937C221008B8165 = {
+						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1410;
+					};
+					DD713F852948DC3400514143 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = DD6A4F452937C221008B8165;
+					};
+				};
+			};
+			buildConfigurationList = DD6A4F412937C221008B8165 /* Build configuration list for PBXProject "Heartland-iOS-SDK-SampleApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DD6A4F3D2937C221008B8165;
+			productRefGroup = DD6A4F472937C221008B8165 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DD6A4F452937C221008B8165 /* Heartland-iOS-SDK-SampleApp */,
+				DD713F852948DC3400514143 /* Heartland-iOS-SDK-SampleAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD6A4F442937C221008B8165 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD6A4F562937C223008B8165 /* LaunchScreen.storyboard in Resources */,
+				DD6A4F532937C223008B8165 /* Assets.xcassets in Resources */,
+				DD6A4F512937C221008B8165 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD713F842948DC3400514143 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD713FC42948DC7500514143 /* Tests-Info.plist in Resources */,
+				DD713FB92948DC7500514143 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DD6A4F422937C221008B8165 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD6A4F6A2937C29B008B8165 /* AppDelegate.swift in Sources */,
+				DD6A4F682937C29B008B8165 /* ConnectC2XViewController.swift in Sources */,
+				DD6A4F692937C29B008B8165 /* Constants.swift in Sources */,
+				DD6A4F6B2937C29B008B8165 /* C2XTransactionsViewController.swift in Sources */,
+				DD6A4F702937C3BF008B8165 /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD713F822948DC3400514143 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD713FC02948DC7500514143 /* Heartland_TokenizationTests.m in Sources */,
+				DD713FBD2948DC7500514143 /* Hps_Pax_VRF_Test.m in Sources */,
+				DD713FBE2948DC7500514143 /* Hps_Hpa_VRF_Test.m in Sources */,
+				DD713FC72948DC7500514143 /* Hps_Hpa_Admin_Test.m in Sources */,
+				DD713FB42948DC7500514143 /* HpsTableServicesTest.m in Sources */,
+				DD713FB62948DC7500514143 /* Hps_Hpa_Gift_Test.m in Sources */,
+				DD713FBC2948DC7500514143 /* Hps_UPA_VRF_Test.m in Sources */,
+				DD713FC52948DC7500514143 /* Hps_Pax_Batch_Tests.m in Sources */,
+				DD713FB22948DC7500514143 /* Hps_Pax_Credit_Tests.m in Sources */,
+				DD713FB72948DC7500514143 /* Hps_Hpa_EBT_Test.m in Sources */,
+				DD713FC22948DC7500514143 /* Hps_Pax_Connection_Tests.m in Sources */,
+				DD713FB82948DC7500514143 /* HpsJsonDocTests.m in Sources */,
+				DD713FB12948DC7500514143 /* Hps_Pax_Admin_Tests.m in Sources */,
+				DD713FBA2948DC7500514143 /* Hps_Pax_Debit_Tests.m in Sources */,
+				DD713FC92948DC7500514143 /* Hps_UPA_Admin_Test.m in Sources */,
+				DD713FC32948DC7500514143 /* Hps_Hpa_Debit_Test.m in Sources */,
+				DD713FAF2948DC7500514143 /* Hps_C2X_Credit_Test.m in Sources */,
+				DD713FB32948DC7500514143 /* Heartland_GatewayTests.m in Sources */,
+				DD713FBF2948DC7500514143 /* Hps_Hpa_Credit_Test.m in Sources */,
+				DD713FB52948DC7500514143 /* HpsPayRollTests.m in Sources */,
+				DD713FBB2948DC7500514143 /* Hps_Hpa_EOD_Test.m in Sources */,
+				DD713FC62948DC7500514143 /* Hps_UPA_Credit_Test.m in Sources */,
+				DD713FC82948DC7500514143 /* Hps_Pax_Report_test.m in Sources */,
+				DD713FCA2948DC7500514143 /* Hps_Hpa_Report_Test.m in Sources */,
+				DD713FB02948DC7500514143 /* Hps_C2X_Device_Test.m in Sources */,
+				DD713FC12948DC7500514143 /* Hps_Pax_Gift_Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DD713F8B2948DC3400514143 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD6A4F452937C221008B8165 /* Heartland-iOS-SDK-SampleApp */;
+			targetProxy = DD713F8A2948DC3400514143 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DD6A4F4F2937C221008B8165 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD6A4F502937C221008B8165 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DD6A4F542937C223008B8165 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD6A4F552937C223008B8165 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DD713F9B2948DC7400514143 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD713F9C2948DC7400514143 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DD6A4F582937C223008B8165 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = "";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DD6A4F592937C223008B8165 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = "";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DD6A4F5B2937C223008B8165 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 264BX5RC4N;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Heartland-iOS-SDK-SampleApp/Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Bluetooth Peripheral";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.heartlandpaymentsystems.Heartland-iOS-SDK-SampleApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Heartland-iOS-SDK-SampleApp/Heartland-iOS-SDK-SampleApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DD6A4F5C2937C223008B8165 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 264BX5RC4N;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Heartland-iOS-SDK-SampleApp/Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Bluetooth Peripheral";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.heartlandpaymentsystems.Heartland-iOS-SDK-SampleApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Heartland-iOS-SDK-SampleApp/Heartland-iOS-SDK-SampleApp-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DD713F8C2948DC3400514143 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.heartland.Heartland-iOS-SDK-SampleAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Heartland-iOS-SDK-SampleApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Heartland-iOS-SDK-SampleApp";
+			};
+			name = Debug;
+		};
+		DD713F8D2948DC3400514143 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.heartland.Heartland-iOS-SDK-SampleAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Heartland-iOS-SDK-SampleApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Heartland-iOS-SDK-SampleApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DD6A4F412937C221008B8165 /* Build configuration list for PBXProject "Heartland-iOS-SDK-SampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD6A4F582937C223008B8165 /* Debug */,
+				DD6A4F592937C223008B8165 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD6A4F5A2937C223008B8165 /* Build configuration list for PBXNativeTarget "Heartland-iOS-SDK-SampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD6A4F5B2937C223008B8165 /* Debug */,
+				DD6A4F5C2937C223008B8165 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD713F8E2948DC3400514143 /* Build configuration list for PBXNativeTarget "Heartland-iOS-SDK-SampleAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD713F8C2948DC3400514143 /* Debug */,
+				DD713F8D2948DC3400514143 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DD6A4F3E2937C221008B8165 /* Project object */;
+}
