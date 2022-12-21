@@ -413,42 +413,52 @@ private extension C2XTransactionsViewController {
         }
         showTextDialog(messageResult, isApproved)
     }
-    
+}
+
+// MARK: - Internal Enums
+
+public enum Status {
+    case APPROVED(response: HpsTerminalResponse)
+    case CANCELLED(response: HpsTerminalResponse)
+    case DECLINED(response: HpsTerminalResponse)
+    case MESSAGE(message: String)
+}
+
+public enum LoadingStatus: String {
+    case WAIT = "PLEASE WAIT..."
+    case CONNECTING = "Connecting to C2X Device..."
+    case WAITING_FOR_CARD = "WAITING FOR CARD..."
+    case PROCESSING = "PROCESSING..."
+    case CANCELLED = "CANCELLED"
+    case DECLINED = "DECLINED"
+    case COMPLETED = "COMPLETED"
+    case ERROR = "ERROR"
+    case TERMINATED = "TERMINATED"
+    case APPROVAL = "APPROVAL"
+    case DEVICE_NOT_CONNECTED_ALERT = "You must have a connected device to proceed."
+    case NOT_TRANSACTION_ID = "You Must have a valid Transaction ID for this action."
+    case CONNECTED_DEVICE = "Device connected."
+    case DEVICE_NOT_CONNECTED = "Device not connected."
+    case AMOUNT_SHOULD_BE_LARGER_THAN_ZERO = "You must inform an amount to proceed."
+    case NEW_VERSION_AVAILABLE = "New Version Available"
+    case YOU_ARE_UPDATED = "You're updated!"
+    case OK_BUTTON = "Ok"
+    case PROGRESS = "\nProgress: "
+    case MESSAGE_FIRMWARE_ALREADY_UPDATED = "Your device firmware version is: %@.\nWe have a new firmware version availabe: %@.\nHit 'Update Firmware' to start the process."
+    case YOU_ALREADY_HAVE_LAST_UPDATED_VERSION = "You're already have the last version: %@."
+    case TAKING_TOO_MUCH_TO_RESPOND = "The server is taking too long to respond. Try again later."
+    case SUCCESS_UPDATED = "Updated! Please, wait a few seconds. Device will be restarted."
+    case YOUVE_GOT_IT_TITLE = "Yes!"
+    case SOMETHING_WENT_WRONG = "Something wen wrong. Please, try update it again."
+}
+
+extension UIViewController {
     func showTextDialog(_ message: String, _ success: Bool = false) {
         let uialert = UIAlertController(title: success ? "Yes!" : "Oops",
                                         message: message,
                                         preferredStyle: UIAlertController.Style.alert)
         uialert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         self.present(uialert, animated: true, completion: nil)
-    }
-}
-
-// MARK: - Internal Enums
-
-private extension C2XTransactionsViewController {
-    enum Status {
-        case APPROVED(response: HpsTerminalResponse)
-        case CANCELLED(response: HpsTerminalResponse)
-        case DECLINED(response: HpsTerminalResponse)
-        case MESSAGE(message: String)
-    }
-    
-    enum LoadingStatus: String {
-        case WAIT = "PLEASE WAIT..."
-        case CONNECTING = "Connecting to C2X Device..."
-        case WAITING_FOR_CARD = "WAITING FOR CARD..."
-        case PROCESSING = "PROCESSING..."
-        case CANCELLED = "CANCELLED"
-        case DECLINED = "DECLINED"
-        case COMPLETED = "COMPLETED"
-        case ERROR = "ERROR"
-        case TERMINATED = "TERMINATED"
-        case APPROVAL = "APPROVAL"
-        case DEVICE_NOT_CONNECTED_ALERT = "You must have a connected device to proceed."
-        case NOT_TRANSACTION_ID = "You Must have a valid Transaction ID for this action."
-        case CONNECTED_DEVICE = "Device connected."
-        case DEVICE_NOT_CONNECTED = "Device not connected."
-        case AMOUNT_SHOULD_BE_LARGER_THAN_ZERO = "You must inform an amount to proceed."
     }
 }
 

@@ -1,4 +1,5 @@
 import Foundation
+import GlobalMobileSDK
 
 @objc
 public protocol GMSDeviceDelegate {
@@ -10,4 +11,19 @@ public protocol GMSDeviceDelegate {
 
 @objc public protocol GMSDeviceScanObserver {
     func deviceDidUpdateScanState(to isScanning: Bool)
+}
+
+
+public protocol GMSDeviceFirmwareUpdateDelegate {
+    func onTerminalVersionDetails(info: [AnyHashable : Any]?)
+
+    func terminalOTAResult(resultType: TerminalOTAResult,
+                           info: [String : AnyObject]?,
+                           error: Error?)
+
+    func listOfVersionsFor(results: [Any]?)
+
+    func otaUpdateProgress(percentage: Float)
+
+    func onReturnSetTargetVersion(message: String)
 }

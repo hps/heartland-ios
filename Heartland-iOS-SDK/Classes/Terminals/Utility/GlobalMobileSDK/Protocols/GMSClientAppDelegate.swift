@@ -16,3 +16,18 @@ public protocol GMSClientAppDelegate {
     func onTransactionCancelled()
     func onError(_ error: NSError)
 }
+
+public protocol GMSClientTerminalOTAManagerDelegate {
+    func terminalVersionDetails(info: [AnyHashable : Any]?)
+
+    func terminalOTAResult(resultType: GlobalMobileSDK.TerminalOTAResult,
+                           info: [String : AnyObject]?, error: Error?)
+
+    func listOfVersionsFor(type: GlobalMobileSDK.TerminalOTAUpdateType, results: [Any]?)
+
+    func otaUpdateProgress(percentage: Float)
+
+    func onReturnSetTargetVersion(resultType: GlobalMobileSDK.TerminalOTAResult,
+                                  type: GlobalMobileSDK.TerminalOTAUpdateType,
+                                  message: String)
+}
