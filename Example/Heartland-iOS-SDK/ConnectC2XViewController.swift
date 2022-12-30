@@ -39,15 +39,65 @@ class ConnectC2XViewController: UIViewController {
 //        self.device?.scan()
 //        self.activityIndicator.isHidden = false
         
-        self.testPaxDevice()
+        self.testPaxDeviceAuth()
         
     }
     
-    func testPaxDevice() {
+    func testPaxDeviceAuth() {
         let timeout = 120
         
         let config = HpsConnectionConfig()
-        config.ipAddress = "192.168.15.9"
+        config.ipAddress = "192.168.15.10"
+        config.port = "10009"
+        config.username = "701389328"
+        config.password = "$Test1234"
+        config.siteID = "142914";
+        config.deviceID = "6399854"
+        config.licenseID = "142827"
+        config.developerID = "002914"
+        config.versionNumber = "3409"
+        config.connectionMode = 1
+        config.timeout = timeout
+        
+        self.paxDevice = HpsPaxDevice(config: config)
+        
+        let card = HpsCreditCard()
+        card.cardNumber = "4005554444444460"
+        card.expMonth = 12
+        card.expYear = 25
+        card.cvv = "123"
+        
+        let address = HpsAddress()
+        address.address = "1 Heartland Way"
+        address.zip = "95124"
+        
+        let builder = HpsPaxCreditAuthBuilder(device: self.paxDevice)
+        builder?.amount = 11.0
+        builder?.referenceNumber = 1
+        builder?.allowDuplicates = true
+        builder?.requestMultiUseToken = true
+        builder?.creditCard = card
+        builder?.address = address
+        
+        builder?.execute({ response, error in
+            
+            if let error = error {
+                print("Error: \(error)")
+                return
+            }
+            if let response = response {
+                print("Response: \(response)")
+                let responseReturn = response.parseResponse()
+                print("Response Parse: \(responseReturn.debugDescription)")
+            }
+        })
+    }
+    
+    func testPaxDeviceManual() {
+        let timeout = 120
+        
+        let config = HpsConnectionConfig()
+        config.ipAddress = "192.168.15.10"
         config.port = "10009"
         config.username = "701389328"
         config.password = "$Test1234"
@@ -73,23 +123,22 @@ class ConnectC2XViewController: UIViewController {
         
         let builder = HpsPaxCreditSaleBuilder(device: self.paxDevice)
         builder?.amount = 11.0
-        builder?.referenceNumber = 1
+        builder?.referenceNumber = 10
         builder?.allowDuplicates = true
-        builder?.requestMultiUseToken = true
-        builder?.creditCard = card
-        builder?.address = address
+
         
-        self.paxDevice?.doCredit("123456",
-                                 andSubGroups: [],
-                                 withResponseBlock: { response, error in
-            print(error)
-            print(response)
+        builder?.execute({ response, error in
+            
+            if let error = error {
+                print("Error: \(error)")
+                return
+            }
+            if let response = response {
+                print("Response: \(response)")
+                let responseReturn = response.parseResponse()
+                print("Response Parse: \(responseReturn.debugDescription)")
+            }
         })
-        
-//        builder?.execute({ response, error in
-//            print("Error: \(String(describing: error))")
-//            print("Response: \(String(describing: response))")
-//        })
     }
 }
 
@@ -103,7 +152,7 @@ extension ConnectC2XViewController: HpsC2xDeviceDelegate {
                                 object: nil, userInfo: selectedDevice)
         
         
-        self.testPaxDevice()
+        self.testPaxDeviceAuth()
     }
     
     func onDisconnected() {
