@@ -37,4 +37,11 @@ Pod::Spec.new do |s|
     s.frameworks = 'UIKit'
     s.vendored_frameworks = 'Heartland-iOS-SDK/Frameworks/GlobalMobileSDK.xcframework', 'Heartland-iOS-SDK/Frameworks/GlobalPaymentsApi.xcframework', 'Heartland-iOS-SDK/Frameworks/BBPOS.xcframework'
     s.swift_version = '5.0'
-  end
+    s.pod_target_xcconfig = { 
+	'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' 
+    }
+    s.user_target_xcconfig = { 
+	'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+    }
+ 
+end
