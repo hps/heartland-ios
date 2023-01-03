@@ -54,6 +54,7 @@
 		DD713FCB2948DCB500514143 /* BBPOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD6A4F7F2937CD52008B8165 /* BBPOS.xcframework */; };
 		DD713FCC2948DCB500514143 /* GlobalMobileSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD6A4F7C2937CD4D008B8165 /* GlobalMobileSDK.xcframework */; };
 		DD713FCD2948DCB500514143 /* GlobalPaymentsApi.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD6A4F822937CD55008B8165 /* GlobalPaymentsApi.xcframework */; };
+		DD8CECF9294CC7370006908F /* HpsUPAStartCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8CECF8294CC7370006908F /* HpsUPAStartCardTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,8 @@
 		DD713FAC2948DC7400514143 /* Hps_Pax_Report_test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_Report_test.m; sourceTree = "<group>"; };
 		DD713FAD2948DC7400514143 /* Hps_UPA_Admin_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_UPA_Admin_Test.m; sourceTree = "<group>"; };
 		DD713FAE2948DC7400514143 /* Hps_Hpa_Report_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_Report_Test.m; sourceTree = "<group>"; };
+		DD8CECF7294CC7360006908F /* Heartland-iOS-SDK-SampleAppTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Heartland-iOS-SDK-SampleAppTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		DD8CECF8294CC7370006908F /* HpsUPAStartCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUPAStartCardTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,8 +235,10 @@
 				DD713F992948DC7400514143 /* HpsJsonDocTests.m */,
 				DD713F962948DC7300514143 /* HpsPayRollTests.m */,
 				DD713F952948DC7300514143 /* HpsTableServicesTest.m */,
+				DD8CECF8294CC7370006908F /* HpsUPAStartCardTests.swift */,
 				DD713FA82948DC7400514143 /* Tests-Info.plist */,
 				DD713FA22948DC7400514143 /* Tests-Prefix.pch */,
+				DD8CECF7294CC7360006908F /* Heartland-iOS-SDK-SampleAppTests-Bridging-Header.h */,
 			);
 			path = "Heartland-iOS-SDK-SampleAppTests";
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 					};
 					DD713F852948DC3400514143 = {
 						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1410;
 						TestTargetID = DD6A4F452937C221008B8165;
 					};
 				};
@@ -381,6 +387,7 @@
 				DD713FBC2948DC7500514143 /* Hps_UPA_VRF_Test.m in Sources */,
 				DD713FC52948DC7500514143 /* Hps_Pax_Batch_Tests.m in Sources */,
 				DD713FB22948DC7500514143 /* Hps_Pax_Credit_Tests.m in Sources */,
+				DD8CECF9294CC7370006908F /* HpsUPAStartCardTests.swift in Sources */,
 				DD713FB72948DC7500514143 /* Hps_Hpa_EBT_Test.m in Sources */,
 				DD713FC22948DC7500514143 /* Hps_Pax_Connection_Tests.m in Sources */,
 				DD713FB82948DC7500514143 /* HpsJsonDocTests.m in Sources */,
@@ -625,13 +632,22 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.heartland.Heartland-iOS-SDK-SampleAppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "Heartland-iOS-SDK-SampleAppTests/Heartland-iOS-SDK-SampleAppTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Heartland-iOS-SDK-SampleApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Heartland-iOS-SDK-SampleApp";
 			};
@@ -642,13 +658,21 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.heartland.Heartland-iOS-SDK-SampleAppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "Heartland-iOS-SDK-SampleAppTests/Heartland-iOS-SDK-SampleAppTests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Heartland-iOS-SDK-SampleApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Heartland-iOS-SDK-SampleApp";
 			};
