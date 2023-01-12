@@ -25,7 +25,7 @@
     config.licenseID = @"145801";
     config.siteID = @"145898";
     config.deviceID = @"90916202";
-    config.ipAddress = @"192.168.0.27";
+    config.ipAddress = @"192.168.4.127";
     config.port = @"8081";
     config.connectionMode = HpsConnectionModes_TCP_IP;
     HpsUpaDevice * device = [[HpsUpaDevice alloc] initWithConfig:config];
