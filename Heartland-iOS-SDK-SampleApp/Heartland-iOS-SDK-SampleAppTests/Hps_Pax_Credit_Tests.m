@@ -599,9 +599,9 @@
     HpsConnectionConfig *config = [[HpsConnectionConfig alloc] init];
     // config.ipAddress = @"10.12.220.113";
     //config.port = @"80";
-    config.ipAddress = @"10.12.220.172";
+    config.ipAddress = @"192.168.15.10";
     config.port = @"10009";
-    config.connectionMode = HpsConnectionModes_HTTP;
+    config.connectionMode = HpsConnectionModes_TCP_IP;
     HpsPaxDevice * device = [[HpsPaxDevice alloc] initWithConfig:config];
     return device;
 }
@@ -630,6 +630,7 @@
         if(error) XCTFail(@"Request Timed out");
     }];
 }
+
 - (void) test_PAX_HTTP_Batch_Close
 {
     XCTestExpectation *expectation = [self expectationWithDescription:@"test_PAX_HTTP_Batch_Close"];
@@ -649,5 +650,61 @@
     }];
 }
 
+- (void) test_PAX_HTTP_Credit_Sale_Adjust_With_3_Scenarios
+{
+    XCTestExpectation *expectation = [self expectationWithDescription:@"test_PAX_HTTP_Credit_Sale_Adjust_With_3_Scenarios"];
+
+    HpsPaxDevice *device = [self setupDevice];
+    
+    HpsPaxCreditSaleBuilder *builderScenario1 = [[HpsPaxCreditSaleBuilder alloc] initWithDevice:device];
+    builderScenario1.amount = [NSNumber numberWithDouble:27.0];
+    builderScenario1.referenceNumber = 1;
+    builderScenario1.allowDuplicates = YES;
+    builderScenario1.tipRequest = YES;
+    builderScenario1.gratuity = [NSNumber numberWithDouble:2.50];
+    
+    [builderScenario1 execute:^(HpsPaxCreditResponse *payload, NSError *error) {
+
+        XCTAssertNil(error);
+        XCTAssertEqualObjects(@"00", payload.responseCode);
+        XCTAssertNotNil(payload);
+        
+
+        HpsPaxCreditSaleBuilder *builderScenario2 = [[HpsPaxCreditSaleBuilder alloc] initWithDevice:device];
+        builderScenario2.amount = [NSNumber numberWithDouble:27.0];
+        builderScenario2.referenceNumber = 1;
+        builderScenario2.allowDuplicates = YES;
+        builderScenario2.tipRequest = NO;
+        builderScenario2.gratuity = [NSNumber numberWithDouble:2.50];
+
+        [builderScenario2 execute:^(HpsPaxCreditResponse *payload, NSError *error) {
+
+            XCTAssertNil(error);
+            XCTAssertEqualObjects(@"00", payload.responseCode);
+            XCTAssertNotNil(payload);
+
+            //Adjust
+            HpsPaxCreditAdjustBuilder *abuilderScenario3 = [[HpsPaxCreditAdjustBuilder alloc] initWithDevice:device];
+            abuilderScenario3.transactionId = payload.transactionId;
+            abuilderScenario3.referenceNumber = 2;
+            abuilderScenario3.amount = [NSNumber numberWithDouble:35.0];
+
+            [abuilderScenario3 execute:^(HpsPaxCreditResponse *apayload, NSError *aerror) {
+
+                XCTAssertNil(aerror);
+                XCTAssertEqualObjects(@"00", apayload.responseCode);
+                XCTAssertNotNil(apayload);
+                [expectation fulfill];
+
+            }];
+
+        }];
+
+    }];
+
+    [self waitForExpectationsWithTimeout:80000.0 handler:^(NSError *error) {
+        if(error) XCTFail(@"Request Timed out");
+    }];
+}
 
 @end

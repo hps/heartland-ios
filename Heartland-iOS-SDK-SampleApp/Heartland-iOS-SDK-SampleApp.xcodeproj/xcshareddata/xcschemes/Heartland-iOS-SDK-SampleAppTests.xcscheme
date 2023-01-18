@@ -5,6 +5,36 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DD713F852948DC3400514143"
+               BuildableName = "Heartland-iOS-SDK-SampleAppTests.xctest"
+               BlueprintName = "Heartland-iOS-SDK-SampleAppTests"
+               ReferencedContainer = "container:Heartland-iOS-SDK-SampleApp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DD6A4F452937C221008B8165"
+               BuildableName = "Heartland-iOS-SDK-SampleApp.app"
+               BlueprintName = "Heartland-iOS-SDK-SampleApp"
+               ReferencedContainer = "container:Heartland-iOS-SDK-SampleApp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -42,6 +72,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DD6A4F452937C221008B8165"
+            BuildableName = "Heartland-iOS-SDK-SampleApp.app"
+            BlueprintName = "Heartland-iOS-SDK-SampleApp"
+            ReferencedContainer = "container:Heartland-iOS-SDK-SampleApp.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
