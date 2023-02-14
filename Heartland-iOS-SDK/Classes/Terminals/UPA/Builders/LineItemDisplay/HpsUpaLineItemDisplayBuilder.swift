@@ -8,11 +8,11 @@ import Foundation
 public class HpsUpaLineItemDisplayBuilder {
     private var upaDevice: HpsUpaDevice
     
-    init (with device: HpsUpaDevice) {
+    public init (with device: HpsUpaDevice) {
         self.upaDevice = device
     }
     
-    public func execute(request: HpsUpaLineItemDisplay, response: @escaping (IHPSDeviceResponse?, Error?) -> Void) {
+    public func execute(request: HpsUpaLineItemDisplay, response: @escaping (IHPSDeviceResponse?, String?, Error?) -> Void) {
         let encoder = JSONEncoder()
         
         let json = try? encoder.encode(request)

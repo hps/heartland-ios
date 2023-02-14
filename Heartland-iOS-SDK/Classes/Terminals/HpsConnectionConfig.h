@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *password;
 @property (nonatomic, strong) NSString *deviceID;
+@property (nonatomic, strong) NSString *sdkNameVersion;
 @property (nonatomic) BOOL isProduction;
 
 @property (nonatomic, strong) id<HpsInterfaceLogging> logger;

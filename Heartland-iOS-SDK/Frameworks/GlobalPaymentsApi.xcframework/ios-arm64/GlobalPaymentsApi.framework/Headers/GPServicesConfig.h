@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSString* secretApiKey;
 @property (nonatomic, strong) NSString* siteTrace;
 @property (nonatomic, strong) NSString* serviceUrl;
+@property (nonatomic, strong) NSString* sdkNameVersion;
 @property (nonatomic) int timeout;
 
 @end

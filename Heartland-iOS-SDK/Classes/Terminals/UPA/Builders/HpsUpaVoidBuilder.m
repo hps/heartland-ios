@@ -47,7 +47,7 @@
         request.data.data.transaction.tranNo = [[@"" stringByPaddingToLength:4 - [self.terminalRefNumber length] withString:@"0" startingAtIndex:0] stringByAppendingString:self.terminalRefNumber];
     }
     
-    [device processTransactionWithRequest:request withResponseBlock:^(id<IHPSDeviceResponse> response, NSError * error) {
+    [device processTransactionWithRequest:request withResponseBlock:^(id<IHPSDeviceResponse> response, NSString *json, NSError * error) {
         if (error != nil) {
             responseBlock(nil, error);
             return;

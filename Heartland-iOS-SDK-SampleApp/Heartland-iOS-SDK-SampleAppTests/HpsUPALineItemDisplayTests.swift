@@ -37,7 +37,7 @@ class HpsUPALineItemDisplayTests: XCTestCase {
         let displayData = HpsUpaLineItemDisplayData(EcrId: "123", requestId: "123", data: data)
         let request = HpsUpaLineItemDisplay(data: displayData)
         
-        builder.execute(request: request) { response, error in
+        builder.execute(request: request) { response, jsonResponse, error in
             XCTAssertNil(error)
             
             expectation.fulfill()

@@ -57,8 +57,9 @@ class HpsUPAStartCardTests: XCTestCase {
             processingIndicators: pi,
             transaction: tx)))
         
-        builder.execute(request: request) { response, error in
-            debugPrint(response)
+        builder.execute(request: request) { deviceResponse, upaResponse, error in
+            debugPrint(deviceResponse)
+            debugPrint(upaResponse)
             debugPrint(error)
             
             expectation.fulfill()

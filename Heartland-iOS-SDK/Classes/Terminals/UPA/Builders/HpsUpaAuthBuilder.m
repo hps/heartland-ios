@@ -42,7 +42,7 @@
         request.data.data.transaction.referenceNumber = self.transactionId;
     }
     
-    [device processTransactionWithRequest:request withResponseBlock:^(id<IHPSDeviceResponse> response, NSError * error) {
+    [device processTransactionWithRequest:request withResponseBlock:^(id<IHPSDeviceResponse> response, NSString *json, NSError * error) {
         if (error != nil) {
             responseBlock(nil, error);
             return;
