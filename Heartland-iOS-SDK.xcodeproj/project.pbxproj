@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
+		143A4379298AB2980027BC3F /* String+ProjectName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A4378298AB2980027BC3F /* String+ProjectName.swift */; };
+=======
+		DD2409302991688C00597A23 /* HpsUpaStartCardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD24092F2991688C00597A23 /* HpsUpaStartCardResponse.swift */; };
+>>>>>>> master
 		DD49DDAF296DD91300EBD526 /* HpsUpaLineItemDisplayBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD49DDAE296DD91200EBD526 /* HpsUpaLineItemDisplayBuilder.swift */; };
 		DD49DDB2296DD9A700EBD526 /* HpsUpaLineItemDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD49DDB1296DD9A700EBD526 /* HpsUpaLineItemDisplay.swift */; };
+		DD49DDB729787F6C00EBD526 /* HpsUpaTipAdjustBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD49DDB629787F6C00EBD526 /* HpsUpaTipAdjustBuilder.swift */; };
 		DD6A4ED32937C05D008B8165 /* LICENCE.md in Resources */ = {isa = PBXBuildFile; fileRef = DD6A4ECE2937C05C008B8165 /* LICENCE.md */; };
 		DD6A4ED42937C05D008B8165 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DD6A4ECF2937C05C008B8165 /* README.md */; };
 		DD6A4ED52937C05D008B8165 /* XMLDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = DD6A4ED12937C05C008B8165 /* XMLDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -21,6 +27,7 @@
 		DD6A4F7B2937C7A1008B8165 /* GlobalPaymentsApi.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DDFF36DA2937AFE300C2D1D1 /* GlobalPaymentsApi.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DD8CECF2294CC00B0006908F /* HpsUpaStartCardTransactionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8CECF1294CC00B0006908F /* HpsUpaStartCardTransactionBuilder.swift */; };
 		DD8CECF6294CC29B0006908F /* HpsUpaStartCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8CECF5294CC29B0006908F /* HpsUpaStartCard.swift */; };
+		DDD0E0442980641700D4A32D /* HpsUpaTipAdjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD0E0432980641700D4A32D /* HpsUpaTipAdjust.swift */; };
 		DDFF35272937AF4300C2D1D1 /* HpsUpaDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = DDFF33542937AF4200C2D1D1 /* HpsUpaDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DDFF35282937AF4300C2D1D1 /* HpsUpaCaptureBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFF33562937AF4200C2D1D1 /* HpsUpaCaptureBuilder.m */; };
 		DDFF35292937AF4300C2D1D1 /* HpsUpaAdjustBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFF33572937AF4200C2D1D1 /* HpsUpaAdjustBuilder.m */; };
@@ -471,14 +478,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
+		143A4378298AB2980027BC3F /* String+ProjectName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ProjectName.swift"; sourceTree = "<group>"; };
+=======
+		DD24092F2991688C00597A23 /* HpsUpaStartCardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaStartCardResponse.swift; sourceTree = "<group>"; };
+>>>>>>> master
 		DD49DDAE296DD91200EBD526 /* HpsUpaLineItemDisplayBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaLineItemDisplayBuilder.swift; sourceTree = "<group>"; };
 		DD49DDB1296DD9A700EBD526 /* HpsUpaLineItemDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaLineItemDisplay.swift; sourceTree = "<group>"; };
+		DD49DDB629787F6C00EBD526 /* HpsUpaTipAdjustBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaTipAdjustBuilder.swift; sourceTree = "<group>"; };
 		DD6A4ECE2937C05C008B8165 /* LICENCE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENCE.md; sourceTree = "<group>"; };
 		DD6A4ECF2937C05C008B8165 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DD6A4ED12937C05C008B8165 /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLDictionary.h; sourceTree = "<group>"; };
 		DD6A4ED22937C05C008B8165 /* XMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLDictionary.m; sourceTree = "<group>"; };
 		DD8CECF1294CC00B0006908F /* HpsUpaStartCardTransactionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaStartCardTransactionBuilder.swift; sourceTree = "<group>"; };
 		DD8CECF5294CC29B0006908F /* HpsUpaStartCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaStartCard.swift; sourceTree = "<group>"; };
+		DDD0E0432980641700D4A32D /* HpsUpaTipAdjust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaTipAdjust.swift; sourceTree = "<group>"; };
 		DDFF33432937AEE000C2D1D1 /* Heartland_iOS_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Heartland_iOS_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDFF33542937AF4200C2D1D1 /* HpsUpaDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HpsUpaDevice.h; sourceTree = "<group>"; };
 		DDFF33562937AF4200C2D1D1 /* HpsUpaCaptureBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpsUpaCaptureBuilder.m; sourceTree = "<group>"; };
@@ -930,6 +944,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		143A4377298AB2830027BC3F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				143A4378298AB2980027BC3F /* String+ProjectName.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		DD49DDAD296DD8E900EBD526 /* LineItemDisplay */ = {
 			isa = PBXGroup;
 			children = (
@@ -943,6 +965,23 @@
 			isa = PBXGroup;
 			children = (
 				DD49DDB1296DD9A700EBD526 /* HpsUpaLineItemDisplay.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DD49DDB529787F5100EBD526 /* TipAdjust */ = {
+			isa = PBXGroup;
+			children = (
+				DD49DDB829787FF600EBD526 /* Models */,
+				DD49DDB629787F6C00EBD526 /* HpsUpaTipAdjustBuilder.swift */,
+			);
+			path = TipAdjust;
+			sourceTree = "<group>";
+		};
+		DD49DDB829787FF600EBD526 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DDD0E0432980641700D4A32D /* HpsUpaTipAdjust.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -995,6 +1034,7 @@
 			isa = PBXGroup;
 			children = (
 				DD8CECF5294CC29B0006908F /* HpsUpaStartCard.swift */,
+				DD24092F2991688C00597A23 /* HpsUpaStartCardResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1043,6 +1083,7 @@
 				DDFF34DD2937AF4300C2D1D1 /* Payroll */,
 				DDFF350D2937AF4300C2D1D1 /* Services */,
 				DDFF35142937AF4300C2D1D1 /* ServiceConfigs */,
+				143A4377298AB2830027BC3F /* Extensions */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1090,6 +1131,7 @@
 		DDFF33552937AF4200C2D1D1 /* Builders */ = {
 			isa = PBXGroup;
 			children = (
+				DD49DDB529787F5100EBD526 /* TipAdjust */,
 				DD49DDAD296DD8E900EBD526 /* LineItemDisplay */,
 				DD8CECF3294CC0C80006908F /* StartCardTransaction */,
 				DDFF33562937AF4200C2D1D1 /* HpsUpaCaptureBuilder.m */,
@@ -2134,6 +2176,7 @@
 				DDFF35402937AF4300C2D1D1 /* HpsUpaTransaction.m in Sources */,
 				DDFF36942937AF4400C2D1D1 /* HpsBasePayrollResponse.m in Sources */,
 				DDFF354C2937AF4300C2D1D1 /* HpsUpaParser.m in Sources */,
+				143A4379298AB2980027BC3F /* String+ProjectName.swift in Sources */,
 				DD49DDB2296DD9A700EBD526 /* HpsUpaLineItemDisplay.swift in Sources */,
 				DDFF370E2937B6FD00C2D1D1 /* GMSCreditAuthBuilder.swift in Sources */,
 				DDFF36FB2937B6FC00C2D1D1 /* HpsC2xEnums.swift in Sources */,
@@ -2228,7 +2271,9 @@
 				DDFF35A52937AF4300C2D1D1 /* HpsPaxCheckResponse.m in Sources */,
 				DDFF36AE2937AF4400C2D1D1 /* HpsLaborField.m in Sources */,
 				DDFF355B2937AF4300C2D1D1 /* HpsC2xDeviceDelegate.swift in Sources */,
+				DD2409302991688C00597A23 /* HpsUpaStartCardResponse.swift in Sources */,
 				DDFF36212937AF4400C2D1D1 /* HpsWiseCubeDevice.swift in Sources */,
+				DD49DDB729787F6C00EBD526 /* HpsUpaTipAdjustBuilder.swift in Sources */,
 				DDFF368D2937AF4400C2D1D1 /* HpsTableServiceConnector.m in Sources */,
 				DDFF365A2937AF4400C2D1D1 /* HpsServerAssignmentResponse.m in Sources */,
 				DDFF35D72937AF4300C2D1D1 /* HpsHpaEBTRefundBuilder.m in Sources */,
@@ -2258,6 +2303,7 @@
 				DDFF37042937B6FC00C2D1D1 /* GMSBaseBuilder.swift in Sources */,
 				DDFF35CB2937AF4300C2D1D1 /* HpsHpaCreditCaptureBuilder.m in Sources */,
 				DDFF35E02937AF4300C2D1D1 /* HpsHpaGiftSaleBuilder.m in Sources */,
+				DDD0E0442980641700D4A32D /* HpsUpaTipAdjust.swift in Sources */,
 				DDFF35792937AF4300C2D1D1 /* HpsPaxGiftActivateBuilder.m in Sources */,
 				DDFF35EC2937AF4300C2D1D1 /* HpsHpaDiagnosticBuilder.m in Sources */,
 				DDFF36652937AF4400C2D1D1 /* HpsGiftCard.m in Sources */,

@@ -33,8 +33,8 @@
 - (void) GetLastResponse:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
 - (void) setSAFMode:(BOOL)isSAF response:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
     // processTransaction
--(void)processTransactionWithRequest:(HpsUpaRequest*)HpsUpaRequest withResponseBlock:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
--(void)processTransactionWithJSONString:(NSString*)HpsUpaRequestString withResponseBlock:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
+-(void)processTransactionWithRequest:(HpsUpaRequest*)HpsUpaRequest withResponseBlock:(void(^)(id <IHPSDeviceResponse>, NSString*, NSError*))responseBlock;
+-(void)processTransactionWithJSONString:(NSString*)HpsUpaRequestString withResponseBlock:(void(^)(id <IHPSDeviceResponse>, NSString*, NSError*))responseBlock;
 //  //Get Diagnostic Report
 - (void) getDiagnosticReport:(void(^)(HpsUpaResponse*, NSError*))responseBlock;
 //  //SAF

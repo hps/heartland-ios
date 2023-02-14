@@ -38,7 +38,7 @@
     }
     request.data.data.transaction.authorizedAmount = self.authorizedAmount != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[self.authorizedAmount doubleValue]]] : nil;
     
-    [device processTransactionWithRequest:request withResponseBlock:^(id<IHPSDeviceResponse> response, NSError * error) {
+    [device processTransactionWithRequest:request withResponseBlock:^(id<IHPSDeviceResponse> response, NSString *json, NSError * error) {
         if (error != nil) {
             responseBlock(nil, error);
             return;

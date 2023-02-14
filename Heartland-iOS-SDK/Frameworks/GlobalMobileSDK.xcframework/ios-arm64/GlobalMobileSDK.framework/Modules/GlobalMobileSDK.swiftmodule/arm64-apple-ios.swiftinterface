@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name GlobalMobileSDK
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
@@ -811,6 +811,7 @@ public struct PorticoConfig : GlobalMobileSDK.GatewayConfig, Swift.Equatable {
   public var uniqueDeviceId: Swift.String?
   public var secretApiKey: Swift.String?
   public var siteTrace: Swift.String?
+  public var sdkNameVersion: Swift.String?
   public var serviceUrl: Swift.String {
     get
   }
@@ -823,7 +824,7 @@ public struct PorticoConfig : GlobalMobileSDK.GatewayConfig, Swift.Equatable {
   public var environment: GlobalMobileSDK.GatewayEnvironment
   public var supportedTerminals: GlobalMobileSDK.PorticoConfig.Terminals
   public var terminalType: GlobalMobileSDK.TerminalType
-  public init?(username: Swift.String, password: Swift.String, siteId: Swift.String, deviceId: Swift.String, licenseId: Swift.String, developerId: Swift.String, versionNumber: Swift.String, merchantName: Swift.String, merchantAddress: Swift.String, merchantNumber: Swift.String, signatureAgreement: Swift.String, acknowledgement: Swift.String, refundPolicy: Swift.String, environment: GlobalMobileSDK.GatewayEnvironment)
+  public init?(username: Swift.String, password: Swift.String, siteId: Swift.String, deviceId: Swift.String, licenseId: Swift.String, developerId: Swift.String, versionNumber: Swift.String, merchantName: Swift.String, merchantAddress: Swift.String, merchantNumber: Swift.String, signatureAgreement: Swift.String, acknowledgement: Swift.String, refundPolicy: Swift.String, environment: GlobalMobileSDK.GatewayEnvironment, sdkNameVersion: Swift.String)
   public init(_ secretApiKey: Swift.String, merchantName: Swift.String, merchantAddress: Swift.String, merchantNumber: Swift.String, signatureAgreement: Swift.String, acknowledgement: Swift.String, refundPolicy: Swift.String, environment: GlobalMobileSDK.GatewayEnvironment)
   public static func == (a: GlobalMobileSDK.PorticoConfig, b: GlobalMobileSDK.PorticoConfig) -> Swift.Bool
   public func encode(to encoder: Swift.Encoder) throws

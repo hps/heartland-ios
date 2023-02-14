@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		143A437B298C47CB0027BC3F /* HpsCreditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A437A298C47CB0027BC3F /* HpsCreditTests.swift */; };
 		14A32FAF2949222800E160AD /* C2XFirmwareUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A32FAE2949222800E160AD /* C2XFirmwareUpdateViewController.swift */; };
 		DD49DDB4296DDAE100EBD526 /* HpsUPALineItemDisplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD49DDB3296DDAE000EBD526 /* HpsUPALineItemDisplayTests.swift */; };
 		DD6A4F512937C221008B8165 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD6A4F4F2937C221008B8165 /* Main.storyboard */; };
@@ -87,6 +88,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		143A437A298C47CB0027BC3F /* HpsCreditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HpsCreditTests.swift; path = "Heartland-iOS-SDK-SampleAppTests/HpsCreditTests.swift"; sourceTree = SOURCE_ROOT; };
 		14A32FAE2949222800E160AD /* C2XFirmwareUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C2XFirmwareUpdateViewController.swift; sourceTree = "<group>"; };
 		DD49DDB3296DDAE000EBD526 /* HpsUPALineItemDisplayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HpsUPALineItemDisplayTests.swift; sourceTree = "<group>"; };
 		DD6A4F462937C221008B8165 /* Heartland-iOS-SDK-SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Heartland-iOS-SDK-SampleApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -242,6 +244,7 @@
 				DD713F952948DC7300514143 /* HpsTableServicesTest.m */,
 				DD8CECF8294CC7370006908F /* HpsUPAStartCardTests.swift */,
 				DD49DDB3296DDAE000EBD526 /* HpsUPALineItemDisplayTests.swift */,
+				143A437A298C47CB0027BC3F /* HpsCreditTests.swift */,
 				DD713FA82948DC7400514143 /* Tests-Info.plist */,
 				DD713FA22948DC7400514143 /* Tests-Prefix.pch */,
 				DD8CECF7294CC7360006908F /* Heartland-iOS-SDK-SampleAppTests-Bridging-Header.h */,
@@ -395,6 +398,7 @@
 				DD713FC52948DC7500514143 /* Hps_Pax_Batch_Tests.m in Sources */,
 				DD713FB22948DC7500514143 /* Hps_Pax_Credit_Tests.m in Sources */,
 				DD8CECF9294CC7370006908F /* HpsUPAStartCardTests.swift in Sources */,
+				143A437B298C47CB0027BC3F /* HpsCreditTests.swift in Sources */,
 				DD713FB72948DC7500514143 /* Hps_Hpa_EBT_Test.m in Sources */,
 				DD713FC22948DC7500514143 /* Hps_Pax_Connection_Tests.m in Sources */,
 				DD713FB82948DC7500514143 /* HpsJsonDocTests.m in Sources */,

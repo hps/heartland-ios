@@ -265,18 +265,18 @@
 #pragma mark -
 #pragma mark Transactions
 
--(void)processTransactionWithRequest:(HpsUpaRequest*)HpsUpaRequest withResponseBlock:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock {
+-(void)processTransactionWithRequest:(HpsUpaRequest*)HpsUpaRequest withResponseBlock:(void(^)(id <IHPSDeviceResponse>, NSString*, NSError*))responseBlock {
     [self processTransactionWithJSONString:[HpsUpaRequest JSONString] withResponseBlock:responseBlock];
 }
 
--(void)processTransactionWithJSONString:(NSString*)HpsUpaRequestString withResponseBlock:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock
+-(void)processTransactionWithJSONString:(NSString*)HpsUpaRequestString withResponseBlock:(void(^)(id <IHPSDeviceResponse>, NSString*, NSError*))responseBlock
 {
     id<IHPSDeviceMessage> request = [HpsTerminalUtilities BuildRequest:HpsUpaRequestString withFormat:format];
 
     [self.interface send:request andUPAResponseBlock:^(JsonDoc *data, NSError *error) {
         if (error) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                responseBlock(nil, error);
+                responseBlock(nil, [data toString], error);
             });
             return;
         }
@@ -292,7 +292,7 @@
             response = [[HpsUpaResponse alloc]initWithJSONDoc:data];
 
             dispatch_async(dispatch_get_main_queue(), ^{
-                responseBlock(response, nil);
+                responseBlock(response, [data toString], nil);
             });
         } @catch (NSException *exception) {
             NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
@@ -301,7 +301,7 @@
                                              userInfo:userInfo];
 
             dispatch_async(dispatch_get_main_queue(), ^{
-                responseBlock(nil, error);
+                responseBlock(nil, [data toString], error);
             });
         }
     }];
