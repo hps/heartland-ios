@@ -10,6 +10,8 @@
 @property (nonatomic,strong) NSString *hostReferenceNumber;
 @property (nonatomic,strong) NSString *traceNumber;
 @property (nonatomic,strong) NSString *batchNumber;
+@property (nonatomic,strong) NSString *transactionIdentifier;
+@property (nonatomic,strong) NSString *gatewayTransactionId;
 
 - (id)initWithBinaryReader: (HpsBinaryDataScanner*)br;
 
