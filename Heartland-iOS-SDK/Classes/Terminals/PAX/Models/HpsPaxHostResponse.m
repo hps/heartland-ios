@@ -30,6 +30,12 @@
             case 5:
                 self.batchNumber = value;
                 break;
+            case 6:
+                self.transactionIdentifier = value;
+                break;
+            case 7:
+                self.gatewayTransactionId = value;
+                break;
                 
             default:
                 break;

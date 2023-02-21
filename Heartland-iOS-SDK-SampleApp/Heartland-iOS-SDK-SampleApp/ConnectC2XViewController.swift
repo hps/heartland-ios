@@ -10,6 +10,7 @@ import CoreBluetooth
 class ConnectC2XViewController: UIViewController {
     
     var device: HpsC2xDevice?
+    var paxDevice: HpsPaxDevice?
     private let notificationCenter: NotificationCenter = NotificationCenter.default
     
     @IBOutlet var connectionLabel: UILabel!
@@ -17,11 +18,16 @@ class ConnectC2XViewController: UIViewController {
     @IBOutlet weak var scanButtonStackView: UIStackView!
     @IBOutlet weak var scanButtonReference: UIButton!
     
+    
+    override func viewDidLoad() {
+        testPaxDeviceManual()
+    }
+    
     @IBAction func scanButtonPressed() {
         
         scanButtonReference.isEnabled = false
         let timeout = 120
-        
+
         let config = HpsConnectionConfig()
         config.username = ""
         config.password = ""
@@ -30,13 +36,101 @@ class ConnectC2XViewController: UIViewController {
         config.licenseID = ""
         config.developerID = ""
         config.versionNumber = ""
-        config.sdkNameVersion = ""
         config.timeout = timeout
-        
+
         self.device = HpsC2xDevice(config: config)
         self.device?.deviceDelegate = self
         self.device?.scan()
         self.activityIndicator.isHidden = false
+        
+    }
+    
+    func testPaxDeviceManual() {
+        let timeout = 120
+
+        let config = HpsConnectionConfig()
+        config.ipAddress = "192.168.15.2"
+        config.port = "10009"
+        config.username = ""
+        config.password = ""
+        config.siteID = "";
+        config.deviceID = ""
+        config.licenseID = ""
+        config.developerID = ""
+        config.versionNumber = ""
+        config.connectionMode = 1
+        config.timeout = timeout
+
+        self.paxDevice = HpsPaxDevice(config: config)
+
+        let builder = HpsPaxCreditSaleBuilder(device: self.paxDevice)
+        builder?.amount = 11.0
+        builder?.referenceNumber = 10
+        builder?.allowDuplicates = false
+
+
+        builder?.execute({ response, error in
+
+            if let error = error {
+                print("Error: \(error)")
+                return
+            }
+            if let response = response {
+                print("Response: \(response)")
+                let responseReturn = response.parseResponse()
+                print("Response Parse: \(responseReturn.debugDescription)")
+            }
+        })
+    }
+    
+    func testPaxDeviceAuth() {
+        let timeout = 120
+
+        let config = HpsConnectionConfig()
+        config.ipAddress = "192.168.15.10"
+        config.port = "10009"
+        config.username = "701389328"
+        config.password = "$Test1234"
+        config.siteID = "142914";
+        config.deviceID = "6399854"
+        config.licenseID = "142827"
+        config.developerID = "002914"
+        config.versionNumber = "3409"
+        config.connectionMode = 1
+        config.timeout = timeout
+
+        self.paxDevice = HpsPaxDevice(config: config)
+
+        let card = HpsCreditCard()
+        card.cardNumber = "4005554444444460"
+        card.expMonth = 12
+        card.expYear = 25
+        card.cvv = "123"
+
+        let address = HpsAddress()
+        address.address = "1 Heartland Way"
+        address.zip = "95124"
+
+        let builder = HpsPaxCreditAuthBuilder(device: self.paxDevice)
+        builder?.amount = 11.0
+        builder?.referenceNumber = 1
+        builder?.allowDuplicates = true
+        builder?.requestMultiUseToken = true
+        builder?.creditCard = card
+        builder?.address = address
+
+        builder?.execute({ response, error in
+
+            if let error = error {
+                print("Error: \(error)")
+                return
+            }
+            if let response = response {
+                print("Response: \(response)")
+                let responseReturn = response.parseResponse()
+                print("Response Parse: \(responseReturn.debugDescription)")
+            }
+        })
     }
 }
 
