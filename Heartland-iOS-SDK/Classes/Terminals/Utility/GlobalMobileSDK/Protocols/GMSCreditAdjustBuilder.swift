@@ -10,4 +10,6 @@ public protocol GMSCreditAdjustBuilder {
     var cardHolderName: String? { get set }
     var address: HpsAddress? { get set }
     var clientTransactionId: String? { get set }
+    var allowPartialAuth: NSNumber? { get set }
+    var cpcReq: NSNumber? { get set }
 }

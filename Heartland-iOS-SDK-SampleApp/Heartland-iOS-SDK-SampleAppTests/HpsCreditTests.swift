@@ -23,7 +23,7 @@ final class HpsCreditTests: XCTestCase, GMSDeviceDelegate {
         config.licenseID = ""
         config.siteID = ""
         config.deviceID = ""
-        config.sdkNameVersion = ".0"
+        config.sdkNameVersion = ""
         config.connectionMode = HpsConnectionModes.TCP_IP.rawValue
         self.config = config
         return HpsC2xDevice(config: config)
@@ -53,6 +53,52 @@ final class HpsCreditTests: XCTestCase, GMSDeviceDelegate {
         builder.amount = 11.97
         builder.gratuity = 0.0
         builder.creditCard = getCC()
+        
+        device.transactionDelegate = self;
+        builder.execute()
+        
+        wait(for: [expectation], timeout: 3000)
+    }
+    
+    func testCPCReqFieldSetTrue() {
+        
+        self.device = self.setupDevice()
+        
+        guard let device = self.device else {
+            XCTFail("Device is nil")
+            return
+        }
+        
+        device.deviceDelegate = self
+        device.scan()
+        let builder = HpsC2xCreditSaleBuilder(device: device)
+        builder.amount = 11.97
+        builder.gratuity = 0.0
+        builder.creditCard = getCC()
+        builder.cpcReq = true
+        
+        device.transactionDelegate = self;
+        builder.execute()
+        
+        wait(for: [expectation], timeout: 3000)
+    }
+    
+    func testCPCReqFieldSetFalse() {
+        
+        self.device = self.setupDevice()
+        
+        guard let device = self.device else {
+            XCTFail("Device is nil")
+            return
+        }
+        
+        device.deviceDelegate = self
+        device.scan()
+        let builder = HpsC2xCreditSaleBuilder(device: device)
+        builder.amount = 11.97
+        builder.gratuity = 0.0
+        builder.creditCard = getCC()
+        builder.cpcReq = false
         
         device.transactionDelegate = self;
         builder.execute()

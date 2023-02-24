@@ -5,6 +5,7 @@ public class HpsWiseCubeCreditVoidBuilder : HpsWiseCubeBaseBuilder, GMSCreditVoi
     public var clientTransactionId: String?
     public var referenceNumber: String?
     public var transactionId: String?
+    public var allowPartialAuth: NSNumber?
     
     public init(device: HpsWiseCubeDevice) {
         super.init(transactionType: .creditVoid, device: device)

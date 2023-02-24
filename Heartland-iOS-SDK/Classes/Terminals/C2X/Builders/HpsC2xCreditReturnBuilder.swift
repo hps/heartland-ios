@@ -6,6 +6,8 @@ public class HpsC2xCreditReturnBuilder : HpsC2xBaseBuilder, GMSCreditReturnBuild
     public var amount: NSDecimalNumber?
     public var referenceNumber: String?
     public var transactionId: String?
+    public var allowPartialAuth: NSNumber?
+    public var cpcReq: NSNumber?
     
     public init(device: HpsC2xDevice) {
         super.init(transactionType: .creditReturn, device: device)

@@ -109,6 +109,8 @@ private extension C2XTransactionsViewController {
             let builder: HpsC2xCreditSaleBuilder = HpsC2xCreditSaleBuilder(device: device)
             builder.amount = amountNumber
             builder.clientTransactionId = "123456789"
+            builder.allowPartialAuth = false
+            builder.cpcReq = false
             if let cTransactionId = builder.clientTransactionId {
                 NSLog("Client Transaction Id Generated In The Client - Request  %@", cTransactionId)
             }

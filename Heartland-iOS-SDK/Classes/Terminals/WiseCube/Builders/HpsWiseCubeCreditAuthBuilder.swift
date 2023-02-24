@@ -11,6 +11,8 @@ public class HpsWiseCubeCreditAuthBuilder : HpsWiseCubeBaseBuilder, GMSCreditAut
     public var cardHolderName: String?
     public var creditCard: HpsCreditCard?
     public var address: HpsAddress?
+    public var allowPartialAuth: NSNumber?
+    public var cpcReq: NSNumber?
     
     public init(device: HpsWiseCubeDevice) {
         super.init(transactionType: .creditAuth, device: device)

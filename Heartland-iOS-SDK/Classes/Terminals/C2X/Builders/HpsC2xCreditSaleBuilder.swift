@@ -12,6 +12,8 @@ public class HpsC2xCreditSaleBuilder : HpsC2xBaseBuilder, GMSCreditSaleBuilder {
     public var cardHolderName: String?
     public var creditCard: HpsCreditCard?
     public var address: HpsAddress?
+    public var allowPartialAuth: NSNumber?
+    public var cpcReq: NSNumber?
     
     public init(device: HpsC2xDevice) {
         super.init(transactionType: .creditSale, device: device)

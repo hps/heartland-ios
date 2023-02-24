@@ -2,10 +2,13 @@ import Foundation
 
 @objcMembers
 public class HpsWiseCubeCreditReturnBuilder : HpsWiseCubeBaseBuilder, GMSCreditReturnBuilder {
+    
     public var amount: NSDecimalNumber?
     public var referenceNumber: String?
     public var transactionId: String?
     public var clientTransactionId: String?
+    public var allowPartialAuth: NSNumber?
+    public var cpcReq: NSNumber?
     
     public init(device: HpsWiseCubeDevice) {
         super.init(transactionType: .creditReturn, device: device)

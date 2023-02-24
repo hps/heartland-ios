@@ -19,10 +19,6 @@ class ConnectC2XViewController: UIViewController {
     @IBOutlet weak var scanButtonReference: UIButton!
     
     
-    override func viewDidLoad() {
-        testPaxDeviceManual()
-    }
-    
     @IBAction func scanButtonPressed() {
         
         scanButtonReference.isEnabled = false
@@ -49,8 +45,8 @@ class ConnectC2XViewController: UIViewController {
         let timeout = 120
 
         let config = HpsConnectionConfig()
-        config.ipAddress = "192.168.15.2"
-        config.port = "10009"
+        config.ipAddress = ""
+        config.port = ""
         config.username = ""
         config.password = ""
         config.siteID = "";
@@ -87,29 +83,29 @@ class ConnectC2XViewController: UIViewController {
         let timeout = 120
 
         let config = HpsConnectionConfig()
-        config.ipAddress = "192.168.15.10"
-        config.port = "10009"
-        config.username = "701389328"
-        config.password = "$Test1234"
-        config.siteID = "142914";
-        config.deviceID = "6399854"
-        config.licenseID = "142827"
-        config.developerID = "002914"
-        config.versionNumber = "3409"
+        config.ipAddress = ""
+        config.port = ""
+        config.username = ""
+        config.password = ""
+        config.siteID = "";
+        config.deviceID = ""
+        config.licenseID = ""
+        config.developerID = ""
+        config.versionNumber = ""
         config.connectionMode = 1
         config.timeout = timeout
 
         self.paxDevice = HpsPaxDevice(config: config)
 
         let card = HpsCreditCard()
-        card.cardNumber = "4005554444444460"
-        card.expMonth = 12
-        card.expYear = 25
-        card.cvv = "123"
+        card.cardNumber = ""
+        card.expMonth = 1
+        card.expYear = 2
+        card.cvv = ""
 
         let address = HpsAddress()
-        address.address = "1 Heartland Way"
-        address.zip = "95124"
+        address.address = ""
+        address.zip = ""
 
         let builder = HpsPaxCreditAuthBuilder(device: self.paxDevice)
         builder?.amount = 11.0

@@ -7,6 +7,7 @@ public class HpsWiseCubeCreditReversalBuilder : HpsWiseCubeBaseBuilder, GMSCredi
     public var reason: ReversalReasonCode = .NOREASON
     public var referenceNumber: String?
     public var transactionId: String?
+    public var allowPartialAuth: NSNumber?
     
     public init(device: HpsWiseCubeDevice) {
         super.init(transactionType: .creditReversal, device: device)

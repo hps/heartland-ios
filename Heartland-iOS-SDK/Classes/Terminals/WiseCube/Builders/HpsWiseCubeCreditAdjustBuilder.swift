@@ -10,6 +10,8 @@ public class HpsWiseCubeCreditAdjustBuilder : HpsWiseCubeBaseBuilder, GMSCreditA
     public var transactionId: String?
     public var cardHolderName: String?
     public var address: HpsAddress?
+    public var allowPartialAuth: NSNumber?
+    public var cpcReq: NSNumber?
 
     public init(device: HpsWiseCubeDevice) {
         super.init(transactionType: .creditAdjust, device: device)
