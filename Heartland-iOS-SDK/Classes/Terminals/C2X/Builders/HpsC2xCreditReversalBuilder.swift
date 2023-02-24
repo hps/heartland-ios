@@ -7,6 +7,7 @@ public class HpsC2xCreditReversalBuilder : HpsC2xBaseBuilder, GMSCreditReversalB
     public var reason: ReversalReasonCode = .NOREASON
     public var referenceNumber: String?
     public var transactionId: String?
+    public var allowPartialAuth: NSNumber?
     
     public init(device: HpsC2xDevice) {
         super.init(transactionType: .creditReversal, device: device)

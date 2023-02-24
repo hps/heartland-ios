@@ -5,6 +5,7 @@ public class HpsC2xCreditVoidBuilder : HpsC2xBaseBuilder, GMSCreditVoidBuilder {
     public var clientTransactionId: String?
     public var referenceNumber: String?
     public var transactionId: String?
+    public var allowPartialAuth: NSNumber?
     
     public init(device: HpsC2xDevice) {
         super.init(transactionType: .creditVoid, device: device)

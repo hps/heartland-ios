@@ -13,6 +13,7 @@
 @property (nonatomic) BOOL allowDuplicate;
 @property (nonatomic, strong) HpsAdditionalTxnFields *additionalTxnFields;
 @property (nonatomic) BOOL allowPartialAuth;
+@property (nonatomic) BOOL cpcReq;
 
 - (NSString*) toXML;
 

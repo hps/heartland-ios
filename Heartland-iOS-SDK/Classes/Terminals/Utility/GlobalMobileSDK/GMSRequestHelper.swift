@@ -15,6 +15,7 @@ class GMSRequestHelper {
         let operatingUserId: String? = nil
         let transactionId: String? = builder.transactionId as String?
         let clientTransactionId: String? = builder.clientTransactionId
+        let allowPartialAuth: Bool? = builder.allowPartialAuth as? Bool
         
         return TipAdjustTransaction.tipAdjust(clientTransactionId: clientTransactionId,
                                               gatewayTransactionId: transactionId ?? "",
@@ -22,7 +23,8 @@ class GMSRequestHelper {
                                               tip: decimalToUint(tip),
                                               invoiceNumber: invoiceNumber,
                                               posReferenceNumber: posReferenceNumber,
-                                              operatingUserId: operatingUserId)
+                                              operatingUserId: operatingUserId,
+                                              allowPartialAuth: allowPartialAuth)
     }
     
     static func decimalToUint(_ decimalValue: Decimal?) -> UInt? {
@@ -45,6 +47,8 @@ class GMSRequestHelper {
         let requestMultiUseToken: Bool? = nil
         var cardData: ManualCardData? = nil
         let clientTransactionId: String? = builder.clientTransactionId
+        let allowPartialAuth: Bool? = builder.allowPartialAuth as? Bool
+        let cpcReq: Bool? = builder.cpcReq as? Bool
         
         if let cd = builder.creditCard {
             cardData = ManualCardData.cardData(cardholderName: builder.cardHolderName ?? "",
@@ -67,7 +71,9 @@ class GMSRequestHelper {
                                         invoiceNumber: invoiceNumber,
                                         operatingUserId: operatingUserId,
                                         cardData: cardData!,
-                                        requestMultiUseToken: requestMultiUseToken ?? false)
+                                        requestMultiUseToken: requestMultiUseToken ?? false,
+                                        allowPartialAuth: allowPartialAuth,
+                                        cpcReq: cpcReq)
         } else {
             return AuthTransaction.auth(clientTransactionId: clientTransactionId,
                                         total: decimalToUint(total),
@@ -78,7 +84,9 @@ class GMSRequestHelper {
                                         posReferenceNumber: posReferenceNumber,
                                         invoiceNumber: invoiceNumber,
                                         operatingUserId: operatingUserId,
-                                        requestMultiUseToken: requestMultiUseToken ?? false)
+                                        requestMultiUseToken: requestMultiUseToken ?? false,
+                                        allowPartialAuth: allowPartialAuth,
+                                        cpcReq: cpcReq)
         }
     }
     
@@ -106,6 +114,7 @@ class GMSRequestHelper {
         let posReferenceNumber: String? = builder.referenceNumber
         let transactionId: String? = builder.transactionId
         let clientTransactionId: String? = builder.clientTransactionId
+        let allowPartialAuth: Bool? = builder.allowPartialAuth as? Bool
         
         return ReturnTransaction.returnWithReference(clientTransactionId: clientTransactionId,
                                                      total: decimalToUint(total),
@@ -115,7 +124,8 @@ class GMSRequestHelper {
                                                      gatewayTransactionId: transactionId ?? "",
                                                      posReferenceNumber: posReferenceNumber,
                                                      invoiceNumber: nil,
-                                                     operatingUserId: nil)
+                                                     operatingUserId: nil,
+                                                     allowPartialAuth: allowPartialAuth)
     }
     
     public static func buildCreditReversalRequest(builder: GMSCreditReversalBuilder) -> Transaction? {
@@ -123,6 +133,7 @@ class GMSRequestHelper {
         let posReferenceNumber: String? = builder.referenceNumber
         let transactionId: String? = builder.transactionId
         let reversalReason: ReversalReason = HpsC2xEnums.reversalReasonCodeToReversalReason(builder.reason)
+        let allowPartialAuth: Bool? = builder.allowPartialAuth as? Bool
 
         if let clientTransactionId = builder.clientTransactionId {
             return ReversalTransaction.reversal(clientTransactionId: clientTransactionId,
@@ -130,7 +141,8 @@ class GMSRequestHelper {
                                                 reversalReason: reversalReason,
                                                 posReferenceNumber: posReferenceNumber,
                                                 amount: decimalToUint(total) ?? 0,
-                                                tlv: nil)
+                                                tlv: nil,
+                                                allowPartialAuth: allowPartialAuth)
         }
 
         return ReversalTransaction.reversal(clientTransactionId: nil,
@@ -138,7 +150,8 @@ class GMSRequestHelper {
                                             reversalReason: reversalReason,
                                             posReferenceNumber: posReferenceNumber,
                                             amount: decimalToUint(total) ?? 0,
-                                            tlv: nil)
+                                            tlv: nil,
+                                            allowPartialAuth: allowPartialAuth)
     }
     
     public static func buildCreditSaleRequest(builder: GMSCreditSaleBuilder) -> Transaction? {
@@ -153,6 +166,8 @@ class GMSRequestHelper {
         let requestMultiUseToken: Bool? = nil
         var cardData: ManualCardData? = nil
         let clientTransactionId: String? = builder.clientTransactionId
+        let allowPartialAuth: Bool? = builder.allowPartialAuth as? Bool
+        let cpcReq: Bool? = builder.cpcReq as? Bool
         
         if let cd = builder.creditCard {
             cardData = ManualCardData.cardData(cardholderName: builder.cardHolderName ?? "",
@@ -175,7 +190,9 @@ class GMSRequestHelper {
                                         invoiceNumber: invoiceNumber,
                                         operatingUserId: operatingUserId,
                                         cardData: cardData!,
-                                        requestMultiUseToken: requestMultiUseToken ?? false)
+                                        requestMultiUseToken: requestMultiUseToken ?? false,
+                                        allowPartialAuth: allowPartialAuth,
+                                        cpcReq: cpcReq)
         } else {
             return SaleTransaction.sale(clientTransactionId: clientTransactionId,
                                         total: decimalToUint(total),
@@ -186,7 +203,9 @@ class GMSRequestHelper {
                                         posReferenceNumber: posReferenceNumber,
                                         invoiceNumber: invoiceNumber,
                                         operatingUserId: operatingUserId,
-                                        requestMultiUseToken: requestMultiUseToken ?? false)
+                                        requestMultiUseToken: requestMultiUseToken ?? false,
+                                        allowPartialAuth: allowPartialAuth,
+                                        cpcReq: cpcReq)
         }
     }
     
@@ -194,12 +213,14 @@ class GMSRequestHelper {
         let posReferenceNumber: String? = builder.referenceNumber
         let transactionId: String? = builder.transactionId
         let clientTransactionId: String? = builder.clientTransactionId
+        let allowPartialAuth: Bool? = builder.allowPartialAuth as? Bool
 
         return VoidTransaction.void(clientTransactionId: clientTransactionId,
                                     gatewayTransactionId: transactionId ?? "",
                                     reversalReason: ReversalReason.undefined,
                                     posReferenceNumber: posReferenceNumber,
                                     invoiceNumber: nil,
-                                    operatingUserId: nil)
+                                    operatingUserId: nil,
+                                    allowPartialAuth: allowPartialAuth)
     }
 }

@@ -8188,9 +8188,229 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "allowPartialAuth",
+            "printedName": "allowPartialAuth",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK15AuthTransactionV012allowPartialD0SbSgvp",
+            "mangledName": "$s15GlobalMobileSDK15AuthTransactionV012allowPartialD0SbSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15AuthTransactionV012allowPartialD0SbSgvg",
+                "mangledName": "$s15GlobalMobileSDK15AuthTransactionV012allowPartialD0SbSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15AuthTransactionV012allowPartialD0SbSgvs",
+                "mangledName": "$s15GlobalMobileSDK15AuthTransactionV012allowPartialD0SbSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15AuthTransactionV012allowPartialD0SbSgvM",
+                "mangledName": "$s15GlobalMobileSDK15AuthTransactionV012allowPartialD0SbSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cpcReq",
+            "printedName": "cpcReq",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK15AuthTransactionV6cpcReqSbSgvp",
+            "mangledName": "$s15GlobalMobileSDK15AuthTransactionV6cpcReqSbSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15AuthTransactionV6cpcReqSbSgvg",
+                "mangledName": "$s15GlobalMobileSDK15AuthTransactionV6cpcReqSbSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15AuthTransactionV6cpcReqSbSgvs",
+                "mangledName": "$s15GlobalMobileSDK15AuthTransactionV6cpcReqSbSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15AuthTransactionV6cpcReqSbSgvM",
+                "mangledName": "$s15GlobalMobileSDK15AuthTransactionV6cpcReqSbSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Function",
             "name": "auth",
-            "printedName": "auth(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:requestMultiUseToken:)",
+            "printedName": "auth(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:requestMultiUseToken:allowPartialAuth:cpcReq:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -8329,11 +8549,39 @@
                 "name": "Bool",
                 "printedName": "Swift.Bool",
                 "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH020requestMultiUseTokenACSSSg_SuSgA3pA03TaxM0OSgA3OSbtFZ",
-            "mangledName": "$s15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH020requestMultiUseTokenACSSSg_SuSgA3pA03TaxM0OSgA3OSbtFZ",
+            "usr": "s:15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH020requestMultiUseToken012allowPartialD06cpcReqACSSSg_SuSgA3rA03TaxM0OSgA3QS2bSgAVtFZ",
+            "mangledName": "$s15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH020requestMultiUseToken012allowPartialD06cpcReqACSSSg_SuSgA3rA03TaxM0OSgA3QS2bSgAVtFZ",
             "moduleName": "GlobalMobileSDK",
             "static": true,
             "declAttributes": [
@@ -8344,7 +8592,7 @@
           {
             "kind": "Function",
             "name": "auth",
-            "printedName": "auth(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:cardData:requestMultiUseToken:)",
+            "printedName": "auth(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:cardData:requestMultiUseToken:allowPartialAuth:cpcReq:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -8489,11 +8737,39 @@
                 "name": "Bool",
                 "printedName": "Swift.Bool",
                 "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData20requestMultiUseTokenACSSSg_SuSgA3qA03TaxM0OSgA3pA010ManualCardU0VSbtFZ",
-            "mangledName": "$s15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData20requestMultiUseTokenACSSSg_SuSgA3qA03TaxM0OSgA3pA010ManualCardU0VSbtFZ",
+            "usr": "s:15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData20requestMultiUseToken012allowPartialD06cpcReqACSSSg_SuSgA3sA03TaxM0OSgA3rA010ManualCardU0VS2bSgAYtFZ",
+            "mangledName": "$s15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData20requestMultiUseToken012allowPartialD06cpcReqACSSSg_SuSgA3sA03TaxM0OSgA3rA010ManualCardU0VS2bSgAYtFZ",
             "moduleName": "GlobalMobileSDK",
             "static": true,
             "declAttributes": [
@@ -8504,7 +8780,7 @@
           {
             "kind": "Function",
             "name": "auth",
-            "printedName": "auth(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:cardData:)",
+            "printedName": "auth(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:cardData:allowPartialAuth:cpcReq:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -8643,11 +8919,39 @@
                 "name": "TokenizedCardData",
                 "printedName": "GlobalMobileSDK.TokenizedCardData",
                 "usr": "s:15GlobalMobileSDK17TokenizedCardDataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardDataACSSSg_SuSgA3pA03TaxM0OSgA3oA013TokenizedCardU0VtFZ",
-            "mangledName": "$s15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardDataACSSSg_SuSgA3pA03TaxM0OSgA3oA013TokenizedCardU0VtFZ",
+            "usr": "s:15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData012allowPartialD06cpcReqACSSSg_SuSgA3rA03TaxM0OSgA3qA013TokenizedCardU0VSbSgAXtFZ",
+            "mangledName": "$s15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData012allowPartialD06cpcReqACSSSg_SuSgA3rA03TaxM0OSgA3qA013TokenizedCardU0VSbSgAXtFZ",
             "moduleName": "GlobalMobileSDK",
             "static": true,
             "declAttributes": [
@@ -37765,9 +38069,229 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "allowPartialAuth",
+            "printedName": "allowPartialAuth",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK15SaleTransactionV16allowPartialAuthSbSgvp",
+            "mangledName": "$s15GlobalMobileSDK15SaleTransactionV16allowPartialAuthSbSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15SaleTransactionV16allowPartialAuthSbSgvg",
+                "mangledName": "$s15GlobalMobileSDK15SaleTransactionV16allowPartialAuthSbSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15SaleTransactionV16allowPartialAuthSbSgvs",
+                "mangledName": "$s15GlobalMobileSDK15SaleTransactionV16allowPartialAuthSbSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15SaleTransactionV16allowPartialAuthSbSgvM",
+                "mangledName": "$s15GlobalMobileSDK15SaleTransactionV16allowPartialAuthSbSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cpcReq",
+            "printedName": "cpcReq",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK15SaleTransactionV6cpcReqSbSgvp",
+            "mangledName": "$s15GlobalMobileSDK15SaleTransactionV6cpcReqSbSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15SaleTransactionV6cpcReqSbSgvg",
+                "mangledName": "$s15GlobalMobileSDK15SaleTransactionV6cpcReqSbSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15SaleTransactionV6cpcReqSbSgvs",
+                "mangledName": "$s15GlobalMobileSDK15SaleTransactionV6cpcReqSbSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15SaleTransactionV6cpcReqSbSgvM",
+                "mangledName": "$s15GlobalMobileSDK15SaleTransactionV6cpcReqSbSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Function",
             "name": "sale",
-            "printedName": "sale(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:requestMultiUseToken:)",
+            "printedName": "sale(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:requestMultiUseToken:allowPartialAuth:cpcReq:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -37906,11 +38430,39 @@
                 "name": "Bool",
                 "printedName": "Swift.Bool",
                 "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH020requestMultiUseTokenACSSSg_SuSgA3pA03TaxM0OSgA3OSbtFZ",
-            "mangledName": "$s15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH020requestMultiUseTokenACSSSg_SuSgA3pA03TaxM0OSgA3OSbtFZ",
+            "usr": "s:15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH020requestMultiUseToken16allowPartialAuth6cpcReqACSSSg_SuSgA3rA03TaxM0OSgA3QS2bSgAVtFZ",
+            "mangledName": "$s15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH020requestMultiUseToken16allowPartialAuth6cpcReqACSSSg_SuSgA3rA03TaxM0OSgA3QS2bSgAVtFZ",
             "moduleName": "GlobalMobileSDK",
             "static": true,
             "declAttributes": [
@@ -37921,7 +38473,7 @@
           {
             "kind": "Function",
             "name": "sale",
-            "printedName": "sale(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:cardData:requestMultiUseToken:)",
+            "printedName": "sale(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:cardData:requestMultiUseToken:allowPartialAuth:cpcReq:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -38066,11 +38618,39 @@
                 "name": "Bool",
                 "printedName": "Swift.Bool",
                 "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData20requestMultiUseTokenACSSSg_SuSgA3qA03TaxM0OSgA3pA010ManualCardU0VSbtFZ",
-            "mangledName": "$s15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData20requestMultiUseTokenACSSSg_SuSgA3qA03TaxM0OSgA3pA010ManualCardU0VSbtFZ",
+            "usr": "s:15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData20requestMultiUseToken16allowPartialAuth6cpcReqACSSSg_SuSgA3sA03TaxM0OSgA3rA010ManualCardU0VS2bSgAYtFZ",
+            "mangledName": "$s15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData20requestMultiUseToken16allowPartialAuth6cpcReqACSSSg_SuSgA3sA03TaxM0OSgA3rA010ManualCardU0VS2bSgAYtFZ",
             "moduleName": "GlobalMobileSDK",
             "static": true,
             "declAttributes": [
@@ -38081,7 +38661,7 @@
           {
             "kind": "Function",
             "name": "sale",
-            "printedName": "sale(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:cardData:)",
+            "printedName": "sale(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:cardData:allowPartialAuth:cpcReq:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -38220,11 +38800,39 @@
                 "name": "TokenizedCardData",
                 "printedName": "GlobalMobileSDK.TokenizedCardData",
                 "usr": "s:15GlobalMobileSDK17TokenizedCardDataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardDataACSSSg_SuSgA3pA03TaxM0OSgA3oA013TokenizedCardU0VtFZ",
-            "mangledName": "$s15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardDataACSSSg_SuSgA3pA03TaxM0OSgA3oA013TokenizedCardU0VtFZ",
+            "usr": "s:15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData16allowPartialAuth6cpcReqACSSSg_SuSgA3rA03TaxM0OSgA3qA013TokenizedCardU0VSbSgAXtFZ",
+            "mangledName": "$s15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData16allowPartialAuth6cpcReqACSSSg_SuSgA3rA03TaxM0OSgA3qA013TokenizedCardU0VSbSgAXtFZ",
             "moduleName": "GlobalMobileSDK",
             "static": true,
             "declAttributes": [
@@ -41209,9 +41817,229 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "allowPartialAuth",
+            "printedName": "allowPartialAuth",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK17VerifyTransactionV16allowPartialAuthSbSgvp",
+            "mangledName": "$s15GlobalMobileSDK17VerifyTransactionV16allowPartialAuthSbSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK17VerifyTransactionV16allowPartialAuthSbSgvg",
+                "mangledName": "$s15GlobalMobileSDK17VerifyTransactionV16allowPartialAuthSbSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK17VerifyTransactionV16allowPartialAuthSbSgvs",
+                "mangledName": "$s15GlobalMobileSDK17VerifyTransactionV16allowPartialAuthSbSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK17VerifyTransactionV16allowPartialAuthSbSgvM",
+                "mangledName": "$s15GlobalMobileSDK17VerifyTransactionV16allowPartialAuthSbSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cpcReq",
+            "printedName": "cpcReq",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK17VerifyTransactionV6cpcReqSbSgvp",
+            "mangledName": "$s15GlobalMobileSDK17VerifyTransactionV6cpcReqSbSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK17VerifyTransactionV6cpcReqSbSgvg",
+                "mangledName": "$s15GlobalMobileSDK17VerifyTransactionV6cpcReqSbSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK17VerifyTransactionV6cpcReqSbSgvs",
+                "mangledName": "$s15GlobalMobileSDK17VerifyTransactionV6cpcReqSbSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK17VerifyTransactionV6cpcReqSbSgvM",
+                "mangledName": "$s15GlobalMobileSDK17VerifyTransactionV6cpcReqSbSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Function",
             "name": "verify",
-            "printedName": "verify(clientTransactionId:posReferenceNumber:invoiceNumber:operatingUserId:requestMultiUseToken:)",
+            "printedName": "verify(clientTransactionId:posReferenceNumber:invoiceNumber:operatingUserId:requestMultiUseToken:allowPartialAuth:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -41280,11 +42108,25 @@
                 "name": "Bool",
                 "printedName": "Swift.Bool",
                 "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15GlobalMobileSDK17VerifyTransactionV6verify06clientE2Id18posReferenceNumber07invoiceK0013operatingUserH020requestMultiUseTokenACSSSg_A3JSbtFZ",
-            "mangledName": "$s15GlobalMobileSDK17VerifyTransactionV6verify06clientE2Id18posReferenceNumber07invoiceK0013operatingUserH020requestMultiUseTokenACSSSg_A3JSbtFZ",
+            "usr": "s:15GlobalMobileSDK17VerifyTransactionV6verify06clientE2Id18posReferenceNumber07invoiceK0013operatingUserH020requestMultiUseToken16allowPartialAuthACSSSg_A3KS2bSgtFZ",
+            "mangledName": "$s15GlobalMobileSDK17VerifyTransactionV6verify06clientE2Id18posReferenceNumber07invoiceK0013operatingUserH020requestMultiUseToken16allowPartialAuthACSSSg_A3KS2bSgtFZ",
             "moduleName": "GlobalMobileSDK",
             "static": true,
             "declAttributes": [
@@ -41295,7 +42137,7 @@
           {
             "kind": "Function",
             "name": "verify",
-            "printedName": "verify(clientTransactionId:posReferenceNumber:invoiceNumber:operatingUserId:cardData:requestMultiUseToken:)",
+            "printedName": "verify(clientTransactionId:posReferenceNumber:invoiceNumber:operatingUserId:cardData:requestMultiUseToken:allowPartialAuth:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -41370,11 +42212,25 @@
                 "name": "Bool",
                 "printedName": "Swift.Bool",
                 "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15GlobalMobileSDK17VerifyTransactionV6verify06clientE2Id18posReferenceNumber07invoiceK0013operatingUserH08cardData20requestMultiUseTokenACSSSg_A3kA010ManualCardP0VSbtFZ",
-            "mangledName": "$s15GlobalMobileSDK17VerifyTransactionV6verify06clientE2Id18posReferenceNumber07invoiceK0013operatingUserH08cardData20requestMultiUseTokenACSSSg_A3kA010ManualCardP0VSbtFZ",
+            "usr": "s:15GlobalMobileSDK17VerifyTransactionV6verify06clientE2Id18posReferenceNumber07invoiceK0013operatingUserH08cardData20requestMultiUseToken16allowPartialAuthACSSSg_A3lA010ManualCardP0VS2bSgtFZ",
+            "mangledName": "$s15GlobalMobileSDK17VerifyTransactionV6verify06clientE2Id18posReferenceNumber07invoiceK0013operatingUserH08cardData20requestMultiUseToken16allowPartialAuthACSSSg_A3lA010ManualCardP0VS2bSgtFZ",
             "moduleName": "GlobalMobileSDK",
             "static": true,
             "declAttributes": [
@@ -42295,9 +43151,119 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "allowPartialAuth",
+            "printedName": "allowPartialAuth",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK20TipAdjustTransactionV16allowPartialAuthSbSgvp",
+            "mangledName": "$s15GlobalMobileSDK20TipAdjustTransactionV16allowPartialAuthSbSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK20TipAdjustTransactionV16allowPartialAuthSbSgvg",
+                "mangledName": "$s15GlobalMobileSDK20TipAdjustTransactionV16allowPartialAuthSbSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK20TipAdjustTransactionV16allowPartialAuthSbSgvs",
+                "mangledName": "$s15GlobalMobileSDK20TipAdjustTransactionV16allowPartialAuthSbSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK20TipAdjustTransactionV16allowPartialAuthSbSgvM",
+                "mangledName": "$s15GlobalMobileSDK20TipAdjustTransactionV16allowPartialAuthSbSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Function",
             "name": "tipAdjust",
-            "printedName": "tipAdjust(clientTransactionId:gatewayTransactionId:total:tip:invoiceNumber:posReferenceNumber:operatingUserId:)",
+            "printedName": "tipAdjust(clientTransactionId:gatewayTransactionId:total:tip:invoiceNumber:posReferenceNumber:operatingUserId:allowPartialAuth:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -42394,11 +43360,25 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15GlobalMobileSDK20TipAdjustTransactionV03tipE006clientF2Id07gatewayfI05total0G013invoiceNumber012posReferenceM0013operatingUserI0ACSSSg_SSSuSgAm3LtFZ",
-            "mangledName": "$s15GlobalMobileSDK20TipAdjustTransactionV03tipE006clientF2Id07gatewayfI05total0G013invoiceNumber012posReferenceM0013operatingUserI0ACSSSg_SSSuSgAm3LtFZ",
+            "usr": "s:15GlobalMobileSDK20TipAdjustTransactionV03tipE006clientF2Id07gatewayfI05total0G013invoiceNumber012posReferenceM0013operatingUserI016allowPartialAuthACSSSg_SSSuSgAn3MSbSgtFZ",
+            "mangledName": "$s15GlobalMobileSDK20TipAdjustTransactionV03tipE006clientF2Id07gatewayfI05total0G013invoiceNumber012posReferenceM0013operatingUserI016allowPartialAuthACSSSg_SSSuSgAn3MSbSgtFZ",
             "moduleName": "GlobalMobileSDK",
             "static": true,
             "declAttributes": [
@@ -56893,9 +57873,119 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "allowPartialAuth",
+            "printedName": "allowPartialAuth",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK15VoidTransactionV16allowPartialAuthSbSgvp",
+            "mangledName": "$s15GlobalMobileSDK15VoidTransactionV16allowPartialAuthSbSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15VoidTransactionV16allowPartialAuthSbSgvg",
+                "mangledName": "$s15GlobalMobileSDK15VoidTransactionV16allowPartialAuthSbSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15VoidTransactionV16allowPartialAuthSbSgvs",
+                "mangledName": "$s15GlobalMobileSDK15VoidTransactionV16allowPartialAuthSbSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15VoidTransactionV16allowPartialAuthSbSgvM",
+                "mangledName": "$s15GlobalMobileSDK15VoidTransactionV16allowPartialAuthSbSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Function",
             "name": "void",
-            "printedName": "void(clientTransactionId:gatewayTransactionId:reversalReason:posReferenceNumber:invoiceNumber:operatingUserId:)",
+            "printedName": "void(clientTransactionId:gatewayTransactionId:reversalReason:posReferenceNumber:invoiceNumber:operatingUserId:allowPartialAuth:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -56970,11 +58060,25 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15GlobalMobileSDK15VoidTransactionV4void06clientE2Id07gatewayeH014reversalReason18posReferenceNumber07invoiceN0013operatingUserH0ACSSSg_SSAA08ReversalK0OA3KtFZ",
-            "mangledName": "$s15GlobalMobileSDK15VoidTransactionV4void06clientE2Id07gatewayeH014reversalReason18posReferenceNumber07invoiceN0013operatingUserH0ACSSSg_SSAA08ReversalK0OA3KtFZ",
+            "usr": "s:15GlobalMobileSDK15VoidTransactionV4void06clientE2Id07gatewayeH014reversalReason18posReferenceNumber07invoiceN0013operatingUserH016allowPartialAuthACSSSg_SSAA08ReversalK0OA3LSbSgtFZ",
+            "mangledName": "$s15GlobalMobileSDK15VoidTransactionV4void06clientE2Id07gatewayeH014reversalReason18posReferenceNumber07invoiceN0013operatingUserH016allowPartialAuthACSSSg_SSAA08ReversalK0OA3LSbSgtFZ",
             "moduleName": "GlobalMobileSDK",
             "static": true,
             "declAttributes": [
@@ -65147,9 +66251,229 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "allowPartialAuth",
+            "printedName": "allowPartialAuth",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK19ReversalTransactionV16allowPartialAuthSbSgvp",
+            "mangledName": "$s15GlobalMobileSDK19ReversalTransactionV16allowPartialAuthSbSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK19ReversalTransactionV16allowPartialAuthSbSgvg",
+                "mangledName": "$s15GlobalMobileSDK19ReversalTransactionV16allowPartialAuthSbSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK19ReversalTransactionV16allowPartialAuthSbSgvs",
+                "mangledName": "$s15GlobalMobileSDK19ReversalTransactionV16allowPartialAuthSbSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK19ReversalTransactionV16allowPartialAuthSbSgvM",
+                "mangledName": "$s15GlobalMobileSDK19ReversalTransactionV16allowPartialAuthSbSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cpcReq",
+            "printedName": "cpcReq",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK19ReversalTransactionV6cpcReqSbSgvp",
+            "mangledName": "$s15GlobalMobileSDK19ReversalTransactionV6cpcReqSbSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK19ReversalTransactionV6cpcReqSbSgvg",
+                "mangledName": "$s15GlobalMobileSDK19ReversalTransactionV6cpcReqSbSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK19ReversalTransactionV6cpcReqSbSgvs",
+                "mangledName": "$s15GlobalMobileSDK19ReversalTransactionV6cpcReqSbSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK19ReversalTransactionV6cpcReqSbSgvM",
+                "mangledName": "$s15GlobalMobileSDK19ReversalTransactionV6cpcReqSbSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Function",
             "name": "reversal",
-            "printedName": "reversal(clientTransactionId:gatewayTransactionId:reversalReason:posReferenceNumber:amount:tlv:)",
+            "printedName": "reversal(clientTransactionId:gatewayTransactionId:reversalReason:posReferenceNumber:amount:tlv:allowPartialAuth:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -65224,11 +66548,25 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15GlobalMobileSDK19ReversalTransactionV8reversal06clientE2Id07gatewayeH00F6Reason18posReferenceNumber6amount3tlvACSSSg_AkA0dJ0OAKSuAKtFZ",
-            "mangledName": "$s15GlobalMobileSDK19ReversalTransactionV8reversal06clientE2Id07gatewayeH00F6Reason18posReferenceNumber6amount3tlvACSSSg_AkA0dJ0OAKSuAKtFZ",
+            "usr": "s:15GlobalMobileSDK19ReversalTransactionV8reversal06clientE2Id07gatewayeH00F6Reason18posReferenceNumber6amount3tlv16allowPartialAuthACSSSg_AlA0dJ0OALSuALSbSgtFZ",
+            "mangledName": "$s15GlobalMobileSDK19ReversalTransactionV8reversal06clientE2Id07gatewayeH00F6Reason18posReferenceNumber6amount3tlv16allowPartialAuthACSSSg_AlA0dJ0OALSuALSbSgtFZ",
             "moduleName": "GlobalMobileSDK",
             "static": true,
             "declAttributes": [
@@ -72256,9 +73594,229 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "allowPartialAuth",
+            "printedName": "allowPartialAuth",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK17ReturnTransactionV16allowPartialAuthSbSgvp",
+            "mangledName": "$s15GlobalMobileSDK17ReturnTransactionV16allowPartialAuthSbSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK17ReturnTransactionV16allowPartialAuthSbSgvg",
+                "mangledName": "$s15GlobalMobileSDK17ReturnTransactionV16allowPartialAuthSbSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK17ReturnTransactionV16allowPartialAuthSbSgvs",
+                "mangledName": "$s15GlobalMobileSDK17ReturnTransactionV16allowPartialAuthSbSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK17ReturnTransactionV16allowPartialAuthSbSgvM",
+                "mangledName": "$s15GlobalMobileSDK17ReturnTransactionV16allowPartialAuthSbSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cpcReq",
+            "printedName": "cpcReq",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK17ReturnTransactionV6cpcReqSbSgvp",
+            "mangledName": "$s15GlobalMobileSDK17ReturnTransactionV6cpcReqSbSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK17ReturnTransactionV6cpcReqSbSgvg",
+                "mangledName": "$s15GlobalMobileSDK17ReturnTransactionV6cpcReqSbSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK17ReturnTransactionV6cpcReqSbSgvs",
+                "mangledName": "$s15GlobalMobileSDK17ReturnTransactionV6cpcReqSbSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK17ReturnTransactionV6cpcReqSbSgvM",
+                "mangledName": "$s15GlobalMobileSDK17ReturnTransactionV6cpcReqSbSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Function",
             "name": "returnWithReference",
-            "printedName": "returnWithReference(clientTransactionId:total:tax:tip:taxCategory:gatewayTransactionId:posReferenceNumber:invoiceNumber:operatingUserId:)",
+            "printedName": "returnWithReference(clientTransactionId:total:tax:tip:taxCategory:gatewayTransactionId:posReferenceNumber:invoiceNumber:operatingUserId:allowPartialAuth:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -72391,11 +73949,25 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15GlobalMobileSDK17ReturnTransactionV19returnWithReference06clientE2Id5total3tax3tip0L8Category07gatewayeJ003posH6Number07invoiceQ0013operatingUserJ0ACSSSg_SuSgA2oA03TaxN0OSgA4NtFZ",
-            "mangledName": "$s15GlobalMobileSDK17ReturnTransactionV19returnWithReference06clientE2Id5total3tax3tip0L8Category07gatewayeJ003posH6Number07invoiceQ0013operatingUserJ0ACSSSg_SuSgA2oA03TaxN0OSgA4NtFZ",
+            "usr": "s:15GlobalMobileSDK17ReturnTransactionV19returnWithReference06clientE2Id5total3tax3tip0L8Category07gatewayeJ003posH6Number07invoiceQ0013operatingUserJ016allowPartialAuthACSSSg_SuSgA2pA03TaxN0OSgA4OSbSgtFZ",
+            "mangledName": "$s15GlobalMobileSDK17ReturnTransactionV19returnWithReference06clientE2Id5total3tax3tip0L8Category07gatewayeJ003posH6Number07invoiceQ0013operatingUserJ016allowPartialAuthACSSSg_SuSgA2pA03TaxN0OSgA4OSbSgtFZ",
             "moduleName": "GlobalMobileSDK",
             "static": true,
             "declAttributes": [
@@ -72406,7 +73978,7 @@
           {
             "kind": "Function",
             "name": "returnWithManualCard",
-            "printedName": "returnWithManualCard(clientTransactionId:total:tax:tip:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:cardData:)",
+            "printedName": "returnWithManualCard(clientTransactionId:total:tax:tip:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:cardData:allowPartialAuth:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -72531,11 +74103,25 @@
                 "name": "ManualCardData",
                 "printedName": "GlobalMobileSDK.ManualCardData",
                 "usr": "s:15GlobalMobileSDK14ManualCardDataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15GlobalMobileSDK17ReturnTransactionV20returnWithManualCard06clientE2Id5total3tax3tip0M8Category18posReferenceNumber07invoiceR0013operatingUserK08cardDataACSSSg_SuSgA2oA03TaxO0OSgA3nA0hiW0VtFZ",
-            "mangledName": "$s15GlobalMobileSDK17ReturnTransactionV20returnWithManualCard06clientE2Id5total3tax3tip0M8Category18posReferenceNumber07invoiceR0013operatingUserK08cardDataACSSSg_SuSgA2oA03TaxO0OSgA3nA0hiW0VtFZ",
+            "usr": "s:15GlobalMobileSDK17ReturnTransactionV20returnWithManualCard06clientE2Id5total3tax3tip0M8Category18posReferenceNumber07invoiceR0013operatingUserK08cardData16allowPartialAuthACSSSg_SuSgA2pA03TaxO0OSgA3oA0hiW0VSbSgtFZ",
+            "mangledName": "$s15GlobalMobileSDK17ReturnTransactionV20returnWithManualCard06clientE2Id5total3tax3tip0M8Category18posReferenceNumber07invoiceR0013operatingUserK08cardData16allowPartialAuthACSSSg_SuSgA2pA03TaxO0OSgA3oA0hiW0VSbSgtFZ",
             "moduleName": "GlobalMobileSDK",
             "static": true,
             "declAttributes": [
@@ -72546,7 +74132,7 @@
           {
             "kind": "Function",
             "name": "returnWithCard",
-            "printedName": "returnWithCard(clientTransactionId:total:tax:tip:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:)",
+            "printedName": "returnWithCard(clientTransactionId:total:tax:tip:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:allowPartialAuth:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -72665,11 +74251,25 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15GlobalMobileSDK17ReturnTransactionV14returnWithCard06clientE2Id5total3tax3tip0L8Category18posReferenceNumber07invoiceQ0013operatingUserJ0ACSSSg_SuSgA2nA03TaxN0OSgA3MtFZ",
-            "mangledName": "$s15GlobalMobileSDK17ReturnTransactionV14returnWithCard06clientE2Id5total3tax3tip0L8Category18posReferenceNumber07invoiceQ0013operatingUserJ0ACSSSg_SuSgA2nA03TaxN0OSgA3MtFZ",
+            "usr": "s:15GlobalMobileSDK17ReturnTransactionV14returnWithCard06clientE2Id5total3tax3tip0L8Category18posReferenceNumber07invoiceQ0013operatingUserJ016allowPartialAuthACSSSg_SuSgA2oA03TaxN0OSgA3NSbSgtFZ",
+            "mangledName": "$s15GlobalMobileSDK17ReturnTransactionV14returnWithCard06clientE2Id5total3tax3tip0L8Category18posReferenceNumber07invoiceQ0013operatingUserJ016allowPartialAuthACSSSg_SuSgA2oA03TaxN0OSgA3NSbSgtFZ",
             "moduleName": "GlobalMobileSDK",
             "static": true,
             "declAttributes": [
@@ -88798,9 +90398,229 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "allowPartialAuth",
+            "printedName": "allowPartialAuth",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK23TokenizationTransactionV16allowPartialAuthSbSgvp",
+            "mangledName": "$s15GlobalMobileSDK23TokenizationTransactionV16allowPartialAuthSbSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK23TokenizationTransactionV16allowPartialAuthSbSgvg",
+                "mangledName": "$s15GlobalMobileSDK23TokenizationTransactionV16allowPartialAuthSbSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK23TokenizationTransactionV16allowPartialAuthSbSgvs",
+                "mangledName": "$s15GlobalMobileSDK23TokenizationTransactionV16allowPartialAuthSbSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK23TokenizationTransactionV16allowPartialAuthSbSgvM",
+                "mangledName": "$s15GlobalMobileSDK23TokenizationTransactionV16allowPartialAuthSbSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cpcReq",
+            "printedName": "cpcReq",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK23TokenizationTransactionV6cpcReqSbSgvp",
+            "mangledName": "$s15GlobalMobileSDK23TokenizationTransactionV6cpcReqSbSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK23TokenizationTransactionV6cpcReqSbSgvg",
+                "mangledName": "$s15GlobalMobileSDK23TokenizationTransactionV6cpcReqSbSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK23TokenizationTransactionV6cpcReqSbSgvs",
+                "mangledName": "$s15GlobalMobileSDK23TokenizationTransactionV6cpcReqSbSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK23TokenizationTransactionV6cpcReqSbSgvM",
+                "mangledName": "$s15GlobalMobileSDK23TokenizationTransactionV6cpcReqSbSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Function",
             "name": "tokenize",
-            "printedName": "tokenize(clientTransactionId:posReferenceNumber:invoiceNumber:operatingUserId:)",
+            "printedName": "tokenize(clientTransactionId:posReferenceNumber:invoiceNumber:operatingUserId:allowPartialAuth:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -88863,11 +90683,25 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15GlobalMobileSDK23TokenizationTransactionV8tokenize06clientE2Id18posReferenceNumber07invoiceK0013operatingUserH0ACSSSg_A3ItFZ",
-            "mangledName": "$s15GlobalMobileSDK23TokenizationTransactionV8tokenize06clientE2Id18posReferenceNumber07invoiceK0013operatingUserH0ACSSSg_A3ItFZ",
+            "usr": "s:15GlobalMobileSDK23TokenizationTransactionV8tokenize06clientE2Id18posReferenceNumber07invoiceK0013operatingUserH016allowPartialAuthACSSSg_A3JSbSgtFZ",
+            "mangledName": "$s15GlobalMobileSDK23TokenizationTransactionV8tokenize06clientE2Id18posReferenceNumber07invoiceK0013operatingUserH016allowPartialAuthACSSSg_A3JSbSgtFZ",
             "moduleName": "GlobalMobileSDK",
             "static": true,
             "declAttributes": [
@@ -88878,7 +90712,7 @@
           {
             "kind": "Function",
             "name": "tokenize",
-            "printedName": "tokenize(clientTransactionId:posReferenceNumber:invoiceNumber:operatingUserId:cardData:)",
+            "printedName": "tokenize(clientTransactionId:posReferenceNumber:invoiceNumber:operatingUserId:cardData:allowPartialAuth:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -88947,11 +90781,25 @@
                 "name": "ManualCardData",
                 "printedName": "GlobalMobileSDK.ManualCardData",
                 "usr": "s:15GlobalMobileSDK14ManualCardDataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15GlobalMobileSDK23TokenizationTransactionV8tokenize06clientE2Id18posReferenceNumber07invoiceK0013operatingUserH08cardDataACSSSg_A3jA010ManualCardP0VtFZ",
-            "mangledName": "$s15GlobalMobileSDK23TokenizationTransactionV8tokenize06clientE2Id18posReferenceNumber07invoiceK0013operatingUserH08cardDataACSSSg_A3jA010ManualCardP0VtFZ",
+            "usr": "s:15GlobalMobileSDK23TokenizationTransactionV8tokenize06clientE2Id18posReferenceNumber07invoiceK0013operatingUserH08cardData16allowPartialAuthACSSSg_A3kA010ManualCardP0VSbSgtFZ",
+            "mangledName": "$s15GlobalMobileSDK23TokenizationTransactionV8tokenize06clientE2Id18posReferenceNumber07invoiceK0013operatingUserH08cardData16allowPartialAuthACSSSg_A3kA010ManualCardP0VSbSgtFZ",
             "moduleName": "GlobalMobileSDK",
             "static": true,
             "declAttributes": [
