@@ -2,25 +2,25 @@ import Foundation
 import GlobalMobileSDK
 
 @objcMembers
-public class GMSBaseBuilder : NSObject {
+public class GMSBaseBuilder: NSObject {
     public let transactionType: HpsTransactionType
     public unowned let device: GMSDeviceInterface
-    
+
     internal init(transactionType: HpsTransactionType, device: GMSDeviceInterface) {
         self.transactionType = transactionType
         self.device = device
         super.init()
     }
-    
+
     public func execute() {
-        device.processTransactionWithRequest(self, withTransactionType: self.transactionType)
+        device.processTransactionWithRequest(self, withTransactionType: transactionType)
     }
 
     public func buildRequest() -> Transaction? {
         return nil
     }
 
-    public func mapResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
+    public func mapResponse(_: HpsTerminalResponse, _: TransactionResult, _: TransactionResponse?) -> HpsTerminalResponse {
         return HpsTerminalResponse()
     }
 }
@@ -37,7 +37,7 @@ public class GMSBuilderModel: NSObject {
     public let creditCard: HpsCreditCard?
     public let clientTransactionId: String?
     public let reason: ReversalReasonCode?
-    
+
     init(
         transactionType: HpsTransactionType,
         amount: NSDecimalNumber? = nil,
@@ -55,21 +55,21 @@ public class GMSBuilderModel: NSObject {
         self.transactionId = transactionId
         self.creditCard = creditCard
         self.clientTransactionId = clientTransactionId
-        self.reason = reasonPointer.flatMap { ReversalReasonCode(rawValue: $0.intValue) }
+        reason = reasonPointer.flatMap { ReversalReasonCode(rawValue: $0.intValue) }
     }
-    
+
     public var reasonPointer: NSNumber? {
         reason.flatMap {
             NSNumber(value: $0.rawValue)
         }
     }
-    
+
     // MARK: Wrappers
-    
+
     public static func creditAuthModel(
         amount: NSDecimalNumber,
         gratuity: NSDecimalNumber?,
-        referenceNumber: String?,
+        referenceNumber _: String?,
         creditCard: HpsCreditCard?
     ) -> GMSBuilderModel {
         .init(
@@ -79,7 +79,7 @@ public class GMSBuilderModel: NSObject {
             creditCard: creditCard
         )
     }
-    
+
     public static func creditReturnModel(
         amount: NSDecimalNumber,
         referenceNumber: String?
@@ -90,7 +90,7 @@ public class GMSBuilderModel: NSObject {
             referenceNumber: referenceNumber
         )
     }
-    
+
     public static func creditReversalModel(
         amount: NSDecimalNumber,
         clientTransactionId: String?,
@@ -103,11 +103,11 @@ public class GMSBuilderModel: NSObject {
             reasonPointer: NSNumber(value: reason.rawValue)
         )
     }
-    
+
     public static func creditSaleModel(
         amount: NSDecimalNumber,
         gratuity: NSDecimalNumber?,
-        referenceNumber: String?
+        referenceNumber _: String?
     ) -> GMSBuilderModel {
         .init(
             transactionType: .creditSale,
@@ -119,8 +119,8 @@ public class GMSBuilderModel: NSObject {
 
 // MARK: - Factory
 
-extension GMSBaseBuilder {
-    @objc public static func builder(
+public extension GMSBaseBuilder {
+    @objc static func builder(
         device: GMSDeviceInterface,
         model: GMSBuilderModel
     ) -> GMSBaseBuilder? {
@@ -152,7 +152,7 @@ extension GMSBaseBuilder {
                     return nil
                 }
             }
-        
+
         switch builder {
         case let builderAuth as GMSCreditAuthBuilder:
             builderAuth.amount = model.amount
@@ -173,7 +173,7 @@ extension GMSBaseBuilder {
         default:
             return nil
         }
-        
+
         return builder
     }
 }

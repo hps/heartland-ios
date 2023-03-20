@@ -18,7 +18,7 @@
     config.licenseID = @"145801";
     config.siteID = @"145898";
     config.deviceID = @"90916202";
-    config.ipAddress = @"192.168.4.125";
+    config.ipAddress = @"192.168.1.213";
     config.port = @"8081";
     config.connectionMode = HpsConnectionModes_TCP_IP;
     HpsUpaDevice * device = [[HpsUpaDevice alloc] initWithConfig:config];
@@ -150,7 +150,7 @@
     XCTestExpectation *expectation = [self expectationWithDescription:@"test_UPA_EOD"];
     
     HpsUpaDevice *device = [self setupDevice];
-    [device processEndOfDay:^(id<IHPSDeviceResponse> payload, NSError *error) {
+    [device processEndOfDayWithEcrId:@"12" requestId:@"123" response:^(id<IHPSDeviceResponse> payload, NSError *error) {
         HpsUpaResponse* response = (HpsUpaResponse*)payload;
         XCTAssertNil(error);
         XCTAssertNotNil(response);

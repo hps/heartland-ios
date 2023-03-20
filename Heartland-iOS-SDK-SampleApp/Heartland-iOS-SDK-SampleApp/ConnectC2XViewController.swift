@@ -2,17 +2,16 @@
 //  ConnectC2XViewController.swift
 //
 
-import Foundation
-import UIKit
-import Heartland_iOS_SDK
 import CoreBluetooth
+import Foundation
+import Heartland_iOS_SDK
+import UIKit
 
 class ConnectC2XViewController: UIViewController {
-    
     var device: HpsC2xDevice?
     var paxDevice: HpsPaxDevice?
-    private let notificationCenter: NotificationCenter = NotificationCenter.default
-    
+    private let notificationCenter: NotificationCenter = .default
+
     @IBOutlet var connectionLabel: UILabel!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var scanButtonStackView: UIStackView!
@@ -20,27 +19,25 @@ class ConnectC2XViewController: UIViewController {
     
     
     @IBAction func scanButtonPressed() {
-        
         scanButtonReference.isEnabled = false
         let timeout = 120
 
         let config = HpsConnectionConfig()
         config.username = ""
         config.password = ""
-        config.siteID = "";
+        config.siteID = ""
         config.deviceID = ""
         config.licenseID = ""
         config.developerID = ""
         config.versionNumber = ""
         config.timeout = timeout
 
-        self.device = HpsC2xDevice(config: config)
-        self.device?.deviceDelegate = self
-        self.device?.scan()
-        self.activityIndicator.isHidden = false
-        
+        device = HpsC2xDevice(config: config)
+        device?.deviceDelegate = self
+        device?.scan()
+        activityIndicator.isHidden = false
     }
-    
+
     func testPaxDeviceManual() {
         let timeout = 120
 
@@ -49,7 +46,7 @@ class ConnectC2XViewController: UIViewController {
         config.port = ""
         config.username = ""
         config.password = ""
-        config.siteID = "";
+        config.siteID = ""
         config.deviceID = ""
         config.licenseID = ""
         config.developerID = ""
@@ -57,15 +54,14 @@ class ConnectC2XViewController: UIViewController {
         config.connectionMode = 1
         config.timeout = timeout
 
-        self.paxDevice = HpsPaxDevice(config: config)
+        paxDevice = HpsPaxDevice(config: config)
 
-        let builder = HpsPaxCreditSaleBuilder(device: self.paxDevice)
+        let builder = HpsPaxCreditSaleBuilder(device: paxDevice)
         builder?.amount = 11.0
         builder?.referenceNumber = 10
         builder?.allowDuplicates = false
 
-
-        builder?.execute({ response, error in
+        builder?.execute { response, error in
 
             if let error = error {
                 print("Error: \(error)")
@@ -76,9 +72,9 @@ class ConnectC2XViewController: UIViewController {
                 let responseReturn = response.parseResponse()
                 print("Response Parse: \(responseReturn.debugDescription)")
             }
-        })
+        }
     }
-    
+
     func testPaxDeviceAuth() {
         let timeout = 120
 
@@ -95,7 +91,7 @@ class ConnectC2XViewController: UIViewController {
         config.connectionMode = 1
         config.timeout = timeout
 
-        self.paxDevice = HpsPaxDevice(config: config)
+        paxDevice = HpsPaxDevice(config: config)
 
         let card = HpsCreditCard()
         card.cardNumber = ""
@@ -107,7 +103,7 @@ class ConnectC2XViewController: UIViewController {
         address.address = ""
         address.zip = ""
 
-        let builder = HpsPaxCreditAuthBuilder(device: self.paxDevice)
+        let builder = HpsPaxCreditAuthBuilder(device: paxDevice)
         builder?.amount = 11.0
         builder?.referenceNumber = 1
         builder?.allowDuplicates = true
@@ -115,7 +111,7 @@ class ConnectC2XViewController: UIViewController {
         builder?.creditCard = card
         builder?.address = address
 
-        builder?.execute({ response, error in
+        builder?.execute { response, error in
 
             if let error = error {
                 print("Error: \(error)")
@@ -126,34 +122,33 @@ class ConnectC2XViewController: UIViewController {
                 let responseReturn = response.parseResponse()
                 print("Response Parse: \(responseReturn.debugDescription)")
             }
-        })
+        }
     }
 }
 
 extension ConnectC2XViewController: HpsC2xDeviceDelegate {
     func onConnected() {
-        self.connectionLabel.text = "Connected"
+        connectionLabel.text = "Connected"
         scanButtonReference.isEnabled = true
-        
-        let selectedDevice:[String: HpsC2xDevice?] = ["selectedDevice": self.device]
+
+        let selectedDevice: [String: HpsC2xDevice?] = ["selectedDevice": device]
         notificationCenter.post(name: Notification.Name(Constants.selectedDeviceNotification),
                                 object: nil, userInfo: selectedDevice)
     }
-    
+
     func onDisconnected() {
-        self.connectionLabel.text = "Disconnected"
+        connectionLabel.text = "Disconnected"
         scanButtonReference.isEnabled = true
     }
-    
-    func onError(_ deviceError: NSError) {
-        self.connectionLabel.text = "Error"
+
+    func onError(_: NSError) {
+        connectionLabel.text = "Error"
         scanButtonReference.isEnabled = true
     }
-    
+
     func onBluetoothDeviceList(_ peripherals: NSMutableArray) {
-        
         let alertController = UIAlertController(title: "Devices", message: "Please select a device to connect", preferredStyle: .actionSheet)
-        
+
         for peripheral in peripherals {
             if let peripheral = peripheral as? HpsTerminalInfo {
                 let action = UIAlertAction(title: peripheral.name, style: .default) { [weak self] _ in
@@ -162,7 +157,7 @@ extension ConnectC2XViewController: HpsC2xDeviceDelegate {
                 alertController.addAction(action)
             }
         }
-        
+
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { [weak self] _ in
             self?.scanButtonReference.isEnabled = true
         }
@@ -172,17 +167,17 @@ extension ConnectC2XViewController: HpsC2xDeviceDelegate {
             alertController.popoverPresentationController?.sourceRect = scanButtonStackView.bounds
             alertController.popoverPresentationController?.permittedArrowDirections = .down
         }
-        self.present(alertController, animated: true)
-        
-        self.activityIndicator.isHidden = true
+        present(alertController, animated: true)
+
+        activityIndicator.isHidden = true
     }
 }
 
 // MARK: - IDIOM
 
 private extension ConnectC2XViewController {
-    enum UIUserInterfaceIdiom : Int {
+    enum UIUserInterfaceIdiom: Int {
         case phone // iPhone and iPod touch style UI
-        case pad   // iPad style UI (also includes macOS Catalyst)
+        case pad // iPad style UI (also includes macOS Catalyst)
     }
 }

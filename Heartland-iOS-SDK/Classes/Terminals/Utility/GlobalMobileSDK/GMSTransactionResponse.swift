@@ -10,7 +10,7 @@ public class GMSTransactionResponse: NSObject {
     var approvedAmount: Decimal?
     var transactionDescription: String
     var transactionType: HpsTransactionType?
-    
+
     init(transactionResult: TransactionResult?, transactionId: String, gatewayTransactionId: String?, gatewayResponseText: String?, approvedAmount: Decimal?, transactionDescription: String) throws {
         self.transactionResult = transactionResult
         self.transactionId = transactionId
@@ -19,28 +19,28 @@ public class GMSTransactionResponse: NSObject {
         self.approvedAmount = approvedAmount
         self.transactionDescription = transactionDescription
     }
-    
+
     init(fromAuthResponse authResponse: AuthResponse) {
-        self.transactionResult = authResponse.transactionResult
-        self.transactionId = authResponse.transactionId
-        self.gatewayTransactionId = authResponse.gatewayTransactionId
-        self.gatewayResponseText = authResponse.gatewayResponseText
+        transactionResult = authResponse.transactionResult
+        transactionId = authResponse.transactionId
+        gatewayTransactionId = authResponse.gatewayTransactionId
+        gatewayResponseText = authResponse.gatewayResponseText
         if let approvedAmount = authResponse.approvedAmount {
             self.approvedAmount = Decimal(approvedAmount)
         }
-        self.transactionDescription = authResponse.transactionDescription
-        self.transactionType = .creditAuth
+        transactionDescription = authResponse.transactionDescription
+        transactionType = .creditAuth
     }
-    
+
     init(fromSaleResponse saleResponse: SaleResponse) {
-        self.transactionResult = saleResponse.transactionResult
-        self.transactionId = saleResponse.transactionId
-        self.gatewayTransactionId = saleResponse.gatewayTransactionId
-        self.gatewayResponseText = saleResponse.gatewayResponseText
+        transactionResult = saleResponse.transactionResult
+        transactionId = saleResponse.transactionId
+        gatewayTransactionId = saleResponse.gatewayTransactionId
+        gatewayResponseText = saleResponse.gatewayResponseText
         if let approvedAmount = saleResponse.approvedAmount {
             self.approvedAmount = Decimal(approvedAmount)
         }
-        self.transactionDescription = saleResponse.transactionDescription
-        self.transactionType = .creditSale
+        transactionDescription = saleResponse.transactionDescription
+        transactionType = .creditSale
     }
 }

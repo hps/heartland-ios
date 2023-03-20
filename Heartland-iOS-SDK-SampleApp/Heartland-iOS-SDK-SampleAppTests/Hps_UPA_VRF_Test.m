@@ -716,7 +716,7 @@
     XCTestExpectation *expectation = [self expectationWithDescription:@"test_UPA_EOD"];
     
     HpsUpaDevice *device = [self setupDevice];
-    [device processEndOfDay:^(id<IHPSDeviceResponse> payload, NSError *error) {
+    [device processEndOfDayWithEcrId:@"12" requestId:@"123" response:^(id<IHPSDeviceResponse> payload, NSError *error) {
         HpsUpaResponse* response = (HpsUpaResponse*)payload;
         XCTAssertNil(error);
         XCTAssertNotNil(response);

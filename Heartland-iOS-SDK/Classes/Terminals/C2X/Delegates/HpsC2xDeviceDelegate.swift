@@ -1,5 +1,4 @@
 import Foundation
 
 @objc
-public protocol HpsC2xDeviceDelegate : GMSDeviceDelegate {
-}
+public protocol HpsC2xDeviceDelegate: GMSDeviceDelegate {}

@@ -58,7 +58,34 @@
         [expectation fulfill];
     }];
     
-    [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
+    [self waitForExpectationsWithTimeout:600.0 handler:^(NSError *error) {
+        if(error) XCTFail(@"Request Timed out");
+    }];
+}
+
+- (void) test_UPA_Sale_HSAFSA
+{
+    XCTestExpectation *expectation = [self expectationWithDescription:@"test_UPA_Sale"];
+    
+    HpsUpaDevice *device = [self setupDevice];
+    HpsUpaSaleBuilder* builder = [[HpsUpaSaleBuilder alloc] initWithDevice:device];
+    builder.ecrId = @"3";
+    builder.amount = [[NSDecimalNumber alloc] initWithDouble:5.99];
+    builder.cardIsHSAFSA = YES;
+    builder.prescriptionAmount = [[NSDecimalNumber alloc] initWithDouble:5.99];
+
+    [builder execute:^(HpsUpaResponse * response, NSError * error) {
+        XCTAssertNil(error);
+        XCTAssertNotNil(response);
+        XCTAssertTrue([response.result isEqualToString:@"Success"]);
+        XCTAssertTrue([response.responseCode isEqualToString:@"00"]);
+        XCTAssertNotNil(response.transactionId);
+        XCTAssertNil(response.deviceResponseCode);
+        XCTAssertNil(response.deviceResponseMessage);
+        [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:600.0 handler:^(NSError *error) {
         if(error) XCTFail(@"Request Timed out");
     }];
 }

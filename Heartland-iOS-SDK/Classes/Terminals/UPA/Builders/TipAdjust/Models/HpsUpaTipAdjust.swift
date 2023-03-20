@@ -6,6 +6,7 @@
 import Foundation
 
 // MARK: - HpsUpaTipAdjust
+
 public struct HpsUpaTipAdjust: Codable {
     public let message: String?
     public let data: HpsUpaTipAdjustData?
@@ -17,6 +18,7 @@ public struct HpsUpaTipAdjust: Codable {
 }
 
 // MARK: - HpsUpaTipAdjustData
+
 public struct HpsUpaTipAdjustData: Codable {
     public let command, EcrId, requestId: String?
     public let data: HpsUpaTipAdjustItem?
@@ -30,6 +32,7 @@ public struct HpsUpaTipAdjustData: Codable {
 }
 
 // MARK: - HpsUpaTipAdjustItem
+
 public struct HpsUpaTipAdjustItem: Codable {
     public let params: HpsUpaTipAdjustParams?
     public let transaction: HpsUpaTipAdjustTransaction?
@@ -41,6 +44,7 @@ public struct HpsUpaTipAdjustItem: Codable {
 }
 
 // MARK: - HpsUpaTipAdjustParams
+
 public struct HpsUpaTipAdjustParams: Codable {
     public let clerkId: String?
     public let directMktInvoiceNbr: String?
@@ -56,6 +60,7 @@ public struct HpsUpaTipAdjustParams: Codable {
 }
 
 // MARK: - HpsUpaTipAdjustTransaction
+
 public struct HpsUpaTipAdjustTransaction: Codable {
     public let tipAmount, tranNo, invoiceNbr: String?
 

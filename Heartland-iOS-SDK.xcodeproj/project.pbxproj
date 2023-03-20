@@ -8,10 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		143A4379298AB2980027BC3F /* String+ProjectName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A4378298AB2980027BC3F /* String+ProjectName.swift */; };
+		14B86F0E29B7AB7F00657AF3 /* HpsAutoSubstantiation.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B86F0D29B7AB7F00657AF3 /* HpsAutoSubstantiation.m */; };
+		14B86F1029B7BCB400657AF3 /* HpsAutoSubstantiation+toAutoSubstantiation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B86F0F29B7BCB400657AF3 /* HpsAutoSubstantiation+toAutoSubstantiation.swift */; };
+		14B86F1129B7C47200657AF3 /* HpsAutoSubstantiation.h in Headers */ = {isa = PBXBuildFile; fileRef = 14B86F0C29B7AB6100657AF3 /* HpsAutoSubstantiation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD2409302991688C00597A23 /* HpsUpaStartCardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD24092F2991688C00597A23 /* HpsUpaStartCardResponse.swift */; };
+		DD426BFB299EC7F200DBFAC5 /* HpsUpaSAFTransactionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD426BFA299EC7F200DBFAC5 /* HpsUpaSAFTransactionBuilder.swift */; };
+		DD426BFE299EC92300DBFAC5 /* HpsUpaSendSaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD426BFD299EC92300DBFAC5 /* HpsUpaSendSaf.swift */; };
+		DD426C03299ED3F000DBFAC5 /* HpsUpaResponsePayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD426C02299ED3F000DBFAC5 /* HpsUpaResponsePayload.swift */; };
+		DD426C05299EDE3500DBFAC5 /* HpsUpaSendSafResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD426C04299EDE3500DBFAC5 /* HpsUpaSendSafResponse.swift */; };
+		DD426C07299EDF2300DBFAC5 /* HpsUpaCommandPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD426C06299EDF2300DBFAC5 /* HpsUpaCommandPayload.swift */; };
 		DD49DDAF296DD91300EBD526 /* HpsUpaLineItemDisplayBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD49DDAE296DD91200EBD526 /* HpsUpaLineItemDisplayBuilder.swift */; };
 		DD49DDB2296DD9A700EBD526 /* HpsUpaLineItemDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD49DDB1296DD9A700EBD526 /* HpsUpaLineItemDisplay.swift */; };
 		DD49DDB729787F6C00EBD526 /* HpsUpaTipAdjustBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD49DDB629787F6C00EBD526 /* HpsUpaTipAdjustBuilder.swift */; };
+		DD54085229AD105600D0D28F /* HpsUpaGetSaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD54085129AD105600D0D28F /* HpsUpaGetSaf.swift */; };
 		DD6A4ED32937C05D008B8165 /* LICENCE.md in Resources */ = {isa = PBXBuildFile; fileRef = DD6A4ECE2937C05C008B8165 /* LICENCE.md */; };
 		DD6A4ED42937C05D008B8165 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DD6A4ECF2937C05C008B8165 /* README.md */; };
 		DD6A4ED52937C05D008B8165 /* XMLDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = DD6A4ED12937C05C008B8165 /* XMLDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -476,10 +485,19 @@
 
 /* Begin PBXFileReference section */
 		143A4378298AB2980027BC3F /* String+ProjectName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ProjectName.swift"; sourceTree = "<group>"; };
+		14B86F0C29B7AB6100657AF3 /* HpsAutoSubstantiation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsAutoSubstantiation.h; sourceTree = "<group>"; };
+		14B86F0D29B7AB7F00657AF3 /* HpsAutoSubstantiation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsAutoSubstantiation.m; sourceTree = "<group>"; };
+		14B86F0F29B7BCB400657AF3 /* HpsAutoSubstantiation+toAutoSubstantiation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HpsAutoSubstantiation+toAutoSubstantiation.swift"; sourceTree = "<group>"; };
 		DD24092F2991688C00597A23 /* HpsUpaStartCardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaStartCardResponse.swift; sourceTree = "<group>"; };
+		DD426BFA299EC7F200DBFAC5 /* HpsUpaSAFTransactionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaSAFTransactionBuilder.swift; sourceTree = "<group>"; };
+		DD426BFD299EC92300DBFAC5 /* HpsUpaSendSaf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaSendSaf.swift; sourceTree = "<group>"; };
+		DD426C02299ED3F000DBFAC5 /* HpsUpaResponsePayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaResponsePayload.swift; sourceTree = "<group>"; };
+		DD426C04299EDE3500DBFAC5 /* HpsUpaSendSafResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaSendSafResponse.swift; sourceTree = "<group>"; };
+		DD426C06299EDF2300DBFAC5 /* HpsUpaCommandPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaCommandPayload.swift; sourceTree = "<group>"; };
 		DD49DDAE296DD91200EBD526 /* HpsUpaLineItemDisplayBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaLineItemDisplayBuilder.swift; sourceTree = "<group>"; };
 		DD49DDB1296DD9A700EBD526 /* HpsUpaLineItemDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaLineItemDisplay.swift; sourceTree = "<group>"; };
 		DD49DDB629787F6C00EBD526 /* HpsUpaTipAdjustBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaTipAdjustBuilder.swift; sourceTree = "<group>"; };
+		DD54085129AD105600D0D28F /* HpsUpaGetSaf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaGetSaf.swift; sourceTree = "<group>"; };
 		DD6A4ECE2937C05C008B8165 /* LICENCE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENCE.md; sourceTree = "<group>"; };
 		DD6A4ECF2937C05C008B8165 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DD6A4ED12937C05C008B8165 /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLDictionary.h; sourceTree = "<group>"; };
@@ -946,6 +964,25 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		DD426BF9299EC7CE00DBFAC5 /* StoreAndForward */ = {
+			isa = PBXGroup;
+			children = (
+				DD426BFC299EC8E100DBFAC5 /* Models */,
+				DD426BFA299EC7F200DBFAC5 /* HpsUpaSAFTransactionBuilder.swift */,
+			);
+			path = StoreAndForward;
+			sourceTree = "<group>";
+		};
+		DD426BFC299EC8E100DBFAC5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DD54085129AD105600D0D28F /* HpsUpaGetSaf.swift */,
+				DD426BFD299EC92300DBFAC5 /* HpsUpaSendSaf.swift */,
+				DD426C04299EDE3500DBFAC5 /* HpsUpaSendSafResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		DD49DDAD296DD8E900EBD526 /* LineItemDisplay */ = {
 			isa = PBXGroup;
 			children = (
@@ -1111,13 +1148,13 @@
 		DDFF33532937AF4200C2D1D1 /* UPA */ = {
 			isa = PBXGroup;
 			children = (
-				DDFF33542937AF4200C2D1D1 /* HpsUpaDevice.h */,
-				DDFF33552937AF4200C2D1D1 /* Builders */,
-				DDFF33662937AF4200C2D1D1 /* UpaEnums.m */,
+				DDFF33772937AF4200C2D1D1 /* Interfaces */,
 				DDFF33672937AF4200C2D1D1 /* Models */,
+				DDFF33552937AF4200C2D1D1 /* Builders */,
+				DDFF33542937AF4200C2D1D1 /* HpsUpaDevice.h */,
+				DDFF33662937AF4200C2D1D1 /* UpaEnums.m */,
 				DDFF33752937AF4200C2D1D1 /* HpsUpaDevice.m */,
 				DDFF33762937AF4200C2D1D1 /* UpaEnums.h */,
-				DDFF33772937AF4200C2D1D1 /* Interfaces */,
 			);
 			path = UPA;
 			sourceTree = "<group>";
@@ -1125,6 +1162,7 @@
 		DDFF33552937AF4200C2D1D1 /* Builders */ = {
 			isa = PBXGroup;
 			children = (
+				DD426BF9299EC7CE00DBFAC5 /* StoreAndForward */,
 				DD49DDB529787F5100EBD526 /* TipAdjust */,
 				DD49DDAD296DD8E900EBD526 /* LineItemDisplay */,
 				DD8CECF3294CC0C80006908F /* StartCardTransaction */,
@@ -1164,6 +1202,8 @@
 				DDFF33722937AF4200C2D1D1 /* HpsUpaResponse.h */,
 				DDFF33732937AF4200C2D1D1 /* HpsUpaRequest.h */,
 				DDFF33742937AF4200C2D1D1 /* HpsUpaData.m */,
+				DD426C02299ED3F000DBFAC5 /* HpsUpaResponsePayload.swift */,
+				DD426C06299EDF2300DBFAC5 /* HpsUpaCommandPayload.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1633,6 +1673,9 @@
 				DDFF34CC2937AF4200C2D1D1 /* HpsEncryptionData.m */,
 				DDFF34CD2937AF4200C2D1D1 /* HpsCardHolderData.h */,
 				DDFF34CE2937AF4200C2D1D1 /* HpsHeader.m */,
+				14B86F0C29B7AB6100657AF3 /* HpsAutoSubstantiation.h */,
+				14B86F0D29B7AB7F00657AF3 /* HpsAutoSubstantiation.m */,
+				14B86F0F29B7BCB400657AF3 /* HpsAutoSubstantiation+toAutoSubstantiation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2002,6 +2045,7 @@
 				DDFF36182937AF4400C2D1D1 /* HpsHpaHeartBeatResponse.h in Headers */,
 				DDFF366E2937AF4400C2D1D1 /* HpsTransaction.h in Headers */,
 				DDFF35A42937AF4300C2D1D1 /* HpsPaxExtDataSubGroup.h in Headers */,
+				14B86F1129B7C47200657AF3 /* HpsAutoSubstantiation.h in Headers */,
 				DDFF36BF2937AF4400C2D1D1 /* hps.h in Headers */,
 				DDFF37152937BAA400C2D1D1 /* Heartland-iOS-SDK-umbrella.h in Headers */,
 			);
@@ -2098,6 +2142,7 @@
 				DDFF37112937B6FD00C2D1D1 /* GMSTransactionDelegate.swift in Sources */,
 				DDFF35DC2937AF4300C2D1D1 /* HpsHpaEBTBalanceBuilder.m in Sources */,
 				DDFF35942937AF4300C2D1D1 /* HpsPaxAccountResponse.m in Sources */,
+				DD426BFB299EC7F200DBFAC5 /* HpsUpaSAFTransactionBuilder.swift in Sources */,
 				DDFF361E2937AF4400C2D1D1 /* HpaEnums.m in Sources */,
 				DDFF36B22937AF4400C2D1D1 /* HpsRestGateway.m in Sources */,
 				DDFF368F2937AF4400C2D1D1 /* HpsServiceContainer.m in Sources */,
@@ -2144,6 +2189,7 @@
 				DDFF36B92937AF4400C2D1D1 /* NSData+SM_EncryptionHelper.m in Sources */,
 				DDFF36252937AF4400C2D1D1 /* HpsWiseCubeCreditReturnBuilder.swift in Sources */,
 				DDFF36122937AF4400C2D1D1 /* HpsHpaEodResponse.m in Sources */,
+				14B86F0E29B7AB7F00657AF3 /* HpsAutoSubstantiation.m in Sources */,
 				DDFF35862937AF4300C2D1D1 /* HpsPaxAmountRequest.m in Sources */,
 				DDFF35892937AF4300C2D1D1 /* HpsPaxDebitResponse.m in Sources */,
 				DDFF37022937B6FC00C2D1D1 /* HpsTransactionType.swift in Sources */,
@@ -2151,6 +2197,7 @@
 				DDFF36AB2937AF4400C2D1D1 /* HpsPayrollEntity.m in Sources */,
 				DDFF37032937B6FC00C2D1D1 /* GMSRequestHelper.swift in Sources */,
 				DD49DDAF296DD91300EBD526 /* HpsUpaLineItemDisplayBuilder.swift in Sources */,
+				DD54085229AD105600D0D28F /* HpsUpaGetSaf.swift in Sources */,
 				DDFF361F2937AF4400C2D1D1 /* HpsHpaTcpInterface.m in Sources */,
 				DDFF36A12937AF4400C2D1D1 /* HpsPayrollEncoder.m in Sources */,
 				DDFF35CF2937AF4300C2D1D1 /* HpsHpaSafBuilder.m in Sources */,
@@ -2222,6 +2269,7 @@
 				DDFF369E2937AF4400C2D1D1 /* HpsEnum.m in Sources */,
 				DDFF360B2937AF4400C2D1D1 /* HpsLastResponse.m in Sources */,
 				DDFF36C12937AF4400C2D1D1 /* HpsGatewayService.m in Sources */,
+				DD426C05299EDE3500DBFAC5 /* HpsUpaSendSafResponse.swift in Sources */,
 				DDFF357A2937AF4300C2D1D1 /* HpsPaxCreditAuthBuilder.m in Sources */,
 				DDFF35782937AF4300C2D1D1 /* HpsPaxDebitSaleBuilder.m in Sources */,
 				DDFF366D2937AF4400C2D1D1 /* HpsCardEntry.m in Sources */,
@@ -2239,7 +2287,9 @@
 				DDFF35382937AF4300C2D1D1 /* UpaEnums.m in Sources */,
 				DDFF35C82937AF4300C2D1D1 /* HpsHpaCreditVerifyBuilder.m in Sources */,
 				DDFF352D2937AF4300C2D1D1 /* HpsUpaAuthBuilder.m in Sources */,
+				DD426C03299ED3F000DBFAC5 /* HpsUpaResponsePayload.swift in Sources */,
 				DDFF355F2937AF4300C2D1D1 /* HpsDeviceProtocols.m in Sources */,
+				DD426C07299EDF2300DBFAC5 /* HpsUpaCommandPayload.swift in Sources */,
 				DDFF36132937AF4400C2D1D1 /* CardSummaryRecord.m in Sources */,
 				DDFF35C52937AF4300C2D1D1 /* HpsHpaCreditAuthBuilder.m in Sources */,
 				DDFF36842937AF4400C2D1D1 /* HpsHeader.m in Sources */,
@@ -2249,6 +2299,7 @@
 				DDFF36602937AF4400C2D1D1 /* HpsLoginResponse.m in Sources */,
 				DDFF35642937AF4300C2D1D1 /* HpsPaxCreditAdjustBuilder.m in Sources */,
 				DDFF353E2937AF4300C2D1D1 /* HpsUpaResponse.m in Sources */,
+				14B86F1029B7BCB400657AF3 /* HpsAutoSubstantiation+toAutoSubstantiation.swift in Sources */,
 				DDFF36FF2937B6FC00C2D1D1 /* GMSError.swift in Sources */,
 				DDFF35542937AF4300C2D1D1 /* HpsC2xBaseBuilder.swift in Sources */,
 				DDFF35C22937AF4300C2D1D1 /* HpsConnectionConfig.m in Sources */,
@@ -2288,6 +2339,7 @@
 				DDFF362A2937AF4400C2D1D1 /* HpsWiseCubeCreditAuthBuilder.swift in Sources */,
 				DDFF35F22937AF4300C2D1D1 /* HpsHpaBatchResponse.m in Sources */,
 				DDFF35EE2937AF4300C2D1D1 /* HpsHpaDownloadBuilder.m in Sources */,
+				DD426BFE299EC92300DBFAC5 /* HpsUpaSendSaf.swift in Sources */,
 				DDFF357D2937AF4300C2D1D1 /* HpsPaxDebitVoidBuilder.m in Sources */,
 				DDFF362D2937AF4400C2D1D1 /* HpsTerminalEnums.m in Sources */,
 				DDFF35BB2937AF4300C2D1D1 /* HpsPaxTcpInterface.m in Sources */,

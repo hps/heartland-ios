@@ -1,9 +1,7 @@
 import Foundation
 
 @objc
-public protocol IWiseCubeDeviceInterface : GMSDeviceInterface {
-}
+public protocol IWiseCubeDeviceInterface: GMSDeviceInterface {}
 
 @objcMembers
-public class HpsWiseCubeBaseBuilder : GMSBaseBuilder {
-}
+public class HpsWiseCubeBaseBuilder: GMSBaseBuilder {}

@@ -13,12 +13,11 @@ public protocol GMSDeviceDelegate {
     func deviceDidUpdateScanState(to isScanning: Bool)
 }
 
-
 public protocol GMSDeviceFirmwareUpdateDelegate {
-    func onTerminalVersionDetails(info: [AnyHashable : Any]?)
+    func onTerminalVersionDetails(info: [AnyHashable: Any]?)
 
     func terminalOTAResult(resultType: TerminalOTAResult,
-                           info: [String : AnyObject]?,
+                           info: [String: AnyObject]?,
                            error: Error?)
 
     func listOfVersionsFor(results: [Any]?)

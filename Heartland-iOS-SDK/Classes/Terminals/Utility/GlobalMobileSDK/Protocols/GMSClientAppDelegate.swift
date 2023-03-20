@@ -8,7 +8,7 @@ public protocol GMSClientAppDelegate {
     func deviceDisconnected()
     func deviceFound(_ device: NSObject)
     func onStatus(_ status: HpsTransactionStatus)
-    func requestAIDSelection(_ applications: Array<AID>)
+    func requestAIDSelection(_ applications: [AID])
     func requestAmountConfirmation(_ amount: Decimal)
     func requestPostalCode(_ maskedPan: String, expiryDate: String, cardholderName: String)
     func requestSaFApproval()
@@ -18,10 +18,10 @@ public protocol GMSClientAppDelegate {
 }
 
 public protocol GMSClientTerminalOTAManagerDelegate {
-    func terminalVersionDetails(info: [AnyHashable : Any]?)
+    func terminalVersionDetails(info: [AnyHashable: Any]?)
 
     func terminalOTAResult(resultType: GlobalMobileSDK.TerminalOTAResult,
-                           info: [String : AnyObject]?, error: Error?)
+                           info: [String: AnyObject]?, error: Error?)
 
     func listOfVersionsFor(type: GlobalMobileSDK.TerminalOTAUpdateType, results: [Any]?)
 

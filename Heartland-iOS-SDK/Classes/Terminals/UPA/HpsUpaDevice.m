@@ -308,14 +308,14 @@
 }
 #pragma mark -
 #pragma mark EOD
--(void)processEndOfDay:(void(^)(HpsUpaResponse*, NSError*))responseBlock
+-(void)processEndOfDayWithEcrId:(NSString*)ecrId requestId:(NSString*)requestId response:(void(^)(HpsUpaResponse*, NSError*))responseBlock
 {
     HpsUpaRequest* request = [[HpsUpaRequest alloc] init];
     request.message = @"MSG";
     request.data = [[HpsUpaCommandData alloc] init];
     request.data.command = UPA_MSG_ID_toString[ UPA_MSG_ID_EXECUTE_EOD ];
-    request.data.EcrId = @"13";
-    request.data.requestId = @"123";
+    request.data.EcrId = ecrId;
+    request.data.requestId = requestId;
 
     id<IHPSDeviceMessage> data = [HpsTerminalUtilities BuildRequest:request.JSONString withFormat:format];
 
