@@ -1,8 +1,7 @@
 import Foundation
-import GlobalMobileSDK
 
 @objcMembers
-public class HpsWiseCubeCreditSaleBuilder : HpsWiseCubeBaseBuilder, GMSCreditSaleBuilder {
+public class HpsWiseCubeCreditSaleBuilder: HpsWiseCubeBaseBuilder, GMSCreditSaleBuilder {
     public var clientTransactionId: String?
     public var amount: NSDecimalNumber?
     public var referenceNumber: String?
@@ -14,16 +13,17 @@ public class HpsWiseCubeCreditSaleBuilder : HpsWiseCubeBaseBuilder, GMSCreditSal
     public var address: HpsAddress?
     public var allowPartialAuth: NSNumber?
     public var cpcReq: NSNumber?
+    public var autoSubstantiation: HpsAutoSubstantiation?
     
     public init(device: HpsWiseCubeDevice) {
         super.init(transactionType: .creditSale, device: device)
     }
-    
-    public override func buildRequest() -> Transaction? {
+
+    override public func buildRequest() -> Transaction? {
         return GMSRequestHelper.buildCreditSaleRequest(builder: self)
     }
 
-    public override func mapResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
+    override public func mapResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
         return GMSResponseHelper.mapCreditSaleResponse(data, result, response)
     }
 }

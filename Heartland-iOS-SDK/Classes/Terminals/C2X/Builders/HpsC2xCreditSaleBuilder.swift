@@ -1,8 +1,7 @@
 import Foundation
-import GlobalMobileSDK
 
 @objcMembers
-public class HpsC2xCreditSaleBuilder : HpsC2xBaseBuilder, GMSCreditSaleBuilder {
+public class HpsC2xCreditSaleBuilder: HpsC2xBaseBuilder, GMSCreditSaleBuilder {
     public var clientTransactionId: String?
     public var amount: NSDecimalNumber?
     public var referenceNumber: String?
@@ -14,16 +13,17 @@ public class HpsC2xCreditSaleBuilder : HpsC2xBaseBuilder, GMSCreditSaleBuilder {
     public var address: HpsAddress?
     public var allowPartialAuth: NSNumber?
     public var cpcReq: NSNumber?
+    public var autoSubstantiation: HpsAutoSubstantiation?
     
     public init(device: HpsC2xDevice) {
         super.init(transactionType: .creditSale, device: device)
     }
-    
-    public override func buildRequest() -> Transaction? {
+
+    override public func buildRequest() -> Transaction? {
         return GMSRequestHelper.buildCreditSaleRequest(builder: self)
     }
 
-    public override func mapResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
+    override public func mapResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
         return GMSResponseHelper.mapCreditSaleResponse(data, result, response)
     }
 }

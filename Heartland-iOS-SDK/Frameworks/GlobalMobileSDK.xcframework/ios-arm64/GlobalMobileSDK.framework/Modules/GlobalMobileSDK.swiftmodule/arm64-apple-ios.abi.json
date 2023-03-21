@@ -8408,9 +8408,119 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "autoSubstantiation",
+            "printedName": "autoSubstantiation",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "GlobalMobileSDK.AutoSubstantiation?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AutoSubstantiation",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiation",
+                    "usr": "s:15GlobalMobileSDK18AutoSubstantiationV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK15AuthTransactionV18autoSubstantiationAA04AutoG0VSgvp",
+            "mangledName": "$s15GlobalMobileSDK15AuthTransactionV18autoSubstantiationAA04AutoG0VSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiation?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AutoSubstantiation",
+                        "printedName": "GlobalMobileSDK.AutoSubstantiation",
+                        "usr": "s:15GlobalMobileSDK18AutoSubstantiationV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15AuthTransactionV18autoSubstantiationAA04AutoG0VSgvg",
+                "mangledName": "$s15GlobalMobileSDK15AuthTransactionV18autoSubstantiationAA04AutoG0VSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiation?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AutoSubstantiation",
+                        "printedName": "GlobalMobileSDK.AutoSubstantiation",
+                        "usr": "s:15GlobalMobileSDK18AutoSubstantiationV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15AuthTransactionV18autoSubstantiationAA04AutoG0VSgvs",
+                "mangledName": "$s15GlobalMobileSDK15AuthTransactionV18autoSubstantiationAA04AutoG0VSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15AuthTransactionV18autoSubstantiationAA04AutoG0VSgvM",
+                "mangledName": "$s15GlobalMobileSDK15AuthTransactionV18autoSubstantiationAA04AutoG0VSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Function",
             "name": "auth",
-            "printedName": "auth(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:requestMultiUseToken:allowPartialAuth:cpcReq:)",
+            "printedName": "auth(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:requestMultiUseToken:allowPartialAuth:cpcReq:autoSubstantiation:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -8577,11 +8687,25 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "GlobalMobileSDK.AutoSubstantiation?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AutoSubstantiation",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiation",
+                    "usr": "s:15GlobalMobileSDK18AutoSubstantiationV"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH020requestMultiUseToken012allowPartialD06cpcReqACSSSg_SuSgA3rA03TaxM0OSgA3QS2bSgAVtFZ",
-            "mangledName": "$s15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH020requestMultiUseToken012allowPartialD06cpcReqACSSSg_SuSgA3rA03TaxM0OSgA3QS2bSgAVtFZ",
+            "usr": "s:15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH020requestMultiUseToken012allowPartialD06cpcReq18autoSubstantiationACSSSg_SuSgA3sA03TaxM0OSgA3RS2bSgAwA18AutoSubstantiationVSgtFZ",
+            "mangledName": "$s15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH020requestMultiUseToken012allowPartialD06cpcReq18autoSubstantiationACSSSg_SuSgA3sA03TaxM0OSgA3RS2bSgAwA18AutoSubstantiationVSgtFZ",
             "moduleName": "GlobalMobileSDK",
             "static": true,
             "declAttributes": [
@@ -8592,7 +8716,7 @@
           {
             "kind": "Function",
             "name": "auth",
-            "printedName": "auth(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:cardData:requestMultiUseToken:allowPartialAuth:cpcReq:)",
+            "printedName": "auth(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:cardData:requestMultiUseToken:allowPartialAuth:cpcReq:autoSubstantiation:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -8765,11 +8889,25 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "GlobalMobileSDK.AutoSubstantiation?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AutoSubstantiation",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiation",
+                    "usr": "s:15GlobalMobileSDK18AutoSubstantiationV"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData20requestMultiUseToken012allowPartialD06cpcReqACSSSg_SuSgA3sA03TaxM0OSgA3rA010ManualCardU0VS2bSgAYtFZ",
-            "mangledName": "$s15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData20requestMultiUseToken012allowPartialD06cpcReqACSSSg_SuSgA3sA03TaxM0OSgA3rA010ManualCardU0VS2bSgAYtFZ",
+            "usr": "s:15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData20requestMultiUseToken012allowPartialD06cpcReq18autoSubstantiationACSSSg_SuSgA3tA03TaxM0OSgA3sA010ManualCardU0VS2bSgAzA18AutoSubstantiationVSgtFZ",
+            "mangledName": "$s15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData20requestMultiUseToken012allowPartialD06cpcReq18autoSubstantiationACSSSg_SuSgA3tA03TaxM0OSgA3sA010ManualCardU0VS2bSgAzA18AutoSubstantiationVSgtFZ",
             "moduleName": "GlobalMobileSDK",
             "static": true,
             "declAttributes": [
@@ -8780,7 +8918,7 @@
           {
             "kind": "Function",
             "name": "auth",
-            "printedName": "auth(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:cardData:allowPartialAuth:cpcReq:)",
+            "printedName": "auth(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:cardData:allowPartialAuth:cpcReq:autoSubstantiation:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -8947,11 +9085,25 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "GlobalMobileSDK.AutoSubstantiation?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AutoSubstantiation",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiation",
+                    "usr": "s:15GlobalMobileSDK18AutoSubstantiationV"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData012allowPartialD06cpcReqACSSSg_SuSgA3rA03TaxM0OSgA3qA013TokenizedCardU0VSbSgAXtFZ",
-            "mangledName": "$s15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData012allowPartialD06cpcReqACSSSg_SuSgA3rA03TaxM0OSgA3qA013TokenizedCardU0VSbSgAXtFZ",
+            "usr": "s:15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData012allowPartialD06cpcReq18autoSubstantiationACSSSg_SuSgA3sA03TaxM0OSgA3rA013TokenizedCardU0VSbSgAyA18AutoSubstantiationVSgtFZ",
+            "mangledName": "$s15GlobalMobileSDK15AuthTransactionV4auth06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData012allowPartialD06cpcReq18autoSubstantiationACSSSg_SuSgA3sA03TaxM0OSgA3rA013TokenizedCardU0VSbSgAyA18AutoSubstantiationVSgtFZ",
             "moduleName": "GlobalMobileSDK",
             "static": true,
             "declAttributes": [
@@ -38289,9 +38441,119 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "autoSubstantiation",
+            "printedName": "autoSubstantiation",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "GlobalMobileSDK.AutoSubstantiation?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AutoSubstantiation",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiation",
+                    "usr": "s:15GlobalMobileSDK18AutoSubstantiationV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK15SaleTransactionV18autoSubstantiationAA04AutoG0VSgvp",
+            "mangledName": "$s15GlobalMobileSDK15SaleTransactionV18autoSubstantiationAA04AutoG0VSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiation?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AutoSubstantiation",
+                        "printedName": "GlobalMobileSDK.AutoSubstantiation",
+                        "usr": "s:15GlobalMobileSDK18AutoSubstantiationV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15SaleTransactionV18autoSubstantiationAA04AutoG0VSgvg",
+                "mangledName": "$s15GlobalMobileSDK15SaleTransactionV18autoSubstantiationAA04AutoG0VSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiation?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AutoSubstantiation",
+                        "printedName": "GlobalMobileSDK.AutoSubstantiation",
+                        "usr": "s:15GlobalMobileSDK18AutoSubstantiationV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15SaleTransactionV18autoSubstantiationAA04AutoG0VSgvs",
+                "mangledName": "$s15GlobalMobileSDK15SaleTransactionV18autoSubstantiationAA04AutoG0VSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK15SaleTransactionV18autoSubstantiationAA04AutoG0VSgvM",
+                "mangledName": "$s15GlobalMobileSDK15SaleTransactionV18autoSubstantiationAA04AutoG0VSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Function",
             "name": "sale",
-            "printedName": "sale(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:requestMultiUseToken:allowPartialAuth:cpcReq:)",
+            "printedName": "sale(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:requestMultiUseToken:allowPartialAuth:cpcReq:autoSubstantiation:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -38458,11 +38720,25 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "GlobalMobileSDK.AutoSubstantiation?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AutoSubstantiation",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiation",
+                    "usr": "s:15GlobalMobileSDK18AutoSubstantiationV"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH020requestMultiUseToken16allowPartialAuth6cpcReqACSSSg_SuSgA3rA03TaxM0OSgA3QS2bSgAVtFZ",
-            "mangledName": "$s15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH020requestMultiUseToken16allowPartialAuth6cpcReqACSSSg_SuSgA3rA03TaxM0OSgA3QS2bSgAVtFZ",
+            "usr": "s:15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH020requestMultiUseToken16allowPartialAuth6cpcReq18autoSubstantiationACSSSg_SuSgA3sA03TaxM0OSgA3RS2bSgAwA18AutoSubstantiationVSgtFZ",
+            "mangledName": "$s15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH020requestMultiUseToken16allowPartialAuth6cpcReq18autoSubstantiationACSSSg_SuSgA3sA03TaxM0OSgA3RS2bSgAwA18AutoSubstantiationVSgtFZ",
             "moduleName": "GlobalMobileSDK",
             "static": true,
             "declAttributes": [
@@ -38473,7 +38749,7 @@
           {
             "kind": "Function",
             "name": "sale",
-            "printedName": "sale(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:cardData:requestMultiUseToken:allowPartialAuth:cpcReq:)",
+            "printedName": "sale(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:cardData:requestMultiUseToken:allowPartialAuth:cpcReq:autoSubstantiation:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -38646,11 +38922,25 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "GlobalMobileSDK.AutoSubstantiation?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AutoSubstantiation",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiation",
+                    "usr": "s:15GlobalMobileSDK18AutoSubstantiationV"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData20requestMultiUseToken16allowPartialAuth6cpcReqACSSSg_SuSgA3sA03TaxM0OSgA3rA010ManualCardU0VS2bSgAYtFZ",
-            "mangledName": "$s15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData20requestMultiUseToken16allowPartialAuth6cpcReqACSSSg_SuSgA3sA03TaxM0OSgA3rA010ManualCardU0VS2bSgAYtFZ",
+            "usr": "s:15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData20requestMultiUseToken16allowPartialAuth6cpcReq18autoSubstantiationACSSSg_SuSgA3tA03TaxM0OSgA3sA010ManualCardU0VS2bSgAzA18AutoSubstantiationVSgtFZ",
+            "mangledName": "$s15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData20requestMultiUseToken16allowPartialAuth6cpcReq18autoSubstantiationACSSSg_SuSgA3tA03TaxM0OSgA3sA010ManualCardU0VS2bSgAzA18AutoSubstantiationVSgtFZ",
             "moduleName": "GlobalMobileSDK",
             "static": true,
             "declAttributes": [
@@ -38661,7 +38951,7 @@
           {
             "kind": "Function",
             "name": "sale",
-            "printedName": "sale(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:cardData:allowPartialAuth:cpcReq:)",
+            "printedName": "sale(clientTransactionId:total:tax:tip:surcharge:taxCategory:posReferenceNumber:invoiceNumber:operatingUserId:cardData:allowPartialAuth:cpcReq:autoSubstantiation:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -38828,11 +39118,25 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "GlobalMobileSDK.AutoSubstantiation?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AutoSubstantiation",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiation",
+                    "usr": "s:15GlobalMobileSDK18AutoSubstantiationV"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData16allowPartialAuth6cpcReqACSSSg_SuSgA3rA03TaxM0OSgA3qA013TokenizedCardU0VSbSgAXtFZ",
-            "mangledName": "$s15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData16allowPartialAuth6cpcReqACSSSg_SuSgA3rA03TaxM0OSgA3qA013TokenizedCardU0VSbSgAXtFZ",
+            "usr": "s:15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData16allowPartialAuth6cpcReq18autoSubstantiationACSSSg_SuSgA3sA03TaxM0OSgA3rA013TokenizedCardU0VSbSgAyA18AutoSubstantiationVSgtFZ",
+            "mangledName": "$s15GlobalMobileSDK15SaleTransactionV4sale06clientE2Id5total3tax3tip9surcharge0J8Category18posReferenceNumber07invoiceP0013operatingUserH08cardData16allowPartialAuth6cpcReq18autoSubstantiationACSSSg_SuSgA3sA03TaxM0OSgA3rA013TokenizedCardU0VSbSgAyA18AutoSubstantiationVSgtFZ",
             "moduleName": "GlobalMobileSDK",
             "static": true,
             "declAttributes": [
@@ -43579,6 +43883,925 @@
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "GlobalMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AutoSubstantiationType",
+        "printedName": "AutoSubstantiationType",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "TOTAL_HEALTHCARE_AMT",
+            "printedName": "TOTAL_HEALTHCARE_AMT",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(GlobalMobileSDK.AutoSubstantiationType.Type) -> GlobalMobileSDK.AutoSubstantiationType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AutoSubstantiationType",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiationType",
+                    "usr": "c:@M@GlobalMobileSDK@E@AutoSubstantiationType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiationType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AutoSubstantiationType",
+                        "printedName": "GlobalMobileSDK.AutoSubstantiationType",
+                        "usr": "c:@M@GlobalMobileSDK@E@AutoSubstantiationType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@GlobalMobileSDK@E@AutoSubstantiationType@AutoSubstantiationTypeTOTAL_HEALTHCARE_AMT",
+            "mangledName": "$s15GlobalMobileSDK22AutoSubstantiationTypeO20TOTAL_HEALTHCARE_AMTyA2CmF",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Var",
+            "name": "SUBTOTAL_PRESCRIPTION_AMT",
+            "printedName": "SUBTOTAL_PRESCRIPTION_AMT",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(GlobalMobileSDK.AutoSubstantiationType.Type) -> GlobalMobileSDK.AutoSubstantiationType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AutoSubstantiationType",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiationType",
+                    "usr": "c:@M@GlobalMobileSDK@E@AutoSubstantiationType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiationType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AutoSubstantiationType",
+                        "printedName": "GlobalMobileSDK.AutoSubstantiationType",
+                        "usr": "c:@M@GlobalMobileSDK@E@AutoSubstantiationType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@GlobalMobileSDK@E@AutoSubstantiationType@AutoSubstantiationTypeSUBTOTAL_PRESCRIPTION_AMT",
+            "mangledName": "$s15GlobalMobileSDK22AutoSubstantiationTypeO25SUBTOTAL_PRESCRIPTION_AMTyA2CmF",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 1
+          },
+          {
+            "kind": "Var",
+            "name": "SUBTOTAL_VISION__OPTICAL_AMT",
+            "printedName": "SUBTOTAL_VISION__OPTICAL_AMT",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(GlobalMobileSDK.AutoSubstantiationType.Type) -> GlobalMobileSDK.AutoSubstantiationType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AutoSubstantiationType",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiationType",
+                    "usr": "c:@M@GlobalMobileSDK@E@AutoSubstantiationType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiationType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AutoSubstantiationType",
+                        "printedName": "GlobalMobileSDK.AutoSubstantiationType",
+                        "usr": "c:@M@GlobalMobileSDK@E@AutoSubstantiationType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@GlobalMobileSDK@E@AutoSubstantiationType@AutoSubstantiationTypeSUBTOTAL_VISION__OPTICAL_AMT",
+            "mangledName": "$s15GlobalMobileSDK22AutoSubstantiationTypeO28SUBTOTAL_VISION__OPTICAL_AMTyA2CmF",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 2
+          },
+          {
+            "kind": "Var",
+            "name": "SUBTOTAL_CLINIC_OR_OTHER_AMT",
+            "printedName": "SUBTOTAL_CLINIC_OR_OTHER_AMT",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(GlobalMobileSDK.AutoSubstantiationType.Type) -> GlobalMobileSDK.AutoSubstantiationType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AutoSubstantiationType",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiationType",
+                    "usr": "c:@M@GlobalMobileSDK@E@AutoSubstantiationType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiationType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AutoSubstantiationType",
+                        "printedName": "GlobalMobileSDK.AutoSubstantiationType",
+                        "usr": "c:@M@GlobalMobileSDK@E@AutoSubstantiationType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@GlobalMobileSDK@E@AutoSubstantiationType@AutoSubstantiationTypeSUBTOTAL_CLINIC_OR_OTHER_AMT",
+            "mangledName": "$s15GlobalMobileSDK22AutoSubstantiationTypeO28SUBTOTAL_CLINIC_OR_OTHER_AMTyA2CmF",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 3
+          },
+          {
+            "kind": "Var",
+            "name": "SUBTOTAL_DENTAL_AMT",
+            "printedName": "SUBTOTAL_DENTAL_AMT",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(GlobalMobileSDK.AutoSubstantiationType.Type) -> GlobalMobileSDK.AutoSubstantiationType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AutoSubstantiationType",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiationType",
+                    "usr": "c:@M@GlobalMobileSDK@E@AutoSubstantiationType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiationType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AutoSubstantiationType",
+                        "printedName": "GlobalMobileSDK.AutoSubstantiationType",
+                        "usr": "c:@M@GlobalMobileSDK@E@AutoSubstantiationType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@GlobalMobileSDK@E@AutoSubstantiationType@AutoSubstantiationTypeSUBTOTAL_DENTAL_AMT",
+            "mangledName": "$s15GlobalMobileSDK22AutoSubstantiationTypeO19SUBTOTAL_DENTAL_AMTyA2CmF",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 4
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "GlobalMobileSDK.AutoSubstantiationType?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AutoSubstantiationType",
+                    "printedName": "GlobalMobileSDK.AutoSubstantiationType",
+                    "usr": "c:@M@GlobalMobileSDK@E@AutoSubstantiationType"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15GlobalMobileSDK22AutoSubstantiationTypeO8rawValueACSgSi_tcfc",
+            "mangledName": "$s15GlobalMobileSDK22AutoSubstantiationTypeO8rawValueACSgSi_tcfc",
+            "moduleName": "GlobalMobileSDK",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK22AutoSubstantiationTypeO8rawValueSivp",
+            "mangledName": "$s15GlobalMobileSDK22AutoSubstantiationTypeO8rawValueSivp",
+            "moduleName": "GlobalMobileSDK",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK22AutoSubstantiationTypeO8rawValueSivg",
+                "mangledName": "$s15GlobalMobileSDK22AutoSubstantiationTypeO8rawValueSivg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "c:@M@GlobalMobileSDK@E@AutoSubstantiationType",
+        "mangledName": "$s15GlobalMobileSDK22AutoSubstantiationTypeO",
+        "moduleName": "GlobalMobileSDK",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AutoSubstantiation",
+        "printedName": "AutoSubstantiation",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "realTimeSubstantiation",
+            "printedName": "realTimeSubstantiation",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK18AutoSubstantiationV08realTimeE0SbSgvp",
+            "mangledName": "$s15GlobalMobileSDK18AutoSubstantiationV08realTimeE0SbSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18AutoSubstantiationV08realTimeE0SbSgvg",
+                "mangledName": "$s15GlobalMobileSDK18AutoSubstantiationV08realTimeE0SbSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18AutoSubstantiationV08realTimeE0SbSgvs",
+                "mangledName": "$s15GlobalMobileSDK18AutoSubstantiationV08realTimeE0SbSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18AutoSubstantiationV08realTimeE0SbSgvM",
+                "mangledName": "$s15GlobalMobileSDK18AutoSubstantiationV08realTimeE0SbSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "merchantVerificationValue",
+            "printedName": "merchantVerificationValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK18AutoSubstantiationV25merchantVerificationValueSSSgvp",
+            "mangledName": "$s15GlobalMobileSDK18AutoSubstantiationV25merchantVerificationValueSSSgvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18AutoSubstantiationV25merchantVerificationValueSSSgvg",
+                "mangledName": "$s15GlobalMobileSDK18AutoSubstantiationV25merchantVerificationValueSSSgvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18AutoSubstantiationV25merchantVerificationValueSSSgvs",
+                "mangledName": "$s15GlobalMobileSDK18AutoSubstantiationV25merchantVerificationValueSSSgvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18AutoSubstantiationV25merchantVerificationValueSSSgvM",
+                "mangledName": "$s15GlobalMobileSDK18AutoSubstantiationV25merchantVerificationValueSSSgvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "amounts",
+            "printedName": "amounts",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15GlobalMobileSDK18AutoSubstantiationV7amountsSDyS2SGvp",
+            "mangledName": "$s15GlobalMobileSDK18AutoSubstantiationV7amountsSDyS2SGvp",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18AutoSubstantiationV7amountsSDyS2SGvg",
+                "mangledName": "$s15GlobalMobileSDK18AutoSubstantiationV7amountsSDyS2SGvg",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18AutoSubstantiationV7amountsSDyS2SGvs",
+                "mangledName": "$s15GlobalMobileSDK18AutoSubstantiationV7amountsSDyS2SGvs",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15GlobalMobileSDK18AutoSubstantiationV7amountsSDyS2SGvM",
+                "mangledName": "$s15GlobalMobileSDK18AutoSubstantiationV7amountsSDyS2SGvM",
+                "moduleName": "GlobalMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AutoSubstantiation",
+                "printedName": "GlobalMobileSDK.AutoSubstantiation",
+                "usr": "s:15GlobalMobileSDK18AutoSubstantiationV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15GlobalMobileSDK18AutoSubstantiationVACycfc",
+            "mangledName": "$s15GlobalMobileSDK18AutoSubstantiationVACycfc",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "isRealTimeSubstantiation",
+            "printedName": "isRealTimeSubstantiation()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15GlobalMobileSDK18AutoSubstantiationV010isRealTimeE0SbyF",
+            "mangledName": "$s15GlobalMobileSDK18AutoSubstantiationV010isRealTimeE0SbyF",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setVisionSubTotal",
+            "printedName": "setVisionSubTotal(value:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSDecimalNumber",
+                "printedName": "Foundation.NSDecimalNumber",
+                "usr": "c:objc(cs)NSDecimalNumber"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15GlobalMobileSDK18AutoSubstantiationV17setVisionSubTotal5valueySo15NSDecimalNumberC_tF",
+            "mangledName": "$s15GlobalMobileSDK18AutoSubstantiationV17setVisionSubTotal5valueySo15NSDecimalNumberC_tF",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "Mutating",
+              "AccessControl"
+            ],
+            "funcSelfKind": "Mutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setClinicSubTotal",
+            "printedName": "setClinicSubTotal(value:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSDecimalNumber",
+                "printedName": "Foundation.NSDecimalNumber",
+                "usr": "c:objc(cs)NSDecimalNumber"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15GlobalMobileSDK18AutoSubstantiationV17setClinicSubTotal5valueySo15NSDecimalNumberC_tF",
+            "mangledName": "$s15GlobalMobileSDK18AutoSubstantiationV17setClinicSubTotal5valueySo15NSDecimalNumberC_tF",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "Mutating",
+              "AccessControl"
+            ],
+            "funcSelfKind": "Mutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setDentalSubTotal",
+            "printedName": "setDentalSubTotal(value:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSDecimalNumber",
+                "printedName": "Foundation.NSDecimalNumber",
+                "usr": "c:objc(cs)NSDecimalNumber"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15GlobalMobileSDK18AutoSubstantiationV17setDentalSubTotal5valueySo15NSDecimalNumberC_tF",
+            "mangledName": "$s15GlobalMobileSDK18AutoSubstantiationV17setDentalSubTotal5valueySo15NSDecimalNumberC_tF",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "Mutating",
+              "AccessControl"
+            ],
+            "funcSelfKind": "Mutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setPrescriptionSubTotal",
+            "printedName": "setPrescriptionSubTotal(value:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSDecimalNumber",
+                "printedName": "Foundation.NSDecimalNumber",
+                "usr": "c:objc(cs)NSDecimalNumber"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15GlobalMobileSDK18AutoSubstantiationV23setPrescriptionSubTotal5valueySo15NSDecimalNumberC_tF",
+            "mangledName": "$s15GlobalMobileSDK18AutoSubstantiationV23setPrescriptionSubTotal5valueySo15NSDecimalNumberC_tF",
+            "moduleName": "GlobalMobileSDK",
+            "declAttributes": [
+              "Mutating",
+              "AccessControl"
+            ],
+            "funcSelfKind": "Mutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AutoSubstantiation",
+                "printedName": "GlobalMobileSDK.AutoSubstantiation",
+                "usr": "s:15GlobalMobileSDK18AutoSubstantiationV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15GlobalMobileSDK18AutoSubstantiationV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s15GlobalMobileSDK18AutoSubstantiationV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "GlobalMobileSDK",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15GlobalMobileSDK18AutoSubstantiationV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s15GlobalMobileSDK18AutoSubstantiationV6encode2toys7Encoder_p_tKF",
+            "moduleName": "GlobalMobileSDK",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:15GlobalMobileSDK18AutoSubstantiationV",
+        "mangledName": "$s15GlobalMobileSDK18AutoSubstantiationV",
+        "moduleName": "GlobalMobileSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
         ]
       },
       {
@@ -101102,6 +102325,76 @@
       "offset": 547,
       "length": 5,
       "value": "false"
+    },
+    {
+      "filePath": "\/Users\/renato.santos\/Documents\/HeartlandProjects\/VitalPOS\/posioslib\/GlobalMobileSDK\/GlobalMobileSDK\/GlobalMobileSDK\/AutoSubstantiation\/AutoSubstantiation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 155,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/renato.santos\/Documents\/HeartlandProjects\/VitalPOS\/posioslib\/GlobalMobileSDK\/GlobalMobileSDK\/GlobalMobileSDK\/AutoSubstantiation\/AutoSubstantiation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 194,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/renato.santos\/Documents\/HeartlandProjects\/VitalPOS\/posioslib\/GlobalMobileSDK\/GlobalMobileSDK\/GlobalMobileSDK\/AutoSubstantiation\/AutoSubstantiation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 236,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/renato.santos\/Documents\/HeartlandProjects\/VitalPOS\/posioslib\/GlobalMobileSDK\/GlobalMobileSDK\/GlobalMobileSDK\/AutoSubstantiation\/AutoSubstantiation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 278,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/renato.santos\/Documents\/HeartlandProjects\/VitalPOS\/posioslib\/GlobalMobileSDK\/GlobalMobileSDK\/GlobalMobileSDK\/AutoSubstantiation\/AutoSubstantiation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 311,
+      "length": 1,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/renato.santos\/Documents\/HeartlandProjects\/VitalPOS\/posioslib\/GlobalMobileSDK\/GlobalMobileSDK\/GlobalMobileSDK\/AutoSubstantiation\/AutoSubstantiation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 155,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/renato.santos\/Documents\/HeartlandProjects\/VitalPOS\/posioslib\/GlobalMobileSDK\/GlobalMobileSDK\/GlobalMobileSDK\/AutoSubstantiation\/AutoSubstantiation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 194,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/renato.santos\/Documents\/HeartlandProjects\/VitalPOS\/posioslib\/GlobalMobileSDK\/GlobalMobileSDK\/GlobalMobileSDK\/AutoSubstantiation\/AutoSubstantiation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 236,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/renato.santos\/Documents\/HeartlandProjects\/VitalPOS\/posioslib\/GlobalMobileSDK\/GlobalMobileSDK\/GlobalMobileSDK\/AutoSubstantiation\/AutoSubstantiation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 278,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/renato.santos\/Documents\/HeartlandProjects\/VitalPOS\/posioslib\/GlobalMobileSDK\/GlobalMobileSDK\/GlobalMobileSDK\/AutoSubstantiation\/AutoSubstantiation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 311,
+      "length": 1,
+      "value": "4"
     },
     {
       "filePath": "\/Users\/renato.santos\/Documents\/HeartlandProjects\/VitalPOS\/posioslib\/GlobalMobileSDK\/GlobalMobileSDK\/GlobalMobileSDK\/Gateways\/Propay\/Requests\/PPYProcessAndStoreCardSwipeRequest.swift",

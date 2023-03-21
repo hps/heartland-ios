@@ -17,12 +17,12 @@ public class HpsC2xCreditAdjustBuilder : HpsC2xBaseBuilder, GMSCreditAdjustBuild
     public init(device: HpsC2xDevice) {
         super.init(transactionType: .creditAdjust, device: device)
     }
-    
-    public override func buildRequest() -> Transaction? {
+
+    override public func buildRequest() -> Transaction? {
         return GMSRequestHelper.buildCreditAdjustRequest(builder: self)
     }
 
-    public override func mapResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
+    override public func mapResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
         return GMSResponseHelper.mapCreditAdjustResponse(data, result, response)
     }
 }

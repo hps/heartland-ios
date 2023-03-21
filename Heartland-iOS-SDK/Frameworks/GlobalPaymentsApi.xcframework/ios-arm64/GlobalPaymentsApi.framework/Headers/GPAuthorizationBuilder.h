@@ -5,6 +5,7 @@
 #import <GlobalPaymentsApi/GPTransactionBuilder.h>
 #import <GlobalPaymentsApi/GPEnums.h>
 #import <GlobalPaymentsApi/GPAddress.h>
+#import <GlobalPaymentsApi/AutoSubstantiation.h>
 
 @interface GPAuthorizationBuilder : GPTransactionBuilder
 
@@ -28,6 +29,7 @@
 @property (nonatomic, strong) NSString* surchargeAmount;
 @property (nonatomic, strong) NSString* tagData;
 @property (nonatomic, strong) NSString* transactionDescription;
+@property (nonatomic, strong) AutoSubstantiation* autoSubstantiation;
 
 - (instancetype) withAddress:(GPAddress*) value;
 - (instancetype) withAddress:(GPAddress*) value withAddressType:(GPAddressType) addressType;
@@ -48,6 +50,7 @@
 - (instancetype) withSurchargeAmount:(NSString*) value;
 - (instancetype) withTagData:(NSString*) value;
 - (instancetype) withTransactionDescription:(NSString*) value;
+- (instancetype) withAutoSubstantiation:(AutoSubstantiation*) value;
 
 @end
 

@@ -4,7 +4,7 @@ import GlobalMobileSDK
 @objc
 public class HpsC2xEnums: NSObject {
     public static func transactionTypeToString(_ transactionType: GlobalMobileSDK.TransactionType?) -> String {
-        switch (transactionType) {
+        switch transactionType {
         case .Auth:
             return "Auth"
         case .BatchClose:
@@ -29,8 +29,9 @@ public class HpsC2xEnums: NSObject {
             return "unknown"
         }
     }
+
     public static func cardDataSourceTypeToString(_ cardDataSourceType: GlobalMobileSDK.EntryMode?) -> String {
-        switch (cardDataSourceType) {
+        switch cardDataSourceType {
         case .chipFallback:
             return "chipFallback"
         case .contact:
@@ -47,8 +48,9 @@ public class HpsC2xEnums: NSObject {
             return "unknown"
         }
     }
+
     public static func cardDataSourceTypeToEntryMode(_ cardDataSourceType: GlobalMobileSDK.EntryMode?) -> HpsPaxEntryModes {
-        switch (cardDataSourceType) {
+        switch cardDataSourceType {
         case .chipFallback:
             return .chipFallBackSwipe
         case .contact:
@@ -65,8 +67,9 @@ public class HpsC2xEnums: NSObject {
             return .unknown
         }
     }
+
     public static func reversalReasonCodeToReversalReason(_ reversalReasonCode: ReversalReasonCode) -> ReversalReason {
-        switch (reversalReasonCode) {
+        switch reversalReasonCode {
         case .CUSTOMERCANCELLATION:
             return .voidedByCustomer
         case .TERMINALERROR:
@@ -79,8 +82,9 @@ public class HpsC2xEnums: NSObject {
             return .undefined
         }
     }
+
     public static func cardTypeToString(_ cardType: CardType?) -> String {
-        switch (cardType) {
+        switch cardType {
         case .amex:
             return "amex"
         case .dinersClub:

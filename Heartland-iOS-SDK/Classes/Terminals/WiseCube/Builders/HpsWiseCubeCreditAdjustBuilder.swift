@@ -1,7 +1,7 @@
 import Foundation
 
 @objcMembers
-public class HpsWiseCubeCreditAdjustBuilder : HpsWiseCubeBaseBuilder, GMSCreditAdjustBuilder {
+public class HpsWiseCubeCreditAdjustBuilder: HpsWiseCubeBaseBuilder, GMSCreditAdjustBuilder {
     public var clientTransactionId: String?
     public var amount: NSDecimalNumber?
     public var referenceNumber: String?
@@ -16,12 +16,12 @@ public class HpsWiseCubeCreditAdjustBuilder : HpsWiseCubeBaseBuilder, GMSCreditA
     public init(device: HpsWiseCubeDevice) {
         super.init(transactionType: .creditAdjust, device: device)
     }
-    
-    public override func buildRequest() -> Transaction? {
+
+    override public func buildRequest() -> Transaction? {
         return GMSRequestHelper.buildCreditAdjustRequest(builder: self)
     }
 
-    public override func mapResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
+    override public func mapResponse(_ data: HpsTerminalResponse, _ result: TransactionResult, _ response: TransactionResponse?) -> HpsTerminalResponse {
         return GMSResponseHelper.mapCreditAdjustResponse(data, result, response)
     }
 }

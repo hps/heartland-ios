@@ -6,7 +6,7 @@ class GMSRequestHelper {
         return BatchCloseTransaction.batchClose(clientTransactionId: clientTransactionId,
                                                 operatingUserId: nil)
     }
-    
+
     public static func buildCreditAdjustRequest(builder: GMSCreditAdjustBuilder) -> Transaction? {
         let total: Decimal? = builder.amount as Decimal?
         let tip: Decimal? = builder.gratuity as Decimal?
@@ -26,10 +26,10 @@ class GMSRequestHelper {
                                               operatingUserId: operatingUserId,
                                               allowPartialAuth: allowPartialAuth)
     }
-    
+
     static func decimalToUint(_ decimalValue: Decimal?) -> UInt? {
         guard var value = decimalValue else { return nil }
-        value = value * 100;
+        value = value * 100
         var rounded = Decimal()
         NSDecimalRound(&rounded, &value, 0, .down)
         return UInt((rounded as NSDecimalNumber).intValue)
@@ -45,10 +45,17 @@ class GMSRequestHelper {
         let invoiceNumber: String? = builder.details?.invoiceNumber
         let operatingUserId: String? = nil
         let requestMultiUseToken: Bool? = nil
-        var cardData: ManualCardData? = nil
+        var cardData: ManualCardData?
         let clientTransactionId: String? = builder.clientTransactionId
         let allowPartialAuth: Bool? = builder.allowPartialAuth as? Bool
         let cpcReq: Bool? = builder.cpcReq as? Bool
+        var autoSubstantiation: GlobalMobileSDK.AutoSubstantiation? = nil
+        
+        if let transactionAutoSubstantiation = builder.autoSubstantiation {
+            
+            autoSubstantiation = transactionAutoSubstantiation.toAutoSubstantiation()
+            
+        }
         
         if let cd = builder.creditCard {
             cardData = ManualCardData.cardData(cardholderName: builder.cardHolderName ?? "",
@@ -73,7 +80,8 @@ class GMSRequestHelper {
                                         cardData: cardData!,
                                         requestMultiUseToken: requestMultiUseToken ?? false,
                                         allowPartialAuth: allowPartialAuth,
-                                        cpcReq: cpcReq)
+                                        cpcReq: cpcReq,
+                                        autoSubstantiation: autoSubstantiation)
         } else {
             return AuthTransaction.auth(clientTransactionId: clientTransactionId,
                                         total: decimalToUint(total),
@@ -86,10 +94,11 @@ class GMSRequestHelper {
                                         operatingUserId: operatingUserId,
                                         requestMultiUseToken: requestMultiUseToken ?? false,
                                         allowPartialAuth: allowPartialAuth,
-                                        cpcReq: cpcReq)
+                                        cpcReq: cpcReq,
+                                        autoSubstantiation: autoSubstantiation)
         }
     }
-    
+
     public static func buildCreditCaptureRequest(builder: GMSCreditCaptureBuilder) -> Transaction? {
         let total: Decimal? = builder.amount as Decimal?
         let tip: Decimal? = builder.gratuity as Decimal?
@@ -108,7 +117,7 @@ class GMSRequestHelper {
                                           posReferenceNumber: posReferenceNumber,
                                           operatingUserId: operatingUserId)
     }
-    
+
     public static func buildCreditReturnRequest(builder: GMSCreditReturnBuilder) -> Transaction? {
         let total: Decimal? = builder.amount as Decimal?
         let posReferenceNumber: String? = builder.referenceNumber
@@ -127,7 +136,7 @@ class GMSRequestHelper {
                                                      operatingUserId: nil,
                                                      allowPartialAuth: allowPartialAuth)
     }
-    
+
     public static func buildCreditReversalRequest(builder: GMSCreditReversalBuilder) -> Transaction? {
         let total: Decimal? = builder.amount as Decimal?
         let posReferenceNumber: String? = builder.referenceNumber
@@ -153,7 +162,7 @@ class GMSRequestHelper {
                                             tlv: nil,
                                             allowPartialAuth: allowPartialAuth)
     }
-    
+
     public static func buildCreditSaleRequest(builder: GMSCreditSaleBuilder) -> Transaction? {
         let total: Decimal? = builder.amount as Decimal?
         let tax: Decimal? = nil
@@ -164,10 +173,17 @@ class GMSRequestHelper {
         let invoiceNumber: String? = builder.details?.invoiceNumber
         let operatingUserId: String? = nil
         let requestMultiUseToken: Bool? = nil
-        var cardData: ManualCardData? = nil
+        var cardData: ManualCardData?
         let clientTransactionId: String? = builder.clientTransactionId
         let allowPartialAuth: Bool? = builder.allowPartialAuth as? Bool
         let cpcReq: Bool? = builder.cpcReq as? Bool
+        var autoSubstantiation: GlobalMobileSDK.AutoSubstantiation? = nil
+        
+        if let transactionAutoSubstantiation = builder.autoSubstantiation {
+            
+            autoSubstantiation = transactionAutoSubstantiation.toAutoSubstantiation()
+            
+        }
         
         if let cd = builder.creditCard {
             cardData = ManualCardData.cardData(cardholderName: builder.cardHolderName ?? "",
@@ -192,7 +208,8 @@ class GMSRequestHelper {
                                         cardData: cardData!,
                                         requestMultiUseToken: requestMultiUseToken ?? false,
                                         allowPartialAuth: allowPartialAuth,
-                                        cpcReq: cpcReq)
+                                        cpcReq: cpcReq,
+                                        autoSubstantiation: autoSubstantiation)
         } else {
             return SaleTransaction.sale(clientTransactionId: clientTransactionId,
                                         total: decimalToUint(total),
@@ -205,10 +222,11 @@ class GMSRequestHelper {
                                         operatingUserId: operatingUserId,
                                         requestMultiUseToken: requestMultiUseToken ?? false,
                                         allowPartialAuth: allowPartialAuth,
-                                        cpcReq: cpcReq)
+                                        cpcReq: cpcReq,
+                                        autoSubstantiation: autoSubstantiation)
         }
     }
-    
+
     public static func buildCreditVoidRequest(builder: GMSCreditVoidBuilder) -> Transaction? {
         let posReferenceNumber: String? = builder.referenceNumber
         let transactionId: String? = builder.transactionId

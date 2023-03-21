@@ -12,17 +12,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DD713F852948DC3400514143"
-               BuildableName = "Heartland-iOS-SDK-SampleAppTests.xctest"
-               BlueprintName = "Heartland-iOS-SDK-SampleAppTests"
-               ReferencedContainer = "container:Heartland-iOS-SDK-SampleApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

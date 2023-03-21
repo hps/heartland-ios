@@ -4,13 +4,17 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Headers/AutoSubstantiation.h</key>
+		<data>
+		aWx8xjo5X8CAZDPpophW5ZUlYVM=
+		</data>
 		<key>Headers/GPAddress.h</key>
 		<data>
 		Ni82blLZJDIPrVQzLhWhfcg/Pqs=
 		</data>
 		<key>Headers/GPAuthorizationBuilder.h</key>
 		<data>
-		shq0FQ6YaHPyWzHD8Zyn542uqNU=
+		3M5AtqY7cFHjrtspODV0gOYwv5A=
 		</data>
 		<key>Headers/GPBatchService.h</key>
 		<data>
@@ -90,7 +94,7 @@
 		</data>
 		<key>Headers/GPTransactionBuilder.h</key>
 		<data>
-		74NjXr+YcwaLb2CJuEGXeyCW4Ws=
+		zpBAgi7RQQBW+E/XRmxYUsh9iis=
 		</data>
 		<key>Headers/GPTransactionReference.h</key>
 		<data>
@@ -114,7 +118,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		OXDZudhSPpu4Vtx/OLP8QQOIAAs=
+		npDQevmsuoG26U96DlF16zyuCaw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -123,6 +127,17 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/AutoSubstantiation.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			aWx8xjo5X8CAZDPpophW5ZUlYVM=
+			</data>
+			<key>hash2</key>
+			<data>
+			iBJ6qz9QqNNCQ4zxqPIz1V3XjjirJFGENhWkON/TqFc=
+			</data>
+		</dict>
 		<key>Headers/GPAddress.h</key>
 		<dict>
 			<key>hash</key>
@@ -138,11 +153,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			shq0FQ6YaHPyWzHD8Zyn542uqNU=
+			3M5AtqY7cFHjrtspODV0gOYwv5A=
 			</data>
 			<key>hash2</key>
 			<data>
-			zgnRbknjfBRiqdgYF3Ky7hNSSfZHX5CEwhXlaJn+Nhk=
+			uFqkP93U1x8PF+1cq4hVu2IFyM1+wdUsYe8/yoQFR0A=
 			</data>
 		</dict>
 		<key>Headers/GPBatchService.h</key>
@@ -358,11 +373,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			74NjXr+YcwaLb2CJuEGXeyCW4Ws=
+			zpBAgi7RQQBW+E/XRmxYUsh9iis=
 			</data>
 			<key>hash2</key>
 			<data>
-			CiOWZsDKIetcsug0T7CF2NJFqORMGuYJkBsoUvg+nTM=
+			ZKttu3/7o4eQQjAvdtqhZqFUdf8dapCrhT966b2r758=
 			</data>
 		</dict>
 		<key>Headers/GPTransactionReference.h</key>

@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name GlobalMobileSDK
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
@@ -182,9 +182,10 @@ public struct AuthTransaction {
   public var customerReceiptEmail: Swift.String?
   public var allowPartialAuth: Swift.Bool?
   public var cpcReq: Swift.Bool?
-  public static func auth(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, requestMultiUseToken: Swift.Bool, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?) -> GlobalMobileSDK.AuthTransaction
-  public static func auth(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.ManualCardData, requestMultiUseToken: Swift.Bool, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?) -> GlobalMobileSDK.AuthTransaction
-  public static func auth(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.TokenizedCardData, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?) -> GlobalMobileSDK.AuthTransaction
+  public var autoSubstantiation: GlobalMobileSDK.AutoSubstantiation?
+  public static func auth(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, requestMultiUseToken: Swift.Bool, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?, autoSubstantiation: GlobalMobileSDK.AutoSubstantiation?) -> GlobalMobileSDK.AuthTransaction
+  public static func auth(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.ManualCardData, requestMultiUseToken: Swift.Bool, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?, autoSubstantiation: GlobalMobileSDK.AutoSubstantiation?) -> GlobalMobileSDK.AuthTransaction
+  public static func auth(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.TokenizedCardData, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?, autoSubstantiation: GlobalMobileSDK.AutoSubstantiation?) -> GlobalMobileSDK.AuthTransaction
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -609,9 +610,10 @@ public struct SaleTransaction {
   public var cardholderAddress: GlobalMobileSDK.Address?
   public var allowPartialAuth: Swift.Bool?
   public var cpcReq: Swift.Bool?
-  public static func sale(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, requestMultiUseToken: Swift.Bool, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?) -> GlobalMobileSDK.SaleTransaction
-  public static func sale(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.ManualCardData, requestMultiUseToken: Swift.Bool, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?) -> GlobalMobileSDK.SaleTransaction
-  public static func sale(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.TokenizedCardData, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?) -> GlobalMobileSDK.SaleTransaction
+  public var autoSubstantiation: GlobalMobileSDK.AutoSubstantiation?
+  public static func sale(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, requestMultiUseToken: Swift.Bool, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?, autoSubstantiation: GlobalMobileSDK.AutoSubstantiation?) -> GlobalMobileSDK.SaleTransaction
+  public static func sale(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.ManualCardData, requestMultiUseToken: Swift.Bool, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?, autoSubstantiation: GlobalMobileSDK.AutoSubstantiation?) -> GlobalMobileSDK.SaleTransaction
+  public static func sale(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.TokenizedCardData, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?, autoSubstantiation: GlobalMobileSDK.AutoSubstantiation?) -> GlobalMobileSDK.SaleTransaction
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -700,6 +702,31 @@ public struct TipAdjustTransaction {
 }
 public struct ListSaFResponse {
   public var transactionId: Foundation.UUID
+}
+@objc public enum AutoSubstantiationType : Swift.Int {
+  case TOTAL_HEALTHCARE_AMT = 0
+  case SUBTOTAL_PRESCRIPTION_AMT = 1
+  case SUBTOTAL_VISION__OPTICAL_AMT = 2
+  case SUBTOTAL_CLINIC_OR_OTHER_AMT = 3
+  case SUBTOTAL_DENTAL_AMT = 4
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct AutoSubstantiation : Swift.Codable {
+  public var realTimeSubstantiation: Swift.Bool?
+  public var merchantVerificationValue: Swift.String?
+  public var amounts: [Swift.String : Swift.String]
+  public init()
+  public func isRealTimeSubstantiation() -> Swift.Bool
+  public mutating func setVisionSubTotal(value: Foundation.NSDecimalNumber)
+  public mutating func setClinicSubTotal(value: Foundation.NSDecimalNumber)
+  public mutating func setDentalSubTotal(value: Foundation.NSDecimalNumber)
+  public mutating func setPrescriptionSubTotal(value: Foundation.NSDecimalNumber)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct ReturnResponse {
   public var transactionResult: GlobalMobileSDK.TransactionResult?
@@ -1546,6 +1573,9 @@ extension GlobalMobileSDK.TerminalSettingType : Swift.Hashable {}
 extension GlobalMobileSDK.TerminalSettingType : Swift.RawRepresentable {}
 extension GlobalMobileSDK.VerifyTransaction : GlobalMobileSDK.Transaction {}
 extension GlobalMobileSDK.TipAdjustTransaction : GlobalMobileSDK.Transaction {}
+extension GlobalMobileSDK.AutoSubstantiationType : Swift.Equatable {}
+extension GlobalMobileSDK.AutoSubstantiationType : Swift.Hashable {}
+extension GlobalMobileSDK.AutoSubstantiationType : Swift.RawRepresentable {}
 extension GlobalMobileSDK.ReturnResponse : GlobalMobileSDK.TransactionResponse {}
 extension GlobalMobileSDK.SaFError : Swift.Equatable {}
 extension GlobalMobileSDK.SaFError : Swift.Hashable {}

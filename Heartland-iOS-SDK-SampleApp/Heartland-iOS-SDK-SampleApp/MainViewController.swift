@@ -2,24 +2,24 @@
 //  MainViewController.swift
 //
 
-import UIKit
 import Heartland_iOS_SDK
+import UIKit
 
 class MainViewController: UITableViewController {
-    
     // MARK: Device
+
     private var device: HpsC2xDevice?
-    
+
     // MARK: NotificationCenter
-    let notificationCenter: NotificationCenter = NotificationCenter.default
-    
+
+    let notificationCenter: NotificationCenter = .default
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
         addObserver()
     }
-    
+
     func addObserver() {
         let notificationName = Notification.Name(Constants.selectedDeviceNotification)
         notificationCenter.addObserver(self,
@@ -32,18 +32,17 @@ class MainViewController: UITableViewController {
 // MARK: Segue
 
 extension MainViewController {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         if let transactionDestination = segue.destination as? ConnectC2XViewController {
             transactionDestination.device = nil
         }
-        
+
         if let transactionDestination = segue.destination as? C2XTransactionsViewController {
-            transactionDestination.device = self.device
+            transactionDestination.device = device
         }
-        
+
         if let transactionDestination = segue.destination as? C2XFirmwareUpdateViewController {
-            transactionDestination.device = self.device
+            transactionDestination.device = device
         }
     }
 }

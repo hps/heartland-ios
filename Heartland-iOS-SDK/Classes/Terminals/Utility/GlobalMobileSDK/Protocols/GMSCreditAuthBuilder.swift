@@ -13,4 +13,5 @@ public protocol GMSCreditAuthBuilder {
     var clientTransactionId: String? { get set }
     var allowPartialAuth: NSNumber? { get set }
     var cpcReq: NSNumber? { get set }
+    var autoSubstantiation: HpsAutoSubstantiation? { get set }
 }

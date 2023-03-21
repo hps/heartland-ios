@@ -6,40 +6,20 @@
 import Foundation
 
 // MARK: - HpsUpaStartCardResponse
+
 public struct HpsUpaStartCardResponse: Codable {
     public let message: String?
-    public let data: HpsUpaStartCardResponseData?
+    public let data: HpsUpaResponsePayload<HpsUpaStartCardResponseData>?
 
-    public init(message: String?, data: HpsUpaStartCardResponseData?) {
+    public init(message: String?, data: HpsUpaResponsePayload<HpsUpaStartCardResponseData>?) {
         self.message = message
         self.data = data
     }
 }
 
 // MARK: - HpsUpaStartCardResponseData
+
 public struct HpsUpaStartCardResponseData: Codable {
-    public let response: String?
-    public let cmdResult: HpsUpaStartCardResponseCmdResult?
-    public let data: HpsUpaStartCardResponseDataData?
-
-    public init(response: String?, cmdResult: HpsUpaStartCardResponseCmdResult?, data: HpsUpaStartCardResponseDataData?) {
-        self.response = response
-        self.cmdResult = cmdResult
-        self.data = data
-    }
-}
-
-// MARK: - CmdResult
-public struct HpsUpaStartCardResponseCmdResult: Codable {
-    public let result: String?
-
-    public init(result: String?) {
-        self.result = result
-    }
-}
-
-// MARK: - DataData
-public struct HpsUpaStartCardResponseDataData: Codable {
     public let acquisitionType, luhnCheckPassed, dataEncryptionType: String?
     public let pan: HpsUpaStartCardResponsePan?
     public let emvTags: String?
@@ -80,6 +60,7 @@ public struct HpsUpaStartCardResponseDataData: Codable {
 }
 
 // MARK: - Pan
+
 public struct HpsUpaStartCardResponsePan: Codable {
     public let clearPAN: String?
     public let maskedPAN: String?
@@ -95,12 +76,12 @@ public struct HpsUpaStartCardResponsePan: Codable {
 public struct HpsUpaStartCardResponsePinDukpt: Codable {
     public let ksn: String?
     public let pinBlock: String?
-    
+
     enum CodingKeys: String, CodingKey {
         case pinBlock = "PinBlock"
         case ksn = "Ksn"
     }
-    
+
     public init(ksn: String?, pinBlock: String?) {
         self.ksn = ksn
         self.pinBlock = pinBlock
@@ -110,12 +91,12 @@ public struct HpsUpaStartCardResponsePinDukpt: Codable {
 public struct HpsUpaStartCardResponse3DesDukpt: Codable {
     public let encryptedBlob: String?
     public let ksn: String?
-    
+
     enum CodingKeys: String, CodingKey {
         case encryptedBlob
         case ksn = "Ksn"
     }
-    
+
     public init(encryptedBlob: String?, ksn: String?) {
         self.encryptedBlob = encryptedBlob
         self.ksn = ksn
@@ -129,7 +110,7 @@ public struct HpsUpaStartCardResponseTrackData: Codable {
     public let maskedTrack1: String?
     public let clearTrack3: String?
     public let maskedTrack3: String?
-    
+
     public init(clearTrack2: String?, maskedTrack2: String?, clearTrack1: String?, maskedTrack1: String?, clearTrack3: String?, maskedTrack3: String?) {
         self.clearTrack2 = clearTrack2
         self.maskedTrack2 = maskedTrack2

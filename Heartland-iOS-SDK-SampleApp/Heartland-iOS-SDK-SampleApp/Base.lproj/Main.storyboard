@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NAZ-sw-0Dp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NAZ-sw-0Dp">
     <device id="ipad10_5" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -300,7 +300,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3ac-Wh-jCJ">
-                                        <rect key="frame" x="40" y="316.5" width="754" height="479.5"/>
+                                        <rect key="frame" x="40" y="272" width="754" height="568.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device/Transaction Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfE-2l-VKd">
                                                 <rect key="frame" x="0.0" y="0.0" width="754" height="34.5"/>
@@ -361,6 +361,16 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="gray" title="Credit Void"/>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLZ-Mp-xop">
+                                                <rect key="frame" x="0.0" y="489.5" width="754" height="34.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Reversal Transaction"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVI-jj-ffY">
+                                                <rect key="frame" x="0.0" y="534" width="754" height="34.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Auth Transaction"/>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUc-t3-J4H">
@@ -417,6 +427,7 @@
                     <connections>
                         <outlet property="DialogView" destination="WUc-t3-J4H" id="hFK-1f-ED5"/>
                         <outlet property="amountTextField" destination="2w6-hm-AFy" id="lNc-ch-1hJ"/>
+                        <outlet property="authTransaction" destination="RVI-jj-ffY" id="Cbi-aZ-0Ac"/>
                         <outlet property="containerView" destination="ULf-7P-gXw" id="87Z-U5-61e"/>
                         <outlet property="creditReturnButton" destination="uTu-m4-l8g" id="Nwg-hT-kxd"/>
                         <outlet property="creditSaleButton" destination="VJi-YH-R8j" id="fiT-Rj-x4Z"/>
@@ -426,6 +437,7 @@
                         <outlet property="gratuityTextField" destination="UQe-sK-ij8" id="CwO-CW-4GT"/>
                         <outlet property="labelStatus" destination="8EK-NM-7R6" id="deR-Ze-2dl"/>
                         <outlet property="manualCardTransactionButton" destination="97T-ck-9WG" id="eOp-hB-2Rj"/>
+                        <outlet property="reversalTransactionButton" destination="WLZ-Mp-xop" id="Ij8-pp-uqY"/>
                         <outlet property="tipAdjustButton" destination="8Jh-3X-lwA" id="QWy-DZ-aJ2"/>
                     </connections>
                 </viewController>
