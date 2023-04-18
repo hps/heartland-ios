@@ -32,7 +32,6 @@
     
     request.data.data.params = [[HpsUpaParams alloc] init];
     request.data.data.params.clerkId = self.clerkId;
-    request.data.data.params.tokenRequest = self.requestMultiUseToken ? @"1" : @"0";
     request.data.data.params.tokenValue = self.token;
     request.data.data.params.cardBrandTransId = self.cardBrandTransactionId;
     if ((self.requestMultiUseToken || self.cardBrandTransactionId != nil) && self.storedCardInitiator != HpsStoredCardInitiator_None) {
