@@ -24,6 +24,7 @@
 @property (nonatomic, strong) HpsAddress *address;
 @property (nonatomic, readwrite) BOOL requestMultiUseToken;
 @property (nonatomic, strong) NSString *clientTransactionId;
+@property (nonatomic, strong) NSString *cardBrandTransactionId;
 
 - (void) execute:(void(^)(HpsPaxCreditResponse*, NSError*))responseBlock;
 - (id)initWithDevice: (HpsPaxDevice*)paxDevice;

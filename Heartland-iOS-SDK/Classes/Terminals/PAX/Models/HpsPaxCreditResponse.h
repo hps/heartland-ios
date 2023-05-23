@@ -4,6 +4,7 @@
 @interface HpsPaxCreditResponse : HpsPaxDeviceResponse
 
 @property (nonatomic,strong) NSString *authorizationCode;
+@property (nonatomic,strong) NSString *cardBrandTransactionId;
 
 - (id) initWithBuffer:(NSData*)buffer;
 - (HpsBinaryDataScanner*) parseResponse;

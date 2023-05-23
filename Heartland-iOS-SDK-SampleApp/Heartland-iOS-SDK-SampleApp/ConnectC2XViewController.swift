@@ -9,7 +9,6 @@ import UIKit
 
 class ConnectC2XViewController: UIViewController {
     var device: HpsC2xDevice?
-    var paxDevice: HpsPaxDevice?
     private let notificationCenter: NotificationCenter = .default
 
     @IBOutlet var connectionLabel: UILabel!
@@ -25,7 +24,7 @@ class ConnectC2XViewController: UIViewController {
         let config = HpsConnectionConfig()
         config.username = ""
         config.password = ""
-        config.siteID = ""
+        config.siteID = "";
         config.deviceID = ""
         config.licenseID = ""
         config.developerID = ""
@@ -36,93 +35,11 @@ class ConnectC2XViewController: UIViewController {
         device?.deviceDelegate = self
         device?.scan()
         activityIndicator.isHidden = false
-    }
-
-    func testPaxDeviceManual() {
-        let timeout = 120
-
-        let config = HpsConnectionConfig()
-        config.ipAddress = ""
-        config.port = ""
-        config.username = ""
-        config.password = ""
-        config.siteID = ""
-        config.deviceID = ""
-        config.licenseID = ""
-        config.developerID = ""
-        config.versionNumber = ""
-        config.connectionMode = 1
-        config.timeout = timeout
-
-        paxDevice = HpsPaxDevice(config: config)
-
-        let builder = HpsPaxCreditSaleBuilder(device: paxDevice)
-        builder?.amount = 11.0
-        builder?.referenceNumber = 10
-        builder?.allowDuplicates = false
-
-        builder?.execute { response, error in
-
-            if let error = error {
-                print("Error: \(error)")
-                return
-            }
-            if let response = response {
-                print("Response: \(response)")
-                let responseReturn = response.parseResponse()
-                print("Response Parse: \(responseReturn.debugDescription)")
-            }
-        }
-    }
-
-    func testPaxDeviceAuth() {
-        let timeout = 120
-
-        let config = HpsConnectionConfig()
-        config.ipAddress = ""
-        config.port = ""
-        config.username = ""
-        config.password = ""
-        config.siteID = "";
-        config.deviceID = ""
-        config.licenseID = ""
-        config.developerID = ""
-        config.versionNumber = ""
-        config.connectionMode = 1
-        config.timeout = timeout
-
-        paxDevice = HpsPaxDevice(config: config)
-
-        let card = HpsCreditCard()
-        card.cardNumber = ""
-        card.expMonth = 1
-        card.expYear = 2
-        card.cvv = ""
-
-        let address = HpsAddress()
-        address.address = ""
-        address.zip = ""
-
-        let builder = HpsPaxCreditAuthBuilder(device: paxDevice)
-        builder?.amount = 11.0
-        builder?.referenceNumber = 1
-        builder?.allowDuplicates = true
-        builder?.requestMultiUseToken = true
-        builder?.creditCard = card
-        builder?.address = address
-
-        builder?.execute { response, error in
-
-            if let error = error {
-                print("Error: \(error)")
-                return
-            }
-            if let response = response {
-                print("Response: \(response)")
-                let responseReturn = response.parseResponse()
-                print("Response Parse: \(responseReturn.debugDescription)")
-            }
-        }
+        
+        /// Please, uncommente these lines to test Pax Integration for Card Brand Transaction id + Token.
+    
+//        HpsPaxDeviceTransaction.testPaxDeviceManualWithSecondTransactionUsingToken()
+//        HpsPaxDeviceTransaction.testPaxDeviceManualWithSecondTransactionUsingTokenAuth()
     }
 }
 

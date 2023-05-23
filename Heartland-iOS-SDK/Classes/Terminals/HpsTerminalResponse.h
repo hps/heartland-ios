@@ -78,6 +78,7 @@
 @property (nonatomic,strong) NSString *clientTransactionId;
 @property (nonatomic,strong) NSString *transactionStatusInformation;
 @property (nonatomic,strong) NSString *cardType;
+@property (nonatomic,strong) NSString *cardBrandTransactionId;
 
 - (void) mapResponse:(id <HpaResposeInterface>) response;
 // @todo
