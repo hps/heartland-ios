@@ -11,6 +11,7 @@
 		14B86F0E29B7AB7F00657AF3 /* HpsAutoSubstantiation.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B86F0D29B7AB7F00657AF3 /* HpsAutoSubstantiation.m */; };
 		14B86F1029B7BCB400657AF3 /* HpsAutoSubstantiation+toAutoSubstantiation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B86F0F29B7BCB400657AF3 /* HpsAutoSubstantiation+toAutoSubstantiation.swift */; };
 		14B86F1129B7C47200657AF3 /* HpsAutoSubstantiation.h in Headers */ = {isa = PBXBuildFile; fileRef = 14B86F0C29B7AB6100657AF3 /* HpsAutoSubstantiation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		14F88D4E29F2FEC3009E821B /* HpsPaxDeviceTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F88D4D29F2FEC3009E821B /* HpsPaxDeviceTransaction.swift */; };
 		DD2409302991688C00597A23 /* HpsUpaStartCardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD24092F2991688C00597A23 /* HpsUpaStartCardResponse.swift */; };
 		DD426BFB299EC7F200DBFAC5 /* HpsUpaSAFTransactionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD426BFA299EC7F200DBFAC5 /* HpsUpaSAFTransactionBuilder.swift */; };
 		DD426BFE299EC92300DBFAC5 /* HpsUpaSendSaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD426BFD299EC92300DBFAC5 /* HpsUpaSendSaf.swift */; };
@@ -488,6 +489,7 @@
 		14B86F0C29B7AB6100657AF3 /* HpsAutoSubstantiation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsAutoSubstantiation.h; sourceTree = "<group>"; };
 		14B86F0D29B7AB7F00657AF3 /* HpsAutoSubstantiation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsAutoSubstantiation.m; sourceTree = "<group>"; };
 		14B86F0F29B7BCB400657AF3 /* HpsAutoSubstantiation+toAutoSubstantiation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HpsAutoSubstantiation+toAutoSubstantiation.swift"; sourceTree = "<group>"; };
+		14F88D4D29F2FEC3009E821B /* HpsPaxDeviceTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsPaxDeviceTransaction.swift; sourceTree = "<group>"; };
 		DD24092F2991688C00597A23 /* HpsUpaStartCardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaStartCardResponse.swift; sourceTree = "<group>"; };
 		DD426BFA299EC7F200DBFAC5 /* HpsUpaSAFTransactionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaSAFTransactionBuilder.swift; sourceTree = "<group>"; };
 		DD426BFD299EC92300DBFAC5 /* HpsUpaSendSaf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaSendSaf.swift; sourceTree = "<group>"; };
@@ -959,9 +961,18 @@
 		143A4377298AB2830027BC3F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				14B86F0F29B7BCB400657AF3 /* HpsAutoSubstantiation+toAutoSubstantiation.swift */,
 				143A4378298AB2980027BC3F /* String+ProjectName.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		14F88D4C29F2FEA8009E821B /* SampleTest */ = {
+			isa = PBXGroup;
+			children = (
+				14F88D4D29F2FEC3009E821B /* HpsPaxDeviceTransaction.swift */,
+			);
+			path = SampleTest;
 			sourceTree = "<group>";
 		};
 		DD426BF9299EC7CE00DBFAC5 /* StoreAndForward */ = {
@@ -1259,6 +1270,7 @@
 		DDFF33942937AF4200C2D1D1 /* PAX */ = {
 			isa = PBXGroup;
 			children = (
+				14F88D4C29F2FEA8009E821B /* SampleTest */,
 				DDFF33952937AF4200C2D1D1 /* Builders */,
 				DDFF33B62937AF4200C2D1D1 /* HpsPaxDevice.m */,
 				DDFF33B72937AF4200C2D1D1 /* Models */,
@@ -1675,7 +1687,6 @@
 				DDFF34CE2937AF4200C2D1D1 /* HpsHeader.m */,
 				14B86F0C29B7AB6100657AF3 /* HpsAutoSubstantiation.h */,
 				14B86F0D29B7AB7F00657AF3 /* HpsAutoSubstantiation.m */,
-				14B86F0F29B7BCB400657AF3 /* HpsAutoSubstantiation+toAutoSubstantiation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2284,6 +2295,7 @@
 				DDFF36512937AF4400C2D1D1 /* HpsTerminalUtilities.m in Sources */,
 				DDFF365D2937AF4400C2D1D1 /* NSMutableDictionary+ShiftAssignments.m in Sources */,
 				DDFF35822937AF4300C2D1D1 /* HpsPaxInitializeResponse.m in Sources */,
+				14F88D4E29F2FEC3009E821B /* HpsPaxDeviceTransaction.swift in Sources */,
 				DDFF35382937AF4300C2D1D1 /* UpaEnums.m in Sources */,
 				DDFF35C82937AF4300C2D1D1 /* HpsHpaCreditVerifyBuilder.m in Sources */,
 				DDFF352D2937AF4300C2D1D1 /* HpsUpaAuthBuilder.m in Sources */,

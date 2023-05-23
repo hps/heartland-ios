@@ -31,7 +31,7 @@
                 self.batchNumber = value;
                 break;
             case 6:
-                self.transactionIdentifier = value;
+                self.cardBrandTransactionId = value;
                 break;
             case 7:
                 self.gatewayTransactionId = value;
