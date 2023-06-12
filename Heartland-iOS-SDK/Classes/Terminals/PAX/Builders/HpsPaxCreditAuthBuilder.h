@@ -31,7 +31,6 @@
 @property (nonatomic, strong) NSString *transactionId;
 @property (nonatomic, strong) NSString *authCode;
 @property (nonatomic, strong) NSString *clientTransactionId;
-@property (nonatomic, strong) NSString *cardBrandTransactionId;
 
 - (void) execute:(void(^)(HpsPaxCreditResponse*, NSError*))responseBlock;
 - (id)initWithDevice: (HpsPaxDevice*)paxDevice;

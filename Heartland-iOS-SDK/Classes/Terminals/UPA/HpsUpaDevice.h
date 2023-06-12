@@ -8,6 +8,7 @@
 #import "HpsUpaTcpInterface.h"
 #import "HpsUpaRequest.h"
 #import "HpsUpaResponse.h"
+#import "HpsUpaDeviceSignatureResponse.h"
 
 
 @interface HpsUpaDevice : NSObject<IDeviceInterface>
@@ -39,4 +40,5 @@
 - (void) lineItem:(NSString*)leftText withResponseBlock:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
 - (void) lineItem:(NSString*)leftText withRightText:(NSString*)rightText withResponseBlock:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
 
+- (void) getSignatureData:(NSString*)ecrId andRequestId:(NSString*)requestId response:(void(^)(HpsUpaDeviceSignatureResponse*, NSError*))responseBlock;
 @end

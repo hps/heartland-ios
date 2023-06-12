@@ -12,7 +12,8 @@ public class HpsUpaStartCardTransactionBuilder {
         upaDevice = device
     }
 
-    public func execute(request: HpsUpaStartCard, response: @escaping (IHPSDeviceResponse?, HpsUpaStartCardResponse?, Error?) -> Void) {
+    public func execute(request: HpsUpaStartCard,
+                        response: @escaping (IHPSDeviceResponse?, HpsUpaStartCardResponse?, Error?) -> Void) {
         let encoder = JSONEncoder()
 
         let json = try? encoder.encode(request)

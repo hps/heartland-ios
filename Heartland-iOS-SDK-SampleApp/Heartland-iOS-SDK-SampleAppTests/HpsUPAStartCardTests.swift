@@ -43,7 +43,7 @@ class HpsUPAStartCardTests: XCTestCase {
         let pi = HpsUpaStartCardProcessingIndicators(quickChip: "Y",
                                                      checkLuhn: nil,
                                                      securityCode: nil,
-                                                     cardFilterType: nil)
+                                                     cardTypeFilter: nil)
 
         let tx = HpsUpaStartCardTransaction(totalAmount: "1.24",
                                             cashBackAmount: nil,

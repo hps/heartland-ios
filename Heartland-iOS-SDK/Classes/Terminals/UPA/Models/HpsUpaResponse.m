@@ -135,6 +135,7 @@ static int IsFieldEnable;
         self.storeAndForward = [payment getValueAsString:@"storeAndForward"];
         self.invoiceNbr = [payment getValueAsString:@"invoiceNbr"];
         self.cardholderName = [payment getValueAsString:@"cardHolderName"];
+        self.signatureData = [payment getValueAsString:@"signatureData"];
     }
 
     if ([data has:@"emv"]) {

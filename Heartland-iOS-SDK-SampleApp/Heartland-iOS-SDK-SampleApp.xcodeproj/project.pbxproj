@@ -12,8 +12,10 @@
 		143A43802993BC5C0027BC3F /* HpsPaxCreditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A437F2993BC5C0027BC3F /* HpsPaxCreditTests.swift */; };
 		143A43842993D5F00027BC3F /* ObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 143A43832993D5F00027BC3F /* ObjC.m */; };
 		143A43862993D6AB0027BC3F /* ObjC+CatchException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A43852993D6AB0027BC3F /* ObjC+CatchException.swift */; };
+		149365D82A321C63005A37CC /* UpsUpaSignatureDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149365D72A321C63005A37CC /* UpsUpaSignatureDataTests.swift */; };
 		14A32FAF2949222800E160AD /* C2XFirmwareUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A32FAE2949222800E160AD /* C2XFirmwareUpdateViewController.swift */; };
 		14B86EFE29B02C3B00657AF3 /* C2XTransactionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B86EFD29B02C3B00657AF3 /* C2XTransactionsTests.swift */; };
+		14F88D5F2A02E3AB009E821B /* HpsUPACAStartCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F88D5E2A02E3AB009E821B /* HpsUPACAStartCardTests.swift */; };
 		DD49DDB4296DDAE100EBD526 /* HpsUPALineItemDisplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD49DDB3296DDAE000EBD526 /* HpsUPALineItemDisplayTests.swift */; };
 		DD6A4F512937C221008B8165 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD6A4F4F2937C221008B8165 /* Main.storyboard */; };
 		DD6A4F532937C223008B8165 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD6A4F522937C223008B8165 /* Assets.xcassets */; };
@@ -99,8 +101,10 @@
 		143A43822993D5D40027BC3F /* ObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjC.h; sourceTree = "<group>"; };
 		143A43832993D5F00027BC3F /* ObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjC.m; sourceTree = "<group>"; };
 		143A43852993D6AB0027BC3F /* ObjC+CatchException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObjC+CatchException.swift"; sourceTree = "<group>"; };
+		149365D72A321C63005A37CC /* UpsUpaSignatureDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpsUpaSignatureDataTests.swift; sourceTree = "<group>"; };
 		14A32FAE2949222800E160AD /* C2XFirmwareUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C2XFirmwareUpdateViewController.swift; sourceTree = "<group>"; };
 		14B86EFD29B02C3B00657AF3 /* C2XTransactionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C2XTransactionsTests.swift; sourceTree = "<group>"; };
+		14F88D5E2A02E3AB009E821B /* HpsUPACAStartCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUPACAStartCardTests.swift; sourceTree = "<group>"; };
 		DD49DDB3296DDAE000EBD526 /* HpsUPALineItemDisplayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HpsUPALineItemDisplayTests.swift; sourceTree = "<group>"; };
 		DD6A4F462937C221008B8165 /* Heartland-iOS-SDK-SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Heartland-iOS-SDK-SampleApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD6A4F502937C221008B8165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -272,10 +276,12 @@
 				DD713F992948DC7400514143 /* HpsJsonDocTests.m */,
 				DD713F962948DC7300514143 /* HpsPayRollTests.m */,
 				DD713F952948DC7300514143 /* HpsTableServicesTest.m */,
+				14F88D5E2A02E3AB009E821B /* HpsUPACAStartCardTests.swift */,
 				DD8CECF8294CC7370006908F /* HpsUPAStartCardTests.swift */,
 				DD49DDB3296DDAE000EBD526 /* HpsUPALineItemDisplayTests.swift */,
 				143A437A298C47CB0027BC3F /* HpsCreditTests.swift */,
 				DDFF6555299FC348004D41BF /* HpsUPASAFTests.swift */,
+				149365D72A321C63005A37CC /* UpsUpaSignatureDataTests.swift */,
 				DD713FA82948DC7400514143 /* Tests-Info.plist */,
 				DD713FA22948DC7400514143 /* Tests-Prefix.pch */,
 				DD8CECF7294CC7360006908F /* Heartland-iOS-SDK-SampleAppTests-Bridging-Header.h */,
@@ -431,10 +437,12 @@
 				DD713FC52948DC7500514143 /* Hps_Pax_Batch_Tests.m in Sources */,
 				14B86EFE29B02C3B00657AF3 /* C2XTransactionsTests.swift in Sources */,
 				143A43842993D5F00027BC3F /* ObjC.m in Sources */,
+				149365D82A321C63005A37CC /* UpsUpaSignatureDataTests.swift in Sources */,
 				DD8CECF9294CC7370006908F /* HpsUPAStartCardTests.swift in Sources */,
 				143A437D29928DDA0027BC3F /* HpsC2XDeviceTests.swift in Sources */,
 				143A437B298C47CB0027BC3F /* HpsCreditTests.swift in Sources */,
 				DD713FB72948DC7500514143 /* Hps_Hpa_EBT_Test.m in Sources */,
+				14F88D5F2A02E3AB009E821B /* HpsUPACAStartCardTests.swift in Sources */,
 				143A43802993BC5C0027BC3F /* HpsPaxCreditTests.swift in Sources */,
 				DD713FC22948DC7500514143 /* Hps_Pax_Connection_Tests.m in Sources */,
 				143A43862993D6AB0027BC3F /* ObjC+CatchException.swift in Sources */,

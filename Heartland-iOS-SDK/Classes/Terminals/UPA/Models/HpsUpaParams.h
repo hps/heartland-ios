@@ -8,4 +8,7 @@
 @property (nonatomic,retain)NSString* lineItemRight;
 @property (nonatomic,retain)NSString* cardOnFileIndicator;
 @property (nonatomic,retain)NSString* cardBrandTransId;
+
+@property (nonatomic,retain)NSString* prompt1;
+@property (nonatomic,retain)NSString* displayOption;
 @end

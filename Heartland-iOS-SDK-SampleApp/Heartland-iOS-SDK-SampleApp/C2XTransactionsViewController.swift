@@ -118,6 +118,10 @@ private extension C2XTransactionsViewController {
                                        action: #selector(authTransactionAction),
                                        for: .touchUpInside)
         
+        self.creditReturnButton.addTarget(self,
+                                          action: #selector(refundTransactionAction),
+                                          for: .touchUpInside)
+        
     }
 
     @objc func selectedDevice(_ notification: Notification) {
@@ -139,7 +143,7 @@ private extension C2XTransactionsViewController {
             builder.amount = amountNumber
             builder.clientTransactionId = "123456789"
             builder.allowPartialAuth = false
-            builder.cpcReq = false
+            builder.cpcReq = true
             
             let autoSubstantiation = HpsAutoSubstantiation()
             autoSubstantiation.setClinicSubTotal(NSDecimalNumber(string: "1.10"))
@@ -248,6 +252,27 @@ private extension C2XTransactionsViewController {
             builder.execute()
             
             
+        } else {
+            showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
+        }
+    }
+    
+    @objc func refundTransactionAction(_: UIButton) {
+        guard let amountText = amountTextField.text, amountText.count > 0 else { showTextDialog(LoadingStatus.AMOUNT_SHOULD_BE_LARGER_THAN_ZERO.rawValue)
+            return
+        }
+        if let device = device {
+            showProgress(true)
+            setText(LoadingStatus.WAIT.rawValue)
+            let amountNumber = NSDecimalNumber(string: amountText)
+            let builder = HpsC2xCreditReturnBuilder(device: device)
+            builder.amount = amountNumber
+            builder.allowPartialAuth = true
+            
+            if let cTransactionId = builder.clientTransactionId {
+                NSLog("Client Transaction Id Generated In The Client - Request  %@", cTransactionId)
+            }
+            builder.execute()
         } else {
             showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
         }

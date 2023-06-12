@@ -29,6 +29,7 @@ public struct HpsUpaStartCardResponseData: Codable {
     public let pinDUKPT: HpsUpaStartCardResponsePinDukpt?
     public let threeDesDukpt: HpsUpaStartCardResponse3DesDukpt?
     public let trackData: HpsUpaStartCardResponseTrackData?
+    public let host: UpsUpaStartCardResponseHost?
 
     enum CodingKeys: String, CodingKey {
         case acquisitionType
@@ -42,9 +43,10 @@ public struct HpsUpaStartCardResponseData: Codable {
         case pinDUKPT = "PinDUKPT"
         case threeDesDukpt = "3DesDukpt"
         case trackData
+        case host
     }
 
-    public init(acquisitionType: String?, luhnCheckPassed: String?, dataEncryptionType: String?, pan: HpsUpaStartCardResponsePan?, emvTags: String?, expDate: String?, cvv: String?, scannedData: String?, pinDUKPT: HpsUpaStartCardResponsePinDukpt?, threeDesDukpt: HpsUpaStartCardResponse3DesDukpt?, trackData: HpsUpaStartCardResponseTrackData?) {
+    public init(acquisitionType: String?, luhnCheckPassed: String?, dataEncryptionType: String?, pan: HpsUpaStartCardResponsePan?, emvTags: String?, expDate: String?, cvv: String?, scannedData: String?, pinDUKPT: HpsUpaStartCardResponsePinDukpt?, threeDesDukpt: HpsUpaStartCardResponse3DesDukpt?, trackData: HpsUpaStartCardResponseTrackData?, host: UpsUpaStartCardResponseHost?) {
         self.acquisitionType = acquisitionType
         self.luhnCheckPassed = luhnCheckPassed
         self.dataEncryptionType = dataEncryptionType
@@ -56,6 +58,7 @@ public struct HpsUpaStartCardResponseData: Codable {
         self.pinDUKPT = pinDUKPT
         self.threeDesDukpt = threeDesDukpt
         self.trackData = trackData
+        self.host = host
     }
 }
 
@@ -111,12 +114,25 @@ public struct HpsUpaStartCardResponseTrackData: Codable {
     public let clearTrack3: String?
     public let maskedTrack3: String?
 
-    public init(clearTrack2: String?, maskedTrack2: String?, clearTrack1: String?, maskedTrack1: String?, clearTrack3: String?, maskedTrack3: String?) {
+    public init(clearTrack2: String?, maskedTrack2: String?, clearTrack1: String?,
+                maskedTrack1: String?, clearTrack3: String?, maskedTrack3: String?) {
         self.clearTrack2 = clearTrack2
         self.maskedTrack2 = maskedTrack2
         self.clearTrack1 = clearTrack1
         self.maskedTrack1 = maskedTrack1
         self.clearTrack3 = clearTrack3
         self.maskedTrack3 = maskedTrack3
+    }
+}
+
+public struct UpsUpaStartCardResponseHost: Codable {
+    public let signatureData: String?
+    
+    enum CodingKeys: CodingKey {
+        case signatureData
+    }
+    
+    public init(signatureData: String?) {
+        self.signatureData = signatureData
     }
 }
