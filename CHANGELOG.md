@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Added UPA Signature Data. (US349346)
 - Added UPA Pay App Canada (US346223)
+- iOS SDK: C2X Refund Reversal (US359118)
 - Bug fixes and improvements.
  
 ### Changed
