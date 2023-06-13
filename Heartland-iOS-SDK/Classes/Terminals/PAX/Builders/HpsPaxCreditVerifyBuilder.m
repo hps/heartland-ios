@@ -39,11 +39,6 @@
     traceRequest.referenceNumber = [NSString stringWithFormat:@"%d", self.referenceNumber];
     if (self.clientTransactionId != nil)
         traceRequest.clientTransactionId = self.clientTransactionId;
-    
-    if (self.cardBrandTransactionId != nil) {
-        traceRequest.originalTransactionIdentifier = self.cardBrandTransactionId;
-    }
-    
     [subgroups addObject:traceRequest];
     
     HpsPaxAvsRequest *avsRequest = [[HpsPaxAvsRequest alloc] init];
@@ -58,7 +53,6 @@
     [subgroups addObject:[[HpsPaxEcomSubGroup alloc] init]];
     
     HpsPaxExtDataSubGroup *extData = [[HpsPaxExtDataSubGroup alloc] init];
-    
     [subgroups addObject:extData];
     
     [device doCredit:(self.requestMultiUseToken ? PAX_TXN_TYPE_TOKENIZE : PAX_TXN_TYPE_VERIFY) andSubGroups:subgroups withResponseBlock:^(HpsPaxCreditResponse *response, NSError *error) {

@@ -51,10 +51,6 @@
     if (self.authCode == nil || self.authCode.length == 0) {
         traceRequest.authCode = self.authCode;
     }
-    
-    if (self.cardBrandTransactionId != nil) {
-        traceRequest.originalTransactionIdentifier = self.cardBrandTransactionId;
-    }
 
     [subgroups addObject:traceRequest];
     

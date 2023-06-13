@@ -12,15 +12,16 @@ public struct HpsUpaCommandPayload<T: Codable>: Codable {
     public let data: T?
 
     enum CodingKeys: String, CodingKey {
-        case command, requestId
+        case command
+        case requestId
         case ecrId = "EcrId"
         case data
     }
 
-    public init(command: String?, requestId: String?, ecrId: String?, data: T?) {
+    public init(command: String?, ecrId: String?, requestId: String?, data: T?) {
         self.command = command
-        self.requestId = requestId
         self.ecrId = ecrId
+        self.requestId = requestId
         self.data = data
     }
 }
@@ -31,7 +32,8 @@ public struct HpsUpaCommandPayloadNoData: Codable {
     public let command, requestId, ecrId: String?
 
     enum CodingKeys: String, CodingKey {
-        case command, requestId
+        case command
+        case requestId
         case ecrId = "EcrId"
     }
 

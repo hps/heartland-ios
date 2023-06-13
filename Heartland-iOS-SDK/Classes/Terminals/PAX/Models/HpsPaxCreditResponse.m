@@ -40,7 +40,6 @@
     @try {
         if (self.hostResponse != nil) {
             self.authorizationCode = self.hostResponse.authCode;
-            self.cardBrandTransactionId = self.hostResponse.cardBrandTransactionId;
         }
         
     } @catch (NSException *exception) {

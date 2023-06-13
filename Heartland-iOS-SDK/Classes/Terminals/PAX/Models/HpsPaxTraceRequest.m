@@ -26,10 +26,7 @@
     [sb appendString:[HpsTerminalEnums controlCodeString:HpsControlCodes_US]];
     
     if (self.clientTransactionId != nil && self.clientTransactionId.length > 0) [sb appendString:self.clientTransactionId];
-    [sb appendString:[HpsTerminalEnums controlCodeString:HpsControlCodes_US]];
     
-    if (self.originalTransactionIdentifier != nil && self.originalTransactionIdentifier.length > 0) [sb appendString:self.originalTransactionIdentifier];
-    [sb appendString:[HpsTerminalEnums controlCodeString:HpsControlCodes_US]];
     return sb;
 }
 

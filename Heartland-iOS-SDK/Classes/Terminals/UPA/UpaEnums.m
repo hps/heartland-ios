@@ -24,6 +24,7 @@ NSString * const UPA_MSG_ID_toString[] = {
     [ UPA_MSG_ID_REVERSAL ] = @"Reversal",
     [ UPA_MSG_ID_LINE_ITEM_DISPLAY ] = @"LineItemDisplay",
     [ UPA_MSG_ID_DELETE_PREAUTH ] = @"DeletePreAuth",
+    [ UPA_MSG_ID_GET_SIGNATURE ] = @"GetSignature",
 };
 NSString * const UPA_CARD_GROUP_toString[] = {
 
@@ -43,6 +44,10 @@ NSString * const UPA_MSG_TYPE_toString[] = {
     [UPA_MSG_TYPE_TIMEOUT] = @"TO",
     [UPA_MSG_TYPE_MSG] = @"MSG",
     [UPA_MSG_TYPE_DATA] = @"DATA",
+};
+
+NSString * const UPA_MSG_PROMPT_toString[] = {
+    [UPA_MSG_TYPE_PROMPT1] = @"Please sign",
 };
 
 @end

@@ -1,6 +1,4 @@
 #import "HpsPaxCreditSaleBuilder.h"
-#import <Heartland_iOS_SDK/Heartland-iOS-SDK-umbrella.h>
-#import <Heartland_iOS_SDK/Heartland_iOS_SDK-Swift.h>
 
 @implementation HpsPaxCreditSaleBuilder
 
@@ -62,17 +60,11 @@
     traceRequest.ecrTransId = _ecrTransId;
     
     traceRequest.referenceNumber = [NSString stringWithFormat:@"%d", self.referenceNumber];
-    
     if (self.clientTransactionId != nil)
         traceRequest.clientTransactionId = self.clientTransactionId;
     if (self.details != nil) {
         traceRequest.invoiceNumber = self.details.invoiceNumber;
     }
-    
-    if (self.cardBrandTransactionId != nil) {
-        traceRequest.originalTransactionIdentifier = self.cardBrandTransactionId;
-    }
-    
     [subgroups addObject:traceRequest];
     
     HpsPaxAvsRequest *avsRequest = [[HpsPaxAvsRequest alloc] init];
@@ -99,7 +91,6 @@
     if (self.tipRequest){
         [extData.collection setObject:@"1" forKey:PAX_EXT_DATA_TIP_REQUEST];
     }
-    
     [subgroups addObject:extData];
     
     [device doCredit:PAX_TXN_TYPE_SALE_REDEEM andSubGroups:subgroups withResponseBlock:^(HpsPaxCreditResponse *response, NSError *error) {

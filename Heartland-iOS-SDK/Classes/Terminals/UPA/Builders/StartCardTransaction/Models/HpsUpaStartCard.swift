@@ -5,8 +5,8 @@
 
 import Foundation
 
-struct HpsUpaStartCardConstants {
-    static let command = "StartCardTransaction"
+public struct HpsUpaStartCardConstants {
+    public static let command = "StartCardTransaction"
 }
 
 public struct HpsUpaStartCard: Codable {
@@ -21,10 +21,10 @@ public struct HpsUpaStartCard: Codable {
 
 public struct HpsUpaStartCardDataDetails: Codable {
     public let params: HpsUpaStartCardParams
-    public let processingIndicators: HpsUpaStartCardProcessingIndicators
+    public let processingIndicators: HpsUpaStartCardProcessingIndicators?
     public let transaction: HpsUpaStartCardTransaction
 
-    public init(params: HpsUpaStartCardParams, processingIndicators: HpsUpaStartCardProcessingIndicators, transaction: HpsUpaStartCardTransaction) {
+    public init(params: HpsUpaStartCardParams, processingIndicators: HpsUpaStartCardProcessingIndicators?, transaction: HpsUpaStartCardTransaction) {
         self.params = params
         self.processingIndicators = processingIndicators
         self.transaction = transaction
@@ -55,13 +55,13 @@ public struct HpsUpaStartCardProcessingIndicators: Codable {
     public let quickChip: String
     public let checkLuhn: String?
     public let securityCode: String?
-    public let cardFilterType: String?
+    public let cardTypeFilter: String?
 
-    public init(quickChip: String, checkLuhn: String?, securityCode: String?, cardFilterType: String?) {
+    public init(quickChip: String, checkLuhn: String?, securityCode: String?, cardTypeFilter: String?) {
         self.quickChip = quickChip
         self.checkLuhn = checkLuhn
         self.securityCode = securityCode
-        self.cardFilterType = cardFilterType
+        self.cardTypeFilter = cardTypeFilter
     }
 }
 

@@ -501,6 +501,20 @@
     }];
 }
 
+-(void) test_UPA_Signature_Data {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"test_UPA_Signature_Data"];
+    HpsUpaDevice *device = [self setupDevice];
+    [device getSignatureData:@"1234" andRequestId:@"1234" response:^(HpsUpaDeviceSignatureResponse *response, NSError *error) {
+            
+            XCTAssertNil(error);
+            XCTAssertNotNil(response);
+            [expectation fulfill];
+    }];
+     [self waitForExpectationsWithTimeout:120.0 handler:^(NSError *error) {
+         if(error) XCTFail(@"Request Timed out");
+     }];
+}
+
 
 @end
 

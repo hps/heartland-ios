@@ -2,6 +2,7 @@
 extern NSString * const UPA_MSG_ID_toString[];
 extern NSString * const UPA_CARD_GROUP_toString[];
 extern NSString * const UPA_MSG_TYPE_toString[];
+extern NSString * const UPA_MSG_PROMPT_toString[];
 
 typedef NS_ENUM(NSInteger, UPA_MSG_ID) {
     UPA_MSG_ID_LANE_OPEN,
@@ -26,6 +27,7 @@ typedef NS_ENUM(NSInteger, UPA_MSG_ID) {
     UPA_MSG_ID_REVERSAL,
     UPA_MSG_ID_LINE_ITEM_DISPLAY,
     UPA_MSG_ID_DELETE_PREAUTH,
+    UPA_MSG_ID_GET_SIGNATURE,
 };
 
 typedef NS_ENUM(NSInteger, UPA_CARD_GROUP) {
@@ -45,7 +47,15 @@ typedef NS_ENUM(NSInteger, UPA_MSG_TYPE) {
     UPA_MSG_TYPE_TIMEOUT,
     UPA_MSG_TYPE_MSG,
     UPA_MSG_TYPE_DATA,
+    UPA_MSG_TYPE_PROMPT1,
+    UPA_MSG_TYPE_BC,
 };
+
+typedef NS_ENUM(NSInteger, UPA_TRANSACTION_COUNTRY_TYPE) {
+    UPA_TRANSACTION_TYPE_CANADA,
+    UPA_TRANSACTION_TYPE_USA
+};
+
 
 @interface UpaEnums : NSObject
 

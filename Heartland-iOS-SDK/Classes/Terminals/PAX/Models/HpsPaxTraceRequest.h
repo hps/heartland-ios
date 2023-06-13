@@ -9,7 +9,6 @@
 @property (nonatomic,strong) NSString *timeStamp;
 @property (nonatomic,strong) NSString *ecrTransId;
 @property (nonatomic,strong) NSString *clientTransactionId;
-@property (nonatomic,strong) NSString *originalTransactionIdentifier;
 
 - (NSString*) getElementString;
 
