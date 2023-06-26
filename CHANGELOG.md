@@ -19,5 +19,4 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 
 ## 2.0.10 2023-06-27
-### Added
 - Bug fixes and improvements.
