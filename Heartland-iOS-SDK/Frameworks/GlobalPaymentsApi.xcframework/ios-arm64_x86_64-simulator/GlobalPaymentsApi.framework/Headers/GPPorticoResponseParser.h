@@ -14,6 +14,7 @@
 @property (nonatomic, retain) GPTransactionSummary* singleReport;
 @property (nonatomic, retain) NSArray* listReport;
 @property (nonatomic, retain) NSString* requestType;
+@property (nonatomic, retain) NSString* gatewayTransactionId;
 
 - (id) initWithString:(NSString*) xml;
 - (BOOL) parse:(NSString*) requestType;

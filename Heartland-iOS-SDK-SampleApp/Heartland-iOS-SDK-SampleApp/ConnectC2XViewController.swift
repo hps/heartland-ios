@@ -83,7 +83,7 @@ class ConnectC2XViewController: UIViewController {
         config.port = ""
         config.username = ""
         config.password = ""
-        config.siteID = "";
+        config.siteID = ""
         config.deviceID = ""
         config.licenseID = ""
         config.developerID = ""
@@ -179,58 +179,5 @@ private extension ConnectC2XViewController {
     enum UIUserInterfaceIdiom: Int {
         case phone // iPhone and iPod touch style UI
         case pad // iPad style UI (also includes macOS Catalyst)
-    }
-}
-
-
-extension ConnectC2XViewController {
-    public func setupUpaDevice() -> HpsUpaDevice? {
-            let config = HpsConnectionConfig()
-            config.ipAddress = "192.168.31.118" //"192.168.31.107" // 199
-            config.port = "8081"
-            config.connectionMode = HpsConnectionModes.TCP_IP.rawValue
-            config.timeout = 1000
-            return HpsUpaDevice(config: config)
-     }
-    
-    public func testingUPAUsaSignatureData() {
-        let device = setupUpaDevice()
-        if let builder = HpsUpaSaleBuilder(device: device) {
-            builder.ecrId = "13"
-            builder.clerkId = "1234"
-            builder.referenceNumber = 1234
-            builder.amount = 30.0;
-            builder.details = HpsTransactionDetails()
-            builder.details.invoiceNumber = generateInvoiceNumber()
-
-            builder.execute(forUPAUSA: { response, error in
-                if let error = error {
-                    print(" Error: \(error)")
-                    return
-                }
-
-                if let response = response {
-                    print(" Response return ")
-                    print(response.approvalCode)
-                    print(" Device signature data")
-                    device?.getSignatureData(builder.ecrId, andRequestId: "1234", response: { signatureDataResponse, error in
-                        if let error = error {
-                            print(" Error: \(error)")
-                            return
-                        }
-                        
-                        if let signatureDataResponse = signatureDataResponse {
-                            print(" Signature Response")
-                            print(signatureDataResponse.data.data.signatureData)
-                        }
-                    })
-                }
-            })
-        }
-    }
-    
-    func generateInvoiceNumber() -> String {
-        let number = Int.random(in: 0001..<5000)
-        return "\(number)"
     }
 }

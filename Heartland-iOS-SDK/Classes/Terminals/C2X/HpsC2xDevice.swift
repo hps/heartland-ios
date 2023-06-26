@@ -12,6 +12,7 @@ public class HpsC2xDevice: GMSDevice, IC2xDeviceInterface {
                 .contactless,
                 .msr,
                 .manual,
+                .quickChip,
             ],
             terminalType: .bbpos_c2x
         )

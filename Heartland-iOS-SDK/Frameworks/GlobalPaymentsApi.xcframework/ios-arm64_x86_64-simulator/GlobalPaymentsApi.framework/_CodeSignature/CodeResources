@@ -74,7 +74,7 @@
 		</data>
 		<key>Headers/GPPorticoResponseParser.h</key>
 		<data>
-		4yOoZ8wSiOeeUKN3sbdj0A3w2vc=
+		OPY5CO46BGknmEtEb1BA+T7vaVs=
 		</data>
 		<key>Headers/GPReportingService.h</key>
 		<data>
@@ -90,7 +90,7 @@
 		</data>
 		<key>Headers/GPTransaction.h</key>
 		<data>
-		DRO/9oSDbePaiaFe0pr3dSq1kHE=
+		UJHXDWMRqxLLMqGhLcCXaY0CwBw=
 		</data>
 		<key>Headers/GPTransactionBuilder.h</key>
 		<data>
@@ -118,7 +118,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		YAflnFEY1/AoJmMms+IJSFlUzHg=
+		4xReYn9K6sdgeZv4A+1duT4X2To=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -318,11 +318,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4yOoZ8wSiOeeUKN3sbdj0A3w2vc=
+			OPY5CO46BGknmEtEb1BA+T7vaVs=
 			</data>
 			<key>hash2</key>
 			<data>
-			V/8DywKhMfz9Ff8Di0pQtpW0ypFyCYN62yULqJd3mfs=
+			QugmLSkeMhDuW9xUOz76yJADXfPu6TLz80JPu+zNAew=
 			</data>
 		</dict>
 		<key>Headers/GPReportingService.h</key>
@@ -362,11 +362,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DRO/9oSDbePaiaFe0pr3dSq1kHE=
+			UJHXDWMRqxLLMqGhLcCXaY0CwBw=
 			</data>
 			<key>hash2</key>
 			<data>
-			lLB9okQAq3mhaIjtDgaou6gEDaIqU9Xh6qV+RSaf35Q=
+			9HYtzX8V1RlK5Uv649EEzuew4p1lFrY0G1zcbDvwaxA=
 			</data>
 		</dict>
 		<key>Headers/GPTransactionBuilder.h</key>

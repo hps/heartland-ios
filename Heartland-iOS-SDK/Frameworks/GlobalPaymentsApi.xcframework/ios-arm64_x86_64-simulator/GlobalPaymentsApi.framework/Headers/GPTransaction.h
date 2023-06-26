@@ -33,6 +33,7 @@
 @property (nonatomic, strong) NSString* token;
 @property (nonatomic, strong) NSString* transactionDescriptor;
 @property (nonatomic, strong) GPTransactionReference* transactionReference;
+@property (nonatomic, strong) NSString* gatewayTransactionId;
 
 + (instancetype) transactionFromId:(NSString*) transactionId;
 + (instancetype) transactionFromId:(NSString*) transactionId withPaymentMethodType:(GPPaymentMethodType) paymentMethodType;

@@ -10,11 +10,11 @@ import XCTest
 class HpsUPAStartCardTests: XCTestCase {
     private func setupDevice() -> HpsUpaDevice? {
         let config = HpsConnectionConfig()
-        config.username = "701420636"
-        config.password = "$Test1234"
-        config.licenseID = "145801"
-        config.siteID = "145898"
-        config.deviceID = "90916202"
+        config.username = ""
+        config.password = ""
+        config.licenseID = ""
+        config.siteID = ""
+        config.deviceID = ""
         config.ipAddress = "192.168.4.127"
         config.port = "8081"
         config.connectionMode = HpsConnectionModes.TCP_IP.rawValue
