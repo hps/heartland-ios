@@ -30,11 +30,13 @@ class ConnectC2XViewController: UIViewController {
         config.licenseID = ""
         config.developerID = ""
         config.versionNumber = ""
+
         config.timeout = timeout
 
         device = HpsC2xDevice(config: config)
         device?.deviceDelegate = self
         device?.scan()
+        print(" Is Device Connected?: \(device?.isConnected())")
         activityIndicator.isHidden = false
     }
 
@@ -134,6 +136,8 @@ extension ConnectC2XViewController: HpsC2xDeviceDelegate {
         let selectedDevice: [String: HpsC2xDevice?] = ["selectedDevice": device]
         notificationCenter.post(name: Notification.Name(Constants.selectedDeviceNotification),
                                 object: nil, userInfo: selectedDevice)
+        
+        print(" Is Device Connected?: \(device?.isConnected())")
     }
 
     func onDisconnected() {

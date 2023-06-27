@@ -13,10 +13,13 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Added Timeout functionality to PayApp TCP connection. (US344949)
 - Added token and card brand transaction id to the response for Pax. (US345636)
- 
+
+## 2.0.10 2023-06-29
+- Added isConnected method for checking if device is connected. C2X
+
 ### Changed
  
 ### Fixed
 
-## 2.0.10 2023-06-27
+## 2.0.10 2023-06-29
 - Bug fixes and improvements.

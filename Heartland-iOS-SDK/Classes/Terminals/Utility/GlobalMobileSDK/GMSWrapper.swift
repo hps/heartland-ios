@@ -120,6 +120,10 @@ public class GMSWrapper: NSObject {
     public func selectAID(aid: AID) {
         GMSManager.shared.select(aid: aid)
     }
+    
+    public func isDeviceConnected() -> Bool {
+        return GMSManager.shared.terminalConnected
+    }
 }
 
 extension GMSWrapper: SearchDelegate {
