@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name GlobalMobileSDK
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
@@ -35,8 +35,8 @@ public struct BatchCloseResponse : GlobalMobileSDK.TransactionResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct BatchCloseTransaction : GlobalMobileSDK.Transaction {
   public var operatingUserId: Swift.String?
@@ -44,8 +44,8 @@ public struct BatchCloseTransaction : GlobalMobileSDK.Transaction {
   public var invoiceNumber: Swift.String?
   public var posReferenceNumber: Swift.String?
   public static func batchClose(clientTransactionId: Swift.String?, operatingUserId: Swift.String?) -> GlobalMobileSDK.BatchCloseTransaction
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public enum SearchError : Swift.Error {
   case bluetoothNotSupported, bluetoothPermissionNotGranted, bluetoothDisabled, terminalNotConfigured
@@ -56,7 +56,7 @@ public enum SearchError : Swift.Error {
   }
 }
 public struct ProcessSaF : GlobalMobileSDK.Transaction {
-  public let transaction: GlobalMobileSDK.Transaction
+  public let transaction: any GlobalMobileSDK.Transaction
   public var clientTransactionId: Swift.String
   public var invoiceNumber: Swift.String?
   public var posReferenceNumber: Swift.String?
@@ -64,8 +64,8 @@ public struct ProcessSaF : GlobalMobileSDK.Transaction {
   public var transactionDate: Foundation.Date? {
     get
   }
-  public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
   public enum TransactionError : Swift.Error {
     case decodeFailed(debugMessage: Swift.String), encodeFailed(debugMessage: Swift.String)
   }
@@ -74,12 +74,12 @@ public enum TransactionError : Swift.Error {
   case gatewayNotConfigured, terminalNotConfigured, bluetoothNotSupported, bluetoothPermissionNotGranted, bluetoothDisabled, bluetoothConnectionLost, devicePoweredOff, cardNotRemoved, trackReadFailed, terminalNotConnnected, transactionNotInProgress, transactionNotSupported, transactionInProgress, transactionFailed(message: Swift.String), safTransactionFailed(message: Swift.String, transactionID: Swift.String?), terminalFailed(message: Swift.String, errorCode: Swift.Int = 0), missingRequiredValue(message: Swift.String), gatewayPermissionFailed(message: Swift.String), gatewayFailure(message: Swift.String, errorCode: Swift.Int = 0), hostTimeout, hostNotReachable
 }
 public struct GMSError : Swift.Error, Swift.Codable {
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public protocol TerminalOTAManagerDelegate {
   func terminalVersionDetails(info: [Swift.AnyHashable : Any]?)
-  func terminalOTAResult(resultType: GlobalMobileSDK.TerminalOTAResult, info: [Swift.String : Swift.AnyObject]?, error: Swift.Error?)
+  func terminalOTAResult(resultType: GlobalMobileSDK.TerminalOTAResult, info: [Swift.String : Swift.AnyObject]?, error: (any Swift.Error)?)
   func listOfVersionsFor(type: GlobalMobileSDK.TerminalOTAUpdateType, results: [Any]?)
   func otaUpdateProgress(percentage: Swift.Float)
   func onReturnSetTargetVersion(resultType: GlobalMobileSDK.TerminalOTAResult, type: GlobalMobileSDK.TerminalOTAUpdateType, message: Swift.String)
@@ -98,27 +98,27 @@ public protocol TerminalOTAManagerDelegate {
 }
 @_hasMissingDesignatedInitializers public class GMSManager {
   public static let shared: GlobalMobileSDK.GMSManager
-  weak public var connectionDelegate: GlobalMobileSDK.ConnectionDelegate?
-  weak public var transactionDelegate: GlobalMobileSDK.TransactionDelegate?
-  weak public var searchDelegate: GlobalMobileSDK.SearchDelegate?
+  weak public var connectionDelegate: (any GlobalMobileSDK.ConnectionDelegate)?
+  weak public var transactionDelegate: (any GlobalMobileSDK.TransactionDelegate)?
+  weak public var searchDelegate: (any GlobalMobileSDK.SearchDelegate)?
   public var transactionState: GlobalMobileSDK.TransactionState
-  public var terminalInfo: GlobalMobileSDK.TerminalInfo?
+  public var terminalInfo: (any GlobalMobileSDK.TerminalInfo)?
   public var terminalConnected: Swift.Bool {
     get
   }
-  public func configure(gatewayConfig: GlobalMobileSDK.GatewayConfig) throws
-  public func requestReadTerminalSetting(settingType: GlobalMobileSDK.TerminalSettingType, delegate: GlobalMobileSDK.TerminalSettingsUpdateDelegate)
-  public func requestUpdateTerminalSetting(settingType: GlobalMobileSDK.TerminalSettingType, value: Swift.Int, delegate: GlobalMobileSDK.TerminalSettingsUpdateDelegate)
-  public func requestTerminalVersionData(delegate: GlobalMobileSDK.TerminalOTAManagerDelegate)
-  public func requestAvailableOTAVersionsListFor(type: GlobalMobileSDK.TerminalOTAUpdateType, delegate: GlobalMobileSDK.TerminalOTAManagerDelegate)
-  public func setVersionDataFor(type: GlobalMobileSDK.TerminalOTAUpdateType, versionString: Swift.String, delegate: GlobalMobileSDK.TerminalOTAManagerDelegate)
-  public func requestToStartUpdateFor(type: GlobalMobileSDK.TerminalOTAUpdateType, delegate: GlobalMobileSDK.TerminalOTAManagerDelegate)
-  public func listSaF(delegate: GlobalMobileSDK.TransactionDelegate)
-  public func search(delegate: GlobalMobileSDK.SearchDelegate)
+  public func configure(gatewayConfig: any GlobalMobileSDK.GatewayConfig) throws
+  public func requestReadTerminalSetting(settingType: GlobalMobileSDK.TerminalSettingType, delegate: any GlobalMobileSDK.TerminalSettingsUpdateDelegate)
+  public func requestUpdateTerminalSetting(settingType: GlobalMobileSDK.TerminalSettingType, value: Swift.Int, delegate: any GlobalMobileSDK.TerminalSettingsUpdateDelegate)
+  public func requestTerminalVersionData(delegate: any GlobalMobileSDK.TerminalOTAManagerDelegate)
+  public func requestAvailableOTAVersionsListFor(type: GlobalMobileSDK.TerminalOTAUpdateType, delegate: any GlobalMobileSDK.TerminalOTAManagerDelegate)
+  public func setVersionDataFor(type: GlobalMobileSDK.TerminalOTAUpdateType, versionString: Swift.String, delegate: any GlobalMobileSDK.TerminalOTAManagerDelegate)
+  public func requestToStartUpdateFor(type: GlobalMobileSDK.TerminalOTAUpdateType, delegate: any GlobalMobileSDK.TerminalOTAManagerDelegate)
+  public func listSaF(delegate: any GlobalMobileSDK.TransactionDelegate)
+  public func search(delegate: any GlobalMobileSDK.SearchDelegate)
   public func cancelSearch()
-  public func connect(terminalInfo: GlobalMobileSDK.TerminalInfo, delegate: GlobalMobileSDK.ConnectionDelegate)
+  public func connect(terminalInfo: any GlobalMobileSDK.TerminalInfo, delegate: any GlobalMobileSDK.ConnectionDelegate)
   public func disconnect()
-  public func start<T>(transaction: T, entryModes: [GlobalMobileSDK.EntryMode] = EntryMode.allCases, delegate: GlobalMobileSDK.TransactionDelegate) where T : GlobalMobileSDK.Transaction
+  public func start<T>(transaction: T, entryModes: [GlobalMobileSDK.EntryMode] = EntryMode.allCases, delegate: any GlobalMobileSDK.TransactionDelegate) where T : GlobalMobileSDK.Transaction
   public func confirm(amount: Foundation.Decimal)
   public func approveSaF()
   public func postalCode(postalCode: Swift.String)
@@ -128,35 +128,35 @@ public protocol TerminalOTAManagerDelegate {
   @objc deinit
 }
 extension GlobalMobileSDK.GMSManager : GlobalMobileSDK.SearchDelegate {
-  public func deviceFound(terminalInfo: GlobalMobileSDK.TerminalInfo)
+  public func deviceFound(terminalInfo: any GlobalMobileSDK.TerminalInfo)
   public func onSearchComplete()
   public func onError(error: GlobalMobileSDK.SearchError)
 }
 extension GlobalMobileSDK.GMSManager : GlobalMobileSDK.ConnectionDelegate {
-  public func onConnected(terminalInfo: GlobalMobileSDK.TerminalInfo)
-  public func onDisconnected(terminalInfo: GlobalMobileSDK.TerminalInfo)
+  public func onConnected(terminalInfo: any GlobalMobileSDK.TerminalInfo)
+  public func onDisconnected(terminalInfo: any GlobalMobileSDK.TerminalInfo)
   public func configuringTerminal(state: GlobalMobileSDK.TransactionState)
   public func onError(error: GlobalMobileSDK.ConnectionError)
 }
 extension GlobalMobileSDK.GMSManager : GlobalMobileSDK.TransactionDelegate {
   public func onDeletedTransactionsComplete(deletedTransactions: [GlobalMobileSDK.ProcessSaF])
-  public func onListSaFComplete(transactions: [GlobalMobileSDK.Transaction])
+  public func onListSaFComplete(transactions: [any GlobalMobileSDK.Transaction])
   public func onState(state: GlobalMobileSDK.TransactionState)
   public func requestAIDSelection(aids: [GlobalMobileSDK.AID])
   public func requestAmountConfirmation(amount: Foundation.Decimal?)
   public func requestSaFApproval()
   public func requestPostalCode(maskedPan: Swift.String, expiryDate: Swift.String, cardholderName: Swift.String?)
-  public func onTransactionComplete(result: GlobalMobileSDK.TransactionResult, response: GlobalMobileSDK.TransactionResponse?)
+  public func onTransactionComplete(result: GlobalMobileSDK.TransactionResult, response: (any GlobalMobileSDK.TransactionResponse)?)
   public func onTransactionCancelled()
   public func onError(error: GlobalMobileSDK.TransactionError)
 }
 extension GlobalMobileSDK.GMSManager : GlobalMobileSDK.TerminalSettingsUpdateDelegate {
   public func onReturnUpdateSetting(settingType: GlobalMobileSDK.TerminalSettingType, result: GlobalMobileSDK.TerminalSettingResult)
-  public func onReturnReadSetting(settingType: GlobalMobileSDK.TerminalSettingType, value: Swift.Int?, error: Swift.Error?)
+  public func onReturnReadSetting(settingType: GlobalMobileSDK.TerminalSettingType, value: Swift.Int?, error: (any Swift.Error)?)
 }
 extension GlobalMobileSDK.GMSManager : GlobalMobileSDK.TerminalOTAManagerDelegate {
   public func terminalVersionDetails(info: [Swift.AnyHashable : Any]?)
-  public func terminalOTAResult(resultType: GlobalMobileSDK.TerminalOTAResult, info: [Swift.String : Swift.AnyObject]?, error: Swift.Error?)
+  public func terminalOTAResult(resultType: GlobalMobileSDK.TerminalOTAResult, info: [Swift.String : Swift.AnyObject]?, error: (any Swift.Error)?)
   public func listOfVersionsFor(type: GlobalMobileSDK.TerminalOTAUpdateType, results: [Any]?)
   public func onReturnSetTargetVersion(resultType: GlobalMobileSDK.TerminalOTAResult, type: GlobalMobileSDK.TerminalOTAUpdateType, message: Swift.String)
   public func otaUpdateProgress(percentage: Swift.Float)
@@ -186,8 +186,8 @@ public struct AuthTransaction {
   public static func auth(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, requestMultiUseToken: Swift.Bool, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?, autoSubstantiation: GlobalMobileSDK.AutoSubstantiation?) -> GlobalMobileSDK.AuthTransaction
   public static func auth(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.ManualCardData, requestMultiUseToken: Swift.Bool, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?, autoSubstantiation: GlobalMobileSDK.AutoSubstantiation?) -> GlobalMobileSDK.AuthTransaction
   public static func auth(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.TokenizedCardData, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?, autoSubstantiation: GlobalMobileSDK.AutoSubstantiation?) -> GlobalMobileSDK.AuthTransaction
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 @objc @objcMembers public class AIDConfiguration : ObjectiveC.NSObject, Swift.Codable {
   @objc public var aid: GlobalMobileSDK.AID
@@ -206,11 +206,11 @@ public struct AuthTransaction {
   @objc public var contactless: Swift.Bool
   @objc public init(aid: GlobalMobileSDK.AID)
   @objc deinit
-  public func encode(to encoder: Swift.Encoder) throws
-  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 public protocol SearchDelegate : AnyObject {
-  func deviceFound(terminalInfo: GlobalMobileSDK.TerminalInfo)
+  func deviceFound(terminalInfo: any GlobalMobileSDK.TerminalInfo)
   func onSearchComplete()
   func onError(error: GlobalMobileSDK.SearchError)
 }
@@ -343,8 +343,8 @@ public struct SaleResponse {
   public var duplicateData: GlobalMobileSDK.DuplicateDataResponse?
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
-  public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class TerminalTender : ObjectiveC.NSObject {
   @objc public var paymentAppVersion: Swift.String
@@ -461,8 +461,8 @@ public struct VerifyResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
-  public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 public protocol OnlineProcessingDelegate : AnyObject {
   func requestOnlineProcessing<T>(transaction: T) where T : GlobalMobileSDK.Transaction
@@ -517,16 +517,16 @@ public struct GMSTerminalInfo {
   public var terminalType: GlobalMobileSDK.TerminalType
   public var identifier: Foundation.UUID
   public init(name: Swift.String, description: Swift.String, connected: Swift.Bool, terminalType: GlobalMobileSDK.TerminalType, identifier: Foundation.UUID)
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct TerminalConfig : Swift.Codable, Swift.Equatable {
   public let terminalType: GlobalMobileSDK.TerminalType
   public let autoConnect: Swift.Bool
   public let gatewayType: GlobalMobileSDK.GatewayType
   public static func == (lhs: GlobalMobileSDK.TerminalConfig, rhs: GlobalMobileSDK.TerminalConfig) -> Swift.Bool
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 @objc public enum PinLength : Swift.UInt, Swift.Codable {
   case unknown, notSupported, max4, max5, max6, max7, max8, max9, max10, max11, max12
@@ -589,8 +589,8 @@ public struct TerminalConfig : Swift.Codable, Swift.Equatable {
   @objc public init(terminalType: GlobalMobileSDK.RUATerminalType)
   public init(terminalType: GlobalMobileSDK.TerminalType)
   @objc deinit
-  public func encode(to encoder: Swift.Encoder) throws
-  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 public struct SaleTransaction {
   public var allowDuplicates: Swift.Bool?
@@ -614,8 +614,8 @@ public struct SaleTransaction {
   public static func sale(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, requestMultiUseToken: Swift.Bool, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?, autoSubstantiation: GlobalMobileSDK.AutoSubstantiation?) -> GlobalMobileSDK.SaleTransaction
   public static func sale(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.ManualCardData, requestMultiUseToken: Swift.Bool, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?, autoSubstantiation: GlobalMobileSDK.AutoSubstantiation?) -> GlobalMobileSDK.SaleTransaction
   public static func sale(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.TokenizedCardData, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?, autoSubstantiation: GlobalMobileSDK.AutoSubstantiation?) -> GlobalMobileSDK.SaleTransaction
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public enum TerminalSettingType : Swift.UInt, Swift.CaseIterable {
   case normalModeTimeout, bluetoothDiscoveryTimeout, standByModeTimeout
@@ -643,18 +643,18 @@ public enum TerminalSettingType : Swift.UInt, Swift.CaseIterable {
   @objc override dynamic public init()
   convenience public init(rid: Swift.String?, pix: Swift.String?, applicationIdentifier: Swift.String, tlv: Swift.String?, index: Swift.Int?, label: Swift.String?, preferredName: Swift.String?)
   @objc deinit
-  public func encode(to encoder: Swift.Encoder) throws
-  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 public struct AnyCardData : GlobalMobileSDK.CardData {
-  public let cardData: GlobalMobileSDK.CardData
+  public let cardData: any GlobalMobileSDK.CardData
   public var cardEntryMode: GlobalMobileSDK.EntryMode
   public var terminalType: GlobalMobileSDK.TerminalType {
     get
   }
-  public init(cardData: GlobalMobileSDK.CardData)
-  public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
+  public init(cardData: any GlobalMobileSDK.CardData)
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
   public enum CardDataError : Swift.Error {
     case decodeFailed(debugMessage: Swift.String), encodeFailed(debugMessage: Swift.String)
   }
@@ -683,8 +683,8 @@ public struct VerifyTransaction {
   public var cpcReq: Swift.Bool?
   public static func verify(clientTransactionId: Swift.String?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, requestMultiUseToken: Swift.Bool, allowPartialAuth: Swift.Bool?) -> GlobalMobileSDK.VerifyTransaction
   public static func verify(clientTransactionId: Swift.String?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.ManualCardData, requestMultiUseToken: Swift.Bool, allowPartialAuth: Swift.Bool?) -> GlobalMobileSDK.VerifyTransaction
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct TipAdjustTransaction {
   public var total: Swift.UInt?
@@ -697,8 +697,8 @@ public struct TipAdjustTransaction {
   public var signatureData: Foundation.Data?
   public var allowPartialAuth: Swift.Bool?
   public static func tipAdjust(clientTransactionId: Swift.String?, gatewayTransactionId: Swift.String, total: Swift.UInt?, tip: Swift.UInt?, invoiceNumber: Swift.String?, posReferenceNumber: Swift.String?, operatingUserId: Swift.String?, allowPartialAuth: Swift.Bool?) -> GlobalMobileSDK.TipAdjustTransaction
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct ListSaFResponse {
   public var transactionId: Foundation.UUID
@@ -725,8 +725,8 @@ public struct AutoSubstantiation : Swift.Codable {
   public mutating func setClinicSubTotal(value: Foundation.NSDecimalNumber)
   public mutating func setDentalSubTotal(value: Foundation.NSDecimalNumber)
   public mutating func setPrescriptionSubTotal(value: Foundation.NSDecimalNumber)
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct ReturnResponse {
   public var transactionResult: GlobalMobileSDK.TransactionResult?
@@ -775,8 +775,8 @@ public struct ReturnResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
-  public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 public struct DuplicateDataResponse {
   public var transactionId: Swift.String?
@@ -861,11 +861,11 @@ public struct PorticoConfig : GlobalMobileSDK.GatewayConfig, Swift.Equatable {
   public init?(username: Swift.String, password: Swift.String, siteId: Swift.String, deviceId: Swift.String, licenseId: Swift.String, developerId: Swift.String, versionNumber: Swift.String, merchantName: Swift.String, merchantAddress: Swift.String, merchantNumber: Swift.String, signatureAgreement: Swift.String, acknowledgement: Swift.String, refundPolicy: Swift.String, environment: GlobalMobileSDK.GatewayEnvironment, sdkNameVersion: Swift.String)
   public init(_ secretApiKey: Swift.String, merchantName: Swift.String, merchantAddress: Swift.String, merchantNumber: Swift.String, signatureAgreement: Swift.String, acknowledgement: Swift.String, refundPolicy: Swift.String, environment: GlobalMobileSDK.GatewayEnvironment)
   public static func == (a: GlobalMobileSDK.PorticoConfig, b: GlobalMobileSDK.PorticoConfig) -> Swift.Bool
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public protocol TerminalSettingsUpdateDelegate {
-  func onReturnReadSetting(settingType: GlobalMobileSDK.TerminalSettingType, value: Swift.Int?, error: Swift.Error?)
+  func onReturnReadSetting(settingType: GlobalMobileSDK.TerminalSettingType, value: Swift.Int?, error: (any Swift.Error)?)
   func onReturnUpdateSetting(settingType: GlobalMobileSDK.TerminalSettingType, result: GlobalMobileSDK.TerminalSettingResult)
 }
 public struct TransITConfig : GlobalMobileSDK.GatewayConfig, Swift.Equatable {
@@ -878,8 +878,8 @@ public struct TransITConfig : GlobalMobileSDK.GatewayConfig, Swift.Equatable {
   public var supportSaf: Swift.Bool
   public var currencyCode: GlobalMobileSDK.CurrencyCode
   public var countryCode: GlobalMobileSDK.CountryCode
-  public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
   public static func == (a: GlobalMobileSDK.TransITConfig, b: GlobalMobileSDK.TransITConfig) -> Swift.Bool
 }
 public struct VoidTransaction {
@@ -893,8 +893,8 @@ public struct VoidTransaction {
   public var gatewayTransactionId: Swift.String?
   public var allowPartialAuth: Swift.Bool?
   public static func void(clientTransactionId: Swift.String?, gatewayTransactionId: Swift.String, reversalReason: GlobalMobileSDK.ReversalReason, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, allowPartialAuth: Swift.Bool?) -> GlobalMobileSDK.VoidTransaction
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 @objc public enum EncryptionType : Swift.Int, Swift.Codable {
   case TDES, DUKPT, voltage, IDT_TDES, none
@@ -956,8 +956,8 @@ public struct AuthResponse {
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
   public let transactionId: Swift.String
-  public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 public enum TaxCategory : Swift.String, Swift.CaseIterable, Swift.Codable, Swift.Equatable {
   case notUsed, sale, taxExempt
@@ -1001,8 +1001,8 @@ public struct ReversalTransaction {
   public var allowPartialAuth: Swift.Bool?
   public var cpcReq: Swift.Bool?
   public static func reversal(clientTransactionId: Swift.String?, gatewayTransactionId: Swift.String?, reversalReason: GlobalMobileSDK.ReversalReason, posReferenceNumber: Swift.String?, amount: Swift.UInt, tlv: Swift.String?, allowPartialAuth: Swift.Bool?) -> GlobalMobileSDK.ReversalTransaction
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 @objc public enum FallbackReason : Swift.Int, Swift.Codable {
   case emptyCandidateList, iccError, other, none
@@ -1014,8 +1014,8 @@ public struct ReversalTransaction {
 }
 public enum GatewayEnvironment : Swift.Codable, Swift.Equatable {
   case production, certification, custom(url: Foundation.URL), mock
-  public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
   public enum ConfigurationError : Swift.Error {
     case decodeFailed(debugMessage: Swift.String)
   }
@@ -1066,8 +1066,8 @@ public struct ProcessSaFResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct TipAdjustResponse {
   public var transactionResult: GlobalMobileSDK.TransactionResult?
@@ -1088,8 +1088,8 @@ public struct TipAdjustResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct ReturnTransaction {
   public var total: Swift.UInt?
@@ -1112,8 +1112,8 @@ public struct ReturnTransaction {
   public static func returnWithReference(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, gatewayTransactionId: Swift.String?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, allowPartialAuth: Swift.Bool?) -> GlobalMobileSDK.ReturnTransaction
   public static func returnWithManualCard(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.ManualCardData, allowPartialAuth: Swift.Bool?) -> GlobalMobileSDK.ReturnTransaction
   public static func returnWithCard(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, allowPartialAuth: Swift.Bool?) -> GlobalMobileSDK.ReturnTransaction
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct CaptureTransaction {
   public var gatewayTransactionId: Swift.String?
@@ -1128,8 +1128,8 @@ public struct CaptureTransaction {
   public var signatureData: Foundation.Data?
   public var customerReceiptEmail: Swift.String?
   public static func capture(clientTransactionId: Swift.String?, gatewayTransactionId: Swift.String, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, invoiceNumber: Swift.String?, posReferenceNumber: Swift.String?, operatingUserId: Swift.String?) -> GlobalMobileSDK.CaptureTransaction
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct TokenizedCardData : GlobalMobileSDK.CardData {
   public var cardEntryMode: GlobalMobileSDK.EntryMode
@@ -1147,8 +1147,8 @@ public struct TokenizedCardData : GlobalMobileSDK.CardData {
   public var emailAddress: Swift.String?
   public var terminalType: GlobalMobileSDK.TerminalType
   public init(token: Swift.String?)
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct PropayConfig : GlobalMobileSDK.GatewayConfig, Swift.Equatable {
   public init()
@@ -1171,8 +1171,8 @@ public struct PropayConfig : GlobalMobileSDK.GatewayConfig, Swift.Equatable {
   public init?(username: Swift.String, password: Swift.String, pin: Swift.String, developerId: Swift.String, timeout: Swift.Int32, isDebug: Swift.Bool, environment: GlobalMobileSDK.GatewayEnvironment)
   public init?(pinToken: Swift.String?, sessionToken: Swift.String, environment: GlobalMobileSDK.GatewayEnvironment, isDebug: Swift.Bool, timeOut: Swift.Int32)
   public static func == (a: GlobalMobileSDK.PropayConfig, b: GlobalMobileSDK.PropayConfig) -> Swift.Bool
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public enum TerminalOTAUpdateType : Swift.UInt {
   case firmware, config
@@ -1190,8 +1190,8 @@ public struct Address : Swift.Codable, Swift.Equatable {
   public var state: Swift.String?
   public init()
   public static func == (a: GlobalMobileSDK.Address, b: GlobalMobileSDK.Address) -> Swift.Bool
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 @objc public enum TransactionResult : Swift.UInt, Swift.Codable {
   case approved, partialApproval, terminated, declined, onlineDeclined, offlineApproved, offlineDecline, postAuthChipDecline, canceled, timeout, capkFail, notIcc, cardBlocked, deviceError, noEmvApps, iccCardRemoved, cardSchemeNotMatched, success, reversalRequired, fail, hostTimeout, networkError
@@ -1202,14 +1202,14 @@ public struct Address : Swift.Codable, Swift.Equatable {
   public init?(rawValue: Swift.String)
 }
 public protocol ConnectionDelegate : AnyObject {
-  func onConnected(terminalInfo: GlobalMobileSDK.TerminalInfo)
-  func onDisconnected(terminalInfo: GlobalMobileSDK.TerminalInfo)
+  func onConnected(terminalInfo: any GlobalMobileSDK.TerminalInfo)
+  func onDisconnected(terminalInfo: any GlobalMobileSDK.TerminalInfo)
   func configuringTerminal(state: GlobalMobileSDK.TransactionState)
   func onError(error: GlobalMobileSDK.ConnectionError)
 }
 public enum TransactionType : Swift.String, Swift.CaseIterable, Swift.Equatable, Swift.Codable {
   case Sale, Auth, Capture, Void, Return, Verify, Tokenize, BatchClose, TipAdjust, Reversal, ListSaf
-  public var transactionType: GlobalMobileSDK.Transaction.Type {
+  public var transactionType: any GlobalMobileSDK.Transaction.Type {
     get
   }
   public init?(rawValue: Swift.String)
@@ -1245,8 +1245,8 @@ public struct ManualCardData : GlobalMobileSDK.CardData {
   public var cardHolderAddress: GlobalMobileSDK.Address?
   public var terminalType: GlobalMobileSDK.TerminalType
   public static func cardData(cardholderName: Swift.String, cardNumber: Swift.String, expirationDate: Swift.String, cvv: Swift.String, cardPresent: Swift.Bool, readerPresent: Swift.Bool, terminalType: GlobalMobileSDK.TerminalType) -> GlobalMobileSDK.ManualCardData
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct CaptureResponse {
   public var transactionResult: GlobalMobileSDK.TransactionResult?
@@ -1269,8 +1269,8 @@ public struct CaptureResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct VoidResponse {
   public var transactionResult: GlobalMobileSDK.TransactionResult?
@@ -1292,12 +1292,12 @@ public struct VoidResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public enum GatewayType : Swift.String, Swift.Codable, Swift.CaseIterable, Swift.Equatable {
   case Portico, ProPay, TransIT
-  public var configType: GlobalMobileSDK.GatewayConfig.Type {
+  public var configType: any GlobalMobileSDK.GatewayConfig.Type {
     get
   }
   public init?(rawValue: Swift.String)
@@ -1328,8 +1328,8 @@ public struct ReversalResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct TokenizationTransaction {
   public var posReferenceNumber: Swift.String?
@@ -1346,11 +1346,11 @@ public struct TokenizationTransaction {
   public var cpcReq: Swift.Bool?
   public static func tokenize(clientTransactionId: Swift.String?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, allowPartialAuth: Swift.Bool?) -> GlobalMobileSDK.TokenizationTransaction
   public static func tokenize(clientTransactionId: Swift.String?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.ManualCardData, allowPartialAuth: Swift.Bool?) -> GlobalMobileSDK.TokenizationTransaction
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public protocol SaFDelegate {
-  func onTransactionStored(response: GlobalMobileSDK.TransactionResponse)
+  func onTransactionStored(response: any GlobalMobileSDK.TransactionResponse)
   func onTransactionRemoved()
   func onDeletedExpiredTransactions(deletedTransactions: [GlobalMobileSDK.ProcessSaF])
   func onError(error: GlobalMobileSDK.SaFError)
@@ -1366,8 +1366,8 @@ public protocol SaFDelegate {
   @objc convenience public init(_ rid: Swift.String, caPublicKeyIndex: Swift.String, publicKey: Swift.String, exponentOfPublicKey: Swift.String, productionKey: Swift.Bool)
   @objc convenience public init(_ rid: Swift.String, caPublicKeyIndex: Swift.String, publicKey: Swift.String, exponentOfPublicKey: Swift.String, checksum: Swift.String, productionKey: Swift.Bool)
   @objc deinit
-  public func encode(to encoder: Swift.Encoder) throws
-  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc public enum RUATerminalType : Swift.UInt {
   case g4x_g5x, rp350x, rp450c, rp750x, rp45BT, moby3000, moby8500, virtualTerminal, unknown
@@ -1400,8 +1400,8 @@ public struct TokenizationResponse : GlobalMobileSDK.TransactionResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
-  public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 @objc public enum ConnectionType : Swift.UInt, Swift.Codable, Swift.Equatable {
   case usb, audioJack, ipAddress, bluetooth, notSelected
@@ -1498,14 +1498,14 @@ public protocol TransactionDelegate : AnyObject {
   func requestAmountConfirmation(amount: Foundation.Decimal?)
   func requestSaFApproval()
   func requestPostalCode(maskedPan: Swift.String, expiryDate: Swift.String, cardholderName: Swift.String?)
-  func onTransactionComplete(result: GlobalMobileSDK.TransactionResult, response: GlobalMobileSDK.TransactionResponse?)
-  func onListSaFComplete(transactions: [GlobalMobileSDK.Transaction])
+  func onTransactionComplete(result: GlobalMobileSDK.TransactionResult, response: (any GlobalMobileSDK.TransactionResponse)?)
+  func onListSaFComplete(transactions: [any GlobalMobileSDK.Transaction])
   func onDeletedTransactionsComplete(deletedTransactions: [GlobalMobileSDK.ProcessSaF])
   func onTransactionCancelled()
   func onError(error: GlobalMobileSDK.TransactionError)
 }
 extension GlobalMobileSDK.TransactionDelegate {
-  public func onListSaFComplete(transactions: [GlobalMobileSDK.Transaction])
+  public func onListSaFComplete(transactions: [any GlobalMobileSDK.Transaction])
   public func onDeletedTransactionsComplete(deletedTransactions: [GlobalMobileSDK.ProcessSaF])
 }
 extension GlobalMobileSDK.SearchError : Swift.Equatable {}

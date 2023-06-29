@@ -135,6 +135,13 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
     public func onError(_ error: NSError) {
         transactionDelegate?.onTransactionError(error)
     }
+    
+    public func isConnected() -> Bool {
+        if let gmsWrapper = gmsWrapper {
+            return gmsWrapper.isDeviceConnected()
+        }
+        return false
+    }
 }
 
 // MARK: Firmware Update

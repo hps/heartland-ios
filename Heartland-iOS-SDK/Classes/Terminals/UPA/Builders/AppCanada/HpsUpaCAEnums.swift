@@ -114,7 +114,7 @@ public enum CardOnFileIndicator: String, CaseIterable, Codable {
     }
 }
 
-public enum HpsUpaCAStartCardCommand: String, Codable {
+public enum HpsUpaCAModelCommand: String, Codable {
     case SALE
     case REFUND
     case VOID
@@ -131,7 +131,7 @@ public enum HpsUpaCAStartCardCommand: String, Codable {
     }
 }
 
-public enum HpsUpaCAStartCardMessage: String, Codable {
+public enum HpsUpaCAModelMessage: String, Codable {
     case MSG
     case ACK
     

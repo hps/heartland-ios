@@ -186,9 +186,8 @@ private extension C2XTransactionsViewController {
             setText(LoadingStatus.WAIT.rawValue)
 
             if let transactionId = transactionId {
-                let builder = HpsC2xCreditSaleBuilder(device: device)
+                let builder = HpsC2xCreditVoidBuilder(device: device)
                 builder.transactionId = transactionId
-                builder.amount = transactionAmount
                 builder.execute()
             } else {
                 showTextDialog(LoadingStatus.NOT_TRANSACTION_ID.rawValue)

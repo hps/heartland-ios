@@ -102,7 +102,11 @@ public class GMSWrapper: NSObject {
                 response.transactionId = gatewayResponse?.transactionId()
                 response.deviceResponseCode = "Success"
 
-                self.delegate.onTransactionComplete(TransactionResult.success.rawValue, response: response)
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    self.delegate.onTransactionComplete(TransactionResult.success.rawValue, response: response)
+                }
+                
             }
         default:
             break
@@ -115,6 +119,10 @@ public class GMSWrapper: NSObject {
 
     public func selectAID(aid: AID) {
         GMSManager.shared.select(aid: aid)
+    }
+    
+    public func isDeviceConnected() -> Bool {
+        return GMSManager.shared.terminalConnected
     }
 }
 
