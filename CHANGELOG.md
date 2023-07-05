@@ -17,6 +17,10 @@ All notable changes to this project will be documented in this file.
 ## 2.0.10 2023-06-29
 - Added isConnected method for checking if device is connected. C2X
 
+## 2.0.11 2023-07-06
+- Added referenceNumber to TipAdjust Input Parameters
+- Added PAX Parse ECR Ref number on Trace Number
+
 ### Changed
  
 ### Fixed
