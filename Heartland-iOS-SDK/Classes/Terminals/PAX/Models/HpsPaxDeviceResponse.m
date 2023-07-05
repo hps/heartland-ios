@@ -22,6 +22,10 @@
 			self.responseCode = self.hostResponse.hostResponseCode;
 			self.responseText = self.hostResponse.hostResponseMessage;
 			self.approvalCode = self. hostResponse.hostResponseCode;
+            
+            if (!self.hostResponse.traceNumber.length && self.traceResponse.ecrRefNumber != nil) {
+                self.hostResponse.traceNumber = self.traceResponse.ecrRefNumber;
+            }
 		}
 		if (self.amountResponse != nil){
             self.transactionAmount = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:self.amountResponse.approvedAmount] decimalValue]];
