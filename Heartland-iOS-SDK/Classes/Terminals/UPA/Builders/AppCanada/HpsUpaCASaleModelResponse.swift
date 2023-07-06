@@ -78,7 +78,7 @@ public struct UpsUpaCASaleModelResponsePayment: Codable {
 public struct HpsUpaCASaleModelResponseHost: Codable {
     public let responseID: Int?
     public let avsResultCode, tipAmount, totalAmount, responseText: String?
-    public let cardBrandTransID: String?
+    public let cardBrandTransID: Int?
     public let tranNo: String?
     public let referenceNumber: Int?
     public let avsResultText, baseAmount, approvalCode, authorizedAmount: String?

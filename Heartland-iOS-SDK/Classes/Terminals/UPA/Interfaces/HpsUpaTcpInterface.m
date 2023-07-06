@@ -61,12 +61,29 @@
     [self setHandler:responseBlock];
     NSData *data = [message getSendBuffer];
     [_interface sendData:data onOpen:YES];
+    
+    __block HpsUpaTcpInterface *blocksafeSelf = self;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(_interface.config.timeout * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            if ([blocksafeSelf handler] != nil) {
+                NSLog(@"HpsUpaTcpInterface timeout has reached.");
+                NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Timeout"};
+                self->_handler(nil, [NSError errorWithDomain: [HpsCommon sharedInstance].hpsErrorDomain
+                                                        code: CocoaError
+                                                    userInfo: userInfo]);
+                [blocksafeSelf setHandler:nil];
+                [[blocksafeSelf interface] closeConnection];
+            }
+        });
 }
 
 // MARK: - HpsTcpInterfaceDelegate
 
 - (void)tcpInterfaceDidCloseStreams {
     [_events removeAllObjects];
+    
+    if (_handler == nil) return;
+    
     BOOL closedEarly = _handlerJSONString == nil && _handlerError == nil;
     if (closedEarly) [self errorOccurred:MBUPAErrorTypeConnectionUnexpectedClose];
     NSString *jsonString = [_handlerJSONString copy];

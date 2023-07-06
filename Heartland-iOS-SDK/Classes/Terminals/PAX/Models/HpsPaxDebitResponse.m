@@ -33,6 +33,10 @@
     @try {
         if (self.hostResponse != nil) {
             self.authorizationCode = self.hostResponse.authCode;
+            
+            if (!self.hostResponse.traceNumber.length && self.traceResponse.ecrRefNumber != nil) {
+                self.hostResponse.traceNumber = self.traceResponse.ecrRefNumber;
+            }
         }
         
         if (self.accountResponse != nil) {

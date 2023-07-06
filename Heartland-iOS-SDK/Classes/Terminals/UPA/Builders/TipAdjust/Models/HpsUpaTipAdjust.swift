@@ -51,7 +51,8 @@ public struct HpsUpaTipAdjustParams: Codable {
     public let directMktShipMonth: String?
     public let directMktShipDay: String?
 
-    public init(clerkId: String?, directMktInvoiceNbr: String?, directMktShipMonth: String?, directMktShipDay: String?) {
+    public init(clerkId: String?, directMktInvoiceNbr: String?,
+                directMktShipMonth: String?, directMktShipDay: String?) {
         self.clerkId = clerkId
         self.directMktInvoiceNbr = directMktInvoiceNbr
         self.directMktShipMonth = directMktShipMonth
@@ -62,11 +63,13 @@ public struct HpsUpaTipAdjustParams: Codable {
 // MARK: - HpsUpaTipAdjustTransaction
 
 public struct HpsUpaTipAdjustTransaction: Codable {
-    public let tipAmount, tranNo, invoiceNbr: String?
+    public let tipAmount, tranNo, invoiceNbr, referenceNumber: String?
 
-    public init(tipAmount: String?, tranNo: String?, invoiceNbr: String?) {
+    public init(tipAmount: String?, tranNo: String?,
+                invoiceNbr: String?, referenceNumber: String?) {
         self.tipAmount = tipAmount
         self.tranNo = tranNo
         self.invoiceNbr = invoiceNbr
+        self.referenceNumber = referenceNumber
     }
 }

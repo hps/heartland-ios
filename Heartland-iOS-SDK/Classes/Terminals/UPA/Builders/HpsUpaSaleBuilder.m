@@ -136,8 +136,9 @@
     if (self.details != nil) {
         request.data.data.transaction.invoiceNbr = self.details.invoiceNumber;
     }
-    
-    request.data.data.transaction.cardIsHSAFSA = self.cardIsHSAFSA ? @"1" : @"0";
+    if (self.cardIsHSAFSA != nil) {
+        request.data.data.transaction.cardIsHSAFSA = self.cardIsHSAFSA ? @"1" : @"0";
+    }
     request.data.data.transaction.clinicAmount = self.clinicAmount != nil ? [[formatter stringFromNumber:[NSNumber numberWithDouble:[self.clinicAmount doubleValue]]] stringByReplacingOccurrencesOfString:@"," withString:@"."] : nil;
     request.data.data.transaction.prescriptionAmount = self.prescriptionAmount != nil ? [[formatter stringFromNumber:[NSNumber numberWithDouble:[self.prescriptionAmount doubleValue]]] stringByReplacingOccurrencesOfString:@"," withString:@"."] : nil;
     request.data.data.transaction.dentalAmount = self.dentalAmount != nil ? [[formatter stringFromNumber:[NSNumber numberWithDouble:[self.dentalAmount doubleValue]]] stringByReplacingOccurrencesOfString:@"," withString:@"."] : nil;

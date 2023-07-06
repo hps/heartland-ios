@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140FA9A52A4E2DCC006E493A /* HpsUPATipAdjustBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140FA9A42A4E2DCC006E493A /* HpsUPATipAdjustBuilderTests.swift */; };
 		143A437B298C47CB0027BC3F /* HpsCreditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A437A298C47CB0027BC3F /* HpsCreditTests.swift */; };
 		143A437D29928DDA0027BC3F /* HpsC2XDeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A437C29928DDA0027BC3F /* HpsC2XDeviceTests.swift */; };
 		143A43802993BC5C0027BC3F /* HpsPaxCreditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A437F2993BC5C0027BC3F /* HpsPaxCreditTests.swift */; };
@@ -95,6 +96,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		140FA9A42A4E2DCC006E493A /* HpsUPATipAdjustBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUPATipAdjustBuilderTests.swift; sourceTree = "<group>"; };
 		143A437A298C47CB0027BC3F /* HpsCreditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HpsCreditTests.swift; path = "Heartland-iOS-SDK-SampleAppTests/HpsCreditTests.swift"; sourceTree = SOURCE_ROOT; };
 		143A437C29928DDA0027BC3F /* HpsC2XDeviceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsC2XDeviceTests.swift; sourceTree = "<group>"; };
 		143A437F2993BC5C0027BC3F /* HpsPaxCreditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsPaxCreditTests.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				14F88D5E2A02E3AB009E821B /* HpsUPACATests.swift */,
 				DD8CECF8294CC7370006908F /* HpsUPAStartCardTests.swift */,
 				DD49DDB3296DDAE000EBD526 /* HpsUPALineItemDisplayTests.swift */,
+				140FA9A42A4E2DCC006E493A /* HpsUPATipAdjustBuilderTests.swift */,
 				143A437A298C47CB0027BC3F /* HpsCreditTests.swift */,
 				DDFF6555299FC348004D41BF /* HpsUPASAFTests.swift */,
 				149365D72A321C63005A37CC /* UpsUpaSignatureDataTests.swift */,
@@ -438,6 +441,7 @@
 				14B86EFE29B02C3B00657AF3 /* C2XTransactionsTests.swift in Sources */,
 				143A43842993D5F00027BC3F /* ObjC.m in Sources */,
 				149365D82A321C63005A37CC /* UpsUpaSignatureDataTests.swift in Sources */,
+				140FA9A52A4E2DCC006E493A /* HpsUPATipAdjustBuilderTests.swift in Sources */,
 				DD8CECF9294CC7370006908F /* HpsUPAStartCardTests.swift in Sources */,
 				14F88D5F2A02E3AB009E821B /* HpsUPACATests.swift in Sources */,
 				143A437D29928DDA0027BC3F /* HpsC2XDeviceTests.swift in Sources */,

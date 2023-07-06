@@ -20,7 +20,10 @@
                 break;
             case 2:
                 self.timeStamp = value;
-                break; 
+                break;
+            case 6:
+                self.ecrRefNumber = value;
+                break;
                 
             default:
                 break;
