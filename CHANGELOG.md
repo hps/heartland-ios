@@ -8,6 +8,8 @@ All notable changes to this project will be documented in this file.
 - Added responseText and responseCode to Sale Output Parameters 
 - Removed cardIsHSAFSA from UPA input parameters 
 - Fixed Partial Refund Bug for PreAuth Transactions
+- Added the DeleteSAF Feature  
+- Added safReferenceNumber to SendSAF and GetSAFReport - Output Parameters
 
 ## 2.0.11 2023-07-06
 - Added referenceNumber to TipAdjust Input Parameters

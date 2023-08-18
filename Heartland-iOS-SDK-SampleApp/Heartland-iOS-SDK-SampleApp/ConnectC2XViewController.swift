@@ -13,7 +13,7 @@ class ConnectC2XViewController: UIViewController {
     private let notificationCenter: NotificationCenter = .default
 
     @IBOutlet private weak var scrollView: UIScrollView!
-    
+
     // MARK: - C2X TextFields
     @IBOutlet fileprivate weak var username: UITextField!
     @IBOutlet fileprivate weak var password: UITextField!
@@ -22,7 +22,7 @@ class ConnectC2XViewController: UIViewController {
     @IBOutlet fileprivate weak var licenseID: UITextField!
     @IBOutlet fileprivate weak var developerID: UITextField!
     @IBOutlet fileprivate weak var versionNumber: UITextField!
-    
+
     @IBOutlet var connectionLabel: UILabel!
     @IBOutlet weak var scanButtonStackView: UIStackView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
