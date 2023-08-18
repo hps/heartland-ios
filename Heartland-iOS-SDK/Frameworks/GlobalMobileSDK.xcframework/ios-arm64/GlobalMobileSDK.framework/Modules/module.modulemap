@@ -19,7 +19,6 @@ framework module GlobalMobileSDK_Private {
     module BBPOS {
         header "BBDeviceCAPK.h"
         header "BBDeviceController.h"
-        header "BBDeviceSPoCController.h"
         header "BBDeviceVASMerchantConfig.h"
         header "BBDeviceOTAController.h"
     }

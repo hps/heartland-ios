@@ -12,121 +12,192 @@ class ConnectC2XViewController: UIViewController {
     var paxDevice: HpsPaxDevice?
     private let notificationCenter: NotificationCenter = .default
 
+    @IBOutlet private weak var scrollView: UIScrollView!
+    
+    // MARK: - C2X TextFields
+    @IBOutlet fileprivate weak var username: UITextField!
+    @IBOutlet fileprivate weak var password: UITextField!
+    @IBOutlet fileprivate weak var siteID: UITextField!
+    @IBOutlet fileprivate weak var deviceID: UITextField!
+    @IBOutlet fileprivate weak var licenseID: UITextField!
+    @IBOutlet fileprivate weak var developerID: UITextField!
+    @IBOutlet fileprivate weak var versionNumber: UITextField!
+    
     @IBOutlet var connectionLabel: UILabel!
-    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var scanButtonStackView: UIStackView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var scanButtonReference: UIButton!
     
-    
+    private var textFieldTogglePassword: Bool = false
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.setupUI()
+    }
+
+    private func setupUI() {
+        for tf in [username, password, siteID, deviceID,
+                   licenseID, developerID, versionNumber] {
+            tf?.delegate = self
+        }
+
+        // Setup password textField toggle
+        if #available(iOS 13.0, *) {
+            let imageIcon = UIImageView()
+            let imageResource = UIImage(systemName: "eye")
+            imageIcon.image = imageResource
+            imageIcon.tag = 1111
+            let contentView = UIView()
+            contentView.addSubview(imageIcon)
+            contentView.frame = CGRect.init(
+                x: 0,
+                y: 0,
+                width: imageResource!.size.width,
+                height: imageResource!.size.height
+            )
+            imageIcon.frame = CGRect.init(
+                x: -10,
+                y: 0,
+                width: imageResource!.size.width,
+                height: imageResource!.size.height
+            )
+
+            password.rightView = contentView
+            password.rightViewMode = .always
+
+            imageIcon.isUserInteractionEnabled = true
+            imageIcon.addGestureRecognizer(UITapGestureRecognizer.init(
+                target: self,
+                action: #selector(toggleShowPasswordTextField(gesture:))
+            ))
+        }
+
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                              action: #selector(hideKeyboard)))
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard(notification:)),
+                                               name: UIResponder.keyboardWillHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard(notification:)),
+                                               name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                              action: #selector(hideKeyboard)))
+
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard(notification:)),
+                                               name: UIResponder.keyboardWillHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard(notification:)),
+                                               name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+
+
+        if #available(iOS 13.0, *) {
+            notificationCenter.addObserver(self, selector: #selector(appMovingToBackground),
+                                           name: UIApplication.didEnterBackgroundNotification, object: nil)
+        }
+    }
+
+    @available(iOS 13.0, *)
+    @objc func toggleShowPasswordTextField(gesture: UITapGestureRecognizer) {
+        guard let toggleIcon = gesture.view as? UIImageView else { return }
+
+        if textFieldTogglePassword {
+            toggleIcon.image = UIImage(systemName: "eye")
+            password.isSecureTextEntry = true
+        } else {
+            toggleIcon.image = UIImage(systemName: "eye.slash")
+            password.isSecureTextEntry = false
+        }
+
+        textFieldTogglePassword.toggle()
+    }
+
+    @available(iOS 13.0, *)
+    @objc func appMovingToBackground() {
+        guard let contentView = self.password.rightView,
+              let toggleIcon = contentView.viewWithTag(1111) as? UIImageView else { return }
+
+        toggleIcon.image = UIImage(systemName: "eye")
+        password.isSecureTextEntry = true
+        textFieldTogglePassword = false
+    }
+
+    @objc func adjustForKeyboard(notification: Notification) {
+        guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+
+        let keyboardScreenEndFrame = keyboardValue.cgRectValue
+        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+
+        if notification.name == UIResponder.keyboardWillHideNotification {
+            self.scrollView.contentInset = .zero
+        } else {
+            self.scrollView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: keyboardViewEndFrame.height, right: 0)
+        }
+
+        self.scrollView.scrollIndicatorInsets = self.scrollView.contentInset
+    }
+
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+    }
+
+    deinit {
+        notificationCenter.removeObserver(self)
+    }
+
     @IBAction func scanButtonPressed() {
-        scanButtonReference.isEnabled = false
-        let timeout = 120
+        if self.validateC2XFields() {
+            scanButtonReference.isEnabled = false
+            let timeout = 120
 
-        let config = HpsConnectionConfig()
-        config.username = ""
-        config.password = ""
-        config.siteID = ""
-        config.deviceID = ""
-        config.licenseID = ""
-        config.developerID = ""
-        config.versionNumber = ""
+            let config = HpsConnectionConfig()
+            config.username = self.username.text ?? ""
+            config.password = self.password.text ?? ""
+            config.siteID = self.siteID.text ?? ""
+            config.deviceID = self.deviceID.text ?? ""
+            config.licenseID = self.licenseID.text ?? ""
+            config.developerID = self.developerID.text ?? ""
+            config.versionNumber = self.versionNumber.text ?? ""
 
-        config.timeout = timeout
+            config.timeout = timeout
 
-        device = HpsC2xDevice(config: config)
-        device?.deviceDelegate = self
-        device?.scan()
-        print(" Is Device Connected?: \(device?.isConnected())")
-        activityIndicator.isHidden = false
-        
-//        testSaleApp()
-//        testPaxDeviceManual()
-    }
-
-    func testPaxDeviceManual() {
-        let timeout = 120
-
-        let config = HpsConnectionConfig()
-        config.ipAddress = "192.168.31.81"
-        config.port = "10009"
-        config.connectionMode = 1
-        config.timeout = timeout
-
-        paxDevice = HpsPaxDevice(config: config)
-
-        let builder = HpsPaxCreditSaleBuilder(device: paxDevice)
-        builder?.amount = 12.0
-        builder?.referenceNumber = 10
-        builder?.allowDuplicates = false
-
-        builder?.execute { response, error in
-
-            if let error = error {
-                print("Error: \(error)")
-                return
-            }
-            if let response = response {
-                print("Response: \(response)")
-                let responseReturn = response.parseResponse()
-                print("Response Parse: \(responseReturn.debugDescription)")
-                
-                if let traceNumber = response.hostResponse.traceNumber {
-                    print("Response TraceNumber")
-                    print(traceNumber)
-                }
-            }
+            device = HpsC2xDevice(config: config)
+            device?.deviceDelegate = self
+            device?.scan()
+            print(" Is Device Connected?: \(device?.isConnected())")
+            activityIndicator.isHidden = false
         }
     }
 
-    func testPaxDeviceAuth() {
-        let timeout = 120
+    private func validateC2XFields() -> Bool {
+        var requiredFields: String = ""
 
-        let config = HpsConnectionConfig()
-        config.ipAddress = ""
-        config.port = ""
-        config.username = ""
-        config.password = ""
-        config.siteID = ""
-        config.deviceID = ""
-        config.licenseID = ""
-        config.developerID = ""
-        config.versionNumber = ""
-        config.connectionMode = 1
-        config.timeout = timeout
+        if let text = self.username?.text, text.isEmpty { requiredFields += "Username\n" }
+        if let text = self.password.text, text.isEmpty { requiredFields += "Password\n" }
+        if let text = self.siteID.text, text.isEmpty { requiredFields += "siteID\n" }
+        if let text = self.deviceID.text, text.isEmpty { requiredFields += "deviceID\n" }
+        if let text = self.licenseID.text, text.isEmpty { requiredFields += "licenseID\n" }
+        if let text = self.developerID.text, text.isEmpty { requiredFields += "developerID\n" }
+        if let text = self.versionNumber.text, text.isEmpty { requiredFields += "versionNumber\n" }
 
-        paxDevice = HpsPaxDevice(config: config)
+        if requiredFields.isEmpty {
+            return true
+        } else {
+            self.showAlert(message: "Required Fields: \n\n \(requiredFields)")
 
-        let card = HpsCreditCard()
-        card.cardNumber = ""
-        card.expMonth = 1
-        card.expYear = 2
-        card.cvv = ""
-
-        let address = HpsAddress()
-        address.address = ""
-        address.zip = ""
-
-        let builder = HpsPaxCreditAuthBuilder(device: paxDevice)
-        builder?.amount = 11.0
-        builder?.referenceNumber = 1
-        builder?.allowDuplicates = true
-        builder?.requestMultiUseToken = true
-        builder?.creditCard = card
-        builder?.address = address
-
-        builder?.execute { response, error in
-
-            if let error = error {
-                print("Error: \(error)")
-                return
-            }
-            if let response = response {
-                print("Response: \(response)")
-                let responseReturn = response.parseResponse()
-                print("Response Parse: \(responseReturn.debugDescription)")
-            }
+            return false
         }
     }
+
+    private func showAlert(message: String) {
+        let alert = UIAlertController(
+            title: "Error",
+            message: message,
+            preferredStyle: .alert
+        )
+
+        alert.addAction(UIAlertAction.init(title: "OK", style: .default))
+
+        self.present(alert, animated: true)
+    }
+
 }
 
 extension ConnectC2XViewController: HpsC2xDeviceDelegate {
@@ -187,70 +258,29 @@ private extension ConnectC2XViewController {
     }
 }
 
+extension ConnectC2XViewController: UITextFieldDelegate {
 
-private extension ConnectC2XViewController {
-    
-    private func setupUpaDevice() -> HpsUpaDevice? {
-        let config = HpsConnectionConfig()
-        config.ipAddress = "192.168.31.117"
-        config.port = "8081"
-        config.connectionMode = HpsConnectionModes.TCP_IP.rawValue
-        return HpsUpaDevice(config: config)
-    }
-    
-    func testSaleApp() {
-        guard let device = setupUpaDevice() else {
-            print(" no device")
-            return
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case username:
+            password.becomeFirstResponder()
+        case password:
+            siteID.becomeFirstResponder()
+        case siteID:
+            deviceID.becomeFirstResponder()
+        case deviceID:
+            licenseID.becomeFirstResponder()
+        case licenseID:
+            developerID.becomeFirstResponder()
+        case developerID:
+            versionNumber.becomeFirstResponder()
+        case versionNumber:
+            hideKeyboard()
+        default:
+            hideKeyboard()
         }
-        
-        if let builder = HpsUpaSaleBuilder(device: device) {
-            builder.amount = 15.00
-            builder.ecrId = "3"
-            
-            builder.execute(forUPAUSA: { upaResponse, error in
-                if let error = error {
-                    print(error)
-                    return
-                }
-                
-                if let upaResponse = upaResponse {
-                    if let referenceNumber = upaResponse.referenceNumber {
-                        
-                        let builderTipAjust = HpsUpaTipAdjustBuilder(with: device)
-                        let params = HpsUpaLineItemDisplayParams(lineItemLeft: "toothpaste",
-                                                                 lineItemRight: "$2.99")
-                        
-                        let transaction = HpsUpaTipAdjustTransaction(tipAmount: "10.00",
-                                                                     tranNo: nil,
-                                                                     invoiceNbr: nil,
-                                                                     referenceNumber: referenceNumber)
-                        
-                        let data = HpsUpaLineItemData(params: nil,
-                                                      transaction: transaction)
-                        let displayData = HpsUpaLineItemDisplayData(command: "TipAdjust", EcrId: "123",
-                                                                    requestId: "123", data: data)
-                        let request = HpsUpaLineItemDisplay(data: displayData)
-                        
-                        builderTipAjust.execute(request: request) { deviceResponse, result, error in
-                            if let error = error {
-                                print(error)
-                                return
-                            }
-                            
-                            if let result = result {
-                                print(" Result")
-                                print(result)
-                            }
-                            
-                            if let deviceResponse = deviceResponse {
-                                print(" deviceResponse ")
-                                print(deviceResponse)
-                            }
-                        }
-                    }
-                }
-            })
-        }
+
+        return true
     }
+
 }
