@@ -95,7 +95,6 @@ public struct HpsUpaCAModelTransaction: Codable {
     public let confirmAmount: String?
     public let disableTip: String?
     public let processCPC: String?
-    public let cardIsHSAFSA: String?
     public let prescriptionAmount: String?
     
     public let clinicAmount: String?
@@ -104,8 +103,9 @@ public struct HpsUpaCAModelTransaction: Codable {
 
     public init(baseAmount: String?, taxAmount: String?, tipAmount: String?, taxIndicator: String?,
                 disableTax: String?, cashBackAmount: String?, invoiceNbr: String?, allowPartialAuth: String?,
-                confirmAmount: String?, disableTip: String?, processCPC: String?, cardIsHSAFSA: String?,
-                prescriptionAmount: String?, clinicAmount: String?, dentalAmount: String?, visionOpticalAmount: String?) {
+                confirmAmount: String?, disableTip: String?, processCPC: String?,
+                prescriptionAmount: String?, clinicAmount: String?,
+                dentalAmount: String?, visionOpticalAmount: String?) {
         
         self.baseAmount = baseAmount
         self.taxAmount = taxAmount
@@ -119,7 +119,6 @@ public struct HpsUpaCAModelTransaction: Codable {
         self.confirmAmount = confirmAmount
         self.disableTip = disableTip
         self.processCPC = processCPC
-        self.cardIsHSAFSA = cardIsHSAFSA
         self.prescriptionAmount = prescriptionAmount
         
         self.clinicAmount = clinicAmount

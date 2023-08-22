@@ -17,6 +17,10 @@
 		14A32FAF2949222800E160AD /* C2XFirmwareUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A32FAE2949222800E160AD /* C2XFirmwareUpdateViewController.swift */; };
 		14B86EFE29B02C3B00657AF3 /* C2XTransactionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B86EFD29B02C3B00657AF3 /* C2XTransactionsTests.swift */; };
 		14F88D5F2A02E3AB009E821B /* HpsUPACATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F88D5E2A02E3AB009E821B /* HpsUPACATests.swift */; };
+		2896FA6C2A44A8720076BBFC /* UpaTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2896FA6B2A44A8720076BBFC /* UpaTransactionsViewController.swift */; };
+		2896FA6F2A44AA2E0076BBFC /* UpaTransactionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2896FA6E2A44AA2E0076BBFC /* UpaTransactionProtocol.swift */; };
+		2896FA712A44AA7E0076BBFC /* UpaUSATransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2896FA702A44AA7E0076BBFC /* UpaUSATransaction.swift */; };
+		2896FA732A44AA930076BBFC /* PayAppCanadaTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2896FA722A44AA930076BBFC /* PayAppCanadaTransaction.swift */; };
 		DD49DDB4296DDAE100EBD526 /* HpsUPALineItemDisplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD49DDB3296DDAE000EBD526 /* HpsUPALineItemDisplayTests.swift */; };
 		DD6A4F512937C221008B8165 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD6A4F4F2937C221008B8165 /* Main.storyboard */; };
 		DD6A4F532937C223008B8165 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD6A4F522937C223008B8165 /* Assets.xcassets */; };
@@ -107,6 +111,10 @@
 		14A32FAE2949222800E160AD /* C2XFirmwareUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C2XFirmwareUpdateViewController.swift; sourceTree = "<group>"; };
 		14B86EFD29B02C3B00657AF3 /* C2XTransactionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C2XTransactionsTests.swift; sourceTree = "<group>"; };
 		14F88D5E2A02E3AB009E821B /* HpsUPACATests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUPACATests.swift; sourceTree = "<group>"; };
+		2896FA6B2A44A8720076BBFC /* UpaTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpaTransactionsViewController.swift; sourceTree = "<group>"; };
+		2896FA6E2A44AA2E0076BBFC /* UpaTransactionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpaTransactionProtocol.swift; sourceTree = "<group>"; };
+		2896FA702A44AA7E0076BBFC /* UpaUSATransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpaUSATransaction.swift; sourceTree = "<group>"; };
+		2896FA722A44AA930076BBFC /* PayAppCanadaTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayAppCanadaTransaction.swift; sourceTree = "<group>"; };
 		DD49DDB3296DDAE000EBD526 /* HpsUPALineItemDisplayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HpsUPALineItemDisplayTests.swift; sourceTree = "<group>"; };
 		DD6A4F462937C221008B8165 /* Heartland-iOS-SDK-SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Heartland-iOS-SDK-SampleApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD6A4F502937C221008B8165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -200,6 +208,17 @@
 			path = Utilis;
 			sourceTree = "<group>";
 		};
+		2896FA6D2A44A97D0076BBFC /* UpaTransactions */ = {
+			isa = PBXGroup;
+			children = (
+				2896FA6E2A44AA2E0076BBFC /* UpaTransactionProtocol.swift */,
+				2896FA702A44AA7E0076BBFC /* UpaUSATransaction.swift */,
+				2896FA722A44AA930076BBFC /* PayAppCanadaTransaction.swift */,
+				2896FA6B2A44A8720076BBFC /* UpaTransactionsViewController.swift */,
+			);
+			path = UpaTransactions;
+			sourceTree = "<group>";
+		};
 		DD6A4F3D2937C221008B8165 = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +246,7 @@
 				DD6A4F672937C29A008B8165 /* C2XTransactionsViewController.swift */,
 				14A32FAE2949222800E160AD /* C2XFirmwareUpdateViewController.swift */,
 				DD6A4F642937C299008B8165 /* ConnectC2XViewController.swift */,
+				2896FA6D2A44A97D0076BBFC /* UpaTransactions */,
 				DD6A4F652937C29A008B8165 /* Constants.swift */,
 				DD6A4F4F2937C221008B8165 /* Main.storyboard */,
 				DD6A4F522937C223008B8165 /* Assets.xcassets */,
@@ -418,9 +438,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD6A4F6A2937C29B008B8165 /* AppDelegate.swift in Sources */,
+				2896FA712A44AA7E0076BBFC /* UpaUSATransaction.swift in Sources */,
 				DD6A4F682937C29B008B8165 /* ConnectC2XViewController.swift in Sources */,
+				2896FA732A44AA930076BBFC /* PayAppCanadaTransaction.swift in Sources */,
 				14A32FAF2949222800E160AD /* C2XFirmwareUpdateViewController.swift in Sources */,
+				2896FA6C2A44A8720076BBFC /* UpaTransactionsViewController.swift in Sources */,
 				DD6A4F692937C29B008B8165 /* Constants.swift in Sources */,
+				2896FA6F2A44AA2E0076BBFC /* UpaTransactionProtocol.swift in Sources */,
 				DD6A4F6B2937C29B008B8165 /* C2XTransactionsViewController.swift in Sources */,
 				DD6A4F702937C3BF008B8165 /* MainViewController.swift in Sources */,
 			);

@@ -1,6 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2.0.12 2023-08-22
+- Improved the C2X Sample App
+- Added UPA Sample App
+- Removed ClerkID from TipAdjust Input Parameters 
+- Added responseText and responseCode to Sale Output Parameters 
+- Removed cardIsHSAFSA from UPA input parameters 
+- Fixed Partial Refund Bug for PreAuth Transactions
+- Added the DeleteSAF Feature  
+- Added safReferenceNumber to SendSAF and GetSAFReport - Output Parameters
+
 ## 2.0.11 2023-07-06
 - Added referenceNumber to TipAdjust Input Parameters
 - Added PAX Parse ECR Ref number on Trace Number

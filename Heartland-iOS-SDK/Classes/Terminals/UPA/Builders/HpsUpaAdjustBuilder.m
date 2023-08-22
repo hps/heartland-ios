@@ -31,11 +31,13 @@
     request.data.data = [[HpsUpaData alloc] init];
     
     request.data.data.params = [[HpsUpaParams alloc] init];
-    request.data.data.params.clerkId = self.clerkId;
 
     request.data.data.transaction = [[HpsUpaTransaction alloc] init];
     
-    request.data.data.transaction.tipAmount =  self.gratuity != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[self.gratuity doubleValue]]] : nil;
+    if (self.gratuity != nil) {
+        request.data.data.transaction.tipAmount = [self.gratuity stringValue];
+    }
+    
     if (self.transactionId != nil) {
         request.data.data.transaction.referenceNumber = self.transactionId;
     } else if (self.terminalRefNumber != nil) {
@@ -57,7 +59,7 @@
 
 - (void) validate
 {
-    if (self.terminalRefNumber == nil && self.clerkId == nil && (self.details == nil || self.details.invoiceNumber == nil)) {
+    if (self.terminalRefNumber == nil && (self.details == nil || self.details.invoiceNumber == nil)) {
         @throw [NSException exceptionWithName:@"HpsUpaException" reason:@"terminalRefNumber, clerkId, or invoiceNumber is required." userInfo:nil];
     }
 

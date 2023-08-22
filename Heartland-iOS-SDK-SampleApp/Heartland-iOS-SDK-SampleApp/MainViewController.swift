@@ -44,6 +44,14 @@ extension MainViewController {
         if let transactionDestination = segue.destination as? C2XFirmwareUpdateViewController {
             transactionDestination.device = device
         }
+        
+        if let transactionDestination = segue.destination as? UpaTransactionsViewController,
+           let selectedRowIndexPath = self.tableView.indexPathForSelectedRow,
+           let selectedCell = self.tableView.cellForRow(at: selectedRowIndexPath) {
+            
+            transactionDestination.upaTransaction = (selectedCell.tag == 1010) ? UpaUSATransaction() : PayAppCanadaTransaction()
+            transactionDestination.title = (selectedCell.tag == 1010) ? "UPA USA Transactions" : "PayApp Canada Transactions"
+        }
     }
 }
 

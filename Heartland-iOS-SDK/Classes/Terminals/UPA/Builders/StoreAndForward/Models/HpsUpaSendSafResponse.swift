@@ -61,7 +61,7 @@ public struct HpsUpaSafDetail: Codable {
 public struct HpsUpaSafRecord: Codable {
     public let totalAmount: String?
     public let authorizedAmount: String?
-    public let transNo: String?
+    public let tranNo: String?
     public let transactionTime: String?
     public let transactionType: String?
     public let maskedPan: String?
@@ -71,18 +71,20 @@ public struct HpsUpaSafRecord: Codable {
     public let responseCode: String?
     public let responseText: String?
     public let referenceNumber: String?
+    public let safReferenceNumber: String?
     public let hostTimeout: String?
     public let baseAmount: String?
     public let taxAmount: String?
     public let tipAmount: String?
     public let requestAmount: String?
     public let invoiceNbr: String?
-    public let clertId: String?
+    public let clerkId: String?
+    public let surcharge: String?
 
-    public init(totalAmount: String?, authorizedAmount: String?, transNo: String?, transactionTime: String?, transactionType: String?, maskedPan: String?, cardType: String?, cardAquisition: String?, approvalCode: String?, responseCode: String?, responseText: String?, referenceNumber: String?, hostTimeout: String?, baseAmount: String?, taxAmount: String?, tipAmount: String?, requestAmount: String?, invoiceNbr: String?, clertId: String?) {
+    public init(totalAmount: String?, authorizedAmount: String?, tranNo: String?, transactionTime: String?, transactionType: String?, maskedPan: String?, cardType: String?, cardAquisition: String?, approvalCode: String?, responseCode: String?, responseText: String?, referenceNumber: String?, safReferenceNumber: String?, hostTimeout: String?, baseAmount: String?, taxAmount: String?, tipAmount: String?, requestAmount: String?, invoiceNbr: String?, clerkId: String?, surcharge: String?) {
         self.totalAmount = totalAmount
         self.authorizedAmount = authorizedAmount
-        self.transNo = transNo
+        self.tranNo = tranNo
         self.transactionTime = transactionTime
         self.transactionType = transactionType
         self.maskedPan = maskedPan
@@ -92,12 +94,14 @@ public struct HpsUpaSafRecord: Codable {
         self.responseCode = responseCode
         self.responseText = responseText
         self.referenceNumber = referenceNumber
+        self.safReferenceNumber = safReferenceNumber
         self.hostTimeout = hostTimeout
         self.baseAmount = baseAmount
         self.taxAmount = taxAmount
         self.tipAmount = tipAmount
         self.requestAmount = requestAmount
         self.invoiceNbr = invoiceNbr
-        self.clertId = clertId
+        self.clerkId = clerkId
+        self.surcharge = surcharge
     }
 }

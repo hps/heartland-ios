@@ -30,6 +30,7 @@ class C2XTransactionsViewController: UIViewController {
     @IBOutlet weak var creditVoidButton: UIButton!
     @IBOutlet weak var reversalTransactionButton: UIButton!
     @IBOutlet weak var authTransaction: UIButton!
+    @IBOutlet weak var captureTransaction: UIButton!
     
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var gratuityTextField: UITextField!
@@ -54,13 +55,7 @@ class C2XTransactionsViewController: UIViewController {
     var terminalRefNumber: String?
     var clientTransactionId: String?
     
-    var transactionId: String? {
-        didSet {
-            if let transactionId = self.transactionId, transactionId.count > 0 {
-                checkForMainTransaction()
-            }
-        }
-    }
+    var transactionId: String?
     var transactionAmount: NSDecimalNumber = 0.0
 
     // MARK: - LifeCycle
@@ -120,6 +115,10 @@ private extension C2XTransactionsViewController {
         
         self.creditReturnButton.addTarget(self,
                                           action: #selector(refundTransactionAction),
+                                          for: .touchUpInside)
+        
+        self.captureTransaction.addTarget(self,
+                                          action: #selector(captureAuthTransaction),
                                           for: .touchUpInside)
         
     }
@@ -212,8 +211,9 @@ private extension C2XTransactionsViewController {
             let builder: HpsC2xCreditReversalBuilder = HpsC2xCreditReversalBuilder(device: device)
             builder.amount = amountNumber
             builder.transactionId = self.transactionId
+            builder.allowPartialAuth = true
             print("Transaction ID coming from response is: \(builder.transactionId)")
-            builder.clientTransactionId = "02997841500"
+            builder.clientTransactionId = self.clientTransactionId
             if let cTransactionId = builder.clientTransactionId {
                 NSLog("Client Transaction Id Generated In The Client - Request  %@", cTransactionId)
             }
@@ -267,6 +267,7 @@ private extension C2XTransactionsViewController {
             let builder = HpsC2xCreditReturnBuilder(device: device)
             builder.amount = amountNumber
             builder.allowPartialAuth = true
+            builder.transactionId = self.transactionId
             
             if let cTransactionId = builder.clientTransactionId {
                 NSLog("Client Transaction Id Generated In The Client - Request  %@", cTransactionId)
@@ -277,7 +278,7 @@ private extension C2XTransactionsViewController {
         }
     }
     
-    func captureAuthTransaction() {
+    @objc func captureAuthTransaction(_: UIButton?) {
         guard let amountText = self.amountTextField.text, amountText.count > 0 else { showTextDialog(LoadingStatus.AMOUNT_SHOULD_BE_LARGER_THAN_ZERO.rawValue)
             return
         }
@@ -293,11 +294,6 @@ private extension C2XTransactionsViewController {
             builder.referenceNumber = self.terminalRefNumber
             builder.transactionId = self.transactionId
             builder.execute()
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-               /// Forcing the timeout in order to test the reversal
-                self.reversalAuthTransaction()
-            }
             
         } else {
             showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
@@ -382,7 +378,10 @@ extension C2XTransactionsViewController: HpsC2xDeviceDelegate, GMSTransactionDel
             
             self.terminalRefNumber = response.terminalRefNumber
             self.clientTransactionId = response.clientTransactionId
-            self.transactionId = responseTransactionId
+            
+            if mainTransaction != .capture {
+                self.transactionId = responseTransactionId
+            }
         }
 
         if let cTransactionId = response.clientTransactionId {
@@ -620,19 +619,3 @@ extension UIViewController {
         present(uialert, animated: true, completion: nil)
     }
 }
-
-extension C2XTransactionsViewController {
-    func checkForMainTransaction() {
-        switch mainTransaction {
-        case .auth:
-            captureAuthTransaction()
-            break
-        case .reversal:
-            checkReversalResult()
-            break
-        default:
-            ()
-        }
-    }
-}
-

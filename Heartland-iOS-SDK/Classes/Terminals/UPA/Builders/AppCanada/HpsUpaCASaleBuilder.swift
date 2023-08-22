@@ -35,7 +35,7 @@ public class HpsUpaCASaleBuilder {
                                           tipAmount: tipAmount, taxIndicator: nil,
                                           disableTax: nil, cashBackAmount: nil, invoiceNbr: nil,
                                           allowPartialAuth: nil, confirmAmount: nil,
-                                          disableTip: nil, processCPC: nil, cardIsHSAFSA: nil,
+                                          disableTip: nil, processCPC: nil,
                                           prescriptionAmount: nil, clinicAmount: nil, dentalAmount: nil,
                                           visionOpticalAmount: nil)
         

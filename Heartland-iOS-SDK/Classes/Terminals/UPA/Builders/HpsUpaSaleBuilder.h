@@ -24,7 +24,6 @@
 @property (nonatomic, strong) NSString *cardBrandTransactionId;
 
 // HSA/FSA Values
-@property (nonatomic, readwrite) BOOL *cardIsHSAFSA;
 @property (nonatomic, strong) NSDecimalNumber *prescriptionAmount;
 @property (nonatomic, strong) NSDecimalNumber *clinicAmount;
 @property (nonatomic, strong) NSDecimalNumber *dentalAmount;

@@ -71,7 +71,6 @@
     HpsUpaSaleBuilder* builder = [[HpsUpaSaleBuilder alloc] initWithDevice:device];
     builder.ecrId = @"3";
     builder.amount = [[NSDecimalNumber alloc] initWithDouble:5.99];
-    builder.cardIsHSAFSA = YES;
     builder.prescriptionAmount = [[NSDecimalNumber alloc] initWithDouble:5.99];
 
     [builder execute:^(HpsUpaResponse * response, NSError * error) {

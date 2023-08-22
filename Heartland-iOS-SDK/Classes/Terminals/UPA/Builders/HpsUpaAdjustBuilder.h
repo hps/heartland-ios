@@ -9,7 +9,6 @@
 }
 
 @property (nonatomic, readwrite) int referenceNumber;
-@property (nonatomic, strong) NSString *clerkId;
 @property (nonatomic, strong) NSString *ecrId;
 @property (nonatomic, strong) NSDecimalNumber *gratuity;
 @property (nonatomic, strong) NSString *terminalRefNumber;
