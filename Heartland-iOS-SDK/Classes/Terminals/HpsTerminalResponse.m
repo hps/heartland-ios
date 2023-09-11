@@ -1,12 +1,6 @@
 #import "HpsTerminalResponse.h"
 #import "HpsHpaSharedParams.h"
 
-#if DEBUG
-#import "Heartland_iOS_SDK/Heartland_iOS_SDK-Swift.h"
-#else
-#import <Heartland_iOS_SDK-Swift.h>
-#endif
-
 @implementation HpsTerminalResponse
 
 - (BOOL)gmsResponseIsApproval {

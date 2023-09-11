@@ -1,9 +1,7 @@
 #import "HpsConnectionConfig.h"
-#if DEBUG
-#import "Heartland_iOS_SDK/Heartland_iOS_SDK-Swift.h"
-#else
-#import <Heartland_iOS_SDK-Swift.h>
-#endif
+//#import "Heartland_iOS_SDK-Swift.h"
+//#import "Heartland_iOS_SDK-Swift.h"
+//#import <Heartland_iOS_SDK/Heartland_iOS_SDK-Swift.h>
 
 @implementation HpsConnectionConfig
 
