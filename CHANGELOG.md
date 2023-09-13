@@ -1,6 +1,15 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2.0.13 2023-09-14
+- iOS SDK: UPA -  Test SAFType on SendSAF
+- iOS SDK: Verify SDKs for PAX
+- iOS SDK: C2X Issuer Response Code incorrect
+- iOS SDK: PAX-Support response code 000002 - PARTIALLY APPROVED
+- iOS SDK: C3X - GlobalMobileSDK to Heartland-iOS-SDK
+- iOS SDK: C3X - Update Heartland-iOS-SDK to support C3X Device
+- iOS SDK: C2X - OTA Configuration Update
+
 ## 2.0.12 2023-08-22
 - Improved the C2X Sample App
 - Added UPA Sample App

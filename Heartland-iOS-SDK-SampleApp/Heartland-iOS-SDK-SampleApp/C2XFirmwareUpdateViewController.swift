@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import GlobalMobileSDK
 import Heartland_iOS_SDK
 import UIKit
 
@@ -37,6 +36,7 @@ class C2XFirmwareUpdateViewController: UIViewController {
 
     @IBOutlet var checkForUpdatesFirmwareButton: UIButton!
     @IBOutlet var updateFirmwareButton: UIButton!
+    @IBOutlet var updateConfigButton: UIButton!
     @IBOutlet var DialogView: UIView!
     @IBOutlet var dialogText: UILabel!
     @IBOutlet var dialogSpinner: UIActivityIndicatorView!
@@ -71,6 +71,16 @@ class C2XFirmwareUpdateViewController: UIViewController {
             showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
         }
     }
+    
+    @IBAction func updateConfigButtonAction(_: Any) {
+        if let device = device {
+            showDialogView()
+            device.requestUpdateConfigForDevice()
+            resetTimer()
+        } else {
+            showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
+        }
+    }
 
     func compareVersions() {
         enableUpdateFirmwareButton()
@@ -88,10 +98,12 @@ class C2XFirmwareUpdateViewController: UIViewController {
     func enableUpdateFirmwareButton() {
         hideDialogView()
         updateFirmwareButton.isEnabled = true
+        updateConfigButton.isEnabled = false
     }
 
     func disableUpdateFirmwareButton() {
         updateFirmwareButton.isEnabled = false
+        updateConfigButton.isEnabled = false
     }
 
     func enableCheckForUpdatesButton() {

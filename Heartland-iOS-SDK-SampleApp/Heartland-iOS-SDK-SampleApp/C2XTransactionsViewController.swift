@@ -140,7 +140,6 @@ private extension C2XTransactionsViewController {
             let amountNumber = NSDecimalNumber(string: amountText)
             let builder = HpsC2xCreditSaleBuilder(device: device)
             builder.amount = amountNumber
-            builder.clientTransactionId = "123456789"
             builder.allowPartialAuth = false
             builder.cpcReq = true
             
@@ -526,19 +525,30 @@ private extension C2XTransactionsViewController {
     private func showDialog(for status: Status) {
         var messageResult = ""
         var isApproved = false
+        var issuerMSG = ""
+        var issuerCode = ""
+        var GWCode = ""
+        var GWMSG = ""
+        
         switch status {
         case let .APPROVED(response):
             guard let responseCode = response.deviceResponseCode else { return }
-            var issuerMSG = ""
-            var authCode = ""
+            
             if let responseIssuerMSG = response.issuerRspMsg {
                 issuerMSG = responseIssuerMSG
             }
-            if let authCodeResponse = response.authCodeData {
-                authCode = authCodeResponse
+            if let responseIssuerCode = response.issuerRspCode {
+                issuerCode = responseIssuerCode
             }
-            print("Auth Resp.: \(authCode) - Issuer Auth Data: \(issuerMSG)")
-            messageResult = "Response: \nStatus: \(responseCode)\n Amount: \(response.approvedAmount!)\n Auth Resp.: \(authCode)\n Issuer Auth Data: \(issuerMSG)"
+            
+            if let respCode = response.responseCode {
+                GWCode = respCode
+            }
+            
+            if let respText = response.responseText {
+                GWMSG = respText
+            }
+            messageResult = "Response: \nStatus: \(responseCode)\n Amount: \(response.approvedAmount!)\n Issuer Resp.: \(issuerCode)\n Issuer Auth Data: \(issuerMSG)\nGW Code: \(GWCode)\nGW MSG: \(GWMSG)"
             isApproved = true
         case let .CANCELLED(response):
             guard let deviceResponseMessage = response.deviceResponseMessage else { return }
@@ -547,24 +557,41 @@ private extension C2XTransactionsViewController {
             if let responseIssuerMSG = response.issuerRspMsg {
                 issuerMSG = responseIssuerMSG
             }
-            if let authCodeResponse = response.authCodeData {
+            
+            if let authCodeResponse = response.issuerRspCode {
                 authCode = authCodeResponse
             }
-            print("Auth Resp.: \(authCode) - Issuer Auth Data: \(issuerMSG)")
-            messageResult = "Response: \nStatus: \(deviceResponseMessage)\n Amount: \(response.approvedAmount!)\n Auth Resp.: \(authCode)\n Issuer Auth Data: \(issuerMSG)"
+            
+            if let respCode = response.responseCode {
+                GWCode = respCode
+            }
+            
+            if let respText = response.responseText {
+                GWMSG = respText
+            }
+            
+            messageResult = "Response: \nStatus: \(deviceResponseMessage)\n Amount: \(response.approvedAmount!)\n Auth Resp.: \(authCode)\n Issuer Auth Data: \(issuerMSG)\nGW Code: \(GWCode)\nGW MSG: \(GWMSG)"
             isApproved = false
         case let .DECLINED(response):
             guard let deviceResponseMessage = response.deviceResponseMessage else { return }
             var issuerMSG = ""
-            var authCode = ""
+            var issuerCode = ""
             if let responseIssuerMSG = response.issuerRspMsg {
                 issuerMSG = responseIssuerMSG
             }
             if let authCodeResponse = response.authCodeData {
-                authCode = authCodeResponse
+                issuerCode = authCodeResponse
             }
-            print("Auth Resp.: \(authCode) - Issuer Auth Data: \(issuerMSG)")
-            messageResult = "Response: \nStatus: \(deviceResponseMessage)\n Amount: \(response.approvedAmount!)\n Auth Resp.: \(authCode)\n Issuer Auth Data: \(issuerMSG)"
+            
+            if let respCode = response.responseCode {
+                GWCode = respCode
+            }
+            
+            if let respText = response.responseText {
+                GWMSG = respText
+            }
+            
+            messageResult = "Response: \nStatus: \(deviceResponseMessage)\n Amount: \(response.approvedAmount!)\n Auth Resp.: \(issuerCode)\n Issuer Auth Data: \(issuerMSG)\nGW Code: \(GWCode)\nGW MSG: \(GWMSG)"
             isApproved = false
         case let .MESSAGE(message):
             messageResult = message

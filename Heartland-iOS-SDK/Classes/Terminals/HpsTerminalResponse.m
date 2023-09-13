@@ -69,7 +69,7 @@
 	self.status = response.MultipleMessage;
 	self.responseText = response.Response;
     self.issuerRspCode = response.GatewayRspCode;
-    self.issuerRspMsg = response.GatewayRspMsg;
+    self.issuerRspMsg = response.AuthCodeData;
     self.authCode = response.AuthCode;
     self.authCodeData = response.AuthCodeData;
 	NSMutableDictionary *paramDictionary = [HpsHpaSharedParams getInstance].params;

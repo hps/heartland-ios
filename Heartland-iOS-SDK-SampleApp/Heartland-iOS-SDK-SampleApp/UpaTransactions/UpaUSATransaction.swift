@@ -90,7 +90,8 @@ extension UpaUSATransaction {
             builder.ecrId = "13"
             builder.clerkId = "1234"
             builder.referenceNumber = 1234
-            builder.amount = 30.0;
+            builder.taxAmount = 0
+            builder.amount = 30.0
             builder.details = HpsTransactionDetails()
             builder.details.invoiceNumber = "123"
             
@@ -101,6 +102,15 @@ extension UpaUSATransaction {
                 } else {
                     if let _ = hpsUpaResponse {
                         print(hpsUpaResponse!)
+                        device.getSignatureData("13", andRequestId: "1234") { response, error in
+                            if let error = error {
+                                print(error)
+                                return
+                            }
+                            if let response = response {
+                                print(response)
+                            }
+                        }
                     }
                 }
                 
