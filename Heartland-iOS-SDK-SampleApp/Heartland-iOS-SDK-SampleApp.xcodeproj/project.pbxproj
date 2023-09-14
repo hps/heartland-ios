@@ -647,9 +647,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 7;
-				DEVELOPMENT_TEAM = GY7QL9RND6;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Heartland-iOS-SDK-SampleApp/Info.plist";
@@ -669,7 +669,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0.13;
-				PRODUCT_BUNDLE_IDENTIFIER = com.heartland.developerexperience;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.heartlandpaymentsystems.Heartland-iOS-SDK-SampleApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -687,9 +687,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 7;
-				DEVELOPMENT_TEAM = GY7QL9RND6;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Heartland-iOS-SDK-SampleApp/Info.plist";
@@ -709,7 +709,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0.13;
-				PRODUCT_BUNDLE_IDENTIFIER = com.heartland.developerexperience;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.heartlandpaymentsystems.Heartland-iOS-SDK-SampleApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
