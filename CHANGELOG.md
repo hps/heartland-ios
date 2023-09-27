@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## 2.0.13 2023-09-14
+## 2.0.13 2023-09-27
 - UPA -  Test SAFType on SendSAF
 - Verify SDKs for PAX
 - C2X Issuer Response Code incorrect
@@ -9,6 +9,9 @@ All notable changes to this project will be documented in this file.
 - C3X - GlobalMobileSDK to Heartland-iOS-SDK
 - C3X - Update Heartland-iOS-SDK to support C3X Device
 - C2X - OTA Configuration Update
+- Added Transaction ID on Sample App Transaction Screen.
+- Added Allow Partial Auth Toggle on Sample App Transaction Screen.
+- Added Healthcare fields on Sample App Transaction Screen.
 
 ## 2.0.12 2023-08-22
 - Improved the C2X Sample App
