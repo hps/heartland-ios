@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name GlobalMobileSDK
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
@@ -26,6 +26,7 @@ public struct BatchCloseResponse : GlobalMobileSDK.TransactionResponse {
   public let transactionId: Swift.String
   public let gatewayTransactionId: Swift.String?
   public var gatewayResponseText: Swift.String?
+  public var gatewayResponseCode: Swift.String?
   public var posReferenceId: Swift.String?
   public var operatingUserId: Swift.String?
   public var isApproved: Swift.Bool
@@ -313,6 +314,7 @@ public struct SaleResponse {
   public var cardDataSourceType: GlobalMobileSDK.EntryMode?
   public var cardType: GlobalMobileSDK.CardType?
   public var gatewayResponseText: Swift.String?
+  public var gatewayResponseCode: Swift.String?
   public var authCode: Swift.String?
   public var authCodeData: Swift.String?
   public var cvvResponseCode: Swift.String?
@@ -338,6 +340,7 @@ public struct SaleResponse {
   public var isPartialApproval: Swift.Bool
   public var isApproved: Swift.Bool
   public var tokenizedCard: GlobalMobileSDK.TokenizedCardData?
+  public var hostProcessingResult: GlobalMobileSDK.HostProcessingResult?
   public var transactionDescription: Swift.String
   public var transactionError: GlobalMobileSDK.GMSError?
   public var duplicateData: GlobalMobileSDK.DuplicateDataResponse?
@@ -436,6 +439,7 @@ public struct VerifyResponse {
   public var cardDataSourceType: GlobalMobileSDK.EntryMode?
   public var cardType: GlobalMobileSDK.CardType?
   public var gatewayResponseText: Swift.String?
+  public var gatewayResponseCode: Swift.String?
   public var authCode: Swift.String?
   public var cvvResponseCode: Swift.String?
   public var cvvResponseMessage: Swift.String?
@@ -491,6 +495,11 @@ extension GlobalMobileSDK.CardData {
     get
     set
   }
+}
+public struct HostProcessingResult : Swift.Codable {
+  public var emvIssuerAuthenticationData: Swift.String?
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 @objc public enum TransactionStatus : Swift.UInt, Swift.Codable {
   case onlineDecline, onlineApproved, offlineApproved, offlineDecline, cancelled, hostTimeout, gatewayTimeOutNoReply, unableToGoOnlineOfflineApproved, unableToGoOnlineOfflineDeclined
@@ -740,6 +749,7 @@ public struct ReturnResponse {
   public var invoiceNumber: Swift.String?
   public var operatingUserId: Swift.String?
   public var gatewayResponseText: Swift.String?
+  public var gatewayResponseCode: Swift.String?
   public var authCode: Swift.String?
   public var cvvResponseCode: Swift.String?
   public var cvvResponseMessage: Swift.String?
@@ -799,6 +809,7 @@ public protocol TransactionResponse : Swift.Decodable, Swift.Encodable {
   var transactionId: Swift.String { get }
   var gatewayTransactionId: Swift.String? { get }
   var gatewayResponseText: Swift.String? { get }
+  var gatewayResponseCode: Swift.String? { get }
   var approvedAmount: Swift.UInt? { get set }
   var transactionDescription: Swift.String { get }
   var transactionError: GlobalMobileSDK.GMSError? { get set }
@@ -918,6 +929,7 @@ public struct AuthResponse {
   public var cardType: GlobalMobileSDK.CardType?
   public let gatewayTransactionId: Swift.String?
   public var gatewayResponseText: Swift.String?
+  public var gatewayResponseCode: Swift.String?
   public var authCode: Swift.String?
   public var cvvResponseCode: Swift.String?
   public var cvvResponseMessage: Swift.String?
@@ -956,6 +968,7 @@ public struct AuthResponse {
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
   public let transactionId: Swift.String
+  public var hostProcessingResult: GlobalMobileSDK.HostProcessingResult?
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
@@ -1051,6 +1064,7 @@ public struct ProcessSaFResponse {
   public var transactionResult: GlobalMobileSDK.TransactionResult?
   public var gatewayTransactionId: Swift.String?
   public var gatewayResponseText: Swift.String?
+  public var gatewayResponseCode: Swift.String?
   public var approvedAmount: Swift.UInt?
   public var cardholderName: Swift.String?
   public var manualSignature: Swift.Bool?
@@ -1074,6 +1088,7 @@ public struct TipAdjustResponse {
   public let transactionId: Swift.String
   public let gatewayTransactionId: Swift.String?
   public var gatewayResponseText: Swift.String?
+  public var gatewayResponseCode: Swift.String?
   public var authCode: Swift.String?
   public var cvvResponseCode: Swift.String?
   public var avsResponseCode: Swift.String?
@@ -1175,7 +1190,7 @@ public struct PropayConfig : GlobalMobileSDK.GatewayConfig, Swift.Equatable {
   public init(from decoder: any Swift.Decoder) throws
 }
 public enum TerminalOTAUpdateType : Swift.UInt {
-  case firmware, config
+  case firmware, config, keyInjection
   public init?(rawValue: Swift.UInt)
   public typealias RawValue = Swift.UInt
   public var rawValue: Swift.UInt {
@@ -1257,6 +1272,7 @@ public struct CaptureResponse {
   public var tipAmount: Swift.UInt?
   public var taxCategory: GlobalMobileSDK.TaxCategory?
   public var gatewayResponseText: Swift.String?
+  public var gatewayResponseCode: Swift.String?
   public var posReferenceNumber: Swift.String?
   public var transactionHistoryId: Swift.String?
   public var invoiceNumber: Swift.String?
@@ -1278,6 +1294,7 @@ public struct VoidResponse {
   public let gatewayTransactionId: Swift.String?
   public var operatingUserId: Swift.String?
   public var gatewayResponseText: Swift.String?
+  public var gatewayResponseCode: Swift.String?
   public var authCode: Swift.String?
   public var cvvResponseCode: Swift.String?
   public var avsResponseCode: Swift.String?
@@ -1315,6 +1332,7 @@ public struct ReversalResponse {
   public let transactionId: Swift.String
   public let gatewayTransactionId: Swift.String?
   public var gatewayResponseText: Swift.String?
+  public var gatewayResponseCode: Swift.String?
   public var authCode: Swift.String?
   public var cvvResponseCode: Swift.String?
   public var avsResponseCode: Swift.String?
@@ -1394,6 +1412,7 @@ public struct TokenizationResponse : GlobalMobileSDK.TransactionResponse {
   public var invoiceNumber: Swift.String?
   public var transactionResult: GlobalMobileSDK.TransactionResult?
   public var gatewayResponseText: Swift.String?
+  public var gatewayResponseCode: Swift.String?
   public var approvedAmount: Swift.UInt?
   public var transactionDescription: Swift.String
   public var transactionError: GlobalMobileSDK.GMSError?

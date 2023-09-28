@@ -70,7 +70,7 @@ static int IsFieldEnable;
         self.transactionId = [host getValueAsString:@"responseId"];
         self.transactionTime = [host getValueAsString:@"respDateTime"];
         self.gatewayRspMsg = [host getValueAsString:@"gatewayResponseMessage"];
-        self.gatewayRspCode = [host getValueAsString:@"gatewayRespCode"];
+        self.gatewayRspCode = [host getValueAsString:@"gatewayResponseCode"];
         self.responseCode = [host getValueAsString:@"responseCode"];
         self.responseText = [host getValueAsString:@"responseText"];
         self.terminalRefNumber = [host getValueAsString:@"tranNo"];

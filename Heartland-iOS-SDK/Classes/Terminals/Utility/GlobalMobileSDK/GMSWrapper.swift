@@ -100,8 +100,9 @@ public class GMSWrapper: NSObject {
 
                 let response = HpsTerminalResponse()
                 response.transactionId = gatewayResponse?.transactionId()
-                response.deviceResponseCode = "Success"
-
+                response.deviceResponseCode = gatewayResponse?.responseCode
+                response.deviceResponseMessage = gatewayResponse?.responseMessage
+                
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
                     self.delegate.onTransactionComplete(TransactionResult.success.rawValue, response: response)

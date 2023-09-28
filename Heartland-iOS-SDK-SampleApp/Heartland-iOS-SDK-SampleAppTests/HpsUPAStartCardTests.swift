@@ -53,8 +53,7 @@ class HpsUPAStartCardTests: XCTestCase {
 
         let data = HpsUpaCommandPayload<HpsUpaStartCardDataDetails>(
             command: HpsUpaStartCardConstants.command,
-            requestId: "1234",
-            ecrId: "123",
+            ecrId: "123", requestId: "1234",
             data: HpsUpaStartCardDataDetails(
                 params: params,
                 processingIndicators: pi,

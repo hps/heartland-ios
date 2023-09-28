@@ -22,7 +22,7 @@ class C2XTransactionsViewController: UIViewController {
     // MARK: Outlets
     
     @IBOutlet weak var labelStatus: UILabel!
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var containerView: UIStackView!
     @IBOutlet weak var creditSaleButton: UIButton!
     @IBOutlet weak var manualCardTransactionButton: UIButton!
     @IBOutlet weak var tipAdjustButton: UIButton!
@@ -34,6 +34,12 @@ class C2XTransactionsViewController: UIViewController {
     
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var gratuityTextField: UITextField!
+    @IBOutlet weak var transactionIdTextField: UITextField!
+    @IBOutlet weak var clinicHealthCareTotalTextField: UITextField!
+    @IBOutlet weak var dentalHealthCareTotalTextField: UITextField!
+    @IBOutlet weak var prescriptionHealthCareTotalTextField: UITextField!
+    @IBOutlet weak var visionHealthCareTotalTextField: UITextField!
+    @IBOutlet weak var allowPartialAuthToggle: UISwitch!
     
     @IBOutlet weak var DialogView: UIView!
     @IBOutlet weak var dialogText: UILabel!
@@ -55,7 +61,13 @@ class C2XTransactionsViewController: UIViewController {
     var terminalRefNumber: String?
     var clientTransactionId: String?
     
-    var transactionId: String?
+    var transactionId: String? {
+        didSet {
+            if transactionIdTextField != nil, transactionId != transactionIdTextField.text {
+                transactionIdTextField.text = transactionId
+            }
+        }
+    }
     var transactionAmount: NSDecimalNumber = 0.0
 
     // MARK: - LifeCycle
@@ -134,20 +146,27 @@ private extension C2XTransactionsViewController {
         guard let amountText = amountTextField.text, amountText.count > 0 else { showTextDialog(LoadingStatus.AMOUNT_SHOULD_BE_LARGER_THAN_ZERO.rawValue)
             return
         }
+        
+        guard validateHeathCareWithTransactionAmount() else {
+            showTextDialogWith("Transaction Not Performed",
+                               LoadingStatus.AMOUNT_SHOULD_BE_HIGHER_THAN_HEALTHCARE_TOTAL.rawValue)
+            return
+        }
+        
         if let device = device {
             showProgress(true)
             setText(LoadingStatus.WAIT.rawValue)
             let amountNumber = NSDecimalNumber(string: amountText)
             let builder = HpsC2xCreditSaleBuilder(device: device)
             builder.amount = amountNumber
-            builder.clientTransactionId = "123456789"
-            builder.allowPartialAuth = false
+            builder.allowPartialAuth = NSNumber(value: allowPartialAuthToggle.isOn)
             builder.cpcReq = true
             
-            let autoSubstantiation = HpsAutoSubstantiation()
-            autoSubstantiation.setClinicSubTotal(NSDecimalNumber(string: "1.10"))
-            
+            let autoSubstantiation = getHealthCareComponent()
             builder.autoSubstantiation = autoSubstantiation
+            
+            let gratuity = gratuityTextField.text ?? "0.00"
+            builder.gratuity = NSDecimalNumber(string: gratuity)
             
             if let cTransactionId = builder.clientTransactionId {
                 NSLog("Client Transaction Id Generated In The Client - Request  %@", cTransactionId)
@@ -184,7 +203,7 @@ private extension C2XTransactionsViewController {
             showProgress(true)
             setText(LoadingStatus.WAIT.rawValue)
 
-            if let transactionId = transactionId {
+            if let transactionId = transactionIdTextField.text {
                 let builder = HpsC2xCreditVoidBuilder(device: device)
                 builder.transactionId = transactionId
                 builder.execute()
@@ -210,8 +229,8 @@ private extension C2XTransactionsViewController {
             let amountNumber = NSDecimalNumber(string: amountText)
             let builder: HpsC2xCreditReversalBuilder = HpsC2xCreditReversalBuilder(device: device)
             builder.amount = amountNumber
-            builder.transactionId = self.transactionId
-            builder.allowPartialAuth = true
+            builder.transactionId = self.transactionIdTextField.text
+            builder.allowPartialAuth = NSNumber(value: allowPartialAuthToggle.isOn)
             print("Transaction ID coming from response is: \(builder.transactionId)")
             builder.clientTransactionId = self.clientTransactionId
             if let cTransactionId = builder.clientTransactionId {
@@ -243,7 +262,8 @@ private extension C2XTransactionsViewController {
             let builder: HpsC2xCreditAuthBuilder = HpsC2xCreditAuthBuilder(device: device)
             builder.amount = amountNumber
             builder.clientTransactionId = "02997841500"
-            builder.gratuity = 0.00
+            let gratuity = gratuityTextField.text ?? "0.00"
+            builder.gratuity = NSDecimalNumber(string: gratuity)
             builder.creditCard = card
             if let cTransactionId = builder.clientTransactionId {
                 NSLog("Client Transaction Id Generated In The Client - Request  %@", cTransactionId)
@@ -266,8 +286,8 @@ private extension C2XTransactionsViewController {
             let amountNumber = NSDecimalNumber(string: amountText)
             let builder = HpsC2xCreditReturnBuilder(device: device)
             builder.amount = amountNumber
-            builder.allowPartialAuth = true
-            builder.transactionId = self.transactionId
+            builder.allowPartialAuth = NSNumber(value: allowPartialAuthToggle.isOn)
+            builder.transactionId = self.transactionIdTextField.text
             
             if let cTransactionId = builder.clientTransactionId {
                 NSLog("Client Transaction Id Generated In The Client - Request  %@", cTransactionId)
@@ -292,7 +312,7 @@ private extension C2XTransactionsViewController {
             builder.amount = amountNumber
             builder.clientTransactionId = self.clientTransactionId
             builder.referenceNumber = self.terminalRefNumber
-            builder.transactionId = self.transactionId
+            builder.transactionId = self.transactionIdTextField.text
             builder.execute()
             
         } else {
@@ -326,6 +346,53 @@ private extension C2XTransactionsViewController {
     func checkReversalResult() {
         print("REVERSAL WORKS: - CLIENT_TRANSACTION_ID: \(self.clientTransactionId)")
         showProgress(false)
+    }
+    
+    func validateHeathCareWithTransactionAmount() -> Bool {
+        let clinicTotal = Double(clinicHealthCareTotalTextField.text ?? "0.00") ?? 0.00
+        let dentalTotal = Double(dentalHealthCareTotalTextField.text ?? "0.00") ?? 0.00
+        let prescriptionTotal = Double(prescriptionHealthCareTotalTextField.text ?? "0.00") ?? 0.00
+        let visionTotal = Double(visionHealthCareTotalTextField.text ?? "0.00") ?? 0.00
+        
+        let amount = Double(amountTextField.text ?? "0.00") ?? 0.00
+        
+        let sumHealthCareTotal = clinicTotal + dentalTotal + prescriptionTotal + visionTotal
+        if sumHealthCareTotal > amount {
+            return false
+        }
+        
+        return true
+    }
+    
+    func getHealthCareComponent() -> HpsAutoSubstantiation {
+        var healthCareAmount: HpsAutoSubstantiation = HpsAutoSubstantiation()
+        
+        let clinicTotal = Double(clinicHealthCareTotalTextField.text ?? "0.00")
+        let dentalTotal = Double(dentalHealthCareTotalTextField.text ?? "0.00")
+        let prescriptionTotal = Double(prescriptionHealthCareTotalTextField.text ?? "0.00")
+        let visionTotal = Double(visionHealthCareTotalTextField.text ?? "0.00")
+        
+        if let clinicTotal = clinicTotal, clinicTotal > 0 {
+            healthCareAmount.setClinicSubTotal(NSDecimalNumber(string: "\(clinicTotal)"))
+        }
+        
+        if let dentalTotal = dentalTotal, dentalTotal > 0 {
+            healthCareAmount.setDentalSubTotal(NSDecimalNumber(string: "\(dentalTotal)"))
+        }
+        
+        if let dentalTotal = dentalTotal, dentalTotal > 0 {
+            healthCareAmount.setDentalSubTotal(NSDecimalNumber(string: "\(dentalTotal)"))
+        }
+        
+        if let prescriptionTotal = prescriptionTotal, prescriptionTotal > 0 {
+            healthCareAmount.setPrescriptionSubTotal(NSDecimalNumber(string: "\(prescriptionTotal)"))
+        }
+        
+        if let visionTotal = visionTotal, visionTotal > 0 {
+            healthCareAmount.setVisionSubTotal(NSDecimalNumber(string: "\(visionTotal)"))
+        }
+        
+        return healthCareAmount
     }
 }
 
@@ -397,7 +464,11 @@ extension C2XTransactionsViewController: HpsC2xDeviceDelegate, GMSTransactionDel
             case LoadingStatus.CANCELLED.rawValue:
                 showDialog(for: .CANCELLED(response: response))
             default:
-                showDialog(for: .MESSAGE(message: deviceResponseCode))
+                if let message = response.deviceResponseMessage {
+                    showDialog(for: .MESSAGE(message: message))
+                } else {
+                    showDialog(for: .MESSAGE(message: "We have faced an issue on trying to perform the transaction"))
+                }
             }
         }
 
@@ -526,19 +597,30 @@ private extension C2XTransactionsViewController {
     private func showDialog(for status: Status) {
         var messageResult = ""
         var isApproved = false
+        var issuerMSG = ""
+        var issuerCode = ""
+        var GWCode = ""
+        var GWMSG = ""
+        
         switch status {
         case let .APPROVED(response):
             guard let responseCode = response.deviceResponseCode else { return }
-            var issuerMSG = ""
-            var authCode = ""
+            
             if let responseIssuerMSG = response.issuerRspMsg {
                 issuerMSG = responseIssuerMSG
             }
-            if let authCodeResponse = response.authCodeData {
-                authCode = authCodeResponse
+            if let responseIssuerCode = response.issuerRspCode {
+                issuerCode = responseIssuerCode
             }
-            print("Auth Resp.: \(authCode) - Issuer Auth Data: \(issuerMSG)")
-            messageResult = "Response: \nStatus: \(responseCode)\n Amount: \(response.approvedAmount!)\n Auth Resp.: \(authCode)\n Issuer Auth Data: \(issuerMSG)"
+            
+            if let respCode = response.responseCode {
+                GWCode = respCode
+            }
+            
+            if let respText = response.responseText {
+                GWMSG = respText
+            }
+            messageResult = "Response: \nStatus: \(responseCode)\n Amount: \(response.approvedAmount!)\n Issuer Resp.: \(issuerCode)\n Issuer Auth Data: \(issuerMSG)\nGW Code: \(GWCode)\nGW MSG: \(GWMSG)"
             isApproved = true
         case let .CANCELLED(response):
             guard let deviceResponseMessage = response.deviceResponseMessage else { return }
@@ -547,24 +629,41 @@ private extension C2XTransactionsViewController {
             if let responseIssuerMSG = response.issuerRspMsg {
                 issuerMSG = responseIssuerMSG
             }
-            if let authCodeResponse = response.authCodeData {
+            
+            if let authCodeResponse = response.issuerRspCode {
                 authCode = authCodeResponse
             }
-            print("Auth Resp.: \(authCode) - Issuer Auth Data: \(issuerMSG)")
-            messageResult = "Response: \nStatus: \(deviceResponseMessage)\n Amount: \(response.approvedAmount!)\n Auth Resp.: \(authCode)\n Issuer Auth Data: \(issuerMSG)"
+            
+            if let respCode = response.responseCode {
+                GWCode = respCode
+            }
+            
+            if let respText = response.responseText {
+                GWMSG = respText
+            }
+            
+            messageResult = "Response: \nStatus: \(deviceResponseMessage)\n Amount: \(response.approvedAmount!)\n Auth Resp.: \(authCode)\n Issuer Auth Data: \(issuerMSG)\nGW Code: \(GWCode)\nGW MSG: \(GWMSG)"
             isApproved = false
         case let .DECLINED(response):
             guard let deviceResponseMessage = response.deviceResponseMessage else { return }
             var issuerMSG = ""
-            var authCode = ""
+            var issuerCode = ""
             if let responseIssuerMSG = response.issuerRspMsg {
                 issuerMSG = responseIssuerMSG
             }
             if let authCodeResponse = response.authCodeData {
-                authCode = authCodeResponse
+                issuerCode = authCodeResponse
             }
-            print("Auth Resp.: \(authCode) - Issuer Auth Data: \(issuerMSG)")
-            messageResult = "Response: \nStatus: \(deviceResponseMessage)\n Amount: \(response.approvedAmount!)\n Auth Resp.: \(authCode)\n Issuer Auth Data: \(issuerMSG)"
+            
+            if let respCode = response.responseCode {
+                GWCode = respCode
+            }
+            
+            if let respText = response.responseText {
+                GWMSG = respText
+            }
+            
+            messageResult = "Response: \nStatus: \(deviceResponseMessage)\n Amount: \(response.approvedAmount!)\n Auth Resp.: \(issuerCode)\n Issuer Auth Data: \(issuerMSG)\nGW Code: \(GWCode)\nGW MSG: \(GWMSG)"
             isApproved = false
         case let .MESSAGE(message):
             messageResult = message
@@ -608,11 +707,21 @@ public enum LoadingStatus: String {
     case SUCCESS_UPDATED = "Updated! Please, wait a few seconds. Device will be restarted."
     case YOUVE_GOT_IT_TITLE = "Yes!"
     case SOMETHING_WENT_WRONG = "Something wen wrong. Please, try update it again."
+    case AMOUNT_SHOULD_BE_HIGHER_THAN_HEALTHCARE_TOTAL = "Transaction Amount should be higher than healthcare total."
+    
 }
 
 extension UIViewController {
     func showTextDialog(_ message: String, _ success: Bool = false) {
-        let uialert = UIAlertController(title: success ? "Yes!" : "Oops",
+        let uialert = UIAlertController(title: "Transaction Completed",
+                                        message: message,
+                                        preferredStyle: UIAlertController.Style.alert)
+        uialert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        present(uialert, animated: true, completion: nil)
+    }
+    
+    func showTextDialogWith(_ title: String = "Transaction Completed", _ message: String, _ success: Bool = false) {
+        let uialert = UIAlertController(title: title,
                                         message: message,
                                         preferredStyle: UIAlertController.Style.alert)
         uialert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))

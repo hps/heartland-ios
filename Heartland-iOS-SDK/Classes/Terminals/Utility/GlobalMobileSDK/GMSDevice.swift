@@ -103,7 +103,7 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
 
         terminalsById[terminal.identifier] = terminal
 
-        if targetTerminalId == terminal.identifier {
+        if targetTerminalId == nil || targetTerminalId == terminal.identifier {
             stopScan()
         }
     }
@@ -155,6 +155,11 @@ public extension GMSDevice {
     func requestUpdateVersionForC2X() {
         gmsWrapper?.terminalOTADelegate = self
         gmsWrapper?.requestToStartUpdateFor(type: .firmware)
+    }
+    
+    func requestUpdateConfigForDevice() {
+        gmsWrapper?.terminalOTADelegate = self
+        gmsWrapper?.requestToStartUpdateFor(type: .config)
     }
 
     func requestTerminalVersionData() {

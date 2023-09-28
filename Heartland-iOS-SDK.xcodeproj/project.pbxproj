@@ -40,14 +40,11 @@
 		DD6A4ED42937C05D008B8165 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DD6A4ECF2937C05C008B8165 /* README.md */; };
 		DD6A4ED52937C05D008B8165 /* XMLDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = DD6A4ED12937C05C008B8165 /* XMLDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD6A4ED62937C05D008B8165 /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6A4ED22937C05C008B8165 /* XMLDictionary.m */; };
-		DD6A4F752937C79E008B8165 /* BBPOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFF37162937BB2400C2D1D1 /* BBPOS.xcframework */; };
-		DD6A4F762937C79E008B8165 /* BBPOS.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DDFF37162937BB2400C2D1D1 /* BBPOS.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DD6A4F782937C79F008B8165 /* GlobalMobileSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFF36D82937AFB600C2D1D1 /* GlobalMobileSDK.xcframework */; };
-		DD6A4F792937C79F008B8165 /* GlobalMobileSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DDFF36D82937AFB600C2D1D1 /* GlobalMobileSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DD6A4F7A2937C7A0008B8165 /* GlobalPaymentsApi.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFF36DA2937AFE300C2D1D1 /* GlobalPaymentsApi.xcframework */; };
-		DD6A4F7B2937C7A1008B8165 /* GlobalPaymentsApi.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DDFF36DA2937AFE300C2D1D1 /* GlobalPaymentsApi.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DD8CECF2294CC00B0006908F /* HpsUpaStartCardTransactionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8CECF1294CC00B0006908F /* HpsUpaStartCardTransactionBuilder.swift */; };
 		DD8CECF6294CC29B0006908F /* HpsUpaStartCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8CECF5294CC29B0006908F /* HpsUpaStartCard.swift */; };
+		DDC13AA62A73F87D0069F2E2 /* GlobalMobileSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC13AA32A73F87D0069F2E2 /* GlobalMobileSDK.xcframework */; };
+		DDC13AA72A73F87D0069F2E2 /* GlobalPaymentsApi.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC13AA42A73F87D0069F2E2 /* GlobalPaymentsApi.xcframework */; };
+		DDC13AA82A73F87D0069F2E2 /* BBPOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC13AA52A73F87D0069F2E2 /* BBPOS.xcframework */; };
 		DDD0E0442980641700D4A32D /* HpsUpaTipAdjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD0E0432980641700D4A32D /* HpsUpaTipAdjust.swift */; };
 		DDFF35272937AF4300C2D1D1 /* HpsUpaDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = DDFF33542937AF4200C2D1D1 /* HpsUpaDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DDFF35282937AF4300C2D1D1 /* HpsUpaCaptureBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFF33562937AF4200C2D1D1 /* HpsUpaCaptureBuilder.m */; };
@@ -489,9 +486,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DD6A4F762937C79E008B8165 /* BBPOS.xcframework in Embed Frameworks */,
-				DD6A4F7B2937C7A1008B8165 /* GlobalPaymentsApi.xcframework in Embed Frameworks */,
-				DD6A4F792937C79F008B8165 /* GlobalMobileSDK.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,6 +528,9 @@
 		DD6A4ED22937C05C008B8165 /* XMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLDictionary.m; sourceTree = "<group>"; };
 		DD8CECF1294CC00B0006908F /* HpsUpaStartCardTransactionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaStartCardTransactionBuilder.swift; sourceTree = "<group>"; };
 		DD8CECF5294CC29B0006908F /* HpsUpaStartCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaStartCard.swift; sourceTree = "<group>"; };
+		DDC13AA32A73F87D0069F2E2 /* GlobalMobileSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GlobalMobileSDK.xcframework; sourceTree = "<group>"; };
+		DDC13AA42A73F87D0069F2E2 /* GlobalPaymentsApi.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GlobalPaymentsApi.xcframework; sourceTree = "<group>"; };
+		DDC13AA52A73F87D0069F2E2 /* BBPOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BBPOS.xcframework; sourceTree = "<group>"; };
 		DDD0E0432980641700D4A32D /* HpsUpaTipAdjust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaTipAdjust.swift; sourceTree = "<group>"; };
 		DDFF33432937AEE000C2D1D1 /* Heartland_iOS_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Heartland_iOS_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDFF33542937AF4200C2D1D1 /* HpsUpaDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HpsUpaDevice.h; sourceTree = "<group>"; };
@@ -941,8 +938,6 @@
 		DDFF35242937AF4300C2D1D1 /* icon_card_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_card_empty.png; sourceTree = "<group>"; };
 		DDFF35252937AF4300C2D1D1 /* heartlandlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartlandlogo.png; sourceTree = "<group>"; };
 		DDFF35262937AF4300C2D1D1 /* icon_mastercard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_mastercard.png; sourceTree = "<group>"; };
-		DDFF36D82937AFB600C2D1D1 /* GlobalMobileSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GlobalMobileSDK.xcframework; sourceTree = "<group>"; };
-		DDFF36DA2937AFE300C2D1D1 /* GlobalPaymentsApi.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GlobalPaymentsApi.xcframework; sourceTree = "<group>"; };
 		DDFF36DF2937B6FC00C2D1D1 /* GMSDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMSDevice.swift; sourceTree = "<group>"; };
 		DDFF36E02937B6FC00C2D1D1 /* GMSTransactionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMSTransactionResponse.swift; sourceTree = "<group>"; };
 		DDFF36E12937B6FC00C2D1D1 /* HpsC2xEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HpsC2xEnums.swift; sourceTree = "<group>"; };
@@ -969,7 +964,6 @@
 		DDFF36F72937B6FC00C2D1D1 /* GMSBatchCloseBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMSBatchCloseBuilder.swift; sourceTree = "<group>"; };
 		DDFF36F82937B6FC00C2D1D1 /* GMSTransactionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMSTransactionDelegate.swift; sourceTree = "<group>"; };
 		DDFF37142937BAA400C2D1D1 /* Heartland-iOS-SDK-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Heartland-iOS-SDK-umbrella.h"; sourceTree = "<group>"; };
-		DDFF37162937BB2400C2D1D1 /* BBPOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BBPOS.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -977,9 +971,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD6A4F752937C79E008B8165 /* BBPOS.xcframework in Frameworks */,
-				DD6A4F7A2937C7A0008B8165 /* GlobalPaymentsApi.xcframework in Frameworks */,
-				DD6A4F782937C79F008B8165 /* GlobalMobileSDK.xcframework in Frameworks */,
+				DDC13AA72A73F87D0069F2E2 /* GlobalPaymentsApi.xcframework in Frameworks */,
+				DDC13AA82A73F87D0069F2E2 /* BBPOS.xcframework in Frameworks */,
+				DDC13AA62A73F87D0069F2E2 /* GlobalMobileSDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1120,6 +1114,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		DDC13AA22A73F87D0069F2E2 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				DDC13AA32A73F87D0069F2E2 /* GlobalMobileSDK.xcframework */,
+				DDC13AA42A73F87D0069F2E2 /* GlobalPaymentsApi.xcframework */,
+				DDC13AA52A73F87D0069F2E2 /* BBPOS.xcframework */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
 		DDFF33392937AEE000C2D1D1 = {
 			isa = PBXGroup;
 			children = (
@@ -1139,9 +1143,9 @@
 		DDFF33452937AEE000C2D1D1 /* Heartland-iOS-SDK */ = {
 			isa = PBXGroup;
 			children = (
+				DDC13AA22A73F87D0069F2E2 /* Libraries */,
 				DD6A4ED72937C08F008B8165 /* Supporting Files */,
 				DD6A4ECC2937C05C008B8165 /* ThirdParty */,
-				DDFF36D72937AFB600C2D1D1 /* Frameworks */,
 				DDFF351B2937AF4300C2D1D1 /* Assets */,
 				DDFF33512937AF4200C2D1D1 /* Classes */,
 			);
@@ -1853,16 +1857,6 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		DDFF36D72937AFB600C2D1D1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DDFF37162937BB2400C2D1D1 /* BBPOS.xcframework */,
-				DDFF36DA2937AFE300C2D1D1 /* GlobalPaymentsApi.xcframework */,
-				DDFF36D82937AFB600C2D1D1 /* GlobalMobileSDK.xcframework */,
-			);
-			path = Frameworks;
-			sourceTree = "<group>";
-		};
 		DDFF36DE2937B6FC00C2D1D1 /* GlobalMobileSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -2507,6 +2501,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 2.0.13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2563,6 +2558,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 2.0.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2582,6 +2578,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -2590,7 +2587,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0.13;
 				MODULEMAP_FILE = "Heartland-iOS-SDK/Heartland-iOS-SDK.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.heartland.Heartland-iOS-SDK";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -2609,6 +2606,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -2617,7 +2615,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0.13;
 				MODULEMAP_FILE = "Heartland-iOS-SDK/Heartland-iOS-SDK.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.heartland.Heartland-iOS-SDK";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
