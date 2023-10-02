@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = "Heartland-iOS-SDK"
-    s.version          = "2.0.12"
+    s.version          = "2.0.13"
     s.summary          = "Secure Tokenized Payments by Heartland Payment Systems."
   
   # This description is used to generate tags and improve search results.
@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
     }
   
     s.frameworks = 'UIKit'
-    s.vendored_frameworks = 'Heartland-iOS-SDK/Frameworks/GlobalMobileSDK.xcframework', 'Heartland-iOS-SDK/Frameworks/GlobalPaymentsApi.xcframework', 'Heartland-iOS-SDK/Frameworks/BBPOS.xcframework'
+    s.vendored_frameworks = 'Heartland-iOS-SDK/Libraries/GlobalMobileSDK.xcframework', 'Heartland-iOS-SDK/Libraries/GlobalPaymentsApi.xcframework', 'Heartland-iOS-SDK/Libraries/BBPOS.xcframework'
     s.swift_version = '5.0'
     s.pod_target_xcconfig = { 
 	'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' 

@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## 2.0.13 2023-09-28
+## 2.0.13 2023-10-03
 - UPA -  Test SAFType on SendSAF
 - Verify SDKs for PAX
 - C2X Issuer Response Code incorrect
