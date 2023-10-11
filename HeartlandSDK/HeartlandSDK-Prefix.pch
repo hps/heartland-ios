@@ -1,0 +1,14 @@
+//
+//  HeartlandSDK-Prefix.pch
+//  HeartlandSDK
+//
+//  Created by Milen Halachev on 26.10.18.
+//  Copyright © 2018 Heartland Payment Systems. All rights reserved.
+//
+
+#ifndef HeartlandSDK_Prefix_h
+#define HeartlandSDK_Prefix_h
+
+#import <CoreGraphics/CoreGraphics.h>
+
+#endif /* HeartlandSDK_Prefix_h */
