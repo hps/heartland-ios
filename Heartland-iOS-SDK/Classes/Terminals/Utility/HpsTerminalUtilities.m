@@ -52,7 +52,9 @@
     
     //Add Version
     [buffer appendData:[PAX_DEVICE_VERSION dataUsingEncoding:NSASCIIStringEncoding]];
-    [buffer appendBytes:(char []){ HpsControlCodes_FS }  length:1];
+    if (messageId != A14_CANCEL) {
+        [buffer appendBytes:(char []){ HpsControlCodes_FS }  length:1];
+    }
     
     // Add the Message
     [buffer appendData:[message dataUsingEncoding:NSASCIIStringEncoding]];

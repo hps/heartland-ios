@@ -8,6 +8,28 @@
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>github.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSTemporaryExceptionMinimumTLSVersion</key>
+				<string>1.2</string>
+				<key>NSTemporaryExceptionRequiresForwardSecrecy</key>
+				<false/>
+			</dict>
+			<key>globalpay.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSTemporaryExceptionMinimumTLSVersion</key>
+				<string>1.2</string>
+				<key>NSTemporaryExceptionRequiresForwardSecrecy</key>
+				<false/>
+			</dict>
 			<key>e-hps.com</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>

@@ -27,6 +27,14 @@
 		284B5CA72A66F1660067AF0D /* HpsUpaDeleteSaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284B5CA62A66F1660067AF0D /* HpsUpaDeleteSaf.swift */; };
 		28FCAA142A68528D0040B118 /* HpsUpaDeleteSafResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FCAA132A68528D0040B118 /* HpsUpaDeleteSafResponse.swift */; };
 		DD2409302991688C00597A23 /* HpsUpaStartCardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD24092F2991688C00597A23 /* HpsUpaStartCardResponse.swift */; };
+		DD37C2E12AE079E7003891D7 /* TapToPayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD37C2E02AE079E7003891D7 /* TapToPayView.swift */; };
+		DD37C2E32AE07C69003891D7 /* TapToPayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD37C2E22AE07C69003891D7 /* TapToPayViewModel.swift */; };
+		DD37C2E52AE07DCB003891D7 /* TapToPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD37C2E42AE07DCB003891D7 /* TapToPay.swift */; };
+		DD37C2F12B164F18003891D7 /* HpsTokenServiceWeb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD37C2F02B164F18003891D7 /* HpsTokenServiceWeb.swift */; };
+		DD37C2F32B164F9A003891D7 /* TokenService.html in Resources */ = {isa = PBXBuildFile; fileRef = DD37C2F22B164F9A003891D7 /* TokenService.html */; };
+		DD37C2F52B165098003891D7 /* TokenServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD37C2F42B165098003891D7 /* TokenServiceViewController.swift */; };
+		DD37C2EC2AFAE344003891D7 /* TokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD37C2EB2AFAE344003891D7 /* TokenProvider.swift */; };
+		DD37C2EE2AFAE569003891D7 /* ProximityReaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD37C2ED2AFAE569003891D7 /* ProximityReaderViewModel.swift */; };
 		DD426BFB299EC7F200DBFAC5 /* HpsUpaSAFTransactionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD426BFA299EC7F200DBFAC5 /* HpsUpaSAFTransactionBuilder.swift */; };
 		DD426BFE299EC92300DBFAC5 /* HpsUpaSendSaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD426BFD299EC92300DBFAC5 /* HpsUpaSendSaf.swift */; };
 		DD426C03299ED3F000DBFAC5 /* HpsUpaResponsePayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD426C02299ED3F000DBFAC5 /* HpsUpaResponsePayload.swift */; };
@@ -513,6 +521,14 @@
 		284B5CA62A66F1660067AF0D /* HpsUpaDeleteSaf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaDeleteSaf.swift; sourceTree = "<group>"; };
 		28FCAA132A68528D0040B118 /* HpsUpaDeleteSafResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaDeleteSafResponse.swift; sourceTree = "<group>"; };
 		DD24092F2991688C00597A23 /* HpsUpaStartCardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaStartCardResponse.swift; sourceTree = "<group>"; };
+		DD37C2E02AE079E7003891D7 /* TapToPayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapToPayView.swift; sourceTree = "<group>"; };
+		DD37C2E22AE07C69003891D7 /* TapToPayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapToPayViewModel.swift; sourceTree = "<group>"; };
+		DD37C2E42AE07DCB003891D7 /* TapToPay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapToPay.swift; sourceTree = "<group>"; };
+		DD37C2F02B164F18003891D7 /* HpsTokenServiceWeb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsTokenServiceWeb.swift; sourceTree = "<group>"; };
+		DD37C2F22B164F9A003891D7 /* TokenService.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = TokenService.html; sourceTree = "<group>"; };
+		DD37C2F42B165098003891D7 /* TokenServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenServiceViewController.swift; sourceTree = "<group>"; };
+		DD37C2EB2AFAE344003891D7 /* TokenProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenProvider.swift; sourceTree = "<group>"; };
+		DD37C2ED2AFAE569003891D7 /* ProximityReaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProximityReaderViewModel.swift; sourceTree = "<group>"; };
 		DD426BFA299EC7F200DBFAC5 /* HpsUpaSAFTransactionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaSAFTransactionBuilder.swift; sourceTree = "<group>"; };
 		DD426BFD299EC92300DBFAC5 /* HpsUpaSendSaf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaSendSaf.swift; sourceTree = "<group>"; };
 		DD426C02299ED3F000DBFAC5 /* HpsUpaResponsePayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsUpaResponsePayload.swift; sourceTree = "<group>"; };
@@ -1006,6 +1022,44 @@
 			path = AppCanada;
 			sourceTree = "<group>";
 		};
+		DD37C2DD2AE079B4003891D7 /* TapToPay */ = {
+			isa = PBXGroup;
+			children = (
+				DD37C2EA2AFAE339003891D7 /* TokenProvider */,
+				DD37C2DF2AE079D0003891D7 /* Views */,
+				DD37C2E42AE07DCB003891D7 /* TapToPay.swift */,
+			);
+			path = TapToPay;
+			sourceTree = "<group>";
+		};
+		DD37C2DF2AE079D0003891D7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DD37C2E02AE079E7003891D7 /* TapToPayView.swift */,
+				DD37C2E22AE07C69003891D7 /* TapToPayViewModel.swift */,
+				DD37C2ED2AFAE569003891D7 /* ProximityReaderViewModel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DD37C2EF2B164F02003891D7 /* TokenService */ = {
+			isa = PBXGroup;
+			children = (
+				DD37C2F02B164F18003891D7 /* HpsTokenServiceWeb.swift */,
+				DD37C2F22B164F9A003891D7 /* TokenService.html */,
+				DD37C2F42B165098003891D7 /* TokenServiceViewController.swift */,
+			);
+			path = TokenService;
+			sourceTree = "<group>";
+		};
+    DD37C2EA2AFAE339003891D7 /* TokenProvider */ = {
+			isa = PBXGroup;
+			children = (
+				DD37C2EB2AFAE344003891D7 /* TokenProvider.swift */,
+			);
+			path = TokenProvider;
+      sourceTree = "<group>";
+		};
 		DD426BF9299EC7CE00DBFAC5 /* StoreAndForward */ = {
 			isa = PBXGroup;
 			children = (
@@ -1155,11 +1209,13 @@
 		DDFF33512937AF4200C2D1D1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DD37C2EF2B164F02003891D7 /* TokenService */,
 				DDFF350C2937AF4300C2D1D1 /* hps.h */,
 				DDFF34AB2937AF4200C2D1D1 /* HpsConfiguredServices.h */,
 				DDFF34AC2937AF4200C2D1D1 /* HpsServiceContainer.h */,
 				DDFF34DB2937AF4300C2D1D1 /* HpsServiceContainer.m */,
 				DDFF34DC2937AF4300C2D1D1 /* HpsConfiguredServices.m */,
+				DD37C2DD2AE079B4003891D7 /* TapToPay */,
 				DDFF33522937AF4200C2D1D1 /* Terminals */,
 				DDFF34992937AF4200C2D1D1 /* Entity */,
 				DDFF34AE2937AF4200C2D1D1 /* Models */,
@@ -2168,6 +2224,7 @@
 				DDFF36CF2937AF4400C2D1D1 /* HPSCardEntryViewController.xib in Resources */,
 				DDFF36D32937AF4400C2D1D1 /* icon_visa.png in Resources */,
 				DDFF36D52937AF4400C2D1D1 /* heartlandlogo.png in Resources */,
+				DD37C2F32B164F9A003891D7 /* TokenService.html in Resources */,
 				DDFF36D22937AF4400C2D1D1 /* icon_cvv.png in Resources */,
 				DDFF36CE2937AF4400C2D1D1 /* icon_discover.png in Resources */,
 			);
@@ -2199,6 +2256,7 @@
 				DDFF35482937AF4300C2D1D1 /* HpsUpaEvent.m in Sources */,
 				DDFF35C02937AF4300C2D1D1 /* HpsTcpInterface.m in Sources */,
 				DDFF36FA2937B6FC00C2D1D1 /* GMSTransactionResponse.swift in Sources */,
+				DD37C2E52AE07DCB003891D7 /* TapToPay.swift in Sources */,
 				DDFF36272937AF4400C2D1D1 /* HpsWiseCubeCreditAdjustBuilder.swift in Sources */,
 				DDFF36AF2937AF4400C2D1D1 /* HpsPayGroup.m in Sources */,
 				DD8CECF6294CC29B0006908F /* HpsUpaStartCard.swift in Sources */,
@@ -2240,6 +2298,7 @@
 				DDFF36252937AF4400C2D1D1 /* HpsWiseCubeCreditReturnBuilder.swift in Sources */,
 				DDFF36122937AF4400C2D1D1 /* HpsHpaEodResponse.m in Sources */,
 				14B86F0E29B7AB7F00657AF3 /* HpsAutoSubstantiation.m in Sources */,
+				DD37C2EC2AFAE344003891D7 /* TokenProvider.swift in Sources */,
 				DDFF35862937AF4300C2D1D1 /* HpsPaxAmountRequest.m in Sources */,
 				DDFF35892937AF4300C2D1D1 /* HpsPaxDebitResponse.m in Sources */,
 				DDFF37022937B6FC00C2D1D1 /* HpsTransactionType.swift in Sources */,
@@ -2339,6 +2398,7 @@
 				DDFF35822937AF4300C2D1D1 /* HpsPaxInitializeResponse.m in Sources */,
 				DDFF35382937AF4300C2D1D1 /* UpaEnums.m in Sources */,
 				DDFF35C82937AF4300C2D1D1 /* HpsHpaCreditVerifyBuilder.m in Sources */,
+				DD37C2F12B164F18003891D7 /* HpsTokenServiceWeb.swift in Sources */,
 				DDFF352D2937AF4300C2D1D1 /* HpsUpaAuthBuilder.m in Sources */,
 				DD426C03299ED3F000DBFAC5 /* HpsUpaResponsePayload.swift in Sources */,
 				DDFF355F2937AF4300C2D1D1 /* HpsDeviceProtocols.m in Sources */,
@@ -2378,6 +2438,8 @@
 				DDFF368D2937AF4400C2D1D1 /* HpsTableServiceConnector.m in Sources */,
 				DDFF365A2937AF4400C2D1D1 /* HpsServerAssignmentResponse.m in Sources */,
 				DDFF35D72937AF4300C2D1D1 /* HpsHpaEBTRefundBuilder.m in Sources */,
+				DD37C2F52B165098003891D7 /* TokenServiceViewController.swift in Sources */,
+				DD37C2E12AE079E7003891D7 /* TapToPayView.swift in Sources */,
 				14AFC6D52A17C812001BA380 /* HpsUpaCAStartRefund.swift in Sources */,
 				DDFF35902937AF4300C2D1D1 /* HpsPaxDeviceResponse.m in Sources */,
 				DDFF35AD2937AF4300C2D1D1 /* HpsPaxTraceResponse.m in Sources */,
@@ -2417,6 +2479,7 @@
 				DDFF365C2937AF4400C2D1D1 /* HpsServerListResponse.m in Sources */,
 				DDFF35572937AF4300C2D1D1 /* HpsC2xCreditAdjustBuilder.swift in Sources */,
 				DDFF35982937AF4300C2D1D1 /* HpsPaxAvsRequest.m in Sources */,
+				DD37C2E32AE07C69003891D7 /* TapToPayViewModel.swift in Sources */,
 				DDFF354A2937AF4300C2D1D1 /* HpsUpaTcpInterface.m in Sources */,
 				DDFF35522937AF4300C2D1D1 /* HpsC2xCreditSaleBuilder.swift in Sources */,
 				DDFF370D2937B6FD00C2D1D1 /* GMSCreditAdjustBuilder.swift in Sources */,
@@ -2433,6 +2496,7 @@
 				28FCAA142A68528D0040B118 /* HpsUpaDeleteSafResponse.swift in Sources */,
 				DDFF36332937AF4400C2D1D1 /* HpsEnums.m in Sources */,
 				DDFF36FE2937B6FC00C2D1D1 /* GMSResponseHelper.swift in Sources */,
+				DD37C2EE2AFAE569003891D7 /* ProximityReaderViewModel.swift in Sources */,
 				DDFF35DE2937AF4300C2D1D1 /* HpsHpaGiftVoidBuilder.m in Sources */,
 				DDFF35632937AF4300C2D1D1 /* HpsPaxGiftBalanceBuilder.m in Sources */,
 				DDFF37012937B6FC00C2D1D1 /* GMSConfiguration.swift in Sources */,
@@ -2500,12 +2564,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.0.13;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 2.0.14;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2557,8 +2622,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.0.13;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 2.0.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2587,7 +2652,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.13;
+				MARKETING_VERSION = 2.0.14;
 				MODULEMAP_FILE = "Heartland-iOS-SDK/Heartland-iOS-SDK.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.heartland.Heartland-iOS-SDK";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -2615,7 +2680,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.13;
+				MARKETING_VERSION = 2.0.14;
 				MODULEMAP_FILE = "Heartland-iOS-SDK/Heartland-iOS-SDK.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.heartland.Heartland-iOS-SDK";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";

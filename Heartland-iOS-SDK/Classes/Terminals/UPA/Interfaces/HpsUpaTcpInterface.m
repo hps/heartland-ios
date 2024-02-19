@@ -194,5 +194,4 @@
     NSString *jsonString = [HpsUpaParser jsonStringFromUPARaw:data];
     [self setHandlerJSONString:jsonString];
 }
-
 @end
