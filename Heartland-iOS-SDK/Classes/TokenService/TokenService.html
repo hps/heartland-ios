@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Heartland Payment</title>
+
+    <script type="text/javascript" src="https://js.globalpay.com/v1/globalpayments.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        label[for=credit-card-card-holder],label[for=credit-card-card-number],
+        label[for=credit-card-card-expiration],label[for=credit-card-card-cvv] {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 13px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        #ss-banner {
+            background: transparent url(https://github.com/hps/heartland-php/blob/master/examples/end-to-end/assets/images/ss-shield@2x.png?raw=true) no-repeat left center;
+            height: 40px;
+            background-size: 280px 34px;
+            margin-bottom: 7px;
+        }
+
+        user agent stylesheet
+        div {
+            display: block;
+        }
+
+        .form-row {
+          margin-top: 5px;
+        }
+
+        .form-wrapper {
+          display: block;
+          width: 300px;
+          margin: 10px auto;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="form-wrapper">
+        <form id="iframes" action="#payment-form">
+        <!-- Other input fields to capture relevant data -->
+        <div id="ss-banner"></div>
+        <!-- Targets for the credit card form's fields -->
+        <div class="form-row">
+            <label for="credit-card-card-holder"> Card Holder Name:</label>
+            <div id="credit-card-card-holder"></div>
+        </div>
+        <div class="form-row">
+            <label for="credit-card-card-number"> Card Number:</label>
+            <div id="credit-card-card-number"></div>
+        </div>
+
+        <div class="form-row">
+            <label for="credit-card-card-expiration"> Card Expiration:</label>
+            <div id="credit-card-card-expiration"></div>
+        </div>
+        <div class="form-row">
+            <label for="credit-card-card-number"> Card Cvv:</label>
+            <div id="credit-card-card-cvv"></div>
+        </div>
+        <br>
+            <div id="credit-card-submit"></div>
+        <br/>
+    </form>
+    </div>
+</div>
+<script type="text/javascript">
+        // Configure account
+        const apiKey = "pkapi_cert_P6dRqs1LzfWJ6HgGVZ";
+        GlobalPayments.configure({
+            publicApiKey: apiKey
+        });
+        
+        // Create Form
+        const cardForm = GlobalPayments.ui.form({
+            fields: {
+                "card-holder-name": {
+                    placeholder: "Card Holder Name",
+                    target: "#credit-card-card-holder"
+                },
+                "card-number": {
+                    placeholder: "•••• •••• •••• ••••",
+                    target: "#credit-card-card-number"
+                },
+                "card-expiration": {
+                    placeholder: "MM / YYYY",
+                    target: "#credit-card-card-expiration"
+                },
+                "card-cvv": {
+                    placeholder: "•••",
+                    target: "#credit-card-card-cvv"
+                },
+                "submit": {
+                    target: "#credit-card-submit"
+                }
+            },
+             styles: {
+              input: {
+                background: 'rgba(252, 252, 252, 1)',
+                'box-sizing': 'border-box',
+                width: '100%',
+                overflow: 'hidden',
+                'text-overflow': 'ellipsis',
+                'white-space': 'nowrap',
+                'border-style': 'none',
+                outline: '2px solid transparent',
+                'outline-offset': '2px',
+                'font-family': '"Inter", sans-serif',
+                'font-size': '16px',
+                'font-weight': '400',
+                'line-height': '24px',
+                'letter-spacing': '0px',
+                'background-color': 'rgba(252, 252, 252, 1)',
+                color: 'rgba(32, 54, 69, 1)',
+                padding: '12px 16px',
+                height: '50px',
+                flex: '1 1',
+                position: 'relative',
+                'border-radius': '8px',
+                border: '1px solid rgba(171, 198, 216, 1)',
+                display: 'flex',
+                'align-items': 'center'
+              },
+              '.card-cvv': {
+                background:
+                  'transparent url(https://github.com/hps/heartland-php/blob/master/examples/end-to-end/assets/images/cvv1.png?raw=true) no-repeat right',
+                'background-size': '63px 40px'
+              },
+              '.card-number': {
+                background:
+                  'transparent url(https://github.com/hps/heartland-php/blob/master/examples/end-to-end/assets/images/ss-inputcard-blank@2x.png?raw=true) no-repeat right',
+                'background-size': '55px 35px'
+              },
+              '.invalid.card-type-visa': {
+                background:
+                  'transparent url(https://github.com/hps/heartland-php/blob/master/examples/end-to-end/assets/images/ss-saved-visa@2x.png?raw=true) no-repeat right',
+                'background-size': '83px 88px',
+                'background-position-y': '-44px'
+              },
+              '.valid.card-type-visa': {
+                background:
+                  'transparent url(https://github.com/hps/heartland-php/blob/master/examples/end-to-end/assets/images/ss-saved-visa@2x.png?raw=true) no-repeat right top',
+                'background-size': '82px 86px'
+              },
+              '.invalid.card-type-discover': {
+                background:
+                  'transparent url(https://github.com/hps/heartland-php/blob/master/examples/end-to-end/assets/images/ss-saved-discover@2x.png?raw=true) no-repeat right',
+                'background-size': '85px 90px',
+                'background-position-y': '-44px'
+              },
+              '.valid.card-type-discover': {
+                background:
+                  'transparent url(https://github.com/hps/heartland-php/blob/master/examples/end-to-end/assets/images/ss-saved-discover@2x.png?raw=true) no-repeat right',
+                'background-size': '85px 90px',
+                'background-position-y': '1px'
+              },
+              '.invalid.card-type-amex': {
+                background:
+                  'transparent url(https://github.com/hps/heartland-php/blob/master/examples/end-to-end/assets/images/ss-savedcards-amex@2x.png?raw=true) no-repeat right',
+                'background-size': '50px 90px',
+                'background-position-y': '-44px'
+              },
+              '.valid.card-type-amex': {
+                background:
+                  'transparent url(https://github.com/hps/heartland-php/blob/master/examples/end-to-end/assets/images/ss-savedcards-amex@2x.png?raw=true) no-repeat right top',
+                'background-size': '50px 90px'
+              },
+              '.invalid.card-type-mastercard': {
+                background:
+                  'transparent url(https://github.com/hps/heartland-php/blob/master/examples/end-to-end/assets/images/ss-saved-mastercard.png?raw=true) no-repeat right',
+                'background-size': '62px 105px',
+                'background-position-y': '-52px'
+              },
+              '.valid.card-type-mastercard': {
+                background:
+                  'transparent url(https://github.com/hps/heartland-php/blob/master/examples/end-to-end/assets/images/ss-saved-mastercard.png?raw=true) no-repeat right',
+                'background-size': '62px 105px',
+                'background-position-y': '-1px'
+              },
+              '.invalid.card-type-jcb': {
+                background:
+                  'transparent url(https://github.com/hps/heartland-php/blob/master/examples/end-to-end/assets/images/ss-saved-jcb@2x.png?raw=true) no-repeat right',
+                'background-size': '55px 94px',
+                'background-position-y': '-44px'
+              },
+              '.valid.card-type-jcb': {
+                background:
+                  'transparent url(https://github.com/hps/heartland-php/blob/master/examples/end-to-end/assets/images/ss-saved-jcb@2x.png?raw=true) no-repeat right top',
+                'background-size': '55px 94px',
+                'background-position-y': '2px'
+              },
+              '.submit':{
+                    'box-sizing': 'border-box',
+                    'display': 'inline-block',
+                    'padding': '6px 12px',
+                    'margin-bottom': '0',
+                    'font-size': '14px',
+                    'font-weight': '400',
+                    'line-height': '1.42857143',
+                    'text-align': 'center',
+                    'white-space': 'nowrap',
+                    'vertical-align': 'middle',
+                    '-ms-touch-action': 'manipulation',
+                    'touch-action': 'manipulation',
+                    'cursor': 'pointer',
+                    'background-image': 'none',
+                    'border-radius': '4px',
+                    'color': '#fff',
+                    'background-color': '#337ab7',
+                    'border-color': '#2e6da4',
+                    'font-family': 'sans-serif',
+                    'text-transform': 'uppercase',
+                    'color': '#ffffff',
+                    'border': '0px solid transparent'
+              },
+            }
+        });
+        cardForm.ready(() => { });
+        cardForm.on("token-error", (resp) => {
+            sendMessage(JSON.stringify(resp));
+        });
+        cardForm.on("token-success", (resp) => {
+            sendMessage(JSON.stringify(resp));
+        });
+        cardForm.on("card-number", "register", () => { });
+    
+        function sendMessage(message) {
+            if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.cardFormMessageHandler) {
+                window.webkit.messageHandlers.cardFormMessageHandler.postMessage({
+                    "message": message
+                });
+            }
+        }
+    </script>
+</body>
+</html>

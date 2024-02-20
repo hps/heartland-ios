@@ -773,4 +773,35 @@ final class HpsPaxCreditTests: XCTestCase {
         
         wait(for: [expectation], timeout: 1000)
     }
+    
+    func testPAXTCPCreditCancelPayment() throws {
+        let expectation = XCTestExpectation(description: "testPAXTCPCreditCancelPayment")
+        
+        device = self.setupDevice()
+        guard let device = self.device else {
+            XCTFail("Device is nil")
+            return
+        }
+        guard let builder = HpsPaxCreditSaleBuilder(device: device) else {
+            XCTFail("Builder is nil")
+            return
+        }
+        builder.referenceNumber = 1
+        builder.amount = 11.0
+        builder.creditCard = getCC()
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            device.cancel({ cancel in
+                expectation.fulfill()
+            })
+        }
+        
+        builder.execute() { response, error in
+            XCTFail("Request not allowed but returned")
+        }
+        
+        
+        wait(for: [expectation], timeout: 1000)
+    }
 }

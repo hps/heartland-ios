@@ -18,6 +18,8 @@
 @interface HpsPaxDevice : NSObject
 {
     NSString *errorDomain;
+    NSString *portForCancellingTransaction;
+    NSString *portForRunningTransaction;
 }
 @property (nonatomic, strong) HpsConnectionConfig *config;
 @property (nonatomic, strong) id<IHPSDeviceCommInterface> interface;
