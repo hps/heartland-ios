@@ -84,5 +84,4 @@
         [_pendingTask cancel];
     }
 }
-
 @end

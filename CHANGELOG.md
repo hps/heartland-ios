@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2.0.15 2024-02-22
+- C2X/C3X - Add RKI and update Configuration file
+- Update code to allow for Firmware delegates to be accessible in Objc-C
+- Iframe sample
+- Cancel/ Reset command does nothing
+
 ## 2.0.13 2023-10-03
 - UPA -  Test SAFType on SendSAF
 - Verify SDKs for PAX
