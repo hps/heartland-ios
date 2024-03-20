@@ -51,7 +51,8 @@ public enum HpsTransactionStatus: UInt {
          cancelled,
          error,
          unknown,
-         terminalDeclined
+         terminalDeclined,
+         surchargeRequested
 }
 
 public extension HpsTransactionStatus {
@@ -106,6 +107,7 @@ public extension HpsTransactionStatus {
         case .error: return .error
         case .unknown: return .unknown
         case .terminalDeclined: return .terminalDeclined
+        case .waitingForSurchargeAcceptance: return .surchargeRequested
         @unknown default: return .unknown
         }
     }

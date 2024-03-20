@@ -82,6 +82,7 @@
 @property (nonatomic,strong) NSString *cardType;
 @property (nonatomic,strong) NSString *cardBrandTransactionId;
 @property (nonatomic,strong) NSString *signatureData;
+@property (nonatomic,strong) NSString *surchargeFee;
 
 - (void) mapResponse:(id <HpaResposeInterface>) response;
 // @todo

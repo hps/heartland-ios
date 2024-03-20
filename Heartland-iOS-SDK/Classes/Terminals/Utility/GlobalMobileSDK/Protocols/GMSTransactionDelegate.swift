@@ -8,4 +8,5 @@ public protocol GMSTransactionDelegate {
     func onTransactionComplete(_ response: HpsTerminalResponse)
     func onTransactionCancelled()
     func onTransactionError(_ error: NSError)
+    func onTransactionWaitingForSurchargeConfirmation(result: HpsTransactionStatus, response: HpsTerminalResponse)
 }

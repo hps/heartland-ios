@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name GlobalMobileSDK
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
@@ -20,7 +20,6 @@ import GlobalMobileSDK_Private.Unimag
 import GlobalMobileSDK_Private.Utils
 import _Concurrency
 import _StringProcessing
-import _SwiftConcurrencyShims
 import os
 public struct BatchCloseResponse : GlobalMobileSDK.TransactionResponse {
   public var transactionResult: GlobalMobileSDK.TransactionResult?
@@ -37,8 +36,25 @@ public struct BatchCloseResponse : GlobalMobileSDK.TransactionResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
+  public var surchargeRequested: Swift.Bool?
+  public var surchargeFee: Swift.String?
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
+}
+public struct SurchargeRequestedResponse : GlobalMobileSDK.TransactionResponse {
+  public var transactionResult: GlobalMobileSDK.TransactionResult?
+  public var gatewayResponseText: Swift.String?
+  public var gatewayResponseCode: Swift.String?
+  public var approvedAmount: Swift.UInt?
+  public var transactionDescription: Swift.String
+  public var transactionError: GlobalMobileSDK.GMSError?
+  public let transactionId: Swift.String
+  public var gatewayTransactionId: Swift.String?
+  public var tokenizedCard: GlobalMobileSDK.TokenizedCardData?
+  public var surchargeRequested: Swift.Bool?
+  public var surchargeFee: Swift.String?
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 public struct BatchCloseTransaction : GlobalMobileSDK.Transaction {
   public var operatingUserId: Swift.String?
@@ -87,7 +103,7 @@ public protocol TerminalOTAManagerDelegate {
   func onReturnSetTargetVersion(resultType: GlobalMobileSDK.TerminalOTAResult, type: GlobalMobileSDK.TerminalOTAUpdateType, message: Swift.String)
 }
 @objc public enum ReversalReason : Swift.Int, Swift.CaseIterable, Swift.Codable {
-  case undefined, voidedByCustomer, deviceTimeOut, deviceUnavailable, partialReversal, prematureChipRemoval, chipDeclined
+  case undefined, voidedByCustomer, deviceTimeOut, deviceUnavailable, partialReversal, prematureChipRemoval, chipDeclined, surchargeRequested
   public typealias RawValue = Swift.String
   public var rawValue: GlobalMobileSDK.ReversalReason.RawValue {
     get
@@ -120,7 +136,9 @@ public protocol TerminalOTAManagerDelegate {
   public func cancelSearch()
   public func connect(terminalInfo: any GlobalMobileSDK.TerminalInfo, delegate: any GlobalMobileSDK.ConnectionDelegate)
   public func disconnect()
+  public func startCheckingForBinCard(cardData: GlobalMobileSDK.AnyCardData, completion: @escaping ((_ response: GlobalMobileSDK.SurchargeRequestedResponse?, _ error: (any Swift.Error)?) -> Swift.Void))
   public func start<T>(transaction: T, entryModes: [GlobalMobileSDK.EntryMode] = EntryMode.allCases, delegate: any GlobalMobileSDK.TransactionDelegate) where T : GlobalMobileSDK.Transaction
+  public func confirmSurcharge<T>(transaction: T, entryModes: [GlobalMobileSDK.EntryMode] = EntryMode.allCases, delegate: any GlobalMobileSDK.TransactionDelegate) where T : GlobalMobileSDK.Transaction
   public func confirm(amount: Foundation.Decimal)
   public func approveSaF()
   public func postalCode(postalCode: Swift.String)
@@ -151,6 +169,7 @@ extension GlobalMobileSDK.GMSManager : GlobalMobileSDK.TransactionDelegate {
   public func onTransactionComplete(result: GlobalMobileSDK.TransactionResult, response: (any GlobalMobileSDK.TransactionResponse)?)
   public func onTransactionCancelled()
   public func onError(error: GlobalMobileSDK.TransactionError)
+  public func onTransactionWaitingForSurchargeConfirmation(result: GlobalMobileSDK.TransactionResult, response: (any GlobalMobileSDK.TransactionResponse)?)
 }
 extension GlobalMobileSDK.GMSManager : GlobalMobileSDK.TerminalSettingsUpdateDelegate {
   public func onReturnUpdateSetting(settingType: GlobalMobileSDK.TerminalSettingType, result: GlobalMobileSDK.TerminalSettingResult)
@@ -347,6 +366,8 @@ public struct SaleResponse {
   public var duplicateData: GlobalMobileSDK.DuplicateDataResponse?
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
+  public var surchargeRequested: Swift.Bool?
+  public var surchargeFee: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
@@ -466,6 +487,8 @@ public struct VerifyResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
+  public var surchargeRequested: Swift.Bool?
+  public var surchargeFee: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
@@ -786,6 +809,8 @@ public struct ReturnResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
+  public var surchargeRequested: Swift.Bool?
+  public var surchargeFee: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
@@ -802,7 +827,7 @@ public struct DuplicateDataResponse {
   public var cardLast4: Swift.String?
 }
 public enum TransactionState : Swift.Equatable {
-  case waitingForConfiguration, configuringTerminal(completed: Swift.Int, total: Swift.Int), configurationFailedTryAgain, ready, started, waitingForCard, insertCard, removeCard, cardRemoved, pleaseWait, pleaseSeePhone, useMagstripe, tryAgain, swipeErrorReSwipe, noEmvApps, applicationExpired, cardReadError, processing, processingDoNotRemoveCard, presentCard, presentCardAgain, insertSwipeOrTryAnotherCard, insertOrSwipeCard, multipleCardDetected, contactlessCardStillInField, transactionTerminated, waitingForTerminal, terminalDeclined, cardDetected, cardBlocked, notAuthorized, notAcceptedRemoveCard, fallbackToMSR, fallbackToChip, waitingForAmountConfirmation, waitingForAidSelection, waitingForPostalCode, waitingForSafApproval, cardHolderBypassedPIN, processingSaf(completed: Swift.Int, total: Swift.Int), requestingOnlineProcessing, reversal, reversalInProgress, complete, cancel, cancelling, cancelled, error, unknown
+  case waitingForConfiguration, configuringTerminal(completed: Swift.Int, total: Swift.Int), configurationFailedTryAgain, ready, started, waitingForCard, insertCard, removeCard, cardRemoved, pleaseWait, pleaseSeePhone, useMagstripe, tryAgain, swipeErrorReSwipe, noEmvApps, applicationExpired, cardReadError, processing, processingDoNotRemoveCard, presentCard, presentCardAgain, insertSwipeOrTryAnotherCard, insertOrSwipeCard, multipleCardDetected, contactlessCardStillInField, transactionTerminated, waitingForTerminal, terminalDeclined, cardDetected, cardBlocked, notAuthorized, notAcceptedRemoveCard, fallbackToMSR, fallbackToChip, waitingForAmountConfirmation, waitingForAidSelection, waitingForPostalCode, waitingForSafApproval, cardHolderBypassedPIN, processingSaf(completed: Swift.Int, total: Swift.Int), requestingOnlineProcessing, reversal, reversalInProgress, complete, cancel, cancelling, cancelled, error, unknown, waitingForSurchargeAcceptance
   public static func == (a: GlobalMobileSDK.TransactionState, b: GlobalMobileSDK.TransactionState) -> Swift.Bool
 }
 public protocol TransactionResponse : Swift.Decodable, Swift.Encodable {
@@ -814,6 +839,8 @@ public protocol TransactionResponse : Swift.Decodable, Swift.Encodable {
   var approvedAmount: Swift.UInt? { get set }
   var transactionDescription: Swift.String { get }
   var transactionError: GlobalMobileSDK.GMSError? { get set }
+  var surchargeRequested: Swift.Bool? { get set }
+  var surchargeFee: Swift.String? { get set }
 }
 extension GlobalMobileSDK.TransactionResponse {
   public var customerReceipt: Swift.String? {
@@ -970,6 +997,8 @@ public struct AuthResponse {
   public var authCodeData: Swift.String?
   public let transactionId: Swift.String
   public var hostProcessingResult: GlobalMobileSDK.HostProcessingResult?
+  public var surchargeRequested: Swift.Bool?
+  public var surchargeFee: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
@@ -1081,6 +1110,8 @@ public struct ProcessSaFResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
+  public var surchargeRequested: Swift.Bool?
+  public var surchargeFee: Swift.String?
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -1104,6 +1135,8 @@ public struct TipAdjustResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
+  public var surchargeRequested: Swift.Bool?
+  public var surchargeFee: Swift.String?
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -1210,7 +1243,7 @@ public struct Address : Swift.Codable, Swift.Equatable {
   public init(from decoder: any Swift.Decoder) throws
 }
 @objc public enum TransactionResult : Swift.UInt, Swift.Codable {
-  case approved, partialApproval, terminated, declined, onlineDeclined, offlineApproved, offlineDecline, postAuthChipDecline, canceled, timeout, capkFail, notIcc, cardBlocked, deviceError, noEmvApps, iccCardRemoved, cardSchemeNotMatched, success, reversalRequired, fail, hostTimeout, networkError
+  case approved, partialApproval, terminated, declined, onlineDeclined, offlineApproved, offlineDecline, postAuthChipDecline, canceled, timeout, capkFail, notIcc, cardBlocked, deviceError, noEmvApps, iccCardRemoved, cardSchemeNotMatched, success, reversalRequired, fail, hostTimeout, networkError, surchargeRequested
   public typealias RawValue = Swift.String
   public var rawValue: GlobalMobileSDK.TransactionResult.RawValue {
     get
@@ -1286,6 +1319,8 @@ public struct CaptureResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
+  public var surchargeRequested: Swift.Bool?
+  public var surchargeFee: Swift.String?
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -1310,6 +1345,8 @@ public struct VoidResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
+  public var surchargeRequested: Swift.Bool?
+  public var surchargeFee: Swift.String?
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -1347,6 +1384,8 @@ public struct ReversalResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
+  public var surchargeRequested: Swift.Bool?
+  public var surchargeFee: Swift.String?
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -1420,6 +1459,8 @@ public struct TokenizationResponse : GlobalMobileSDK.TransactionResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
+  public var surchargeRequested: Swift.Bool?
+  public var surchargeFee: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
@@ -1523,6 +1564,7 @@ public protocol TransactionDelegate : AnyObject {
   func onDeletedTransactionsComplete(deletedTransactions: [GlobalMobileSDK.ProcessSaF])
   func onTransactionCancelled()
   func onError(error: GlobalMobileSDK.TransactionError)
+  func onTransactionWaitingForSurchargeConfirmation(result: GlobalMobileSDK.TransactionResult, response: (any GlobalMobileSDK.TransactionResponse)?)
 }
 extension GlobalMobileSDK.TransactionDelegate {
   public func onListSaFComplete(transactions: [any GlobalMobileSDK.Transaction])

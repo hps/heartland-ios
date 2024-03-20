@@ -85,6 +85,7 @@ typedef NS_ENUM(NSInteger, GPTransactionType) {
     GPTransactionType_Reward = 1 << 13,
     GPTransactionType_Deactivate = 1 << 14,
     GPTransactionType_BatchClose = 1 << 15,
+    GPTransactionType_Surcharge = 1 << 16,
 };
 
 typedef NS_ENUM(NSInteger, GPPaymentMethodType) {

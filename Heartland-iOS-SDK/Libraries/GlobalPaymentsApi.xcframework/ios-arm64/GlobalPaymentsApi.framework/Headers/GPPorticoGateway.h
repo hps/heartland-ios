@@ -8,6 +8,7 @@
 #import <GlobalPaymentsApi/GPAuthorizationBuilder.h>
 #import <GlobalPaymentsApi/GPManagementBuilder.h>
 #import <GlobalPaymentsApi/GPTransactionSummary.h>
+#import <GlobalPaymentsApi/GPSurchargeEligibilityLookupBuilder.h>
 
 @interface GPPorticoGateway : GPXmlGateway
 
@@ -16,6 +17,8 @@
 - (id)initWithConfig:(GPServicesConfig*)config;
 - (void)processAuthorization:(GPAuthorizationBuilder*)builder
    completionHandler:(void(^)(GPTransaction*, NSError*))completionHandler;
+- (void)processSurchargeEligibilityLookup:(GPSurchargeEligibilityLookupBuilder*)builder
+                        completionHandler:(void(^)(GPTransaction*, NSError*))completionHandler;
 - (void)manageTransaction:(GPManagementBuilder*)builder
   completionHandler:(void(^)(GPTransaction*, NSError*))completionHandler;
 - (void)processReport:(NSDictionary*)request
@@ -23,6 +26,7 @@
     completionHandler:(void(^)(NSArray<GPTransactionSummary*>*, NSError*))completionHandler;
 
 @end
+
 
 
 #endif /* GPPorticoGateway_h */
