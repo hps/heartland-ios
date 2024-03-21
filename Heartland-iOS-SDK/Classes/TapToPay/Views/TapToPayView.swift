@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+@available(iOS 13.0, *)
 struct TapToPayView: View {
     @StateObject var model: TapToPayViewModel
     
@@ -58,12 +60,14 @@ struct TapToPayView: View {
     }
 }
 
+@available(iOS 13.0, *)
 struct TapToPayView_Previews: PreviewProvider {
     static var previews: some View {
         TapToPayView(model: TapToPayViewModel())
     }
 }
 
+@available(iOS 13.0, *)
 struct CurrencyAmount: View {
     let title: String
     @Binding var amount: Decimal
