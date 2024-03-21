@@ -21,6 +21,7 @@
 		2896FA6F2A44AA2E0076BBFC /* UpaTransactionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2896FA6E2A44AA2E0076BBFC /* UpaTransactionProtocol.swift */; };
 		2896FA712A44AA7E0076BBFC /* UpaUSATransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2896FA702A44AA7E0076BBFC /* UpaUSATransaction.swift */; };
 		2896FA732A44AA930076BBFC /* PayAppCanadaTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2896FA722A44AA930076BBFC /* PayAppCanadaTransaction.swift */; };
+		DD37C2E72AE0829E003891D7 /* TapToPayHostedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD37C2E62AE0829E003891D7 /* TapToPayHostedViewController.swift */; };
 		DD37C2F72B165674003891D7 /* TokenServiceHostedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD37C2F62B165674003891D7 /* TokenServiceHostedViewController.swift */; };
 		DD49DDB4296DDAE100EBD526 /* HpsUPALineItemDisplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD49DDB3296DDAE000EBD526 /* HpsUPALineItemDisplayTests.swift */; };
 		DD6A4F512937C221008B8165 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD6A4F4F2937C221008B8165 /* Main.storyboard */; };
@@ -111,6 +112,7 @@
 		2896FA6E2A44AA2E0076BBFC /* UpaTransactionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpaTransactionProtocol.swift; sourceTree = "<group>"; };
 		2896FA702A44AA7E0076BBFC /* UpaUSATransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpaUSATransaction.swift; sourceTree = "<group>"; };
 		2896FA722A44AA930076BBFC /* PayAppCanadaTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayAppCanadaTransaction.swift; sourceTree = "<group>"; };
+		DD37C2E62AE0829E003891D7 /* TapToPayHostedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapToPayHostedViewController.swift; sourceTree = "<group>"; };
 		DD37C2F62B165674003891D7 /* TokenServiceHostedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenServiceHostedViewController.swift; sourceTree = "<group>"; };
 		DD49DDB3296DDAE000EBD526 /* HpsUPALineItemDisplayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HpsUPALineItemDisplayTests.swift; sourceTree = "<group>"; };
 		DD6A4F462937C221008B8165 /* Heartland-iOS-SDK-SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Heartland-iOS-SDK-SampleApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,6 +249,7 @@
 				DD6A4F542937C223008B8165 /* LaunchScreen.storyboard */,
 				DD6A4F572937C223008B8165 /* Info.plist */,
 				DD6A4F632937C299008B8165 /* Heartland-iOS-SDK-SampleApp-Bridging-Header.h */,
+				DD37C2E62AE0829E003891D7 /* TapToPayHostedViewController.swift */,
 				DD37C2F62B165674003891D7 /* TokenServiceHostedViewController.swift */,
 			);
 			path = "Heartland-iOS-SDK-SampleApp";
@@ -443,6 +446,7 @@
 				2896FA6F2A44AA2E0076BBFC /* UpaTransactionProtocol.swift in Sources */,
 				DD6A4F6B2937C29B008B8165 /* C2XTransactionsViewController.swift in Sources */,
 				DD6A4F702937C3BF008B8165 /* MainViewController.swift in Sources */,
+				DD37C2E72AE0829E003891D7 /* TapToPayHostedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,7 +671,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -707,7 +711,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

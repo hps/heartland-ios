@@ -26,7 +26,7 @@
 		</data>
 		<key>Headers/GlobalMobileSDK-Swift.h</key>
 		<data>
-		Kn2nkA02GKNbQZ5TVeOZCW52HtY=
+		W8sLSD1ToSxP953kj73IDj3VqHM=
 		</data>
 		<key>Headers/GlobalMobileSDK.h</key>
 		<data>
@@ -46,27 +46,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		veyJhI7jvbl85oYnW89LJQWE8Zc=
+		RNHf3mwGVHBYy8qmn4dB/E3v7kU=
 		</data>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		NIrCo56g6HX/8nhZ40VjJPBudKg=
+		3tjilhzBBkYHU5MC//RmBR0j7+k=
 		</data>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		Go9vsiWktTrtLU54KHPSTOdHUfo=
+		G0bB6Vg3vvPbvWf8rRE1bVisZ1Y=
 		</data>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		LuMGJJt0KiqoDTkrrppN8dbftdk=
+		V+j1haJEeI5IFV4Wrd51u1LgBgM=
 		</data>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Go9vsiWktTrtLU54KHPSTOdHUfo=
+		G0bB6Vg3vvPbvWf8rRE1bVisZ1Y=
 		</data>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		hxeHB0e3Ca5aCgeFvPkWjUyxvS4=
+		2ok0jsezCvdfTdmFx2zejWUqGBw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -150,7 +150,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HDxoKS5SJ9hQA08ZUXt0FfY3mDWPAW98+wF+6pmhH38=
+			5ooaRD2QJkAvu5QeJ/0FkUmXOsKFnPabXJKZBkIg3l8=
 			</data>
 		</dict>
 		<key>Headers/GlobalMobileSDK.h</key>
@@ -185,35 +185,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/+xMASX+iN7g+p4Njd1byvHNPrQNhNVrYLhKoZNKx/s=
+			z2Cp6/wdlUxd/vMgvNJXXBvQNSgYIlyh2daL7U1cKuE=
 			</data>
 		</dict>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OM8+WmZXW8VaHETmrAVQ2O7+5Z0y7FJDOdxgVsAnu4w=
+			RK3X6jAGpDyBND6O2+VUZq+VTh1qNmSIkx/g5IUPDNU=
 			</data>
 		</dict>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			E0bznXXwu7IFCBvi0lCelByLXEJSuF2pBadZ7L3MNJY=
+			gp+vIRV/V5xzoQULiQ39Z/RCVCyKtYejKd98NQZTx/U=
 			</data>
 		</dict>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OM8+WmZXW8VaHETmrAVQ2O7+5Z0y7FJDOdxgVsAnu4w=
+			RK3X6jAGpDyBND6O2+VUZq+VTh1qNmSIkx/g5IUPDNU=
 			</data>
 		</dict>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pzsZdvFQ+iz+lDlK623uTL/vnQMVzpPAMV1TFKySM3c=
+			MOL1OIMILvVwXZErUnPUjz7N5ErlsYLhUdlP9qG+p6c=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

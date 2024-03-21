@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NAZ-sw-0Dp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NAZ-sw-0Dp">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -177,10 +177,41 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Token Service" id="q6r-nE-au0">
+                            <tableViewSection headerTitle="Tap To Pay Options" id="M69-sc-Faa" userLabel="Tap To Pay">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" tag="1010" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="g5A-iO-Zh2" detailTextLabel="4xR-Ew-UGG" rowHeight="70" style="IBUITableViewCellStyleSubtitle" id="0EG-fI-e7R">
+                                        <rect key="frame" x="0.0" y="556" width="430" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0EG-fI-e7R" id="ajk-wW-Pvk">
+                                            <rect key="frame" x="0.0" y="0.0" width="399.66666666666669" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Tap To Pay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g5A-iO-Zh2">
+                                                    <rect key="frame" x="20" y="19" width="64" height="14.333333333333334"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Open the Tap To Pay View to allow Tap to Pay transactions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4xR-Ew-UGG">
+                                                    <rect key="frame" x="20" y="35.333333333333336" width="329.33333333333331" height="14.333333333333334"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="rjH-QU-zjL" kind="show" id="HvG-rd-Sgd"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Token Service" id="q6r-nE-au0" userLabel="Tap To Pay">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" tag="1010" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="s39-ax-rfW" detailTextLabel="GU0-hX-5uh" rowHeight="70" style="IBUITableViewCellStyleSubtitle" id="6e7-lc-QH8">
-                                        <rect key="frame" x="0.0" y="556" width="430" height="70"/>
+                                        <rect key="frame" x="0.0" y="704" width="430" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6e7-lc-QH8" id="i6N-e6-ynb">
                                             <rect key="frame" x="0.0" y="0.0" width="399.66666666666669" height="70"/>
@@ -228,27 +259,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rqc-fq-Wde">
-                                <rect key="frame" x="132" y="150" width="166" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="fUd-1f-AIK"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Check for Updates"/>
-                                <connections>
-                                    <action selector="checkForUpdatesButtonAction:" destination="qeT-zM-mHj" eventType="touchUpInside" id="T8W-Mf-rjP"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="7DG-5u-bo7">
+                                <rect key="frame" x="123" y="166" width="184" height="278"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rqc-fq-Wde">
+                                        <rect key="frame" x="0.0" y="0.0" width="184" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="fUd-1f-AIK"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Check for Updates"/>
+                                        <connections>
+                                            <action selector="checkForUpdatesButtonAction:" destination="qeT-zM-mHj" eventType="touchUpInside" id="T8W-Mf-rjP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txb-7Y-TEX">
+                                        <rect key="frame" x="0.0" y="74" width="184" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="IHz-0a-IVg"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Update Config"/>
+                                        <connections>
+                                            <action selector="updateConfigButtonAction:" destination="qeT-zM-mHj" eventType="touchUpInside" id="tbe-zh-dG0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="537-eJ-eZS">
+                                        <rect key="frame" x="0.0" y="148" width="184" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="FGR-GE-wvh"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Update Firmware"/>
+                                        <connections>
+                                            <action selector="updateFirmwareButtonAction:" destination="qeT-zM-mHj" eventType="touchUpInside" id="7iq-Un-d4a"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1DN-fi-j0L">
+                                        <rect key="frame" x="0.0" y="222" width="184" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="viP-ob-eQx"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Remote Key Injection"/>
+                                        <connections>
+                                            <action selector="remoteKeyInjections:" destination="qeT-zM-mHj" eventType="touchUpInside" id="evi-DC-3IY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZS4-wo-S5J">
-                                <rect key="frame" x="65" y="418" width="300" height="160"/>
+                                <rect key="frame" x="65" y="382.66666666666669" width="300" height="167.00000000000006"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="5kt-Nt-zsm">
                                         <rect key="frame" x="120" y="74" width="60" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </activityIndicatorView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9t-p8-bc2">
-                                        <rect key="frame" x="8" y="8" width="64" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9t-p8-bc2">
+                                        <rect key="frame" x="8" y="8" width="284" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -256,47 +324,29 @@
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="S9e-Fj-96q"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstItem="S9e-Fj-96q" firstAttribute="bottom" secondItem="E9t-p8-bc2" secondAttribute="bottom" constant="125" id="3Ze-7M-jHg"/>
+                                    <constraint firstAttribute="height" constant="167" id="7gx-mV-f2Q"/>
+                                    <constraint firstItem="E9t-p8-bc2" firstAttribute="top" secondItem="ZS4-wo-S5J" secondAttribute="topMargin" id="GL6-XY-kkr"/>
+                                    <constraint firstAttribute="width" constant="300" id="di1-ZM-HCl"/>
+                                    <constraint firstItem="S9e-Fj-96q" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="E9t-p8-bc2" secondAttribute="trailing" symbolic="YES" id="iXQ-5Z-0lj"/>
+                                    <constraint firstItem="S9e-Fj-96q" firstAttribute="trailing" secondItem="E9t-p8-bc2" secondAttribute="trailing" constant="8" id="sEh-Op-CNH"/>
+                                    <constraint firstItem="E9t-p8-bc2" firstAttribute="leading" secondItem="ZS4-wo-S5J" secondAttribute="leadingMargin" id="zBW-wd-rKc"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txb-7Y-TEX">
-                                <rect key="frame" x="138" y="214" width="154" height="56"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Update Config"/>
-                                <connections>
-                                    <action selector="updateConfigButtonAction:" destination="qeT-zM-mHj" eventType="touchUpInside" id="tbe-zh-dG0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="537-eJ-eZS">
-                                <rect key="frame" x="138" y="278" width="154" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="FGR-GE-wvh"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Update Firmware"/>
-                                <connections>
-                                    <action selector="updateFirmwareButtonAction:" destination="qeT-zM-mHj" eventType="touchUpInside" id="7iq-Un-d4a"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WeK-bK-2gw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Rqc-fq-Wde" firstAttribute="centerX" secondItem="RYq-A7-tc1" secondAttribute="centerX" id="3ZM-KF-c1k"/>
-                            <constraint firstItem="537-eJ-eZS" firstAttribute="centerX" secondItem="ZS4-wo-S5J" secondAttribute="centerX" id="6fI-Dh-fvn"/>
-                            <constraint firstItem="537-eJ-eZS" firstAttribute="leading" secondItem="txb-7Y-TEX" secondAttribute="leading" id="83B-ON-bAK"/>
-                            <constraint firstItem="537-eJ-eZS" firstAttribute="top" secondItem="txb-7Y-TEX" secondAttribute="bottom" constant="8" id="CP8-lr-oeR"/>
-                            <constraint firstItem="Rqc-fq-Wde" firstAttribute="centerX" secondItem="537-eJ-eZS" secondAttribute="centerX" id="EIO-3o-hVs"/>
-                            <constraint firstItem="ZS4-wo-S5J" firstAttribute="top" secondItem="537-eJ-eZS" secondAttribute="bottom" constant="84" id="FY5-xU-tXf"/>
-                            <constraint firstItem="txb-7Y-TEX" firstAttribute="top" secondItem="Rqc-fq-Wde" secondAttribute="bottom" constant="8" id="WcN-up-poa"/>
-                            <constraint firstItem="Rqc-fq-Wde" firstAttribute="centerX" secondItem="ZS4-wo-S5J" secondAttribute="centerX" id="Z2k-QY-KOK"/>
-                            <constraint firstItem="Rqc-fq-Wde" firstAttribute="top" secondItem="WeK-bK-2gw" secondAttribute="top" constant="47" id="aOD-Zg-bam"/>
-                            <constraint firstItem="ZS4-wo-S5J" firstAttribute="leading" secondItem="WeK-bK-2gw" secondAttribute="leading" constant="65" id="cf5-UO-WXO"/>
-                            <constraint firstItem="537-eJ-eZS" firstAttribute="top" secondItem="RYq-A7-tc1" secondAttribute="top" constant="278" id="dxL-th-6Sc"/>
-                            <constraint firstItem="WeK-bK-2gw" firstAttribute="bottom" secondItem="ZS4-wo-S5J" secondAttribute="bottom" constant="320" id="gIp-yS-tOD"/>
-                            <constraint firstItem="Rqc-fq-Wde" firstAttribute="leading" secondItem="WeK-bK-2gw" secondAttribute="leading" constant="132" id="qTp-9U-PJR"/>
-                            <constraint firstItem="Rqc-fq-Wde" firstAttribute="centerX" secondItem="txb-7Y-TEX" secondAttribute="centerX" id="x5B-Eu-97f"/>
+                            <constraint firstItem="ZS4-wo-S5J" firstAttribute="centerX" secondItem="RYq-A7-tc1" secondAttribute="centerX" id="21x-ix-6yN"/>
+                            <constraint firstItem="ZS4-wo-S5J" firstAttribute="centerY" secondItem="RYq-A7-tc1" secondAttribute="centerY" id="NBc-eZ-Ucy"/>
+                            <constraint firstItem="7DG-5u-bo7" firstAttribute="leading" secondItem="WeK-bK-2gw" secondAttribute="leading" constant="123" id="qvG-M5-vOI"/>
+                            <constraint firstItem="7DG-5u-bo7" firstAttribute="centerX" secondItem="RYq-A7-tc1" secondAttribute="centerX" id="tCk-yL-lv0"/>
+                            <constraint firstItem="WeK-bK-2gw" firstAttribute="trailing" secondItem="7DG-5u-bo7" secondAttribute="trailing" constant="123" id="vbZ-dS-jP0"/>
+                            <constraint firstItem="7DG-5u-bo7" firstAttribute="top" secondItem="WeK-bK-2gw" secondAttribute="top" constant="63" id="x7O-HL-lIV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="n35-ai-jb1"/>
@@ -305,13 +355,14 @@
                         <outlet property="checkForUpdatesFirmwareButton" destination="Rqc-fq-Wde" id="wqc-hJ-cHi"/>
                         <outlet property="dialogSpinner" destination="5kt-Nt-zsm" id="ZqL-qu-8Y0"/>
                         <outlet property="dialogText" destination="E9t-p8-bc2" id="rlM-13-kMf"/>
+                        <outlet property="remoteKeyInjectionButton" destination="1DN-fi-j0L" id="yHo-Ix-We0"/>
                         <outlet property="updateConfigButton" destination="txb-7Y-TEX" id="WDK-R2-llU"/>
                         <outlet property="updateFirmwareButton" destination="537-eJ-eZS" id="x7w-7U-hwo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1MF-Vl-lYm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-899" y="673"/>
+            <point key="canvasLocation" x="-900" y="672.74678111587991"/>
         </scene>
         <!--Upa Transactions View Controller-->
         <scene sceneID="sDw-Tp-B5O">
@@ -659,6 +710,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cGb-N6-kjD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="696.79999999999995" y="-88.605697151424295"/>
+        </scene>
+        <!--Tap To Pay Hosted View Controller-->
+        <scene sceneID="fg6-pl-HLf">
+            <objects>
+                <viewController id="rjH-QU-zjL" customClass="TapToPayHostedViewController" customModule="Heartland_iOS_SDK_SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oQg-V2-DkZ">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="TjH-oW-kMD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xpE-sZ-YTE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QQb-h3-5pc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="656" y="628"/>
         </scene>
         <!--Token Service Hosted View Controller-->
         <scene sceneID="zMf-zn-ze8">

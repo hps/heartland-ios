@@ -18,5 +18,6 @@
 @property (nonatomic,retain)NSString* clinicAmount;
 @property (nonatomic,retain)NSString* dentalAmount;
 @property (nonatomic,retain)NSString* visionOpticalAmount;
+@property (nonatomic,retain)NSString* preAuthAmount;
 
 @end

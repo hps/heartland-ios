@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2.0.16 2024-03-21
+- iOS SDK: Pay App (UPA) - Add DeletePreAuth 
+- iOS SDK: Add fallback to Pay App 2.18
+- iOS SDK: Add ServiceCode Parameter to Pay App
+- Updated the expDate parameter to expiryDate
+- iOS SDK: C3X/C2X Surcharge 
+
 ## 2.0.15 2024-02-22
 - C2X/C3X - Add RKI and update Configuration file
 - Update code to allow for Firmware delegates to be accessible in Objc-C

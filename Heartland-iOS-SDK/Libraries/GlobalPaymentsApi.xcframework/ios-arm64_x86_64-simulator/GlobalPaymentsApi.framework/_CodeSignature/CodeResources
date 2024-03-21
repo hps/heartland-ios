@@ -26,7 +26,7 @@
 		</data>
 		<key>Headers/GPCredit.h</key>
 		<data>
-		6D5uTa6302DmqFkvqqjm1Yn4kEY=
+		wyzi425puhbbTCurIHsgvTi9rqo=
 		</data>
 		<key>Headers/GPCreditCardData.h</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Headers/GPEnums.h</key>
 		<data>
-		qDH/cm23dZeoDw5QOMPK1vCvGjE=
+		/pY0NFIfAWnIWasfyOjHFmiLBk0=
 		</data>
 		<key>Headers/GPGateway.h</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Headers/GPPorticoGateway.h</key>
 		<data>
-		4RmCTRR4MaRqAh7dcoL1aLWpfO0=
+		R2q1SGumD/aGFdQ5lcO2KM7dPP0=
 		</data>
 		<key>Headers/GPPorticoResponseParser.h</key>
 		<data>
@@ -88,9 +88,13 @@
 		<data>
 		hO/cYsg8tFXID1f10ftwphBWyfc=
 		</data>
+		<key>Headers/GPSurchargeEligibilityLookupBuilder.h</key>
+		<data>
+		anEuOzssaPBzgYKrC7p9LcM+yco=
+		</data>
 		<key>Headers/GPTransaction.h</key>
 		<data>
-		UJHXDWMRqxLLMqGhLcCXaY0CwBw=
+		3QGnrBX3i+lDDl4SkUPdZ4rmQXg=
 		</data>
 		<key>Headers/GPTransactionBuilder.h</key>
 		<data>
@@ -186,11 +190,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6D5uTa6302DmqFkvqqjm1Yn4kEY=
+			wyzi425puhbbTCurIHsgvTi9rqo=
 			</data>
 			<key>hash2</key>
 			<data>
-			PQ2FJpdnCq2NaVup0bnzxihhmmp8CIOzxA8BlwNsDnk=
+			2Bypez81du/H7rvmk3MGPUSUgEZPwSDToBny38+fGwc=
 			</data>
 		</dict>
 		<key>Headers/GPCreditCardData.h</key>
@@ -241,11 +245,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			qDH/cm23dZeoDw5QOMPK1vCvGjE=
+			/pY0NFIfAWnIWasfyOjHFmiLBk0=
 			</data>
 			<key>hash2</key>
 			<data>
-			AbazcaVl+yvfp+bADtq4dbbTMYwq8EOe0kSg4Ic+rxA=
+			syx8W+90SZpIH0qyPwRtYZYYQb1L+tFiL2TCUqCyQFs=
 			</data>
 		</dict>
 		<key>Headers/GPGateway.h</key>
@@ -307,11 +311,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4RmCTRR4MaRqAh7dcoL1aLWpfO0=
+			R2q1SGumD/aGFdQ5lcO2KM7dPP0=
 			</data>
 			<key>hash2</key>
 			<data>
-			DO7wpAshaJvlG04y9zyuXuH8niqsqyBRnpxSULBL/Vo=
+			iWnOmAuKlXkg9MzxGncjR8DmZbhoU4iQ0+5V4ca8q/w=
 			</data>
 		</dict>
 		<key>Headers/GPPorticoResponseParser.h</key>
@@ -358,15 +362,26 @@
 			muE7X2obtJnH2sL5ewgtzW/TjJ4/pBTJvyO1H0iu0aE=
 			</data>
 		</dict>
+		<key>Headers/GPSurchargeEligibilityLookupBuilder.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			anEuOzssaPBzgYKrC7p9LcM+yco=
+			</data>
+			<key>hash2</key>
+			<data>
+			DlHR265jAXvhORYjrRTE4GgtXn41fMiSd9XXUrf8PbY=
+			</data>
+		</dict>
 		<key>Headers/GPTransaction.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			UJHXDWMRqxLLMqGhLcCXaY0CwBw=
+			3QGnrBX3i+lDDl4SkUPdZ4rmQXg=
 			</data>
 			<key>hash2</key>
 			<data>
-			9HYtzX8V1RlK5Uv649EEzuew4p1lFrY0G1zcbDvwaxA=
+			zMNQzutM/KfSvR3bSBs0uDKJmB2BS6Yfei+Ev1lWchU=
 			</data>
 		</dict>
 		<key>Headers/GPTransactionBuilder.h</key>

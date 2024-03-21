@@ -15,6 +15,8 @@ public protocol GMSClientAppDelegate {
     func onTransactionComplete(_ result: String, response: HpsTerminalResponse)
     func onTransactionCancelled()
     func onError(_ error: NSError)
+    func onTransactionWaitingForSurchargeConfirmation(result: HpsTransactionStatus,
+                                                      response: HpsTerminalResponse)
 }
 
 public protocol GMSClientTerminalOTAManagerDelegate {

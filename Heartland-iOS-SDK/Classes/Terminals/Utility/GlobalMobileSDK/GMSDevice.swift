@@ -2,6 +2,7 @@ import Foundation
 
 @objcMembers
 public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
+    
     public var gmsWrapper: GMSWrapper?
     public var deviceDelegate: GMSDeviceDelegate?
     public weak var deviceScanObserver: GMSDeviceScanObserver?
@@ -58,6 +59,7 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
 
     public func processTransactionWithRequest(_ builder: GMSBaseBuilder, withTransactionType transactionType: HpsTransactionType) {
         if let wrapper = gmsWrapper {
+            
             wrapper.startTransaction(builder, withTransactionType: transactionType)
         }
     }
@@ -65,6 +67,12 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
     public func confirmAmount(_ amount: Decimal) {
         if let wrapper = gmsWrapper {
             wrapper.confirmAmount(amount: amount)
+        }
+    }
+    
+    public func confirmSurcharge(_ builder: GMSBaseBuilder) {
+        if let wrapper = gmsWrapper {
+            wrapper.confirmSurcharge(builder, withTransactionType: builder.transactionType)
         }
     }
 
@@ -127,6 +135,11 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
     public func requestAmountConfirmation(_ amount: Decimal) {
         transactionDelegate?.onConfirmAmount(amount)
     }
+    
+    public func onTransactionWaitingForSurchargeConfirmation(result: HpsTransactionStatus, response: HpsTerminalResponse) {
+        transactionDelegate?.onTransactionWaitingForSurchargeConfirmation(result: result, response: response)
+    }
+    
 
     public func requestPostalCode(_: String, expiryDate _: String, cardholderName _: String) {}
 
@@ -170,6 +183,11 @@ public extension GMSDevice {
     func setVersionDataFor(versionString: String) {
         gmsWrapper?.terminalOTADelegate = self
         gmsWrapper?.setVersionDataFor(versionString: versionString)
+    }
+    
+    func setRemoteKeyInjection() {
+        gmsWrapper?.terminalOTADelegate = self
+        gmsWrapper?.requestToStartUpdateFor(type: .keyInjection)
     }
 }
 

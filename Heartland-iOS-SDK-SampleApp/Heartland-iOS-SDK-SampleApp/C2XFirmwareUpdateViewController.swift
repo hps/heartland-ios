@@ -37,6 +37,7 @@ class C2XFirmwareUpdateViewController: UIViewController {
     @IBOutlet var checkForUpdatesFirmwareButton: UIButton!
     @IBOutlet var updateFirmwareButton: UIButton!
     @IBOutlet var updateConfigButton: UIButton!
+    @IBOutlet var remoteKeyInjectionButton: UIButton!
     @IBOutlet var DialogView: UIView!
     @IBOutlet var dialogText: UILabel!
     @IBOutlet var dialogSpinner: UIActivityIndicatorView!
@@ -81,6 +82,16 @@ class C2XFirmwareUpdateViewController: UIViewController {
             showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
         }
     }
+    
+    @IBAction func remoteKeyInjections(_: Any) {
+        if let device = device {
+            showDialogView()
+            device.setRemoteKeyInjection()
+            resetTimer()
+        } else {
+            showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
+        }
+    }
 
     func compareVersions() {
         enableUpdateFirmwareButton()
@@ -98,7 +109,7 @@ class C2XFirmwareUpdateViewController: UIViewController {
     func enableUpdateFirmwareButton() {
         hideDialogView()
         updateFirmwareButton.isEnabled = true
-        updateConfigButton.isEnabled = false
+        updateConfigButton.isEnabled = true
     }
 
     func disableUpdateFirmwareButton() {

@@ -8,6 +8,8 @@
 #import <Heartland_iOS_SDK/HpsHpaCreditVoidBuilder.h>
 #import <Heartland_iOS_SDK/HpsHpaCreditCaptureBuilder.h>
 #import <Heartland_iOS_SDK/HpsHpaCreditVerifyBuilder.h>
+#import <Heartland_iOS_SDK/HpsUpaDeletePreAuthBuilder.h>
+#import <Heartland_iOS_SDK/HpsUpaAuthBuilder.h>
 
 @interface Hps_Hpa_Credit_Test : XCTestCase
 
@@ -449,6 +451,44 @@
 	//	XCTestExpectation *expectation = [self expectationWithDescription:@"testHttpHpa Do credit fail MultiplePayments"];
 	//	HpsHpaDevice *device = [self setupDevice];
 	//}
+
+
+- (void) test_UPA_Delete_PreAuth_Capture
+{
+    XCTestExpectation *expectation = [self expectationWithDescription:@"test_UPA_Delete_PreAuth_Capture"];
+    
+    HpsUpaDevice *device = [self setupDevice];
+    HpsUpaAuthBuilder *builder = [[HpsUpaAuthBuilder alloc] initWithDevice:device];
+    builder.amount = [[NSDecimalNumber alloc] initWithDouble:1.00];
+    builder.ecrId = @"1";
+    
+    [builder execute:^(HpsUpaResponse *payload, NSError *error) {
+        XCTAssertNil(error);
+        XCTAssertEqualObjects(@"00", payload.responseCode);
+        XCTAssertNotNil(payload);
+        
+        sleep(5);
+        
+        //Delete PreAuth
+     
+        //Capture
+        HpsUpaDeletePreAuthBuilder *cbuilder = [[HpsUpaDeletePreAuthBuilder alloc] initWithDevice:device];
+        cbuilder.issuerRefNumber = payload.issuerRefNumber;
+        cbuilder.amount = [[NSDecimalNumber alloc] initWithDouble:15.00];
+        cbuilder.ecrId = @"1";
+        
+        [cbuilder execute:^(HpsUpaResponse *cpayload, NSError *cerror) {
+            XCTAssertNil(cerror);
+            XCTAssertEqualObjects(@"00", cpayload.responseCode);
+            XCTAssertNotNil(cpayload);
+            [expectation fulfill];
+        }];
+    }];
+    
+    [self waitForExpectationsWithTimeout:120.0 handler:^(NSError *error) {
+        if(error) XCTFail(@"Request Timed out");
+    }];
+}
 
 @end
 

@@ -23,7 +23,7 @@ public struct HpsUpaStartCardResponseData: Codable {
     public let acquisitionType, luhnCheckPassed, dataEncryptionType: String?
     public let pan: HpsUpaStartCardResponsePan?
     public let emvTags: String?
-    public let expDate: String?
+    public let expiryDate: String?
     public let cvv: String?
     public let scannedData: String?
     public let pinDUKPT: HpsUpaStartCardResponsePinDukpt?
@@ -37,7 +37,7 @@ public struct HpsUpaStartCardResponseData: Codable {
         case pan = "PAN"
         case emvTags = "EmvTags"
         case dataEncryptionType
-        case expDate
+        case expiryDate
         case cvv = "Cvv"
         case scannedData = "ScannedData"
         case pinDUKPT = "PinDUKPT"
@@ -46,13 +46,13 @@ public struct HpsUpaStartCardResponseData: Codable {
         case host
     }
 
-    public init(acquisitionType: String?, luhnCheckPassed: String?, dataEncryptionType: String?, pan: HpsUpaStartCardResponsePan?, emvTags: String?, expDate: String?, cvv: String?, scannedData: String?, pinDUKPT: HpsUpaStartCardResponsePinDukpt?, threeDesDukpt: HpsUpaStartCardResponse3DesDukpt?, trackData: HpsUpaStartCardResponseTrackData?, host: UpsUpaStartCardResponseHost?) {
+    public init(acquisitionType: String?, luhnCheckPassed: String?, dataEncryptionType: String?, pan: HpsUpaStartCardResponsePan?, emvTags: String?, expiryDate: String?, cvv: String?, scannedData: String?, pinDUKPT: HpsUpaStartCardResponsePinDukpt?, threeDesDukpt: HpsUpaStartCardResponse3DesDukpt?, trackData: HpsUpaStartCardResponseTrackData?, host: UpsUpaStartCardResponseHost?) {
         self.acquisitionType = acquisitionType
         self.luhnCheckPassed = luhnCheckPassed
         self.dataEncryptionType = dataEncryptionType
         self.pan = pan
         self.emvTags = emvTags
-        self.expDate = expDate
+        self.expiryDate = expiryDate
         self.cvv = cvv
         self.scannedData = scannedData
         self.pinDUKPT = pinDUKPT

@@ -34,6 +34,7 @@
 @property (nonatomic, strong) NSString* transactionDescriptor;
 @property (nonatomic, strong) GPTransactionReference* transactionReference;
 @property (nonatomic, strong) NSString* gatewayTransactionId;
+@property (nonatomic, strong) NSString* isSurchargeable;
 
 + (instancetype) transactionFromId:(NSString*) transactionId;
 + (instancetype) transactionFromId:(NSString*) transactionId withPaymentMethodType:(GPPaymentMethodType) paymentMethodType;
