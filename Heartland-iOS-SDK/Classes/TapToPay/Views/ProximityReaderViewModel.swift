@@ -12,7 +12,7 @@ import os
 #if canImport(ProximityReader)
 import ProximityReader
 
-@available(iOS 15.4, *)
+@available(iOS 16.0, *)
 
 class ProximityReaderViewModel: ObservableObject {
     @Published var status: String = "Not Ready"
