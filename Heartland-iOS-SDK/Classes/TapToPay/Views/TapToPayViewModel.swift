@@ -7,6 +7,7 @@
 
 import Foundation
 
+@available(iOS 16.0, *)
 enum TTPTransactionType: Int, CaseIterable, Identifiable {
     case sale, refund, verification
 
@@ -24,6 +25,7 @@ enum TTPTransactionType: Int, CaseIterable, Identifiable {
     var id: Int { self.rawValue }
 }
 
+@available(iOS 16.0, *)
 enum TTPReaderMode: Int, CaseIterable, Identifiable {
     /// A value that represents a payment.
     case paymentOnly
@@ -52,6 +54,7 @@ enum TTPReaderMode: Int, CaseIterable, Identifiable {
     var id: Int { self.rawValue }
 }
 
+@available(iOS 16.0, *)
 class TapToPayViewModel: ObservableObject {
     @Published var transactionTypePicker = TTPTransactionType.sale
     @Published var amount: Decimal = 0
