@@ -14,4 +14,6 @@ public protocol GMSCreditAuthBuilder {
     var allowPartialAuth: NSNumber? { get set }
     var cpcReq: NSNumber? { get set }
     var autoSubstantiation: HpsAutoSubstantiation? { get set }
+    var isSurchargeEnabled: NSNumber? { get set }
+    var allowDuplicates: NSNumber? { get set }
 }

@@ -65,6 +65,14 @@
     if (self.receivedResponse.AuthCodeData) {
         self.authCodeData = [self NormalizeResponse:self.receivedResponse.AuthCodeData];
     }
+    
+    if (self.receivedResponse.SurchargeAmount) {
+        self.surchargeAmount = [self NormalizeResponse:self.receivedResponse.SurchargeAmount];
+    }
+    
+    if (self.receivedResponse.SurchargeFee) {
+        self.surchargeFee = [self NormalizeResponse:self.receivedResponse.SurchargeFee];
+    }
 }
 
 -(NSString *)NormalizeResponse:(NSString *)response

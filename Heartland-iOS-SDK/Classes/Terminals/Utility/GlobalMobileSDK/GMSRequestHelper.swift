@@ -51,6 +51,9 @@ class GMSRequestHelper {
         let cpcReq: Bool? = builder.cpcReq as? Bool
         var autoSubstantiation: GlobalMobileSDK.AutoSubstantiation? = nil
         
+        let isSurchargeEnabled: Bool = builder.isSurchargeEnabled as? Bool ?? false
+        let allowDuplicates: Bool = builder.allowDuplicates as? Bool ?? false
+        
         if let transactionAutoSubstantiation = builder.autoSubstantiation {
             
             autoSubstantiation = transactionAutoSubstantiation.toAutoSubstantiation()
@@ -81,7 +84,9 @@ class GMSRequestHelper {
                                         requestMultiUseToken: requestMultiUseToken ?? false,
                                         allowPartialAuth: allowPartialAuth,
                                         cpcReq: cpcReq,
-                                        autoSubstantiation: autoSubstantiation)
+                                        autoSubstantiation: autoSubstantiation,
+                                        isSurchargeEnabled: isSurchargeEnabled,
+                                        allowDuplicates: allowDuplicates)
         } else {
             return AuthTransaction.auth(clientTransactionId: clientTransactionId,
                                         total: decimalToUint(total),
@@ -95,7 +100,9 @@ class GMSRequestHelper {
                                         requestMultiUseToken: requestMultiUseToken ?? false,
                                         allowPartialAuth: allowPartialAuth,
                                         cpcReq: cpcReq,
-                                        autoSubstantiation: autoSubstantiation)
+                                        autoSubstantiation: autoSubstantiation,
+                                        isSurchargeEnabled: isSurchargeEnabled,
+                                        allowDuplicates: allowDuplicates)
         }
     }
 
@@ -178,6 +185,8 @@ class GMSRequestHelper {
         let allowPartialAuth: Bool? = builder.allowPartialAuth as? Bool
         let cpcReq: Bool? = builder.cpcReq as? Bool
         var autoSubstantiation: GlobalMobileSDK.AutoSubstantiation? = nil
+        let isSurchargeEnabled: Bool = builder.isSurchargeEnabled as? Bool ?? false
+        let allowDuplicates: Bool = builder.allowDuplicates as? Bool ?? false
         
         if let transactionAutoSubstantiation = builder.autoSubstantiation {
             
@@ -209,7 +218,10 @@ class GMSRequestHelper {
                                         requestMultiUseToken: requestMultiUseToken ?? false,
                                         allowPartialAuth: allowPartialAuth,
                                         cpcReq: cpcReq,
-                                        autoSubstantiation: autoSubstantiation)
+                                        autoSubstantiation: autoSubstantiation,
+                                        isSurchargeEnabled: isSurchargeEnabled,
+                                        allowDuplicates: allowDuplicates)
+            
         } else {
             return SaleTransaction.sale(clientTransactionId: clientTransactionId,
                                         total: decimalToUint(total),
@@ -223,7 +235,9 @@ class GMSRequestHelper {
                                         requestMultiUseToken: requestMultiUseToken ?? false,
                                         allowPartialAuth: allowPartialAuth,
                                         cpcReq: cpcReq,
-                                        autoSubstantiation: autoSubstantiation)
+                                        autoSubstantiation: autoSubstantiation,
+                                        isSurchargeEnabled: isSurchargeEnabled,
+                                        allowDuplicates: allowDuplicates)
         }
     }
 

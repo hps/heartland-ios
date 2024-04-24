@@ -68,6 +68,8 @@
         self.issuerRspMsg = self.receivedResponse.GatewayRspMsg;
         self.authCode = self.receivedResponse.AuthCode;
         self.authCodeData = self.receivedResponse.AuthCodeData;
+        self.surchargeFee = self.receivedResponse.SurchargeFee;
+        self.surchargeAmount = self.receivedResponse.SurchargeAmount;
 }
 
 	return self;

@@ -155,6 +155,7 @@ class ConnectC2XViewController: UIViewController {
             config.licenseID = self.licenseID.text ?? ""
             config.developerID = self.developerID.text ?? ""
             config.versionNumber = self.versionNumber.text ?? ""
+            
             config.timeout = timeout
 
             device = HpsC2xDevice(config: config)
