@@ -436,11 +436,11 @@ typedef SWIFT_ENUM(NSInteger, EncryptionType, open) {
   EncryptionTypeNone = 4,
 };
 
-typedef SWIFT_ENUM(NSInteger, FallbackReason, open) {
-  FallbackReasonEmptyCandidateList = 0,
-  FallbackReasonIccError = 1,
-  FallbackReasonOther = 2,
-  FallbackReasonNone = 3,
+typedef SWIFT_ENUM(NSInteger, GMSFallbackReason, open) {
+  GMSFallbackReasonEmptyCandidateList = 0,
+  GMSFallbackReasonIccError = 1,
+  GMSFallbackReasonOther = 2,
+  GMSFallbackReasonNone = 3,
 };
 
 
@@ -630,7 +630,7 @@ SWIFT_CLASS("_TtC15GlobalMobileSDK14TerminalTender")
 @property (nonatomic) TerminalTransactionType transactionType;
 @property (nonatomic) enum CardDataSource cardDataSource;
 @property (nonatomic) enum ReversalReason voidReason;
-@property (nonatomic) enum FallbackReason emvFallbackCondition;
+@property (nonatomic) enum GMSFallbackReason emvFallbackCondition;
 @property (nonatomic) enum LastChipRead lastChipRead;
 @property (nonatomic) enum CardholderAuthenticationMethod cardholderAuthenticationMethod;
 @property (nonatomic, readonly) NSInteger totalAmount;

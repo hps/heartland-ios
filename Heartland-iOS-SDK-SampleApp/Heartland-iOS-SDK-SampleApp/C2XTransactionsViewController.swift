@@ -164,6 +164,8 @@ private extension C2XTransactionsViewController {
             builder.amount = amountNumber
             builder.allowPartialAuth = NSNumber(value: allowPartialAuthToggle.isOn)
             builder.cpcReq = true
+            builder.isSurchargeEnabled = false
+            builder.allowDuplicates = true
             
             let autoSubstantiation = getHealthCareComponent()
             builder.autoSubstantiation = autoSubstantiation
@@ -191,16 +193,21 @@ private extension C2XTransactionsViewController {
             address.zip = "75024"
             
             let card = HpsCreditCard()
-            card.cardNumber = "2223000010005780"
+            card.cardNumber = "374245001751006"
             card.expMonth = 12
-            card.expYear = 2030
-            card.cvv = "900"
+            card.expYear = 2024
+            card.cvv = "201"
             
             let amountString = NSDecimalNumber(string: amountTextField.text)
             let builder = HpsC2xCreditAuthBuilder(device: device)
             builder.amount = amountString
             builder.creditCard = card
             builder.address = address
+            
+            builder.allowPartialAuth = true
+            builder.allowDuplicates = true
+            builder.isSurchargeEnabled = false
+            
             self.builder = builder
             builder.execute()
         } else {
@@ -275,6 +282,7 @@ private extension C2XTransactionsViewController {
             let gratuity = gratuityTextField.text ?? "0.00"
             builder.gratuity = NSDecimalNumber(string: gratuity)
             builder.creditCard = card
+            builder.isSurchargeEnabled = false
             if let cTransactionId = builder.clientTransactionId {
                 NSLog("Client Transaction Id Generated In The Client - Request  %@", cTransactionId)
             }
@@ -471,6 +479,8 @@ extension C2XTransactionsViewController: HpsC2xDeviceDelegate, GMSTransactionDel
             switch deviceResponseCode {
             case LoadingStatus.APPROVAL.rawValue:
                 showDialog(for: .APPROVED(response: response))
+            case LoadingStatus.PARTIAL_APPROVAL.rawValue:
+                showDialog(for: .APPROVED(response: response))
             case LoadingStatus.DECLINED.rawValue:
                 showDialog(for: .DECLINED(response: response))
             case LoadingStatus.CANCELLED.rawValue:
@@ -664,7 +674,9 @@ private extension C2XTransactionsViewController {
             if let respText = response.responseText {
                 GWMSG = respText
             }
-            messageResult = "Response: \nStatus: \(responseCode)\n Amount: \(response.approvedAmount!)\n Issuer Resp.: \(issuerCode)\n Issuer Auth Data: \(issuerMSG)\nGW Code: \(GWCode)\nGW MSG: \(GWMSG)"
+            let surchargeFee = (Decimal(string: response.surchargeFee ?? "0") ?? 0) * 100
+            let surchargeAmount = NSDecimalNumber(string: response.surchargeAmount ?? "0")
+            messageResult = "Response: \nStatus: \(responseCode)\n Amount: \(String(format: "%.2f", response.approvedAmount.doubleValue))\nSurchargeAmount: \(String(format: "%.2f", surchargeAmount.doubleValue))\nSurchargeFee: \(surchargeFee)%\n Issuer Resp.: \(issuerCode)\n Issuer Auth Data: \(issuerMSG)\nGW Code: \(GWCode)\nGW MSG: \(GWMSG)"
             isApproved = true
         case let .CANCELLED(response):
             guard let deviceResponseMessage = response.deviceResponseMessage else { return }
@@ -707,7 +719,7 @@ private extension C2XTransactionsViewController {
                 GWMSG = respText
             }
             
-            messageResult = "Response: \nStatus: \(deviceResponseMessage)\n Amount: \(response.approvedAmount!)\n Auth Resp.: \(issuerCode)\n Issuer Auth Data: \(issuerMSG)\nGW Code: \(GWCode)\nGW MSG: \(GWMSG)"
+            messageResult = "Response: \nStatus: \(deviceResponseMessage)\n Amount: \(response.approvedAmount)\n Auth Resp.: \(issuerCode)\n Issuer Auth Data: \(issuerMSG)\nGW Code: \(GWCode)\nGW MSG: \(GWMSG)"
             isApproved = false
         case let .MESSAGE(message):
             messageResult = message
@@ -735,6 +747,7 @@ public enum LoadingStatus: String {
     case COMPLETED
     case ERROR
     case TERMINATED
+    case PARTIAL_APPROVAL = "PARTIAL APPROVAL"
     case APPROVAL
     case DEVICE_NOT_CONNECTED_ALERT = "You must have a connected device to proceed."
     case NOT_TRANSACTION_ID = "You Must have a valid Transaction ID for this action."

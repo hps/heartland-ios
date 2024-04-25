@@ -14,6 +14,8 @@ public class HpsC2xCreditSaleBuilder: HpsC2xBaseBuilder, GMSCreditSaleBuilder {
     public var allowPartialAuth: NSNumber?
     public var cpcReq: NSNumber?
     public var autoSubstantiation: HpsAutoSubstantiation?
+    public var isSurchargeEnabled: NSNumber?
+    public var allowDuplicates: NSNumber?
     
     public init(device: HpsC2xDevice) {
         super.init(transactionType: .creditSale, device: device)

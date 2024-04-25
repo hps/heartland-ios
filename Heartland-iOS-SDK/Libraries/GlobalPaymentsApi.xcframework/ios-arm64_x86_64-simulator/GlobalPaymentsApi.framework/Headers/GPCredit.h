@@ -6,6 +6,7 @@
 #import <GlobalPaymentsApi/GPPaymentMethod.h>
 #import <GlobalPaymentsApi/GPAuthorizationBuilder.h>
 #import <GlobalPaymentsApi/GPSurchargeEligibilityLookupBuilder.h>
+#import <GlobalPaymentsApi/GPManagementBuilder.h>
 
 @interface GPCredit : GPPaymentMethod
 
@@ -14,6 +15,7 @@
 - (GPAuthorizationBuilder*) refund;
 - (GPAuthorizationBuilder*) verify;
 - (GPSurchargeEligibilityLookupBuilder*) surcharge;
+- (GPManagementBuilder*) edit;
 
 @end
 

@@ -17,6 +17,9 @@
 @property (nonatomic, strong) NSString* poNumber;
 @property (nonatomic, strong) NSString* tagData;
 @property (nonatomic, strong) NSString* taxAmount;
+@property (nonatomic, strong) NSString* surchargeAmtInfo;
+@property (nonatomic, strong) NSString* gatewayTransactionId;
+@property (nonatomic, strong) NSString* clientTransactionId;
 @property (nonatomic) GPTaxType taxType;
 @property (nonatomic, strong) NSString* transactionDescription;
 

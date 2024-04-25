@@ -230,6 +230,14 @@ extension GMSWrapper: TransactionDelegate {
         if result == .success && currentState == .reversalInProgress {
             data.deviceResponseCode = "reversed"
         }
+        
+        if response?.surchargeFee != nil {
+            data.surchargeFee = response?.surchargeFee
+        }
+        
+        if response?.surchargeAmount != nil {
+            data.surchargeAmount = response?.surchargeAmount
+        }
 
         delegate.onTransactionComplete(result.rawValue, response: data)
     }
@@ -254,6 +262,7 @@ extension GMSWrapper: TransactionDelegate {
         responseMap.responseCode = response?.gatewayResponseCode
         responseMap.responseText = response?.gatewayResponseText
         responseMap.surchargeFee = response?.surchargeFee
+        responseMap.surchargeAmount = response?.surchargeAmount
         
         delegate.onTransactionWaitingForSurchargeConfirmation(result: .surchargeRequested,
                                                               response: responseMap)

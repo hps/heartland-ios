@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2.0.18 2024-04-25
+- iOS SDK: Fix for C3X/C2X Surcharge 
+
 ## 2.0.16 2024-03-21
 - iOS SDK: Pay App (UPA) - Add DeletePreAuth 
 - iOS SDK: Add fallback to Pay App 2.18
