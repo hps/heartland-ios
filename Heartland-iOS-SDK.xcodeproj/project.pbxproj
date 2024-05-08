@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		141A6E8B2B9A205000310B4B /* HpsUpaDeletePreAuthBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 141A6E892B9A205000310B4B /* HpsUpaDeletePreAuthBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		141A6E8C2B9A205000310B4B /* HpsUpaDeletePreAuthBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 141A6E8A2B9A205000310B4B /* HpsUpaDeletePreAuthBuilder.m */; };
+		142669EC2BB326820018D4B0 /* HpsTransactionDuplicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 142669EB2BB326820018D4B0 /* HpsTransactionDuplicate.m */; };
+		142669ED2BB326B80018D4B0 /* HpsTransactionDuplicate.h in Headers */ = {isa = PBXBuildFile; fileRef = 142669EA2BB324E40018D4B0 /* HpsTransactionDuplicate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		143A4379298AB2980027BC3F /* String+ProjectName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A4378298AB2980027BC3F /* String+ProjectName.swift */; };
 		149365D52A2669E2005A37CC /* HpsUpaDeviceSignatureResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 149365D42A2669E2005A37CC /* HpsUpaDeviceSignatureResponse.m */; };
 		149365D62A267093005A37CC /* HpsUpaDeviceSignatureResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 149365D32A266795005A37CC /* HpsUpaDeviceSignatureResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -505,6 +507,8 @@
 /* Begin PBXFileReference section */
 		141A6E892B9A205000310B4B /* HpsUpaDeletePreAuthBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsUpaDeletePreAuthBuilder.h; sourceTree = "<group>"; };
 		141A6E8A2B9A205000310B4B /* HpsUpaDeletePreAuthBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsUpaDeletePreAuthBuilder.m; sourceTree = "<group>"; };
+		142669EA2BB324E40018D4B0 /* HpsTransactionDuplicate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsTransactionDuplicate.h; sourceTree = "<group>"; };
+		142669EB2BB326820018D4B0 /* HpsTransactionDuplicate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsTransactionDuplicate.m; sourceTree = "<group>"; };
 		143A4378298AB2980027BC3F /* String+ProjectName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ProjectName.swift"; sourceTree = "<group>"; };
 		149365D32A266795005A37CC /* HpsUpaDeviceSignatureResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HpsUpaDeviceSignatureResponse.h; sourceTree = "<group>"; };
 		149365D42A2669E2005A37CC /* HpsUpaDeviceSignatureResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HpsUpaDeviceSignatureResponse.m; sourceTree = "<group>"; };
@@ -1780,6 +1784,8 @@
 				DDFF34C02937AF4200C2D1D1 /* HpsGatewayData.h */,
 				DDFF34C12937AF4200C2D1D1 /* HpsAddress.m */,
 				DDFF34C22937AF4200C2D1D1 /* HpsTransactionDetails.h */,
+				142669EA2BB324E40018D4B0 /* HpsTransactionDuplicate.h */,
+				142669EB2BB326820018D4B0 /* HpsTransactionDuplicate.m */,
 				DDFF34C32937AF4200C2D1D1 /* HpsCardData.h */,
 				DDFF34C42937AF4200C2D1D1 /* HpsGiftCard.h */,
 				DDFF34C52937AF4200C2D1D1 /* HpsTokenData.h */,
@@ -1967,6 +1973,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD6A4ED52937C05D008B8165 /* XMLDictionary.h in Headers */,
+				142669ED2BB326B80018D4B0 /* HpsTransactionDuplicate.h in Headers */,
 				DDFF35CE2937AF4300C2D1D1 /* HpsHpaCreditAuthBuilder.h in Headers */,
 				141A6E8B2B9A205000310B4B /* HpsUpaDeletePreAuthBuilder.h in Headers */,
 				DDFF35EF2937AF4300C2D1D1 /* HpaEnums.h in Headers */,
@@ -2244,6 +2251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				142669EC2BB326820018D4B0 /* HpsTransactionDuplicate.m in Sources */,
 				DDFF35FA2937AF4300C2D1D1 /* CardSummary.m in Sources */,
 				DDFF36672937AF4400C2D1D1 /* HpsTransactionDetails.m in Sources */,
 				149365DE2A408BA3005A37CC /* HpsUpaCARefundBuilder.swift in Sources */,

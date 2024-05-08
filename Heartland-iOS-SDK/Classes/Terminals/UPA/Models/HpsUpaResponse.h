@@ -7,6 +7,7 @@
 #import "HpsTerminalResponse.h"
 #import "HpsDeviceProtocols.h"
 #import "JsonDoc.h"
+#import "HpsTransactionDuplicate.h"
 
 @interface HpsUpaResponse : HpsTerminalResponse<IHPSDeviceResponse>
 
@@ -74,6 +75,9 @@
 @property (nonatomic,strong) TransactionSummaryRecord *transactionSummaryRecord;
 @property (nonatomic,strong) HpsLastResponse *lastResponse;
 
+// New Duplicate object
+@property (nonatomic, strong) HpsTransactionDuplicate *duplicate;
+
     //EOD
 @property (nonatomic,strong) NSString *reversal;
 @property (nonatomic,strong) NSString *emvOfflineDecline;
@@ -83,6 +87,7 @@
 @property (nonatomic,strong) NSString *batchClose;
 @property (nonatomic,strong) NSString *heartBeat;
 @property (nonatomic,strong) NSString *emvPDL;
+
 -(id)initWithJSONDoc:(JsonDoc*)data;
 
 

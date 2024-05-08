@@ -60,6 +60,10 @@
         request.data.data.transaction.invoiceNbr = self.details.invoiceNumber;
     }
     
+    if (self.allowDuplicate != nil) {
+        request.data.data.transaction.allowDuplicate = self.allowDuplicate;
+    }
+    
     request.data.data.transaction.clinicAmount = self.clinicAmount != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[self.clinicAmount doubleValue]]] : nil;
     request.data.data.transaction.prescriptionAmount = self.prescriptionAmount != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[self.prescriptionAmount doubleValue]]] : nil;
     request.data.data.transaction.dentalAmount = self.dentalAmount != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[self.dentalAmount doubleValue]]] : nil;
@@ -128,18 +132,22 @@
         baseAmount = [baseAmount decimalNumberBySubtracting:self.taxAmount];
     }
     
-    request.data.data.transaction.baseAmount = baseAmount != nil ? [[formatter stringFromNumber:[NSNumber numberWithDouble:[baseAmount doubleValue]]] stringByReplacingOccurrencesOfString:@"," withString:@"."] : nil;
-    request.data.data.transaction.tipAmount =  self.gratuity != nil ? [[formatter stringFromNumber:[NSNumber numberWithDouble:[self.gratuity doubleValue]]] stringByReplacingOccurrencesOfString:@"," withString:@"."] : nil;
-    request.data.data.transaction.taxAmount =  self.taxAmount != nil ? [[formatter stringFromNumber:[NSNumber numberWithDouble:[self.taxAmount doubleValue]]] stringByReplacingOccurrencesOfString:@"," withString:@"."] : nil;
+    if (self.allowDuplicate != nil) {
+        request.data.data.transaction.allowDuplicate = self.allowDuplicate;
+    }
+    
+    request.data.data.transaction.baseAmount = baseAmount != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[baseAmount doubleValue]]] : nil;
+    request.data.data.transaction.tipAmount =  self.gratuity != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[self.gratuity doubleValue]]] : nil;
+    request.data.data.transaction.taxAmount =  self.taxAmount != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[self.taxAmount doubleValue]]] : nil;
     
     if (self.details != nil) {
         request.data.data.transaction.invoiceNbr = self.details.invoiceNumber;
     }
     
-    request.data.data.transaction.clinicAmount = self.clinicAmount != nil ? [[formatter stringFromNumber:[NSNumber numberWithDouble:[self.clinicAmount doubleValue]]] stringByReplacingOccurrencesOfString:@"," withString:@"."] : nil;
-    request.data.data.transaction.prescriptionAmount = self.prescriptionAmount != nil ? [[formatter stringFromNumber:[NSNumber numberWithDouble:[self.prescriptionAmount doubleValue]]] stringByReplacingOccurrencesOfString:@"," withString:@"."] : nil;
-    request.data.data.transaction.dentalAmount = self.dentalAmount != nil ? [[formatter stringFromNumber:[NSNumber numberWithDouble:[self.dentalAmount doubleValue]]] stringByReplacingOccurrencesOfString:@"," withString:@"."] : nil;
-    request.data.data.transaction.visionOpticalAmount = self.visionOpticalAmount != nil ? [[formatter stringFromNumber:[NSNumber numberWithDouble:[self.visionOpticalAmount doubleValue]]] stringByReplacingOccurrencesOfString:@"," withString:@"."] : nil;
+    request.data.data.transaction.clinicAmount = self.clinicAmount != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[self.clinicAmount doubleValue]]] : nil;
+    request.data.data.transaction.prescriptionAmount = self.prescriptionAmount != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[self.prescriptionAmount doubleValue]]] : nil;
+    request.data.data.transaction.dentalAmount = self.dentalAmount != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[self.dentalAmount doubleValue]]] : nil;
+    request.data.data.transaction.visionOpticalAmount = self.visionOpticalAmount != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[self.visionOpticalAmount doubleValue]]] : nil;
     
     [device processTransactionWithRequest:request withResponseBlock:^(id<IHPSDeviceResponse> response, NSString *json, NSError * error) {
         if (error != nil) {

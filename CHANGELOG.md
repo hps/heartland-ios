@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2.0.19 2024-05-09
+- iOS SDK: Pax_Cancel Command on HTTP Mode
+- iOS SDK: Pay App New Sale and Refund Parameters
+- iOS SDK: HPA / iOS SDK - TSI and TVR fields are not returned in the response
+
 ## 2.0.18 2024-04-25
 - iOS SDK: Fix for C3X/C2X Surcharge 
 

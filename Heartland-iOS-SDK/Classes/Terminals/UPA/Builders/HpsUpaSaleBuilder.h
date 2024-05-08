@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSDecimalNumber *taxAmount;
 @property (nonatomic, readwrite) HpsStoredCardInitiator storedCardInitiator;
 @property (nonatomic, strong) NSString *cardBrandTransactionId;
+@property (nonatomic, strong) NSNumber *allowDuplicate;
 
 // HSA/FSA Values
 @property (nonatomic, strong) NSDecimalNumber *prescriptionAmount;
