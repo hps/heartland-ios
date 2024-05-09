@@ -514,6 +514,45 @@
      }];
 }
 
+- (void) test_UPA_Sale_Duplication
+{
+    XCTestExpectation *expectation = [self expectationWithDescription:@"test_UPA_Sale"];
+    
+    HpsUpaDevice *device = [self setupDevice];
+    HpsUpaSaleBuilder* builder = [[HpsUpaSaleBuilder alloc] initWithDevice:device];
+    builder.ecrId = @"3";
+    builder.amount = [[NSDecimalNumber alloc] initWithDouble:5];
+    builder.gratuity = [[NSDecimalNumber alloc] initWithDouble:0];
+
+    [builder execute:^(HpsUpaResponse * response, NSError * error) {
+        XCTAssertNil(error);
+        XCTAssertNotNil(response);
+        XCTAssertTrue([response.result isEqualToString:@"Success"]);
+        XCTAssertTrue([response.responseCode isEqualToString:@"00"]);
+        XCTAssertNotNil(response.transactionId);
+        XCTAssertNil(response.deviceResponseCode);
+        XCTAssertNil(response.deviceResponseMessage);
+        
+        HpsUpaSaleBuilder* builderDup = [[HpsUpaSaleBuilder alloc] initWithDevice:device];
+        builderDup.ecrId = @"3";
+        builderDup.amount = [[NSDecimalNumber alloc] initWithDouble:5];
+        builderDup.gratuity = [[NSDecimalNumber alloc] initWithDouble:0];
+
+        [builderDup execute:^(HpsUpaResponse * response, NSError * error) {
+            XCTAssertNil(error);
+            XCTAssertNotNil(response);
+            XCTAssertTrue([response.result isEqualToString:@"Failed"]);
+            XCTAssertTrue([response.responseCode isEqualToString:@"0"]);
+            XCTAssertNotNil(response.duplicate);
+            [expectation fulfill];
+        }];
+        
+    }];
+    
+    [self waitForExpectationsWithTimeout:600.0 handler:^(NSError *error) {
+        if(error) XCTFail(@"Request Timed out");
+    }];
+}
 
 @end
 

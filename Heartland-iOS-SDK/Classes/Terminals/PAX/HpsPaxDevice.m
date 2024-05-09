@@ -76,48 +76,36 @@
 //void results or error
 - (void) cancel:(void(^)(NSError*))responseBlock{
     
-    if ((int)self.config.connectionMode == HpsConnectionModes_HTTP) {
-        NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"HTTP mode not supported"};
-        NSError *error = [NSError errorWithDomain:errorDomain
-                                             code:CocoaError
-                                         userInfo:userInfo];
+    id<IHPSDeviceMessage> request = [HpsTerminalUtilities buildRequest:A14_CANCEL];
+    [self.interface send:request andResponseBlock:^(NSData *data, NSError *error) {
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            responseBlock(error);
-        });
-        
-    }else{
-        id<IHPSDeviceMessage> request = [HpsTerminalUtilities buildRequest:A14_CANCEL];
-        [self.interface send:request andResponseBlock:^(NSData *data, NSError *error) {
-            
-            if (error) {
+        if (error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                responseBlock(error);
+            });
+        }else{
+            //done
+            NSString *dataview = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+            NSLog(@"data returned: %@", dataview);
+            HpsPaxInitializeResponse *response;
+            @try {
+                //parse data
+                response = [[HpsPaxInitializeResponse alloc] initWithBuffer:data];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    responseBlock(nil);
+                });
+            } @catch (NSException *exception) {
+                NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
+                NSError *error = [NSError errorWithDomain:self->errorDomain
+                                                     code:CocoaError
+                                                 userInfo:userInfo];
+                
                 dispatch_async(dispatch_get_main_queue(), ^{
                     responseBlock(error);
                 });
-            }else{
-                //done
-                NSString *dataview = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-                NSLog(@"data returned: %@", dataview);
-                HpsPaxInitializeResponse *response;
-                @try {
-                    //parse data
-                    response = [[HpsPaxInitializeResponse alloc] initWithBuffer:data];
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        responseBlock(nil);
-                    });
-                } @catch (NSException *exception) {
-                    NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
-                    NSError *error = [NSError errorWithDomain:self->errorDomain
-                                                         code:CocoaError
-                                                     userInfo:userInfo];
-                    
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        responseBlock(error);
-                    });
-                }
             }
-        }];
-    }
+        }
+    }];
 }
 
 - (void) reset:(void(^)(HpsPaxDeviceResponse*, NSError*))responseBlock{

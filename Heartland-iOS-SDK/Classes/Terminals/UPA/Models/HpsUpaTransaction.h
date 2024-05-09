@@ -19,5 +19,6 @@
 @property (nonatomic,retain)NSString* dentalAmount;
 @property (nonatomic,retain)NSString* visionOpticalAmount;
 @property (nonatomic,retain)NSString* preAuthAmount;
+@property (nonatomic,retain)NSNumber* allowDuplicate;
 
 @end

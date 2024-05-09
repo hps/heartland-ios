@@ -156,6 +156,23 @@ static int IsFieldEnable;
             self.applicationCryptogramType = ARQC;
             self.applicationCryptogramTypeS = [HpsTerminalEnums applicationCryptogramTypeToString:self.applicationCryptogramType];
         }
+        
+        NSString *emvTSI = [emv getValueAsString:@"9B"];
+        self.emvTSI = emvTSI;
+        
+        NSString *emvTVR = [emv getValueAsString:@"95"];
+        self.emvTVR = emvTVR;
+    }
+    
+    if ([data has:@"duplicate"]) {
+        JsonDoc* duplicate = [data get:@"duplicate"];
+        self.duplicate = [[HpsTransactionDuplicate alloc] init];
+        self.duplicate.duplicateCardType = [duplicate getValueAsString:@"cardType"];
+        self.duplicate.duplicateTotalAmount = [duplicate getValueAsString:@"totalAmount"];
+        self.duplicate.duplicateApprovalCode = [duplicate getValueAsString:@"approvalCode"];
+        self.duplicate.duplicateReferenceNumber = [duplicate getValueAsString:@"referenceNumber"];
+        self.duplicate.duplicateTranDate = [duplicate getValueAsString:@"tranDate"];
+        self.duplicate.duplicatePanLast4 = [duplicate getValueAsString:@"panLast4"];
     }
 
     return self;
