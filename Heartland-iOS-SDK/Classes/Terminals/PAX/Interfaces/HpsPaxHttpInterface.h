@@ -11,5 +11,5 @@
 -(void) disconnect;
 -(void) send:(id<IHPSDeviceMessage>)message andResponseBlock:(void(^)(NSData*, NSError*))responseBlock;
 - (void)cancelPendingTask;
-
+- (NSString *)getPort:(NSString*)message;
 @end

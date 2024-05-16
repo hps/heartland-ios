@@ -1,5 +1,6 @@
 #import "HpsPaxHttpInterface.h"
 #import "HpsCommon.h"
+#import "HPSTerminalEnums.h"
 
 @interface HpsPaxHttpInterface()
 {
@@ -29,21 +30,21 @@
     
 }
 -(void) send:(id<IHPSDeviceMessage>)message andResponseBlock:(void(^)(NSData*, NSError*))responseBlock{
-	NSLog(@"\r Request_toString = %@ \r",message.toString);
-
-
+    NSLog(@"\r Request_toString = %@ \r",message.toString);
+    
+    
     NSData *data = [message getSendBuffer];
     
     NSString *urlString = [NSString stringWithFormat:@"http://%@:%@/?%@",
                            self.config.ipAddress,
-                           self.config.port,
+                           [self getPort:message.toString],
                            [data base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed]];
     
     NSLog(@"181189=%@",urlString);
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:160];
-  
+    
     NSURLSessionDataTask *task = [NSURLSession.sharedSession dataTaskWithRequest:request
                                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
                                   {
@@ -83,5 +84,14 @@
     if (_pendingTask) {
         [_pendingTask cancel];
     }
+}
+
+- (NSString *)getPort:(NSString *)message {
+    if (_config.connectionMode == HpsConnectionModes_HTTP && [message containsString:@"A14"]) {
+        NSInteger portValue = [self.config.port integerValue] + 1;
+        return [NSString stringWithFormat:@"%ld", (long)portValue];
+    }
+    
+    return self.config.port;
 }
 @end
