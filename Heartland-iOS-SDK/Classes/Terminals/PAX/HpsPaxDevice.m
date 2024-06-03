@@ -90,7 +90,7 @@
             HpsPaxDeviceResponse *response;
             @try {
                 //parse data
-                response = [[HpsPaxDeviceResponse alloc] initWithMessageID:A15_RSP_RESET andBuffer:data];
+                response = [[HpsPaxDeviceResponse alloc] initWithMessageID:A15_RSP_CANCEL andBuffer:data];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     responseBlock(response, nil);
                 });
