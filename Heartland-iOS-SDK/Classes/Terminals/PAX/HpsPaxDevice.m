@@ -74,25 +74,25 @@
 }
 
 //void results or error
-- (void) cancel:(void(^)(NSError*))responseBlock{
+- (void) cancel:(void(^)(HpsPaxDeviceResponse*, NSError*))responseBlock{
     
     id<IHPSDeviceMessage> request = [HpsTerminalUtilities buildRequest:A14_CANCEL];
     [self.interface send:request andResponseBlock:^(NSData *data, NSError *error) {
         
         if (error) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                responseBlock(error);
+                responseBlock(nil, error);
             });
         }else{
             //done
             NSString *dataview = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
             NSLog(@"data returned: %@", dataview);
-            HpsPaxInitializeResponse *response;
+            HpsPaxDeviceResponse *response;
             @try {
                 //parse data
-                response = [[HpsPaxInitializeResponse alloc] initWithBuffer:data];
+                response = [[HpsPaxDeviceResponse alloc] initWithMessageID:A15_RSP_CANCEL andBuffer:data];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    responseBlock(nil);
+                    responseBlock(response, nil);
                 });
             } @catch (NSException *exception) {
                 NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
@@ -101,7 +101,7 @@
                                                  userInfo:userInfo];
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    responseBlock(error);
+                    responseBlock(nil, error);
                 });
             }
         }

@@ -28,7 +28,7 @@
 
 //Admin
 - (void) initialize:(void(^)(HpsPaxInitializeResponse*, NSError*))responseBlock;
-- (void) cancel:(void(^)(NSError*))responseBlock;
+- (void) cancel:(void(^)(HpsPaxDeviceResponse*, NSError*))responseBlock;
 - (void) reset:(void(^)(HpsPaxDeviceResponse*, NSError*))responseBlock;
 - (void) reboot:(void(^)(HpsPaxDeviceResponse*, NSError*))responseBlock;
 - (void) setSafMode:(SafMode)safMode withResponseBlock:(void(^)(HpsPaxDeviceResponse*, NSError*))responseBlock;
