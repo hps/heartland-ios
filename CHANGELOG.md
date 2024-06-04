@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2.0.22 2024-06-06
+- iOS SDK: Fixing isSurchargeEnabled item for allow null
+
 ## 2.0.21 2024-06-04
 - iOS SDK: Fixing the Pax Cancel Response
 
