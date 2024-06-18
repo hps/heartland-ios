@@ -164,7 +164,6 @@ private extension C2XTransactionsViewController {
             builder.amount = amountNumber
             builder.allowPartialAuth = NSNumber(value: allowPartialAuthToggle.isOn)
             builder.cpcReq = true
-            builder.isSurchargeEnabled = false
             builder.allowDuplicates = true
             
             let autoSubstantiation = getHealthCareComponent()
