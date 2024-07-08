@@ -32,5 +32,5 @@
 
 - (void) execute:(void(^)(HpsUpaResponse*, NSError*))responseBlock;
 - (id)initWithDevice: (HpsUpaDevice*)upaDevice;
-- (void) executeForUPAUSA:(void(^)(HpsUpaResponse*, NSError*))responseBlock;
+- (void) executeForUPAUSA:(void(^)(HpsUpaResponse*, NSString*, NSError*))responseBlock;
 @end

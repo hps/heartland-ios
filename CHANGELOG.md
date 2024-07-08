@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2.0.23 2024-07-08
+- iOS SDK: Fixing tipAmount response for Tip Adjust transaction
+
 ## 2.0.22 2024-06-06
 - iOS SDK: Fixing isSurchargeEnabled item for allow null
 
