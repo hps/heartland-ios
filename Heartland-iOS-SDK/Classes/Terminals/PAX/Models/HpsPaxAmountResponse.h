@@ -12,6 +12,7 @@
 @property (nonatomic) double taxAmount;
 @property (nonatomic) double balance1;
 @property (nonatomic) double balance2;
+@property (nonatomic) double surchargeFee;
 
 - (id)initWithBinaryReader: (HpsBinaryDataScanner*)br;
 

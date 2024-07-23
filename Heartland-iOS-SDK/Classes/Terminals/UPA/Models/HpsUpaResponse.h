@@ -90,7 +90,6 @@
 
 -(id)initWithJSONDoc:(JsonDoc*)data;
 
-
 @property (nonatomic,strong) NSString *deviceSerialNumber;
 @property (nonatomic,strong) NSString *upaAppVersion;
 @property (nonatomic,strong) NSString *upaOsVersion;

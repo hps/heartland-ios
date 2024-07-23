@@ -17,7 +17,7 @@ struct UpaUSATransaction: UpaTransactionProtocol {
             builder.amount = NSDecimalNumber(string: amount)
             builder.gratuity = 0
             
-            builder.execute(forUPAUSA: { hpsUpaResponse, error in
+            builder.execute(forUPAUSA: { hpsUpaResponse, json, error in
                
                 if let _ = error {
                     print(error!)
@@ -95,7 +95,7 @@ extension UpaUSATransaction {
             builder.details = HpsTransactionDetails()
             builder.details.invoiceNumber = "123"
             
-            builder.execute(forUPAUSA: { hpsUpaResponse, error in
+            builder.execute(forUPAUSA: { hpsUpaResponse, json, error in
                
                 if let _ = error {
                     print(error!)

@@ -26,6 +26,7 @@
                 break;
             case 4:
                 self.merchantFee = [value doubleValue]/100;
+                self.surchargeFee = [value doubleValue]/100;
                 break;
             case 5:
                 self.taxAmount = [value doubleValue]/100;

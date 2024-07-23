@@ -115,6 +115,37 @@ static int IsFieldEnable;
             }
 
             self.tipAmount = tip;
+        } else {
+            if ([data has:@"transaction"]) {
+                NSDecimalNumber* tip = [NSDecimalNumber decimalNumberWithString:@"0.00"];
+                NSDecimalNumber* transactionAmount = [NSDecimalNumber decimalNumberWithString:@"0.00"];
+                NSDecimalNumber* surchargeAmount = [NSDecimalNumber decimalNumberWithString:@"0.00"];
+                
+                JsonDoc* transaction = [data get:@"transaction"];
+                if ([transaction has:@"tipAmount"]) {
+                    tip = [tip decimalNumberByAdding:[NSDecimalNumber decimalNumberWithString:[transaction getValueAsString:@"tipAmount"]]];
+                    
+                    if (tip > self.tipAmount) {
+                        self.tipAmount = tip;
+                    }
+                }
+                
+                if ([transaction has:@"totalAmount"]) {
+                    transactionAmount = [NSDecimalNumber decimalNumberWithString:[transaction getValueAsString:@"totalAmount"]];
+                    
+                    if (transactionAmount > self.transactionAmount) {
+                        self.transactionAmount = transactionAmount;
+                    }
+                }
+                
+                if ([host has:@"surcharge"]) {
+                    surchargeAmount = [NSDecimalNumber decimalNumberWithString:[host getValueAsString:@"surcharge"]];
+                    
+                    if(surchargeAmount > self.merchantFee) {
+                        self.merchantFee = surchargeAmount;
+                    }
+                }
+            }
         }
 
         if ([host has:@"tokenValue"]) {

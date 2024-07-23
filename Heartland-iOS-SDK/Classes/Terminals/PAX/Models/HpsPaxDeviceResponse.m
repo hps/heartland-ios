@@ -33,6 +33,8 @@
             self.tipAmount = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:self.amountResponse.tipAmount] decimalValue]];
             self.cashBackAmount = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:self.amountResponse.cashBackAmount] decimalValue]];
             self.merchantFee = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:self.amountResponse.merchantFee] decimalValue]];
+            
+            self.surchargeFee = [[NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:self.amountResponse.surchargeFee] decimalValue]] stringValue];
 		}
 
 		if (self.accountResponse != nil) {

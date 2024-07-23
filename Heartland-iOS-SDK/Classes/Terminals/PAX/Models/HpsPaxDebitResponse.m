@@ -50,6 +50,8 @@
             self.transactionAmount = [NSDecimalNumber decimalNumberWithDecimal:adjustedTransactionAmount];
             self.approvedAmount = [NSDecimalNumber decimalNumberWithString:[[NSNumber numberWithDouble:self.amountResponse.approvedAmount] stringValue]];
             self.amountDue = [NSDecimalNumber decimalNumberWithString:[[NSNumber numberWithDouble:self.amountResponse.amountDue] stringValue]];
+            
+            self.surchargeFee = [[NSDecimalNumber decimalNumberWithString:[[NSNumber numberWithDouble:self.amountResponse.surchargeFee] stringValue]] stringValue];
         }
         
     } @catch (NSException *exception) {

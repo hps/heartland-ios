@@ -91,7 +91,7 @@
     }
 }
 
-- (void) executeForUPAUSA:(void(^)(HpsUpaResponse*, NSError*))responseBlock{
+- (void) executeForUPAUSA:(void(^)(HpsUpaResponse*, NSString*, NSError*))responseBlock{
 
     [self validate];
 
@@ -151,11 +151,11 @@
     
     [device processTransactionWithRequest:request withResponseBlock:^(id<IHPSDeviceResponse> response, NSString *json, NSError * error) {
         if (error != nil) {
-            responseBlock(nil, error);
+            responseBlock(nil, nil, error);
             return;
         }
         
-        responseBlock((HpsUpaResponse*)response, nil);
+        responseBlock((HpsUpaResponse*)response, json, nil);
     }];
 }
 
