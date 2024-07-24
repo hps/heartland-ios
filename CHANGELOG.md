@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2.0.24 2024-07-24
+- iOS SDK: Implement surchargeRequested parameter for integrators.
+
 ## 2.0.23 2024-07-08
 - iOS SDK: Fixing tipAmount response for Tip Adjust transaction
 

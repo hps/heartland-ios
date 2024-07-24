@@ -4,6 +4,7 @@
 #import "CardSummaryRecord.h"
 #import "TransactionSummaryRecord.h"
 #import "HpsLastResponse.h"
+#import "HpsPaxMessageIDs.h"
 
 @protocol HpaResposeInterface
 
@@ -96,7 +97,7 @@
 // Surcharge
 @property (readonly,retain) NSString *SurchargeFee;
 @property (readonly,retain) NSString *SurchargeAmount;
-
+@property (readonly) SurchargeEligibility *SurchargeRequested;
 
 @end
 
@@ -192,5 +193,6 @@
 // Surcharge
 @property (readonly,retain) NSString *SurchargeFee;
 @property (readonly,retain) NSString *SurchargeAmount;
+@property (readonly) SurchargeEligibility *SurchargeRequested;
 
 @end
