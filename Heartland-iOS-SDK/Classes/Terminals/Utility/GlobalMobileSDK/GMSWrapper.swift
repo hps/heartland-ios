@@ -238,6 +238,20 @@ extension GMSWrapper: TransactionDelegate {
         if response?.surchargeAmount != nil {
             data.surchargeAmount = response?.surchargeAmount
         }
+        
+        if response?.surchargeRequested != nil {
+            if response?.surchargeRequested == .Y {
+                data.surchargeRequested = UnsafeMutablePointer(bitPattern: SurchargeEligibility.Y.rawValue)
+            }
+            
+            if response?.surchargeRequested == .N {
+                data.surchargeRequested = UnsafeMutablePointer(bitPattern: SurchargeEligibility.N.rawValue)
+            }
+            
+            if response?.surchargeRequested == .U {
+                data.surchargeRequested = UnsafeMutablePointer(bitPattern: SurchargeEligibility.U.rawValue)
+            }
+        }
 
         delegate.onTransactionComplete(result.rawValue, response: data)
     }

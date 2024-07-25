@@ -282,10 +282,17 @@ typedef NS_ENUM(NSInteger, HpsPaxEntryModes) {
     HpsPaxEntryModes_ChipFallBackSwipe,
     HpsPaxEntryModes_Unknown
 };
+
 typedef NS_ENUM(NSInteger, ApplicationCrytogramType) {
 	TC,
 	ARQC,
     AAC
+};
+
+typedef NS_ENUM(NSInteger, SurchargeEligibility) {
+    SurchargeEligibility_Y,
+    SurchargeEligibility_N,
+    SurchargeEligibility_U
 };
 
 

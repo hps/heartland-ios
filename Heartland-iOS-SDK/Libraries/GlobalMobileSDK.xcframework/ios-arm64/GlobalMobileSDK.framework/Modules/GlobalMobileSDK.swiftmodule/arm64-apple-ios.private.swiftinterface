@@ -36,7 +36,7 @@ public struct BatchCloseResponse : GlobalMobileSDK.TransactionResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
-  public var surchargeRequested: Swift.Bool?
+  public var surchargeRequested: GlobalMobileSDK.SurchargeEligibility?
   public var surchargeFee: Swift.String?
   public var surchargeAmount: Swift.String?
   public func encode(to encoder: any Swift.Encoder) throws
@@ -52,7 +52,7 @@ public struct SurchargeRequestedResponse : GlobalMobileSDK.TransactionResponse {
   public let transactionId: Swift.String
   public var gatewayTransactionId: Swift.String?
   public var tokenizedCard: GlobalMobileSDK.TokenizedCardData?
-  public var surchargeRequested: Swift.Bool?
+  public var surchargeRequested: GlobalMobileSDK.SurchargeEligibility?
   public var surchargeFee: Swift.String?
   public var surchargeAmount: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
@@ -212,6 +212,7 @@ public struct AuthTransaction {
   public var autoSubstantiation: GlobalMobileSDK.AutoSubstantiation?
   public var isSurchargeEnabled: Swift.Bool?
   public var surchargeAmtInfo: Swift.String?
+  public var surchargeRequested: GlobalMobileSDK.SurchargeEligibility?
   public static func auth(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, requestMultiUseToken: Swift.Bool, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?, autoSubstantiation: GlobalMobileSDK.AutoSubstantiation?, isSurchargeEnabled: Swift.Bool?, allowDuplicates: Swift.Bool?) -> GlobalMobileSDK.AuthTransaction
   public static func auth(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.ManualCardData, requestMultiUseToken: Swift.Bool, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?, autoSubstantiation: GlobalMobileSDK.AutoSubstantiation?, isSurchargeEnabled: Swift.Bool?, allowDuplicates: Swift.Bool?) -> GlobalMobileSDK.AuthTransaction
   public static func auth(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.TokenizedCardData, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?, autoSubstantiation: GlobalMobileSDK.AutoSubstantiation?, isSurchargeEnabled: Swift.Bool?, allowDuplicates: Swift.Bool?) -> GlobalMobileSDK.AuthTransaction
@@ -326,6 +327,22 @@ public enum TenderType : Swift.String {
     get
   }
 }
+public enum SurchargeEligibility : Swift.String, Swift.Codable, Swift.CodingKey {
+  case Y, N, U
+  public init?(rawValue: Swift.String)
+  public init?(stringValue: Swift.String)
+  public init?(intValue: Swift.Int)
+  public typealias RawValue = Swift.String
+  public var intValue: Swift.Int? {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+  public var stringValue: Swift.String {
+    get
+  }
+}
 public struct SaleResponse {
   public var transactionResult: GlobalMobileSDK.TransactionResult?
   public let transactionId: Swift.String
@@ -374,7 +391,7 @@ public struct SaleResponse {
   public var duplicateData: GlobalMobileSDK.DuplicateDataResponse?
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
-  public var surchargeRequested: Swift.Bool?
+  public var surchargeRequested: GlobalMobileSDK.SurchargeEligibility?
   public var surchargeFee: Swift.String?
   public var surchargeAmount: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
@@ -496,7 +513,7 @@ public struct VerifyResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
-  public var surchargeRequested: Swift.Bool?
+  public var surchargeRequested: GlobalMobileSDK.SurchargeEligibility?
   public var surchargeFee: Swift.String?
   public var surchargeAmount: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
@@ -656,6 +673,7 @@ public struct SaleTransaction {
   public var autoSubstantiation: GlobalMobileSDK.AutoSubstantiation?
   public var isSurchargeEnabled: Swift.Bool?
   public var surchargeAmtInfo: Swift.String?
+  public var surchargeRequested: GlobalMobileSDK.SurchargeEligibility?
   public static func sale(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, requestMultiUseToken: Swift.Bool, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?, autoSubstantiation: GlobalMobileSDK.AutoSubstantiation?, isSurchargeEnabled: Swift.Bool?, allowDuplicates: Swift.Bool?) -> GlobalMobileSDK.SaleTransaction
   public static func sale(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.ManualCardData, requestMultiUseToken: Swift.Bool, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?, autoSubstantiation: GlobalMobileSDK.AutoSubstantiation?, isSurchargeEnabled: Swift.Bool?, allowDuplicates: Swift.Bool?) -> GlobalMobileSDK.SaleTransaction
   public static func sale(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, surcharge: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.TokenizedCardData, allowPartialAuth: Swift.Bool?, cpcReq: Swift.Bool?, autoSubstantiation: GlobalMobileSDK.AutoSubstantiation?, isSurchargeEnabled: Swift.Bool?, allowDuplicates: Swift.Bool?) -> GlobalMobileSDK.SaleTransaction
@@ -728,6 +746,7 @@ public struct VerifyTransaction {
   public var cpcReq: Swift.Bool?
   public var isSurchargeEnabled: Swift.Bool?
   public var surchargeAmtInfo: Swift.String?
+  public var surchargeRequested: GlobalMobileSDK.SurchargeEligibility?
   public static func verify(clientTransactionId: Swift.String?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, requestMultiUseToken: Swift.Bool, allowPartialAuth: Swift.Bool?) -> GlobalMobileSDK.VerifyTransaction
   public static func verify(clientTransactionId: Swift.String?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.ManualCardData, requestMultiUseToken: Swift.Bool, allowPartialAuth: Swift.Bool?) -> GlobalMobileSDK.VerifyTransaction
   public func encode(to encoder: any Swift.Encoder) throws
@@ -825,7 +844,7 @@ public struct ReturnResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
-  public var surchargeRequested: Swift.Bool?
+  public var surchargeRequested: GlobalMobileSDK.SurchargeEligibility?
   public var surchargeFee: Swift.String?
   public var surchargeAmount: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
@@ -856,7 +875,7 @@ public protocol TransactionResponse : Swift.Decodable, Swift.Encodable {
   var approvedAmount: Swift.UInt? { get set }
   var transactionDescription: Swift.String { get }
   var transactionError: GlobalMobileSDK.GMSError? { get set }
-  var surchargeRequested: Swift.Bool? { get set }
+  var surchargeRequested: GlobalMobileSDK.SurchargeEligibility? { get set }
   var surchargeFee: Swift.String? { get set }
   var surchargeAmount: Swift.String? { get set }
 }
@@ -963,6 +982,7 @@ public struct VoidTransaction {
     get
   }
 }
+public let PorticoTransactionSurchargeAPIRequestTimeOut: Swift.String
 public struct AuthResponse {
   public var transactionResult: GlobalMobileSDK.TransactionResult?
   public var total: Swift.UInt?
@@ -1017,7 +1037,7 @@ public struct AuthResponse {
   public var authCodeData: Swift.String?
   public let transactionId: Swift.String
   public var hostProcessingResult: GlobalMobileSDK.HostProcessingResult?
-  public var surchargeRequested: Swift.Bool?
+  public var surchargeRequested: GlobalMobileSDK.SurchargeEligibility?
   public var surchargeFee: Swift.String?
   public var surchargeAmount: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
@@ -1068,6 +1088,7 @@ public struct ReversalTransaction {
   public var cpcReq: Swift.Bool?
   public var isSurchargeEnabled: Swift.Bool?
   public var surchargeAmtInfo: Swift.String?
+  public var surchargeRequested: GlobalMobileSDK.SurchargeEligibility?
   public static func reversal(clientTransactionId: Swift.String?, gatewayTransactionId: Swift.String?, reversalReason: GlobalMobileSDK.ReversalReason, posReferenceNumber: Swift.String?, amount: Swift.UInt, tlv: Swift.String?, allowPartialAuth: Swift.Bool?) -> GlobalMobileSDK.ReversalTransaction
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
@@ -1135,7 +1156,7 @@ public struct ProcessSaFResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
-  public var surchargeRequested: Swift.Bool?
+  public var surchargeRequested: GlobalMobileSDK.SurchargeEligibility?
   public var surchargeFee: Swift.String?
   public var surchargeAmount: Swift.String?
   public func encode(to encoder: any Swift.Encoder) throws
@@ -1161,7 +1182,7 @@ public struct TipAdjustResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
-  public var surchargeRequested: Swift.Bool?
+  public var surchargeRequested: GlobalMobileSDK.SurchargeEligibility?
   public var surchargeFee: Swift.String?
   public var surchargeAmount: Swift.String?
   public func encode(to encoder: any Swift.Encoder) throws
@@ -1187,6 +1208,7 @@ public struct ReturnTransaction {
   public var cpcReq: Swift.Bool?
   public var isSurchargeEnabled: Swift.Bool?
   public var surchargeAmtInfo: Swift.String?
+  public var surchargeRequested: GlobalMobileSDK.SurchargeEligibility?
   public static func returnWithReference(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, gatewayTransactionId: Swift.String?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, allowPartialAuth: Swift.Bool?) -> GlobalMobileSDK.ReturnTransaction
   public static func returnWithManualCard(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.ManualCardData, allowPartialAuth: Swift.Bool?) -> GlobalMobileSDK.ReturnTransaction
   public static func returnWithCard(clientTransactionId: Swift.String?, total: Swift.UInt?, tax: Swift.UInt?, tip: Swift.UInt?, taxCategory: GlobalMobileSDK.TaxCategory?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, allowPartialAuth: Swift.Bool?) -> GlobalMobileSDK.ReturnTransaction
@@ -1350,7 +1372,7 @@ public struct CaptureResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
-  public var surchargeRequested: Swift.Bool?
+  public var surchargeRequested: GlobalMobileSDK.SurchargeEligibility?
   public var surchargeFee: Swift.String?
   public var surchargeAmount: Swift.String?
   public func encode(to encoder: any Swift.Encoder) throws
@@ -1377,7 +1399,7 @@ public struct VoidResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
-  public var surchargeRequested: Swift.Bool?
+  public var surchargeRequested: GlobalMobileSDK.SurchargeEligibility?
   public var surchargeFee: Swift.String?
   public var surchargeAmount: Swift.String?
   public func encode(to encoder: any Swift.Encoder) throws
@@ -1417,7 +1439,7 @@ public struct ReversalResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
-  public var surchargeRequested: Swift.Bool?
+  public var surchargeRequested: GlobalMobileSDK.SurchargeEligibility?
   public var surchargeFee: Swift.String?
   public var surchargeAmount: Swift.String?
   public func encode(to encoder: any Swift.Encoder) throws
@@ -1438,6 +1460,7 @@ public struct TokenizationTransaction {
   public var cpcReq: Swift.Bool?
   public var isSurchargeEnabled: Swift.Bool?
   public var surchargeAmtInfo: Swift.String?
+  public var surchargeRequested: GlobalMobileSDK.SurchargeEligibility?
   public static func tokenize(clientTransactionId: Swift.String?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, allowPartialAuth: Swift.Bool?) -> GlobalMobileSDK.TokenizationTransaction
   public static func tokenize(clientTransactionId: Swift.String?, posReferenceNumber: Swift.String?, invoiceNumber: Swift.String?, operatingUserId: Swift.String?, cardData: GlobalMobileSDK.ManualCardData, allowPartialAuth: Swift.Bool?) -> GlobalMobileSDK.TokenizationTransaction
   public func encode(to encoder: any Swift.Encoder) throws
@@ -1495,7 +1518,7 @@ public struct TokenizationResponse : GlobalMobileSDK.TransactionResponse {
   public var emvIssuerRspCode: Swift.String?
   public var emvIssuerResponse: Swift.String?
   public var authCodeData: Swift.String?
-  public var surchargeRequested: Swift.Bool?
+  public var surchargeRequested: GlobalMobileSDK.SurchargeEligibility?
   public var surchargeFee: Swift.String?
   public var surchargeAmount: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
@@ -1642,6 +1665,9 @@ extension GlobalMobileSDK.CardDataSource : Swift.RawRepresentable {}
 extension GlobalMobileSDK.TenderType : Swift.Equatable {}
 extension GlobalMobileSDK.TenderType : Swift.Hashable {}
 extension GlobalMobileSDK.TenderType : Swift.RawRepresentable {}
+extension GlobalMobileSDK.SurchargeEligibility : Swift.Equatable {}
+extension GlobalMobileSDK.SurchargeEligibility : Swift.Hashable {}
+extension GlobalMobileSDK.SurchargeEligibility : Swift.RawRepresentable {}
 extension GlobalMobileSDK.SaleResponse : GlobalMobileSDK.TransactionResponse {}
 extension GlobalMobileSDK.VerifyResponse : GlobalMobileSDK.TransactionResponse {}
 extension GlobalMobileSDK.TransactionStatus : Swift.Equatable {}

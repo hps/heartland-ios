@@ -63,7 +63,11 @@ class GMSResponseHelper {
         data.cardType = HpsC2xEnums.cardTypeToString(resp?.cardType)
         data.authCode = resp?.authCode
         data.issuerRspMsg = resp?.emvIssuerResponse
-        // data.authCodeData = resp?.authCodeData
+        data.authCodeData = resp?.authCodeData
+        data.responseCode = resp?.gatewayResponseCode
+        data.responseText = resp?.gatewayResponseText
+        data.issuerRspCode = resp?.emvIssuerRspCode
+//        data.issuerRspMsg = resp?.hostProcessingResult?.emvIssuerAuthenticationData
 
         if let uintValue = resp?.tip {
             data.tipAmount = uintToDecimal(uintValue)

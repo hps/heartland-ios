@@ -70,6 +70,7 @@
         self.authCodeData = self.receivedResponse.AuthCodeData;
         self.surchargeFee = self.receivedResponse.SurchargeFee;
         self.surchargeAmount = self.receivedResponse.SurchargeAmount;
+        self.surchargeRequested = self.receivedResponse.SurchargeRequested;
 }
 
 	return self;

@@ -51,11 +51,11 @@
 		}
     
     if (self.receivedResponse.GatewayRspCode) {
-        self.issuerRspCode = [self NormalizeResponse:self.receivedResponse.GatewayRspCode];
+        self.issuerRspCode = self.receivedResponse.GatewayRspCode;
     }
     
     if (self.receivedResponse.GatewayRspMsg) {
-        self.issuerRspMsg = [self NormalizeResponse:self.receivedResponse.GatewayRspMsg];
+        self.issuerRspMsg = self.receivedResponse.GatewayRspMsg;
     }
     
     if (self.receivedResponse.AuthCode) {
@@ -72,6 +72,10 @@
     
     if (self.receivedResponse.SurchargeFee) {
         self.surchargeFee = [self NormalizeResponse:self.receivedResponse.SurchargeFee];
+    }
+    
+    if (self.receivedResponse.SurchargeRequested) {
+        self.surchargeRequested = self.receivedResponse.SurchargeRequested;
     }
 }
 
