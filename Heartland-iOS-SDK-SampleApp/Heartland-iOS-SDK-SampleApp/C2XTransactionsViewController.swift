@@ -515,12 +515,12 @@ extension C2XTransactionsViewController: HpsC2xDeviceDelegate, GMSTransactionDel
             let okAction = UIAlertAction(title: "Accept", style: UIAlertAction.Style.default) {
                 UIAlertAction in
                 NSLog("OK Pressed")
-                self.device?.confirmSurcharge(builder)
+                self.device?.confirmSurcharge(true)
             }
             let cancelAction = UIAlertAction(title: "Decline", style: UIAlertAction.Style.cancel) {
                 UIAlertAction in
                 NSLog("Cancel Pressed")
-                self.device?.cancelTransaction()
+                self.device?.confirmSurcharge(false)
                 self.showProgress(false)
             }
             
