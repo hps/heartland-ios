@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2.0.25 2024-08-09
+- iOS SDK: Surcharge Confirmation value improvement.
+
 ## 2.0.24 2024-07-24
 - iOS SDK: Implement surchargeRequested parameter for integrators.
 

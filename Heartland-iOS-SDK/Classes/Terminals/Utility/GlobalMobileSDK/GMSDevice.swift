@@ -70,9 +70,9 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
         }
     }
     
-    public func confirmSurcharge(_ builder: GMSBaseBuilder) {
+    public func confirmSurcharge(_ confirmSurcharge: Bool) {
         if let wrapper = gmsWrapper {
-            wrapper.confirmSurcharge(builder, withTransactionType: builder.transactionType)
+            wrapper.confirmSurcharge(confirmSurcharge)
         }
     }
 

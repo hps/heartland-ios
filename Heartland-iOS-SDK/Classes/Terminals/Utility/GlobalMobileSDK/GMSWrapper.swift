@@ -118,26 +118,28 @@ public class GMSWrapper: NSObject {
         GMSManager.shared.confirm(amount: amount)
     }
     
-    public func confirmSurcharge(_ builder: GMSBaseBuilder, withTransactionType transactionType: HpsTransactionType) {
-        self.transactionType = transactionType
-        self.builder = builder
-        switch transactionType {
-        case .creditAuth:
-            if let transaction = builder.buildRequest() as? AuthTransaction {
-                GMSManager.shared.confirmSurcharge(transaction: transaction, delegate: self)
+    public func confirmSurcharge(_ confirmSurcharge: Bool) {
+        if confirmSurcharge {
+            guard let builder = self.builder else { return }
+            switch builder.transactionType {
+            case .creditAuth:
+                if let transaction = builder.buildRequest() as? AuthTransaction {
+                    GMSManager.shared.confirmSurcharge(transaction: transaction, delegate: self)
+                }
+            case .creditCapture:
+                if let transaction = builder.buildRequest() as? CaptureTransaction {
+                    GMSManager.shared.confirmSurcharge(transaction: transaction, delegate: self)
+                }
+            case .creditSale:
+                if let transaction = builder.buildRequest() as? SaleTransaction {
+                    GMSManager.shared.confirmSurcharge(transaction: transaction, delegate: self)
+                }
+            default:
+                break
             }
-        case .creditCapture:
-            if let transaction = builder.buildRequest() as? CaptureTransaction {
-                GMSManager.shared.confirmSurcharge(transaction: transaction, delegate: self)
-            }
-        case .creditSale:
-            if let transaction = builder.buildRequest() as? SaleTransaction {
-                GMSManager.shared.confirmSurcharge(transaction: transaction, delegate: self)
-            }
-        default:
-            break
+        } else {
+            GMSManager.shared.cancelTransaction()
         }
-        
     }
 
     public func selectAID(aid: AID) {
