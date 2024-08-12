@@ -233,3 +233,51 @@ The included test suite can help ensure your contribution doesn't cause unexpect
 ## License
 
 This project is licensed under the GNU General Public License v2.0. Please see [LICENSE.md](LICENSE.md) located at the project's root for more details.
+
+========
+2.0.24 - Surcharge Usage Doc
+========
+
+# Surcharge Usage:
+
+```
+            let builder = HpsC2xCreditAuthBuilder(device: device)
+            builder.amount = amountString
+            builder.creditCard = card // Auth
+            builder.address = address
+            builder.isSurchargeEnabled = true
+            builder.execute()
+```
+>>> If surcharge is enabled and credit card could be surcheargable, it will prompt onTransactionWaitingForSurchargeConfirmation method
+```
+    func onTransactionWaitingForSurchargeConfirmation(result: HpsTransactionStatus, response: HpsTerminalResponse) {
+        if result == .surchargeRequested, let builder = self.builder,
+           let surchargeFee = response.surchargeFee {
+            let alertController = UIAlertController(title: "Surcharge Confirmation Required",
+                                                    message: "There will be a \(surchargeFee) surcharge added to your purchase",
+                                                    preferredStyle: .alert)
+            
+            // Create the actions
+            let okAction = UIAlertAction(title: "Accept", style: UIAlertAction.Style.default) {
+                UIAlertAction in
+                NSLog("OK Pressed")
+                self.device?.confirmSurcharge(true)
+            }
+            let cancelAction = UIAlertAction(title: "Decline", style: UIAlertAction.Style.cancel) {
+                UIAlertAction in
+                NSLog("Cancel Pressed")
+                self.device?.confirmSurcharge(false)
+                self.showProgress(false)
+            }
+            
+            // Add the actions
+            alertController.addAction(okAction)
+            alertController.addAction(cancelAction)
+            
+            // Present the controller
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+
+```
+>>> self.device?.confirmSurcharge(true) will trigger the transaction sending to our Gateway and the return will be captured on onTransactionComplete(_ result: String, response: HpsTerminalResponse)
