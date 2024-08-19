@@ -151,6 +151,7 @@ public protocol TerminalOTAManagerDelegate {
   public func select(aid: GlobalMobileSDK.AID)
   public func cancelTransaction()
   public func deleteSafTransaction()
+  public func releaseDevice()
   @objc deinit
 }
 extension GlobalMobileSDK.GMSManager : GlobalMobileSDK.SearchDelegate {
@@ -1335,6 +1336,16 @@ public enum TransactionType : Swift.String, Swift.CaseIterable, Swift.Equatable,
   @objc public init(withName name: Swift.String, identifier: Swift.String)
   @objc deinit
 }
+public enum AuthType {
+  case manualCard
+  case cardReader
+  case unknown
+  public static func == (a: GlobalMobileSDK.AuthType, b: GlobalMobileSDK.AuthType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 public struct ManualCardData : GlobalMobileSDK.CardData {
   public var cardEntryMode: GlobalMobileSDK.EntryMode
   public var cardholderName: Swift.String?
@@ -1735,6 +1746,8 @@ extension GlobalMobileSDK.TransactionResult : Swift.Hashable {}
 extension GlobalMobileSDK.TransactionResult : Swift.RawRepresentable {}
 extension GlobalMobileSDK.TransactionType : Swift.Hashable {}
 extension GlobalMobileSDK.TransactionType : Swift.RawRepresentable {}
+extension GlobalMobileSDK.AuthType : Swift.Equatable {}
+extension GlobalMobileSDK.AuthType : Swift.Hashable {}
 extension GlobalMobileSDK.CaptureResponse : GlobalMobileSDK.TransactionResponse {}
 extension GlobalMobileSDK.VoidResponse : GlobalMobileSDK.TransactionResponse {}
 extension GlobalMobileSDK.GatewayType : Swift.Hashable {}

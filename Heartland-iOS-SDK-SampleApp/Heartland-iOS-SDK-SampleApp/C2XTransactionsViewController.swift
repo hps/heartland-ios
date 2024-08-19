@@ -31,6 +31,7 @@ class C2XTransactionsViewController: UIViewController {
     @IBOutlet weak var reversalTransactionButton: UIButton!
     @IBOutlet weak var authTransaction: UIButton!
     @IBOutlet weak var captureTransaction: UIButton!
+    @IBOutlet weak var resetValues: UIButton!
     
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var gratuityTextField: UITextField!
@@ -103,6 +104,15 @@ class C2XTransactionsViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleContainerViewTap))
         containerView.addGestureRecognizer(tapGesture)
+        
+        amountTextField.text = "1.28"
+        gratuityTextField.text = "0.00"
+        allowPartialAuthToggle.setOn(false, animated: true)
+        transactionIdTextField.text = String.empty
+        clinicHealthCareTotalTextField.text = "0.00"
+        dentalHealthCareTotalTextField.text = "0.00"
+        prescriptionHealthCareTotalTextField.text = "0.00"
+        visionHealthCareTotalTextField.text = "0.00"
     }
 }
 
@@ -135,6 +145,10 @@ private extension C2XTransactionsViewController {
         self.captureTransaction.addTarget(self,
                                           action: #selector(captureAuthTransaction),
                                           for: .touchUpInside)
+        
+        self.resetValues.addTarget(self,
+                                   action: #selector(resetScreenValues),
+                                   for: .touchUpInside)
         
     }
     
@@ -208,7 +222,7 @@ private extension C2XTransactionsViewController {
             builder.allowPartialAuth = true
             builder.allowDuplicates = true
             
-            
+            self.mainTransaction = .auth
             self.builder = builder
             builder.execute()
         } else {
@@ -219,6 +233,7 @@ private extension C2XTransactionsViewController {
     @objc func creditVoidTransactionButtonAction(_: UIButton) {
         if let device = device {
             showProgress(true)
+            transactionIdTextField.text = String.empty
             setText(LoadingStatus.WAIT.rawValue)
             
             if let transactionId = transactionIdTextField.text {
@@ -266,6 +281,7 @@ private extension C2XTransactionsViewController {
         }
         if let device = self.device {
             showProgress(true)
+            transactionIdTextField.text = String.empty
             setText(LoadingStatus.WAIT.rawValue)
             
             let card: HpsCreditCard = HpsCreditCard()
@@ -282,11 +298,13 @@ private extension C2XTransactionsViewController {
             builder.clientTransactionId = "02997841500"
             let gratuity = gratuityTextField.text ?? "0.00"
             builder.gratuity = NSDecimalNumber(string: gratuity)
-            builder.creditCard = card
-            builder.isSurchargeEnabled = false
+//            builder.creditCard = card -- Keep commented if you want to use the reader for card
+            builder.allowDuplicates = true
+            builder.isSurchargeEnabled = true
             if let cTransactionId = builder.clientTransactionId {
                 NSLog("Client Transaction Id Generated In The Client - Request  %@", cTransactionId)
             }
+            self.builder = builder
             builder.execute()
             
             
@@ -337,6 +355,10 @@ private extension C2XTransactionsViewController {
         } else {
             showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
         }
+    }
+    
+    @objc func resetScreenValues(_: UIButton?) {
+        configureView()
     }
     
     func reversalAuthTransaction() {
@@ -495,6 +517,8 @@ extension C2XTransactionsViewController: HpsC2xDeviceDelegate, GMSTransactionDel
             default:
                 if let message = response.responseText {
                     showDialog(for: .MESSAGE(message: message))
+                } else if let message = response.deviceResponseMessage {
+                    showDialog(for: .MESSAGE(message: message))
                 } else {
                     showDialog(for: .MESSAGE(message: "We have faced an issue on trying to perform the transaction"))
                 }
@@ -541,7 +565,11 @@ extension C2XTransactionsViewController: HpsC2xDeviceDelegate, GMSTransactionDel
 //        device?.cancelTransaction()
         showProgress(false)
         print(error)
-        showDialog(for: .MESSAGE(message: "We have faced an issue on trying to perform the transaction"))
+        if let errorMessge = error.userInfo["message"] as? String {
+            showDialog(for: .MESSAGE(message: errorMessge))
+        } else {
+            showDialog(for: .MESSAGE(message: "We have faced an issue on trying to perform the transaction"))
+        }
     }
     
     func onError(_ error: NSError) {
