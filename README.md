@@ -234,6 +234,7 @@ The included test suite can help ensure your contribution doesn't cause unexpect
 
 This project is licensed under the GNU General Public License v2.0. Please see [LICENSE.md](LICENSE.md) located at the project's root for more details.
 
+
 ========
 2.0.24 - Surcharge Usage Doc
 ========
@@ -281,3 +282,4 @@ This project is licensed under the GNU General Public License v2.0. Please see [
 
 ```
 >>> self.device?.confirmSurcharge(true) will trigger the transaction sending to our Gateway and the return will be captured on onTransactionComplete(_ result: String, response: HpsTerminalResponse)
+

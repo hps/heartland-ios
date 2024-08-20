@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2.0.26 2024-08-19
+- iOS SDK: Surcharge Fix under card reader.
+
 ## 2.0.25 2024-08-09
 - iOS SDK: Surcharge Confirmation value improvement.
 

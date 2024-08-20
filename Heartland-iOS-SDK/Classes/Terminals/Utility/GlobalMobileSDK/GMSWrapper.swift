@@ -5,7 +5,7 @@ import GlobalPaymentsApi
 @objcMembers
 public class GMSWrapper: NSObject {
     // MARK: Variables
-
+    
     private var gatewayConfig: GMSConfiguration?
     private unowned let delegate: GMSClientAppDelegate
     private var selectedTerminal: HpsTerminalInfo?
@@ -14,45 +14,49 @@ public class GMSWrapper: NSObject {
     private var transactionType: HpsTransactionType
     private var builder: GMSBaseBuilder?
     private var currentState: TransactionState = .unknown
-
+    
     var terminalOTADelegate: GMSClientTerminalOTAManagerDelegate?
-
+    
     // MARK: Init
-
+    
     public init(_ gatewayConfig: GMSConfiguration?, delegate: GMSClientAppDelegate, entryModes: [EntryMode], terminalType: TerminalType) {
         self.gatewayConfig = gatewayConfig
         self.delegate = delegate
         transactionType = .unknown
         self.entryModes = entryModes
-
+        
         if let config = gatewayConfig {
             try! GMSManager.shared.configure(gatewayConfig: config.asPorticoConfig(terminalType: terminalType))
         }
     }
-
+    
     // MARK: External
-
+    
     public func searchDevices() {
         GMSManager.shared.search(delegate: self)
     }
-
+    
     public func cancelSearch() {
         GMSManager.shared.cancelSearch()
     }
-
+    
     public func cancelTransaction() {
         GMSManager.shared.cancelTransaction()
     }
-
+    
+    public func releaseDevice() {
+        GMSManager.shared.releaseDevice()
+    }
+    
     public func connectDevice(_ device: HpsTerminalInfo) {
         GMSManager.shared.connect(terminalInfo: device.gmsTerminalInfo, delegate: self)
     }
-
+    
     public func disconnect() {
         selectedTerminal = nil
         GMSManager.shared.disconnect()
     }
-
+    
     public func startTransaction(_ builder: GMSBaseBuilder, withTransactionType transactionType: HpsTransactionType) {
         self.transactionType = transactionType
         self.builder = builder
@@ -91,13 +95,13 @@ public class GMSWrapper: NSObject {
             }
             let transaction = GPTransaction(fromId: original.gatewayTransactionId)
             let builder = transaction?.voidTransaction()
-
+            
             builder?.execute { gatewayResponse, gatewayError in
                 if gatewayError != nil {
                     self.delegate.onError(gatewayError! as NSError)
                     return
                 }
-
+                
                 let response = HpsTerminalResponse()
                 response.transactionId = gatewayResponse?.transactionId()
                 response.deviceResponseCode = gatewayResponse?.responseCode
@@ -113,7 +117,7 @@ public class GMSWrapper: NSObject {
             break
         }
     }
-
+    
     public func confirmAmount(amount: Decimal) {
         GMSManager.shared.confirm(amount: amount)
     }
@@ -140,8 +144,9 @@ public class GMSWrapper: NSObject {
         } else {
             GMSManager.shared.cancelTransaction()
         }
+        
     }
-
+    
     public func selectAID(aid: AID) {
         GMSManager.shared.select(aid: aid)
     }
@@ -153,15 +158,15 @@ public class GMSWrapper: NSObject {
 
 extension GMSWrapper: SearchDelegate {
     // MARK: SearchDelegate
-
+    
     public func deviceFound(terminalInfo: TerminalInfo) {
         delegate.deviceFound(HpsTerminalInfo(fromTerminalInfo: terminalInfo))
     }
-
+    
     public func onSearchComplete() {
         delegate.searchComplete()
     }
-
+    
     public func onError(error: SearchError) {
         delegate.onError(NSError(fromSearchError: error))
     }
@@ -169,66 +174,66 @@ extension GMSWrapper: SearchDelegate {
 
 extension GMSWrapper: ConnectionDelegate {
     // MARK: ConnectionDelegate
-
+    
     public func onConnected(terminalInfo: TerminalInfo) {
         selectedTerminal = HpsTerminalInfo(fromTerminalInfo: terminalInfo)
         delegate.deviceConnected() // (selectedTerminal)
     }
-
+    
     public func onDisconnected(terminalInfo _: TerminalInfo) {
         selectedTerminal = nil
         delegate.deviceDisconnected()
     }
-
+    
     public func configuringTerminal(state _: TransactionState) {
         delegate.deviceConnected()
     }
-
+    
     public func onError(error: ConnectionError) {
         delegate.onError(NSError(fromConnectionError: error))
     }
 }
 
 extension GMSWrapper: TransactionDelegate {
-   
+    
     // MARK: TransactionDelegate
-
+    
     public func onState(state: TransactionState) {
         print(" GMSWrapper - onState ")
         currentState = state
         delegate.onStatus(HpsTransactionStatus.fromTransactionState(state))
     }
-
+    
     public func requestAIDSelection(aids: [AID]) {
         delegate.requestAIDSelection(aids)
     }
-
+    
     public func requestAmountConfirmation(amount: Decimal?) {
         delegate.requestAmountConfirmation(amount ?? 0)
     }
-
+    
     public func requestPostalCode(maskedPan: String, expiryDate: String, cardholderName: String?) {
         delegate.requestPostalCode(maskedPan, expiryDate: expiryDate, cardholderName: cardholderName ?? "")
     }
-
+    
     public func requestSaFApproval() {
         delegate.requestSaFApproval()
     }
-
+    
     public func onTransactionComplete(result: TransactionResult, response: TransactionResponse?) {
         var data = HpsTerminalResponse()
-
+        
         data.transactionId = response?.gatewayTransactionId
         data.clientTransactionId = response?.transactionId
-
+        
         if let uintValue = response?.approvedAmount {
             data.approvedAmount = GMSResponseHelper.uintToDecimal(uintValue)
         }
-
+        
         if let b = builder {
             data = b.mapResponse(data, result, response)
         }
-
+        
         if result == .success && currentState == .reversalInProgress {
             data.deviceResponseCode = "reversed"
         }
@@ -254,14 +259,14 @@ extension GMSWrapper: TransactionDelegate {
                 data.surchargeRequested = UnsafeMutablePointer(bitPattern: SurchargeEligibility.U.rawValue)
             }
         }
-
+        
         delegate.onTransactionComplete(result.rawValue, response: data)
     }
-
+    
     public func onTransactionCancelled() {
         delegate.onTransactionCancelled()
     }
-
+    
     public func onError(error: TransactionError) {
         if error.isStartError {
             onTransactionStartFailed(withError: error)
@@ -288,12 +293,12 @@ extension GMSWrapper: TransactionDelegate {
 
 /*
  Utilities added as a temp work around for inconsistent GlobalMobileSDK behavior.
-
+ 
  Transaction-failing errors are usually returned within response objects passed into
  onTransactionComplete. However, if a card is inserted before a transaction
  starts, for some reason the error (which also ends the transaction attempt) is passed
  through onError instead.
-
+ 
  Should probably have all process-failing errors return in 1 place, but until then we
  have this...
  */
@@ -342,15 +347,15 @@ public extension GMSWrapper {
     func requestAvailableOTAVersionsListFor(type: TerminalOTAUpdateType) {
         GMSManager.shared.requestAvailableOTAVersionsListFor(type: type, delegate: self)
     }
-
+    
     func requestToStartUpdateFor(type: TerminalOTAUpdateType) {
         GMSManager.shared.requestToStartUpdateFor(type: type, delegate: self)
     }
-
+    
     func requestTerminalVersionData() {
         GMSManager.shared.requestTerminalVersionData(delegate: self)
     }
-
+    
     func setVersionDataFor(versionString: String) {
         GMSManager.shared.setVersionDataFor(type: .firmware, versionString: versionString, delegate: self)
     }
@@ -362,21 +367,21 @@ extension GMSWrapper: TerminalOTAManagerDelegate {
     public func terminalVersionDetails(info: [AnyHashable: Any]?) {
         terminalOTADelegate?.terminalVersionDetails(info: info)
     }
-
+    
     public func terminalOTAResult(resultType: GlobalMobileSDK.TerminalOTAResult,
                                   info: [String: AnyObject]?, error: Error?)
     {
         terminalOTADelegate?.terminalOTAResult(resultType: resultType, info: info, error: error)
     }
-
+    
     public func listOfVersionsFor(type: GlobalMobileSDK.TerminalOTAUpdateType, results: [Any]?) {
         terminalOTADelegate?.listOfVersionsFor(type: type, results: results)
     }
-
+    
     public func otaUpdateProgress(percentage: Float) {
         terminalOTADelegate?.otaUpdateProgress(percentage: percentage)
     }
-
+    
     public func onReturnSetTargetVersion(resultType: GlobalMobileSDK.TerminalOTAResult,
                                          type: GlobalMobileSDK.TerminalOTAUpdateType,
                                          message: String)
