@@ -142,7 +142,6 @@ public protocol TerminalOTAManagerDelegate {
   public func cancelSearch()
   public func connect(terminalInfo: any GlobalMobileSDK.TerminalInfo, delegate: any GlobalMobileSDK.ConnectionDelegate)
   public func disconnect()
-  public func startCheckingForBinCard(cardData: GlobalMobileSDK.AnyCardData, completion: @escaping ((_ response: GlobalMobileSDK.SurchargeRequestedResponse?, _ error: (any Swift.Error)?) -> Swift.Void))
   public func start<T>(transaction: T, entryModes: [GlobalMobileSDK.EntryMode] = EntryMode.allCases, delegate: any GlobalMobileSDK.TransactionDelegate) where T : GlobalMobileSDK.Transaction
   public func confirmSurcharge<T>(transaction: T, entryModes: [GlobalMobileSDK.EntryMode] = EntryMode.allCases, delegate: any GlobalMobileSDK.TransactionDelegate) where T : GlobalMobileSDK.Transaction
   public func confirm(amount: Foundation.Decimal)

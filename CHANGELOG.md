@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2.0.27 2024-08-21
+- iOS SDK: Duplicated transaction due to Surcharge lookup result.
+
 ## 2.0.26 2024-08-19
 - iOS SDK: Surcharge Fix under card reader.
 
