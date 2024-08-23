@@ -113,6 +113,8 @@ class C2XTransactionsViewController: UIViewController {
         dentalHealthCareTotalTextField.text = "0.00"
         prescriptionHealthCareTotalTextField.text = "0.00"
         visionHealthCareTotalTextField.text = "0.00"
+        
+        enableButtons(true)
     }
 }
 

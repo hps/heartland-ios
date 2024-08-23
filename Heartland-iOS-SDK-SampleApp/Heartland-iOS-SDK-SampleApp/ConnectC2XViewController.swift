@@ -36,6 +36,13 @@ class ConnectC2XViewController: UIViewController {
     }
     
     private func setupUI() {
+        
+        if let _ = self.device {
+            connectionLabel.text = "Connected"
+        } else {
+            connectionLabel.text = "Disconnected"
+        }
+        
         for tf in [username, password, siteID, deviceID,
                    licenseID, developerID, versionNumber] {
             tf?.delegate = self
@@ -167,6 +174,7 @@ class ConnectC2XViewController: UIViewController {
     }
     
     private func validateC2XFields() -> Bool {
+
         var requiredFields: String = ""
         
         if let text = self.username?.text, text.isEmpty { requiredFields += "Username\n" }

@@ -36,7 +36,7 @@ class MainViewController: UITableViewController {
 extension MainViewController {
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         if let transactionDestination = segue.destination as? ConnectC2XViewController {
-            transactionDestination.device = nil
+            transactionDestination.device = device
         }
         
         if let transactionDestination = segue.destination as? C2XTransactionsViewController {
