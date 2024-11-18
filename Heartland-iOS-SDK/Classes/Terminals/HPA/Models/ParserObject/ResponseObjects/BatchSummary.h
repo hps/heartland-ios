@@ -22,6 +22,7 @@
 @property(nonatomic,strong) NSString *saleAmount;
 @property(nonatomic,strong) NSString *returnCount;
 @property(nonatomic,strong) NSString *returnAmount;
+@property(nonatomic,strong) NSString *clientTxnId;
 
 -(id)initWithPayload:(id <HpaResposeInterface>)response;
 @end

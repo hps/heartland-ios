@@ -6,7 +6,7 @@
 
 import Foundation
 
-struct HpsUpaGetSafConstants {
+public struct HpsUpaGetSafConstants {
     static let command = "GetSAFReport"
 }
 
@@ -32,8 +32,10 @@ public struct HpsUpaGetSafData: Codable {
 
 public struct HpsUpaGetSafDataReportOutput: Codable {
     public let reportOutput: String?
+    public let background: String?
 
-    public init(reportOutput: String?) {
+    public init(reportOutput: String?, background: String?) {
         self.reportOutput = reportOutput
+        self.background = background
     }
 }

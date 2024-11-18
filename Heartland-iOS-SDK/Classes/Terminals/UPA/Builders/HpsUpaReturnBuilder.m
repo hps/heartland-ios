@@ -42,7 +42,7 @@
     if (self.transactionId != nil) {
         request.data.data.transaction.referenceNumber = self.transactionId;
     }
-    request.data.data.transaction.totalAmount = self.amount != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[self.amount doubleValue]]] : nil;
+    request.data.data.transaction.totalAmount = self.amount != nil ? [[formatter stringFromNumber:[NSNumber numberWithDouble:[self.amount doubleValue]]] stringByReplacingOccurrencesOfString:@"," withString:@"."] : nil;
     
     if (self.details != nil) {
         request.data.data.transaction.invoiceNbr = self.details.invoiceNumber;

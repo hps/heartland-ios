@@ -85,6 +85,7 @@
 @property (nonatomic) SurchargeEligibility *surchargeRequested;
 @property (nonatomic,strong) NSString *surchargeFee;
 @property (nonatomic,strong) NSString *surchargeAmount;
+@property (nonatomic,strong) NSString *clientTxnId;
 - (void) mapResponse:(id <HpaResposeInterface>) response;
 // @todo
 //+(HpsTerminalResponse*)terminalResponseFromVitalSDK:(TransactionResponse*)transactionResponse;
