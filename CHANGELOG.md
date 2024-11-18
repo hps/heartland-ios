@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2.0.28 2024-11-19
+- iOS SDK: Adding background property to UPA
+- iOS SDK: Adding ClientTxnID to Response
+
 ## 2.0.27 2024-08-21
 - iOS SDK: Duplicated transaction due to Surcharge lookup result.
 

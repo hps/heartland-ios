@@ -225,6 +225,7 @@ extension GMSWrapper: TransactionDelegate {
         
         data.transactionId = response?.gatewayTransactionId
         data.clientTransactionId = response?.transactionId
+        data.clientTxnId = response?.clientTxnID
         
         if let uintValue = response?.approvedAmount {
             data.approvedAmount = GMSResponseHelper.uintToDecimal(uintValue)

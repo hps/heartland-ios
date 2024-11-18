@@ -57,7 +57,7 @@ class HpsUPASAFTests: XCTestCase {
 
         let builder = HpsUpaSAFTransactionBuilder(with: device)
 
-        let sendSAF = HpsUpaGetSaf(data: HpsUpaCommandPayload(command: HpsUpaGetSafConstants.command, ecrId: "123", requestId: "123", data: HpsUpaGetSafData(params: HpsUpaGetSafDataReportOutput(reportOutput: "ReturnData"))))
+        let sendSAF = HpsUpaGetSaf(data: HpsUpaCommandPayload(command: HpsUpaGetSafConstants.command, ecrId: "123", requestId: "123", data: HpsUpaGetSafData(params: HpsUpaGetSafDataReportOutput(reportOutput: "ReturnData", background: "true"))))
 
         builder.execute(request: sendSAF) { response, safResponse, error in
             XCTAssertNotNil(response)

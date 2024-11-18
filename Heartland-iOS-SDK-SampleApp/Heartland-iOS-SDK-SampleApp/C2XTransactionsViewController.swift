@@ -61,6 +61,7 @@ class C2XTransactionsViewController: UIViewController {
     var isDeviceConnected: Bool = false
     var terminalRefNumber: String?
     var clientTransactionId: String?
+    var clientTxnID: String?
     
     var transactionId: String? {
         didSet {
@@ -486,6 +487,10 @@ extension C2XTransactionsViewController: HpsC2xDeviceDelegate, GMSTransactionDel
             print(" Status response: \(responseStatus)")
         }
         
+        if let clientTxnId = response.clientTxnId {
+            print("ClientTxnID: \(clientTxnId)")
+        }
+        
         print(" Response: \(response)")
         
         if let surchargeRequested = response.surchargeRequested {
@@ -496,6 +501,7 @@ extension C2XTransactionsViewController: HpsC2xDeviceDelegate, GMSTransactionDel
             
             self.terminalRefNumber = response.terminalRefNumber
             self.clientTransactionId = response.clientTransactionId
+            self.clientTxnID = response.clientTxnId
             
             if mainTransaction != .capture {
                 self.transactionId = responseTransactionId
