@@ -17,6 +17,24 @@ public class HpsC2xCreditAuthBuilder: HpsC2xBaseBuilder, GMSCreditAuthBuilder {
     public var autoSubstantiation: HpsAutoSubstantiation?
     public var isSurchargeEnabled: NSNumber?
     public var allowDuplicates: NSNumber?
+    public var surchargeFee: NSDecimalNumber? {
+        get {
+            return _surchargeFee
+        }
+        set {
+            guard let newValue = newValue else {
+                _surchargeFee = nil
+                return
+            }
+            
+            var fee = Decimal(newValue.doubleValue)
+            var roundedFee = Decimal()
+            NSDecimalRound(&roundedFee, &fee, 2, .bankers)
+
+            _surchargeFee = NSDecimalNumber(decimal: roundedFee)
+        }
+    }
+    private var _surchargeFee: NSDecimalNumber?
     
     public init(device: HpsC2xDevice) {
         super.init(transactionType: .creditAuth, device: device)

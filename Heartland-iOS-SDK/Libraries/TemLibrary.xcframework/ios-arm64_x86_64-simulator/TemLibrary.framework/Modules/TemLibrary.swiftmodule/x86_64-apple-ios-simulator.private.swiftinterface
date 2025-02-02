@@ -1,0 +1,50 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name TemLibrary
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+import Swift
+
+@_exported import TemLibrary
+import _Concurrency
+import _StringProcessing
+public class Ntpt3Config {
+  public init(applicationId: Swift.String, applicationVersion: Swift.String, ip: Swift.String, port: Swift.Int32, callingMethod: Swift.Int32, authorizedActivities: Swift.Int32, offlineInstallMode: Swift.Int32, contractNumber: Swift.String, SSL: Swift.Int32, certClient: Swift.String, keyClient: Swift.String, certServ: Swift.String)
+  @objc deinit
+}
+@objc public enum SandboxStatus : Swift.Int {
+  case InitilisationOk
+  case AlreadyInitialized
+  case ErrorOnInitialized
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum ReasonForCalling : Swift.Int {
+  case REPORT
+  case MANUAL
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class Sandbox : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc public func initSandboxSwift(applicationId: Swift.String, applicationVersion: Swift.String, ip: Swift.String, port: Swift.Int32, callingMethod: Swift.Int32, authorizedActivities: Swift.Int32, offlineInstallMode: Swift.Int32, contractNumber: Swift.String, SSL: Swift.Int32, certClient: Swift.String, keyClient: Swift.String, certServ: Swift.String, resultCompletionBlock: @escaping (TemLibrary.SandboxStatus) -> Swift.Void)
+  @objc public func updateReaderStateJson(readerStateJson: Swift.String, resultCompletionBlock: @escaping (Swift.Int32) -> Swift.Void)
+  @objc public func initReaderContext(readerStateJson: Swift.String, resultCompletionBlock: @escaping (Swift.Int32) -> Swift.Void)
+  @objc public func performCall(reasonForCalling: TemLibrary.ReasonForCalling, resultCompletionBlock: @escaping (Swift.Int32) -> Swift.Void)
+  @objc public func isUpdateAvailable(deviceSerialNumber: Swift.String, resultCompletionBlock: @escaping (Swift.Bool) -> Swift.Void)
+  @objc public func getUpdateFilePath(deviceSerialNumber: Swift.String, resultCompletionBlock: @escaping (Swift.String) -> Swift.Void)
+  @objc public func getRkiFileName(deviceSerialNumber: Swift.String, resultCompletionBlock: @escaping (Swift.String) -> Swift.Void)
+  @objc deinit
+}
+extension TemLibrary.SandboxStatus : Swift.Equatable {}
+extension TemLibrary.SandboxStatus : Swift.Hashable {}
+extension TemLibrary.SandboxStatus : Swift.RawRepresentable {}
+extension TemLibrary.ReasonForCalling : Swift.Equatable {}
+extension TemLibrary.ReasonForCalling : Swift.Hashable {}
+extension TemLibrary.ReasonForCalling : Swift.RawRepresentable {}

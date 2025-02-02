@@ -1,0 +1,20 @@
+/*
+ //////////////////////////////////////////////////////////////////////////////
+ //
+ // Copyright (c) 2015 - 2018. All Rights Reserved, Ingenico Inc.
+ //
+ //////////////////////////////////////////////////////////////////////////////
+ */
+
+#import <Foundation/Foundation.h>
+
+@interface BaseKeyMap : NSObject{
+
+@protected
+    /**
+     *  DUKPT Key Name
+     */
+    NSString* keyName;
+    
+}
+@end

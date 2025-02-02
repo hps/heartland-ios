@@ -25,35 +25,43 @@ public class HpsUpaCAVoidBuilder {
         encoder.outputFormatting = .sortedKeys
         
         try! self.validateFields()
-
+        
         let params = HpsUpaCAVoidParams(clerkID: self.clerkId)
         
         let transaction = HpsUpaCAVoidTransaction(tranNo: self.tranNo)
-
+        
         let data = HpsUpaCommandPayload<HpsUpaCAVoid>(command: HpsUpaCAModelCommand.VOID.rawValue,
                                                       ecrId: self.ecrId,
                                                       requestId: self.requestId,
                                                       data: HpsUpaCAVoid(params: params,
                                                                          transaction: transaction))
-
+        
         let request = HpsUpaCAModel<HpsUpaCAVoid>(data: data)
         
         let json = try? encoder.encode(request)
-
+        
         guard let json else { return }
         
         var hpsUpaAppCanadaModelResponse: HpsUpaCAVoidModelResponse?
         upaDevice.processTransaction(withJSONString: String(data: json, encoding: .utf8),
                                      withResponseBlock: { deviceResponse, jsonDeviceResponse, error in
-                                         
-                                         if let jsonDeviceResponse,
-                                            let jsonData = jsonDeviceResponse.data(using: .utf8) {
-                                             hpsUpaAppCanadaModelResponse = try? JSONDecoder().decode(HpsUpaCAVoidModelResponse.self,
-                                                                                                 from: jsonData)
-                                         }
-
-                                         response(deviceResponse, hpsUpaAppCanadaModelResponse, error)
-                                     })
+            do {
+                var responseBack = deviceResponse
+                if let jsonDeviceResponse, let jsonData = jsonDeviceResponse.data(using: .utf8) {
+                    hpsUpaAppCanadaModelResponse = try JSONDecoder().decode(HpsUpaCAVoidModelResponse.self,
+                                                                            from: jsonData)
+                    hpsUpaAppCanadaModelResponse?.jsonTransactionResponse = jsonDeviceResponse
+                    response(deviceResponse,
+                             hpsUpaAppCanadaModelResponse,
+                             error)
+                }
+            } catch {
+                print("Error when trying to decode JSON:", error)
+                response(nil,
+                         nil,
+                         error)
+            }
+        })
         
         
     }

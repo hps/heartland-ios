@@ -1,0 +1,11 @@
+framework module TemLibrary {
+  umbrella header "TemLibrary.h"
+
+  export *
+  module * { export * }
+}
+
+module TemLibrary.Swift {
+  header "TemLibrary-Swift.h"
+  requires objc
+}

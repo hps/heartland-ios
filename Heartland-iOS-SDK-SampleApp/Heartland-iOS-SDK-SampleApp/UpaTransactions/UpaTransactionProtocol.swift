@@ -60,7 +60,7 @@ extension UpaTransactionProtocol {
         let builder = HpsUpaSAFTransactionBuilder(with: device)
         
         let getSAFReport = HpsUpaGetSaf(
-            data: HpsUpaCommandPayload(command: "GetSAFReport", ecrId: "123", requestId: "123", data: HpsUpaGetSafData(params: HpsUpaGetSafDataReportOutput(reportOutput: "ReturnData")))
+            data: HpsUpaCommandPayload(command: "GetSAFReport", ecrId: "123", requestId: "123", data: HpsUpaGetSafData(params: HpsUpaGetSafDataReportOutput(reportOutput: "ReturnData", background: "true")))
         )
         
         builder.execute(request: getSAFReport) { ihpsDeviceResponse, hpsUpaSafResponse, error in

@@ -13,6 +13,7 @@ public class HpsC2xCreditAdjustBuilder : HpsC2xBaseBuilder, GMSCreditAdjustBuild
     public var address: HpsAddress?
     public var allowPartialAuth: NSNumber?
     public var cpcReq: NSNumber?
+    public var isSurchargeEnabled: NSNumber?
 
     public init(device: HpsC2xDevice) {
         super.init(transactionType: .creditAdjust, device: device)

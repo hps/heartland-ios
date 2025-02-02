@@ -37,4 +37,6 @@ Returns TRACK_2_EQUIVALENT_DATA_KSN from given Array of EMV Tags.
 
 + (NSArray *_Nullable)convertStringToByteArray:(NSString *_Nullable)string;
 
++ (nullable NSString *)fetchMobyTrack2EquivalentDataFromEmvTags:(nullable NSArray<TLVObject *> *)emvTags;
++ (nullable NSString *)fetchMobyKsnEquivalentDataFromEmvTags:(nullable NSArray<TLVObject *> *)emvTags;
 @end

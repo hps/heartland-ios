@@ -4,11 +4,15 @@
 
 import Heartland_iOS_SDK
 import UIKit
+import SwiftUI
 
 class MainViewController: UITableViewController {
     // MARK: Device
     
     private var device: HpsC2xDevice?
+    private var mobyDevice: HpsMobyDevice?
+    private var isTransactioning: Bool = false
+    
     
     // MARK: NotificationCenter
     
@@ -28,6 +32,15 @@ class MainViewController: UITableViewController {
                                        object: nil)
     }
     
+    @IBSegueAction func showSwiftUIComponentView(_ coder: NSCoder) -> UIViewController? {
+        return UIHostingController(coder: coder,
+                                   rootView: MobyDevicesView())
+    }
+    
+    @IBSegueAction func showTransactionsComponentView(_ coder: NSCoder) -> UIViewController? {
+        return UIHostingController(coder: coder,
+                                   rootView: MobyTransactionsView())
+    }
     
 }
 
@@ -65,3 +78,4 @@ private extension MainViewController {
         }
     }
 }
+

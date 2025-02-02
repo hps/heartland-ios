@@ -175,4 +175,8 @@ extension C2XTransactionsTests: HpsC2xDeviceDelegate, HpsC2xTransactionDelegate 
     func onTransactionError(_ error: NSError) {
         print("onTransactionError \(error)")
     }
+    
+    func onTransactionWaitingForSurchargeConfirmation(result: Heartland_iOS_SDK.HpsTransactionStatus, response: HpsTerminalResponse) {
+        print("onTransactionWaitingForSurchargeConfirmation \(result)")
+    }
 }

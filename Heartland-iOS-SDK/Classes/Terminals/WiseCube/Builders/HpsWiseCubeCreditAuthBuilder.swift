@@ -16,6 +16,7 @@ public class HpsWiseCubeCreditAuthBuilder: HpsWiseCubeBaseBuilder, GMSCreditAuth
     public var autoSubstantiation: HpsAutoSubstantiation?
     public var isSurchargeEnabled: NSNumber?
     public var allowDuplicates: NSNumber?
+    public var surchargeFee: NSDecimalNumber?
     
     public init(device: HpsWiseCubeDevice) {
         super.init(transactionType: .creditAuth, device: device)

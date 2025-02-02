@@ -225,6 +225,7 @@ extension GMSWrapper: TransactionDelegate {
         
         data.transactionId = response?.gatewayTransactionId
         data.clientTransactionId = response?.transactionId
+        data.clientTxnId = response?.transactionId
         
         if let uintValue = response?.approvedAmount {
             data.approvedAmount = GMSResponseHelper.uintToDecimal(uintValue)
@@ -248,15 +249,15 @@ extension GMSWrapper: TransactionDelegate {
         
         if response?.surchargeRequested != nil {
             if response?.surchargeRequested == .Y {
-                data.surchargeRequested = UnsafeMutablePointer(bitPattern: SurchargeEligibility.Y.rawValue)
+                data.surchargeRequested = .Y
             }
             
             if response?.surchargeRequested == .N {
-                data.surchargeRequested = UnsafeMutablePointer(bitPattern: SurchargeEligibility.N.rawValue)
+                data.surchargeRequested = .N
             }
             
             if response?.surchargeRequested == .U {
-                data.surchargeRequested = UnsafeMutablePointer(bitPattern: SurchargeEligibility.U.rawValue)
+                data.surchargeRequested = .U
             }
         }
         

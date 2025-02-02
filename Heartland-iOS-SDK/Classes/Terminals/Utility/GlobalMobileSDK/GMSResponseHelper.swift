@@ -11,6 +11,7 @@ class GMSResponseHelper {
 
         data.responseText = resp?.gatewayResponseText
         data.deviceResponseCode = deviceResponseCode
+        data.clientTxnId = resp?.transactionId
 
         return data
     }
@@ -68,7 +69,7 @@ class GMSResponseHelper {
         data.responseText = resp?.gatewayResponseText
         data.issuerRspCode = resp?.emvIssuerRspCode
 //        data.issuerRspMsg = resp?.hostProcessingResult?.emvIssuerAuthenticationData
-
+        data.clientTxnId = resp?.transactionId
         if let uintValue = resp?.tip {
             data.tipAmount = uintToDecimal(uintValue)
         }
@@ -184,6 +185,7 @@ class GMSResponseHelper {
         data.issuerRspMsg = resp?.hostProcessingResult?.emvIssuerAuthenticationData
         data.authCode = resp?.authCode
         data.authCodeData = resp?.authCodeData
+        data.clientTxnId = resp?.transactionId
         if let uintValue = resp?.tip {
             data.tipAmount = uintToDecimal(uintValue)
         }

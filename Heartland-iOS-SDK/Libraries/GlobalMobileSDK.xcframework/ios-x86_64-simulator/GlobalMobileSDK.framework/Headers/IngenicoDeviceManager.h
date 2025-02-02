@@ -15,6 +15,7 @@
 @class TerminalTender;
 @class HostTenderResponse;
 
+
 @protocol IngenicoDeviceManagerDelegate <NSObject>
 
 - (void)devicesFound:(nullable NSArray<Device *> *)devices;
@@ -31,21 +32,33 @@
 
 @end
 
-@interface IngenicoDeviceManager : NSObject
-
+@protocol IngenicoMethods <NSObject>
+@required
 - (nonnull instancetype)initWithConfig:(nonnull RUATerminalConfig *)terminalConfig
                            autoConnect:(BOOL)autoconnect
                               delegate:(nonnull id <IngenicoDeviceManagerDelegate>)delegate;
-
+@required
 - (void)scanForDevices;
+@required
 - (void)cancelSearch;
+@required
 - (void)connect:(nonnull Device *)device;
+@required
 - (void)disconnect;
+@required
 - (void)batteryLevel;
+@required
 - (void)startWithTender:(nonnull TerminalTender *)tender;
+@required
 - (void)confirmAmount:(BOOL)confirmed;
+@required
 - (void)selectedAID:(nonnull AID *)aid;
+@required
 - (void)sendOnlineProcessingResult:(nonnull HostTenderResponse *)onlineResult;
+@required
 - (void)cancelTransaction;
+@end
+
+@interface IngenicoDeviceManager : NSObject <IngenicoMethods>
 
 @end

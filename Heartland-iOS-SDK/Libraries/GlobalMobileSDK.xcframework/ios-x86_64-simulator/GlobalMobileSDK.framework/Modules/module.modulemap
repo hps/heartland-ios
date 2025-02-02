@@ -13,7 +13,7 @@ framework module GlobalMobileSDK_Private {
         header "TLVUtility.h"
         header "Utilities.h"
         header "TLVObject.h"
-        header "TLVParser.h"
+        header "TLVGMParser.h"
     }
 
     module BBPOS {

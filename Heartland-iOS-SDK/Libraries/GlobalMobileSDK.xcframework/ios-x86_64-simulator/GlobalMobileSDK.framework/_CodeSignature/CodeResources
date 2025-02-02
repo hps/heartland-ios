@@ -4,6 +4,14 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Assets.car</key>
+		<data>
+		HN7srZe5nDBLjcRl6dAVDqNaDrk=
+		</data>
+		<key>EMVTransactionParameters.json</key>
+		<data>
+		lLrPO+AuBMyGxKMgATYwEYXsG+A=
+		</data>
 		<key>Headers/BBDeviceCAPK.h</key>
 		<data>
 		xdmIpHZA5/sVfTKhz14VQtOloOw=
@@ -24,57 +32,65 @@
 		<data>
 		hAZzO/+9H8Ay/uS2BA9sifLb22o=
 		</data>
+		<key>Headers/GMSRuaCommandHelper.h</key>
+		<data>
+		9UJHsdWyJH5K9mJebhgvnFwfOEo=
+		</data>
 		<key>Headers/GlobalMobileSDK-Swift.h</key>
 		<data>
-		lbNaxKkCxS7JodDoQ58jmcFAXPo=
+		OiBfxgWW25pTpu17CTu3bnfIjlU=
 		</data>
 		<key>Headers/GlobalMobileSDK.h</key>
 		<data>
-		+jKje55TBLzXZv7WEDA6ChW8AoQ=
+		jZwsAGMXbx+7az+vn1hn5dnWfNA=
 		</data>
 		<key>Headers/IngenicoDeviceConfiguration.h</key>
 		<data>
-		tJoXicE79ut0x9IPOcJK4z6fWi4=
+		kg3pifRMdkrZbGZDN0NrONccz98=
 		</data>
 		<key>Headers/IngenicoDeviceManager.h</key>
 		<data>
-		u2kD4jIvXz7G8VJ3hJyRgcYjGP4=
+		IHSuBm/qEGyfiVfksr1VbryWa2k=
 		</data>
 		<key>Headers/IngenicoEnums.h</key>
 		<data>
-		rwXie9NMyXa284/iu5ki75UJ8as=
+		Seinwwqt/QxH5KhVXKg6prl5S2M=
+		</data>
+		<key>Headers/IngenicoMoby5500DeviceManager.h</key>
+		<data>
+		spZ2sRCYq+eMUu/L6XBHaLtCHM8=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		VQYGnuwUybZqlPJVzJbACsx6D5s=
+		iN8Vhp0YHkHTSRM3FzVgF8viJrY=
 		</data>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		LCJlb68uiF6ZoMZAJRWggciXt0Y=
+		cUtH5Z2xss6/kg8nnl5TszYrSs4=
 		</data>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		FnV4T9AEHf6dkGWx13t9yAQGM4s=
+		bp0nDxT8cqTkNDgniHy61sSFwdo=
 		</data>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		UTdX/Am4p9/0B0ZGfZCNwJ9J6iw=
+		CIhPFm+ovSfiTVjAHAN42ezxU10=
 		</data>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		FnV4T9AEHf6dkGWx13t9yAQGM4s=
+		bp0nDxT8cqTkNDgniHy61sSFwdo=
 		</data>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		OK/RwYkKHAOsBEn4MimTZlXmYaU=
+		GxGjDkaWuSdGMCtgyT2AmIO2lZ0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		TbMVNh3myvIPmKY6gazWR/Sxt1U=
+		mJFqTKAiczzu5wl37cokscfJsZk=
 		</data>
 		<key>PrivateHeaders/EMVTagDescriptor.h</key>
 		<data>
-		eAZqyfWnuGKbWH/P8uTKXS82ACc=
+		ESp73zyuBXH606IgB59pzZFJmNo=
 		</data>
 		<key>PrivateHeaders/EMVTagHelper.h</key>
 		<data>
@@ -92,13 +108,13 @@
 		<data>
 		cdtvXQb13vmMZhFDAnD2meLbglU=
 		</data>
+		<key>PrivateHeaders/TLVGMParser.h</key>
+		<data>
+		R3VLAJ4AiShl9FdFOvBRBJXF1BA=
+		</data>
 		<key>PrivateHeaders/TLVObject.h</key>
 		<data>
 		nGCN6rQlQK2Zso9k4PKo3r5qJWw=
-		</data>
-		<key>PrivateHeaders/TLVParser.h</key>
-		<data>
-		95D8bV/Vr9S9z2KejJ+ICeIkyv4=
 		</data>
 		<key>PrivateHeaders/TLVUtility.h</key>
 		<data>
@@ -106,11 +122,45 @@
 		</data>
 		<key>PrivateHeaders/Utilities.h</key>
 		<data>
-		a9Hd6mQqV8VUXT6BKXFMPL0t3mQ=
+		IGb5QHiI/2LJ/NH3TxD+DVZzNDw=
+		</data>
+		<key>RuaPairingStoryBoard.storyboardc/Info.plist</key>
+		<data>
+		Qg83+06RDf3U0VVU4FCd/UKfAFE=
+		</data>
+		<key>RuaPairingStoryBoard.storyboardc/PairingViewController.nib</key>
+		<data>
+		QJaJSnNvbfzUHogQXzQkuVU2IvY=
+		</data>
+		<key>RuaPairingStoryBoard.storyboardc/Y6W-OH-hqX-view-5EZ-qb-Rvc.nib</key>
+		<data>
+		reBm8gweijywy8iR2FKTjRUIrJw=
+		</data>
+		<key>provisionProd_5500.json</key>
+		<data>
+		KGjgiUD5H+HHfVBEMLy+ZqinQAo=
+		</data>
+		<key>provisionTest_5500.json</key>
+		<data>
+		IiVoX6Hfs17uC863seLgkm9VxEQ=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Assets.car</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tm2pnTO4XBiiYVkZDiWCGf2sbzDjPjqDanXsbA6SNos=
+			</data>
+		</dict>
+		<key>EMVTransactionParameters.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hlOdZdKhsrN8ljZp4ytTxcnK9AShUOKbStmByQ2pA3c=
+			</data>
+		</dict>
 		<key>Headers/BBDeviceCAPK.h</key>
 		<dict>
 			<key>hash2</key>
@@ -146,88 +196,102 @@
 			YItAFHIdkRj+ndIFVKLj75zGT949U93bAHcK4fNgm4g=
 			</data>
 		</dict>
+		<key>Headers/GMSRuaCommandHelper.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yhE1a1+aYHoJaXol4m73T30UtMLkYYxSoh3/upK/Rfg=
+			</data>
+		</dict>
 		<key>Headers/GlobalMobileSDK-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BxDurGdD4xzdsN8R2zVqrhnIG9xoFOUDI0hph6/RDgM=
+			ttk5cvJlBSFQqHHLFp+87YWhZ9xYBeOxIs7qbBqu9Po=
 			</data>
 		</dict>
 		<key>Headers/GlobalMobileSDK.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ieRbCEn0xv/y47yHnkbfEPyrTGsCHoxok7LRTYEDpOU=
+			6MsT7jPKkruNWDJ8KCNnswTgeJIhupknVRQW3bqDX6I=
 			</data>
 		</dict>
 		<key>Headers/IngenicoDeviceConfiguration.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Blr/JXnejSWwTAI/UsNteiEwUZ+7dkz+LnJ5efiOqrk=
+			daNNRynASSLvSJ1hWYY2rfgjR2lRDpxuImDzUSxeOGo=
 			</data>
 		</dict>
 		<key>Headers/IngenicoDeviceManager.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			H18Djoh5PdM0gTg81nxgLDRnJn+EJwNnZHoO46pNA78=
+			pKpkj5+PECcPE29DLUXsgr01QzBZm7ZzMrIfy0QJ+cc=
 			</data>
 		</dict>
 		<key>Headers/IngenicoEnums.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oEjCIirfNEmUTkb43UWyTsF7CHKH90ulIuhuPi7x7d4=
+			rhnWTApUrYCwY+9QLrRpDLq9XDNbQusFDr5NcOvqq7w=
+			</data>
+		</dict>
+		<key>Headers/IngenicoMoby5500DeviceManager.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			QCNtGpj+ri8qYzeuGepVU7itIi5uZvDQXea/BO/j+2s=
 			</data>
 		</dict>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yF04lyAbRPe9urNErED4DFNZq3W2odzb83Yl05iwJcM=
+			49O7ZZTwp4h1EFSqXeMBIwGMm7Ll6akgSXo4JI5nzfo=
 			</data>
 		</dict>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9sysCVqTmze/o4yryq0EAIqtLDBe3ZqeAdbOyO3+xpQ=
+			KnPEhZoor4HBFto/nCtHGhOLrwcLFLLTspqt8NHaLfo=
 			</data>
 		</dict>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OeD0lpC3HRub5En46At6BMxJiskLg7zZT7Wc8tpPwJA=
+			o0/SCoT0+PwVNPZ1QP3P7Vd5Vze+OCLVjcjPHYPY2HM=
 			</data>
 		</dict>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9sysCVqTmze/o4yryq0EAIqtLDBe3ZqeAdbOyO3+xpQ=
+			KnPEhZoor4HBFto/nCtHGhOLrwcLFLLTspqt8NHaLfo=
 			</data>
 		</dict>
 		<key>Modules/GlobalMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FxQfIenAhOe8jqwCIvGo1fm8HCgdZLgCVsf/RKuLdMw=
+			Nu7FNRRFxHZ/XnxjKKomAIVa984j0GMp4zqY59EkZ3g=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kWbBkmLebsCvIclndgMJ4qiSq3zTKJ0+IfOQZ3/X5h8=
+			Qd0p448re4/BqgNGqk0sKHEyDmfPKimnRroyYdPhbUU=
 			</data>
 		</dict>
 		<key>PrivateHeaders/EMVTagDescriptor.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			G9evl50AF6fUKKlwZgi4yFfTH0uy8qNyGyW8aV9XJBg=
+			nKIcKzno0b6WVghZEirGWzR65wCRL+JGBVp2lH6ClYI=
 			</data>
 		</dict>
 		<key>PrivateHeaders/EMVTagHelper.h</key>
@@ -258,18 +322,18 @@
 			ZLlDYz3KjezvbFnLo//Diyx2fuu8VlwMzCXwGzIAqNE=
 			</data>
 		</dict>
+		<key>PrivateHeaders/TLVGMParser.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			gQy7FMDA+q4+JqDZU9mjiqAzQfg4LDdgk+G+QhUUHDA=
+			</data>
+		</dict>
 		<key>PrivateHeaders/TLVObject.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			3unaJCGnLE5FM0HJ5co61W+v06xwJNzFnje1GFnR7GQ=
-			</data>
-		</dict>
-		<key>PrivateHeaders/TLVParser.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			RvOEILe54NR4Oa3qDP2bGQvUFVhdIfd6af9YNUpLNMI=
 			</data>
 		</dict>
 		<key>PrivateHeaders/TLVUtility.h</key>
@@ -283,7 +347,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6Tpsl/TgoXh5bP4ZvdJ9oJWR5mJR30V3VzaPl4rkJ0A=
+			qX+cWQByaS1YL3Ni5w1JVU11bckqvc6LkJWssapcW28=
+			</data>
+		</dict>
+		<key>RuaPairingStoryBoard.storyboardc/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UTY3vhk7XYjk+K3+JyzXDcZSoUzbrAWsWRuT6fj43vQ=
+			</data>
+		</dict>
+		<key>RuaPairingStoryBoard.storyboardc/PairingViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dsUZq4UnvP3/ER3I8ESgU6bG//HyOYCGmu5ZgCs0vzM=
+			</data>
+		</dict>
+		<key>RuaPairingStoryBoard.storyboardc/Y6W-OH-hqX-view-5EZ-qb-Rvc.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			FxY29LA/SN4YqeWPxVFRLZpz4bxbeNYrz0vu3YLfNzs=
+			</data>
+		</dict>
+		<key>provisionProd_5500.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/0iLxDfp3a4S9lF72sB2DPDy/96y9zgksPvpYmAuqZ4=
+			</data>
+		</dict>
+		<key>provisionTest_5500.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8kg5Z4+pbikSg2PfNxT2RSdXboeRoyYdemmtZruzVjY=
 			</data>
 		</dict>
 	</dict>

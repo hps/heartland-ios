@@ -16,4 +16,5 @@ public protocol GMSCreditSaleBuilder {
     var autoSubstantiation: HpsAutoSubstantiation? { get set }
     var isSurchargeEnabled: NSNumber? { get set }
     var allowDuplicates: NSNumber? { get set }
+    var surchargeFee: NSDecimalNumber? { get set }
 }

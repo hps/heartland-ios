@@ -2,6 +2,7 @@ import Foundation
 
 @objcMembers
 public class HpsWiseCubeCreditSaleBuilder: HpsWiseCubeBaseBuilder, GMSCreditSaleBuilder {
+    
     public var clientTransactionId: String?
     public var amount: NSDecimalNumber?
     public var referenceNumber: String?
@@ -16,6 +17,8 @@ public class HpsWiseCubeCreditSaleBuilder: HpsWiseCubeBaseBuilder, GMSCreditSale
     public var autoSubstantiation: HpsAutoSubstantiation?
     public var isSurchargeEnabled: NSNumber?
     public var allowDuplicates: NSNumber?
+    public var surchargeFee: NSDecimalNumber?
+    
     
     public init(device: HpsWiseCubeDevice) {
         super.init(transactionType: .creditSale, device: device)
