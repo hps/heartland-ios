@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2.1.0 2025-02-04
+- iOS SDK: Implemlentation of Moby/Ingenico Transactions.
+- iOS SDK: Allow Surcharge less than 3%
+- iOS SDK: Adding BanckRespCode to UPA response
+- iOS SDK: Allowing JSON access to Portico Response for UPA.
+- iOS SDK: Adding ClientTransactionId to Portico Response.
+
 ## 2.0.27 2024-08-21
 - iOS SDK: Duplicated transaction due to Surcharge lookup result.
 
