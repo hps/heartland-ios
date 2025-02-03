@@ -476,7 +476,3 @@ private struct MobyTransactionsView: View {
     }
 }
 
-//@available(iOS 16.0, *)
-//#Preview {
-//    MobyTransactionsView()
-//}

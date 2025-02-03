@@ -1,12 +1,21 @@
 import UIKit
 
+public struct ReceiptHelperDetail {
+    public var headerTitle: String
+    public var headerAddress: String
+    public var headerAddressComplement: String
+    public var headerPhone: String
+    public var description: String
+}
+
 class ReceiptHelper {
     
     static let fontSize: CGFloat = 20.0
     static let fontSizeLarge: CGFloat = 26.0
     static var margin: CGFloat = 30.0
     
-    static func createReceiptImage(transaction: HpsTerminalResponse) -> UIImage {
+    static func createReceiptImage(transaction: HpsTerminalResponse,
+                                   headerDetail: ReceiptHelperDetail) -> UIImage {
         let width: CGFloat = 550
         let height: CGFloat = 550
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: width, height: height))
@@ -31,10 +40,10 @@ class ReceiptHelper {
                 .foregroundColor: UIColor.black,
                 .paragraphStyle: paragraphStyle
             ]
-            "HPS Test".draw(in: CGRect(x: 0, y: margin, width: width, height: fontSizeLarge), withAttributes: headerFontAttributes)
-            "1 Heartland Way".draw(in: CGRect(x: 0, y: margin + 10 + fontSizeLarge, width: width, height: fontSize), withAttributes: textFontAttributes)
-            "Jeffersonville, IN 47136".draw(in: CGRect(x: 0, y: margin + 20 + fontSize * 2, width: width, height: fontSize), withAttributes: textFontAttributes)
-            "888-798-3133".draw(in: CGRect(x: 0, y: margin + 25 + fontSize * 3, width: width, height: fontSize), withAttributes: textFontAttributes)
+            headerDetail.headerTitle.draw(in: CGRect(x: 0, y: margin, width: width, height: fontSizeLarge), withAttributes: headerFontAttributes)
+            headerDetail.headerAddress.draw(in: CGRect(x: 0, y: margin + 10 + fontSizeLarge, width: width, height: fontSize), withAttributes: textFontAttributes)
+            headerDetail.headerAddressComplement.draw(in: CGRect(x: 0, y: margin + 20 + fontSize * 2, width: width, height: fontSize), withAttributes: textFontAttributes)
+            headerDetail.headerPhone.draw(in: CGRect(x: 0, y: margin + 25 + fontSize * 3, width: width, height: fontSize), withAttributes: textFontAttributes)
             
             
             // Draw date and time
@@ -83,11 +92,23 @@ class ReceiptHelper {
                 yOffset += fontSize
                 
                 "ACCT:".draw(in: CGRect(x: margin, y: yOffset, width: width, height: fontSize), withAttributes: leftAlignedTextAttributes)
-                transaction.maskedCardNumber.draw(in: CGRect(x: 200, y: yOffset, width: width - 200, height: fontSize), withAttributes: leftAlignedTextAttributes)
+                ReceiptHelper.maskCardNumber(transaction.maskedCardNumber).draw(in: CGRect(x: 200, y: yOffset, width: width - 200, height: fontSize), withAttributes: leftAlignedTextAttributes)
                 yOffset += fontSize
                 
                 "APP NAME:".draw(in: CGRect(x: margin, y: yOffset, width: width, height: fontSize), withAttributes: leftAlignedTextAttributes)
                 transaction.applicationName.draw(in: CGRect(x: 200, y: yOffset, width: width - 200, height: fontSize), withAttributes: leftAlignedTextAttributes)
+                yOffset += fontSize
+                
+                "ENTRY:".draw(in: CGRect(x: margin, y: yOffset, width: width, height: fontSize), withAttributes: leftAlignedTextAttributes)
+                ReceiptHelper.entryModeName(from: Int(transaction.entryMode)).draw(in: CGRect(x: 200, y: yOffset, width: width - 200, height: fontSize), withAttributes: leftAlignedTextAttributes)
+                yOffset += fontSize
+                
+                "APPROVAL:".draw(in: CGRect(x: margin, y: yOffset, width: width, height: fontSize), withAttributes: leftAlignedTextAttributes)
+                transaction.approvalCode.draw(in: CGRect(x: 200, y: yOffset, width: width - 200, height: fontSize), withAttributes: leftAlignedTextAttributes)
+                yOffset += fontSize
+                
+                "TXN ID:".draw(in: CGRect(x: margin, y: yOffset, width: width, height: fontSize), withAttributes: leftAlignedTextAttributes)
+                transaction.transactionId.draw(in: CGRect(x: 200, y: yOffset, width: width - 200, height: fontSize), withAttributes: leftAlignedTextAttributes)
                 yOffset += fontSize
                 
                 // Continue drawing other details like AID, ARQC, Entry mode, Approval code, and Transaction ID similarly
@@ -95,7 +116,7 @@ class ReceiptHelper {
             // Handle other conditions for entry mode if required
 
             // Draw total and description
-            "DESCRIPTION: Merchandise".draw(in: CGRect(x: margin, y: yOffset + fontSize * 2, width: width, height: fontSize), withAttributes: leftAlignedTextAttributes)
+            "DESCRIPTION: \(headerDetail.description)".draw(in: CGRect(x: margin, y: yOffset + fontSize * 2, width: width, height: fontSize), withAttributes: leftAlignedTextAttributes)
             "TOTAL".draw(in: CGRect(x: margin, y: yOffset + fontSize * 4, width: width, height: fontSizeLarge), withAttributes: leftAlignedTextAttributes)
             
             guard let approvedAmount = transaction.approvedAmount else { return }
@@ -107,5 +128,29 @@ class ReceiptHelper {
         }
         
         return image
+    }
+    
+    private static func maskCardNumber(_ cardNumber: String) -> String {
+        
+        let cleanNumber = cardNumber.replacingOccurrences(of: "\\D", with: "", options: .regularExpression)
+
+        guard cleanNumber.count >= 8 else { return "**** **** **** ****" }
+       
+        let firstFour = cleanNumber.prefix(4)
+        let lastFour = cleanNumber.suffix(4)
+        
+        return "\(firstFour) **** **** \(lastFour)"
+    }
+    
+    private static func entryModeName(from code: Int) -> String {
+        switch code {
+        case 0: return "Contact"
+        case 1: return "Chip"
+        case 2: return "Contactless"
+        case 3: return "MSR (Magnetic Stripe Reader)"
+        case 4: return "Manual Entry"
+        case 5: return "Quick Chip"
+        default: return "Unknown Entry Mode"
+        }
     }
 }

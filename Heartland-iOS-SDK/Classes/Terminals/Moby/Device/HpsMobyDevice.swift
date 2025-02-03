@@ -30,7 +30,7 @@ public class HpsMobyDevice: GMSDevice, IC2xDeviceInterface {
         self.scan()
     }
     
-    public func printReceipt(response: HpsTerminalResponse) -> UIImage {
-        return ReceiptHelper.createReceiptImage(transaction: response)
+    public func printReceipt(response: HpsTerminalResponse, headerDetail: ReceiptHelperDetail) -> UIImage {
+        return ReceiptHelper.createReceiptImage(transaction: response, headerDetail: headerDetail)
     }
 }

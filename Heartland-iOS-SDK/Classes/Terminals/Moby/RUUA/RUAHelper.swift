@@ -118,6 +118,12 @@ class RUAHelper: NSObject {
     @Published public var status: String = "PROCESSING"
     @Published public var receiptImage: UIImage?
     
+    let headerDetail = ReceiptHelperDetail(headerTitle: "HPS Test",
+                                           headerAddress: "1 Heartland Way",
+                                           headerAddressComplement: "Jeffersonville, IN 47136",
+                                           headerPhone: "888-798-3133",
+                                           description: "Merchandise")
+    
     private override init()  {
         RUA.setProductionMode(false)
         RUA.enableDebugLogMessages(false)
@@ -731,7 +737,8 @@ extension RUAHelper: GMSTransactionDelegate {
             case LoadingStatus.CANCELLED.rawValue:
                 showDialog(for: .CANCELLED(response: response))
             default:
-                self.receiptImage = self.mobyDevice?.printReceipt(response: response)
+                self.receiptImage = self.mobyDevice?.printReceipt(response: response,
+                                                                  headerDetail: headerDetail)
                 if let message = response.responseText {
                     showDialog(for: .MESSAGE(message: message))
                 } else if let message = response.deviceResponseMessage {
@@ -762,7 +769,8 @@ extension RUAHelper {
         
         switch status {
         case let .APPROVED(response):
-            self.receiptImage = self.mobyDevice?.printReceipt(response: response)
+            self.receiptImage = self.mobyDevice?.printReceipt(response: response,
+                                                              headerDetail: headerDetail)
             guard let responseCode = response.deviceResponseCode else { return }
             
             if let responseIssuerMSG = response.issuerRspMsg {
@@ -785,7 +793,8 @@ extension RUAHelper {
             isApproved = true
             
         case let .CANCELLED(response):
-            self.receiptImage = self.mobyDevice?.printReceipt(response: response)
+            self.receiptImage = self.mobyDevice?.printReceipt(response: response,
+                                                              headerDetail: headerDetail)
             guard let deviceResponseMessage = response.deviceResponseMessage else { return }
             var issuerMSG = ""
             var authCode = ""
@@ -809,7 +818,8 @@ extension RUAHelper {
             isApproved = false
             
         case let .DECLINED(response):
-            self.receiptImage = self.mobyDevice?.printReceipt(response: response)
+            self.receiptImage = self.mobyDevice?.printReceipt(response: response,
+                                                              headerDetail: headerDetail)
             guard let deviceResponseMessage = response.deviceResponseMessage else { return }
             var issuerMSG = ""
             var issuerCode = ""
