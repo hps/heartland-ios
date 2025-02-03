@@ -8,11 +8,11 @@
 import SwiftUI
 
 @available(iOS 16.0, *)
-public struct MobyTransactionsView: View {
+private struct MobyTransactionsView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     
-    public init() {
+    private init() {
     
     }
     
@@ -476,7 +476,7 @@ public struct MobyTransactionsView: View {
     }
 }
 
-@available(iOS 16.0, *)
-#Preview {
-    MobyTransactionsView()
-}
+//@available(iOS 16.0, *)
+//#Preview {
+//    MobyTransactionsView()
+//}

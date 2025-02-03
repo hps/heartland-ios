@@ -38,8 +38,20 @@ class MainViewController: UITableViewController {
     }
     
     @IBSegueAction func showTransactionsComponentView(_ coder: NSCoder) -> UIViewController? {
-        return UIHostingController(coder: coder,
-                                   rootView: MobyTransactionsView())
+//        return UIHostingController(coder: coder,
+//                                   rootView: MobyTransactionsView())
+        
+        let alert = UIAlertController(title: "Not Implemented Yet",
+                                          message: "This feature will be available soon.",
+                                          preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        if let topController = UIApplication.shared.windows.first?.rootViewController {
+            topController.present(alert, animated: true, completion: nil)
+        }
+        
+        return nil
+        
     }
     
 }
