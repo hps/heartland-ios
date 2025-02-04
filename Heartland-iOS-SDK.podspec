@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   
     s.source_files = ['Heartland-iOS-SDK/Classes/**/*', 'Heartland-iOS-SDK/ThirdParty/**/*']
     s.resource_bundles = {
-      'Heartland-iOS-SDK' => ['Heartland-iOS-SDK/Assets/*.png', 'Heartland-iOS-SDK/Assets/*.xib']
+      'Heartland-iOS-SDK' => ['Heartland-iOS-SDK/Assets/*.png', 'Heartland-iOS-SDK/Assets/*.xib', 'Heartland-iOS-SDK/Classes/Terminals/Moby/Resources/*.json', 'Heartland-iOS-SDK/ThirdParty/XMLDictionary/*.md', 'Heartland-iOS-SDK/Classes/TokenService/*.html']
     }
   
     s.frameworks = 'UIKit'
@@ -43,5 +43,5 @@ Pod::Spec.new do |s|
     s.user_target_xcconfig = { 
 	'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
     }
-    s.exclude_files = 'Classes/Terminals/Moby/Views/ExtensionView.swift'
+    s.exclude_files = 'Heartland-iOS-SDK/Classes/Terminals/Moby/Views/*.swift'
 end
