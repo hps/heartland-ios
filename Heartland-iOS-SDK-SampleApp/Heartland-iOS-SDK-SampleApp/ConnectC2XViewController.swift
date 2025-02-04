@@ -174,7 +174,6 @@ class ConnectC2XViewController: UIViewController {
     }
     
     private func validateC2XFields() -> Bool {
-
         var requiredFields: String = ""
         
         if let text = self.username?.text, text.isEmpty { requiredFields += "Username\n" }

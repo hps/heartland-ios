@@ -792,7 +792,7 @@ final class HpsPaxCreditTests: XCTestCase {
         
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            device.cancel({ cancel in
+            device.cancel({ cancel, error in
                 expectation.fulfill()
             })
         }

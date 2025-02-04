@@ -36,6 +36,7 @@
 @property (nonatomic, strong) NSString* gatewayTransactionId;
 @property (nonatomic, strong) NSString* isSurchargeable;
 @property (nonatomic, strong) NSString* surchargeAmtInfo;
+@property (nonatomic, strong) NSString* bankRespCode;
 
 + (instancetype) transactionFromId:(NSString*) transactionId;
 + (instancetype) transactionFromId:(NSString*) transactionId withPaymentMethodType:(GPPaymentMethodType) paymentMethodType;

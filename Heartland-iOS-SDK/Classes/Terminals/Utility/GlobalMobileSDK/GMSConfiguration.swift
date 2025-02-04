@@ -23,6 +23,7 @@ public class GMSConfiguration: NSObject {
             config.versionNumber = c.versionNumber
             config.environment = c.isProduction ? .production : .certification
             config.sdkNameVersion = c.sdkNameVersion ?? GMSConfiguration.getSKDNameVersion()
+            config.isDebug = !c.isProduction
             if c.timeout > 0 {
                 config.timeout = Int32(c.timeout)
             }
@@ -37,6 +38,7 @@ public class GMSConfiguration: NSObject {
         config.acknowledgement = ""
         config.signatureAgreement = ""
         config.terminalType = terminalType
+        
         return config
     }
 

@@ -85,6 +85,10 @@ static int IsFieldEnable;
         self.partialApproval = [host getValueAsString:@"partialApproval"];
         self.batchId = [host getValueAsString:@"batchId"];
         self.cardBrandTransactionId = [host getValueAsString:@"cardBrandTransId"];
+        
+        if ([host has:@"clientTxnId"]) {
+            self.clientTxnId = [host getValueAsString:@"clientTxnId"];;
+        }
 
         if ([host has:@"cashbackAmount"]) {
             self.cashBackAmount = [NSDecimalNumber decimalNumberWithString:[host getValueAsString:@"cashbackAmount"]];

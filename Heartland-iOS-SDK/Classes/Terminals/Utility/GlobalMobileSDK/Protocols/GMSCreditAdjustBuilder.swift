@@ -12,4 +12,5 @@ public protocol GMSCreditAdjustBuilder {
     var clientTransactionId: String? { get set }
     var allowPartialAuth: NSNumber? { get set }
     var cpcReq: NSNumber? { get set }
+    var isSurchargeEnabled: NSNumber? { get set }
 }

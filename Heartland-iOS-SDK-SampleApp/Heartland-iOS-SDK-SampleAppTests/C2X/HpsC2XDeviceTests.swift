@@ -111,4 +111,8 @@ final class HpsC2XDeviceTests: XCTestCase, HpsC2xDeviceDelegate, HpsC2xTransacti
         print("onTransactionError \(error)")
     }
     
+    func onTransactionWaitingForSurchargeConfirmation(result: Heartland_iOS_SDK.HpsTransactionStatus, response: HpsTerminalResponse) {
+        print("onTransactionWaitingForSurchargeConfirmation \(response)")
+    }
+    
 }

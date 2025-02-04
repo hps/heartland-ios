@@ -2,6 +2,7 @@ import Foundation
 
 @objcMembers
 public class HpsWiseCubeCreditAdjustBuilder: HpsWiseCubeBaseBuilder, GMSCreditAdjustBuilder {
+    
     public var clientTransactionId: String?
     public var amount: NSDecimalNumber?
     public var referenceNumber: String?
@@ -12,6 +13,7 @@ public class HpsWiseCubeCreditAdjustBuilder: HpsWiseCubeBaseBuilder, GMSCreditAd
     public var address: HpsAddress?
     public var allowPartialAuth: NSNumber?
     public var cpcReq: NSNumber?
+    public var isSurchargeEnabled: NSNumber?
 
     public init(device: HpsWiseCubeDevice) {
         super.init(transactionType: .creditAdjust, device: device)

@@ -1,0 +1,150 @@
+{
+   "MOBY8500EMVStartTransactionParameters":{
+      "AuthorizationResponseCodeList":"59315A3159325A3259335A333030303530313034",
+      "DefaultValueForDDOL":"9F3704",
+      "TerminalIdentification":"3132333435363738",
+      "TerminalType":"22",
+      "TerminalApplicationVersionNumber":"0020",
+      "TerminalCapabilities":"E0F8C8",
+      "AdditionalTerminalCapabilities":"6000F0B001",
+      "ExtraProgressMessageFlag":"01",
+      "OverallContactlessTransactionLimit":"05F5E0FF",
+      "TransactionCategoryCode":"52",
+      "TransactionCurrencyExponent":"02",
+      "TransactionSequenceCounter":"00110321",
+      "POSEntryMode":"00",
+      "TransactionCurrencyCode":"0840",
+      "AmountOtherBinary":"00000000",
+      "AmountOtherNumeric":"000000000000",
+      "TerminalCountryCode":"0840",
+      "OnlinePINBlockFormat":"00",
+      "OnlinePINBlockKeyLocator":"00010001",
+      "TransactionType":"00",
+      "MerchantCategoryCode":"0000",
+      "MagStripeFallbackRules":"FEFEFE01FE"
+   },
+   "MOBY8500EMVTransactionDataParameters":{
+      "TerminalFloorLimit":"00000000",
+      "ThresholdValue":"00000000",
+      "TargetPercentage":"00",
+      "Maximumtargetpercentage":"00",
+      "OnlinePINBlockFormat":"00",
+      "OnlinePINBlockKeyLocator":"00010001"
+   },
+   "MOBY8500EMVTransactionCompleteParameters":{
+      "AuthorizationResponseCodeList":"59315A3159325A3259335A333030303530313034",
+      "ResultofOnlineProcess":"01",
+      "AuthorizationCode":"110203040509",
+      "AuthorizationResponseCode":"3030"
+   },
+   "MOBY5500EMVStartTransactionParameters":{
+      "AuthorizationResponseCodeList":"59315A3159325A3259335A333030303530313034",
+      "DefaultValueForDDOL":"9F3704",
+      "TerminalIdentification":"3132333435363738",
+      "TerminalType":"22",
+      "TerminalApplicationVersionNumber":"0020",
+      "TerminalCapabilities":"6028C8",
+      "AdditionalTerminalCapabilities":"600000A001",
+      "ExtraProgressMessageFlag":"01",
+      "OverallContactlessTransactionLimit":"05F5E0FF",
+      "TransactionCategoryCode":"52",
+      "TransactionCurrencyExponent":"02",
+      "TransactionSequenceCounter":"00110321",
+      "POSEntryMode":"00",
+      "TransactionCurrencyCode":"0840",
+      "AmountOtherBinary":"00000000",
+      "AmountOtherNumeric":"000000000000",
+      "TerminalCountryCode":"0840",
+      "TransactionType":"00",
+      "MerchantCategoryCode":"0000",
+      "MagStripeFallbackRules":"FEFEFE01FE"
+   },
+   "MOBY5500EMVTransactionDataParameters":{
+      "TerminalFloorLimit":"00000000",
+      "ThresholdValue":"00000000",
+      "TargetPercentage":"00",
+      "Maximumtargetpercentage":"00"
+   },
+   "MOBY5500EMVTransactionCompleteParameters":{
+      "AuthorizationResponseCodeList":"59315A3159325A3259335A333030303530313034",
+      "ResultofOnlineProcess":"01",
+      "AuthorizationCode":"110203040509",
+      "AuthorizationResponseCode":"3030"
+   },
+   "RP350EMVStartTransactionParameters":{
+      "AuthorizationResponseCodeList":"59315A3159325A3259335A333030303530313034",
+      "DefaultValueForDDOL":"9F3704",
+      "TerminalIdentification":"3132333435363738",
+      "TerminalType":"22",
+      "TerminalApplicationVersionNumber":"0020",
+      "TerminalCapabilities":"E028C8",
+      "AdditionalTerminalCapabilities":"6000008001",
+      "ExtraProgressMessageFlag":"01",
+      "TransactionCategoryCode":"52",
+      "TransactionCurrencyExponent":"02",
+      "TransactionSequenceCounter":"00110321",
+      "POSEntryMode":"00",
+      "TransactionCurrencyCode":"0840",
+      "AmountOtherBinary":"00000000",
+      "AmountOtherNumeric":"000000000000",
+      "TerminalCountryCode":"0840",
+      "TransactionType":"00",
+      "MerchantCategoryCode":"0000"
+   },
+   "RP350EMVTransactionDataParameters":{
+      "TerminalFloorLimit":"00000000",
+      "ThresholdValue":"00000000",
+      "TargetPercentage":"00",
+      "Maximumtargetpercentage":"00"
+   },
+   "RP350EMVTransactionCompleteParameters":{
+      "AuthorizationResponseCodeList":"59315A3159325A3259335A333030303530313034",
+      "ResultofOnlineProcess":"01",
+      "AuthorizationCode":"110203040509",
+      "AuthorizationResponseCode":"3030"
+   },
+   "TerminalActionCode": {
+      "A0000000031010": {
+         "TerminalActionCodeDefault": "DC4000A800",
+         "TerminalActionCodeDenial": "0010000000",
+         "TerminalActionCodeOnline": "DC4004F800"
+      },
+      "A0000000032010": {
+         "TerminalActionCodeDefault": "DC4000A800",
+         "TerminalActionCodeDenial": "0010000000",
+         "TerminalActionCodeOnline": "DC4004F800"
+      },
+      "A0000000041010": {
+         "TerminalActionCodeDefault": "FE50802000",
+         "TerminalActionCodeDenial": "0000000000",
+         "TerminalActionCodeOnline": "FE5080F800"
+      },
+      "A00000002501": {
+         "TerminalActionCodeDefault": "C800000000",
+         "TerminalActionCodeDenial": "0000000000",
+         "TerminalActionCodeOnline": "C800000000"
+      },
+      "A0000001523010": {
+         "TerminalActionCodeDefault": "DC00002000",
+         "TerminalActionCodeDenial": "0010000000",
+         "TerminalActionCodeOnline": "FCE09CF800"
+      },
+      "A0000000651010": {
+         "TerminalActionCodeDefault": "FC6024A800",
+         "TerminalActionCodeDenial": "0010000000",
+         "TerminalActionCodeOnline": "FC60ACF800"
+      },
+      "A000000333010102": {
+         "TerminalActionCodeDefault": "D84000A800",
+         "TerminalActionCodeDenial": "0010000000",
+         "TerminalActionCodeOnline": "D84004F800"
+      },
+      "A000000333010103": {
+         "TerminalActionCodeDefault": "D84000A800",
+         "TerminalActionCodeDenial": "0010000000",
+         "TerminalActionCodeOnline": "D84004F800"
+      }
+   }
+}
+
+

@@ -8,10 +8,12 @@ import Foundation
 public struct HpsUpaCASaleModelResponse: Codable {
     public let message: String?
     public let data: HpsUpaCASaleModelResponseData?
+    public var jsonTransactionResponse: String?
 
-    public init(message: String?, data: HpsUpaCASaleModelResponseData?) {
+    public init(message: String?, data: HpsUpaCASaleModelResponseData?, json: String?) {
         self.message = message
         self.data = data
+        self.jsonTransactionResponse = json
     }
 }
 
@@ -64,12 +66,13 @@ public struct DataSaleResponse: Codable {
 public struct UpsUpaCASaleModelResponsePayment: Codable {
     public let pinVerified, fallback, maskedPan, qpsQualified: String?
     public let cardGroup, cardType, appName, transactionType: String?
-    public let storeAndForward, cardAcquisition, signatureLine, expiryDate: String?
+    public let storeAndForward, cardAcquisition, signatureLine, expiryDate, accountType: String?
 
     enum CodingKeys: String, CodingKey {
         case pinVerified = "PinVerified"
         case fallback, maskedPan
         case qpsQualified = "QpsQualified"
+        case accountType = "AccountType"
         case cardGroup, cardType, appName, transactionType, storeAndForward, cardAcquisition, signatureLine, expiryDate
     }
 }

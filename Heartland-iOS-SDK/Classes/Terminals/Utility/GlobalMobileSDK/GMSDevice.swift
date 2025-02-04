@@ -88,6 +88,12 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
         }
     }
     
+    public func disconnectDevice() {
+        if let wrapper = gmsWrapper {
+            wrapper.disconnect()
+        }
+    }
+
     public func releaseDevice() {
         if let wrapper = gmsWrapper {
             wrapper.releaseDevice()

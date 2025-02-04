@@ -52,6 +52,9 @@
     if([[batchdetails allKeys] containsObject:@"ReturnAmt"]) {
         self.returnAmount = [batchdetails valueForKey:@"ReturnAmt"];
     }
+    if([[batchdetails allKeys] containsObject:@"ClientTxnId"]) {
+        self.clientTxnId = [batchdetails valueForKey:@"ClientTxnId"];
+    }
     return self;
 }
 @end

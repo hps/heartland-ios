@@ -36,6 +36,7 @@
 #pragma mark - TRANSACTIONAL
 @property (nonatomic,strong) NSString *transactionType;
 @property (nonatomic,strong) NSString *entryMethod;
+@property (nonatomic,strong) NSString *rspDT;
 
 @property (nonatomic,strong) NSString *maskedCardNumber;
 @property (nonatomic) int entryMode;
@@ -82,9 +83,10 @@
 @property (nonatomic,strong) NSString *cardType;
 @property (nonatomic,strong) NSString *cardBrandTransactionId;
 @property (nonatomic,strong) NSString *signatureData;
-@property (nonatomic) SurchargeEligibility *surchargeRequested;
+@property (nonatomic) SurchargeEligibility surchargeRequested;
 @property (nonatomic,strong) NSString *surchargeFee;
 @property (nonatomic,strong) NSString *surchargeAmount;
+@property (nonatomic,strong) NSString *clientTxnId;
 - (void) mapResponse:(id <HpaResposeInterface>) response;
 // @todo
 //+(HpsTerminalResponse*)terminalResponseFromVitalSDK:(TransactionResponse*)transactionResponse;

@@ -16,6 +16,8 @@ class GMSRequestHelper {
         let transactionId: String? = builder.transactionId as String?
         let clientTransactionId: String? = builder.clientTransactionId
         let allowPartialAuth: Bool? = builder.allowPartialAuth as? Bool
+        let isSurchargeEnabled: Bool = builder.isSurchargeEnabled as? Bool ?? false
+        
         
         return TipAdjustTransaction.tipAdjust(clientTransactionId: clientTransactionId,
                                               gatewayTransactionId: transactionId ?? "",
@@ -24,7 +26,8 @@ class GMSRequestHelper {
                                               invoiceNumber: invoiceNumber,
                                               posReferenceNumber: posReferenceNumber,
                                               operatingUserId: operatingUserId,
-                                              allowPartialAuth: allowPartialAuth)
+                                              allowPartialAuth: allowPartialAuth,
+                                              isSurchargeEnabled: isSurchargeEnabled)
     }
 
     static func decimalToUint(_ decimalValue: Decimal?) -> UInt? {
@@ -53,6 +56,17 @@ class GMSRequestHelper {
         
         let isSurchargeEnabled: Bool = builder.isSurchargeEnabled as? Bool ?? false
         let allowDuplicates: Bool = builder.allowDuplicates as? Bool ?? false
+        
+        let surchargeFee: Decimal = {
+            var fee = Decimal(builder.surchargeFee?.doubleValue ?? 3.0)
+            var roundedFee = Decimal()
+            NSDecimalRound(&roundedFee, &fee, 2, .bankers)
+            return roundedFee
+        }()
+        
+        if isSurchargeEnabled && (surchargeFee < 2 || surchargeFee > 3) {
+            fatalError("Surcharge fee must be between 2 and 3")
+        }
         
         if let transactionAutoSubstantiation = builder.autoSubstantiation {
             
@@ -86,7 +100,8 @@ class GMSRequestHelper {
                                         cpcReq: cpcReq,
                                         autoSubstantiation: autoSubstantiation,
                                         isSurchargeEnabled: isSurchargeEnabled,
-                                        allowDuplicates: allowDuplicates)
+                                        allowDuplicates: allowDuplicates,
+                                        surchargeFee: surchargeFee)
         } else {
             return AuthTransaction.auth(clientTransactionId: clientTransactionId,
                                         total: decimalToUint(total),
@@ -102,7 +117,8 @@ class GMSRequestHelper {
                                         cpcReq: cpcReq,
                                         autoSubstantiation: autoSubstantiation,
                                         isSurchargeEnabled: isSurchargeEnabled,
-                                        allowDuplicates: allowDuplicates)
+                                        allowDuplicates: allowDuplicates,
+                                        surchargeFee: surchargeFee)
         }
     }
 
@@ -187,6 +203,17 @@ class GMSRequestHelper {
         var autoSubstantiation: GlobalMobileSDK.AutoSubstantiation? = nil
         let isSurchargeEnabled: Bool = builder.isSurchargeEnabled as? Bool ?? false
         let allowDuplicates: Bool = builder.allowDuplicates as? Bool ?? false
+        let surchargeFee: Decimal = {
+            var fee = Decimal(builder.surchargeFee?.doubleValue ?? 3.0)
+            var roundedFee = Decimal()
+            NSDecimalRound(&roundedFee, &fee, 2, .bankers)
+            return roundedFee
+        }()
+        
+        if isSurchargeEnabled && (surchargeFee < 2 || surchargeFee > 3) {
+            fatalError("Surcharge fee must be between 2 and 3")
+        }
+        
         
         if let transactionAutoSubstantiation = builder.autoSubstantiation {
             
@@ -220,7 +247,8 @@ class GMSRequestHelper {
                                         cpcReq: cpcReq,
                                         autoSubstantiation: autoSubstantiation,
                                         isSurchargeEnabled: isSurchargeEnabled,
-                                        allowDuplicates: allowDuplicates)
+                                        allowDuplicates: allowDuplicates,
+                                        surchargeFee: surchargeFee)
             
         } else {
             return SaleTransaction.sale(clientTransactionId: clientTransactionId,
@@ -237,7 +265,8 @@ class GMSRequestHelper {
                                         cpcReq: cpcReq,
                                         autoSubstantiation: autoSubstantiation,
                                         isSurchargeEnabled: isSurchargeEnabled,
-                                        allowDuplicates: allowDuplicates)
+                                        allowDuplicates: allowDuplicates,
+                                        surchargeFee: surchargeFee)
         }
     }
 

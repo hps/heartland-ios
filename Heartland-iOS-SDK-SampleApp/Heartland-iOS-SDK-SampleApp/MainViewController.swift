@@ -4,11 +4,15 @@
 
 import Heartland_iOS_SDK
 import UIKit
+import SwiftUI
 
 class MainViewController: UITableViewController {
     // MARK: Device
     
     private var device: HpsC2xDevice?
+    private var mobyDevice: HpsMobyDevice?
+    private var isTransactioning: Bool = false
+    
     
     // MARK: NotificationCenter
     
@@ -28,6 +32,26 @@ class MainViewController: UITableViewController {
                                        object: nil)
     }
     
+    @IBSegueAction func showSwiftUIComponentView(_ coder: NSCoder) -> UIViewController? {
+        return UIHostingController(coder: coder,
+                                   rootView: MobyDevicesView())
+    }
+    
+    @IBSegueAction func showTransactionsComponentView(_ coder: NSCoder) -> UIViewController? {
+//        return UIHostingController(coder: coder,
+//                                   rootView: MobyTransactionsView())
+        
+        let alert = UIAlertController(title: "Not Implemented Yet",
+                                          message: "This feature will be available soon.",
+                                          preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        if let topController = UIApplication.shared.windows.first?.rootViewController {
+            topController.present(alert, animated: true, completion: nil)
+        }
+        
+        return nil
+    }
     
 }
 
@@ -65,3 +89,4 @@ private extension MainViewController {
         }
     }
 }
+

@@ -30,7 +30,7 @@ public class HpsUpaCASaleBuilder {
                                          cardOnFileIndicator: nil, cardBrandTransId: nil,
                                          directMktInvoiceNbr: nil, directMktShipMonth: nil,
                                          directMktShipDay: nil)
-
+        
         let tx = HpsUpaCAModelTransaction(baseAmount: self.baseAmount, taxAmount: taxAmount,
                                           tipAmount: tipAmount, taxIndicator: nil,
                                           disableTax: nil, cashBackAmount: nil, invoiceNbr: nil,
@@ -48,24 +48,33 @@ public class HpsUpaCASaleBuilder {
                 lodging: nil
             )
         )
-
+        
         let request = HpsUpaCAModel(data: data)
         
         let json = try? encoder.encode(request)
-
+        
         guard let json else { return }
         var hpsUpaAppCanadaModelResponse: HpsUpaCASaleModelResponse?
         upaDevice.processTransaction(withJSONString: String(data: json, encoding: .utf8),
                                      withResponseBlock: { deviceResponse, jsonDeviceResponse, error in
             
-                                         if let jsonDeviceResponse,
-                                            let jsonData = jsonDeviceResponse.data(using: .utf8) {
-                                             hpsUpaAppCanadaModelResponse = try? JSONDecoder().decode(HpsUpaCASaleModelResponse.self,
-                                                                                                      from: jsonData)
-                                         }
-
-                                         response(deviceResponse, hpsUpaAppCanadaModelResponse, error)
-                                     })
+            do {
+                if let jsonDeviceResponse, let jsonData = jsonDeviceResponse.data(using: .utf8) {
+                    hpsUpaAppCanadaModelResponse = try JSONDecoder().decode(HpsUpaCASaleModelResponse.self,
+                                                                                from: jsonData)
+                    hpsUpaAppCanadaModelResponse?.jsonTransactionResponse = jsonDeviceResponse
+                    
+                    response(deviceResponse,
+                             hpsUpaAppCanadaModelResponse,
+                             error)
+                }
+            } catch {
+                print("Error when trying to decode:", error)
+                response(nil,
+                         nil,
+                         error)
+            }
+        })
         
         
     }

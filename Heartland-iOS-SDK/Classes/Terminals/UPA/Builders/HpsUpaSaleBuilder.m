@@ -136,7 +136,7 @@
         request.data.data.transaction.allowDuplicate = self.allowDuplicate;
     }
     
-    request.data.data.transaction.baseAmount = baseAmount != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[baseAmount doubleValue]]] : nil;
+    request.data.data.transaction.baseAmount = baseAmount != nil ? [[formatter stringFromNumber:[NSNumber numberWithDouble:[baseAmount doubleValue]]] stringByReplacingOccurrencesOfString:@"," withString:@"."] : nil;
     request.data.data.transaction.tipAmount =  self.gratuity != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[self.gratuity doubleValue]]] : nil;
     request.data.data.transaction.taxAmount =  self.taxAmount != nil ? [formatter stringFromNumber:[NSNumber numberWithDouble:[self.taxAmount doubleValue]]] : nil;
     

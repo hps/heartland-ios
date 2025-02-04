@@ -1,0 +1,6 @@
+
+framework module LandiSDK {
+    umbrella header "Global.h"
+    export *
+    module * { export * }
+}

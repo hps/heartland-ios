@@ -58,7 +58,7 @@ class C2XFirmwareUpdateViewController: UIViewController {
             setText(LoadingStatus.WAIT.rawValue)
             device.requestTerminalVersionData()
         } else {
-            showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
+            showTextDialog(title: "Device Not Connected", LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
         }
     }
 
@@ -69,7 +69,7 @@ class C2XFirmwareUpdateViewController: UIViewController {
             device.requestUpdateVersionForC2X()
             resetTimer()
         } else {
-            showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
+            showTextDialog(title: "Device Not Connected", LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
         }
     }
     
@@ -79,7 +79,8 @@ class C2XFirmwareUpdateViewController: UIViewController {
             device.requestUpdateConfigForDevice()
             resetTimer()
         } else {
-            showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
+            showTextDialog(title: "Device Not Connected",
+                           LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
         }
     }
     
@@ -89,7 +90,8 @@ class C2XFirmwareUpdateViewController: UIViewController {
             device.setRemoteKeyInjection()
             resetTimer()
         } else {
-            showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
+            showTextDialog(title: "Device Not Connected",
+                           LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
         }
     }
 
@@ -140,7 +142,7 @@ extension C2XFirmwareUpdateViewController {
 
     @objc func handleIdleEvent(_: Timer) {
         hideDialogView()
-        showTextDialog(LoadingStatus.TAKING_TOO_MUCH_TO_RESPOND.rawValue)
+        showTextDialog(title: "Error", LoadingStatus.TAKING_TOO_MUCH_TO_RESPOND.rawValue)
     }
 }
 
@@ -192,7 +194,8 @@ extension C2XFirmwareUpdateViewController: GMSDeviceFirmwareUpdateDelegate {
         if isSuccess {
             timeout?.invalidate()
             hideDialogView()
-            showTextDialog(LoadingStatus.SUCCESS_UPDATED.rawValue, true)
+            showTextDialog(title: LoadingStatus.YOU_ARE_UPDATED.rawValue,
+                           LoadingStatus.SUCCESS_UPDATED.rawValue, true)
         }
     }
 }

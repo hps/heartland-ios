@@ -177,7 +177,7 @@
 @property (readonly,retain) CardSummaryRecord *CardSummaryRecord;
 @property (readonly,retain) TransactionSummaryRecord *TransactionSummaryRecord;
 @property (readonly,retain) NSString *CardholderName;
-
+@property (readonly,retain) NSString *ClientTxnID;
 
     //EOD
 @property (readonly,retain) NSString *Reversal;

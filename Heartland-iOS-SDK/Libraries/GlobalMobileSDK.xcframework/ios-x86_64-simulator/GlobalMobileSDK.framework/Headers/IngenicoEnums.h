@@ -25,7 +25,7 @@ typedef NS_ENUM(NSUInteger, ProgressMessage)
     ProgressMessageSwipeDetected,
     ProgressMessageWaitingforCardSwipe,
     ProgressMessageWaitingforDevice,
-    ProgressMessageDecodingStarted,
+    ProgressMessageDecodingStarted, //10
     ProgressMessageICCErrorSwipeCard,
     ProgressMessageSwipeErrorReswipe,
     ProgressMessageMagCardDataInsertCard,
@@ -35,7 +35,7 @@ typedef NS_ENUM(NSUInteger, ProgressMessage)
     ProgressMessageErrorReadingContactlessCard,
     ProgressMessageMultipleContactlessCardsDetected,
     ProgressMessageSwipeErrorReswipeMagStripe,
-    ProgressMessageUpdatingFirmware,
+    ProgressMessageUpdatingFirmware, //20
     ProgressMessageTapDetected,
     ProgressMessageContactlessCardStillInField,
     ProgressMessagePleaseSeePhone,
@@ -45,7 +45,7 @@ typedef NS_ENUM(NSUInteger, ProgressMessage)
     ProgressMessageCardBlocked,
     ProgressMessageNotAuthorized,
     ProgressMessageCompleteCardRemove,
-    ProgressMessageInsertOrSwipeCard,
+    ProgressMessageInsertOrSwipeCard, //30
     ProgressMessageTransactionVoid,
     ProgressMessageCardReadOkRemoveCard,
     ProgressMessageProcessingTransaction,
@@ -55,7 +55,7 @@ typedef NS_ENUM(NSUInteger, ProgressMessage)
     ProgressMessageAuthorizing,
     ProgressMessageNotAcceptedRemoveCard,
     ProgressMessageCardError,
-    ProgressMessageCardErrorRemoveCard,
+    ProgressMessageCardErrorRemoveCard, //40
     ProgressMessageCancelled,
     ProgressMessageCancelledRemoveCard,
     ProgressMessageTransactionVoidRemoveCard,
@@ -64,7 +64,7 @@ typedef NS_ENUM(NSUInteger, ProgressMessage)
     ProgressMessageApproved,
     ProgressMessageCompleteRemoveCard,
     ProgressMessageComplete,
-    ProgressMessageWaitingforFallbackSwipe,
+    ProgressMessageWaitingforFallbackSwipe,//50
     ProgressMessageWaitingforFallbackChip,
     ProgressMessageGoOnlineRequested,
     ProgressMessageReversalRequested,

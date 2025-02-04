@@ -13,6 +13,8 @@
 		143A43802993BC5C0027BC3F /* HpsPaxCreditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A437F2993BC5C0027BC3F /* HpsPaxCreditTests.swift */; };
 		143A43842993D5F00027BC3F /* ObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 143A43832993D5F00027BC3F /* ObjC.m */; };
 		143A43862993D6AB0027BC3F /* ObjC+CatchException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A43852993D6AB0027BC3F /* ObjC+CatchException.swift */; };
+		14864F202C9C74CF00B0E4F3 /* HpsMobyDeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14864F1F2C9C74CF00B0E4F3 /* HpsMobyDeviceTests.swift */; };
+		14864F232C9C74F400B0E4F3 /* HpsMobyTransactionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14864F222C9C74F400B0E4F3 /* HpsMobyTransactionsTests.swift */; };
 		149365D82A321C63005A37CC /* UpsUpaSignatureDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149365D72A321C63005A37CC /* UpsUpaSignatureDataTests.swift */; };
 		14A32FAF2949222800E160AD /* C2XFirmwareUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A32FAE2949222800E160AD /* C2XFirmwareUpdateViewController.swift */; };
 		14B86EFE29B02C3B00657AF3 /* C2XTransactionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B86EFD29B02C3B00657AF3 /* C2XTransactionsTests.swift */; };
@@ -104,6 +106,8 @@
 		143A43822993D5D40027BC3F /* ObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjC.h; sourceTree = "<group>"; };
 		143A43832993D5F00027BC3F /* ObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjC.m; sourceTree = "<group>"; };
 		143A43852993D6AB0027BC3F /* ObjC+CatchException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObjC+CatchException.swift"; sourceTree = "<group>"; };
+		14864F1F2C9C74CF00B0E4F3 /* HpsMobyDeviceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsMobyDeviceTests.swift; sourceTree = "<group>"; };
+		14864F222C9C74F400B0E4F3 /* HpsMobyTransactionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpsMobyTransactionsTests.swift; sourceTree = "<group>"; };
 		149365D72A321C63005A37CC /* UpsUpaSignatureDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpsUpaSignatureDataTests.swift; sourceTree = "<group>"; };
 		14A32FAE2949222800E160AD /* C2XFirmwareUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C2XFirmwareUpdateViewController.swift; sourceTree = "<group>"; };
 		14B86EFD29B02C3B00657AF3 /* C2XTransactionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C2XTransactionsTests.swift; sourceTree = "<group>"; };
@@ -204,6 +208,15 @@
 			path = Utilis;
 			sourceTree = "<group>";
 		};
+		14864F212C9C74DD00B0E4F3 /* Moby */ = {
+			isa = PBXGroup;
+			children = (
+				14864F1F2C9C74CF00B0E4F3 /* HpsMobyDeviceTests.swift */,
+				14864F222C9C74F400B0E4F3 /* HpsMobyTransactionsTests.swift */,
+			);
+			path = Moby;
+			sourceTree = "<group>";
+		};
 		2896FA6D2A44A97D0076BBFC /* UpaTransactions */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +282,7 @@
 		DD713F872948DC3400514143 /* Heartland-iOS-SDK-SampleAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				14864F212C9C74DD00B0E4F3 /* Moby */,
 				143A43812993D5BE0027BC3F /* Utilis */,
 				143A437E2993BC3E0027BC3F /* PAX */,
 				DD713F8F2948DC7300514143 /* C2X */,
@@ -464,6 +478,7 @@
 				DD713FC52948DC7500514143 /* Hps_Pax_Batch_Tests.m in Sources */,
 				14B86EFE29B02C3B00657AF3 /* C2XTransactionsTests.swift in Sources */,
 				143A43842993D5F00027BC3F /* ObjC.m in Sources */,
+				14864F202C9C74CF00B0E4F3 /* HpsMobyDeviceTests.swift in Sources */,
 				149365D82A321C63005A37CC /* UpsUpaSignatureDataTests.swift in Sources */,
 				140FA9A52A4E2DCC006E493A /* HpsUPATipAdjustBuilderTests.swift in Sources */,
 				DD8CECF9294CC7370006908F /* HpsUPAStartCardTests.swift in Sources */,
@@ -489,6 +504,7 @@
 				DD713FC62948DC7500514143 /* Hps_UPA_Credit_Test.m in Sources */,
 				DD713FC82948DC7500514143 /* Hps_Pax_Report_test.m in Sources */,
 				DD713FCA2948DC7500514143 /* Hps_Hpa_Report_Test.m in Sources */,
+				14864F232C9C74F400B0E4F3 /* HpsMobyTransactionsTests.swift in Sources */,
 				DD713FB02948DC7500514143 /* Hps_C2X_Device_Test.m in Sources */,
 				DD713FC12948DC7500514143 /* Hps_Pax_Gift_Tests.m in Sources */,
 			);

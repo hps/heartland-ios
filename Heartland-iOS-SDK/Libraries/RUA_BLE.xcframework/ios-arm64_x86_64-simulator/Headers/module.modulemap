@@ -1,0 +1,5 @@
+module RUA_BLE {
+    umbrella header "ROAMreaderUnifiedAPI-umbrella-header.h"
+    export *
+    module * {export *}
+}

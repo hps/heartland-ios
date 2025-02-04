@@ -18,7 +18,7 @@ enum MainTransaction {
     case capture
 }
 
-class C2XTransactionsViewController: UIViewController {
+class C2XTransactionsViewController: UIViewController, UITextFieldDelegate {
     // MARK: Outlets
     public let PorticoTransactionSurchargeAPIRequestTimeOut = "\n\n\nSurcharge eligibility was unable to be verified."
     @IBOutlet weak var labelStatus: UILabel!
@@ -41,6 +41,8 @@ class C2XTransactionsViewController: UIViewController {
     @IBOutlet weak var prescriptionHealthCareTotalTextField: UITextField!
     @IBOutlet weak var visionHealthCareTotalTextField: UITextField!
     @IBOutlet weak var allowPartialAuthToggle: UISwitch!
+    @IBOutlet weak var allowSurcharge: UISwitch!
+    @IBOutlet weak var surchargePercent: UITextField!
     
     @IBOutlet weak var DialogView: UIView!
     @IBOutlet weak var dialogText: UILabel!
@@ -61,6 +63,7 @@ class C2XTransactionsViewController: UIViewController {
     var isDeviceConnected: Bool = false
     var terminalRefNumber: String?
     var clientTransactionId: String?
+    var clientTxnID: String?
     
     var transactionId: String? {
         didSet {
@@ -87,6 +90,17 @@ class C2XTransactionsViewController: UIViewController {
         super.viewDidLoad()
         
         configureActions()
+        surchargePercent.delegate = self
+        surchargePercent.keyboardType = .decimalPad
+        allowSurcharge.addTarget(self, action: #selector(toggleSurcharge(_:)), for: .valueChanged)
+        
+        if allowSurcharge.isOn {
+            surchargePercent.text = "3.00"
+            surchargePercent.isEnabled = true
+        } else {
+            surchargePercent.text = ""
+            surchargePercent.isEnabled = false
+        }
     }
     
     private func addObserver() {
@@ -148,6 +162,10 @@ private extension C2XTransactionsViewController {
                                           action: #selector(captureAuthTransaction),
                                           for: .touchUpInside)
         
+        self.tipAdjustButton.addTarget(self, 
+                                       action: #selector(tipAdjustTransaction),
+                                       for: .touchUpInside)
+        
         self.resetValues.addTarget(self,
                                    action: #selector(resetScreenValues),
                                    for: .touchUpInside)
@@ -167,21 +185,21 @@ private extension C2XTransactionsViewController {
         }
         
         guard validateHeathCareWithTransactionAmount() else {
-            showTextDialogWith("Transaction Not Performed",
+            showTextDialogWith("Transaction Cannot Be Performed",
                                LoadingStatus.AMOUNT_SHOULD_BE_HIGHER_THAN_HEALTHCARE_TOTAL.rawValue)
             return
         }
         
         if let device = device {
-            showProgress(true)
-            setText(LoadingStatus.WAIT.rawValue)
+            
             let amountNumber = NSDecimalNumber(string: amountText)
             let builder = HpsC2xCreditSaleBuilder(device: device)
             builder.amount = amountNumber
             builder.allowPartialAuth = NSNumber(value: allowPartialAuthToggle.isOn)
             builder.cpcReq = true
             builder.allowDuplicates = true
-            builder.isSurchargeEnabled = true
+            builder.isSurchargeEnabled = NSNumber(value: allowSurcharge.isOn)
+            builder.surchargeFee = NSDecimalNumber(string: surchargePercent.text)
             
             let autoSubstantiation = getHealthCareComponent()
             builder.autoSubstantiation = autoSubstantiation
@@ -193,6 +211,17 @@ private extension C2XTransactionsViewController {
                 NSLog("Client Transaction Id Generated In The Client - Request  %@", cTransactionId)
             }
             self.builder = builder
+            
+            if allowSurcharge.isOn,
+               let surchargeValue = Decimal(string: surchargePercent.text ?? "3.0"),
+                surchargeValue < 2 || surchargeValue > 3 {
+                showTextDialogWith("Transaction Cannot Be Performed",
+                                   "Custom surcharge fee is limited to a value of 2% or greater and less than 3%")
+                return
+            }
+            
+            showProgress(true)
+            setText(LoadingStatus.WAIT.rawValue)
             builder.execute()
         } else {
             showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
@@ -201,8 +230,6 @@ private extension C2XTransactionsViewController {
     
     @objc func manualTransactionButtonAction(_: UIButton) {
         if let device = device {
-            showProgress(true)
-            setText(LoadingStatus.WAIT.rawValue)
             
             let address = HpsAddress()
             address.address = "6860 Dallas Pkwy"
@@ -219,13 +246,24 @@ private extension C2XTransactionsViewController {
             builder.amount = amountString
             builder.creditCard = card
             builder.address = address
-            builder.isSurchargeEnabled = true
+            builder.isSurchargeEnabled = NSNumber(value: allowSurcharge.isOn)
+            builder.surchargeFee = NSDecimalNumber(string: surchargePercent.text)
             
             builder.allowPartialAuth = true
             builder.allowDuplicates = true
             
             self.mainTransaction = .auth
             self.builder = builder
+            
+            if allowSurcharge.isOn,
+               let surchargeValue = Decimal(string: surchargePercent.text ?? "3.0"),
+                surchargeValue < 2 || surchargeValue > 3 {
+                showTextDialogWith("Transaction Cannot Be Performed",
+                                   "Custom surcharge fee is limited to a value of 2% or greater and less than 3%")
+                return
+            }
+            showProgress(true)
+            setText(LoadingStatus.WAIT.rawValue)
             builder.execute()
         } else {
             showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
@@ -282,9 +320,9 @@ private extension C2XTransactionsViewController {
             return
         }
         if let device = self.device {
-            showProgress(true)
+            
             transactionIdTextField.text = String.empty
-            setText(LoadingStatus.WAIT.rawValue)
+            
             
             let card: HpsCreditCard = HpsCreditCard()
             card.cardNumber = "374245001751006"
@@ -302,11 +340,21 @@ private extension C2XTransactionsViewController {
             builder.gratuity = NSDecimalNumber(string: gratuity)
 //            builder.creditCard = card -- Keep commented if you want to use the reader for card
             builder.allowDuplicates = true
-            builder.isSurchargeEnabled = true
+            builder.isSurchargeEnabled = NSNumber(value: allowSurcharge.isOn)
+            builder.surchargeFee = NSDecimalNumber(string: surchargePercent.text)
             if let cTransactionId = builder.clientTransactionId {
                 NSLog("Client Transaction Id Generated In The Client - Request  %@", cTransactionId)
             }
             self.builder = builder
+            if allowSurcharge.isOn,
+               let surchargeValue = Decimal(string: surchargePercent.text ?? "3.0"),
+                surchargeValue < 2 || surchargeValue > 3 {
+                showTextDialogWith("Transaction Cannot Be Performed",
+                                   "Custom surcharge fee is limited to a value of 2% or greater and less than 3%")
+                return
+            }
+            showProgress(true)
+            setText(LoadingStatus.WAIT.rawValue)
             builder.execute()
             
             
@@ -359,9 +407,49 @@ private extension C2XTransactionsViewController {
         }
     }
     
+    @objc func tipAdjustTransaction(_: UIButton?) {
+        guard let amountText = self.amountTextField.text, amountText.count > 0 else { showTextDialog(LoadingStatus.AMOUNT_SHOULD_BE_LARGER_THAN_ZERO.rawValue)
+            return
+        }
+        
+        guard let gratuityAmountText = self.gratuityTextField.text,
+                gratuityAmountText.count > 0 else { showTextDialog(LoadingStatus.AMOUNT_SHOULD_BE_LARGER_THAN_ZERO.rawValue)
+            return
+        }
+        if let device = self.device {
+            showProgress(true)
+            setText(LoadingStatus.WAIT.rawValue)
+            
+            self.mainTransaction = .capture
+            let amountNumber = NSDecimalNumber(string: amountText)
+            let gratuityNumber = NSDecimalNumber(string: gratuityAmountText)
+            let builder: HpsC2xCreditAdjustBuilder = HpsC2xCreditAdjustBuilder(device: device)
+            builder.amount = amountNumber.adding(gratuityNumber)
+            builder.gratuity = gratuityNumber
+            builder.clientTransactionId = self.clientTransactionId
+            builder.referenceNumber = self.terminalRefNumber
+            builder.transactionId = self.transactionIdTextField.text
+            builder.isSurchargeEnabled = true
+            builder.execute()
+            
+        } else {
+            showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
+        }
+    }
+    
     @objc func resetScreenValues(_: UIButton?) {
         configureView()
     }
+    
+    @objc func toggleSurcharge(_ sender: UISwitch) {
+       if sender.isOn {
+           surchargePercent.text = "3.00"
+           surchargePercent.isEnabled = true
+       } else {
+           surchargePercent.text = ""
+           surchargePercent.isEnabled = false
+       }
+   }
     
     func reversalAuthTransaction() {
         guard let amountText = self.amountTextField.text, amountText.count > 0 else { showTextDialog(LoadingStatus.AMOUNT_SHOULD_BE_LARGER_THAN_ZERO.rawValue)
@@ -486,16 +574,21 @@ extension C2XTransactionsViewController: HpsC2xDeviceDelegate, GMSTransactionDel
             print(" Status response: \(responseStatus)")
         }
         
+        if let clientTxnId = response.clientTxnId {
+            print("ClientTxnID: \(clientTxnId)")
+        }
+        
         print(" Response: \(response)")
         
-        if let surchargeRequested = response.surchargeRequested {
-            print(" Surcharge Requested: \(SurchargeEligibility(rawValue: Int(bitPattern: surchargeRequested))?.rawValue)")
+        if response.surchargeRequested != nil {
+            print(" Surcharge Requested: \(response.surchargeRequested)")
         }
         
         if let responseTransactionId = response.transactionId {
             
             self.terminalRefNumber = response.terminalRefNumber
             self.clientTransactionId = response.clientTransactionId
+            self.clientTxnID = response.clientTxnId
             
             if mainTransaction != .capture {
                 self.transactionId = responseTransactionId
@@ -693,6 +786,7 @@ private extension C2XTransactionsViewController {
         var GWCode = ""
         var GWMSG = ""
         var GWMSGSurcharge = ""
+        var cardHolderName = ""
         
         switch status {
         case let .APPROVED(response):
@@ -713,15 +807,17 @@ private extension C2XTransactionsViewController {
                 GWMSG = respText
             }
             
-            if case response.surchargeRequested = UnsafeMutablePointer(bitPattern: SurchargeEligibility.U.rawValue) {
+            if case response.surchargeRequested = .U {
                 GWMSGSurcharge = PorticoTransactionSurchargeAPIRequestTimeOut
             }
             
-            let surchargeFee = (Decimal(string: response.surchargeFee ?? "0") ?? 0) * 100
+            let surchargeFee = response.surchargeFee ?? "0"
+            var surchargeAmount: NSDecimalNumber = NSDecimalNumber(string: "0")
+            if response.surchargeRequested == SurchargeEligibility.Y {
+                surchargeAmount = NSDecimalNumber(string: response.surchargeAmount ?? "0")
+            }
             
-            let surchargeAmount = NSDecimalNumber(string: response.surchargeAmount ?? "0")
-            
-            messageResult = "Response: \nStatus: \(responseCode)\n Amount: \(String(format: "%.2f", response.approvedAmount.doubleValue))\nSurchargeAmount: \(String(format: "%.2f", surchargeAmount.doubleValue))\nSurchargeFee: \(surchargeFee)%\n Issuer Resp.: \(issuerCode)\n Issuer Auth Data: \(issuerMSG)\nGW Code: \(GWCode)\nGW MSG: \(GWMSG) \(GWMSGSurcharge)"
+            messageResult = "Response: \nStatus: \(responseCode)\nTransaction Type: \(response.transactionType ?? "") \nAmount: \(String(format: "%.2f", response.approvedAmount.doubleValue))\nSurchargeAmount: \(String(format: "%.2f", surchargeAmount.doubleValue))\nSurchargeFee: \(surchargeFee)%\n Issuer Resp.: \(issuerCode)\n Issuer Auth Data: \(issuerMSG)\nGW Code: \(GWCode)\nGW MSG: \(GWMSG) \(GWMSGSurcharge)"
             
             isApproved = true
         case let .CANCELLED(response):
@@ -745,7 +841,7 @@ private extension C2XTransactionsViewController {
                 GWMSG = respText
             }
             
-            messageResult = "Response: \nStatus: \(deviceResponseMessage)\n Amount: \(response.approvedAmount!)\n Auth Resp.: \(authCode)\n Issuer Auth Data: \(issuerMSG)\nGW Code: \(GWCode)\nGW MSG: \(GWMSG)"
+            messageResult = "Response: \nStatus: \(deviceResponseMessage)\nTransaction Type: \(response.transactionType ?? "") \nAmount: \(response.approvedAmount!)\n Auth Resp.: \(authCode)\n Issuer Auth Data: \(issuerMSG)\nGW Code: \(GWCode)\nGW MSG: \(GWMSG)"
             isApproved = false
         case let .DECLINED(response):
             guard let deviceResponseMessage = response.deviceResponseMessage else { return }
@@ -766,7 +862,7 @@ private extension C2XTransactionsViewController {
                 GWMSG = respText
             }
             
-            messageResult = "Response: \nStatus: \(deviceResponseMessage)\n Amount: \(response.approvedAmount)\n Auth Resp.: \(issuerCode)\n Issuer Auth Data: \(issuerMSG)\nGW Code: \(GWCode)\nGW MSG: \(GWMSG)"
+            messageResult = "Response: \nStatus: \(deviceResponseMessage)\nTransaction Type: \(response.transactionType ?? "") \nAmount: \(response.approvedAmount)\n Auth Resp.: \(issuerCode)\n Issuer Auth Data: \(issuerMSG)\nGW Code: \(GWCode)\nGW MSG: \(GWMSG)"
             isApproved = false
         case let .MESSAGE(message):
             messageResult = message
@@ -816,8 +912,9 @@ public enum LoadingStatus: String {
 }
 
 extension UIViewController {
-    func showTextDialog(_ message: String, _ success: Bool = false) {
-        let uialert = UIAlertController(title: "Transaction Completed",
+    func showTextDialog(title: String = "Transaction Completed",
+                        _ message: String, _ success: Bool = false) {
+        let uialert = UIAlertController(title: title,
                                         message: message,
                                         preferredStyle: UIAlertController.Style.alert)
         uialert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
@@ -831,4 +928,38 @@ extension UIViewController {
         uialert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         present(uialert, animated: true, completion: nil)
     }
+}
+
+
+extension C2XTransactionsViewController {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            let allowedCharacters = CharacterSet(charactersIn: "0123456789.,")
+            let characterSet = CharacterSet(charactersIn: string)
+
+            
+            if !allowedCharacters.isSuperset(of: characterSet) {
+                return false
+            }
+
+            
+            let currentText = textField.text ?? ""
+            let newText = (currentText as NSString).replacingCharacters(in: range, with: string)
+
+            
+            let decimalSeparator = "."
+            let decimalCount = newText.components(separatedBy: decimalSeparator).count - 1
+            if decimalCount > 1 {
+                return false
+            }
+
+            
+            if let decimalSeparatorIndex = newText.firstIndex(of: Character(decimalSeparator)) {
+                let decimalPart = newText[newText.index(after: decimalSeparatorIndex)...]
+                if decimalPart.count > 2 {
+                    return false
+                }
+            }
+
+            return true
+        }
 }

@@ -18,3 +18,4 @@ FOUNDATION_EXPORT const unsigned char GlobalMobileSDKVersionString[];
 
 #import "IngenicoDeviceManager.h"
 #import "IngenicoDeviceConfiguration.h"
+#import "IngenicoMoby5500DeviceManager.h"
