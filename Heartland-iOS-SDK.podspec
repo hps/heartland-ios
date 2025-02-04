@@ -43,5 +43,9 @@ Pod::Spec.new do |s|
     s.user_target_xcconfig = { 
 	'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
     }
-    s.exclude_files = 'Heartland-iOS-SDK/Classes/Terminals/Moby/Views/*.swift'
+    s.exclude_files = [
+    	'Heartland-iOS-SDK/Classes/Terminals/Moby/Views/*.swift',
+    	'Heartland-iOS-SDK/Classes/Terminals/Moby/RUA/RUAHelper.swift'
+    ]
+
 end
