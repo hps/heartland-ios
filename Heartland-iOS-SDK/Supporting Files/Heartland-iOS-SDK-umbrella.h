@@ -195,7 +195,10 @@
 #import "HpsUpaDeletePreAuthBuilder.h"
 #import "RUADevice.h"
 #import "SObjc.h"
+<<<<<<< HEAD
 #import "TemCommunicationManager.h"
+=======
+>>>>>>> master
 
 
 FOUNDATION_EXPORT double Heartland_iOS_SDKVersionNumber;
