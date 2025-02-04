@@ -7,6 +7,7 @@
 import SwiftUI
 import TemLibrary
 import System
+import Heartland_iOS_SDK
 //import AlertToast
 //import ActivityIndicatorView
 

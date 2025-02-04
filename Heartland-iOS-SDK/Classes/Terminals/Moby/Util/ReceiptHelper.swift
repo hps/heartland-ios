@@ -17,7 +17,7 @@ class ReceiptHelper {
     static func createReceiptImage(transaction: HpsTerminalResponse,
                                    headerDetail: ReceiptHelperDetail) -> UIImage {
         let width: CGFloat = 550
-        let height: CGFloat = 550
+        let height: CGFloat = 750
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: width, height: height))
         
         let image = renderer.image { ctx in
