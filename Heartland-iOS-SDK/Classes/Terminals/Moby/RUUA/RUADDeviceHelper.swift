@@ -67,11 +67,7 @@ public class DRuaDevice: NSObject,Identifiable{
 }
 
 @available(iOS 13.0, *)
-<<<<<<<< HEAD:Heartland-iOS-SDK/Classes/Terminals/Moby/RUUA/RUADDeviceHelper.swift
 class RUADDeviceHelper: NSObject {
-========
-class RUUAHelper: NSObject {
->>>>>>>> master:Heartland-iOS-SDK/Classes/Terminals/Moby/RUUA/RUUAHelper.swift
     
     private var ruaDeviceManager: RUADeviceManager?
     private var selectedRUADevice: RUADevice? = nil
@@ -104,11 +100,7 @@ class RUUAHelper: NSObject {
     private var launchTransactionAfterSetup = false
     private var hardwareType : String? = nil
     
-<<<<<<<< HEAD:Heartland-iOS-SDK/Classes/Terminals/Moby/RUUA/RUADDeviceHelper.swift
     public static let sharedInstance = RUADDeviceHelper()
-========
-    public static let sharedInstance = RUUAHelper()
->>>>>>>> master:Heartland-iOS-SDK/Classes/Terminals/Moby/RUUA/RUUAHelper.swift
     
     private var connectingFinishBlock: ((Bool?) -> Void) = {_ in }
     
@@ -548,11 +540,7 @@ extension RUAResponse{
 // MARK: Transaction
 
 @available(iOS 13.0, *)
-<<<<<<<< HEAD:Heartland-iOS-SDK/Classes/Terminals/Moby/RUUA/RUADDeviceHelper.swift
 extension RUADDeviceHelper {
-========
-extension RUUAHelper {
->>>>>>>> master:Heartland-iOS-SDK/Classes/Terminals/Moby/RUUA/RUUAHelper.swift
     
     // MARK: Check if device is ready
     func isDeviceReady() -> Bool {
@@ -574,11 +562,7 @@ extension RUUAHelper {
 }
 
 @available(iOS 13.0, *)
-<<<<<<<< HEAD:Heartland-iOS-SDK/Classes/Terminals/Moby/RUUA/RUADDeviceHelper.swift
 extension RUADDeviceHelper: HpsMobyDeviceDelegate {
-========
-extension RUUAHelper: HpsMobyDeviceDelegate {
->>>>>>>> master:Heartland-iOS-SDK/Classes/Terminals/Moby/RUUA/RUUAHelper.swift
     func onConnected() {
         showLoadingScreen = false
         print(" Is Device Connected?: \(mobyDevice?.isConnected())")
@@ -621,11 +605,7 @@ extension RUUAHelper: HpsMobyDeviceDelegate {
 }
 
 @available(iOS 13.0, *)
-<<<<<<<< HEAD:Heartland-iOS-SDK/Classes/Terminals/Moby/RUUA/RUADDeviceHelper.swift
 extension RUADDeviceHelper: GMSClientAppDelegate {
-========
-extension RUUAHelper: GMSClientAppDelegate {
->>>>>>>> master:Heartland-iOS-SDK/Classes/Terminals/Moby/RUUA/RUUAHelper.swift
     func searchComplete() {
         showLoadingScreen = false
         print("searchComplete")
@@ -682,11 +662,7 @@ extension RUUAHelper: GMSClientAppDelegate {
 }
 
 @available(iOS 13.0, *)
-<<<<<<<< HEAD:Heartland-iOS-SDK/Classes/Terminals/Moby/RUUA/RUADDeviceHelper.swift
 extension RUADDeviceHelper: GMSTransactionDelegate {
-========
-extension RUUAHelper: GMSTransactionDelegate {
->>>>>>>> master:Heartland-iOS-SDK/Classes/Terminals/Moby/RUUA/RUUAHelper.swift
     func onStatusUpdate(_ transactionStatus: Heartland_iOS_SDK.HpsTransactionStatus) {
         print("status")
         print(transactionStatus.rawValue)
@@ -785,11 +761,7 @@ extension RUUAHelper: GMSTransactionDelegate {
 }
 
 @available(iOS 13.0, *)
-<<<<<<<< HEAD:Heartland-iOS-SDK/Classes/Terminals/Moby/RUUA/RUADDeviceHelper.swift
 extension RUADDeviceHelper {
-========
-extension RUUAHelper {
->>>>>>>> master:Heartland-iOS-SDK/Classes/Terminals/Moby/RUUA/RUUAHelper.swift
     private func showDialog(for status: Status) {
         var messageResult = ""
         var isApproved = false
