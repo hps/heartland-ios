@@ -22,7 +22,7 @@
 		14864EE52C88976000B0E4F3 /* TemLibrary.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14864EE42C88976000B0E4F3 /* TemLibrary.xcframework */; };
 		14864EFD2C88A82800B0E4F3 /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14864EFA2C88A82800B0E4F3 /* FileUtils.swift */; };
 		14864EFE2C88A82800B0E4F3 /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14864EFB2C88A82800B0E4F3 /* Configurations.swift */; };
-		14864F072C88A84F00B0E4F3 /* RUAHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14864F062C88A84F00B0E4F3 /* RUAHelper.swift */; };
+		14864F072C88A84F00B0E4F3 /* RUUAHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14864F062C88A84F00B0E4F3 /* RUUAHelper.swift */; };
 		14864F092C88A8E200B0E4F3 /* RUA_BLE.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14864F082C88A8E200B0E4F3 /* RUA_BLE.xcframework */; };
 		14864F0D2C88A9FF00B0E4F3 /* BlueButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14864F0B2C88A9FF00B0E4F3 /* BlueButtonStyle.swift */; };
 		14864F0E2C88A9FF00B0E4F3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14864F0C2C88A9FF00B0E4F3 /* Extensions.swift */; };
@@ -562,7 +562,7 @@
 		14864EF42C88A7B900B0E4F3 /* FilePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilePickerView.swift; path = "Heartland-iOS-SDK/Classes/Terminals/Moby/Views/FilePickerView.swift"; sourceTree = SOURCE_ROOT; };
 		14864EFA2C88A82800B0E4F3 /* FileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		14864EFB2C88A82800B0E4F3 /* Configurations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
-		14864F062C88A84F00B0E4F3 /* RUAHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RUAHelper.swift; sourceTree = "<group>"; };
+		14864F062C88A84F00B0E4F3 /* RUUAHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RUUAHelper.swift; sourceTree = "<group>"; };
 		14864F082C88A8E200B0E4F3 /* RUA_BLE.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = RUA_BLE.xcframework; sourceTree = "<group>"; };
 		14864F0B2C88A9FF00B0E4F3 /* BlueButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlueButtonStyle.swift; path = "Heartland-iOS-SDK/Classes/Terminals/Moby/Style/BlueButtonStyle.swift"; sourceTree = SOURCE_ROOT; };
 		14864F0C2C88A9FF00B0E4F3 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = "Heartland-iOS-SDK/Classes/Terminals/Moby/Style/Extensions.swift"; sourceTree = SOURCE_ROOT; };
@@ -1130,7 +1130,7 @@
 		14864F052C88A84100B0E4F3 /* RUUA */ = {
 			isa = PBXGroup;
 			children = (
-				14864F062C88A84F00B0E4F3 /* RUAHelper.swift */,
+				14864F062C88A84F00B0E4F3 /* RUUAHelper.swift */,
 			);
 			path = RUUA;
 			sourceTree = "<group>";
@@ -2467,7 +2467,7 @@
 				DDFF36672937AF4400C2D1D1 /* HpsTransactionDetails.m in Sources */,
 				149365DE2A408BA3005A37CC /* HpsUpaCARefundBuilder.swift in Sources */,
 				14DBE25E2BF7DAE9005F27DF /* DEV-8500-V33.01.00.uns in Sources */,
-				14864F072C88A84F00B0E4F3 /* RUAHelper.swift in Sources */,
+				14864F072C88A84F00B0E4F3 /* RUUAHelper.swift in Sources */,
 				DDFF37002937B6FC00C2D1D1 /* HpsTransactionStatus.swift in Sources */,
 				DDFF36BA2937AF4400C2D1D1 /* HpsJsonDoc.m in Sources */,
 				14864EFE2C88A82800B0E4F3 /* Configurations.swift in Sources */,

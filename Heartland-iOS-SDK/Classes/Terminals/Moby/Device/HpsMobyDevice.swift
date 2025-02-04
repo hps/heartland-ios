@@ -6,7 +6,7 @@ import TemLibrary
 @objcMembers
 public class HpsMobyDevice: GMSDevice, IC2xDeviceInterface {
     
-    let ruaHelper: RUAHelper = RUAHelper.sharedInstance
+    let ruaHelper: RUUAHelper = RUUAHelper.sharedInstance
     
     var ruaDevice: RuaDevice?
     

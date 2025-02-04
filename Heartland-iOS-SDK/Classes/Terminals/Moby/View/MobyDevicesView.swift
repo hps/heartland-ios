@@ -211,17 +211,17 @@ public struct MobyDevicesView: View {
         
         config.timeout = timeout
     
-        RUAHelper.sharedInstance.initializeWith(config: config) { result1, result2 in
+        RUUAHelper.sharedInstance.initializeWith(config: config) { result1, result2 in
             print(result1)
             print(result2)
         } releaseCompletionBlock: { isConnected in
             print("releaseCompletionBlock")
-            showToastLoading = RUAHelper.sharedInstance.showLoadingScreen
+            showToastLoading = RUUAHelper.sharedInstance.showLoadingScreen
         }
 
-        RUAHelper.sharedInstance.startSearchingDevices { devices in
+        RUUAHelper.sharedInstance.startSearchingDevices { devices in
             listDevices = devices
-            showToastLoading = RUAHelper.sharedInstance.showLoadingScreen
+            showToastLoading = RUUAHelper.sharedInstance.showLoadingScreen
             if(searchEnded != nil){
                 searchEnded!()
             }

@@ -68,7 +68,7 @@ public class RuaDevice: NSObject,Identifiable{
 }
 
 @available(iOS 13.0, *)
-class RUAHelper: NSObject {
+class RUUAHelper: NSObject {
     
     private var ruaDeviceManager: RUADeviceManager?
     private var selectedRUADevice: RUADevice? = nil
@@ -101,7 +101,7 @@ class RUAHelper: NSObject {
     private var launchTransactionAfterSetup = false
     private var hardwareType : String? = nil
     
-    public static let sharedInstance = RUAHelper()
+    public static let sharedInstance = RUUAHelper()
     
     private var connectingFinishBlock: ((Bool?) -> Void) = {_ in }
     
@@ -539,7 +539,7 @@ extension RUAResponse{
 // MARK: Transaction
 
 @available(iOS 13.0, *)
-extension RUAHelper {
+extension RUUAHelper {
     
     // MARK: Check if device is ready
     func isDeviceReady() -> Bool {
@@ -561,7 +561,7 @@ extension RUAHelper {
 }
 
 @available(iOS 13.0, *)
-extension RUAHelper: HpsMobyDeviceDelegate {
+extension RUUAHelper: HpsMobyDeviceDelegate {
     func onConnected() {
         showLoadingScreen = false
         print(" Is Device Connected?: \(mobyDevice?.isConnected())")
@@ -602,7 +602,7 @@ extension RUAHelper: HpsMobyDeviceDelegate {
 }
 
 @available(iOS 13.0, *)
-extension RUAHelper: GMSClientAppDelegate {
+extension RUUAHelper: GMSClientAppDelegate {
     func searchComplete() {
         showLoadingScreen = false
         print("searchComplete")
@@ -659,7 +659,7 @@ extension RUAHelper: GMSClientAppDelegate {
 }
 
 @available(iOS 13.0, *)
-extension RUAHelper: GMSTransactionDelegate {
+extension RUUAHelper: GMSTransactionDelegate {
     func onStatusUpdate(_ transactionStatus: Heartland_iOS_SDK.HpsTransactionStatus) {
         print("status")
         print(transactionStatus.rawValue)
@@ -758,7 +758,7 @@ extension RUAHelper: GMSTransactionDelegate {
 }
 
 @available(iOS 13.0, *)
-extension RUAHelper {
+extension RUUAHelper {
     private func showDialog(for status: Status) {
         var messageResult = ""
         var isApproved = false

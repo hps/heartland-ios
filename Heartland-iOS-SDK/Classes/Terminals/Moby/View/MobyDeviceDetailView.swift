@@ -16,7 +16,7 @@ let sandbox  = SObjc.getInstance()
 @available(iOS 16.0, *)
 struct MobyDeviceDetailView: View {
     
-    var ruaHelper : RUAHelper = RUAHelper.sharedInstance
+    var ruaHelper : RUUAHelper = RUUAHelper.sharedInstance
     
     var deviceSelected: RuaDevice
     
