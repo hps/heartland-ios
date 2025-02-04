@@ -558,8 +558,6 @@
 		14864ECF2C886BF200B0E4F3 /* ExtensionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionView.swift; sourceTree = "<group>"; };
 		14864ED02C886BF200B0E4F3 /* MobyDevicesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobyDevicesView.swift; sourceTree = "<group>"; };
 		14864EE42C88976000B0E4F3 /* TemLibrary.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = TemLibrary.xcframework; sourceTree = "<group>"; };
-		14864EF32C88A7B900B0E4F3 /* ExtensionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtensionView.swift; path = "Heartland-iOS-SDK/Classes/Terminals/Moby/Views/ExtensionView.swift"; sourceTree = SOURCE_ROOT; };
-		14864EF42C88A7B900B0E4F3 /* FilePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilePickerView.swift; path = "Heartland-iOS-SDK/Classes/Terminals/Moby/Views/FilePickerView.swift"; sourceTree = SOURCE_ROOT; };
 		14864EFA2C88A82800B0E4F3 /* FileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		14864EFB2C88A82800B0E4F3 /* Configurations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
 		14864F062C88A84F00B0E4F3 /* RUAHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RUAHelper.swift; sourceTree = "<group>"; };
@@ -1108,8 +1106,6 @@
 				14864F0A2C88A9F700B0E4F3 /* Style */,
 				14864ECF2C886BF200B0E4F3 /* ExtensionView.swift */,
 				14864ECD2C886BF200B0E4F3 /* FilePickerView.swift */,
-				14864EF32C88A7B900B0E4F3 /* ExtensionView.swift */,
-				14864EF42C88A7B900B0E4F3 /* FilePickerView.swift */,
 				14864ECE2C886BF200B0E4F3 /* MobyDeviceDetailView.swift */,
 				14864ED02C886BF200B0E4F3 /* MobyDevicesView.swift */,
 				14864F0F2C89F8FD00B0E4F3 /* MobyTransactionsView.swift */,
