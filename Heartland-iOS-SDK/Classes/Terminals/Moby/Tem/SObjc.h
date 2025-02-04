@@ -6,6 +6,7 @@
 
 #import <Foundation/Foundation.h>
 #import <TemCommunicationManager.h>
+#import <TemLibrary/TemLibrary-swift.h>
 
 @class Sandbox;
 

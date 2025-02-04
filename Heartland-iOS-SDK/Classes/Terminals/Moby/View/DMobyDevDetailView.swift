@@ -7,24 +7,24 @@
 import SwiftUI
 import TemLibrary
 import System
-//import AlertToast
-//import ActivityIndicatorView
+import Heartland_iOS_SDK
+import TemLibrary
+import RUA_BLE
 
-let sandbox  = SandboxObjc.getInstance()
+let sandbox  = SObjc.getInstance()
 
 @available(iOS 16.0, *)
-struct MobyDeviceDetailView: View {
+struct DMobyDeviceDetailView: View {
     
-    var ruaHelper : RUAHelper = RUAHelper.sharedInstance
+    var ruaHelper : RUADDeviceHelper = RUADDeviceHelper.sharedInstance
     
-    var deviceSelected: RuaDevice
-    var mobyDevice: HpsMobyDevice
+    var deviceSelected: RUADevice
     
     var textPadding : CGFloat = 5
     @State private var showToastMessage = false
     @State private var showToastLoading = false
     
-    @State private var selection = KeyMappingStubMode.None
+    @State private var selection = DKeyMappingStubMode.None
     
     @State private var isConnectedToReader = false
     @State private var isInitTem = false
@@ -46,10 +46,9 @@ struct MobyDeviceDetailView: View {
     
     private let fileUtils = FileUtils()
     
-    init(deviceSelected : RuaDevice, mobyDevice: HpsMobyDevice){
+    init(deviceSelected : RUADevice){
         config = Configurations()
         self.deviceSelected = deviceSelected
-        self.mobyDevice = mobyDevice
     }
     
     var body: some View {
@@ -83,6 +82,9 @@ struct MobyDeviceDetailView: View {
                 }.frame(maxWidth: .infinity, maxHeight: .infinity).background(Color.black.opacity(0.9)).edgesIgnoringSafeArea(.all)
             }
         }.navigationBarBackButtonHidden(isConnectedToReader || showToastLoading).navigationBarHidden(showToastLoading)
+            .onReceive(ruaHelper.$showLoadingScreen) { showLoadinScreen in
+                showToastLoading = showLoadinScreen
+            }
         
     }
     
@@ -95,7 +97,7 @@ struct MobyDeviceDetailView: View {
                     initConnection()
                    
                 }){
-                    Text("OPEN")
+                    Text("CONNECT")
                         .padding(textPadding)
                         .foregroundColor(.red)
                 }
@@ -107,30 +109,12 @@ struct MobyDeviceDetailView: View {
                 Button(action: {
                     releaseDevice()
                 }){
-                    Text("CLOSE")
-                        .foregroundStyle(.blue)
+                    Text("DISCONNECT")
+                        .foregroundStyle(isConnectedToReader ? .red : .orange)
                         .padding(textPadding)
                 }
                 .buttonStyle(BlueButtonStyle(width: .infinity))
                 .disabled(!isConnectedToReader)
-            }
-            
-            Button(action: {
-                beep()
-            }){
-                Text("BEEP")
-                    .foregroundStyle(.green)
-                    .padding(textPadding)
-            }
-            .buttonStyle(BlueButtonStyle(width: .infinity))
-            .disabled(!isConnectedToReader)
-            
-            Button(action: {
-                transactioning()
-            }) {
-                Text("Start Transaction")
-                    .foregroundStyle(.orange)
-                    .padding(textPadding)
             }
             
         }.padding()
@@ -175,9 +159,9 @@ struct MobyDeviceDetailView: View {
             HStack {
                 Text("Key Mapping Stub : ").underline()
                 Picker(selection: $selection.onChange(stubModeChange), label: Text("Stub mode").font(.body.bold())) {
-                    Text(KeyMappingStubMode.None.rawValue).tag(KeyMappingStubMode.None)
-                    Text(KeyMappingStubMode.Stub1.rawValue).tag(KeyMappingStubMode.Stub1)
-                    Text(KeyMappingStubMode.Stub2.rawValue).tag(KeyMappingStubMode.Stub2)
+                    Text(DKeyMappingStubMode.None.rawValue).tag(DKeyMappingStubMode.None)
+                    Text(DKeyMappingStubMode.Stub1.rawValue).tag(DKeyMappingStubMode.Stub1)
+                    Text(DKeyMappingStubMode.Stub2.rawValue).tag(DKeyMappingStubMode.Stub2)
                 }
             }.padding().disabled(!isInitTem)
         }.padding().background(
@@ -221,7 +205,7 @@ struct MobyDeviceDetailView: View {
         )
     }
     
-    func stubModeChange(_ tag: KeyMappingStubMode) {
+    func stubModeChange(_ tag: DKeyMappingStubMode) {
         if(self.ruaHelper.currentKeyMappingInfoMode != tag){
             self.ruaHelper.currentKeyMappingInfoMode = tag
             refreshReaderStateJson()
@@ -232,33 +216,24 @@ struct MobyDeviceDetailView: View {
         showToastLoading = true
         loadingMessage = "Connecting"
         
-        ruaHelper.initialize(ruaDevice: deviceSelected) { result1, result2 in
-            print(result1)
-            print(result2)
-        } releaseCompletionBlock: { isConnected in
-            print("releaseCompletionBlock")
-            showToastLoading = !isConnected
+        ruaHelper.connect(deviceSelected) { isConnected in
+            guard let isConnected = isConnected else { return }
+            print("connect completion block")
+            showToastLoading = ruaHelper.showLoadingScreen
             isConnectedToReader = isConnected
             loadingMessage = isConnectedToReader ? "Connected" : "Disconnected"
             connectionMessage = isConnectedToReader ? "Connected" : "Disconnected"
         }
-
     }
     
     func releaseDevice(){
-        showToastLoading = true
-        loadingMessage = "Disconnecting"
         ruaHelper.release()
-    }
-    
-    func beep() {
-        ruaHelper.beep()
-    }
-    
-    func transactioning() {
-        ruaHelper.startTransaction(mobyDevice: mobyDevice) { responseData in
-            
-        }
+        showToastLoading = ruaHelper.showLoadingScreen
+        loadingMessage = "Disconnecting"
+        isConnectedToReader = ruaHelper.isConnectedToDevice
+        loadingMessage = isConnectedToReader ? "Connected" : "Disconnected"
+        connectionMessage = isConnectedToReader ? "Connected" : "Disconnected"
+       
     }
     
     func checkUpdateAvailable() {
@@ -310,7 +285,7 @@ struct MobyDeviceDetailView: View {
         showToastLoading = true
         loadingMessage = "Manual Call"
         sandbox.performCall(ReasonForCalling.MANUAL) { result in
-            Logger.info("Perform call manual result = \(result)")
+            print("Perform call manual result = \(result)")
             showToastLoading = false
             loadingMessage = ""
             if(result != 0){
@@ -338,7 +313,7 @@ struct MobyDeviceDetailView: View {
             if(result != 0){
                 toast("An error occured (\(result))")
             }else{
-                Logger.info("Perform call report result = \(result)")
+                print("Perform call report result = \(result)")
             }
         }
     }
@@ -564,12 +539,3 @@ struct MobyDeviceDetailView: View {
     }
     
 }
-
-extension Double {
-    /// Rounds the double to decimal places value
-    func rounded(toPlaces places:Int) -> Double {
-        let divisor = pow(10.0, Double(places))
-        return (self * divisor).rounded() / divisor
-    }
-}
-
