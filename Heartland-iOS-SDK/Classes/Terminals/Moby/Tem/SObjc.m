@@ -1,5 +1,5 @@
 //
-//  SObjc.m
+//  SanboxObjc.m
 //  Heartland-iOS-SDK
 //
 //

@@ -7,11 +7,10 @@
 import SwiftUI
 import TemLibrary
 import System
-import Heartland_iOS_SDK
 //import AlertToast
 //import ActivityIndicatorView
 
-let sandbox  = SObjc.getInstance()
+let sandbox  = SandboxObjc.getInstance()
 
 @available(iOS 16.0, *)
 struct MobyDeviceDetailView: View {
@@ -19,6 +18,7 @@ struct MobyDeviceDetailView: View {
     var ruaHelper : RUAHelper = RUAHelper.sharedInstance
     
     var deviceSelected: RuaDevice
+    var mobyDevice: HpsMobyDevice
     
     var textPadding : CGFloat = 5
     @State private var showToastMessage = false
@@ -46,9 +46,10 @@ struct MobyDeviceDetailView: View {
     
     private let fileUtils = FileUtils()
     
-    init(deviceSelected : RuaDevice){
+    init(deviceSelected : RuaDevice, mobyDevice: HpsMobyDevice){
         config = Configurations()
         self.deviceSelected = deviceSelected
+        self.mobyDevice = mobyDevice
     }
     
     var body: some View {
@@ -82,9 +83,6 @@ struct MobyDeviceDetailView: View {
                 }.frame(maxWidth: .infinity, maxHeight: .infinity).background(Color.black.opacity(0.9)).edgesIgnoringSafeArea(.all)
             }
         }.navigationBarBackButtonHidden(isConnectedToReader || showToastLoading).navigationBarHidden(showToastLoading)
-            .onReceive(ruaHelper.$showLoadingScreen) { showLoadinScreen in
-                showToastLoading = showLoadinScreen
-            }
         
     }
     
@@ -97,7 +95,7 @@ struct MobyDeviceDetailView: View {
                     initConnection()
                    
                 }){
-                    Text("CONNECT")
+                    Text("OPEN")
                         .padding(textPadding)
                         .foregroundColor(.red)
                 }
@@ -109,12 +107,30 @@ struct MobyDeviceDetailView: View {
                 Button(action: {
                     releaseDevice()
                 }){
-                    Text("DISCONNECT")
-                        .foregroundStyle(isConnectedToReader ? .red : .orange)
+                    Text("CLOSE")
+                        .foregroundStyle(.blue)
                         .padding(textPadding)
                 }
                 .buttonStyle(BlueButtonStyle(width: .infinity))
                 .disabled(!isConnectedToReader)
+            }
+            
+            Button(action: {
+                beep()
+            }){
+                Text("BEEP")
+                    .foregroundStyle(.green)
+                    .padding(textPadding)
+            }
+            .buttonStyle(BlueButtonStyle(width: .infinity))
+            .disabled(!isConnectedToReader)
+            
+            Button(action: {
+                transactioning()
+            }) {
+                Text("Start Transaction")
+                    .foregroundStyle(.orange)
+                    .padding(textPadding)
             }
             
         }.padding()
@@ -216,24 +232,33 @@ struct MobyDeviceDetailView: View {
         showToastLoading = true
         loadingMessage = "Connecting"
         
-        ruaHelper.connect(deviceSelected) { isConnected in
-            guard let isConnected = isConnected else { return }
-            print("connect completion block")
-            showToastLoading = ruaHelper.showLoadingScreen
+        ruaHelper.initialize(ruaDevice: deviceSelected) { result1, result2 in
+            print(result1)
+            print(result2)
+        } releaseCompletionBlock: { isConnected in
+            print("releaseCompletionBlock")
+            showToastLoading = !isConnected
             isConnectedToReader = isConnected
             loadingMessage = isConnectedToReader ? "Connected" : "Disconnected"
             connectionMessage = isConnectedToReader ? "Connected" : "Disconnected"
         }
+
     }
     
     func releaseDevice(){
-        ruaHelper.release()
-        showToastLoading = ruaHelper.showLoadingScreen
+        showToastLoading = true
         loadingMessage = "Disconnecting"
-        isConnectedToReader = ruaHelper.isConnectedToDevice
-        loadingMessage = isConnectedToReader ? "Connected" : "Disconnected"
-        connectionMessage = isConnectedToReader ? "Connected" : "Disconnected"
-       
+        ruaHelper.release()
+    }
+    
+    func beep() {
+        ruaHelper.beep()
+    }
+    
+    func transactioning() {
+        ruaHelper.startTransaction(mobyDevice: mobyDevice) { responseData in
+            
+        }
     }
     
     func checkUpdateAvailable() {
@@ -285,7 +310,7 @@ struct MobyDeviceDetailView: View {
         showToastLoading = true
         loadingMessage = "Manual Call"
         sandbox.performCall(ReasonForCalling.MANUAL) { result in
-            print("Perform call manual result = \(result)")
+            Logger.info("Perform call manual result = \(result)")
             showToastLoading = false
             loadingMessage = ""
             if(result != 0){
@@ -313,7 +338,7 @@ struct MobyDeviceDetailView: View {
             if(result != 0){
                 toast("An error occured (\(result))")
             }else{
-                print("Perform call report result = \(result)")
+                Logger.info("Perform call report result = \(result)")
             }
         }
     }

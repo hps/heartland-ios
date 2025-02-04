@@ -193,8 +193,8 @@
 #import "HpsAutoSubstantiation.h"
 #import "HpsUpaDeviceSignatureResponse.h"
 #import "HpsUpaDeletePreAuthBuilder.h"
-#import "SObjc.h"
 #import "RUADevice.h"
+#import "SObjc.h"
 
 
 FOUNDATION_EXPORT double Heartland_iOS_SDKVersionNumber;

@@ -13,8 +13,8 @@
 		142669ED2BB326B80018D4B0 /* HpsTransactionDuplicate.h in Headers */ = {isa = PBXBuildFile; fileRef = 142669EA2BB324E40018D4B0 /* HpsTransactionDuplicate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1438BFF62CC7FD940040F364 /* ReceiptHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1438BFF52CC7FD940040F364 /* ReceiptHelper.swift */; };
 		143A4379298AB2980027BC3F /* String+ProjectName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143A4378298AB2980027BC3F /* String+ProjectName.swift */; };
-		146285C82D5250810057376B /* SObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 146285C62D5250810057376B /* SObjc.m */; };
-		146285C92D5250810057376B /* SObjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 146285C52D5250810057376B /* SObjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		146285BE2D524DD60057376B /* SObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 146285BC2D524DD60057376B /* SObjc.m */; };
+		146285BF2D524DD60057376B /* SObjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 146285BB2D524DD60057376B /* SObjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		14864ED12C886BF200B0E4F3 /* FilePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14864ECD2C886BF200B0E4F3 /* FilePickerView.swift */; };
 		14864ED22C886BF200B0E4F3 /* MobyDeviceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14864ECE2C886BF200B0E4F3 /* MobyDeviceDetailView.swift */; };
 		14864ED32C886BF200B0E4F3 /* ExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14864ECF2C886BF200B0E4F3 /* ExtensionView.swift */; };
@@ -551,13 +551,15 @@
 		144E0C6A2C664DBD00BF7A89 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ExternalAccessory.framework; sourceTree = DEVELOPER_DIR; };
 		144E0C6B2C664DC800BF7A89 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
 		144E0C6C2C664DE000BF7A89 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreBluetooth.framework; sourceTree = DEVELOPER_DIR; };
-		146285C52D5250810057376B /* SObjc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SObjc.h; sourceTree = "<group>"; };
-		146285C62D5250810057376B /* SObjc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SObjc.m; sourceTree = "<group>"; };
+		146285BB2D524DD60057376B /* SObjc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SObjc.h; sourceTree = "<group>"; };
+		146285BC2D524DD60057376B /* SObjc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SObjc.m; sourceTree = "<group>"; };
 		14864ECD2C886BF200B0E4F3 /* FilePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePickerView.swift; sourceTree = "<group>"; };
 		14864ECE2C886BF200B0E4F3 /* MobyDeviceDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobyDeviceDetailView.swift; sourceTree = "<group>"; };
 		14864ECF2C886BF200B0E4F3 /* ExtensionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionView.swift; sourceTree = "<group>"; };
 		14864ED02C886BF200B0E4F3 /* MobyDevicesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobyDevicesView.swift; sourceTree = "<group>"; };
 		14864EE42C88976000B0E4F3 /* TemLibrary.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = TemLibrary.xcframework; sourceTree = "<group>"; };
+		14864EF32C88A7B900B0E4F3 /* ExtensionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtensionView.swift; path = "Heartland-iOS-SDK/Classes/Terminals/Moby/Views/ExtensionView.swift"; sourceTree = SOURCE_ROOT; };
+		14864EF42C88A7B900B0E4F3 /* FilePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilePickerView.swift; path = "Heartland-iOS-SDK/Classes/Terminals/Moby/Views/FilePickerView.swift"; sourceTree = SOURCE_ROOT; };
 		14864EFA2C88A82800B0E4F3 /* FileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		14864EFB2C88A82800B0E4F3 /* Configurations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
 		14864F062C88A84F00B0E4F3 /* RUAHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RUAHelper.swift; sourceTree = "<group>"; };
@@ -1091,11 +1093,11 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		146285C72D5250810057376B /* Tem */ = {
+		146285BD2D524DD60057376B /* Tem */ = {
 			isa = PBXGroup;
 			children = (
-				146285C52D5250810057376B /* SObjc.h */,
-				146285C62D5250810057376B /* SObjc.m */,
+				146285BB2D524DD60057376B /* SObjc.h */,
+				146285BC2D524DD60057376B /* SObjc.m */,
 			);
 			path = Tem;
 			sourceTree = "<group>";
@@ -1106,6 +1108,8 @@
 				14864F0A2C88A9F700B0E4F3 /* Style */,
 				14864ECF2C886BF200B0E4F3 /* ExtensionView.swift */,
 				14864ECD2C886BF200B0E4F3 /* FilePickerView.swift */,
+				14864EF32C88A7B900B0E4F3 /* ExtensionView.swift */,
+				14864EF42C88A7B900B0E4F3 /* FilePickerView.swift */,
 				14864ECE2C886BF200B0E4F3 /* MobyDeviceDetailView.swift */,
 				14864ED02C886BF200B0E4F3 /* MobyDevicesView.swift */,
 				14864F0F2C89F8FD00B0E4F3 /* MobyTransactionsView.swift */,
@@ -1143,7 +1147,6 @@
 		14DBE22D2BF7D9C3005F27DF /* Moby */ = {
 			isa = PBXGroup;
 			children = (
-				146285C72D5250810057376B /* Tem */,
 				14864F052C88A84100B0E4F3 /* RUUA */,
 				14864EF92C88A81F00B0E4F3 /* Util */,
 				14864ECC2C886BE500B0E4F3 /* View */,
@@ -1151,6 +1154,7 @@
 				14DBE28D2BFE54CF005F27DF /* Device */,
 				14DBE27B2BFD0D4F005F27DF /* Builders */,
 				14DBE2312BF7D9EB005F27DF /* Resources */,
+				146285BD2D524DD60057376B /* Tem */,
 			);
 			path = Moby;
 			sourceTree = "<group>";
@@ -2358,8 +2362,8 @@
 				DDFF36182937AF4400C2D1D1 /* HpsHpaHeartBeatResponse.h in Headers */,
 				DDFF366E2937AF4400C2D1D1 /* HpsTransaction.h in Headers */,
 				DDFF35A42937AF4300C2D1D1 /* HpsPaxExtDataSubGroup.h in Headers */,
-				146285C92D5250810057376B /* SObjc.h in Headers */,
 				149365D62A267093005A37CC /* HpsUpaDeviceSignatureResponse.h in Headers */,
+				146285BF2D524DD60057376B /* SObjc.h in Headers */,
 				14B86F1129B7C47200657AF3 /* HpsAutoSubstantiation.h in Headers */,
 				DDFF36BF2937AF4400C2D1D1 /* hps.h in Headers */,
 				DDFF37152937BAA400C2D1D1 /* Heartland-iOS-SDK-umbrella.h in Headers */,
@@ -2712,7 +2716,7 @@
 				DDFF35792937AF4300C2D1D1 /* HpsPaxGiftActivateBuilder.m in Sources */,
 				DDFF35EC2937AF4300C2D1D1 /* HpsHpaDiagnosticBuilder.m in Sources */,
 				DDFF36652937AF4400C2D1D1 /* HpsGiftCard.m in Sources */,
-				146285C82D5250810057376B /* SObjc.m in Sources */,
+				146285BE2D524DD60057376B /* SObjc.m in Sources */,
 				DDFF35AB2937AF4300C2D1D1 /* HpsPaxLocalDetailResponse.m in Sources */,
 				DDFF35B92937AF4300C2D1D1 /* HpsPaxHttpInterface.m in Sources */,
 				1438BFF62CC7FD940040F364 /* ReceiptHelper.swift in Sources */,
