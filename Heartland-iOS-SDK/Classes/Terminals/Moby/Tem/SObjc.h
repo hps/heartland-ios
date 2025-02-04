@@ -1,21 +1,22 @@
 //
-//  SanboxObjc.h
+//  SObjc.h
 //  Heartland-iOS-SDK
 //
 //
 
 #import <Foundation/Foundation.h>
 #import <TemCommunicationManager.h>
+#import <TemLibrary/TemLibrary-swift.h>
 
 @class Sandbox;
 
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface SandboxObjc : NSObject
+@interface SObjc : NSObject
 
 
-+(SandboxObjc *)getInstance;
++(SObjc *)getInstance;
 
 
 /**

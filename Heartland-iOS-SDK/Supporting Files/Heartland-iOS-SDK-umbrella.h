@@ -193,8 +193,9 @@
 #import "HpsAutoSubstantiation.h"
 #import "HpsUpaDeviceSignatureResponse.h"
 #import "HpsUpaDeletePreAuthBuilder.h"
-#import "SandboxObjc.h"
 #import "RUADevice.h"
+#import "SObjc.h"
+#import "TemCommunicationManager.h"
 
 
 FOUNDATION_EXPORT double Heartland_iOS_SDKVersionNumber;

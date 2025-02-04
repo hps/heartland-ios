@@ -1,13 +1,13 @@
 //
-//  SanboxObjc.m
+//  SObjc.m
 //  Heartland-iOS-SDK
 //
 //
 
-#import "SandboxObjc.h"
+#import "SObjc.h"
 
 
-@implementation SandboxObjc
+@implementation SObjc
 
 TemCommunicationManager * temCommunicationManager;
 
@@ -19,11 +19,11 @@ TemCommunicationManager * temCommunicationManager;
     return self;
 }
 
-+ (SandboxObjc *)getInstance{
-    static SandboxObjc *sharedInstance = nil;
++ (SObjc *)getInstance{
+    static SObjc *sharedInstance = nil;
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
-            sharedInstance = [[SandboxObjc alloc] init];
+            sharedInstance = [[SObjc alloc] init];
         });
         return sharedInstance;
 }

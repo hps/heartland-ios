@@ -7,23 +7,24 @@
 import SwiftUI
 import TemLibrary
 import System
-//import AlertToast
-//import ActivityIndicatorView
+import Heartland_iOS_SDK
+import TemLibrary
+import RUA_BLE
 
-let sandbox  = SandboxObjc.getInstance()
+let sandbox  = SObjc.getInstance()
 
 @available(iOS 16.0, *)
-struct MobyDeviceDetailView: View {
+struct DMobyDeviceDetailView: View {
     
-    var ruaHelper : RUAHelper = RUAHelper.sharedInstance
+    var ruaHelper : RUADDeviceHelper = RUADDeviceHelper.sharedInstance
     
-    var deviceSelected: RuaDevice
+    var deviceSelected: RUADevice
     
     var textPadding : CGFloat = 5
     @State private var showToastMessage = false
     @State private var showToastLoading = false
     
-    @State private var selection = KeyMappingStubMode.None
+    @State private var selection = DKeyMappingStubMode.None
     
     @State private var isConnectedToReader = false
     @State private var isInitTem = false
@@ -45,7 +46,7 @@ struct MobyDeviceDetailView: View {
     
     private let fileUtils = FileUtils()
     
-    init(deviceSelected : RuaDevice){
+    init(deviceSelected : RUADevice){
         config = Configurations()
         self.deviceSelected = deviceSelected
     }
@@ -158,9 +159,9 @@ struct MobyDeviceDetailView: View {
             HStack {
                 Text("Key Mapping Stub : ").underline()
                 Picker(selection: $selection.onChange(stubModeChange), label: Text("Stub mode").font(.body.bold())) {
-                    Text(KeyMappingStubMode.None.rawValue).tag(KeyMappingStubMode.None)
-                    Text(KeyMappingStubMode.Stub1.rawValue).tag(KeyMappingStubMode.Stub1)
-                    Text(KeyMappingStubMode.Stub2.rawValue).tag(KeyMappingStubMode.Stub2)
+                    Text(DKeyMappingStubMode.None.rawValue).tag(DKeyMappingStubMode.None)
+                    Text(DKeyMappingStubMode.Stub1.rawValue).tag(DKeyMappingStubMode.Stub1)
+                    Text(DKeyMappingStubMode.Stub2.rawValue).tag(DKeyMappingStubMode.Stub2)
                 }
             }.padding().disabled(!isInitTem)
         }.padding().background(
@@ -204,7 +205,7 @@ struct MobyDeviceDetailView: View {
         )
     }
     
-    func stubModeChange(_ tag: KeyMappingStubMode) {
+    func stubModeChange(_ tag: DKeyMappingStubMode) {
         if(self.ruaHelper.currentKeyMappingInfoMode != tag){
             self.ruaHelper.currentKeyMappingInfoMode = tag
             refreshReaderStateJson()
@@ -538,12 +539,3 @@ struct MobyDeviceDetailView: View {
     }
     
 }
-
-extension Double {
-    /// Rounds the double to decimal places value
-    func rounded(toPlaces places:Int) -> Double {
-        let divisor = pow(10.0, Double(places))
-        return (self * divisor).rounded() / divisor
-    }
-}
-
