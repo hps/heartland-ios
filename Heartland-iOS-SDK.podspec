@@ -43,5 +43,6 @@ Pod::Spec.new do |s|
     s.user_target_xcconfig = { 
 	'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
     }
+
  
 end

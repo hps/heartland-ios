@@ -193,7 +193,7 @@
 #import "HpsAutoSubstantiation.h"
 #import "HpsUpaDeviceSignatureResponse.h"
 #import "HpsUpaDeletePreAuthBuilder.h"
-#import "SandboxObjc.h"
+#import "SObjc.h"
 #import "RUADevice.h"
 
 

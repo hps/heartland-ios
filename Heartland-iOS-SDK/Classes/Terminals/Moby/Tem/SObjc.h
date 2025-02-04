@@ -1,5 +1,5 @@
 //
-//  SanboxObjc.h
+//  SObjc.h
 //  Heartland-iOS-SDK
 //
 //
@@ -12,10 +12,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface SandboxObjc : NSObject
+@interface SObjc : NSObject
 
 
-+(SandboxObjc *)getInstance;
++(SObjc *)getInstance;
 
 
 /**

@@ -10,7 +10,7 @@ import System
 //import AlertToast
 //import ActivityIndicatorView
 
-let sandbox  = SandboxObjc.getInstance()
+let sandbox  = SObjc.getInstance()
 
 @available(iOS 16.0, *)
 struct MobyDeviceDetailView: View {
