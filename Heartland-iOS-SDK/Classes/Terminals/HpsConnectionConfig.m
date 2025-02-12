@@ -5,7 +5,7 @@
 
 -(id)init {
      if (self = [super init])  {
-         self.timeout = 3; //Seconds
+         self.timeout = 30; //Seconds
      }
      return self;
 }
