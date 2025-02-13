@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2.1.1 2025-02-12
+- iOS SDK: Fixing Default Timeout for UPA Device Connection
+
 ## 2.1.0 2025-02-04
 - iOS SDK: Implemlentation of Moby/Ingenico Transactions.
 - iOS SDK: Allow Surcharge less than 3%
