@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2.1.2 2025-03-24
+- iOS SDK: Fixing Surcharge fee calculation rounding up
+
 ## 2.1.1 2025-02-12
 - iOS SDK: Fixing Default Timeout for UPA Device Connection
 
