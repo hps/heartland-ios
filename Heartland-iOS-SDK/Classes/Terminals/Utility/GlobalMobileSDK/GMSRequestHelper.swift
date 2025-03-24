@@ -101,7 +101,8 @@ class GMSRequestHelper {
                                         autoSubstantiation: autoSubstantiation,
                                         isSurchargeEnabled: isSurchargeEnabled,
                                         allowDuplicates: allowDuplicates,
-                                        surchargeFee: surchargeFee)
+                                        surchargeFee: surchargeFee,
+                                        preTaxAmount: 0.00)
         } else {
             return AuthTransaction.auth(clientTransactionId: clientTransactionId,
                                         total: decimalToUint(total),
@@ -118,7 +119,8 @@ class GMSRequestHelper {
                                         autoSubstantiation: autoSubstantiation,
                                         isSurchargeEnabled: isSurchargeEnabled,
                                         allowDuplicates: allowDuplicates,
-                                        surchargeFee: surchargeFee)
+                                        surchargeFee: surchargeFee,
+                                        preTaxAmount: 0.00)
         }
     }
 
@@ -248,7 +250,7 @@ class GMSRequestHelper {
                                         autoSubstantiation: autoSubstantiation,
                                         isSurchargeEnabled: isSurchargeEnabled,
                                         allowDuplicates: allowDuplicates,
-                                        surchargeFee: surchargeFee)
+                                        surchargeFee: surchargeFee, preTaxAmount: 0.00)
             
         } else {
             return SaleTransaction.sale(clientTransactionId: clientTransactionId,
@@ -266,7 +268,7 @@ class GMSRequestHelper {
                                         autoSubstantiation: autoSubstantiation,
                                         isSurchargeEnabled: isSurchargeEnabled,
                                         allowDuplicates: allowDuplicates,
-                                        surchargeFee: surchargeFee)
+                                        surchargeFee: surchargeFee, preTaxAmount: 0.00)
         }
     }
 
