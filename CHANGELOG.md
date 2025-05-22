@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## 2.1.3 2025-05-27
+## 2.1.3 2025-05-22
 - iOS SDK: Fixed BBPOS incorrect card charged
 
 ## 2.1.2 2025-03-24
