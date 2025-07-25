@@ -7,6 +7,7 @@ public class HpsWiseCubeCreditCaptureBuilder: HpsWiseCubeBaseBuilder, GMSCreditC
     public var referenceNumber: String?
     public var gratuity: NSDecimalNumber?
     public var transactionId: String?
+    public var preTaxAmount: NSDecimalNumber?
 
     public init(device: HpsWiseCubeDevice) {
         super.init(transactionType: .creditCapture, device: device)

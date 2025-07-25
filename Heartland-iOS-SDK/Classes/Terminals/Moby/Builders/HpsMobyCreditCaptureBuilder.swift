@@ -17,6 +17,7 @@ public class HpsMobyCreditCaptureBuilder: HpsMobyBaseBuilder, GMSCreditCaptureBu
     public var autoSubstantiation: HpsAutoSubstantiation?
     public var isSurchargeEnabled: NSNumber?
     public var allowDuplicates: NSNumber?
+    public var preTaxAmount: NSDecimalNumber?
     
     public init(device: HpsMobyDevice) {
         super.init(transactionType: .creditCapture, device: device)

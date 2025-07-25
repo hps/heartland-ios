@@ -127,7 +127,7 @@ final class HpsCreditTests: XCTestCase, GMSDeviceDelegate {
 
     func onError(_: NSError) {}
 
-    func onBluetoothDeviceList(_ peripherals: NSMutableArray) {
+    func onBluetoothDeviceList(_ peripherals: NSMutableArray, isScanning: Bool) {
         for peripheral in peripherals {
             if let device = peripheral as? HpsTerminalInfo {
                 self.device?.connectDevice(device)
@@ -151,4 +151,6 @@ extension HpsCreditTests: GMSTransactionDelegate {
     func onTransactionCancelled() {}
 
     func onTransactionError(_: NSError) {}
+    
+    func onTransactionWaitingForSurchargeConfirmation(result: Heartland_iOS_SDK.HpsTransactionStatus, response: HpsTerminalResponse) {}
 }

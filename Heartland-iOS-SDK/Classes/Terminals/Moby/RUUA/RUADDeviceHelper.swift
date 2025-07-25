@@ -585,7 +585,7 @@ extension RUADDeviceHelper: HpsMobyDeviceDelegate {
         self.initilalizeCompletionBlock(nil,nil)
     }
     
-    func onBluetoothDeviceList(_ peripherals: NSMutableArray) {
+    func onBluetoothDeviceList(_ peripherals: NSMutableArray, isScanning: Bool) {
         
         for peripheral in peripherals {
             if let peripheral = peripheral as? HpsTerminalInfo {

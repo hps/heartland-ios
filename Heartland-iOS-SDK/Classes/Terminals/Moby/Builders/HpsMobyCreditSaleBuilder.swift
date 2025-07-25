@@ -18,6 +18,7 @@ public class HpsMobyCreditSaleBuilder: HpsMobyBaseBuilder, GMSCreditSaleBuilder 
     public var isSurchargeEnabled: NSNumber?
     public var allowDuplicates: NSNumber?
     public var surchargeFee: NSDecimalNumber?
+    public var preTaxAmount: NSDecimalNumber?
     
     public init(device: HpsMobyDevice) {
         super.init(transactionType: .creditSale, device: device)
