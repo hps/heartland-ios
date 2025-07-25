@@ -229,12 +229,26 @@ extension ConnectC2XViewController: HpsC2xDeviceDelegate {
         scanButtonReference.isEnabled = true
     }
     
-    func onBluetoothDeviceList(_ peripherals: NSMutableArray) {
+    func onBluetoothDeviceList(_ peripherals: NSMutableArray, isScanning: Bool) {
+        // Dismiss any currently presented alert controller
+        if let presentedAlert = self.presentedViewController as? UIAlertController {
+            presentedAlert.dismiss(animated: false) { [weak self] in
+                self?.presentDeviceList(peripherals, isScanning: isScanning)
+            }
+        } else {
+            presentDeviceList(peripherals, isScanning: isScanning)
+        }
+    }
+}
+
+fileprivate extension ConnectC2XViewController {
+    private func presentDeviceList(_ peripherals: NSMutableArray, isScanning: Bool) {
         let alertController = UIAlertController(title: "Devices", message: "Please select a device to connect", preferredStyle: .actionSheet)
         
         for peripheral in peripherals {
             if let peripheral = peripheral as? HpsTerminalInfo {
                 let action = UIAlertAction(title: peripheral.name, style: .default) { [weak self] _ in
+                    self?.device?.stopScan()
                     self?.device?.connectDevice(peripheral)
                 }
                 alertController.addAction(action)
@@ -252,7 +266,7 @@ extension ConnectC2XViewController: HpsC2xDeviceDelegate {
         }
         present(alertController, animated: true)
         
-        activityIndicator.isHidden = true
+        activityIndicator.isHidden = !isScanning
     }
 }
 

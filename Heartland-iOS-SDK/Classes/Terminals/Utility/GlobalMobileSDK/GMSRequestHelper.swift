@@ -63,6 +63,13 @@ class GMSRequestHelper {
             NSDecimalRound(&roundedFee, &fee, 2, .bankers)
             return roundedFee
         }()
+
+        let preTaxAmount: Decimal = {
+            var fee = Decimal(builder.preTaxAmount?.doubleValue ?? 0.0)
+            var roundedFee = Decimal()
+            NSDecimalRound(&roundedFee, &fee, 2, .bankers)
+            return roundedFee
+        }()
         
         if isSurchargeEnabled && (surchargeFee < 2 || surchargeFee > 3) {
             fatalError("Surcharge fee must be between 2 and 3")
@@ -102,7 +109,7 @@ class GMSRequestHelper {
                                         isSurchargeEnabled: isSurchargeEnabled,
                                         allowDuplicates: allowDuplicates,
                                         surchargeFee: surchargeFee,
-                                        preTaxAmount: 0.00)
+                                        preTaxAmount: preTaxAmount)
         } else {
             return AuthTransaction.auth(clientTransactionId: clientTransactionId,
                                         total: decimalToUint(total),
@@ -120,7 +127,7 @@ class GMSRequestHelper {
                                         isSurchargeEnabled: isSurchargeEnabled,
                                         allowDuplicates: allowDuplicates,
                                         surchargeFee: surchargeFee,
-                                        preTaxAmount: 0.00)
+                                        preTaxAmount: preTaxAmount)
         }
     }
 
@@ -212,6 +219,13 @@ class GMSRequestHelper {
             return roundedFee
         }()
         
+        let preTaxAmount: Decimal = {
+            var fee = Decimal(builder.preTaxAmount?.doubleValue ?? 0.0)
+            var roundedFee = Decimal()
+            NSDecimalRound(&roundedFee, &fee, 2, .bankers)
+            return roundedFee
+        }()
+        
         if isSurchargeEnabled && (surchargeFee < 2 || surchargeFee > 3) {
             fatalError("Surcharge fee must be between 2 and 3")
         }
@@ -250,7 +264,8 @@ class GMSRequestHelper {
                                         autoSubstantiation: autoSubstantiation,
                                         isSurchargeEnabled: isSurchargeEnabled,
                                         allowDuplicates: allowDuplicates,
-                                        surchargeFee: surchargeFee, preTaxAmount: 0.00)
+                                        surchargeFee: surchargeFee,
+                                        preTaxAmount: preTaxAmount)
             
         } else {
             return SaleTransaction.sale(clientTransactionId: clientTransactionId,
@@ -268,7 +283,8 @@ class GMSRequestHelper {
                                         autoSubstantiation: autoSubstantiation,
                                         isSurchargeEnabled: isSurchargeEnabled,
                                         allowDuplicates: allowDuplicates,
-                                        surchargeFee: surchargeFee, preTaxAmount: 0.00)
+                                        surchargeFee: surchargeFee,
+                                        preTaxAmount: preTaxAmount)
         }
     }
 

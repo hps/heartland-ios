@@ -18,6 +18,7 @@ public class HpsWiseCubeCreditSaleBuilder: HpsWiseCubeBaseBuilder, GMSCreditSale
     public var isSurchargeEnabled: NSNumber?
     public var allowDuplicates: NSNumber?
     public var surchargeFee: NSDecimalNumber?
+    public var preTaxAmount: NSDecimalNumber?
     
     
     public init(device: HpsWiseCubeDevice) {

@@ -7,4 +7,5 @@ public protocol GMSCreditCaptureBuilder {
     var gratuity: NSDecimalNumber? { get set }
     var transactionId: String? { get set }
     var clientTransactionId: String? { get set }
+    var preTaxAmount: NSDecimalNumber? { get set }
 }

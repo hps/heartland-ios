@@ -17,4 +17,5 @@ public protocol GMSCreditSaleBuilder {
     var isSurchargeEnabled: NSNumber? { get set }
     var allowDuplicates: NSNumber? { get set }
     var surchargeFee: NSDecimalNumber? { get set }
+    var preTaxAmount: NSDecimalNumber? { get set }
 }
