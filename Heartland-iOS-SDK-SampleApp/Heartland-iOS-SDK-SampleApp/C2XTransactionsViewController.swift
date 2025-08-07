@@ -239,12 +239,24 @@ extension C2XTransactionsViewController {
             }
             self.builder = builder
             
-            if allowSurcharge.isOn,
-               let surchargeValue = Decimal(string: surchargePercent.text ?? "0.0"),
-                surchargeValue < 2 || surchargeValue > 3 {
-                showTextDialogWith("Transaction Cannot Be Performed",
-                                   "Custom surcharge fee is limited to a value of 2% or greater and less than 3%")
-                return
+            if allowSurcharge.isOn {
+                guard let surchargePercentText = surchargePercent.text else {
+                    showTextDialogWith("Transaction Cannot Be Performed",
+                                       "Custom surcharge fee is limited to a value of 2% or greater and less than 3%")
+                    return
+                }
+                
+                guard let surchargeValue = Decimal(string: surchargePercentText) else {
+                    showTextDialogWith("Transaction Cannot Be Performed",
+                                       "Custom surcharge fee is limited to a value of 2% or greater and less than 3%")
+                    return
+                }
+                
+                if surchargeValue < 2 || surchargeValue > 3 {
+                    showTextDialogWith("Transaction Cannot Be Performed",
+                                       "Custom surcharge fee is limited to a value of 2% or greater and less than 3%")
+                    return
+                }
             }
             
             if allowPreTax.isOn,
