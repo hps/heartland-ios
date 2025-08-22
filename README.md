@@ -31,12 +31,22 @@ Adding this pod will also include the XMLDictionary, and Masonry cocoapod as a d
 
 ## Installation
 
+### Cocoapods
+
 Heartland-iOS-SDK is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile and run "pod update":
 
 ```ruby
 pod 'Heartland-iOS-SDK'
 ```
+
+### Carthage
+
+If you are using [Carthage](https://github.com/Carthage/Carthage), simply add the following line to your Cartfile and run `carthage update`
+
+```
+github "hps/heartland-ios"
+``` 
 
 ## For iOS 9 only: Whitelist heartlandportico.com
 
