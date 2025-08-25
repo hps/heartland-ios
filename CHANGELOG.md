@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## 2.1.4 2025-07-29
+## 2.1.4 2025-08-26
 - iOS SDK: Implemented BBPOS discovery should return multiple devices
 - iOS SDK: Fixed Surcharge pre-tax miscalculates total amount 
 
