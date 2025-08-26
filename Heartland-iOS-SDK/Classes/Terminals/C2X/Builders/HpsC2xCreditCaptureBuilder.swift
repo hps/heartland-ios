@@ -8,6 +8,7 @@ public class HpsC2xCreditCaptureBuilder: HpsC2xBaseBuilder, GMSCreditCaptureBuil
     public var referenceNumber: String?
     public var gratuity: NSDecimalNumber?
     public var transactionId: String?
+    public var preTaxAmount: NSDecimalNumber?
 
     public init(device: HpsC2xDevice) {
         super.init(transactionType: .creditCapture, device: device)

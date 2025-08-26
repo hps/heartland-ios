@@ -36,6 +36,25 @@ public class HpsC2xCreditAuthBuilder: HpsC2xBaseBuilder, GMSCreditAuthBuilder {
     }
     private var _surchargeFee: NSDecimalNumber?
     
+    public var preTaxAmount: NSDecimalNumber?  {
+        get {
+            return _preTaxAmount
+        }
+        set {
+            guard let newValue = newValue else {
+                _preTaxAmount = nil
+                return
+            }
+            
+            var fee = Decimal(newValue.doubleValue)
+            var roundedFee = Decimal()
+            NSDecimalRound(&roundedFee, &fee, 2, .bankers)
+            
+            _preTaxAmount = NSDecimalNumber(decimal: roundedFee)
+        }
+    }
+    private var _preTaxAmount: NSDecimalNumber?
+    
     public init(device: HpsC2xDevice) {
         super.init(transactionType: .creditAuth, device: device)
     }

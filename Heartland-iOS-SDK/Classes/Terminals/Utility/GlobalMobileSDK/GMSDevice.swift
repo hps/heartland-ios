@@ -7,9 +7,10 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
     public var deviceDelegate: GMSDeviceDelegate?
     public weak var deviceScanObserver: GMSDeviceScanObserver?
     public var transactionDelegate: GMSTransactionDelegate?
-    public var targetTerminalId: UUID?
     public private(set) var terminalsById = [UUID: HpsTerminalInfo]()
     public var otaFirmwareUpdateDelegate: GMSDeviceFirmwareUpdateDelegate?
+    
+    private var scanTimer: Timer?
     
     public private(set) var isScanning = false {
         didSet {
@@ -41,10 +42,28 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
         if let wrapper = gmsWrapper {
             isScanning = true
             wrapper.searchDevices()
+            
+            // Invalidate previous timer if it exists
+            scanTimer?.invalidate()
+            
+            scanTimer = Timer.scheduledTimer(
+                timeInterval: 15.0,
+                target: self,
+                selector: #selector(scanTimerTimeout),
+                userInfo: nil,
+                repeats: false
+            )
         }
     }
     
+    @objc private func scanTimerTimeout() {
+        stopScan()
+    }
+    
     public func stopScan() {
+        scanTimer?.invalidate()
+        scanTimer = nil
+        
         if let wrapper = gmsWrapper {
             wrapper.cancelSearch()
         }
@@ -111,9 +130,8 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
     }
     
     public func searchComplete() {
-        targetTerminalId = nil
         isScanning = false
-        deviceDelegate?.onBluetoothDeviceList(peripherals)
+        deviceDelegate?.onBluetoothDeviceList(peripherals, isScanning: isScanning)
     }
     
     public func deviceFound(_ device: NSObject) {
@@ -121,10 +139,10 @@ public class GMSDevice: NSObject, GMSClientAppDelegate, GMSDeviceInterface {
             return
         }
         
-        terminalsById[terminal.identifier] = terminal
-        
-        if targetTerminalId == nil || targetTerminalId == terminal.identifier {
-            stopScan()
+        // Only add the terminal if its identifier doesn't already exist in the dictionary
+        if !terminalsById.keys.contains(terminal.identifier) {
+            terminalsById[terminal.identifier] = terminal
+            deviceDelegate?.onBluetoothDeviceList(peripherals, isScanning: isScanning)
         }
     }
     

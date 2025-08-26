@@ -43,6 +43,8 @@ class C2XTransactionsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var allowPartialAuthToggle: UISwitch!
     @IBOutlet weak var allowSurcharge: UISwitch!
     @IBOutlet weak var surchargePercent: UITextField!
+    @IBOutlet weak var allowPreTax: UISwitch!
+    @IBOutlet weak var preTaxAmount: UITextField!
     
     @IBOutlet weak var DialogView: UIView!
     @IBOutlet weak var dialogText: UILabel!
@@ -93,13 +95,28 @@ class C2XTransactionsViewController: UIViewController, UITextFieldDelegate {
         surchargePercent.delegate = self
         surchargePercent.keyboardType = .decimalPad
         allowSurcharge.addTarget(self, action: #selector(toggleSurcharge(_:)), for: .valueChanged)
+        allowSurcharge.isOn = false
+        
+        preTaxAmount.delegate = self
+        preTaxAmount.keyboardType = .decimalPad
+        allowPreTax.addTarget(self, action: #selector(togglePreTax(_:)), for: .valueChanged)
         
         if allowSurcharge.isOn {
             surchargePercent.text = "3.00"
             surchargePercent.isEnabled = true
+            allowPreTax.isEnabled = true
         } else {
             surchargePercent.text = ""
             surchargePercent.isEnabled = false
+            allowPreTax.isEnabled = false
+        }
+        
+        if allowPreTax.isOn {
+            preTaxAmount.text = "3.00"
+            preTaxAmount.isEnabled = true
+        } else {
+            preTaxAmount.text = ""
+            preTaxAmount.isEnabled = false
         }
     }
     
@@ -119,7 +136,7 @@ class C2XTransactionsViewController: UIViewController, UITextFieldDelegate {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleContainerViewTap))
         containerView.addGestureRecognizer(tapGesture)
         
-        amountTextField.text = "1.28"
+        amountTextField.text = "100.00"
         gratuityTextField.text = "0.00"
         allowPartialAuthToggle.setOn(false, animated: true)
         transactionIdTextField.text = String.empty
@@ -127,6 +144,8 @@ class C2XTransactionsViewController: UIViewController, UITextFieldDelegate {
         dentalHealthCareTotalTextField.text = "0.00"
         prescriptionHealthCareTotalTextField.text = "0.00"
         visionHealthCareTotalTextField.text = "0.00"
+        surchargePercent.text = ""
+        preTaxAmount.text = ""
         
         enableButtons(true)
     }
@@ -134,8 +153,8 @@ class C2XTransactionsViewController: UIViewController, UITextFieldDelegate {
 
 // MARK: - Actions
 
-private extension C2XTransactionsViewController {
-    private func configureActions() {
+extension C2XTransactionsViewController {
+    public func configureActions() {
         self.creditSaleButton.addTarget(self,
                                         action: #selector(creditSaleButtonAction(_:)),
                                         for: .touchUpInside)
@@ -200,6 +219,14 @@ private extension C2XTransactionsViewController {
             builder.allowDuplicates = true
             builder.isSurchargeEnabled = NSNumber(value: allowSurcharge.isOn)
             builder.surchargeFee = NSDecimalNumber(string: surchargePercent.text)
+            if allowPreTax.isOn {
+                if preTaxAmount.text?.count ?? 0 == 0 {
+                    showTextDialog(title: "Pre-Tax Allowed", "You must enter a value")
+                    return
+                }
+                // TODO: - check property later
+                builder.preTaxAmount = NSDecimalNumber(string: preTaxAmount.text!)
+            }
             
             let autoSubstantiation = getHealthCareComponent()
             builder.autoSubstantiation = autoSubstantiation
@@ -212,11 +239,31 @@ private extension C2XTransactionsViewController {
             }
             self.builder = builder
             
-            if allowSurcharge.isOn,
-               let surchargeValue = Decimal(string: surchargePercent.text ?? "3.0"),
-                surchargeValue < 2 || surchargeValue > 3 {
+            if allowSurcharge.isOn {
+                guard let surchargePercentText = surchargePercent.text else {
+                    showTextDialogWith("Transaction Cannot Be Performed",
+                                       "Custom surcharge fee is limited to a value of 2% or greater and less than 3%")
+                    return
+                }
+                
+                guard let surchargeValue = Decimal(string: surchargePercentText) else {
+                    showTextDialogWith("Transaction Cannot Be Performed",
+                                       "Custom surcharge fee is limited to a value of 2% or greater and less than 3%")
+                    return
+                }
+                
+                if surchargeValue < 2 || surchargeValue > 3 {
+                    showTextDialogWith("Transaction Cannot Be Performed",
+                                       "Custom surcharge fee is limited to a value of 2% or greater and less than 3%")
+                    return
+                }
+            }
+            
+            if allowPreTax.isOn,
+               let preTaxAmount = Decimal(string: preTaxAmount.text ?? "3.0"),
+               preTaxAmount <= 0 {
                 showTextDialogWith("Transaction Cannot Be Performed",
-                                   "Custom surcharge fee is limited to a value of 2% or greater and less than 3%")
+                                   "Custom pre-tax value must be greater than zero.")
                 return
             }
             
@@ -248,6 +295,14 @@ private extension C2XTransactionsViewController {
             builder.address = address
             builder.isSurchargeEnabled = NSNumber(value: allowSurcharge.isOn)
             builder.surchargeFee = NSDecimalNumber(string: surchargePercent.text)
+            if allowPreTax.isOn {
+                if preTaxAmount.text?.count ?? 0 == 0 {
+                    showTextDialog(title: "Pre-Tax Allowed", "You must enter a value")
+                    return
+                }
+                // TODO: - check this later
+                builder.preTaxAmount = NSDecimalNumber(string: preTaxAmount.text)
+            }
             
             builder.allowPartialAuth = true
             builder.allowDuplicates = true
@@ -262,6 +317,15 @@ private extension C2XTransactionsViewController {
                                    "Custom surcharge fee is limited to a value of 2% or greater and less than 3%")
                 return
             }
+            
+            if allowPreTax.isOn,
+               let preTaxAmount = Decimal(string: preTaxAmount.text ?? "0.0"),
+               preTaxAmount <= 0 {
+                showTextDialogWith("Transaction Cannot Be Performed",
+                                   "Custom pre-tax value must be greater than zero.")
+                return
+            }
+            
             showProgress(true)
             setText(LoadingStatus.WAIT.rawValue)
             builder.execute()
@@ -342,6 +406,14 @@ private extension C2XTransactionsViewController {
             builder.allowDuplicates = true
             builder.isSurchargeEnabled = NSNumber(value: allowSurcharge.isOn)
             builder.surchargeFee = NSDecimalNumber(string: surchargePercent.text)
+            if allowPreTax.isOn {
+                if preTaxAmount.text?.count ?? 0 == 0 {
+                    showTextDialog(title: "Pre-Tax Allowed", "You must enter a value")
+                    return
+                }
+                builder.preTaxAmount = NSDecimalNumber(string: preTaxAmount.text)
+            }
+            
             if let cTransactionId = builder.clientTransactionId {
                 NSLog("Client Transaction Id Generated In The Client - Request  %@", cTransactionId)
             }
@@ -353,6 +425,15 @@ private extension C2XTransactionsViewController {
                                    "Custom surcharge fee is limited to a value of 2% or greater and less than 3%")
                 return
             }
+            
+            if allowPreTax.isOn,
+               let preTaxAmount = Decimal(string: preTaxAmount.text ?? "0.0"),
+               preTaxAmount <= 0 {
+                showTextDialogWith("Transaction Cannot Be Performed",
+                                   "Custom pre-tax value must be greater than zero.")
+                return
+            }
+            
             showProgress(true)
             setText(LoadingStatus.WAIT.rawValue)
             builder.execute()
@@ -442,14 +523,28 @@ private extension C2XTransactionsViewController {
     }
     
     @objc func toggleSurcharge(_ sender: UISwitch) {
-       if sender.isOn {
-           surchargePercent.text = "3.00"
-           surchargePercent.isEnabled = true
-       } else {
-           surchargePercent.text = ""
-           surchargePercent.isEnabled = false
-       }
-   }
+        if sender.isOn {
+            surchargePercent.text = "3.00"
+            surchargePercent.isEnabled = true
+            allowPreTax.isEnabled = true
+        } else {
+            surchargePercent.text = ""
+            surchargePercent.isEnabled = false
+            preTaxAmount.text = ""
+            allowPreTax.isEnabled = false
+            allowPreTax.isOn = false
+        }
+    }
+    
+    @objc func togglePreTax(_ sender: UISwitch) {
+        if sender.isOn {
+            preTaxAmount.text = "3.00"
+            preTaxAmount.isEnabled = true
+        } else {
+            preTaxAmount.text = ""
+            preTaxAmount.isEnabled = false
+        }
+    }
     
     func reversalAuthTransaction() {
         guard let amountText = self.amountTextField.text, amountText.count > 0 else { showTextDialog(LoadingStatus.AMOUNT_SHOULD_BE_LARGER_THAN_ZERO.rawValue)
@@ -728,7 +823,7 @@ extension C2XTransactionsViewController: HpsC2xDeviceDelegate, GMSTransactionDel
         enableButtons(isDeviceConnected)
     }
     
-    func onBluetoothDeviceList(_ peripherals: NSMutableArray) {
+    func onBluetoothDeviceList(_ peripherals: NSMutableArray, isScanning: Bool) {
         if peripherals.count == 0 {
             return
         }
@@ -813,11 +908,12 @@ private extension C2XTransactionsViewController {
             
             let surchargeFee = response.surchargeFee ?? "0"
             var surchargeAmount: NSDecimalNumber = NSDecimalNumber(string: "0")
+            var approvedAmount = response.approvedAmount.doubleValue
             if response.surchargeRequested == SurchargeEligibility.Y {
                 surchargeAmount = NSDecimalNumber(string: response.surchargeAmount ?? "0")
             }
             
-            messageResult = "Response: \nStatus: \(responseCode)\nTransaction Type: \(response.transactionType ?? "") \nAmount: \(String(format: "%.2f", response.approvedAmount.doubleValue))\nSurchargeAmount: \(String(format: "%.2f", surchargeAmount.doubleValue))\nSurchargeFee: \(surchargeFee)%\n Issuer Resp.: \(issuerCode)\n Issuer Auth Data: \(issuerMSG)\nGW Code: \(GWCode)\nGW MSG: \(GWMSG) \(GWMSGSurcharge)"
+            messageResult = "Response: \nStatus: \(responseCode)\nTransaction Type: \(response.transactionType ?? "") \nAmount: \(String(format: "%.2f", approvedAmount))\nSurchargeAmount: \(String(format: "%.2f", surchargeAmount.doubleValue))\nSurchargeFee: \(surchargeFee)%\n Issuer Resp.: \(issuerCode)\n Issuer Auth Data: \(issuerMSG)\nGW Code: \(GWCode)\nGW MSG: \(GWMSG) \(GWMSGSurcharge)"
             
             isApproved = true
         case let .CANCELLED(response):
@@ -862,7 +958,7 @@ private extension C2XTransactionsViewController {
                 GWMSG = respText
             }
             
-            messageResult = "Response: \nStatus: \(deviceResponseMessage)\nTransaction Type: \(response.transactionType ?? "") \nAmount: \(response.approvedAmount)\n Auth Resp.: \(issuerCode)\n Issuer Auth Data: \(issuerMSG)\nGW Code: \(GWCode)\nGW MSG: \(GWMSG)"
+            messageResult = "Response: \nStatus: \(deviceResponseMessage)\nTransaction Type: \(response.transactionType ?? "") \nAmount: \(String(describing: response.approvedAmount))\n Auth Resp.: \(issuerCode)\n Issuer Auth Data: \(issuerMSG)\nGW Code: \(GWCode)\nGW MSG: \(GWMSG)"
             isApproved = false
         case let .MESSAGE(message):
             messageResult = message
@@ -921,7 +1017,9 @@ extension UIViewController {
         present(uialert, animated: true, completion: nil)
     }
     
-    func showTextDialogWith(_ title: String = "Transaction Completed", _ message: String, _ success: Bool = false) {
+    func showTextDialogWith(_ title: String = "Transaction Completed",
+                            _ message: String,
+                            _ success: Bool = false) {
         let uialert = UIAlertController(title: title,
                                         message: message,
                                         preferredStyle: UIAlertController.Style.alert)

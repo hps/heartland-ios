@@ -33,6 +33,24 @@ public class HpsC2xCreditSaleBuilder: HpsC2xBaseBuilder, GMSCreditSaleBuilder {
         }
     }
     private var _surchargeFee: NSDecimalNumber?
+    private var _preTaxAmount: NSDecimalNumber?
+    public var preTaxAmount: NSDecimalNumber? {
+        get {
+            return _preTaxAmount
+        }
+        set {
+            guard let newValue = newValue else {
+                _preTaxAmount = nil
+                return
+            }
+            
+            var fee = Decimal(newValue.doubleValue)
+            var roundedFee = Decimal()
+            NSDecimalRound(&roundedFee, &fee, 2, .bankers)
+            
+            _preTaxAmount = NSDecimalNumber(decimal: roundedFee)
+        }
+    }
 
     public var allowDuplicates: NSNumber?
     

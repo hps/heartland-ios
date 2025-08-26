@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2.1.4 2025-08-26
+- iOS SDK: Implemented BBPOS discovery should return multiple devices
+- iOS SDK: Fixed Surcharge pre-tax miscalculates total amount 
+
 ## 2.1.3 2025-05-22
 - iOS SDK: Fixed BBPOS incorrect card charged
 
