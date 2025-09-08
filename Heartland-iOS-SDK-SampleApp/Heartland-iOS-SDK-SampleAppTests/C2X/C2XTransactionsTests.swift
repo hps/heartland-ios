@@ -142,7 +142,7 @@ extension C2XTransactionsTests: HpsC2xDeviceDelegate, HpsC2xTransactionDelegate 
         print("Device Error \(deviceError)")
     }
     
-    func onBluetoothDeviceList(_ peripherals: NSMutableArray) {
+    func onBluetoothDeviceList(_ peripherals: NSMutableArray, isScanning: Bool) {
         print("onBluetoothDeviceList");
         for peripheral in peripherals {
             if let device = peripheral as? HpsTerminalInfo {

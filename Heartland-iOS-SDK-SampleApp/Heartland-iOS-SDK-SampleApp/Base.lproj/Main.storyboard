@@ -1053,6 +1053,17 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UzB-IT-oKC">
+                                <rect key="frame" x="101.66666666666667" y="498.00000000000006" width="189.66666666666663" height="32.666666666666686"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="CANCEL">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onCancelTransactionButtonClicked:" destination="oPc-K8-8zg" eventType="touchUpInside" id="9kY-3p-cPh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="obc-m5-pk4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1061,10 +1072,14 @@
                             <constraint firstItem="WUc-t3-J4H" firstAttribute="top" secondItem="nXU-ap-B8C" secondAttribute="top" constant="386" id="9mR-mB-Mva"/>
                             <constraint firstItem="WUc-t3-J4H" firstAttribute="centerX" secondItem="nXU-ap-B8C" secondAttribute="centerX" id="Ene-U0-D2t"/>
                             <constraint firstItem="Cfi-8O-Z0L" firstAttribute="centerX" secondItem="WUc-t3-J4H" secondAttribute="centerX" id="KUr-up-OpU"/>
+                            <constraint firstItem="WUc-t3-J4H" firstAttribute="bottom" secondItem="UzB-IT-oKC" secondAttribute="top" constant="-32" id="LRP-G1-TpI"/>
+                            <constraint firstItem="UzB-IT-oKC" firstAttribute="centerX" secondItem="WUc-t3-J4H" secondAttribute="centerX" id="Maq-j5-yFJ"/>
+                            <constraint firstItem="UzB-IT-oKC" firstAttribute="width" secondItem="WUc-t3-J4H" secondAttribute="width" multiplier="0.7" id="Qrj-hP-4w5"/>
                             <constraint firstItem="WUc-t3-J4H" firstAttribute="leading" secondItem="nXU-ap-B8C" secondAttribute="leadingMargin" constant="45" id="adN-JD-VlE"/>
                             <constraint firstItem="Cfi-8O-Z0L" firstAttribute="leading" secondItem="nXU-ap-B8C" secondAttribute="leadingMargin" id="gKc-R1-qH6"/>
                             <constraint firstItem="Cfi-8O-Z0L" firstAttribute="top" secondItem="nXU-ap-B8C" secondAttribute="topMargin" id="glf-BJ-A0Y"/>
                             <constraint firstItem="WUc-t3-J4H" firstAttribute="centerY" secondItem="nXU-ap-B8C" secondAttribute="centerY" id="nNQ-I6-85Z"/>
+                            <constraint firstItem="UzB-IT-oKC" firstAttribute="height" secondItem="WUc-t3-J4H" secondAttribute="width" multiplier="0.12" id="xjX-FY-X7Z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="C2X Transactions" id="5PR-y3-b4c">
@@ -1077,6 +1092,7 @@
                         <outlet property="allowSurcharge" destination="8HF-g6-34a" id="eAY-jk-Skv"/>
                         <outlet property="amountTextField" destination="2w6-hm-AFy" id="lNc-ch-1hJ"/>
                         <outlet property="authTransaction" destination="RVI-jj-ffY" id="Cbi-aZ-0Ac"/>
+                        <outlet property="cancelButton" destination="UzB-IT-oKC" id="AvR-Xi-5mp"/>
                         <outlet property="captureTransaction" destination="2zX-52-MBH" id="Yh8-tJ-k6R"/>
                         <outlet property="clinicHealthCareTotalTextField" destination="yzy-vm-HPr" id="sGN-Ir-ljM"/>
                         <outlet property="containerView" destination="3ac-Wh-jCJ" id="yCb-ZX-CJP"/>
@@ -1130,6 +1146,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -137,6 +137,7 @@ final class HpsCreditTests: XCTestCase, GMSDeviceDelegate {
 }
 
 extension HpsCreditTests: GMSTransactionDelegate {
+    
     func onStatusUpdate(_: Heartland_iOS_SDK.HpsTransactionStatus) {}
 
     func onConfirmAmount(_: Decimal) {}

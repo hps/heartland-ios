@@ -77,7 +77,7 @@ final class HpsC2XDeviceTests: XCTestCase, HpsC2xDeviceDelegate, HpsC2xTransacti
         print("Device Error \(deviceError)")
     }
     
-    func onBluetoothDeviceList(_ peripherals: NSMutableArray) {
+    func onBluetoothDeviceList(_ peripherals: NSMutableArray, isScanning: Bool) {
         print("onBluetoothDeviceList");
         for peripheral in peripherals {
             if let device = peripheral as? HpsTerminalInfo {
