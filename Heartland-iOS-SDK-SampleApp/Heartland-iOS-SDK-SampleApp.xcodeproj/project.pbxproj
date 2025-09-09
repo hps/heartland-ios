@@ -23,6 +23,7 @@
 		2896FA6F2A44AA2E0076BBFC /* UpaTransactionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2896FA6E2A44AA2E0076BBFC /* UpaTransactionProtocol.swift */; };
 		2896FA712A44AA7E0076BBFC /* UpaUSATransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2896FA702A44AA7E0076BBFC /* UpaUSATransaction.swift */; };
 		2896FA732A44AA930076BBFC /* PayAppCanadaTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2896FA722A44AA930076BBFC /* PayAppCanadaTransaction.swift */; };
+		43233D002E356AC300DBB5B6 /* BBPOSCreditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43233CFF2E356AAF00DBB5B6 /* BBPOSCreditTests.swift */; };
 		DD37C2E72AE0829E003891D7 /* TapToPayHostedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD37C2E62AE0829E003891D7 /* TapToPayHostedViewController.swift */; };
 		DD37C2F72B165674003891D7 /* TokenServiceHostedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD37C2F62B165674003891D7 /* TokenServiceHostedViewController.swift */; };
 		DD49DDB4296DDAE100EBD526 /* HpsUPALineItemDisplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD49DDB3296DDAE000EBD526 /* HpsUPALineItemDisplayTests.swift */; };
@@ -116,6 +117,7 @@
 		2896FA6E2A44AA2E0076BBFC /* UpaTransactionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpaTransactionProtocol.swift; sourceTree = "<group>"; };
 		2896FA702A44AA7E0076BBFC /* UpaUSATransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpaUSATransaction.swift; sourceTree = "<group>"; };
 		2896FA722A44AA930076BBFC /* PayAppCanadaTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayAppCanadaTransaction.swift; sourceTree = "<group>"; };
+		43233CFF2E356AAF00DBB5B6 /* BBPOSCreditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBPOSCreditTests.swift; sourceTree = "<group>"; };
 		DD37C2E62AE0829E003891D7 /* TapToPayHostedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapToPayHostedViewController.swift; sourceTree = "<group>"; };
 		DD37C2F62B165674003891D7 /* TokenServiceHostedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenServiceHostedViewController.swift; sourceTree = "<group>"; };
 		DD49DDB3296DDAE000EBD526 /* HpsUPALineItemDisplayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HpsUPALineItemDisplayTests.swift; sourceTree = "<group>"; };
@@ -228,6 +230,14 @@
 			path = UpaTransactions;
 			sourceTree = "<group>";
 		};
+		43233CFE2E356A9D00DBB5B6 /* BBPOS */ = {
+			isa = PBXGroup;
+			children = (
+				43233CFF2E356AAF00DBB5B6 /* BBPOSCreditTests.swift */,
+			);
+			path = BBPOS;
+			sourceTree = "<group>";
+		};
 		DD6A4F3D2937C221008B8165 = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +292,7 @@
 		DD713F872948DC3400514143 /* Heartland-iOS-SDK-SampleAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				43233CFE2E356A9D00DBB5B6 /* BBPOS */,
 				14864F212C9C74DD00B0E4F3 /* Moby */,
 				143A43812993D5BE0027BC3F /* Utilis */,
 				143A437E2993BC3E0027BC3F /* PAX */,
@@ -481,6 +492,7 @@
 				14864F202C9C74CF00B0E4F3 /* HpsMobyDeviceTests.swift in Sources */,
 				149365D82A321C63005A37CC /* UpsUpaSignatureDataTests.swift in Sources */,
 				140FA9A52A4E2DCC006E493A /* HpsUPATipAdjustBuilderTests.swift in Sources */,
+				43233D002E356AC300DBB5B6 /* BBPOSCreditTests.swift in Sources */,
 				DD8CECF9294CC7370006908F /* HpsUPAStartCardTests.swift in Sources */,
 				14F88D5F2A02E3AB009E821B /* HpsUPACATests.swift in Sources */,
 				143A437D29928DDA0027BC3F /* HpsC2XDeviceTests.swift in Sources */,

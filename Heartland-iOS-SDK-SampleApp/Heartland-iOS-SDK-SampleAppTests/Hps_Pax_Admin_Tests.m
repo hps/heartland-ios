@@ -55,7 +55,7 @@
     
     //Not supported
     HpsPaxDevice *device = [self setupDevice];
-    [device cancel:^(NSError *error) {
+    [device cancel:^(HpsPaxDeviceResponse *response, NSError *error) {
         XCTAssertNotNil(error);
         [expectation fulfill];
     }];

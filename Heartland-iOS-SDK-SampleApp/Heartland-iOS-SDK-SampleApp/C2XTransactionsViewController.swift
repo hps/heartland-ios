@@ -50,6 +50,8 @@ class C2XTransactionsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var dialogText: UILabel!
     @IBOutlet weak var dialogSpinner: UIActivityIndicatorView!
     
+    @IBOutlet weak var cancelButton: UIButton!
+    
     
     // MARK: - Properties
     var mainTransaction: MainTransaction = .credit
@@ -149,6 +151,12 @@ class C2XTransactionsViewController: UIViewController, UITextFieldDelegate {
         
         enableButtons(true)
     }
+    
+    @IBAction func onCancelTransactionButtonClicked(_ sender: UIButton) {
+        print("onCancelTransactionButtonClicked")
+        guard let _ = self.device else { return }
+        self.device?.cancelTransaction()
+    }
 }
 
 // MARK: - Actions
@@ -240,19 +248,7 @@ extension C2XTransactionsViewController {
             self.builder = builder
             
             if allowSurcharge.isOn {
-                guard let surchargePercentText = surchargePercent.text else {
-                    showTextDialogWith("Transaction Cannot Be Performed",
-                                       "Custom surcharge fee is limited to a value of 2% or greater and less than 3%")
-                    return
-                }
-                
-                guard let surchargeValue = Decimal(string: surchargePercentText) else {
-                    showTextDialogWith("Transaction Cannot Be Performed",
-                                       "Custom surcharge fee is limited to a value of 2% or greater and less than 3%")
-                    return
-                }
-                
-                if surchargeValue < 2 || surchargeValue > 3 {
+                if !self.isSurchargeFieldValid() {
                     showTextDialogWith("Transaction Cannot Be Performed",
                                        "Custom surcharge fee is limited to a value of 2% or greater and less than 3%")
                     return
@@ -273,6 +269,19 @@ extension C2XTransactionsViewController {
         } else {
             showTextDialog(LoadingStatus.DEVICE_NOT_CONNECTED_ALERT.rawValue)
         }
+    }
+    
+    private func isSurchargeFieldValid() -> Bool {
+        guard let surchargePercentText = surchargePercent.text,
+              let surchargeValue = Decimal(string: surchargePercentText) else {
+            return false
+        }
+        
+        if surchargeValue < 2 || surchargeValue > 3 {
+            return false
+        }
+        
+        return true
     }
     
     @objc func manualTransactionButtonAction(_: UIButton) {
@@ -860,6 +869,7 @@ private extension C2XTransactionsViewController {
     
     func showProgress(_ show: Bool) {
         DialogView.isHidden = !show
+        cancelButton.isHidden = DialogView.isHidden
         if show {
             dialogSpinner.startAnimating()
         } else {

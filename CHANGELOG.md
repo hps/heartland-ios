@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2.1.5 2025-09-09
+- iOS SDK: Readded appsec.properties file
+- iOS SDK: Fixed quick cancel fails to clear Ready State
+- iOS SDK: Bug fixes and improvements.
+
 ## 2.1.4 2025-08-26
 - iOS SDK: Implemented BBPOS discovery should return multiple devices
 - iOS SDK: Fixed Surcharge pre-tax miscalculates total amount 
