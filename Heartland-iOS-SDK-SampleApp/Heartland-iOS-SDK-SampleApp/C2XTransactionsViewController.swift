@@ -247,6 +247,11 @@ extension C2XTransactionsViewController {
             }
             self.builder = builder
             
+            // Adding Invoice Number in request
+            let transactionDetails = HpsTransactionDetails()
+            transactionDetails.invoiceNumber = "123456"
+            builder.details = transactionDetails
+            
             if allowSurcharge.isOn {
                 if !self.isSurchargeFieldValid() {
                     showTextDialogWith("Transaction Cannot Be Performed",
@@ -427,6 +432,12 @@ extension C2XTransactionsViewController {
                 NSLog("Client Transaction Id Generated In The Client - Request  %@", cTransactionId)
             }
             self.builder = builder
+            
+            // Adding Invoice Number in request
+            let transactionDetails = HpsTransactionDetails()
+            transactionDetails.invoiceNumber = "123456"
+            builder.details = transactionDetails
+            
             if allowSurcharge.isOn,
                let surchargeValue = Decimal(string: surchargePercent.text ?? "3.0"),
                 surchargeValue < 2 || surchargeValue > 3 {
