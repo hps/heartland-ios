@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2.1.6 2025-10-30
+- iOS SDK: Implemented Invoice Number for Portico CP duplicate checking 
+
 ## 2.1.5 2025-09-09
 - iOS SDK: Readded appsec.properties file
 - iOS SDK: Fixed quick cancel fails to clear Ready State

@@ -24,6 +24,7 @@
 		2896FA712A44AA7E0076BBFC /* UpaUSATransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2896FA702A44AA7E0076BBFC /* UpaUSATransaction.swift */; };
 		2896FA732A44AA930076BBFC /* PayAppCanadaTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2896FA722A44AA930076BBFC /* PayAppCanadaTransaction.swift */; };
 		43233D002E356AC300DBB5B6 /* BBPOSCreditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43233CFF2E356AAF00DBB5B6 /* BBPOSCreditTests.swift */; };
+		438C3D1D2EABBCCB00E77CCA /* BBPOSDuplicateTransactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C3D1C2EABBCCB00E77CCA /* BBPOSDuplicateTransactionTests.swift */; };
 		DD37C2E72AE0829E003891D7 /* TapToPayHostedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD37C2E62AE0829E003891D7 /* TapToPayHostedViewController.swift */; };
 		DD37C2F72B165674003891D7 /* TokenServiceHostedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD37C2F62B165674003891D7 /* TokenServiceHostedViewController.swift */; };
 		DD49DDB4296DDAE100EBD526 /* HpsUPALineItemDisplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD49DDB3296DDAE000EBD526 /* HpsUPALineItemDisplayTests.swift */; };
@@ -118,6 +119,7 @@
 		2896FA702A44AA7E0076BBFC /* UpaUSATransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpaUSATransaction.swift; sourceTree = "<group>"; };
 		2896FA722A44AA930076BBFC /* PayAppCanadaTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayAppCanadaTransaction.swift; sourceTree = "<group>"; };
 		43233CFF2E356AAF00DBB5B6 /* BBPOSCreditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBPOSCreditTests.swift; sourceTree = "<group>"; };
+		438C3D1C2EABBCCB00E77CCA /* BBPOSDuplicateTransactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBPOSDuplicateTransactionTests.swift; sourceTree = "<group>"; };
 		DD37C2E62AE0829E003891D7 /* TapToPayHostedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapToPayHostedViewController.swift; sourceTree = "<group>"; };
 		DD37C2F62B165674003891D7 /* TokenServiceHostedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenServiceHostedViewController.swift; sourceTree = "<group>"; };
 		DD49DDB3296DDAE000EBD526 /* HpsUPALineItemDisplayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HpsUPALineItemDisplayTests.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				43233CFF2E356AAF00DBB5B6 /* BBPOSCreditTests.swift */,
+				438C3D1C2EABBCCB00E77CCA /* BBPOSDuplicateTransactionTests.swift */,
 			);
 			path = BBPOS;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				DD713FC72948DC7500514143 /* Hps_Hpa_Admin_Test.m in Sources */,
 				DD713FB42948DC7500514143 /* HpsTableServicesTest.m in Sources */,
 				DD713FB62948DC7500514143 /* Hps_Hpa_Gift_Test.m in Sources */,
+				438C3D1D2EABBCCB00E77CCA /* BBPOSDuplicateTransactionTests.swift in Sources */,
 				DD713FBC2948DC7500514143 /* Hps_UPA_VRF_Test.m in Sources */,
 				DD713FC52948DC7500514143 /* Hps_Pax_Batch_Tests.m in Sources */,
 				14B86EFE29B02C3B00657AF3 /* C2XTransactionsTests.swift in Sources */,
