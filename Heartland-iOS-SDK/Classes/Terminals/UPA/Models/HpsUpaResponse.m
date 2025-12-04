@@ -208,6 +208,7 @@ static int IsFieldEnable;
         self.duplicate.duplicateReferenceNumber = [duplicate getValueAsString:@"referenceNumber"];
         self.duplicate.duplicateTranDate = [duplicate getValueAsString:@"tranDate"];
         self.duplicate.duplicatePanLast4 = [duplicate getValueAsString:@"panLast4"];
+        self.duplicateFound = YES;
     }
 
     return self;

@@ -96,6 +96,8 @@
 @property (nonatomic,strong) NSString *upaEmvSdkVersion;
 @property (nonatomic,strong) NSString *upaContactlessSdkVersion;
 
+@property (nonatomic, assign) BOOL duplicateFound;
+
 - (BOOL)isSuccess;
 - (NSString *)duplicateTransactionId;
 - (BOOL)isDuplicateTransactionError;

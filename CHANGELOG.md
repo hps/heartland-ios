@@ -1,5 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
+- iOS SDK: Added an allow duplicate flag in UPA to handle duplicate transactions
+- iOS SDK: Added additional details for duplicate transactions
+
+## 2.1.7 2025-12-04
+- iOS SDK: Implemented Invoice Number for Portico CP duplicate checking
 
 ## 2.1.6 2025-10-30
 - iOS SDK: Implemented Invoice Number for Portico CP duplicate checking 
